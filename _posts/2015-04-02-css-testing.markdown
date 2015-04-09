@@ -3,6 +3,7 @@ layout: post
 title: "CSS testing techniques and tools"
 date: 2015-04-02
 author: Anne Tomasevich
+tags: css testing
 summary: Writing CSS is easy. Writing good, semantic, DRY CSS, all while avoiding unintended changes elsewhere on your site, is not so easy. Since automated testing is a high priority to our team, I set out to research CSS testing techniques that we could integrate into our workflow. There are plenty of tools out there, so I've reviewed the ones most ideal for our shop.
 ---
 

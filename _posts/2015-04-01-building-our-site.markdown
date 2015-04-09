@@ -3,6 +3,7 @@ layout: post
 title: "Building savaslabs.com"
 date: 2015-04-01
 author: Anne Tomasevich
+tags: jekyll bourbon sass
 summary: What do web developers do when they have a few days between projects? Build an entire company website from scratch. Thanks to Jekyll and Bourbon, we were able to completely redo our website efficiently.
 ---
 

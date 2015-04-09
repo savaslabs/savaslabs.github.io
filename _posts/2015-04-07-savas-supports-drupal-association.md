@@ -3,6 +3,7 @@ title: Savas supports the Drupal Association
 layout: post
 date: 2015-04-07
 author: Kosta Harlan
+tags: drupal
 summary: Savas is proud to join the Drupal Association as an organization member.
 ---
 <a href="https://assoc.drupal.org"><img align="left" src="/assets/icons/drupal-association-120.png" alt="Drupal Association icon" style="padding-right: 10px"></a>
