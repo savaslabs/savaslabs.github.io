@@ -11,12 +11,7 @@ layout: default
     {{ content }}<br>
     <p class="post-tags">
       Tags: {% for tag in page.tags %}
-        {% if forloop.rindex > 1 %}
-          <a href="{{ tag | prepend: "/tags/"}}">{{ tag }}</a>, 
-        {% endif %}
-        {% if forloop.rindex == 1 %}
-          <a href="{{ tag | prepend: "/tags/"}}">{{ tag }}</a>
-        {% endif %}
+        <a href="{{ tag | prepend: "/tags/"}}">{{ tag }}</a>{% if forloop.rindex > 1 %}, {% endif %}
       {% endfor %}
     </p>
     <hr />
