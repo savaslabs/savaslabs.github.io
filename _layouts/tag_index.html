@@ -1,0 +1,31 @@
+---
+layout: page
+---
+
+<div class="flex-container">
+    <div class="cards">
+        {% for post in site.posts %}    
+            {% for tag in post.tags %}
+                {% if tag == page.tag %}
+                <div class="card">
+                    <a href="{{ post.url }}">
+                        <div class="card-image">
+                        </div>
+                        <div class="card-header">
+                            {{ post.title }}
+                        </div>
+                        <div class="card-copy">
+                            <p>By {{ post.author }}</p>
+                            <p>{{ post.summary }}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="view-all-posts">
+    <i class="fa fa-arrow-up"></i> <a href="/blog"> View all blog posts</a>
+</div>

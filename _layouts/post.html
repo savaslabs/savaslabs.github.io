@@ -33,7 +33,12 @@ layout: default
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | prepend: site.baseurl | prepend: site.url | strip_newlines }}">{{ page.author }}</a>{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
   <article class="post-content">
-    {{ content }}
+    {{ content }}<br>
+    <p class="post-tags">
+      Tags: {% for tag in page.tags %}
+        <a href="{{ tag | prepend: "/tags/"}}">{{ tag }}</a>{% if forloop.rindex > 1 %}, {% endif %}
+      {% endfor %}
+    </p>
     <hr />
     </article>
     <div class="previous-next-links">

@@ -21,3 +21,11 @@ collections:
     permalink: /work/:path/
 gems:
   - jekyll-sitemap
+tags:
+  - drupal
+  - jekyll
+  - bourbon
+  - sass
+  - css
+  - testing
+  - maps
