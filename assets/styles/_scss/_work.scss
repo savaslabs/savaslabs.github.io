@@ -15,3 +15,29 @@
         }
     }
 }
+
+.portfolio-details table {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.client-quote {
+    .client-name {
+        font-style: italic;
+    }
+}
+
+.portfolio-details {
+    overflow: hidden;
+}
+
+.client-quote {
+    border: 1px solid gainsboro;
+    @include media($medium-screen) {
+        display: inline-block;
+        float: right;
+        margin: 1.5em;
+        padding: .5em;
+        width: 15em;
+    }
+}

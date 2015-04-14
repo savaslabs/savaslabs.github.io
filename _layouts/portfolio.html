@@ -5,9 +5,7 @@ layout: default
     <header class="portfolio-header">
         <h2 class="portfolio-item">{{ page.title }}</h2>
     </header>
-    <article class="portfolio-description">
-        {{ content }}
-    </article>
+    <p>{{ page.short_description }}</p>
     <services class="portfolio-details">
         <table class="table-minimal">
             <tbody>
@@ -26,6 +24,17 @@ layout: default
             </tbody>
         </table>
     </services>
+    <article class="portfolio-description">
+        {% if page.client_quote %}
+            <div class="client-quote">
+                <p>{{ page.client_quote }}</p>
+                <p class="client-name">{{ page.client_name }}</p>
+            </div>
+        {% endif %}
+        <div class="portfolio-content">
+            {{ content }}
+        </div>
+    </article>
     <hr />
     <div class="view-all-link">
         <i class="fa fa-arrow-up"></i> <a href="/work"> View all portfolio items</a>
