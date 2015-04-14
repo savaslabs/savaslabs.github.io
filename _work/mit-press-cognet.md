@@ -28,3 +28,5 @@ One of the biggest challenges faced by MIT Press was a legacy codebase in need o
 ---
 
 ### Security audit
+
+Savas performed a security audit of custom code via automated tools and manual review, empowering the MIT Press team to clearly view potential issues and prioritize their resolution.
