@@ -15,10 +15,10 @@ services:
 
 ### Drupal development and theming
 
-As a pro-bono project, Savas (in collaboration with a design firm) completed a full site build for Tilthy Rich. Enabling users to easily select various service options to cusomize their experience was a high priority, along with creating automated systems for coordinating the collection and distribution process, including a map of subscibers and periodic reminders sent to users based on options they select.
+As a pro-bono project, Savas (in collaboration with a local design firm, [Cuberis](http://www.cuberis.com)) completed a full Drupal site build for Tilthy Rich. Enabling users to easily select various service options to customize their experience was a high priority, along with creating automated systems for coordinating the collection and distribution process, including a map of subscribers and periodic reminders sent to users based on options they select.
 
 ---
 
 ### API integration and ecommerce
 
-Savas initially integrated Paypal for processing customer subscriptions. Recently, Savas developers implemented the Stripe API for a simpler customer interface and more favorable security practices.
+Savas initially integrated Paypal for processing customer subscriptions. Recently, Savas developers implemented the Stripe API for a simpler customer interface and a more flexible developer experience.
