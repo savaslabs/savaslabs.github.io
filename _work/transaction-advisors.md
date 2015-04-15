@@ -14,14 +14,12 @@ services:
 Savas provides Drupal development and theming services for Transaction Advisors, working closely with the editorial management to implement new features and designs.
 
 ### Challenges:
-> - Provide a better way to manage customer subscriptions and process recurring payments.
-> - Implement a more modern, responsive design that looks good on a variety of devices.
+- Provide a better way to manage customer subscriptions and process recurring payments.
+- Implement a more modern, responsive design that looks good on a variety of devices.
 
 ---
 
 ### Solution:
-Savas started by cleaning up the existing codebase to ensure it was consistent with Drupal standards, laying the groundwork for sustainable development going forward.
+Since Transaction Advisors’ business model depends on paid subscriptions to their collection of articles and videos, it was critical that their site have a robust paywall allowing subscribers access to content, while encouraging anonymous users to register for paid accounts. Savas leveraged Drupal’s powerful core system for managing user’s roles and permissions with custom code that allows anonymous users to view an article or video description, but displays a login/register window if those users then click on the full article/video link.
 
-Next, it was important to Compost Pedallers to have a lot of flexibility in their subscription plans along with automated, recurring billing. Based on Savas founder Chris Russo’s own experience running a compost service, Savas suggested that Compost Pedallers switch to Stripe as their payment processor. Stripe provides a powerful payment API allowing for complete control over the checkout experience, coupled with simple, competitive pricing and tremendous customer support. After demonstrating the benefits of Stripe to the client, Savas integrated Stripe into the existing Compost Pedallers site.
-
-Compost Pedallers also wanted a more modern looking website that was user friendly on a variety of devices, including tablets and smart phones. To provide the most bang for the buck, Savas guided Compost Pedallers’ purchase of a responsive theme from a credible template marketplace. Savas then configured the existing site to use the new theme, providing custom code where needed to ensure the new theme worked throughout, including in the client’s online store.
+Like most web-based businesses these days, Transaction Advisors knew that it wasn’t enough for their site to cater only to visitors using desktops or laptops. Rather, they found it critical to provide a great user experience on tablets and mobile devices as well. To make the best use of Transaction Advisors development budget, Savas purchased an off-the-shelf responsive base theme and then customized it to the client’s needs. The result was a low cost transition to a responsive, clean design that was user friendly on a variety of devices.
