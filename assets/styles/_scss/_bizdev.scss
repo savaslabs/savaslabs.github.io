@@ -1,0 +1,46 @@
+.proposal {
+
+  .navigation-wrapper {
+    @include outer-container();
+    @include media($large-screen) {
+      @include span-columns(10);
+      @include shift(1);
+      float: none;
+    }
+
+    .nav-link {
+      color: transparentize($white, .3);
+      display: inline-block;
+      font-size: 1.2em;
+      font-weight: 400;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:focus,
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .proposal__content {
+    @include outer-container();
+    @include media($large-screen) {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+
+  .proposal__title {
+    margin-bottom: 3em;
+  }
+
+  .proposal__client-name {
+    margin-bottom: .5em;
+  }
+
+  .proposal__submitter {
+    margin-bottom: .25em;
+    margin-top: 3em;
+  }
+}
