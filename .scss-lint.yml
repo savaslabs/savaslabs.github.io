@@ -14,3 +14,5 @@ linters:
     enabled: false
   PlaceholderInExtend:
     enabled: false
+  SelectorFormat:
+    enabled: false

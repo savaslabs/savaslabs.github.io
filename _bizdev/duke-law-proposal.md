@@ -8,19 +8,46 @@ submitter: Chris Russo, Director
 
 ### Statement of Work
 
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+##### Overview
+
+Design and implement a responsive layout for the Duke Law website and upgrade
+other design elements to further modernize the look and feel of the site.
+
+##### Details
+
+Since the site's theme, Seven, does not include responsive functionality, we
+believe moving the site to a responsive theme would be mean faster and more
+predictable development than updating the current theme. Foundation and Bootstrap
+are two of Drupal's most popular base themes and either would offer a highly
+vetted responsive framework. Moving to a new theme offers additional advantages:
+
+- Implementing other design element changes, such as new fonts or an updated
+color scheme, would be easily done in tandem with the theme change.
+- A CSS preprocessor could be set up to make future development faster.
+- Using a theme that is based on responsive design means more reliable results
+and less custom code.
 
 ### Tasks
 
-- Efficiently unleash cross-media information without cross-media value.
-  - Quickly maximize timely deliverables for real-time schemas.
-  - Dramatically maintain clicks-and-mortar solutions without functional solutions.
-- Completely synergize resource taxing relationships via premier niche markets.
-- Professionally cultivate one-to-one customer service with robust ideas.
-- Dynamically innovate resource-leveling customer service for state of the art customer service.
-  - Quickly maximize timely deliverables for real-time schemas.
+##### Discovery
+  - Review the current theme. Inventory template files and inspect stylesheets to
+  prepare for move to a responsive Drupal theme.
+  - Identify additional tasks to be completed (e.g. banner update, font and color
+  changes)
+
+##### Wireframing
+  - Design layout of site on various screen sizes
+  - Provide mockups to client stakeholders for review
+
+##### Development
+  - Install a responsive theme and refactor current templates and stylesheets
+  - Implement responsive layout
+  - Complete additional design element updates
 
 ### Deliverable
+
+Provide updated theme implementing a modern, responsive layout on various screen
+sizes while maintaining current layout and style of the desktop site.
 
 ### Estimate
 
