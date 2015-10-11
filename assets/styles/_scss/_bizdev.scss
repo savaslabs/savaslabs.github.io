@@ -1,0 +1,90 @@
+.proposal {
+
+  .proposal__navigation {
+    background-color: $dark-blue;
+    border-bottom: 1px solid darken($dark-blue, 10);
+    min-height: 70px;
+    padding: 1em 0;
+    width: 100%;
+    z-index: 999;
+
+    @include media(em(400)) {
+      padding: 0;
+    }
+
+    .proposal__navigation-wrapper {
+      @include outer-container();
+      padding: 25px 0;
+
+      @include media($large-screen) {
+        @include span-columns(10);
+        @include shift(1);
+        float: none;
+      }
+
+      .logo {
+        @include media(em(400)) {
+          float: left;
+          padding-left: 1em;
+
+          img {
+            max-height: 70px;
+            padding: .5em 0;
+          }
+        }
+      }
+
+      nav {
+        @include media(em(400)) {
+          min-height: 70px;
+        }
+
+        .nav-link {
+          display: none;
+
+          @include media(em(400)) {
+            color: transparentize($white, .3);
+            display: inline-block;
+            float: right;
+            font-size: 1.2em;
+            font-weight: 400;
+            line-height: 70px;
+            padding-right: 1em;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:focus,
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .proposal__content {
+    @include outer-container();
+    @include media($large-screen) {
+      @include span-columns(10);
+      @include shift(1);
+    }
+
+    h5 {
+      color: $orange;
+    }
+  }
+
+  .proposal__title {
+    margin-bottom: 3em;
+  }
+
+  .proposal__client-name {
+    margin-bottom: .5em;
+  }
+
+  .proposal__submitter {
+    margin-bottom: .25em;
+    margin-top: 3em;
+  }
+}

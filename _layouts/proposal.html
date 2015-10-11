@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body class="proposal">
+
+<header class="proposal__navigation" role="banner">
+  <div class="proposal__navigation-wrapper">
+    <a href="/" class="logo">
+      <img src="{{ site.url }}/assets/img/logo.png" alt="Savas logo">
+    </a>
+    <nav role="navigation">
+      <a href="/" class="nav-link">Visit savaslabs.com</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="wrapper">
+    <div class="proposal__content">
+      <header class="proposal__title">
+        <h1 class="proposal__client-name">{{ page.client_name }}</h1>
+        <h2 class="proposal__project-name">{{ page.project_name }}</h2>
+        <p class="proposal__submitter">Submitted by {{ page.submitter }}</p>
+        <p class="proposal__date">{{ page.date }}</p>
+      </header>
+      <hr>
+
+      <article class="proposal__content">
+        {{ content }}
+      </article>
+    </div>
+
+  </div>
+</div>
+
+{% include footer.html %}
+
+</body>
+
+</html>
