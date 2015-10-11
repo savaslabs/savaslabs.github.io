@@ -17,7 +17,7 @@
   $navigation-active-link-color: $white;
   $navigation-submenu-padding: 1em;
   $navigation-submenu-width: 12em;
-  $horizontal-bar-mode: $medium-screen-up;
+  $horizontal-bar-mode: $large-screen-up;
 
   background-color: $navigation-background;
   border-bottom: 1px solid darken($navigation-background, 10);
@@ -75,16 +75,16 @@
 
   nav {
     float: none;
-    min-height: $navigation-height;
     z-index: 9999999;
 
     @include media ($horizontal-bar-mode) {
       float: right;
+      min-height: $navigation-height;
     }
 
     @include media ($medium-screen-up) {
       clear: left;
-      float: none;
+      float: right;
     }
 
     @include media ($large-screen-up) {
