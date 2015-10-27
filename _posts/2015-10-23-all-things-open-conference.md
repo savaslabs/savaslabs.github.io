@@ -102,7 +102,7 @@ In addition to hiring, Mark gets to work on some of the
 [most important work](https://github.com/caktus/taytay) Caktus produces.
 
 
-### Keynote themes
+#### Keynote themes
 There was a _lot_ of discussion about cultivating diversity in the technology
 industry. An excellent, and award-winning documentary called 
 [Code: Debugging the Gender Gap](http://www.codedocumentary.com/)
