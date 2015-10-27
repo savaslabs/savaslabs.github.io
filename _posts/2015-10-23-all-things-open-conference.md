@@ -16,7 +16,7 @@ the conference last year (its 2nd year running) and enjoyed a shallow dive
 into a [wide variety](http://allthingsopen.org/schedule/) of open source 
 technologies. Some of which was applicable to the work I was doing, and some of 
 which was more geared towards inspiration, new ideas, and learning about 
-technologies that I could be working in or at least should be aware of. This 
+technologies that I could utilize or at least should be aware of. This 
 year I attended with a similar perspective, but also with my employer (red) hat 
 ([and shoes](https://twitter.com/Savas_Labs/status/656108971175116801)) on. 
 
@@ -86,8 +86,8 @@ has those two things.
 
 + They look for people who are self-aware, know what they know, and know what 
 they don’t.
-+ Doing whiteboard interviews reinforce imposter syndrome for folks who don’t 
-come from CS backgrounds.
++ Conducting whiteboard interview exercises reinforce imposter syndrome for 
+folks who don’t come from CS backgrounds.
 + Rather they ask:
   + What is this person going to need to learn to be part of our team?
   + How have you functioned on teams in the past?
