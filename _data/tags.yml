@@ -21,6 +21,8 @@
   name: Drupal 8
 - slug: event
   name: Event
+- slug: conference
+  name: Conference
 - slug: docker
   name: Docker
 - slug: bowline
