@@ -12,7 +12,7 @@ Last week, I attended the
 [All Things Open conference](http://allthingsopen.org/) conference. The 
 conference is hosted in Raleigh, so for those of us carless folks, it is a very
 accessible world-class conference a mere 30-minute bus ride away. I attended 
-the conference last year (it's 2nd year running) and enjoyed a shallow dive 
+the conference last year (its 2nd year running) and enjoyed a shallow dive
 into a [wide variety](http://allthingsopen.org/schedule/) of open source 
 technologies. Some of which was applicable to the work I was doing, and some of 
 which was more geared towards inspiration, new ideas, and learning about 
@@ -24,7 +24,7 @@ It was fun to network and discuss opportunities of diversity with organizations
 like [girl develop it](https://www.girldevelopit.com/) and advocate that the 
 [iron yard academy](http://theironyard.com/locations/durham/)
 produce a PHP / Drupal class. It was also another chance to be impressed with
-conference organizer [Tood Lewis](https://twitter.com/toddlew)'s ability to say
+conference organizer [Todd Lewis](https://twitter.com/toddlew)'s ability to say
 "thank you" in nearly every sentence. Thank _you_ Todd! All-in-all-things-open 
 it was a productive conference for meeting people, hearing presentations, and 
 getting our name out there a bit more.
@@ -73,7 +73,7 @@ an employer.
 You get the basic gist from the title, but I'll pull out a few nuggets from
 [Mark's presentation](http://talks.caktusgroup.com/all-things-open/2015/hiring/#/1)
 
-The following [Bertrand Russel Quote](http://talks.caktusgroup.com/all-things-open/2015/hiring/#/13)
++ The following [Bertrand Russel Quote](http://talks.caktusgroup.com/all-things-open/2015/hiring/#/13)
 
 > The trouble with the world is that the stupid are cocksure and the intelligent are full of doubt.
  
@@ -88,7 +88,7 @@ has those two things.
 they don’t.
 + Doing whiteboard interviews reinforce imposter syndrome for folks who don’t 
 come from CS backgrounds.
-+ Rather they ask
++ Rather they ask:
   + What is this person going to need to learn to be part of our team?
   + How have you functioned on teams in the past?
   + How will you function on this team?
@@ -96,7 +96,7 @@ come from CS backgrounds.
 Perhaps most salient to me was Mark's point that they are looking for someone 
 who is a
 
-> Cultural add, not a cultural fit.
+> cultural add, not a cultural fit.
 
 In addition to hiring, Mark gets to work on some of the 
 [most important work](https://github.com/caktus/taytay) Caktus produces.
@@ -112,8 +112,8 @@ of the nuances of that necessary conversation, but some highlights to me were:
 
 + If you want to hire more women, don't have your on-staff female developer 
 passing out t-shirts, have her interviewing the candidates!
-+ meritocracy can work - but hyper-confrontational meritocracy can also better
-serve dominant, or extroverted people.
++ Meritocracy can work - but hyper-confrontational meritocracy can also better
+serve dominant or extroverted people.
  + To avoid this, constantly review your policies on inclusion.
 + Be visually inclusive: have pictures on your website, and booths at events
 that are demographically diverse.
