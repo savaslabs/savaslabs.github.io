@@ -1,20 +1,59 @@
 <header class="navigation" role="banner">
   <div class="navigation-wrapper">
-      <a href="/" class="logo">
-          <img src="{{ site.url }}/assets/img/logo.png" alt="Savas logo">
-      </a>
-      <a href="/" id="js-mobile-menu" class="navigation-menu-button">MENU</a>
-      <nav role="navigation">
-        <ul id="js-navigation-menu" class="navigation-menu show">
-          {% for link in site.navigation %}{% assign active-nav-item = nil %}
-            {% if page.url contains link.url %}
-              {% assign active-nav-item = 'active-nav-item' %}
+
+    <!-- Savas logo. -->
+    <a href="/" class="logo">
+        <img src="{{ site.url }}/assets/img/logo.png" alt="Savas logo">
+    </a>
+
+    <!-- Mobile menu button. -->
+    <a href="/" id="js-mobile-menu" class="navigation-menu-button">MENU</a>
+
+    <!-- Main menu. -->
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+
+        <!-- Loop through nav items in config.yml. -->
+        {% for link in site.navigation %}
+
+          <!-- These variables will be used for special CSS classes. -->
+          {% assign active-nav-item = nil %}{% assign more-link = nil %}
+
+          <!-- Assign active nav item class. -->
+          {% if page.url contains link.url %}
+            {% assign active-nav-item = 'active-nav-item' %}
+          {% endif %}
+
+          <!-- Assign class for menu items with sub-links. -->
+          {% if link.sub-menu %}
+            {% assign more-link = 'more' %}
+          {% endif %}
+
+          <!-- Build links. -->
+          <li class="nav-link {{ active-nav-item }} {{ more-link }}">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+
+            <!-- If there are sub-links, create them. -->
+            {% if link.sub-menu %}
+
+              <ul class="submenu">
+                {% for sublink in link.sub-menu %}
+
+                  <!-- Assign active nav item class. -->
+                  {% assign active-nav-item = nil %}
+                  {% if page.url contains sublink.url %}
+                    {% assign active-nav-item = 'active-nav-item' %}
+                  {% endif %}
+
+                  <li class="nav-link {{ active-nav-item }}">
+                    <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
             {% endif %}
-            <li class="nav-link {{ active-nav-item }}">
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
 </header>

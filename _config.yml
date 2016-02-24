@@ -14,7 +14,12 @@ comment_server_enabled: 1
 # Nav links
 navigation:
   - title: Who we are
-    url: /team
+    url: javascript:void(0)
+    sub-menu:
+      - title: Team
+        url: /team
+      - title: Mission & values
+        url: /mission-and-values
   - title: What we do
     url: /what-we-do
   - title: Our work
