@@ -58,6 +58,16 @@
     margin-bottom: 0;
   }
 
+  .footnotes {
+    border-top: dashed 1px $gainsboro;
+    margin-top: 2em;
+    padding-top: 2em;
+
+    p {
+      font-size: 1em;
+    }
+  }
+
 }
 
 // Images within posts.
