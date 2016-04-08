@@ -27,10 +27,14 @@
 
   .logo {
     // On small screens, float menu to the left inline with mobile menu.
+    background-color: $dark-blue;
+    border-radius: $base-border-radius * 2;
+    display: inline-block;
     float: left;
+    margin: 0 0 0 1em;
     max-height: $navigation-height;
     padding-left: $navigation-padding;
-    padding-right: 2em;
+    padding-right: 1em;
 
     // On medium screens, center logo above menu.
     @include media($horizontal-bar-mode) {
@@ -41,7 +45,7 @@
     // On large screens, float logo to the left inline with menu.
     @include media($large-screen-up) {
       float: left;
-      margin: 0;
+      margin: 0 0 0 1em;
     }
 
     img {
