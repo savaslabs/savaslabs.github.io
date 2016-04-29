@@ -29,7 +29,10 @@ technologies_used: |
 client_logo: "/assets/img/work/cognet-case-study/cognet_logo.png"
 client_hero_image: "/assets/img/work/cognet-case-study/cognet_hero.png"
 project_objective_image: "/assets/img/work/cognet-case-study/cognet_objective.png"
+project_objective_image_alt: "A desktop-size screenshot of the MIT Press CogNet website"
 project_process_image: "/assets/img/work/cognet-case-study/cognet_process.png"
+project_process_image_alt: "Mockups paired with the final site on mobile screens"
 project_results_image: "/assets/img/work/cognet-case-study/cognet_results.png"
+project_results_image_alt: "The MIT Press CogNet site on three screen sizes"
 
 ---

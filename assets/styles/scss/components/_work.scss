@@ -4,6 +4,7 @@
  * Styles for /our-work, and case study and portfolio pages.
  */
 
+// Simple portfolio pages.
 .portfolio {
   @include outer-container;
   @include media($large-screen-up) {
@@ -22,6 +23,7 @@
   }
 }
 
+// Case study pages.
 .case-study {
   clear: both;
 
@@ -30,9 +32,10 @@
     @include justify-content(space-around);
     @include align-items(center);
 
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     height: 88vh;
 
     // On medium screens, change height to account for menu height.
@@ -179,9 +182,9 @@
   }
 
   .case-study__square-image {
-    background-size: 100%;
-    background-repeat: no-repeat;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 
   }
 
