@@ -24,11 +24,14 @@
 
         <!-- Client introduction -->
         <div class="case-study__client">
-          <img class="case-study__client__logo" src="{{ page.client_logo }}" alt="{{ page.client_name }} logo">
-          {{ page.client_description | markdownify }}
+          <div class="wrapper">
+            <img class="case-study__client__logo" src="{{ page.client_logo }}" alt="{{ page.client_name }} logo">
+            {{ page.client_description | markdownify }}
+          </div>
         </div>
 
-        <!-- Objective, Process, and Results sections. -->
+      <div class="wrapper">
+      <!-- Objective, Process, and Results sections. -->
         <div class="case-study__content case-study__content--objective">
           <div class="case-study__content__text case-study__content__text--objective">
             <h2>The Objective</h2>
@@ -58,14 +61,17 @@
             <img src="{{ page.project_results_image }}" alt="{{ page.project_results_image_alt }}">
           </div>
         </div>
+        </div>
 
         {% if page.client_quote %}
         <!-- Client Quote. -->
         <div class="case-study__client-quote">
+          <div class="wrapper">
           <blockquote>
             <p class="case-study__client-quote__quote">{{ page.client_quote }}</p><br>
             <p class="case-study__client-quote__attribution">&mdash; {{ page.client_quote_author }}</p>
           </blockquote>
+            </div>
         </div>
         {% endif %}
 
@@ -90,10 +96,13 @@
           </table>
         </div>
 
-        <hr>
-        <div class="view-all-link">
-          <i class="fa fa-arrow-up"></i> <a href="/work"> View all portfolio items</a>
+      <div class="case-study__bottom">
+        <div class="case-study__contact">
+          <h3>Interested in working with us?</h3>
+          <a href="/contact">Get in touch!</a>
         </div>
+        <i class="fa fa-arrow-up"></i> <a href="/work"> View all portfolio items</a>
+      </div>
 
     </div><!--case-study-->
 

@@ -80,7 +80,7 @@
         @extend %button-outline;
 
         display: inline-block;
-        margin-top: .75em;
+        margin-top: $base-spacing;
       }
     }
   }
@@ -95,24 +95,26 @@
   }
 
   .case-study__client {
-    @include display(flex);
-    @include justify-content(space-between);
-    @include align-items(center);
-    @include flex-wrap(wrap);
-
     background-color: lighten($light-gray, 10);
     padding: $base-margin $base-spacing;
 
-    @include media($medium-screen-up) {
-      @include flex-wrap(nowrap);
-    }
-
-    .case-study__client__logo {
-      display: block;
-      margin: 0 auto $base-spacing;
+    .wrapper {
+      @include display(flex);
+      @include justify-content(space-between);
+      @include align-items(center);
+      @include flex-wrap(wrap);
 
       @include media($medium-screen-up) {
-        margin: 0 $base-margin 0 0;
+        @include flex-wrap(nowrap);
+      }
+
+      .case-study__client__logo {
+        display: block;
+        margin: 0 auto $base-spacing;
+
+        @include media($medium-screen-up) {
+          margin: 0 $base-margin 0 0;
+        }
       }
     }
   }
@@ -143,19 +145,19 @@
 
     .case-study__content__text {
       h2 {
-        //background-color: lighten($light-gray, 10);
-        //color: $base-background-color;
-        display: inline-block;
         font-size: 1.8em;
-        padding: .75em 3em .75em 1em;
+        margin-bottom: 0;
+        text-align: center;
 
         @include media($medium-screen-up) {
           font-size: 2em;
+          padding: .75em 3em .75em 1em;
+          text-align: left;
         }
       }
 
       p {
-        padding: 2em;
+        padding: 1.667em;
       }
     }
 
@@ -169,18 +171,28 @@
 
       .case-study__content__text--process {
         @include order(2);
-        text-align: right;
 
         h2 {
           color: $dark-blue;
-          padding-left: 3em;
-          padding-right: 1em;
+
+          @include media($medium-screen-up) {
+            padding-left: 3em;
+            padding-right: 1em;
+            text-align: right;
+          }
+        }
+
+        p {
+          @include media($medium-screen-up) {
+            text-align: right;
+          }
         }
       }
-
     }
 
     &.case-study__content--results {
+      padding-bottom: 0;
+
       h2 {
         color: $teal;
       }
@@ -232,6 +244,31 @@
     ul {
       margin-bottom: 0;
       margin-left: 1em;
+    }
+  }
+
+  .case-study__bottom {
+    background-color: lighten($light-gray, 10);
+    clear: both;
+    padding: 2.5em 0;
+    text-align: center;
+
+    .case-study__contact {
+      @include display(flex);
+      @include justify-content(center);
+      @include align-items(center);
+      @include flex-wrap(wrap);
+
+      margin-bottom: $base-margin;
+
+      h3,
+      a {
+        margin: .5em;
+      }
+
+      a {
+        @extend %button;
+      }
     }
   }
 }
