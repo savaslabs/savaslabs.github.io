@@ -15,46 +15,47 @@
       <div class="case-study__header" style="background-image: url({{ page.client_hero_image }});">
         <div class="case-study__header__text">
           <h1>{{ page.project_title }}</h1>
-          <p class="case-study__header__project-description">{{ page.project_description }}</p>
+          {{ page.project_description | markdownify }}
           <a class="case-study__header__link" href="{{ page.client_url }}">View site</a>
         </div>
       </div>
 
-      <div class="wrapper">
+      <!--<div class="wrapper">-->
 
         <!-- Client introduction -->
-        <div class="case-study__client">
-          <div class="case-study__client__logo">
-            <img src="{{ page.client_logo }}" alt="{{ page.client_name }} logo">
-            <p class="case-study__client__client-description">{{ page.client_description }}</p>
-          </div>
+        <div class="case-study__client wrapper">
+          <img class="case-study__client__logo" src="{{ page.client_logo }}" alt="{{ page.client_name }} logo">
+          {{ page.client_description | markdownify }}
         </div>
 
         <!-- Objective, Process, and Results sections. -->
         <div class="case-study__content case-study__content--objective">
           <div class="case-study__content__text case-study__content__text--objective">
-            <h2>Objective</h2>
-            <p>{{ page.project_objective }}</p>
+            <h2>The Objective</h2>
+            {{ page.project_objective | markdownify }}
           </div>
-          <div class="case-study__square-image case-study__square-image--objective" style="background-image: url({{ page.project_objective_image }});">
+          <div class="case-study__square-image case-study__square-image--objective">
+            <img src="{{ page.project_objective_image }}">
           </div>
         </div>
 
         <div class="case-study__content case-study__content--process">
           <div class="case-study__content__text case-study__content__text--process">
-            <h2>Process</h2>
-            <p>{{ page.project_process }}</p>
+            <h2>The Process</h2>
+            {{ page.project_process | markdownify }}
           </div>
-          <div class="case-study__square-image case-study__square-image--process" style="background-image: url({{ page.project_process_image }});">
+          <div class="case-study__square-image case-study__square-image--process">
+            <img src="{{ page.project_process_image }}">
           </div>
         </div>
 
         <div class="case-study__content case-study__content--results">
           <div class="case-study__content__text case-study__content__text--results">
-            <h2>Results</h2>
-            <p>{{ page.project_objective }}</p>
+            <h2>The Results</h2>
+              {{ page.project_objective | markdownify }}
           </div>
-          <div class="case-study__square-image case-study__square-image--results" style="background-image: url({{ page.project_results_image }});">
+          <div class="case-study__square-image case-study__square-image--results">
+            <img src="{{ page.project_results_image }}">
           </div>
         </div>
 
@@ -63,13 +64,14 @@
         <div class="case-study__client-quote">
           <blockquote>
             <p class="case-study__client-quote__quote">{{ page.client_quote }}</p><br>
-            <p class="case-study__client-quote__attribution">- {{ page.client_quote_author }}</p>
+            <p class="case-study__client-quote__attribution">&mdash; {{ page.client_quote_author }}</p>
           </blockquote>
         </div>
         {% endif %}
 
         <!-- Technical details. -->
-        <div class="case-study__details">
+        <div class="case-study__details wrapper">
+          <h2>The Details</h2>
           <table class="table-minimal">
             <tbody>
             <tr>
@@ -78,11 +80,11 @@
             </tr>
             <tr>
               <td class="label"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Services provided</td>
-              <td>{{ page.services_provided | join: ', ' }}</td>
+              <td>{{ page.services_provided | markdownify }}</td>
             </tr>
             <tr>
               <td class="label"><i class="fa fa-code"></i>&nbsp;&nbsp;Technologies used</td>
-              <td>{{ page.technologies_used | join: ', ' }}</td>
+              <td>{{ page.technologies_used | markdownify }}</td>
             </tr>
             </tbody>
           </table>
@@ -93,8 +95,7 @@
           <i class="fa fa-arrow-up"></i> <a href="/work"> View all portfolio items</a>
         </div>
 
-      </div><!--wrapper-->.
-    </div><!--case-study-->.
+    </div><!--case-study-->
 
     {% include footer.html %}
 

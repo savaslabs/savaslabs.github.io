@@ -17,8 +17,8 @@
   overflow: hidden;
 
   table {
-    margin-bottom: 3em;
-    margin-top: 3em;
+    margin-bottom: $base-margin;
+    margin-top: $base-margin;
   }
 }
 
@@ -58,10 +58,15 @@
 
       h1 {
         color: $base-background-color;
+        font-size: 2em;
         margin-bottom: 1em;
+
+        @include media($medium-screen-up) {
+          font-size: 2.5em;
+        }
       }
 
-      .case-study__header__project-description,
+      p,
       .case-study__header__link {
         color: $base-background-color;
         font-size: 1.25em;
@@ -78,9 +83,146 @@
   }
 
   .wrapper {
-    p,
-    td {
-      font-size: 1.2em;
+    padding: 0;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .case-study__client {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+
+    padding: $base-spacing * 2 $base-spacing $base-spacing;
+
+    @include media($medium-screen-up) {
+      @include flex-wrap(nowrap);
+    }
+
+    .case-study__client__logo {
+      display: block;
+      margin: 0 auto $base-spacing;
+
+      @include media($medium-screen-up) {
+        margin: 0 $base-margin 0 0;
+      }
+    }
+  }
+
+  .case-study__content {
+    padding: $base-spacing 0;
+
+    @include media($medium-screen-up) {
+      @include display(flex);
+      @include align-items(center);
+    }
+
+    .case-study__content__text,
+    .case-study__square-image {
+      @include media($medium-screen-up) {
+        width: 50%;
+      }
+    }
+
+    .case-study__square-image {
+      img {
+        height: auto;
+      }
+    }
+
+    .case-study__content__text {
+      h2 {
+        color: $base-background-color;
+        display: inline-block;
+        font-size: 1.8em;
+        padding: .75em 3em .75em 1em;
+
+        @include media($medium-screen-up) {
+          font-size: 2em;
+        }
+      }
+
+      p {
+        padding: 2em;
+      }
+    }
+
+    &.case-study__content--objective {
+      h2 {
+        background-color: $fuschia;
+      }
+    }
+
+    &.case-study__content--process {
+
+      .case-study__content__text--process {
+        @include order(2);
+        text-align: right;
+
+        h2 {
+          background-color: $dark-blue;
+          padding-left: 3em;
+          padding-right: 1em;
+        }
+      }
+
+    }
+
+    &.case-study__content--results {
+      h2 {
+        background-color: $teal;
+      }
+    }
+  }
+
+  .case-study__square-image {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+  }
+
+  .case-study__client-quote {
+    background-color: lighten($light-gray, 10);
+    margin: $base-spacing 0 $base-spacing * 2;
+    padding: $base-spacing;
+
+    @include media($medium-screen-up) {
+      padding: $base-spacing $base-margin;
+    }
+
+    @include media($large-screen-up) {
+      padding: $base-spacing $base-margin * 2;
+    }
+
+    .case-study__client-quote__quote {
+      font-style: normal;
+    }
+
+    .case-study__client-quote__attribution {
+      display: block;
+      margin-bottom: 0;
+      margin-top: .5em;
+      text-align: center;
+    }
+  }
+
+  .case-study__details {
+    @include media($medium-screen-up) {
+      @include span-columns(8);
+      @include shift(2);
+
+      td {
+        font-size: 1.2em;
+      }
+    }
+
+    ul {
+      margin-bottom: 0;
+      margin-left: 1em;
     }
   }
 }
