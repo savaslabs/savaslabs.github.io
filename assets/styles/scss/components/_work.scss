@@ -1,7 +1,7 @@
 /**
  * @file
  *
- * Styles for /our-work and portfolio pages.
+ * Styles for /our-work, and case study and portfolio pages.
  */
 
 .portfolio {
@@ -10,29 +10,77 @@
     @include span-columns(8);
     @include shift(2);
   }
+}
 
-  .portfolio-details {
-    overflow: hidden;
+.portfolio-details,
+.case-study__details {
+  overflow: hidden;
 
-    table {
-      margin-bottom: 3em;
-      margin-top: 3em;
-    }
+  table {
+    margin-bottom: 3em;
+    margin-top: 3em;
   }
 }
 
-.client-quote {
-  border: 1px solid $gainsboro;
+.case-study {
+  clear: both;
 
-  @include media($medium-screen-up) {
-    display: inline-block;
-    float: right;
-    margin: 1.5em;
-    padding: .5em;
-    width: 15em;
+  .case-study__header {
+    @include display(flex);
+    @include justify-content(space-around);
+    @include align-items(center);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 88vh;
+
+    // On medium screens, change height to account for menu height.
+    @include media($horizontal-bar-mode) {
+      height: 78vh;
+    }
+
+    // On large screens, adjust height to account for menu height.
+    @include media($large-screen-up) {
+      height: 88vh;
+    }
+
+    .case-study__header__text {
+      padding: 1em;
+
+      @include media($medium-screen-up) {
+        width: 80%;
+      }
+
+      @include media($large-screen-up) {
+        width: 60%;
+      }
+
+      h1 {
+        color: $base-background-color;
+        margin-bottom: 1em;
+      }
+
+      .case-study__header__project-description,
+      .case-study__header__link {
+        color: $base-background-color;
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      .case-study__header__link {
+        @extend %button-outline;
+
+        display: inline-block;
+        margin-top: .75em;
+      }
+    }
   }
 
-  .client-name {
-    font-style: italic;
+  .wrapper {
+    p,
+    td {
+      font-size: 1.2em;
+    }
   }
 }

@@ -21,7 +21,7 @@
       height: 78vh;
     }
 
-    // On large screens, adjust height to account for menu height..
+    // On large screens, adjust height to account for menu height.
     @include media($large-screen-up) {
       height: 88vh;
     }
