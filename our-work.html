@@ -7,21 +7,21 @@ excerpt: A selection of recent work done by Savas
 <p class="page-description">Below is a selection of recent work done by Savas.</p>
 
 <div class="flex-container">
-    <div class="cards">
-        {% for portfolio in site.work %}
-            <div class="card work-card">
-                <a href="{{ portfolio.url }}">
-                    <div class="card-image">
-                        <img alt="{{ portfolio.title }}" src="{{ base.url }}/{{ portfolio.image }}">
-                    </div>
-                        <div class="card-header">
-                            {{ portfolio.title }}
-                        </div>
-                    <div class="card-copy">
-                        <p>{{ portfolio.short_description }}</p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-    </div>
+  <div class="cards">
+    {% for portfolio in site.work %}
+      <div class="card work-card">
+        <a href="{{ portfolio.url }}">
+          <div class="card-image">
+            <img alt="{{ portfolio.title }}" src="{{ base.url }}/{{ portfolio.image }}">
+          </div>
+          <div class="card-header">
+            {{ portfolio.title }}
+          </div>
+          <div class="card-copy">
+            <p>{{ portfolio.short_description }}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
 </div>
