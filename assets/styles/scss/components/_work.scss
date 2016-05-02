@@ -37,6 +37,7 @@
     background-size: cover;
 
     height: 88vh;
+    min-height: 350px;
 
     // On medium screens, change height to account for menu height.
     @include media($horizontal-bar-mode) {
@@ -232,18 +233,22 @@
   }
 
   .case-study__details {
-    @include media($medium-screen-up) {
-      @include span-columns(8);
-      @include shift(2);
+    @include outer-container();
 
-      td {
-        font-size: 1.2em;
+    .wrapper {
+      @include media($medium-screen-up) {
+        @include span-columns(8);
+        @include shift(2);
+
+        td {
+          font-size: 1.2em;
+        }
       }
-    }
 
-    ul {
-      margin-bottom: 0;
-      margin-left: 1em;
+      ul {
+        margin-bottom: 0;
+        margin-left: 1em;
+      }
     }
   }
 

@@ -76,24 +76,27 @@
         {% endif %}
 
         <!-- Technical details. -->
-        <div class="case-study__details wrapper">
-          <h2>The Details</h2>
-          <table class="table-minimal">
-            <tbody>
-            <tr>
-              <td class="label"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Client since</td>
-              <td>{{ page.client_dates }}</td>
-            </tr>
-            <tr>
-              <td class="label"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Services provided</td>
-              <td>{{ page.services_provided | markdownify }}</td>
-            </tr>
-            <tr>
-              <td class="label"><i class="fa fa-code"></i>&nbsp;&nbsp;Technologies used</td>
-              <td>{{ page.technologies_used | markdownify }}</td>
-            </tr>
-            </tbody>
-          </table>
+        <div class="case-study__details">
+          <div class="wrapper">
+            <h2>The Details</h2>
+            <table class="table-minimal">
+              <tbody>
+              <tr>
+                <td class="label"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Client since</td>
+                <td>{{ page.client_dates }}</td>
+              </tr>
+              <tr>
+                <td class="label"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Services provided</td>
+                <td>{{ page.services_provided | markdownify }}</td>
+              </tr>
+              <tr>
+                <td class="label"><i class="fa fa-code"></i>&nbsp;&nbsp;Technologies used</td>
+                <td>{{ page.technologies_used | markdownify }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
 
       <div class="case-study__bottom">
