@@ -4,24 +4,26 @@ title: Our work
 permalink: "/work/"
 excerpt: A selection of recent work done by Savas
 ---
-
-<div class="work__case-studies">
-  {% for item in site.case-studies %}
-  <div class="work__case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
-    <div class="case-study__title">
-      <h2><a href="{{ item.url }}">{{ item.project_title }}</a></h2>
+<div class="page-work">
+  <div class="work__case-studies">
+    <h2>Recent case studies</h2>
+    {% for item in site.case-studies %}
+    <div class="work__case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
+      <div class="case-study__title">
+        <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
+      </div>
+      <div class="case-study__description">
+        {{ item.project_description | markdownify }}
+        <a href="{{ item.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
+      </div>
     </div>
-    <div class="case-study__description">
-      {{ item.project_description | markdownify }}
-      <a href="{{ item.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
-    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 
-<div class="flex-container">
-  <div class="cards">
-    {% for portfolio in site.work %}
+  <h2>Other work</h2>
+  <div class="flex-container">
+    <div class="cards">
+      {% for portfolio in site.work %}
       <div class="card work-card">
         <a href="{{ portfolio.url }}">
           <div class="card-image">
@@ -35,6 +37,7 @@ excerpt: A selection of recent work done by Savas
           </div>
         </a>
       </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </div>
