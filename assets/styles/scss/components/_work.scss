@@ -4,6 +4,77 @@
  * Styles for /our-work, and case study and portfolio pages.
  */
 
+// Case studies on /work.
+.work__case-studies {
+  margin: $base-margin 0;
+
+  // Individual case studies.
+  .work__case-studies__case-study {
+    @include display(flex);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: $base-spacing 0;
+
+    @include media($medium-screen-up) {
+      @include flex-wrap(nowrap);
+    }
+
+    h2,
+    p,
+    a {
+      color: $base-background-color;
+      margin-bottom: 0;
+    }
+
+    .case-study__title,
+    .case-study__description {
+      padding: $base-spacing;
+
+      @include media($medium-screen-up) {
+        padding: $base-margin * 2 $base-spacing;
+      }
+    }
+
+    .case-study__title {
+      padding-bottom: 0;
+      text-align: center;
+
+      @include media($medium-screen-up) {
+        padding-bottom: $base-margin * 2;
+        width: 40%;
+      }
+    }
+
+    .case-study__description {
+      @include media($medium-screen-up) {
+        width: 60%;
+      }
+
+      p,
+      a {
+        font-size: 1.25em;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+
+      a {
+        @extend %button-outline;
+
+        display: inline-block;
+        margin-top: $base-spacing;
+
+        i {
+          margin-left: .5em;
+        }
+      }
+    }
+  }
+}
+
 // Simple portfolio pages.
 .portfolio {
   @include outer-container;
