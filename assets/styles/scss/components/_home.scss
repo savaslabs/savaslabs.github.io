@@ -64,6 +64,8 @@
   }
 
   .wrapper {
+    padding-top: 0;
+
     h3,
     h2 {
       text-align: center;
@@ -89,14 +91,14 @@
 
   .home-blog-list {
     clear: both;
+  }
 
-    .view-more-posts {
-      font-size: 1.2em;
-      text-align: center;
+  .view-more-link {
+    font-size: 1.2em;
+    text-align: center;
 
-      i {
-        margin-left: 5px;
-      }
+    i {
+      margin-left: 5px;
     }
   }
 }

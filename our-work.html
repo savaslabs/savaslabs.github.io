@@ -5,10 +5,10 @@ permalink: "/work/"
 excerpt: A selection of recent work done by Savas
 ---
 <div class="page-work">
-  <div class="work__case-studies">
+  <div class="case-studies">
     <h2>Recent case studies</h2>
     {% for item in site.case-studies %}
-    <div class="work__case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
+    <div class="case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
       <div class="case-study__title">
         <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
       </div>
