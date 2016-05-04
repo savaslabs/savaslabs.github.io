@@ -6,8 +6,8 @@ client_url: "http://cognet.mit.edu"
 client_description: |
   [MIT Press CogNet](http://cognet.mit.edu) is the essential online resource for students and scholars in the brain and cognitive sciences. Since its launch in 2000, it quickly became the premiere source for those engaged in highly-cited, cutting-edge research.
 client_quote: |
-  Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
-client_quote_author: Firstname Lastname, Important Web Person
+  Many thanks for getting this done, in such a thoughtful manner, and in a way that really honors the content and provides such a useful, attractive set of interactions for the readers.
+client_quote_author: Bill Trippe, Director of Technology, The MIT Press
 client_dates: 2014 - present
 project_description: |
   After building a custom Drupal 7 theme based on Zurb Foundation, Savas went back to the drawing board to redesign the site for small screens, resulting in a seamless, responsive experience across devices.
