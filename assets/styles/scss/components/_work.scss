@@ -333,28 +333,7 @@
     }
   }
 
-  .case-study__bottom {
-    background-color: lighten($light-gray, 10);
-    clear: both;
-    padding: 2.5em 0;
-    text-align: center;
-
-    .case-study__contact {
-      @include display(flex);
-      @include justify-content(center);
-      @include align-items(center);
-      @include flex-wrap(wrap);
-
-      margin-bottom: $base-margin;
-
-      h3,
-      a {
-        margin: .5em;
-      }
-
-      a {
-        @extend %button;
-      }
-    }
+  .view-more-link {
+    margin-bottom: $base-margin;
   }
 }
