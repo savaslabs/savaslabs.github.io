@@ -10,6 +10,7 @@ baseurl: ""
 url: "http://savaslabs.com"
 comment_server_url: http://comments.savasdev.com
 comment_server_enabled: 1
+tagline: A full-service web agency leveraging the power of Drupal.
 
 # Nav links
 navigation:
