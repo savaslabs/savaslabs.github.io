@@ -266,7 +266,8 @@
 
         p {
           @include media($medium-screen-up) {
-            text-align: right;
+            //text-align: right;
+            padding-left: 4em;
           }
         }
       }
