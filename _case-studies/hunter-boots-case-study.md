@@ -24,9 +24,6 @@ services_provided: |
   - [Third party integration](/blog/we-dont-have-a-tag-for-this-yet)
   - [data](/blog/we-dont-have-a-tag-for-this-yet)
   - [rescue](/blog/we-dont-have-a-tag-for-this-yet)
-  Powerhouse warehouse integration
-    reporting
-  Develop custom import from warehouse
 technologies_used: |
   - Drupal 7
   - Drupal Commerce
