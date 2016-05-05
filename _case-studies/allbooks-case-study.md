@@ -6,7 +6,8 @@ client_url: "http://mitpress.mit.edu"
 client_description: |
 
 client_quote: |
-client_quote_author: 
+    It’s a genuine pleasure to encounter a transparent, systematic development team that clearly knows their environment backwards and forwards (and schools us in sound methodology). I wish we’d found you four years ago.
+client_quote_author: Jake Furbush, MIT Press Digital Publishing Manager (2009 - 2015)
 client_dates: 2014 - present
 project_description: |
     When MIT Press needed to bring new product information into their website from their back-end database, Savas came through with an automated importer module that did the job in a flexible and extensible way.
