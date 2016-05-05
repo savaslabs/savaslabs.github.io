@@ -111,6 +111,21 @@ $expander-toggle-margin: 1em;
   }
 }
 
+%button-outline {
+  border: 2px solid $base-background-color;
+  border-radius: 3px;
+  color: $base-background-color;
+  font-family: $copytext-font;
+  margin-top: 2em;
+  padding: .5em 1em;
+  transition: (all .2s ease-in-out);
+
+  &:hover,
+  &:focus {
+    background-color: $action-color-hover;
+  }
+}
+
 @mixin flash($color) {
   background-color: $color;
   color: darken($color, 60%);

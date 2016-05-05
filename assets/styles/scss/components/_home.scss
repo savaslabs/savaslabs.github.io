@@ -21,7 +21,7 @@
       height: 78vh;
     }
 
-    // On large screens, adjust height to account for menu height..
+    // On large screens, adjust height to account for menu height.
     @include media($large-screen-up) {
       height: 88vh;
     }
@@ -64,6 +64,8 @@
   }
 
   .wrapper {
+    padding-top: 0;
+
     h3,
     h2 {
       text-align: center;
@@ -89,14 +91,5 @@
 
   .home-blog-list {
     clear: both;
-
-    .view-more-posts {
-      font-size: 1.2em;
-      text-align: center;
-
-      i {
-        margin-left: 5px;
-      }
-    }
   }
 }
