@@ -16,7 +16,7 @@ project_objective: |
 project_process: |
   Savas Labs built the store with Drupal Commerce which was fed by a custom content migration as well as warehouse fulfillment and reporting integrations.
 project_results: |
-  The Hunter Boots website won Acquia's BlueDrop award for best Marketplace/eCommerce site in 2014!
+  The Hunter Boots website won [Acquia's BlueDrop award](http://2014.bluedropawards.org/blog-entry/2014-blue-drop-award-winners-are-announced) for best Marketplace/eCommerce site in 2014!
 services_provided: |
   - [Responsive design](/blog/tag/front-end-dev/)
   - [Drupal theme development](/blog/tag/theming/)

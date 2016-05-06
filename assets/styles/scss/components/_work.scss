@@ -41,7 +41,7 @@
       padding: $base-spacing;
 
       @include media($medium-screen-up) {
-        padding: $base-margin * 2 $base-spacing;
+        padding: $base-margin $base-spacing;
       }
     }
 

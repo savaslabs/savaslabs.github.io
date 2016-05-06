@@ -16,7 +16,7 @@ project_objective: |
 project_process: |
   Working with the CogNet team we developed basic wireframes, then capitalized on the power of the Zurb Foundation theme and Sass for CSS preprocessing to rework the already-existing subtheme. To ensure a seamless experience on smaller devices, we used jQuery to create slick navigation, scrolling, and content exploration.
 project_results: |
-  MIT Press CogNet went from a desktop-only site to a clean, modern, easy to navigate site on all screen sizes. Thanks to our strong partnership with the client, effective planning, and the powerful technologies used, this project was delivered under-budget.
+  MIT Press CogNet went from a desktop-only site to a clean, modern, easy to navigate site on all screen sizes. Thanks to our strong partnership with the client, effective planning, and the powerful technologies used, this project was delivered under budget.
 services_provided: |
   - [Responsive design](/blog/tag/front-end-dev/)
   - [Drupal theme development](/blog/tag/theming/)
