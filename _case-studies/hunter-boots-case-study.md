@@ -37,6 +37,6 @@ project_process_image_alt: "Drupal Commerce logo"
 project_results_image: "/assets/img/work/hunter-boots-case-study/hunter_results.png"
 project_results_image_alt: "The Hunter Boots home page on desktop and mobile"
 client_quote2_author: Jodi Sweetbaum, President of Lloyd & Co.
-client_quote2: The site is looking amazing. I was very proud to present it today. Thank you so so so much! THANK YOU a million times over                                     
+client_quote2: The site is looking amazing. I was very proud to present it today. Thank you so so so much! THANK YOU a million times over
 
 ---
