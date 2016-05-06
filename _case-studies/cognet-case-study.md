@@ -10,7 +10,7 @@ client_quote: |
 client_quote_author: Bill Trippe, Director of Technology, The MIT Press
 client_dates: 2014 - present
 project_description: |
-  After building a custom Drupal 7 theme based on Zurb Foundation, Savas went back to the drawing board to redesign the site for small screens, resulting in a seamless, responsive experience across devices.
+  After building a custom Drupal 7 theme based on Zurb Foundation, Savas Labs went back to the drawing board to redesign the site for small screens, resulting in a seamless, responsive experience across devices.
 project_objective: |
   As a next phase in development following the site's relaunch in May 2015, MIT Press CogNet wanted to extend their site to users of all devices. A complete responsive redesign was in order.
 project_process: |
