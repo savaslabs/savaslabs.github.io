@@ -244,6 +244,10 @@
 
       p {
         padding: 1.667em;
+
+        @include media($medium-screen-up) {
+          padding-right: 3em;
+        }
       }
     }
 
@@ -270,8 +274,8 @@
 
         p {
           @include media($medium-screen-up) {
-            //text-align: right;
-            padding-left: 4em;
+            padding-left: 3em;
+            padding-right: 1.667em;
           }
         }
       }
