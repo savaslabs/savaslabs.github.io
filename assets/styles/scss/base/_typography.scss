@@ -71,7 +71,8 @@ p a,
 .portfolio,
 .page-description,
 .name-description p,
-.team-member p {
+.team-member p,
+.services__service p {
   color: $dark-blue;
   font-size: $base-font-size * 1.2;
 }

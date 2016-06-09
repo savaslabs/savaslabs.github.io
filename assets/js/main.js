@@ -6,15 +6,15 @@ library: jquery-2.1.3.min.js
 
 // MOBILE MENU.
 $(document).ready(
-    function() {
+    function () {
         var menuToggle = $('#js-mobile-menu').unbind();
         $('#js-navigation-menu').removeClass("show");
 
         menuToggle.on(
-            'click', function(e) {
+            'click', function (e) {
                 e.preventDefault();
                 $('#js-navigation-menu').slideToggle(
-                    function(){
+                    function () {
                         if ($('#js-navigation-menu').is(':hidden')) {
                             $('#js-navigation-menu').removeAttr('style');
                         }
@@ -25,50 +25,49 @@ $(document).ready(
 // SMOOTH SCROLLING ON HOME PAGE.
 // See https://css-tricks.com/snippets/jquery/smooth-scrolling/
 $(document).ready(
-    function() {
-        $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-          $('html, body').animate({
-              scrollTop: target.offset().top
-          }, 1000);
-          return false;
-      }
-    }
-  });
-});
+    function () {
+        $('a[href*="#"]:not([href="#"])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
 
 // COMMENTS.
 $(document).ready(
-    function() {
-        // Expandable comment section.
+    function () {
 
-        $('#js-expander-trigger').click(function() {
+        // Expandable comment section.
+        $('#js-expander-trigger').click(function () {
             enableCommentForm('#js-expander-trigger');
         });
 
 
-        $('#comment-count').click(function() {
+        $('#comment-count').click(function () {
             enableCommentForm('#comment-count');
         });
-
-
-
     });
 
 // COMMENT COUNT.
 $(document).ready(
-    function() {
+    function () {
+
         // Create variable for request URI.
         var commentServer = "{{ site.comment_server_url }}";
         var postSlug = window.location.pathname;
+
         // Remove leading forward slash.
         var truncatedSlug = postSlug.substring(1, postSlug.length);
         var requri = commentServer + '/api/comments/count';
         $.getJSON(
-            requri, function(json) {
+            requri, function (json) {
                 if (truncatedSlug in json.data[0]) {
                     var commentString = 'comments';
                     if (json.data[0][truncatedSlug] == 1) {
@@ -81,13 +80,12 @@ $(document).ready(
 
 // COMMENT COUNT ON CARDS.
 $(document).ready(
-    function() {
+    function () {
         var commentServer = "{{ site.comment_server_url }}";
         var requri = commentServer + '/api/comments/count';
         $.getJSON(
-            requri, function(json) {
-
-                $(".card .url").each(function() {
+            requri, function (json) {
+                $(".card .url").each(function () {
                     var truncatedSlug = $(this).attr('href').substring(1, $(this).attr('href').length);
                     if (truncatedSlug in json.data[0]) {
                         var commentString = 'comments';
@@ -112,10 +110,10 @@ function enableCommentForm($id) {
         $('#js-expander-trigger').removeClass("expander-hidden");
     }
 
-
     // Create variable for request URI.
     var commentServer = "{{ site.comment_server_url }}";
     var postSlug = window.location.pathname;
+
     // Remove leading forward slash.
     var truncatedSlug = postSlug.substring(1, postSlug.length);
     var encodedSlug = encodeURIComponent(truncatedSlug);
@@ -130,13 +128,16 @@ function enableCommentForm($id) {
             data: payload,
             success: function (json) {
                 var outhtml = '';
+
                 // If there are comments, include a link to the comment form.
                 if (json.data.length > 0) {
                     outhtml = '<p class="comment-form-link"><a href="#comment-form">Leave a comment</a></p>'
                 }
+
                 // Loop through comments.
                 $.each(
                     json.data, function (i) {
+
                         // Assign JSON data points to variables.
                         var name = json.data[i].name;
                         var created = json.data[i].created_at;
@@ -159,6 +160,7 @@ function enableCommentForm($id) {
 
     form.on(
         'submit', function (e) {
+
             // Prevent default action.
             e.preventDefault();
 
@@ -170,12 +172,14 @@ function enableCommentForm($id) {
                     dataType: 'json',
                     data: form.serialize(),
                     beforeSend: function () {
+
                         // Change submit button value text and disable it.
                         // submit.val('Submitting...').attr('disabled', 'disabled');
                         $('.flash-error').remove();
                         $('.flash-success').remove();
                     },
                     success: function (data) {
+
                         // Check to see if we got an error from the server.
                         if (data.success == false) {
                             var message = '<div class="flash-error">' + data.message + '</div>';
