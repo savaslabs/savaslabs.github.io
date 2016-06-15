@@ -14,7 +14,7 @@ After you've [installed XHProf](/2016/05/26/installing-xhprof.html), what's next
 ### Understanding an XHProf run report
 
 The XHProf GUI displays the result of a given profiler run, or a group of runs. It can even compare 2 runs, but we'll get to that in a minute. If you followed my previous post, you should have the `xhprof_html` directory symlinked into the root web directory for your Drupal site; so visiting `<my-local-site>/xhprof/` should give you a list of all available stored run IDs, and you can click through one of those to view a specific run report.
- 
+
 You can also go directly to a specific run report via the URL `<my-local-site>/xhprof/index.php?run=<run-id>&source=<source-id>` (which you should have been logging already via an `echo` statement or `dblog` if you followed the last post).
 
 The core of the run report is a table of each function or method which your code called while it was being profiled, along with a set of statistics about that function. This allows you to understand which parts of your code are most resource-intensive, and which are being called frequently in the use case that you're profiling. Clicking on any one of the column headers will sort the list by that metric. To understand this report, it's helpful to have some terminology:
