@@ -1,7 +1,7 @@
 ---
 layout: case-study
 featured: 1
-weight: 1
+weight: -4
 project_title: Durham Civil and Human Rights History Map
 client_name: Pauli Murray Project, Duke Human Rights Center
 client_url: "http://www.durhamcivilrightsmap.org"

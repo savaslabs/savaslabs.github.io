@@ -1,7 +1,7 @@
 ---
 layout: case-study
 featured: 1
-weight: 2
+weight: -3
 project_title: Hunter Boots E-Commerce / Redesign
 client_name: Hunter Boots
 client_url: "http://us.hunterboots.com/"

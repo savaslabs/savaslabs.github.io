@@ -1,6 +1,6 @@
 ---
 layout: case-study
-weight: 4
+weight: -1
 project_title: Transaction Advisors Multisite Development
 client_name: Transaction Advisors
 client_url: "https://www.transactionadvisors.com"
