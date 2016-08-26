@@ -1,0 +1,19 @@
+{
+  "name": "savas-take-two",
+  "version": "1.0.0",
+  "description": "Savas Labs' company website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:savaslabs/savaslabs.github.io.git"
+  },
+  "author": "Savas Labs <info@savaslabs.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
