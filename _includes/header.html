@@ -14,7 +14,7 @@
       <ul id="js-navigation-menu" class="navigation-menu show">
 
         <!-- Loop through nav items in config.yml. -->
-        {% for link in site.navigation %}
+        {% for link in site.data.navigation %}
 
           <!-- These variables will be used for special CSS classes. -->
           {% assign active-nav-item = nil %}{% assign more-link = nil %}
