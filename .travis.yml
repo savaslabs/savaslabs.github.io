@@ -10,7 +10,7 @@ env:
   - secure: cZzIlGtTm/yRXJOT3sB8XJI/lJwtxMReOnpBLik/+KW36/hwFkOoYaJa6aif6bLaAixcH/IlmZYE6bNjMQ7HtSLoaZLzmBXu39Qhj305LT78A/r4P9zt43JFhAYB9T+WjzT3qeX1k+YKdhC8CM9p0GPAT1LQ24co5/TbOjKzpGs=
 deploy:
   provider: script
-  script: "./scripts/build.sh"
+  script: /bin/sh scripts/build.sh
   skip_cleanup: true
   on:
     branch: source
