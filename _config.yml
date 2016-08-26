@@ -11,24 +11,6 @@ url: "http://savaslabs.com"
 comment_server_url: http://comments.savaslabs.com
 comment_server_enabled: 1
 
-# Nav links
-navigation:
-  - title: Who we are
-    url: javascript:void(0)
-    sub-menu:
-      - title: Team
-        url: /team
-      - title: Mission & values
-        url: /mission-and-values
-  - title: Services
-    url: /services
-  - title: Our work
-    url: /work
-  - title: Blog
-    url: /blog
-  - title: Contact
-    url: /contact
-
 # Professional and social media links
 twitter_username: savas_labs
 github_username: savaslabs
