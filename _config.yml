@@ -17,8 +17,6 @@ github_username: savaslabs
 
 # Languages and syntax highlighting
 markdown: kramdown
-sass:
-  sass_dir: assets/styles
 kramdown:
   input: GFM
   hard_wrap: false
@@ -31,8 +29,14 @@ include: ["_pages"]
 paginate: 6
 paginate_path: "/blog/:num/"
 
-# For Travis CI
-exclude: [vendor]
+# For Travis CI and gulp
+exclude: ["vendor",
+          "_assets",
+          "Gemfile",
+          "Gemfile.lock",
+          "gulpfile.js",
+          "node_modules",
+          "package.json"]
 
 # Collections
 collections:
