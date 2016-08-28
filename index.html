@@ -29,7 +29,8 @@
               <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
             </div>
             <div class="case-study__description">
-              {{ item.project_description | markdownify }}
+              {% capture project_description %}{{ item.project_description }}{% endcapture %}
+              {{ project_description | markdownify }}
               <a href="{{ item.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
             </div>
           </div>
@@ -61,7 +62,8 @@
                   {% if site.comment_server_enabled == 1 %}
                   <span class="comment-count"></span>
                   {% endif %}
-                  <p>{{ post.summary | markdownify }}</p>
+                  {% capture summary %}{{ post.summary }}{% endcapture %}
+                  <p>{{ summary | markdownify }}</p>
                 </div>
               </a>
             </div>
