@@ -35,7 +35,9 @@ layout: default
     {% if site.comment_server_enabled == 1 %}
       {% include comment-form.html %}
     {% endif %}
-    {% include post-meta.html %}
+    {% if page %}
+      {% include post-meta.html %}
+    {% endif %}
     {% include previous-next-links.html %}
 
   </article>
