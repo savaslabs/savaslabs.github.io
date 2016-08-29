@@ -31,7 +31,7 @@ technologies_used: |
 client_logo: "/img/work/hunter-boots-case-study/hunter_logo.svg"
 client_logo_width: "120px"
 client_logo_height: "50px"
-client_hero_image: "img/work/hunter-boots-case-study/hunter_hero.png"
+client_hero_image: "/img/work/hunter-boots-case-study/hunter_hero.png"
 project_objective_image: "/img/work/hunter-boots-case-study/hunter_objective.png"
 project_objective_image_alt: "The Hunter Boots checkout process on multiple screen sizes"
 project_process_image: "/img/work/hunter-boots-case-study/hunter_process.png"

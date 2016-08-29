@@ -32,7 +32,7 @@ technologies_used: |
   - Drupal Feeds
   - jQuery
 client_logo: "/img/work/transaction-advisors-case-study/transaction_advisors_logo.jpg"
-client_hero_image: "img/work/transaction-advisors-case-study/transaction_advisors_hero.png"
+client_hero_image: "/img/work/transaction-advisors-case-study/transaction_advisors_hero.png"
 project_objective_image: "/img/work/transaction-advisors-case-study/transaction_advisors_objective.png"
 project_objective_image_alt: "The Transaction Advisors home page on desktop and mobile."
 project_process_image: "/img/work/transaction-advisors-case-study/transaction_advisors_process.png"
