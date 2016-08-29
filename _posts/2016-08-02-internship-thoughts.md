@@ -18,11 +18,11 @@ In this post, I'd like to share my 3 month internship experience for anyone who'
 
 Since I’m located [2,845 miles](https://www.google.com/maps/dir/Portland,+OR/Durham,+NC/@39.4988195,-118.778336,4z/data=!4m13!4m12!1m5!1m1!1s0x54950b0b7da97427:0x1c36b9e6f6d18591!2m2!1d-122.6764816!2d45.5230622!1m5!1m1!1s0x89ace471120f66f1:0xe17ada898a46f27e!2m2!1d-78.898619!2d35.9940329) from Savas Labs HQ, one of my biggest concerns starting out as a newbie was the added challenge of telecommuting. To get me up and running as fast as possible, [Chris](http://savaslabs.com/team/chris-russo/) and I decided I’d fly to Durham to meet the team and work in the office together for my first week.
 
-It was great to kick-off my internship with in-person QA sessions and impromptu whiteboarding (not to mention meeting my teammates and being graciously invited to their homes!). Even though we relied on screenshares and conference calls just fine after that first week, being in the same physical space to start off with helped establish my presence with the team and laid the strong learning foundation for the remainder of my internship.
+It was great to kick-off my internship with in-person QA sessions and impromptu whiteboarding (not to mention meeting my teammates and being graciously invited to their homes!). Even though we relied on screenshares and conference calls just fine after that first week, being in the same physical space to start off with helped establish my presence with the team and laid a strong learning foundation for the remainder of my internship.
 
 ## An Inclusive Learning Environment
 
-Everyone at Savas Labs contributed to my learning! I was encouraged by all and no one was above taking the time to show me how to [install Composer](https://www.drupal.org/node/1791676) or configure [DrupalVM](https://www.drupalvm.com/). I felt comfortable asking questions and was encouraged to do so from the beginning.
+Everyone at Savas Labs contributed to my learning! I was encouraged by the entire team, and no one was above taking the time to show me how to [install Composer](https://www.drupal.org/node/1791676) or configure [DrupalVM](https://www.drupalvm.com/). I felt comfortable asking questions and was encouraged to do so from the beginning.
 
 <img src="/assets/img/blog/internship-encouragement.png" class="blog-image-large" alt="Slack Encouragement">
 
@@ -34,11 +34,11 @@ It helped that many on the team had also transitioned from other careers and und
 
 <span class="caption">[_Source_](http://dilbert.com/strip/2011-04-22).</span>
 
-Likewise, I found the internship to be anything but a one-sided experience. My thoughts on workflow and documentation were welcome from the beginning and it was nice to have my voice be a part of the discussion about virtualization even though I had minimal experience. It was very satisfying to contribute to the company at the same time Savas was investing in me.
+Likewise, I found the internship to be anything but a one-sided experience. My thoughts on workflow and documentation were welcome from the beginning and it was nice to have my voice be a part of the discussion about virtualization, even though I had minimal experience. It was very satisfying to contribute to the company while Savas was investing in me.
 
 ## The Learning
 
-**There is a. lot. to. learn** (I mean, it can’t _all_ be roses right?).
+**There is. A lot. To. Learn** (I mean, it can’t _all_ be roses right?).
 
 Though comfortable with programming syntax when I started (a significant portion of my last job was writing custom object-oriented programs for mechanical systems), I had never heard of [git](https://git-scm.com/) before or had any idea how to use the command line. I had, essentially, _zero_ Web Development experience[^1].
 
@@ -50,14 +50,14 @@ To be honest, I wasn’t expecting the sheer breadth and volume of material I’
 
 Likewise, I think this presented a teaching challenge for Savas as well. Before I started, Chris created a list of what I was expected to cover in the course of this internship. Frankly, the topics assumed a lot of foundational knowledge that I didn’t have yet. I'd start tackling a task only to realize that I was missing a critical package manager or had skipped a step I didn't even know was needed. In those moments I found myself wishing there was a more structured curriculum.
 
-As I started to get the basics down, my learning became more focused as I began to get involved with client projects. I found task-based learning more satisfying because I was contributing to projects and the team. And while no project is without busywork, the team wasn’t just trying to offload mindless drudgery to the newest pair of hands -- I could tell my teammates were thinking about the value of each assignment and how that would help me build upon the previous lessons I’d just learned.
+As I started to get the basics down, my learning became more focused as I began to get involved with client projects. I found task-based learning more satisfying because I was contributing to projects and the team. While no project is without busywork, the team wasn’t just trying to offload mindless drudgery to the newest pair of hands -- I could tell my teammates were thinking about the value of each assignment and how that would help me build upon the previous lessons I’d just learned.
 
 ## Mentoring & Community
 My mentor, [Lisa](http://savaslabs.com/team/lisa-ridley/), was instrumental in the success of my internship. Given how much there was (and still is!) to learn, having an experienced person actively direct my focus was invaluable.
 
-When I became a bit adrift after the first month, Lisa guided me towards site building and eventually even created a [simulated D7 client project](https://github.com/savaslabs/autism-case-study) for me to work on. And mindful of the changing Web Development landscape, Lisa counseled me to emphasize D7/D8 learning instead of spending time on D6 projects. We started meeting twice a week (sometimes more!) to discuss my progress or deep dive into topics like the history of version control. All this took a significant amount of Lisa’s time (thank you Lisa!), and is proof of the Savas team’s dedication to each other’s growth as developers.
+When I became a bit adrift after the first month, Lisa guided me towards site building and eventually even created a [simulated D7 client project](https://github.com/savaslabs/autism-case-study) for me to work on. And mindful of the changing Web Development landscape, Lisa counseled me to emphasize Drupal 7/Drupal 8 learning instead of spending time on Drupal 6 projects. We started meeting twice a week (sometimes more!) to discuss my progress or deep dive into topics like the history of version control. All this took a significant amount of Lisa’s time (thank you Lisa!), and is proof of the Savas team’s dedication to each other’s growth as developers.
 
-More generally, this generosity is something I’ve noticed throughout the Web and Drupal communities. In the few months since I’ve started, I sense that my colleagues don’t just look towards their day-to-day responsibilities at Savas, but also beyond, at what they can contribute to Development at large. This isn’t exclusive to our company either. The number of [how-to articles](http://www.metaltoad.com/blog/how-write-drupal-update-scripts), [Stack Exchange conversations](http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal), and Open Source [Public Repos](https://github.com/fish-shell/fish-shell) available is inspiring!
+More generally, this generosity is something I’ve noticed throughout the Web and Drupal communities. In the few months since I’ve started, I sense that my colleagues don’t just look towards their day-to-day responsibilities at Savas, but also beyond, at what they can contribute to Development at large. This isn’t exclusive to our company either. The number of [how-to articles](http://www.metaltoad.com/blog/how-write-drupal-update-scripts), [Stack Exchange conversations](http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal), and Open Source [public repos](https://github.com/fish-shell/fish-shell) available is inspiring!
 
 ## Last Thoughts
 
