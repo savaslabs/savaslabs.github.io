@@ -162,7 +162,8 @@ pre, .highlight {
 }
 
 .highlight code {
-  @extend .pre-code; background: #fff;
+  @extend .pre-code;
+  background: #fff !important;
 }
 
 figure.code {
