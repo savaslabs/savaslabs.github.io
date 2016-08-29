@@ -31,7 +31,7 @@ technologies_used: |
 client_logo: "/img/work/hptn-case-study/hptn-logo.png"
 client_logo_width: "229"
 client_logo_height: "91"
-client_hero_image: "img/work/hptn-case-study/hptn-hero.png"
+client_hero_image: "/img/work/hptn-case-study/hptn-hero.png"
 project_objective_image: "/img/work/hptn-case-study/hptn-objective.png"
 project_objective_image_alt: "HPTN website redesign mockups."
 project_process_image: "/img/work/hptn-case-study/hptn-process.png"
