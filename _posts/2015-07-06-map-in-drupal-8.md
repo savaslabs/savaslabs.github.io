@@ -37,7 +37,7 @@ Rest and serialization are dependencies of Views GeoJSON, so they will be instal
 
 ## Add the Leaflet library
 
-<img src="/assets/img/blog/map-in-drupal-8/leaflet-files.png" alt="Screenshot of the Mappy theme showing Leaflet file locations" class="blog-image wrap-left" width="256" height="504">
+<img src="/img/blog/map-in-drupal-8/leaflet-files.png" alt="Screenshot of the Mappy theme showing Leaflet file locations" class="blog-image wrap-left" width="256" height="504">
 
 Head over to [Leaflet's website](http://leafletjs.com/download.html) and download the latest stable release of the Leaflet library.
 
@@ -88,7 +88,7 @@ Now we need a content type that includes a location field.
 1. Navigate to `admin/structure/types/add`
 2. Give your new content type a name (we called ours "Place"), then click "Save and manage fields."
 3. Add a new field with the field type Geofield. If Geofield isn't an option, you should double-check that the Geofield module is installed. Add a label (we used "Location Coordinates"), then click "Save and continue."
-<img src="/assets/img/blog/map-in-drupal-8/geofield_creation.png" alt="Screenshot of geofield creation" class="blog-image-large">
+<img src="/img/blog/map-in-drupal-8/geofield_creation.png" alt="Screenshot of geofield creation" class="blog-image-large">
 4. On the next page, leave the number of maxiumum values at 1 and click "Save field settings."
 
 That's it! Obviously you can add more fields to your content type if you'd like, but all we need to generate a map marker is the geofield that we created.
@@ -106,11 +106,11 @@ Next we'll add a view that will output a list of our "place" nodes as GeoJSON th
 3. Under View Settings, show content of type "Place" (or whatever you named your new content type).
 4. Check the "Provide a REST export" box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose "/points". Click "Save and edit."
 5. Under "Format," click on "Serializer." Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
-  <img src="/assets/img/blog/map-in-drupal-8/rest-export-settings.png" alt="Screenshot the rest export settings for the Places view" class="blog-image-large" width="440px">
+  <img src="/img/blog/map-in-drupal-8/rest-export-settings.png" alt="Screenshot the rest export settings for the Places view" class="blog-image-large" width="440px">
 6. Under "Pager," change the number of fields to display to 0 (which means unlimited in this case).
 
 For reference, here's the settings for my Places view:
-<img src="/assets/img/blog/map-in-drupal-8/places-view.png" alt="Screenshot of settings for the Places view" class="blog-image-xl">
+<img src="/img/blog/map-in-drupal-8/places-view.png" alt="Screenshot of settings for the Places view" class="blog-image-xl">
 
 We've just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we'll use this page to populate our map with points.
 
@@ -168,7 +168,7 @@ Now we need to add a base map. We're using Positron by CartoDB. We'll import the
 
 Go to your Drupal site and rebuild your cache and you should see your base map!
 
-<img src="/assets/img/blog/map-in-drupal-8/map-without-markers.png" alt="Screenshot the base map" class="blog-image-xl">
+<img src="/img/blog/map-in-drupal-8/map-without-markers.png" alt="Screenshot the base map" class="blog-image-xl">
 
 ## Add our points
 
@@ -194,13 +194,13 @@ Now we'll use `.getJSON` to retrieve our data from the url "/points," then trigg
 
  Refresh - we've got points!
 
-<img src="/assets/img/blog/map-in-drupal-8/map-with-markers.png" alt="Screenshot of the map with markers" class="blog-image-xl">
+<img src="/img/blog/map-in-drupal-8/map-with-markers.png" alt="Screenshot of the map with markers" class="blog-image-xl">
 
 ## Add popups
 
 The last thing to do is add popups to each point when they're clicked. We'll insert this code in the `addDataToMap` function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.
 
-<img src="/assets/img/blog/map-in-drupal-8/geojson-points.png" alt="Screenshot of GeoJSON" class="blog-image-xl">
+<img src="/img/blog/map-in-drupal-8/geojson-points.png" alt="Screenshot of GeoJSON" class="blog-image-xl">
 
 I want to display the node title in the popup, which I can see is at `feature.property.name`.
 
@@ -218,6 +218,6 @@ I want to display the node title in the popup, which I can see is at `feature.pr
 
 Now when I click on a point I get a nice little popup with the node title.
 
-<img src="/assets/img/blog/map-in-drupal-8/map-with-popup.png" alt="Screenshot of the map with a popup open" class="blog-image-xl">
+<img src="/img/blog/map-in-drupal-8/map-with-popup.png" alt="Screenshot of the map with a popup open" class="blog-image-xl">
 
 Check out the entire [map.js file](https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js) and be sure to visit Savas Labs GitHub repository for the [Durham Civil Rights Mapping project](https://github.com/savaslabs/durham-civil-rights-map) and the [completed site](http://www.durhamcivilrightsmap.org/) to see a Drupal 8 site in action!
