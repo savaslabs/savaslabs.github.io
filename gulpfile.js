@@ -24,13 +24,14 @@ gulp.task('build:styles', function() {
         trace: true,
         loadPath: [paths.sassFiles]
     }).pipe(minifycss())
-        .pipe(gulp.dest(paths.siteDir))
+        .pipe(gulp.dest(paths.jekyllCssFiles))
+        .pipe(gulp.dest(paths.siteCssFiles))
         .pipe(browserSync.stream())
         .on('error', gutil.log);
 });
 
 gulp.task('clean:styles', function(callback) {
-    del([paths.siteDir + 'main.css']);
+    del([paths.jekyllCssFiles + 'main.css', paths.siteCssFiles + 'main.css']);
     callback();
 });
 
@@ -43,12 +44,13 @@ gulp.task('build:scripts:global', function() {
     ])
         .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(paths.siteDir))
+        .pipe(gulp.dest(paths.jekyllJsFiles))
+        .pipe(gulp.dest(paths.siteJsFiles))
         .on('error', gutil.log);
 });
 
 gulp.task('clean:scripts', function(callback) {
-    del([paths.siteDir + 'main.js']);
+    del([paths.jekyllJsFiles + 'main.js', paths.siteJsFiles + 'main.js']);
     callback();
 });
 
@@ -57,16 +59,17 @@ gulp.task('clean:scripts', function(callback) {
 gulp.task('build:scripts:leaflet', function() {
     return gulp.src([
         paths.jsFiles + '/leaflet/leaflet.js',
-        paths.jsFiles + 'leaflet/leadlet-providers.js'
+        paths.jsFiles + '/leaflet/leaflet-providers.js'
     ])
         .pipe(concat('leaflet.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(paths.siteDir))
+        .pipe(gulp.dest(paths.jekyllJsFiles))
+        .pipe(gulp.dest(paths.siteJsFiles))
         .on('error', gutil.log);
 });
 
 gulp.task('clean:scripts:leaflet', function(callback) {
-    del([paths.siteDir + 'leaflet.js']);
+    del([paths.jekyllJsFiles + 'leaflet.js', paths.siteJsFiles + 'leaflet.js']);
     callback();
 });
 
@@ -79,12 +82,13 @@ gulp.task('build:images', function() {
     //TODO: optimize images.
 
     return gulp.src(paths.imageFilesGlob)
+        .pipe(gulp.dest(paths.jekyllImageFiles))
         .pipe(gulp.dest(paths.siteImageFiles))
         .pipe(browserSync.stream());
 });
 
 gulp.task('clean:images', function(callback) {
-    del([paths.siteImageFiles]);
+    del([paths.jekyllImageFiles, paths.siteImageFiles]);
     callback();
 });
 
@@ -95,13 +99,14 @@ gulp.task('build:fonts', ['fontawesome']);
 gulp.task('fontawesome', function() {
     return gulp.src(paths.fontFiles + '/font-awesome/**.*')
         .pipe(rename(function(path) {path.dirname = '';}))
+        .pipe(gulp.dest(paths.jekyllFontFiles))
         .pipe(gulp.dest(paths.siteFontFiles))
         .pipe(browserSync.stream())
         .on('error', gutil.log);
 });
 
 gulp.task('clean:fonts', function(callback) {
-    del([paths.siteFontFiles]);
+    del([paths.jekyllFontFiles, paths.siteFontFiles]);
     callback();
 });
 
@@ -109,7 +114,7 @@ gulp.task('clean:fonts', function(callback) {
 gulp.task('build:jekyll', function() {
     var shellCommand = 'bundle exec jekyll build --config _config.yml';
 
-    return gulp.src(paths.jekyllDir)
+    return gulp.src('')
         .pipe(run(shellCommand))
         .on('error', gutil.log);
 });
@@ -118,16 +123,22 @@ gulp.task('build:jekyll', function() {
 gulp.task('build:jekyll:local', function() {
     var shellCommand = 'bundle exec jekyll build --config _config.yml,_config.test.yml,_config.dev.yml';
 
-    return gulp.src(paths.jekyllDir)
+    return gulp.src('')
         .pipe(run(shellCommand))
         .on('error', gutil.log);
 });
 
 // Deletes the entire _site directory.
-gulp.task('clean', function(callback) {
-    del([paths.siteDir]);
+gulp.task('clean:jekyll', function(callback) {
+    del(['_site']);
     callback();
 });
+
+gulp.task('clean', ['clean:jekyll',
+    'clean:fonts',
+    'clean:images',
+    'clean:scripts',
+    'clean:styles']);
 
 // Builds site anew.
 gulp.task('build', function(callback) {

@@ -7,7 +7,7 @@ tags: drupal drupalcamp drupal8
 summary: Lisa Ridley of Savas Labs attended Drupal Camp Florida in March 2016.  Here's what she learned.
 ---
 
-<img src="/img/blog/drupal-camp-florida-2016.png" alt="DrupalCamp Florida Hero Banner">
+<img src="/assets/img/blog/drupal-camp-florida-2016.png" alt="DrupalCamp Florida Hero Banner">
 
 ## Drupal Camp Florida 2016 Recap
 
@@ -41,7 +41,7 @@ There were also several non-Drupal specific sessions covering such topics as:
 ####  Visual Regression Testing
 
 <div class="blog-image-large wrap-left">
-   <img src="/img/blog/visual-regression-testing.jpg" alt="Visual Regression Testing, courtesy of Flickr">
+   <img src="/assets/img/blog/visual-regression-testing.jpg" alt="Visual Regression Testing, courtesy of Flickr">
 </div>
 
 I presented a session on [Visual Regression Testing with Webdriver.io](https://www.fldrupal.camp/sites/default/files/slides/2015/VisualRegressionTestingWebdriverSavas_0.pdf) which was well attended, and I received a lot of positive feedback on the session from attendees.  Most of the attendees had no experience with visual regression testing and did not know that such testing capabilities existed, so there was a great deal of fruitful discussion during the session.  Several attendees came up afterwards, and expressed excitement about the potential uses of visual regression testing in their daily workflow.  This mirrored my own excitement about visual regression testing when I was first exposed to it nearly two years ago.
@@ -64,7 +64,7 @@ The final session I attended was presented by David Laietta, Chief Technology Of
 
 ### After Party
 <div class="blog-image-large wrap-left">
-  <img src="/img/blog/pantheon-booth-at-drupalcamp-florida.jpg" alt="Pantheon Booth at DrupalCamp Florida">
+  <img src="/assets/img/blog/pantheon-booth-at-drupalcamp-florida.jpg" alt="Pantheon Booth at DrupalCamp Florida">
 </div>
 
 The after party, sponsored by [Pantheon](https://pantheon.io), was excellent as always!  Many thanks to Pantheon and Ben Stoffel-Rosales, Partner Manager at Pantheon, for their graciousness and sponsorship of the camp and the after party.

@@ -24,15 +24,15 @@ services_provided: |
 technologies_used: |
   - Drupal 6
   - PHPUnit
-client_logo: "/img/work/allbooks-case-study/mitpress-logo.png"
+client_logo: "/assets/img/work/allbooks-case-study/mitpress-logo.png"
 client_logo_width: "110px"
 client_logo_height: "107px"
-client_hero_image: "/img/work/allbooks-case-study/allbooks-hero.png"
-project_objective_image: "/img/work/allbooks-case-study/allbooks-objective.png"
+client_hero_image: "/assets/img/work/allbooks-case-study/allbooks-hero.png"
+project_objective_image: "/assets/img/work/allbooks-case-study/allbooks-objective.png"
 project_objective_image_alt: "Class hierarchy of importer objects."
-project_process_image: "/img/work/allbooks-case-study/allbooks-process.png"
+project_process_image: "/assets/img/work/allbooks-case-study/allbooks-process.png"
 project_process_image_alt: "Reporting interface shows import results for site administrators."
-project_results_image: "/img/work/allbooks-case-study/allbooks-results.png"
+project_results_image: "/assets/img/work/allbooks-case-study/allbooks-results.png"
 project_results_image_alt: "A title node, with content populated by the importer."
 
 ---

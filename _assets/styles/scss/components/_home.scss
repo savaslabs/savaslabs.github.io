@@ -12,7 +12,7 @@
     @include align-items(center);
     @include flex-direction(column);
 
-    background: url('img/home-cover-code.png') $dark-blue center no-repeat;
+    background: url('/assets/img/home-cover-code.png') $dark-blue center no-repeat;
     height: 88vh;
     text-align: center;
 

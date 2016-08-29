@@ -31,13 +31,13 @@ technologies_used: |
   - Drupal Domain Access
   - Drupal Feeds
   - jQuery
-client_logo: "/img/work/transaction-advisors-case-study/transaction_advisors_logo.jpg"
-client_hero_image: "/img/work/transaction-advisors-case-study/transaction_advisors_hero.png"
-project_objective_image: "/img/work/transaction-advisors-case-study/transaction_advisors_objective.png"
+client_logo: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_logo.jpg"
+client_hero_image: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_hero.png"
+project_objective_image: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_objective.png"
 project_objective_image_alt: "The Transaction Advisors home page on desktop and mobile."
-project_process_image: "/img/work/transaction-advisors-case-study/transaction_advisors_process.png"
+project_process_image: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_process.png"
 project_process_image_alt: "The SatelliteFinance home page on desktop and mobile."
-project_results_image: "/img/work/transaction-advisors-case-study/transaction_advisors_results.png"
+project_results_image: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_results.png"
 project_results_image_alt: "The TelecomFinance home page on desktop and mobile."
 
 ---
