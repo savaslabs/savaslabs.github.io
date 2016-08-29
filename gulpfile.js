@@ -17,7 +17,7 @@ var uglify       = require('gulp-uglify');
 var paths        = require('./_assets/gulp_config/paths');
 
 // Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
-// outputs file to the appropriate locations.
+// outputs file to the appropriate location.
 gulp.task('build:styles', function() {
     return sass(paths.sassFiles + '/main.scss', {
         style: 'compressed',
@@ -34,10 +34,13 @@ gulp.task('clean:styles', function(callback) {
     callback();
 });
 
-// Concatenates and uglifies JS files and outputs result to the appropriate
-// locations.
-gulp.task('build:scripts', function() {
-    return gulp.src(paths.jsFilesGlob)
+// Concatenates and uglifies global JS files and outputs result to the
+// appropriate location.
+gulp.task('build:scripts:global', function() {
+    return gulp.src([
+        paths.jsFiles + '/global/lib' + paths.jsPattern,
+        paths.jsFiles + '/global/*.js'
+    ])
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.siteDir))
@@ -48,6 +51,27 @@ gulp.task('clean:scripts', function(callback) {
     del([paths.siteDir + 'main.js']);
     callback();
 });
+
+// Concatenates and uglifies leaflet JS files and outputs result to the
+// appropriate location.
+gulp.task('build:scripts:leaflet', function() {
+    return gulp.src([
+        paths.jsFiles + '/leaflet/leaflet.js',
+        paths.jsFiles + 'leaflet/leadlet-providers.js'
+    ])
+        .pipe(concat('leaflet.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.siteDir))
+        .on('error', gutil.log);
+});
+
+gulp.task('clean:scripts:leaflet', function(callback) {
+    del([paths.siteDir + 'leaflet.js']);
+    callback();
+});
+
+// Build all scripts.
+gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
 
 // Optimizes and copies image files.
 gulp.task('build:images', function() {
@@ -67,7 +91,7 @@ gulp.task('clean:images', function(callback) {
 // Copies fonts.
 gulp.task('build:fonts', ['fontawesome']);
 
-// Places Font Awesome fonts in proper location
+// Places Font Awesome fonts in proper location.
 gulp.task('fontawesome', function() {
     return gulp.src(paths.fontFiles + '/font-awesome/**.*')
         .pipe(rename(function(path) {path.dirname = '';}))
@@ -90,16 +114,33 @@ gulp.task('build:jekyll', function() {
         .on('error', gutil.log);
 });
 
+// Runs jekyll build command using local config.
+gulp.task('build:jekyll:local', function() {
+    var shellCommand = 'bundle exec jekyll build --config _config.yml,_config.test.yml,_config.dev.yml';
+
+    return gulp.src(paths.jekyllDir)
+        .pipe(run(shellCommand))
+        .on('error', gutil.log);
+});
+
 // Deletes the entire _site directory.
 gulp.task('clean', function(callback) {
     del([paths.siteDir]);
     callback();
 });
 
-// Builds site anew. Pass the --drafts flag to enable including drafts.
+// Builds site anew.
 gulp.task('build', function(callback) {
     runSequence('clean',
         'build:jekyll',
+        ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        callback);
+});
+
+// Builds site anew using local config.
+gulp.task('build:local', function(callback) {
+    runSequence('clean',
+        'build:jekyll:local',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
         callback);
 });
@@ -108,7 +149,7 @@ gulp.task('build', function(callback) {
 gulp.task('default', ['build']);
 
 // Special tasks for building and then reloading BrowserSync.
-gulp.task('build:jekyll:watch', ['build:jekyll'], function(callback) {
+gulp.task('build:jekyll:watch', ['build:jekyll:local'], function(callback) {
     browserSync.reload();
     callback();
 });
@@ -116,6 +157,49 @@ gulp.task('build:jekyll:watch', ['build:jekyll'], function(callback) {
 gulp.task('build:scripts:watch', ['build:scripts'], function(callback) {
     browserSync.reload();
     callback();
+});
+
+// Static Server + watching files.
+// Note: passing anything besides hard-coded literal paths with globs doesn't
+// seem to work with gulp.watch().
+gulp.task('serve', ['build:local'], function() {
+
+    browserSync.init({
+        server: paths.siteDir,
+        ghostMode: false, // Toggle to mirror clicks, reloads etc. (performance)
+        logFileChanges: true,
+        logLevel: 'debug',
+        open: true        // Toggle to automatically open page when starting.
+    });
+
+    // Watch site settings.
+    gulp.watch(['_config.yml'], ['build:jekyll:watch']);
+
+    // Watch .scss files; changes are piped to browserSync.
+    gulp.watch('_assets/styles/**/*.scss', ['build:styles']);
+
+    // Watch .js files.
+    gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
+
+    // Watch posts.
+    gulp.watch('_posts/**/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+
+    // Watch drafts if --drafts flag was passed.
+    if (module.exports.drafts) {
+        gulp.watch('_drafts/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+    }
+
+    // Watch html and markdown files.
+    gulp.watch(['**/*.+(html|md|markdown|MD)', '!_site/**/*.*'], ['build:jekyll:watch']);
+
+    // Watch RSS feed XML file.
+    gulp.watch('feed.xml', ['build:jekyll:watch']);
+
+    // Watch data files.
+    gulp.watch('_data/**.*+(yml|yaml|csv|json)', ['build:jekyll:watch']);
+
+    // Watch favicon.png.
+    gulp.watch('favicon.png', ['build:jekyll:watch']);
 });
 
 // Updates Ruby gems
