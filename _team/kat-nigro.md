@@ -3,8 +3,8 @@ name: Kat Nigro
 layout: team
 job_title: Office Administrator
 job_description: Kat is the office admin at Savas Labs. She gets stuff done.
-card: "/img/team/cards/kat-card.jpg"
-photo: "/img/team/kat-nigro.jpg"
+card: "img/team/cards/kat-card.jpg"
+photo: "img/team/kat-nigro.jpg"
 ---
 
 Kat is the Office Administrator at Savas Labs. She ties up any odds and ends

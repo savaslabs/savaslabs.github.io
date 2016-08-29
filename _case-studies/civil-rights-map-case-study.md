@@ -31,7 +31,7 @@ technologies_used: |
 client_logo: "/img/work/civil-rights-map-case-study/pauli-murray-logo.png"
 client_logo_width: "300px"
 client_logo_height: "72px"
-client_hero_image: "img/work/civil-rights-map-case-study/pmp-hero.png"
+client_hero_image: "/img/work/civil-rights-map-case-study/pmp-hero.png"
 project_objective_image: "/img/work/civil-rights-map-case-study/pmp-objective.png"
 project_objective_image_alt: "The map as it was pre-migration on Google Maps"
 project_process_image: "/img/work/civil-rights-map-case-study/pmp-process.png"
