@@ -4,6 +4,7 @@ title: "Mapping external GeoJSON data"
 date: 2015-05-18
 author: Tim Stallmann
 tags: cartography leaflet
+custom_js: leaflet.js
 summary: Leaflet.js is a powerful, light-weight javascript API for mapping. In this post, I'll walk through how to use Leaflet to map GeoJSON data.
 ---
 [Leaflet.js](http://www.leafletjs.com) is a powerful, light-weight javascript API for mapping. In this post, I'll walk through how to use Leaflet to map GeoJSON data. By the end, we'll have a map of earthquakes in the past 24 hours (using live USGS data) which looks like this:

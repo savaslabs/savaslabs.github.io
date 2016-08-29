@@ -11,8 +11,6 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Bitter|Source+Sans+Pro' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ '/main.css' | prepend: site.baseurl | prepend: site.url }}">
-  <!--TODO: update-->
-  <!--<link rel="stylesheet" href="{{ "/img/icons/octicons/octicons.css" }}">-->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}" />
   <script type="text/javascript" src="{{ '/main.js' | prepend: site.baseurl | prepend: site.url }}"></script>
@@ -21,4 +19,9 @@
   {% if page.permalink == "/what-we-do/" or page.permalink == "/drupal-training/" %}{% include schema-professional-service.html %}{% endif %}
   {% if page.path contains "_posts" %}{% include schema-blog.html %}{% endif %}
   {% include googleanalytics.html %}
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="/{{ page.custom_js | prepend: site.baseurl | prepend: site.url }}" type="text/javascript"></script>
+    {% endfor %}
+  {% endif %}
 </head>
