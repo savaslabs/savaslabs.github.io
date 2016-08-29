@@ -8,7 +8,7 @@ summary: Savas is proud to join the Drupal Association as an organization member
 drupal_planet_summary: |
   Drupal is a thriving FOSS project, and one of the main organizations moving it forward is the Drupal Association. Today, Savas is proud to have become a supporting member of the Drupal Association.
 ---
-<a href="https://assoc.drupal.org"><img align="left" src="/assets/img/icons/drupal-association-120.png" alt="Drupal Association icon" style="padding-right: 10px"></a>
+<a href="https://assoc.drupal.org"><img align="left" src="/imgicons/drupal-association-120.png" alt="Drupal Association icon" style="padding-right: 10px"></a>
 There are [lots of free and open source software (FOSS)](http://directory.fsf.org/wiki/Main_Page) projects out in the world. Why do some thrive while others founder? I would argue that a strong community is needed to push FOSS projects forward. And to help that happen, organization is key.
 
 [Drupal](https://drupal.org) is a thriving FOSS project, and one of the main organizations moving it forward is the Drupal Association. Today, Savas is proud to have become a supporting member of the [Drupal Association](https://assoc.drupal.org). In their words:

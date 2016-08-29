@@ -61,7 +61,7 @@ Open Layers does have a cost of more computational and memory overhead than Leaf
  OpenLayers maps would fail to render on the server-side once the mapped view reached about 500-750 points. If you're just displaying individual points, you can get around this performance limitation using the [GeoCluster](https://www.drupal.org/project/geocluster) module for D7, which implements
  server-side clustering, but that module clusters all features at once and does not support, for example, clustering multiple feature layers separately. Also it needs some D8 port-related love.
 
-<img src="/assets/img/blog/pauli_murray_map_site_screenshot.jpg" width="500px" height="223px" alt="Screenshot of Durham Civil and Human Rights map, showing a detail of Pauli Murray's childhood home." class="blog-image-large">
+<img src="/img/blog/pauli_murray_map_site_screenshot.jpg" width="500px" height="223px" alt="Screenshot of Durham Civil and Human Rights map, showing a detail of Pauli Murray's childhood home." class="blog-image-large">
 
 ## Views GeoJSON + Custom leaflet.js code
 
