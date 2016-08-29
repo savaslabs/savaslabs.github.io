@@ -5,7 +5,7 @@ date: 2016-05-26
 author: Tim Stallmann
 tags: php performance drupal drupal-planet module-development
 summary: Step-by-step, how to install and use XHProf to profile your Drupal module.
-featured_image: "/img/blog/xhprof-callgraph.jpg"
+featured_image: "/assets/img/blog/xhprof-callgraph.jpg"
 featured_image_alt: "an XHProf callgraph"
 drupal_planet_summary:
   First part in a series of how to use XHProf effectively within a VM for a Drupal website.
@@ -36,7 +36,7 @@ sudo apt-get install php5-dev
 
 And, if you want to view nice callgraph trees like the one below you'll need to install the graphviz package `sudo apt-get install graphviz`
 
-<img src="/img/blog/xhprof-callgraph.jpg" alt="Image of a sample XHProf callgraph">
+<img src="/assets/img/blog/xhprof-callgraph.jpg" alt="Image of a sample XHProf callgraph">
 
 ### Configure PHP to run XHProf
 
@@ -135,7 +135,7 @@ Note: Another way to run XHProf on a Drupal site is using the [XHProf](https://w
 
 If everything is configured correctly, when you run your module you should get a run ID output either to the screen (via `echo`, as above, or however you've configured this logging). Visit the URL you configured above for xhprof, and you should see a list of all the stored runs. Clicking on a run will bring up the full profiler report.
 
-<img src="/img/blog/xhprof-screenshot.jpg" alt="Sample screenshot of an XHProf profiler report">
+<img src="/assets/img/blog/xhprof-screenshot.jpg" alt="Sample screenshot of an XHProf profiler report">
 
 ### Now what?
 

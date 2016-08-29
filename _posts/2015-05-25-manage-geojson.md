@@ -137,7 +137,7 @@ $ ogr2ogr -f GeoJSON all_month_mag_over_5.geojson all_month.geojson -sql "SELECT
 Now we're just down to 44 kb, a totally reasonable size for mapping.
 
 Here's what the dataset we just made looks like (via [geojson.io](http://geojson.io)):
-<img src="/img/blog/earthquakes-mag-5-geojson-io.jpg" width="500px" height="250px" alt="Screenshot of GeoJSON.io map showing earthquakes distributed across the world" class="blog-image-large">
+<img src="/assets/img/blog/earthquakes-mag-5-geojson-io.jpg" width="500px" height="250px" alt="Screenshot of GeoJSON.io map showing earthquakes distributed across the world" class="blog-image-large">
 
 ## Filtering by location
 
@@ -150,7 +150,7 @@ $ ogr2ogr -f GeoJSON all_month_us_east.geojson all_month.geojson -clipsrc -86.83
 ```
 
 Here's the result. Florida turns out to be a good place to live if you want to avoid minor tremors! Also notice that because of using a simple latitude-longitude rectangle to filter the data, we also pulled in those parts of Canada which are south of Maine.
-<img src="/img/blog/earthquakes-us-east-geojson-io.jpg" width="400px" height="400px" alt="Screenshot of GeoJSON.io map showing earthquakes in the past month in the United States, with one point in Canada" class="blog-image-large">
+<img src="/assets/img/blog/earthquakes-us-east-geojson-io.jpg" width="400px" height="400px" alt="Screenshot of GeoJSON.io map showing earthquakes in the past month in the United States, with one point in Canada" class="blog-image-large">
 
 ## Filtering by location 2: Clipping to another dataset
 
@@ -203,4 +203,4 @@ $ ogr2ogr -f GeoJSON all_month_georgia.geojson all_month.geojson -clipsrc tl_201
 
 And here's the GeoJSON dataset we just created, viewed on geojson.io -- all two earthquakes in Georgia last month!
 
-<img src="/img/blog/earthquakes-georgia-geojson-io.jpg" width="500px" height="164px" alt="Screenshot of GeoJSON.io map showing two earthquakes in Georgia" class="blog-image-large">
+<img src="/assets/img/blog/earthquakes-georgia-geojson-io.jpg" width="500px" height="164px" alt="Screenshot of GeoJSON.io map showing two earthquakes in Georgia" class="blog-image-large">

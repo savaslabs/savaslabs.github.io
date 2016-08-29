@@ -5,7 +5,7 @@ date: 2016-06-15
 author: Dan Murphy
 tags: git
 summary: An overview of strategies and tools I like to use when I encounter conflicts during merges.
-featured_image: "/img/blog/git_merge_conflict_screenshot.png"
+featured_image: "/assets/img/blog/git_merge_conflict_screenshot.png"
 featured_image_alt: "screenshot of git merge output"
 ---
 
@@ -82,7 +82,7 @@ A good visual merge tool will display at least 3 panels for each file with confl
 
 I prefer merge tools (such as the P4Merge tool shown below) which also include a fourth display panel showing the version of that file in the merge base:
 
-<img src="/img/blog/P4Merge_screenshot.png" alt="P4Merge tool screenshot">
+<img src="/assets/img/blog/P4Merge_screenshot.png" alt="P4Merge tool screenshot">
 
 There are many visual merge tools to choose from, some of which may already be installed on your system.
 

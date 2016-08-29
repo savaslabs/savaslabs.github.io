@@ -3,8 +3,8 @@ name: Dan Murphy
 layout: team
 job_title: Web Developer
 job_description: Dan develops back-end solutions and front-end, responsive designs for Savas Labs clients.
-photo: "img/team/dan-murphy.jpg"
-card: "img/team/cards/dan-card.jpg"
+photo: "assets/img/team/dan-murphy.jpg"
+card: "assets/img/team/cards/dan-card.jpg"
 drupal: dmurphy1
 github: dmurphy1
 linkedin: danielmurphyjr
