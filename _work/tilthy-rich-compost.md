@@ -3,7 +3,7 @@ layout: portfolio
 title: Tilthy Rich Compost
 client_url: "http://tilthyrichcompost.com"
 client_since: 2013 - present
-image: "/img/work/tilthy-rich-compost.png"
+image: "/assets/img/work/tilthy-rich-compost.png"
 short_description: >
   Tilthy Rich Compost collects compostable material from homes and businesses around downtown Durham, NC via bicycle, periodically returning compost to those customers.
 services:

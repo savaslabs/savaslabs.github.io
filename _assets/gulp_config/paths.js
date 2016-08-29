@@ -8,9 +8,11 @@
 var paths = {};
 
 // Directory locations.
-paths.assetsDir          = '_assets/';  // The files Gulp will handle.
-paths.jekyllDir          = '';          // The files Jekyll will handle.
-paths.siteDir            = '_site/';    // The resulting static site.
+paths.assetsDir       = '_assets/';      // The files Gulp will handle.
+paths.jekyllDir       = '';              // The files Jekyll will handle.
+paths.jekyllAssetsDir = 'assets/';       // The asset files Jekyll will handle.
+paths.siteDir         = '_site/';        // The resulting static site.
+paths.siteAssetsDir   = '_site/assets/'; // The resulting static site's assets.
 
 // Folder naming conventions.
 paths.postFolderName   = '_posts';
@@ -27,14 +29,18 @@ paths.imageFiles  = paths.assetsDir + paths.imageFolderName;
 paths.fontFiles   = paths.assetsDir + paths.fontFolderName;
 
 // Jekyll files locations.
-paths.jekyllPostFiles  = paths.jekyllDir + paths.postFolderName;
-paths.jekyllDraftFiles = paths.jekyllDir + paths.draftFolderName;
-paths.jekyllImageFiles = paths.jekyllDir + paths.imageFolderName;
-paths.jekyllFontFiles  = paths.jekyllDir + paths.fontFolderName;
+paths.jekyllPostFiles  = paths.jekyllDir       + paths.postFolderName;
+paths.jekyllDraftFiles = paths.jekyllDir       + paths.draftFolderName;
+paths.jekyllCssFiles   = paths.jekyllAssetsDir + paths.stylesFolderName;
+paths.jekyllJsFiles    = paths.jekyllAssetsDir + paths.scriptFolderName;
+paths.jekyllImageFiles = paths.jekyllAssetsDir + paths.imageFolderName;
+paths.jekyllFontFiles  = paths.jekyllAssetsDir + paths.fontFolderName;
 
 // Site files locations.
-paths.siteImageFiles = paths.siteDir + paths.imageFolderName;
-paths.siteFontFiles  = paths.siteDir + paths.fontFolderName;
+paths.siteCssFiles   = paths.siteAssetsDir + paths.stylesFolderName;
+paths.siteJsFiles    = paths.siteAssetsDir + paths.scriptFolderName;
+paths.siteImageFiles = paths.siteAssetsDir + paths.imageFolderName;
+paths.siteFontFiles  = paths.siteAssetsDir + paths.fontFolderName;
 
 // Glob patterns by file type.
 paths.sassPattern     = '/**/*.scss';

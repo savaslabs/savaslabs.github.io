@@ -28,15 +28,15 @@ technologies_used: |
   - Drupal 7
   - Drupal Commerce
   - jQuery
-client_logo: "/img/work/hunter-boots-case-study/hunter_logo.svg"
+client_logo: "/assets/img/work/hunter-boots-case-study/hunter_logo.svg"
 client_logo_width: "120px"
 client_logo_height: "50px"
-client_hero_image: "/img/work/hunter-boots-case-study/hunter_hero.png"
-project_objective_image: "/img/work/hunter-boots-case-study/hunter_objective.png"
+client_hero_image: "/assets/img/work/hunter-boots-case-study/hunter_hero.png"
+project_objective_image: "/assets/img/work/hunter-boots-case-study/hunter_objective.png"
 project_objective_image_alt: "The Hunter Boots checkout process on multiple screen sizes"
-project_process_image: "/img/work/hunter-boots-case-study/hunter_process.png"
+project_process_image: "/assets/img/work/hunter-boots-case-study/hunter_process.png"
 project_process_image_alt: "Drupal Commerce logo"
-project_results_image: "/img/work/hunter-boots-case-study/hunter_results.png"
+project_results_image: "/assets/img/work/hunter-boots-case-study/hunter_results.png"
 project_results_image_alt: "The Hunter Boots home page on desktop and mobile"
 client_quote2_author: Jodi Sweetbaum, President of Lloyd & Co.
 client_quote2: The site is looking amazing. I was very proud to present it today. Thank you so so so much! THANK YOU a million times over.

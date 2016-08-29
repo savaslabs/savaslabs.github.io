@@ -3,17 +3,17 @@ name: Lisa Ridley
 layout: team
 job_title: Director of Client Success
 job_description: Lisa is a project manager and developer at Savas Labs, focused on client satisfaction and project success.
-photo: "img/team/lisa-ridley.jpg"
-card: "img/team/cards/lisa-card.jpg"
+photo: "assets/img/team/lisa-ridley.jpg"
+card: "assets/img/team/cards/lisa-card.jpg"
 drupal: lhridley
 github: lhridley
 linkedin: lisahridley
 resume: https://docs.google.com/document/d/1DDsmug2fY7O6xefDOjwiTQiXeze4tPRoQxVw66nm0ac/pub
 badges:
-  - image: "img/team/association_ind_member_badge.svg"
+  - image: "assets/img/team/association_ind_member_badge.svg"
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
-  - image: "img/team/ACD2015.png"
+  - image: "assets/img/team/ACD2015.png"
     alt: "Acquia Certification Badge"
     link: "https://www.acquia.com/customer-success/learning-services/acquia-certification-program-overview"
 ---
