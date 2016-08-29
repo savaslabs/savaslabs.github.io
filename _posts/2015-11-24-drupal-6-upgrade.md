@@ -17,11 +17,11 @@ EOL approaches.
 
 *****
 
-## The issue at <img src="/img/blog/hand.png" alt="hand">
+## The issue at <img src="/assets/img/blog/hand.png" alt="hand">
 
 As most Drupal 6 site owners are aware, after a [prolonged development period](https://www.drupal.org/core/dev-cycle), Drupal 8 was officially released ([8.0.0]((https://www.drupal.org/node/2619030))) last week on November 19th, 2015
 [Dries's birthday](https://en.wikipedia.org/wiki/Dries_Buytaert) with a corresponding many, [many a lively party](https://twitter.com/hashtag/Celebr8D8?src=hash):
-<img src="/img/blog/celebr8d8.jpg" alt="Drupal 8 celebration #celebr8d8">
+<img src="/assets/img/blog/celebr8d8.jpg" alt="Drupal 8 celebration #celebr8d8">
 <span class="caption">Like this fancy one in downtown Durham atop the rooftop bar of [The Durham Hotel](http://thedurham.com/).</span>
 
 Drupal 8.0.0 is a [**BIG DEAL**](http://celebratedrupal8.com/) and generally speaking is great for the community of Drupal site owners and site builders.
