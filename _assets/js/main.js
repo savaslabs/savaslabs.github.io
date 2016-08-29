@@ -1,9 +1,3 @@
----
-library: jquery-2.1.3.min.js
----
-
-{% include_relative _lib/{{page.library}} %}
-
 // MOBILE MENU.
 $(document).ready(
     function () {
