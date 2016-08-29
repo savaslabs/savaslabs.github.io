@@ -3,7 +3,7 @@ layout: portfolio
 title: UNC Computers And Writing Conference
 client_url: "http://www.siteslab.org/cwcon"
 client_since: 2013
-image: "assets/img/work/unc-cwcon.png"
+image: "/img/work/unc-cwcon.png"
 short_description: >
   The Computers and Writing Conference is an annual conference held at the University of North Carolina at Chapel Hill.
 services:

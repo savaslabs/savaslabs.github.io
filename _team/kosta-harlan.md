@@ -3,8 +3,8 @@ name: Kosta Harlan
 layout: team
 job_title: Director of Technology
 job_description: Kosta is responsible for code quality at Savas Labs, keeping up to date with emerging technologies and ensuring our team follows best practices.
-photo: "assets/img/team/kosta-harlan.jpg"
-card: "assets/img/team/cards/kosta-card.jpg"
+photo: "/img/team/kosta-harlan.jpg"
+card: "/img/team/cards/kosta-card.jpg"
 drupal: kostajh
 github: kostajh
 twitter: kostajh
@@ -12,7 +12,7 @@ linkedin: kostaharlan
 website: http://www.kostaharlan.net
 resume: https://stackoverflow.com/cv/kostajh
 badges:
-  - image: "assets/img/team/association_ind_member_badge.svg"
+  - image: "/img/team/association_ind_member_badge.svg"
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
 ---
