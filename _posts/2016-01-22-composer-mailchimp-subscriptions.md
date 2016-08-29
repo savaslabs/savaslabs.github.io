@@ -5,7 +5,7 @@ date: 2016-01-22
 author: Dan Murphy
 tags: drupal drupal-planet composer module-development mailchimp
 summary: Using Composer Manager and the MailChimp PHP library we can simply and easily subscribe users to mailing lists without using the MailChimp contributed module.
-featured_image: "/assets/img/blog/composer.jpg"
+featured_image: "/img/blog/composer.jpg"
 featured_image_alt: "composer"
 drupal_planet_summary: |
   A demonstration on how to use Composer Manager and the MailChimp PHP library to simply and easily subscribe users to mailing lists without using the MailChimp contributed module.

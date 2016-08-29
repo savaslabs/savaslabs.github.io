@@ -2,36 +2,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   {% if page.layout == "team" %}
   <title>{{ page.name }} | {{ site.title }}</title>
   {% else %}
   <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   {% endif %}
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Bitter|Source+Sans+Pro' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ "main.css" }}">
+  <link rel="stylesheet" href="main.css">
   <!--TODO: update-->
-  <!--<link rel="stylesheet" href="{{ "/_assets/img/icons/octicons/octicons.css" }}">-->
+  <!--<link rel="stylesheet" href="{{ "/img/icons/octicons/octicons.css" }}">-->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}" />
-  <script type="text/javascript" src="{{ "main.js" }}"></script>
+  <script type="text/javascript" src="main.js"></script>
   {% include schema-organization.html %}
   {% if page.layout == "team" %}{% include schema-team.html %}{% endif %}
   {% if page.permalink == "/what-we-do/" or page.permalink == "/drupal-training/" %}{% include schema-professional-service.html %}{% endif %}
   {% if page.path contains "_posts" %}{% include schema-blog.html %}{% endif %}
   {% include googleanalytics.html %}
-  // TODO: update
-//  {% if page.custom_css %}
-//      {% for stylesheet in page.custom_css %}
-//          <link rel="stylesheet" href="/assets/styles/{{ stylesheet }}.css" media="screen" type="text/css">
-//      {% endfor %}
-//  {% endif %}
-
-  <!--{% if page.custom_js %}-->
-      <!--{% for js_file in page.custom_js %}-->
-          <!--<script src='/assets/js/{{ js_file }}.js' type="text/javascript"></script>-->
-      <!--{% endfor %}-->
-  <!--{% endif %}-->
 </head>
