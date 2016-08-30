@@ -17,7 +17,7 @@ high-quality brain transfer (via HTTP 2 of course), meeting in-person with those
 in the issue queue, and general Drupal gallivanting ...where we plan to see
 people like this...
 
-<img src="/assets/img/blog/druplicon-in-durham.png" alt="Druplicon in Durham">
+<img src="/assets/img/blog/druplicon-in-durham.jpg" alt="Druplicon in Durham">
 
 ### What we're (hopefully) talking about
 
