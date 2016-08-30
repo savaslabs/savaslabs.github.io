@@ -5,6 +5,7 @@ var concat       = require('gulp-concat');
 var del          = require('del');
 var gulp         = require('gulp');
 var gutil        = require('gulp-util');
+var imagemin     = require('gulp-imagemin');
 var jshint       = require('gulp-jshint');
 var minifycss    = require('gulp-minify-css');
 var notify       = require('gulp-notify');
@@ -80,10 +81,8 @@ gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
 
 // Optimizes and copies image files.
 gulp.task('build:images', function() {
-
-    //TODO: optimize images.
-
     return gulp.src(paths.imageFilesGlob)
+        .pipe(imagemin())
         .pipe(gulp.dest(paths.jekyllImageFiles))
         .pipe(gulp.dest(paths.siteImageFiles))
         .pipe(browserSync.stream());
