@@ -14,11 +14,12 @@ TODO: add info about image optimization/processing.
 2. Clone the repo (default branch is `source`; do not use master.)
 3. Run `bundle install`
 4. Make sure [node.js and npm](https://docs.npmjs.com/getting-started/installing-node) are installed.
-5. Run `npm install` to install node modules. This takes a few minutess.
+5. Run `npm install` to install node modules. This takes a few minutes.
 
 ### Local development
 
-To serve the site, run `gulp serve`. This uses the test and dev config files for local development.
+To serve the site, run `gulp serve`. This uses the test and dev config files for
+local development.
 
 Thanks to `gulp.watch` and Browsersync, any changes you make will trigger Gulp
 to either regenerate the Jekyll site and automatically refresh your browser or,
