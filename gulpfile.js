@@ -193,6 +193,9 @@ gulp.task('serve', ['build:local'], function() {
     // Watch .js files.
     gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
 
+    // Watch image files; changes are piped to browserSync.
+    gulp.watch('_assets/img/**/*', ['build:images']);
+
     // Watch posts.
     gulp.watch('_posts/**/*.+(md|markdown|MD)', ['build:jekyll:watch']);
 
