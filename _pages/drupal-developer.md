@@ -7,7 +7,7 @@ excerpt: |
 ---
 
 <p style="text-align:center;">
-  <img src="/assets/img/jobs/drupal 8 logo.png" alt="Drupal 8 logo" class="center">
+  <img src="/assets/img/jobs/drupal 8 logo isolated.svg" alt="Drupal 8 logo" class="center" style="width: 100%; max-width: 300px;">
 </p>
 
 ### The position
