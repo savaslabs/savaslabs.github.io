@@ -79,7 +79,7 @@ Here's what your map should look like at this point:
 
 <div id="map" style="width: 100%; height: 300px;"></div>
 <script type="text/javascript">
-L.Icon.Default.imagePath = "/assets/img";
+L.Icon.Default.imagePath = "/assets/img/leaflet";
 var map = L.map('map');
 var terrainTiles = L.tileLayer.provider('OpenTopoMap');
 terrainTiles.addTo(map);
