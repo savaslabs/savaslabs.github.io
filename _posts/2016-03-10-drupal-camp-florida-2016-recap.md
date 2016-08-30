@@ -7,7 +7,7 @@ tags: drupal drupalcamp drupal8
 summary: Lisa Ridley of Savas Labs attended Drupal Camp Florida in March 2016.  Here's what she learned.
 ---
 
-<img src="/assets/img/blog/drupal-camp-florida-2016.png" alt="DrupalCamp Florida Hero Banner">
+<img src="/assets/img/blog/drupal-camp-florida-2016.jpg" alt="DrupalCamp Florida Hero Banner">
 
 ## Drupal Camp Florida 2016 Recap
 
