@@ -4,7 +4,7 @@ This is the website for [Savas Labs](http://savaslabs.com).
 
 The site is built using Jekyll and Gulp.
 
-TODO: update!
+TODO: add info about image optimization/processing.
 
 ### Installation
 
