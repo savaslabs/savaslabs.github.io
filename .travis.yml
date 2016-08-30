@@ -1,11 +1,11 @@
-language: node_js
-node_js:
-  - '5.6'
+language: ruby
 script: "./_scripts/run-tests.sh"
 branches:
   except:
   - master
 cache: bundler
+rvm:
+ - 2.1
 before_install:
   - npm install
 env:
