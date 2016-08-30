@@ -1,5 +1,5 @@
 // Define variables.
-var autoprefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
 var browserSync  = require('browser-sync').create();
 var concat       = require('gulp-concat');
 var del          = require('del');
@@ -8,6 +8,7 @@ var gutil        = require('gulp-util');
 var jshint       = require('gulp-jshint');
 var minifycss    = require('gulp-minify-css');
 var notify       = require('gulp-notify');
+var postcss      = require('gulp-postcss');
 var rename       = require('gulp-rename');
 var run          = require('gulp-run');
 var runSequence  = require('run-sequence');
@@ -23,7 +24,8 @@ gulp.task('build:styles', function() {
         style: 'compressed',
         trace: true,
         loadPath: [paths.sassFiles]
-    }).pipe(minifycss())
+    }).pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(minifycss())
         .pipe(gulp.dest(paths.jekyllCssFiles))
         .pipe(gulp.dest(paths.siteCssFiles))
         .pipe(browserSync.stream())
