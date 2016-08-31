@@ -24,7 +24,7 @@ It was great to kick-off my internship with in-person QA sessions and impromptu 
 
 Everyone at Savas Labs contributed to my learning! I was encouraged by the entire team, and no one was above taking the time to show me how to [install Composer](https://www.drupal.org/node/1791676) or configure [DrupalVM](https://www.drupalvm.com/). I felt comfortable asking questions and was encouraged to do so from the beginning.
 
-<img src="/assets/img/blog/internship-encouragement.png" class="blog-image-large" alt="Slack Encouragement">
+<img src="/assets/img/blog/internship-encouragement.jpg" class="blog-image-large" alt="Slack Encouragement">
 
 <span class="caption">Supportive Savasians!</span>
 
