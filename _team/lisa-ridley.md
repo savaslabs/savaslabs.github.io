@@ -3,8 +3,8 @@ name: Lisa Ridley
 layout: team
 job_title: Director of Client Success
 job_description: Lisa is a project manager and developer at Savas Labs, focused on client satisfaction and project success.
-photo: "assets/img/team/lisa-ridley.jpg"
-card: "assets/img/team/cards/lisa-card.jpg"
+photo: "/team/lisa-ridley.jpg"
+card: "/team/cards/lisa-card.jpg"
 drupal: lhridley
 github: lhridley
 linkedin: lisahridley

@@ -144,8 +144,8 @@ gulp.task('clean', ['clean:jekyll',
 // Builds site anew.
 gulp.task('build', function(callback) {
     runSequence('clean',
-        'build:jekyll',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        'build:jekyll',
         callback);
 });
 
