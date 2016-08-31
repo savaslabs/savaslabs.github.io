@@ -58,3 +58,31 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate
+  - jekyll-picture-tag
+
+# Picture element presets
+picture:
+  source: "assets/img"
+  output: "assets/processed-img"
+  markup: "picture"
+  presets:
+    team_square:
+      attr:
+        class: "image--team-square"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "334"
+      source_default:
+        width: "254"
+    team_individual:
+      attr:
+        class: "image--team-individual"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "350"
+      source_default:
+        width: "288"

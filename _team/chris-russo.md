@@ -5,8 +5,8 @@ job_title: Principal Director
 job_description:
   Chris does his best to ensure that his team is learning and growing and that
   our clients feel like partners.
-photo: "assets/img/team/chris-russo.jpg"
-card: "assets/img/team/cards/chris-card.jpg"
+photo: "/team/chris-russo.jpg"
+card: "/team/cards/chris-card.jpg"
 drupal: chrisarusso
 github: chrisarusso
 linkedin: chrisarusso
