@@ -5,9 +5,11 @@ branches:
   - master
 cache: bundler
 rvm:
- - 2.1
+ - "2.1"
+node_js:
+ - "6"
 before_install:
-  - npm install
+  - npm install -g npm@2
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
