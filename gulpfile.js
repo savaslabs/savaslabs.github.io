@@ -144,16 +144,16 @@ gulp.task('clean', ['clean:jekyll',
 // Builds site anew.
 gulp.task('build', function(callback) {
     runSequence('clean',
-        'build:jekyll',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        'build:jekyll',
         callback);
 });
 
 // Builds site anew using local config.
 gulp.task('build:local', function(callback) {
     runSequence('clean',
-        'build:jekyll:local',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        'build:jekyll:local',
         callback);
 });
 
@@ -192,6 +192,9 @@ gulp.task('serve', ['build:local'], function() {
 
     // Watch .js files.
     gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
+
+    // Watch image files; changes are piped to browserSync.
+    gulp.watch('_assets/img/**/*', ['build:images']);
 
     // Watch posts.
     gulp.watch('_posts/**/*.+(md|markdown|MD)', ['build:jekyll:watch']);

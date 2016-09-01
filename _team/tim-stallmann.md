@@ -3,8 +3,8 @@ name: Tim Stallmann
 layout: team
 job_title: Lead Cartographer
 job_description: Tim is a cartographer and developer at Savas Labs, implementing complex web applications for our clients.
-photo: "assets/img/team/tim-stallmann.jpg"
-card: "assets/img/team/cards/tim-card.jpg"
+photo: "/team/tim-stallmann.jpg"
+card: "/team/cards/tim-card.jpg"
 drupal: t_stallmann
 github: timstallmann
 linkedin: timstallmann

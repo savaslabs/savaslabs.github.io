@@ -10,7 +10,7 @@ Remember *Another Thyme*? *Kim Son*? *Honey's*? The *Know* restaurant and book s
 So here at Savas, we've created a helpful [Durham restaurant time machine](http://www.savaslabs.com/durham-restaurants-map).
 
 <div class="blog-image wrap-left">
-<a href="http://www.savaslabs.com/durham-restaurants-map"><img src="/assets/img/blog/restaurants-map-pan-pan-diner.png" alt="Map showing the Pan Pan Diner, at its original location on Hillandale Road" width="250" height="212"></a>
+<a href="http://www.savaslabs.com/durham-restaurants-map"><img src="/assets/img/blog/restaurants-map-pan-pan-diner.jpg" alt="Map showing the Pan Pan Diner, at its original location on Hillandale Road" width="250" height="212"></a>
 <p>The Pan Pan Diner, at its original location on Hillandale Road (misspelled as <i>Hillondale</i> in the health inspections dataset)</p>
 </div>
 

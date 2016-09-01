@@ -58,3 +58,57 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate
+  - jekyll-picture-tag
+
+# Picture element presets
+picture:
+  source: "assets/img"
+  output: "assets/processed-img"
+  markup: "picture"
+  presets:
+    team_square:
+      attr:
+        class: "image--team-square"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "334"
+      source_default:
+        width: "254"
+    team_individual:
+      attr:
+        class: "image--team-individual"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "350"
+      source_default:
+        width: "288"
+    case_study:
+      attr:
+        class: "image--case-study"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_860:
+        media: "(min-width: 860px)"
+        width: "560"
+      source_640:
+        media: "(min-width: 640px)"
+        width: "430"
+      source_400:
+        media: "(min-width: 400px)"
+        width: "560"
+      source_default:
+        width: "400"
+    post_featured_image:
+      attr:
+        class: "image--post-featured-image"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_1120:
+        media: "(min-width: 400px)"
+        width: "737"
+      source_default:
+        width: "400"
