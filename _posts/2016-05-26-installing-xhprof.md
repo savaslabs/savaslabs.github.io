@@ -5,7 +5,7 @@ date: 2016-05-26
 author: Tim Stallmann
 tags: php performance drupal drupal-planet module-development
 summary: Step-by-step, how to install and use XHProf to profile your Drupal module.
-featured_image: "/assets/img/blog/xhprof-callgraph.jpg"
+featured_image: "/blog/xhprof-callgraph.jpg"
 featured_image_alt: "an XHProf callgraph"
 drupal_planet_summary:
   First part in a series of how to use XHProf effectively within a VM for a Drupal website.
