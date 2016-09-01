@@ -102,3 +102,13 @@ picture:
         width: "560"
       source_default:
         width: "400"
+    post_featured_image:
+      attr:
+        class: "image--post-featured-image"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_1120:
+        media: "(min-width: 400px)"
+        width: "737"
+      source_default:
+        width: "400"
