@@ -62,6 +62,10 @@ You can include a featured image in the front matter using the `featured_image`
 and `featured_image_alt` keys. This will work for our site and for Drupal Planet.
 Please try to do this for every post!
 
+Your image should be 1474px wide. Blog images should be placed in
+`_/assets/img/blog`, but you should only include `/blog/[filename].jpg` in the
+front matter of your post.
+
 ### Syntax Highlighting
 
 Since updating to Jekyll 3.0.2 which uses Kramdown/Rouge, to use syntax
