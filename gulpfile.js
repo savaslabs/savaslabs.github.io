@@ -152,8 +152,8 @@ gulp.task('build', function(callback) {
 // Builds site anew using local config.
 gulp.task('build:local', function(callback) {
     runSequence('clean',
-        'build:jekyll:local',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        'build:jekyll:local',
         callback);
 });
 

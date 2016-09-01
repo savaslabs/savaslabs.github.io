@@ -12,23 +12,49 @@
     @include align-items(center);
     @include flex-direction(column);
 
-    background: url('/assets/img/home-cover-code.png') $dark-blue center no-repeat;
+    background: url('/assets/img/home-cover-image/home-cover-code-400.png') $dark-blue center center no-repeat;
+    background-size: cover;
     height: 88vh;
     text-align: center;
 
-    // On medium screens, change height to account for menu height.
+    // Use proper image depending on screen size and resolution.
+    @include hidpi(2) {
+      background-image: url('/assets/img/home-cover-image/home-cover-code-800.png');
+    }
+
+    // Adjust image height and image used based on screne size and resolution.
+    @include media(em(400px)) {
+      background-image: url('/assets/img/home-cover-image/home-cover-code-640.png');
+
+      @include hidpi(2) {
+        background-image: url('/assets/img/home-cover-image/home-cover-code-1280.png');
+      }
+    }
+
     @include media($horizontal-bar-mode) {
+      background-image: url('/assets/img/home-cover-image/home-cover-code-860.png');
       height: 78vh;
+
+      @include hidpi(2) {
+        background-image: url('/assets/img/home-cover-image/home-cover-code-1720.png');
+      }
     }
 
-    // On large screens, adjust height to account for menu height.
     @include media($large-screen-up) {
+      background-image: url('/assets/img/home-cover-image/home-cover-code-1120.png');
       height: 88vh;
+
+      @include hidpi(2) {
+        background-image: url('/assets/img/home-cover-image/home-cover-code-2240.png');
+      }
     }
 
-    // On very large screens, allow background image to scale up to fill screen.
-    @include media(1200px) {
-      background-size: 100% auto;
+    @include media($extra-large-screen-up) {
+      background-image: url('/assets/img/home-cover-image/home-cover-code-1200.png');
+
+      @include hidpi(2) {
+        background-image: url('/assets/img/home-cover-image/home-cover-code.png');
+      }
     }
 
     .home__cover__heading,
