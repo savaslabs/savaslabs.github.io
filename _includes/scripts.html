@@ -1,0 +1,9 @@
+<script type="text/javascript" src="{{ '/assets/js/main.js' | prepend: site.baseurl | prepend: site.url }}" async></script>
+
+{% if page.custom_js %}
+  {% assign path = '/assets/js/' %}
+  {% for js_file in page.custom_js %}
+    {% capture file %}{{ path }}{{ page.custom_js }}{% endcapture %}
+    <script src="{{ file | prepend: site.baseurl | prepend: site.url }}" type="text/javascript" async></script>
+  {% endfor %}
+{% endif %}
