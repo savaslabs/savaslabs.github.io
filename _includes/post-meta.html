@@ -3,7 +3,7 @@
     <h4>About the author</h4>
     {% for person in site.team %}{% if person.name == page.author %}
       <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">
-        <img src="/{{ person.photo }}" alt="{{ person.name }}">
+        {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
       </a>
       <p class="post-author-desc">{{ person.job_description }}</p>
     {% endif %}{% endfor %}
