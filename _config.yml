@@ -86,6 +86,13 @@ picture:
         width: "350"
       source_default:
         width: "288"
+    team_post_meta:
+      attr:
+        class: "image--team-post-meta"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_default:
+        width: "288"
     case_study:
       attr:
         class: "image--case-study"
