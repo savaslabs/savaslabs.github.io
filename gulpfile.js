@@ -20,7 +20,7 @@ var paths        = require('./_assets/gulp_config/paths');
 
 // Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
 // outputs file to the appropriate location.
-gulp.task('build:styles', function() {
+gulp.task('build:styles:main', function() {
     return sass(paths.sassFiles + '/main.scss', {
         style: 'compressed',
         trace: true,
@@ -33,8 +33,23 @@ gulp.task('build:styles', function() {
         .on('error', gutil.log);
 });
 
+// Processes critical CSS, to be included in head.html.
+gulp.task('build:styles:critical', function() {
+    return sass(paths.sassFiles + '/critical.scss', {
+        style: 'compressed',
+        trace: true,
+        loadPath: [paths.sassFiles]
+    }).pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(cleancss())
+        .pipe(gulp.dest('_includes'))
+        .on('error', gutil.log);
+});
+
 gulp.task('clean:styles', function(callback) {
-    del([paths.jekyllCssFiles + 'main.css', paths.siteCssFiles + 'main.css']);
+    del([paths.jekyllCssFiles + 'main.css',
+        paths.siteCssFiles + 'main.css',
+        '_includes/critical.css'
+    ]);
     callback();
 });
 
@@ -51,6 +66,9 @@ gulp.task('build:scripts:global', function() {
         .pipe(gulp.dest(paths.siteJsFiles))
         .on('error', gutil.log);
 });
+
+// Build all styles.
+gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
 
 gulp.task('clean:scripts', function(callback) {
     del([paths.jekyllJsFiles + 'main.js', paths.siteJsFiles + 'main.js']);

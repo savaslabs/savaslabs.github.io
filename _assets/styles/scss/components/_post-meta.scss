@@ -1,0 +1,56 @@
+/**
+ * @file
+ *
+ * Styles for meta information at the bottom of blog posts.
+ */
+
+.post-bottom {
+
+  h4 {
+    margin: 0 0 1em;
+  }
+
+  .post-meta {
+    margin-bottom: 3em;
+    text-align: center;
+
+    @include media($medium-screen-up) {
+      @include span-columns(4);
+      text-align: left;
+    }
+
+    img {
+      border-radius: 3px;
+      width: 12em;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.2em;
+      margin-top: 1em;
+    }
+
+    .post-author-desc {
+      text-align: left;
+    }
+  }
+
+  .post-related {
+    margin-bottom: 3em;
+    text-align: center;
+
+    @include media($medium-screen-up) {
+      @include span-columns(8);
+
+      h4 {
+        margin-left: .583em;
+        text-align: left;
+      }
+    }
+
+    .cards {
+      font-size: .9em;
+      text-align: left;
+    }
+  }
+}

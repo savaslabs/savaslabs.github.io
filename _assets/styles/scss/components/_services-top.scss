@@ -1,7 +1,7 @@
 /**
  * @file
  *
- * Styles for /services.
+ * Above the fold styles for /services.
  */
 
 .services {
@@ -39,30 +39,6 @@
 
     .services__service__icon {
       margin-right: 1em;
-    }
-  }
-}
-
-.services--sub__wrapper {
-
-  h2 {
-    margin-bottom: $base-spacing;
-    text-align: center;
-  }
-
-  .services--sub {
-
-    .services__service {
-
-      @include media($medium-screen-up) {
-        margin-bottom: $base-spacing;
-        padding: $base-spacing;
-        width: 50%;
-      }
-
-      .services__service__icon {
-        margin-right: .5em;
-      }
     }
   }
 }

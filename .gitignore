@@ -4,6 +4,7 @@ _site
 tmp
 node_modules
 assets
+_includes/critical.css
 
 # For Travis.
 .bundle

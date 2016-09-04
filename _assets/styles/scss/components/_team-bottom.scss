@@ -1,0 +1,27 @@
+/**
+ * @file
+ *
+ * Below the fold styles for /team.
+ */
+
+.associations {
+  clear: both;
+  text-align: center;
+
+  .logos {
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    height: 125px;
+    width: 100%;
+
+    img {
+      margin: 0 1em;
+    }
+  }
+}
+
+.name-description {
+  padding-bottom: 0;
+  text-align: center;
+}

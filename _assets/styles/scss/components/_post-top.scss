@@ -1,10 +1,9 @@
 /**
  * @file
  *
- * Styles for the blog posts.
+ * Above the fold styles for blog posts.
  */
 
-// General styles.
 .post {
   @include outer-container;
   @include media($large-screen-up) {
@@ -50,15 +49,6 @@
     }
   }
 
-  // Footnotes.
-  .footnotes {
-    border-top: solid 1px $dark-blue;
-    color: $dark-blue;
-    font-size: .9em;
-    margin-top: 3em;
-    padding-top: .5em;
-  }
-
   // Need to override inline style from Twitter iframe.
   // scss-lint:disable ImportantRule
   .twitter-tweet {
@@ -74,7 +64,6 @@
   ul ul {
     margin-bottom: 0;
   }
-
 }
 
 // Images within posts ---------------------------------------------------------
@@ -122,70 +111,4 @@
   font-size: .9em;
   margin: 0 auto 2em;
   text-align: center;
-}
-
-// Post meta information and other posts ---------------------------------------
-.post-bottom {
-
-  h4 {
-    margin: 0 0 1em;
-  }
-
-  .post-meta {
-    margin-bottom: 3em;
-    text-align: center;
-
-    @include media($medium-screen-up) {
-      @include span-columns(4);
-      text-align: left;
-    }
-
-    img {
-      border-radius: 3px;
-      width: 12em;
-    }
-
-    p {
-      font-size: 1em;
-      line-height: 1.2em;
-      margin-top: 1em;
-    }
-
-    .post-author-desc {
-      text-align: left;
-    }
-  }
-
-  .post-related {
-    margin-bottom: 3em;
-    text-align: center;
-
-    @include media($medium-screen-up) {
-      @include span-columns(8);
-
-      h4 {
-        margin-left: .583em;
-        text-align: left;
-      }
-    }
-
-    .cards {
-      font-size: .9em;
-      text-align: left;
-    }
-  }
-}
-
-// Previous and next links -----------------------------------------------------
-.previous-next-links {
-  .next {
-    @include span-columns(6);
-    float: left;
-  }
-
-  .previous {
-    @include span-columns(6);
-    float: right;
-    text-align: right;
-  }
 }

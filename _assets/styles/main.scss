@@ -19,15 +19,29 @@
 @import 'scss/components/cards';
 @import 'scss/components/comments';
 @import 'scss/components/contact-block';
+@import 'scss/lib/font-awesome/font-awesome';
 @import 'scss/components/footer';
 @import 'scss/components/header-links';
 @import 'scss/components/home';
+@import 'scss/components/home-cover-image';
 @import 'scss/components/navigation';
-@import 'scss/components/post';
-@import 'scss/components/services';
+@import 'scss/components/post-footnotes';
+@import 'scss/components/post-meta';
+@import 'scss/components/post-top';
+@import 'scss/components/previous-next-links';
+@import 'scss/components/services-top';
+@import 'scss/components/sub-services';
 @import 'scss/components/syntax-highlighting';
-@import 'scss/components/team';
+@import 'scss/components/team-bottom';
+@import 'scss/components/team-member-badges';
+@import 'scss/components/team-member-posts';
+@import 'scss/components/team-member-top';
 @import 'scss/components/work';
+@import 'scss/components/work-case-study';
+@import 'scss/components/work-case-study-cover-image';
+@import 'scss/components/work-portfolio';
+@import 'scss/components/work-table';
+
 
 /* Misc CSS files. */
 @import 'leaflet.css';

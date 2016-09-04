@@ -1,0 +1,15 @@
+/**
+ * @file
+ *
+ * Styles for tables on case study and portolio pages.
+ */
+
+.portfolio-details,
+.case-study__details {
+  overflow: hidden;
+
+  table {
+    margin-bottom: $base-margin;
+    margin-top: $base-margin;
+  }
+}
