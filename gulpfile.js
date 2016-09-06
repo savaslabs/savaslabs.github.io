@@ -120,6 +120,15 @@ gulp.task('build:jekyll', function() {
         .on('error', gutil.log);
 });
 
+// Runs jekyll build command using test config.
+gulp.task('build:jekyll:test', function() {
+    var shellCommand = 'bundle exec jekyll build --config _config.yml,_config.test.yml';
+
+    return gulp.src('')
+        .pipe(run(shellCommand))
+        .on('error', gutil.log);
+});
+
 // Runs jekyll build command using local config.
 gulp.task('build:jekyll:local', function() {
     var shellCommand = 'bundle exec jekyll build --config _config.yml,_config.test.yml,_config.dev.yml';
@@ -146,6 +155,14 @@ gulp.task('build', function(callback) {
     runSequence('clean',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
         'build:jekyll',
+        callback);
+});
+
+// Builds site anew using test config.
+gulp.task('build:test', function(callback) {
+    runSequence('clean',
+        ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        'build:jekyll:test',
         callback);
 });
 
