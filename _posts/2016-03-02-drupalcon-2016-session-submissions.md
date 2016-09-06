@@ -7,7 +7,7 @@ tags: drupal drupal8
 summary: Savas Labs is sending 3 people to Drupalcon and has proposed 4 sessions.
 ---
 
-<img src="/assets/img/blog/drupalcon-nola.png" alt="Drupalcon New Orleans logo">
+<img src="/assets/img/blog/drupalcon-nola.jpg" alt="Drupalcon New Orleans logo">
 
 ## 4 Savas Labs sessions proposed for Drupalcon NA 2016
 
