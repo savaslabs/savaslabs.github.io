@@ -12,7 +12,7 @@ TODO: add info about image optimization/processing.
    * `gem install bundler`
    * `gem install jekyll`
 2. Clone the repo (default branch is `source`; do not use master.)
-3. Run `bundle install`
+3. Run `bundle install` (or `bundle install --path vendor/bundle` if preferred)
 4. Make sure [node.js and npm](https://docs.npmjs.com/getting-started/installing-node) are installed.
 5. Run `npm install` to install node modules. This takes a few minutes.
 
