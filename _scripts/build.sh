@@ -3,6 +3,9 @@
 # Enable error reporting to the console.
 set -e
 
+# Build the site.
+gulp
+
 # Clone repo (defaulted to source branch) into a new directory using encrypted
 # GH_TOKEN for authentication.
 git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
