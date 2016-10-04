@@ -10,7 +10,7 @@ client_quote: |
 client_quote_author: |
   Blyth Morrell, Director of Strategic and Digital Communications at Duke University
 client_description: |
-  Duke Today is a hub for news produced around Duke University. Articles are produced by staff and faculty across the university and health system to comprise a one-stop-shop for news from around Duke. 
+  Duke Today is a hub for news produced around Duke University. Articles are produced by staff and faculty across the university and health system to comprise a one-stop-shop for news from around Duke.
 client_dates: 2016 - present
 project_description: |
   When Duke's flagship news site's upgrade from Drupal 6 to Drupal 7 needed a new development team, Savas Labs came in to complete their full content migration, provide a polished content editing interface, and deliver complex custom code, all on a Docker platform.
