@@ -9,10 +9,11 @@ drupal_planet_summary: |
   Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don't have an 8.x branch ready and therefore aren't usable in Drupal 8. Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.
 
   In this post we'll add the Leaflet library to a custom theme using the new *.libaries.yml file, write a little Javascript to create our map, and pull in map points via a REST export view.
-published: false
+disclaimer: |
+  This post was written in the early days of Drupal 8 and some information may be outdated. Some clearly-marked updates have been made throughout the post.
 ---
 
-Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don't have an 8.x branch ready and therefore aren't usable in Drupal 8. Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.
+Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don't have an 8.x branch ready and therefore aren't usable in Drupal 8. **Update: As of October 2016, the Leaflet module has a beta release for Drupal 8.** Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.
 
 Before we jump in, I have to give major kudos to my coworker [Tim Stallmann](/team/tim-stallmann/). This tutorial is based on his [excellent post](/2015/05/18/mapping-geojson.html) about mapping with Leaflet and GeoJSON, so check that out for a great primer if you're new to mapping.
 
@@ -26,7 +27,7 @@ First you'll need to install several contributed modules in your site's `modules
 
 - [Geofield](https://www.drupal.org/project/geofield), which creates a new field type called geofield that we'll use within a view
 - [GeoPHP](https://www.drupal.org/project/geophp), a dependency of Geofield
-- [Views GeoJSON](https://github.com/savaslabs/views_geojson), a style plugin for Views that outputs data in GeoJSON, which can be used by Leaflet to create map points. You'll note that I've linked to Savas Labs Views GeoJSON GitHub repo rather than the module's [Drupal.org page](https://www.drupal.org/project/views_geojson), because at the time of writing this our 8.x branch is not yet available there. You can follow the status of this issue [here.](https://www.drupal.org/node/2527636)
+- [Views GeoJSON](https://www.drupal.org/project/views_geojson), a style plugin for Views that outputs data in GeoJSON, which can be used by Leaflet to create map points. **Update: We're using the 8.x-1.x-dev version of Views GeoJSON.** You can follow the status of the module's port to Drupal 8 [here.](https://www.drupal.org/node/2527636)
 
 There are 3 core modules you'll need:
 
@@ -35,6 +36,8 @@ There are 3 core modules you'll need:
 - [Serialization](https://www.drupal.org/documentation/modules/serialization)
 
 Rest and serialization are dependencies of Views GeoJSON, so they will be installed when Views GeoJSON is installed.
+
+**Update: We previously recommended installing the GeoPHP module, which was a dependency of the Geofield module. This dependency has been removed and the GeoPHP library must be managed with Composer - read more about doing so [on drupal.org](https://www.drupal.org/node/2718229).**
 
 ## Add the Leaflet library
 
