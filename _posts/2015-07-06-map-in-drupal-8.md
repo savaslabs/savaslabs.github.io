@@ -26,8 +26,17 @@ Before we can get into mapping, we'll need a working Drupal 8 site. Savas Labs h
 First you'll need to install several contributed modules in your site's `modules/contrib` directory:
 
 - [Geofield](https://www.drupal.org/project/geofield), which creates a new field type called geofield that we'll use within a view
-- [GeoPHP](https://www.drupal.org/project/geophp), a dependency of Geofield
 - [Views GeoJSON](https://www.drupal.org/project/views_geojson), a style plugin for Views that outputs data in GeoJSON, which can be used by Leaflet to create map points. **Update: We're using the 8.x-1.x-dev version of Views GeoJSON.** You can follow the status of the module's port to Drupal 8 [here.](https://www.drupal.org/node/2527636)
+
+**Update: We previously recommended installing the GeoPHP module, which was a dependency of the Geofield module. This dependency has been removed and the GeoPHP library must be managed with Composer.**
+
+```bash
+# Install geophp library
+# Run this in the Drupal root
+composer require "phayes/geophp"
+```
+
+After running this command you should see the `phayes/geophp` directory in `vendor`. You can read more about installing dependencies via Composer [on drupal.org](https://www.drupal.org/node/2718229).
 
 There are 3 core modules you'll need:
 
@@ -36,8 +45,6 @@ There are 3 core modules you'll need:
 - [Serialization](https://www.drupal.org/documentation/modules/serialization)
 
 Rest and serialization are dependencies of Views GeoJSON, so they will be installed when Views GeoJSON is installed.
-
-**Update: We previously recommended installing the GeoPHP module, which was a dependency of the Geofield module. This dependency has been removed and the GeoPHP library must be managed with Composer - read more about doing so [on drupal.org](https://www.drupal.org/node/2718229).**
 
 ## Add the Leaflet library
 
@@ -109,6 +116,7 @@ Next we'll add a view that will output a list of our "place" nodes as GeoJSON th
 2. Give your new view a name - ours is called "Points."
 3. Under View Settings, show content of type "Place" (or whatever you named your new content type).
 4. Check the "Provide a REST export" box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose "/points". Click "Save and edit."
+5. Add the Location Coordinates field and choose GeoJSON as the output format. You can add other fields if you want to, but we'll definitely need this one.
 5. Under "Format," click on "Serializer." Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
   <img src="/assets/img/blog/map-in-drupal-8/rest-export-settings.png" alt="Screenshot the rest export settings for the Places view" class="blog-image-large" width="440px">
 6. Under "Pager," change the number of fields to display to 0 (which means unlimited in this case).
@@ -131,7 +139,7 @@ We also need to define a height and width of the map div. Ours is going to span 
 ```scss
 .map--front {
   // Set these to whatever you want.
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 ```
@@ -179,7 +187,7 @@ Go to your Drupal site and rebuild your cache and you should see your base map!
 Next, we're going to access the GeoJSON we're outputting via our view to add points to our map. First, let's add the path to our marker image.
 
 ```js
-L.Icon.Default.imagePath = '/themes/custom/mappy/images/leaflet';
+L.Icon.Default.imagePath = '/themes/custom/mappy/images/leaflet/';
 ```
 
 Now we'll use `.getJSON` to retrieve our data from the url "/points," then trigger the `addDataToMap` function to create a new layer containing our points via Leaflet's geoJson function.
