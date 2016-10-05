@@ -1,11 +1,16 @@
-language: ruby
+language: node_js
 script: "./_scripts/run-tests.sh"
 branches:
   except:
   - master
 cache: bundler
-rvm:
-- 2.1
+node_js:
+ - 4
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+  - rvm install 2.1
+  - gem install bundler
+  - bundle install
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -14,6 +19,5 @@ env:
 deploy:
   provider: script
   script: "./_scripts/build.sh"
-  skip_cleanup: true
   on:
     branch: source

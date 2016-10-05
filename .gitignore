@@ -1,5 +1,10 @@
+# For Jekyll.
 _site
 .sass-cache
 tmp
+node_modules
+assets
+
+# For Travis.
 .bundle
 vendor

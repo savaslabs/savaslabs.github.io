@@ -3,7 +3,7 @@ layout: portfolio
 title: MIT Press CogNet
 client_url: "http://cognet.mit.edu"
 client_since: 2014 - present
-image: "assets/img/work/mit-press-cognet.png"
+image: "/assets/img/work/mit-press-cognet.png"
 short_description: >
   MIT Press CogNet is the essential online resource for students and scholars in the brain and cognitive sciences. Since its launch in 2000, it quickly became the premiere source for those engaged in highly-cited, cutting-edge research.
 services:
