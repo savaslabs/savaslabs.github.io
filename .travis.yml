@@ -1,5 +1,4 @@
 language: node_js
-sudo: required
 script:
   - ./_scripts/run-tests.sh
   - ./_scripts/build.sh
@@ -10,10 +9,13 @@ node_js:
  - 4
 before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
-  - sudo rvm install 2.1
+  - rvm install 2.1
+  - rvm use 2.1
   - gem install bundler
   - gem install jekyll
+  - gem install sass
   - bundle install
+  - ls -la $BUNDLE_PATH
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
