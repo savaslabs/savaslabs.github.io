@@ -10,7 +10,9 @@ bundle check || bundle install
 npm install
 
 # Build the site.
-gulp
+ls -la
+gulp && echo "Done"
+ls -la
 
 # Stash built site.
 cp -a _site /tmp/_site

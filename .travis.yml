@@ -1,6 +1,6 @@
 language: node_js
 script:
-  - ./_scripts/run-tests.sh
+  # - ./_scripts/run-tests.sh
   - ./_scripts/build.sh
 branches:
   except:
