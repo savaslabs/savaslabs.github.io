@@ -12,7 +12,9 @@ before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
   - rvm install 2.1
   - gem install bundler
-  - bundle install --path vendor/bundle
+  - mkdir -p ~/.bundle
+  - export BUNDLE_PATH=~/.bundle
+  - bundle install
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true

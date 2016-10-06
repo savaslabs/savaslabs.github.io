@@ -4,7 +4,7 @@
 set -e
 
 # Install bundles if needed
-bundle_check || bundle install --path vendor/bundle
+bundle_check || bundle install
 
 # Build the site.
 gulp
