@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>Building a map in Drupal 8 | Savas Labs</title>
+  
+  <meta name="description" content="Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modu...">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Bitter|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="/assets/icons/octicons/octicons.css">
+  <link rel="canonical" href="/2015/07/06/map-in-drupal-8.html">
+  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="/feed.xml" />
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Durham, North Carolina",
+        "postalCode": "27701",
+        "streetAddress": "201 W Main St."
+      },
+      "description": "A full-service web agency leveraging the power of Drupal.
+",
+      "email": "info@savaslabs.com",
+      "name": "Savas Labs",
+      "telephone": "(919) 432-4660",
+      "url": "http://savaslabs.com",
+      "logo": "http://savaslabs.com/assets/img/logo.png"
+    }
+</script>
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Building a map in Drupal 8",
+    "about": "In this post I'll outline how to create a basic map in Drupal 8 using the Leaflet library within a custom theme and the Views GeoJSON module.",
+    "articleBody": "
+
+
+&lt;div class=&quot;post&quot;&gt;
+  &lt;header class=&quot;post-header&quot;&gt;
+    &lt;h1 class=&quot;post-title&quot;&gt;Building a map in Drupal 8&lt;/h1&gt;
+    &lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
+    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
+    &lt;p&gt;Jul 6, 2015 &lt;/p&gt;&lt;br&gt;
+    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal8/&quot;&gt;Drupal 8&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/cartography/&quot;&gt;Cartography&lt;/a&gt;, &lt;a href=&quot;/blog/tag/leaflet/&quot;&gt;Leaflet.js&lt;/a&gt;&lt;/p&gt;
+    
+    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
+    
+    
+  &lt;/header&gt;
+
+  
+    &lt;div class=&quot;disclaimer&quot;&gt;
+      &lt;h5&gt;Proceed with caution&lt;/h5&gt;
+      &lt;p&gt;This post was written in the early days of Drupal 8 and some information may be outdated. Some clearly-marked updates have been made throughout the post.&lt;/p&gt;
+
+    &lt;/div&gt;
+  
+
+  &lt;article class=&quot;post-content&quot;&gt;
+    &lt;p&gt;Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don’t have an 8.x branch ready and therefore aren’t usable in Drupal 8. &lt;strong&gt;Update: As of October 2016, the Leaflet module has a beta release for Drupal 8.&lt;/strong&gt; Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.&lt;/p&gt;
+
+&lt;p&gt;Before we jump in, I have to give major kudos to my coworker &lt;a href=&quot;/team/tim-stallmann/&quot;&gt;Tim Stallmann&lt;/a&gt;. This tutorial is based on his &lt;a href=&quot;/2015/05/18/mapping-geojson.html&quot;&gt;excellent post&lt;/a&gt; about mapping with Leaflet and GeoJSON, so check that out for a great primer if you’re new to mapping.&lt;/p&gt;
+
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;Before we can get into mapping, we’ll need a working Drupal 8 site. Savas Labs has previously gone over &lt;a href=&quot;/2015/04/23/drupal-8-docker-bowline-setup.html&quot;&gt;setting up a D8 site using Docker&lt;/a&gt; and &lt;a href=&quot;/2015/06/10/d8-theming-basics.html&quot;&gt;creating a custom theme&lt;/a&gt;. That said, you don’t need to use Docker or a custom theme based on Classy to create your map - any Drupal 8 instance with a custom theme will do. In this tutorial, I’ll be referencing our custom theme called Mappy that we created for the &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;Durham Civil Rights Mapping project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-contributed-modules&quot;&gt;Install contributed modules&lt;/h2&gt;
+
+&lt;p&gt;First you’ll need to install several contributed modules in your site’s &lt;code class=&quot;highlighter-rouge&quot;&gt;modules/contrib&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/geofield&quot;&gt;Geofield&lt;/a&gt;, which creates a new field type called geofield that we’ll use within a view&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/views_geojson&quot;&gt;Views GeoJSON&lt;/a&gt;, a style plugin for Views that outputs data in GeoJSON, which can be used by Leaflet to create map points. &lt;strong&gt;Update: We’re using the 8.x-1.x-dev version of Views GeoJSON.&lt;/strong&gt; You can follow the status of the module’s port to Drupal 8 &lt;a href=&quot;https://www.drupal.org/node/2527636&quot;&gt;here.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Update: We previously recommended installing the GeoPHP module, which was a dependency of the Geofield module. This dependency has been removed and the GeoPHP library must be managed with Composer.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Install geophp library&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Run this in the Drupal root&lt;/span&gt;
+composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;After running this command you should see the &lt;code class=&quot;highlighter-rouge&quot;&gt;phayes/geophp&lt;/code&gt; directory in &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor&lt;/code&gt;. You can read more about installing dependencies via Composer &lt;a href=&quot;https://www.drupal.org/node/2718229&quot;&gt;on drupal.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are 3 core modules you’ll need:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/node/1912118&quot;&gt;Views&lt;/a&gt; (now part of core!)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/restws&quot;&gt;RESTful Web Services&lt;/a&gt; (otherwise known as rest)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/documentation/modules/serialization&quot;&gt;Serialization&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rest and serialization are dependencies of Views GeoJSON, so they will be installed when Views GeoJSON is installed.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-the-leaflet-library&quot;&gt;Add the Leaflet library&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/leaflet-files.png&quot; alt=&quot;Screenshot of the Mappy theme showing Leaflet file locations&quot; class=&quot;blog-image wrap-left&quot; width=&quot;256&quot; height=&quot;504&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Head over to &lt;a href=&quot;http://leafletjs.com/download.html&quot;&gt;Leaflet’s website&lt;/a&gt; and download the latest stable release of the Leaflet library.&lt;/p&gt;
+
+&lt;p&gt;Move the Leaflet files into your custom theme directory (see mine for reference). You can put your files wherever you want to, you’ll just need to customize your filepaths in the libraries file in the next step.&lt;/p&gt;
+
+&lt;p&gt;You should also create a custom JavaScript file to hold your map code - ours is called &lt;code class=&quot;highlighter-rouge&quot;&gt;map.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next you’ll need to add the Leaflet library to your theme’s &lt;a href=&quot;https://www.drupal.org/developing/api/8/assets&quot;&gt;libraries file&lt;/a&gt;. In &lt;code class=&quot;highlighter-rouge&quot;&gt;mappy.libraries.yml&lt;/code&gt;, shown below, I’ve defined a new library called &lt;code class=&quot;highlighter-rouge&quot;&gt;leaflet&lt;/code&gt; and stated the paths to leaflet.css, leaflet.js and my custom JS file map.js.&lt;/p&gt;
+
+&lt;p&gt;Note that I’ve listed jQuery as a dependency - in Drupal 8 jQuery is no longer loaded on every page, so it needs to be explictly included here.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# From mappy.libraries.yml&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;leaflet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;css/leaflet.css&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;js/leaflet.js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;js/map.js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;dependencies&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;core/jquery&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once the library is defined, you need to include it on your page. This can be done globally by including the following in your [theme].info.yml file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# In mappy.info.yml&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;libraries&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mappy/leaflet&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You could also attach the library in a Twig template:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+{# In some .html.twig file #}
+&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;attach_library&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mappy/leaflet&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For more methods of attaching assets to pages and elements, check out Drupal.org’s &lt;a href=&quot;https://www.drupal.org/developing/api/8/assets&quot;&gt;writeup&lt;/a&gt; on the matter.&lt;/p&gt;
+
+&lt;h2 id=&quot;define-a-new-content-type&quot;&gt;Define a new content type&lt;/h2&gt;
+
+&lt;p&gt;Now we need a content type that includes a location field.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;admin/structure/types/add&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Give your new content type a name (we called ours “Place”), then click “Save and manage fields.”&lt;/li&gt;
+  &lt;li&gt;Add a new field with the field type Geofield. If Geofield isn’t an option, you should double-check that the Geofield module is installed. Add a label (we used “Location Coordinates”), then click “Save and continue.”
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geofield_creation.png&quot; alt=&quot;Screenshot of geofield creation&quot; class=&quot;blog-image-large&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;On the next page, leave the number of maxiumum values at 1 and click “Save field settings.”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s it! Obviously you can add more fields to your content type if you’d like, but all we need to generate a map marker is the geofield that we created.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-some-content&quot;&gt;Add some content&lt;/h2&gt;
+
+&lt;p&gt;Next, add a few points by navigating to “node/add/place” (or node/add/whatever your content type is called) and create a few nodes representing different locations. A quick Google search can provide you with the latitude and longitude of any location you’d like to include.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-a-new-view&quot;&gt;Add a new view&lt;/h2&gt;
+
+&lt;p&gt;Next we’ll add a view that will output a list of our “place” nodes as GeoJSON thanks to the Views GeoJSON plugin.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;admin/structure/views/add&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Give your new view a name - ours is called “Points.”&lt;/li&gt;
+  &lt;li&gt;Under View Settings, show content of type “Place” (or whatever you named your new content type).&lt;/li&gt;
+  &lt;li&gt;Check the “Provide a REST export” box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose “/points”. Click “Save and edit.”&lt;/li&gt;
+  &lt;li&gt;Add the Location Coordinates field and choose GeoJSON as the output format. You can add other fields if you want to, but we’ll definitely need this one.&lt;/li&gt;
+  &lt;li&gt;Under “Format,” click on “Serializer.” Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
+  &lt;img src=&quot;/assets/img/blog/map-in-drupal-8/rest-export-settings.png&quot; alt=&quot;Screenshot the rest export settings for the Places view&quot; class=&quot;blog-image-large&quot; width=&quot;440px&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Under “Pager,” change the number of fields to display to 0 (which means unlimited in this case).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For reference, here’s the settings for my Places view:
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/places-view.png&quot; alt=&quot;Screenshot of settings for the Places view&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ve just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we’ll use this page to populate our map with points.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-the-map-div-and-add-a-base-map&quot;&gt;Create the map div and add a base map&lt;/h2&gt;
+
+&lt;p&gt;The first thing we need to do is create a div with the id “map” in our template file. Our map is on the front page so I’ve inserted the following into &lt;code class=&quot;highlighter-rouge&quot;&gt;page--front.html.twig&lt;/code&gt;. Place this code in the template your map will reside in. Feel free to customize the class, but the ID should remain “map.”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;map&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;map--front&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We also need to define a height and width of the map div. Ours is going to span the entire page background so I’ve included the following in my Sass file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.map--front&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Set these to whatever you want.
+&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100vh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Previously we created a custom JavaScript file to hold our map code. Ours is called &lt;code class=&quot;highlighter-rouge&quot;&gt;map.js&lt;/code&gt; and is located in our custom theme’s &lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt; directory. In the code below, we’ve added the map itself and set a center point and a zoom level. We’ve centered over our hometown of Durham, NC and selected a zoom level of 12 since all of our map markers are viewable within this region. Check out &lt;a href=&quot;https://www.mapbox.com/guides/how-web-maps-work/#tiles-and-zoom-levels&quot;&gt;this explanation&lt;/a&gt; of zoom levels, or go for a little trial and error to get the right one for your map.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Create map and set center and zoom.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;map&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// The `L` stands for the Leaflet library.&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;scrollWheelZoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;35.9908385&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;78.9005222&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we need to add a base map. We’re using Positron by CartoDB. We’ll import the tiles and attribution, then add them as a layer to our map.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Add basemap tiles and attribution.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;baseLayer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tileLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;attribution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;amp;copy; &amp;lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&amp;gt;OpenStreetMap&amp;lt;/a&amp;gt; contributors, &amp;amp;copy; &amp;lt;a href=&quot;http://cartodb.com/attributions&quot;&amp;gt;CartoDB&amp;lt;/a&amp;gt;&#39;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Create map and set center and zoom.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;map&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;scrollWheelZoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;35.9908385&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;78.9005222&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Add basemap to map.&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;baseLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Go to your Drupal site and rebuild your cache and you should see your base map!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-without-markers.png&quot; alt=&quot;Screenshot the base map&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;add-our-points&quot;&gt;Add our points&lt;/h2&gt;
+
+&lt;p&gt;Next, we’re going to access the GeoJSON we’re outputting via our view to add points to our map. First, let’s add the path to our marker image.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Icon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imagePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/themes/custom/mappy/images/leaflet/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we’ll use &lt;code class=&quot;highlighter-rouge&quot;&gt;.getJSON&lt;/code&gt; to retrieve our data from the url “/points,” then trigger the &lt;code class=&quot;highlighter-rouge&quot;&gt;addDataToMap&lt;/code&gt; function to create a new layer containing our points via Leaflet’s geoJson function.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Add points.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addDataToMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geoJson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;/points&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;addDataToMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Refresh - we’ve got points!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-markers.png&quot; alt=&quot;Screenshot of the map with markers&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;add-popups&quot;&gt;Add popups&lt;/h2&gt;
+
+&lt;p&gt;The last thing to do is add popups to each point when they’re clicked. We’ll insert this code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;addDataToMap&lt;/code&gt; function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geojson-points.png&quot; alt=&quot;Screenshot of GeoJSON&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I want to display the node title in the popup, which I can see is at &lt;code class=&quot;highlighter-rouge&quot;&gt;feature.property.name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addDataToMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geoJson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;onEachFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;popupText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bindPopup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;popupText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now when I click on a point I get a nice little popup with the node title.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-popup.png&quot; alt=&quot;Screenshot of the map with a popup open&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out the entire &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js&quot;&gt;map.js file&lt;/a&gt; and be sure to visit Savas Labs GitHub repository for the &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;Durham Civil Rights Mapping project&lt;/a&gt; and the &lt;a href=&quot;http://www.durhamcivilrightsmap.org/&quot;&gt;completed site&lt;/a&gt; to see a Drupal 8 site in action!&lt;/p&gt;
+
+    &lt;hr&gt;
+
+    
+      &lt;div class=&quot;post-comments&quot;&gt;
+  
+    &lt;div class=&quot;expander&quot;&gt;
+      &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
+      &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
+        &lt;!-- If there are existing comments, output them here. --&gt;
+        &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
+        &lt;!-- New comment form --&gt;
+        &lt;form id=&quot;comment-form&quot;&gt;
+          &lt;h4&gt;Leave a comment&lt;/h4&gt;
+          &lt;div class=&quot;comment-name&quot;&gt;
+            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;comment-email&quot;&gt;
+            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
+            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;p&gt;Comment&lt;/p&gt;
+          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
+          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
+
+          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2015/07/06/map-in-drupal-8.html&#39; /&gt;
+          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
+
+          &lt;div class=&#39;are-you-human&#39;&gt;
+            &lt;div class=&#39;are-you-human-owl&#39;&gt;
+              &lt;img src=&quot;/assets/img/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&#39;are-you-human-field&#39;&gt;
+              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
+              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
+              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+  &lt;hr&gt;
+&lt;/div&gt;
+
+    
+    &lt;div class=&quot;post-bottom&quot;&gt;
+  &lt;div class=&quot;post-meta&quot;&gt;
+    &lt;h4&gt;About the author&lt;/h4&gt;
+    
+      &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
+        &lt;img src=&quot;/assets/img/team/anne-tomasevich.jpg&quot; alt=&quot;Anne Tomasevich&quot;&gt;
+      &lt;/a&gt;
+      &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
+    
+  &lt;/div&gt;
+    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
+  &lt;div class=&quot;post-related flex-container&quot;&gt;
+    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
+    &lt;div class=&quot;cards&quot;&gt;
+      
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Supercharged SEO with Drupal 8
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/08/29/internship-thoughts.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  A Savas Labs Internship
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/06/22/user-testing.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Usability Testing - Our Process and Favorite Practices
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Jun 22, 2016&lt;/p&gt;
+                &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+    &lt;div class=&quot;previous-next-links&quot;&gt;
+  &lt;div class=&quot;next&quot;&gt;
+    
+      &lt;a href=&quot;/2015/07/09/personal-git-workflow.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; Personal git workflow... for collaboration&lt;/a&gt;
+    
+  &lt;/div&gt;
+  &lt;div class=&quot;previous&quot;&gt;
+    
+      &lt;a href=&quot;/2015/06/23/implementing-ctools-multi-step-form-block.html&quot;&gt; Implementing a CTools multi-step form in a block &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+  &lt;/article&gt;
+
+&lt;/div&gt;
+",
+      "author": {
+          "@context": "http://schema.org",
+          "@type": "Person",
+          "name": "Anne Tomasevich",
+          "affiliation": "Savas Labs",
+          "worksFor": "Savas Labs"
+      },
+    "keywords": "drupal, drupal8, drupal-planet, cartography, leaflet",
+    "text": "
+
+
+&lt;div class=&quot;post&quot;&gt;
+  &lt;header class=&quot;post-header&quot;&gt;
+    &lt;h1 class=&quot;post-title&quot;&gt;Building a map in Drupal 8&lt;/h1&gt;
+    &lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
+    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
+    &lt;p&gt;Jul 6, 2015 &lt;/p&gt;&lt;br&gt;
+    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal8/&quot;&gt;Drupal 8&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/cartography/&quot;&gt;Cartography&lt;/a&gt;, &lt;a href=&quot;/blog/tag/leaflet/&quot;&gt;Leaflet.js&lt;/a&gt;&lt;/p&gt;
+    
+    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
+    
+    
+  &lt;/header&gt;
+
+  
+    &lt;div class=&quot;disclaimer&quot;&gt;
+      &lt;h5&gt;Proceed with caution&lt;/h5&gt;
+      &lt;p&gt;This post was written in the early days of Drupal 8 and some information may be outdated. Some clearly-marked updates have been made throughout the post.&lt;/p&gt;
+
+    &lt;/div&gt;
+  
+
+  &lt;article class=&quot;post-content&quot;&gt;
+    &lt;p&gt;Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don’t have an 8.x branch ready and therefore aren’t usable in Drupal 8. &lt;strong&gt;Update: As of October 2016, the Leaflet module has a beta release for Drupal 8.&lt;/strong&gt; Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.&lt;/p&gt;
+
+&lt;p&gt;Before we jump in, I have to give major kudos to my coworker &lt;a href=&quot;/team/tim-stallmann/&quot;&gt;Tim Stallmann&lt;/a&gt;. This tutorial is based on his &lt;a href=&quot;/2015/05/18/mapping-geojson.html&quot;&gt;excellent post&lt;/a&gt; about mapping with Leaflet and GeoJSON, so check that out for a great primer if you’re new to mapping.&lt;/p&gt;
+
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;Before we can get into mapping, we’ll need a working Drupal 8 site. Savas Labs has previously gone over &lt;a href=&quot;/2015/04/23/drupal-8-docker-bowline-setup.html&quot;&gt;setting up a D8 site using Docker&lt;/a&gt; and &lt;a href=&quot;/2015/06/10/d8-theming-basics.html&quot;&gt;creating a custom theme&lt;/a&gt;. That said, you don’t need to use Docker or a custom theme based on Classy to create your map - any Drupal 8 instance with a custom theme will do. In this tutorial, I’ll be referencing our custom theme called Mappy that we created for the &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;Durham Civil Rights Mapping project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-contributed-modules&quot;&gt;Install contributed modules&lt;/h2&gt;
+
+&lt;p&gt;First you’ll need to install several contributed modules in your site’s &lt;code class=&quot;highlighter-rouge&quot;&gt;modules/contrib&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/geofield&quot;&gt;Geofield&lt;/a&gt;, which creates a new field type called geofield that we’ll use within a view&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/views_geojson&quot;&gt;Views GeoJSON&lt;/a&gt;, a style plugin for Views that outputs data in GeoJSON, which can be used by Leaflet to create map points. &lt;strong&gt;Update: We’re using the 8.x-1.x-dev version of Views GeoJSON.&lt;/strong&gt; You can follow the status of the module’s port to Drupal 8 &lt;a href=&quot;https://www.drupal.org/node/2527636&quot;&gt;here.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Update: We previously recommended installing the GeoPHP module, which was a dependency of the Geofield module. This dependency has been removed and the GeoPHP library must be managed with Composer.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Install geophp library&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Run this in the Drupal root&lt;/span&gt;
+composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;After running this command you should see the &lt;code class=&quot;highlighter-rouge&quot;&gt;phayes/geophp&lt;/code&gt; directory in &lt;code class=&quot;highlighter-rouge&quot;&gt;vendor&lt;/code&gt;. You can read more about installing dependencies via Composer &lt;a href=&quot;https://www.drupal.org/node/2718229&quot;&gt;on drupal.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are 3 core modules you’ll need:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/node/1912118&quot;&gt;Views&lt;/a&gt; (now part of core!)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/restws&quot;&gt;RESTful Web Services&lt;/a&gt; (otherwise known as rest)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/documentation/modules/serialization&quot;&gt;Serialization&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rest and serialization are dependencies of Views GeoJSON, so they will be installed when Views GeoJSON is installed.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-the-leaflet-library&quot;&gt;Add the Leaflet library&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/leaflet-files.png&quot; alt=&quot;Screenshot of the Mappy theme showing Leaflet file locations&quot; class=&quot;blog-image wrap-left&quot; width=&quot;256&quot; height=&quot;504&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Head over to &lt;a href=&quot;http://leafletjs.com/download.html&quot;&gt;Leaflet’s website&lt;/a&gt; and download the latest stable release of the Leaflet library.&lt;/p&gt;
+
+&lt;p&gt;Move the Leaflet files into your custom theme directory (see mine for reference). You can put your files wherever you want to, you’ll just need to customize your filepaths in the libraries file in the next step.&lt;/p&gt;
+
+&lt;p&gt;You should also create a custom JavaScript file to hold your map code - ours is called &lt;code class=&quot;highlighter-rouge&quot;&gt;map.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next you’ll need to add the Leaflet library to your theme’s &lt;a href=&quot;https://www.drupal.org/developing/api/8/assets&quot;&gt;libraries file&lt;/a&gt;. In &lt;code class=&quot;highlighter-rouge&quot;&gt;mappy.libraries.yml&lt;/code&gt;, shown below, I’ve defined a new library called &lt;code class=&quot;highlighter-rouge&quot;&gt;leaflet&lt;/code&gt; and stated the paths to leaflet.css, leaflet.js and my custom JS file map.js.&lt;/p&gt;
+
+&lt;p&gt;Note that I’ve listed jQuery as a dependency - in Drupal 8 jQuery is no longer loaded on every page, so it needs to be explictly included here.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# From mappy.libraries.yml&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;leaflet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;css/leaflet.css&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;js/leaflet.js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;js/map.js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;dependencies&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;core/jquery&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once the library is defined, you need to include it on your page. This can be done globally by including the following in your [theme].info.yml file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# In mappy.info.yml&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;libraries&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mappy/leaflet&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You could also attach the library in a Twig template:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+{# In some .html.twig file #}
+&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;attach_library&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mappy/leaflet&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For more methods of attaching assets to pages and elements, check out Drupal.org’s &lt;a href=&quot;https://www.drupal.org/developing/api/8/assets&quot;&gt;writeup&lt;/a&gt; on the matter.&lt;/p&gt;
+
+&lt;h2 id=&quot;define-a-new-content-type&quot;&gt;Define a new content type&lt;/h2&gt;
+
+&lt;p&gt;Now we need a content type that includes a location field.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;admin/structure/types/add&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Give your new content type a name (we called ours “Place”), then click “Save and manage fields.”&lt;/li&gt;
+  &lt;li&gt;Add a new field with the field type Geofield. If Geofield isn’t an option, you should double-check that the Geofield module is installed. Add a label (we used “Location Coordinates”), then click “Save and continue.”
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geofield_creation.png&quot; alt=&quot;Screenshot of geofield creation&quot; class=&quot;blog-image-large&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;On the next page, leave the number of maxiumum values at 1 and click “Save field settings.”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s it! Obviously you can add more fields to your content type if you’d like, but all we need to generate a map marker is the geofield that we created.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-some-content&quot;&gt;Add some content&lt;/h2&gt;
+
+&lt;p&gt;Next, add a few points by navigating to “node/add/place” (or node/add/whatever your content type is called) and create a few nodes representing different locations. A quick Google search can provide you with the latitude and longitude of any location you’d like to include.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-a-new-view&quot;&gt;Add a new view&lt;/h2&gt;
+
+&lt;p&gt;Next we’ll add a view that will output a list of our “place” nodes as GeoJSON thanks to the Views GeoJSON plugin.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;admin/structure/views/add&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Give your new view a name - ours is called “Points.”&lt;/li&gt;
+  &lt;li&gt;Under View Settings, show content of type “Place” (or whatever you named your new content type).&lt;/li&gt;
+  &lt;li&gt;Check the “Provide a REST export” box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose “/points”. Click “Save and edit.”&lt;/li&gt;
+  &lt;li&gt;Add the Location Coordinates field and choose GeoJSON as the output format. You can add other fields if you want to, but we’ll definitely need this one.&lt;/li&gt;
+  &lt;li&gt;Under “Format,” click on “Serializer.” Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
+  &lt;img src=&quot;/assets/img/blog/map-in-drupal-8/rest-export-settings.png&quot; alt=&quot;Screenshot the rest export settings for the Places view&quot; class=&quot;blog-image-large&quot; width=&quot;440px&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Under “Pager,” change the number of fields to display to 0 (which means unlimited in this case).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For reference, here’s the settings for my Places view:
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/places-view.png&quot; alt=&quot;Screenshot of settings for the Places view&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ve just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we’ll use this page to populate our map with points.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-the-map-div-and-add-a-base-map&quot;&gt;Create the map div and add a base map&lt;/h2&gt;
+
+&lt;p&gt;The first thing we need to do is create a div with the id “map” in our template file. Our map is on the front page so I’ve inserted the following into &lt;code class=&quot;highlighter-rouge&quot;&gt;page--front.html.twig&lt;/code&gt;. Place this code in the template your map will reside in. Feel free to customize the class, but the ID should remain “map.”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;map&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;map--front&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We also need to define a height and width of the map div. Ours is going to span the entire page background so I’ve included the following in my Sass file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.map--front&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Set these to whatever you want.
+&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100vh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Previously we created a custom JavaScript file to hold our map code. Ours is called &lt;code class=&quot;highlighter-rouge&quot;&gt;map.js&lt;/code&gt; and is located in our custom theme’s &lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt; directory. In the code below, we’ve added the map itself and set a center point and a zoom level. We’ve centered over our hometown of Durham, NC and selected a zoom level of 12 since all of our map markers are viewable within this region. Check out &lt;a href=&quot;https://www.mapbox.com/guides/how-web-maps-work/#tiles-and-zoom-levels&quot;&gt;this explanation&lt;/a&gt; of zoom levels, or go for a little trial and error to get the right one for your map.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Create map and set center and zoom.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;map&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// The `L` stands for the Leaflet library.&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;scrollWheelZoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;35.9908385&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;78.9005222&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we need to add a base map. We’re using Positron by CartoDB. We’ll import the tiles and attribution, then add them as a layer to our map.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Add basemap tiles and attribution.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;baseLayer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tileLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;attribution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;amp;copy; &amp;lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&amp;gt;OpenStreetMap&amp;lt;/a&amp;gt; contributors, &amp;amp;copy; &amp;lt;a href=&quot;http://cartodb.com/attributions&quot;&amp;gt;CartoDB&amp;lt;/a&amp;gt;&#39;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Create map and set center and zoom.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;map&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;scrollWheelZoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;35.9908385&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;78.9005222&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;zoom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// Add basemap to map.&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;baseLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Go to your Drupal site and rebuild your cache and you should see your base map!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-without-markers.png&quot; alt=&quot;Screenshot the base map&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;add-our-points&quot;&gt;Add our points&lt;/h2&gt;
+
+&lt;p&gt;Next, we’re going to access the GeoJSON we’re outputting via our view to add points to our map. First, let’s add the path to our marker image.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Icon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imagePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/themes/custom/mappy/images/leaflet/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now we’ll use &lt;code class=&quot;highlighter-rouge&quot;&gt;.getJSON&lt;/code&gt; to retrieve our data from the url “/points,” then trigger the &lt;code class=&quot;highlighter-rouge&quot;&gt;addDataToMap&lt;/code&gt; function to create a new layer containing our points via Leaflet’s geoJson function.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Add points.&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addDataToMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geoJson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;/points&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;addDataToMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Refresh - we’ve got points!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-markers.png&quot; alt=&quot;Screenshot of the map with markers&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;add-popups&quot;&gt;Add popups&lt;/h2&gt;
+
+&lt;p&gt;The last thing to do is add popups to each point when they’re clicked. We’ll insert this code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;addDataToMap&lt;/code&gt; function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geojson-points.png&quot; alt=&quot;Screenshot of GeoJSON&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I want to display the node title in the popup, which I can see is at &lt;code class=&quot;highlighter-rouge&quot;&gt;feature.property.name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addDataToMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;geoJson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;onEachFeature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;popupText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bindPopup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;popupText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;dataLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now when I click on a point I get a nice little popup with the node title.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-popup.png&quot; alt=&quot;Screenshot of the map with a popup open&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out the entire &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js&quot;&gt;map.js file&lt;/a&gt; and be sure to visit Savas Labs GitHub repository for the &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;Durham Civil Rights Mapping project&lt;/a&gt; and the &lt;a href=&quot;http://www.durhamcivilrightsmap.org/&quot;&gt;completed site&lt;/a&gt; to see a Drupal 8 site in action!&lt;/p&gt;
+
+    &lt;hr&gt;
+
+    
+      &lt;div class=&quot;post-comments&quot;&gt;
+  
+    &lt;div class=&quot;expander&quot;&gt;
+      &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
+      &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
+        &lt;!-- If there are existing comments, output them here. --&gt;
+        &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
+        &lt;!-- New comment form --&gt;
+        &lt;form id=&quot;comment-form&quot;&gt;
+          &lt;h4&gt;Leave a comment&lt;/h4&gt;
+          &lt;div class=&quot;comment-name&quot;&gt;
+            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;comment-email&quot;&gt;
+            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
+            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;p&gt;Comment&lt;/p&gt;
+          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
+          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
+
+          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2015/07/06/map-in-drupal-8.html&#39; /&gt;
+          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
+
+          &lt;div class=&#39;are-you-human&#39;&gt;
+            &lt;div class=&#39;are-you-human-owl&#39;&gt;
+              &lt;img src=&quot;/assets/img/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&#39;are-you-human-field&#39;&gt;
+              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
+              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
+              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+  &lt;hr&gt;
+&lt;/div&gt;
+
+    
+    &lt;div class=&quot;post-bottom&quot;&gt;
+  &lt;div class=&quot;post-meta&quot;&gt;
+    &lt;h4&gt;About the author&lt;/h4&gt;
+    
+      &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
+        &lt;img src=&quot;/assets/img/team/anne-tomasevich.jpg&quot; alt=&quot;Anne Tomasevich&quot;&gt;
+      &lt;/a&gt;
+      &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
+    
+  &lt;/div&gt;
+    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
+  &lt;div class=&quot;post-related flex-container&quot;&gt;
+    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
+    &lt;div class=&quot;cards&quot;&gt;
+      
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Supercharged SEO with Drupal 8
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/08/29/internship-thoughts.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  A Savas Labs Internship
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/06/22/user-testing.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Usability Testing - Our Process and Favorite Practices
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Jun 22, 2016&lt;/p&gt;
+                &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+    &lt;div class=&quot;previous-next-links&quot;&gt;
+  &lt;div class=&quot;next&quot;&gt;
+    
+      &lt;a href=&quot;/2015/07/09/personal-git-workflow.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; Personal git workflow... for collaboration&lt;/a&gt;
+    
+  &lt;/div&gt;
+  &lt;div class=&quot;previous&quot;&gt;
+    
+      &lt;a href=&quot;/2015/06/23/implementing-ctools-multi-step-form-block.html&quot;&gt; Implementing a CTools multi-step form in a block &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+  &lt;/article&gt;
+
+&lt;/div&gt;
+",
+    "sourceOrganization": "Savas Labs",
+    "inLanguage": "en-US",
+    "dateCreated": "2015-07-06 00:00:00 +0000",
+    "datePublished": "2015-07-06 00:00:00 +0000",
+    "url": "/2015/07/06/map-in-drupal-8.html"
+  }
+</script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61514316-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  
+
+  
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+
+    <!-- Savas Labs logo. -->
+    <a href="/" class="logo">
+        <img src="/assets/img/logo.png" alt="Savas Labs logo">
+    </a>
+
+    <!-- Mobile menu button. -->
+    <a href="/" id="js-mobile-menu" class="navigation-menu-button">MENU</a>
+
+    <!-- Main menu. -->
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+
+        <!-- Loop through nav items in config.yml. -->
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  more">
+            <a href="javascript:void(0)">Who we are</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+
+              <ul class="submenu">
+                
+
+                  <!-- Assign active nav item class. -->
+                  
+                  
+
+                  <li class="nav-link ">
+                    <a href="/team">Team</a>
+                  </li>
+                
+
+                  <!-- Assign active nav item class. -->
+                  
+                  
+
+                  <li class="nav-link ">
+                    <a href="/mission-and-values">Mission & values</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/services">Services</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/work">Our work</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/blog">Blog</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/contact">Contact</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        
+
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Building a map in Drupal 8</h1>
+    <p>By <a href="/team/anne-tomasevich">Anne Tomasevich</a></p>
+    <p class="centerdot">&centerdot; </p>
+    <p>Jul 6, 2015 </p><br>
+    <i class="fa fa-tags"></i><p><a href="/blog/tag/drupal/">Drupal</a>, <a href="/blog/tag/drupal8/">Drupal 8</a>, <a href="/blog/tag/drupal-planet/">Drupal Planet</a>, <a href="/blog/tag/cartography/">Cartography</a>, <a href="/blog/tag/leaflet/">Leaflet.js</a></p>
+    
+    <div><p><span id="comment-count"></span></p></div>
+    
+    
+  </header>
+
+  
+    <div class="disclaimer">
+      <h5>Proceed with caution</h5>
+      <p>This post was written in the early days of Drupal 8 and some information may be outdated. Some clearly-marked updates have been made throughout the post.</p>
+
+    </div>
+  
+
+  <article class="post-content">
+    <p>Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don’t have an 8.x branch ready and therefore aren’t usable in Drupal 8. <strong>Update: As of October 2016, the Leaflet module has a beta release for Drupal 8.</strong> Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.</p>
+
+<p>Before we jump in, I have to give major kudos to my coworker <a href="/team/tim-stallmann/">Tim Stallmann</a>. This tutorial is based on his <a href="/2015/05/18/mapping-geojson.html">excellent post</a> about mapping with Leaflet and GeoJSON, so check that out for a great primer if you’re new to mapping.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Before we can get into mapping, we’ll need a working Drupal 8 site. Savas Labs has previously gone over <a href="/2015/04/23/drupal-8-docker-bowline-setup.html">setting up a D8 site using Docker</a> and <a href="/2015/06/10/d8-theming-basics.html">creating a custom theme</a>. That said, you don’t need to use Docker or a custom theme based on Classy to create your map - any Drupal 8 instance with a custom theme will do. In this tutorial, I’ll be referencing our custom theme called Mappy that we created for the <a href="https://github.com/savaslabs/durham-civil-rights-map">Durham Civil Rights Mapping project</a>.</p>
+
+<h2 id="install-contributed-modules">Install contributed modules</h2>
+
+<p>First you’ll need to install several contributed modules in your site’s <code class="highlighter-rouge">modules/contrib</code> directory:</p>
+
+<ul>
+  <li><a href="https://www.drupal.org/project/geofield">Geofield</a>, which creates a new field type called geofield that we’ll use within a view</li>
+  <li><a href="https://www.drupal.org/project/views_geojson">Views GeoJSON</a>, a style plugin for Views that outputs data in GeoJSON, which can be used by Leaflet to create map points. <strong>Update: We’re using the 8.x-1.x-dev version of Views GeoJSON.</strong> You can follow the status of the module’s port to Drupal 8 <a href="https://www.drupal.org/node/2527636">here.</a></li>
+</ul>
+
+<p><strong>Update: We previously recommended installing the GeoPHP module, which was a dependency of the Geofield module. This dependency has been removed and the GeoPHP library must be managed with Composer.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Install geophp library</span>
+<span class="c"># Run this in the Drupal root</span>
+composer require <span class="s2">"phayes/geophp"</span>
+</code></pre>
+</div>
+
+<p>After running this command you should see the <code class="highlighter-rouge">phayes/geophp</code> directory in <code class="highlighter-rouge">vendor</code>. You can read more about installing dependencies via Composer <a href="https://www.drupal.org/node/2718229">on drupal.org</a>.</p>
+
+<p>There are 3 core modules you’ll need:</p>
+
+<ul>
+  <li><a href="https://www.drupal.org/node/1912118">Views</a> (now part of core!)</li>
+  <li><a href="https://www.drupal.org/project/restws">RESTful Web Services</a> (otherwise known as rest)</li>
+  <li><a href="https://www.drupal.org/documentation/modules/serialization">Serialization</a></li>
+</ul>
+
+<p>Rest and serialization are dependencies of Views GeoJSON, so they will be installed when Views GeoJSON is installed.</p>
+
+<h2 id="add-the-leaflet-library">Add the Leaflet library</h2>
+
+<p><img src="/assets/img/blog/map-in-drupal-8/leaflet-files.png" alt="Screenshot of the Mappy theme showing Leaflet file locations" class="blog-image wrap-left" width="256" height="504" /></p>
+
+<p>Head over to <a href="http://leafletjs.com/download.html">Leaflet’s website</a> and download the latest stable release of the Leaflet library.</p>
+
+<p>Move the Leaflet files into your custom theme directory (see mine for reference). You can put your files wherever you want to, you’ll just need to customize your filepaths in the libraries file in the next step.</p>
+
+<p>You should also create a custom JavaScript file to hold your map code - ours is called <code class="highlighter-rouge">map.js</code>.</p>
+
+<p>Next you’ll need to add the Leaflet library to your theme’s <a href="https://www.drupal.org/developing/api/8/assets">libraries file</a>. In <code class="highlighter-rouge">mappy.libraries.yml</code>, shown below, I’ve defined a new library called <code class="highlighter-rouge">leaflet</code> and stated the paths to leaflet.css, leaflet.js and my custom JS file map.js.</p>
+
+<p>Note that I’ve listed jQuery as a dependency - in Drupal 8 jQuery is no longer loaded on every page, so it needs to be explictly included here.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1"># From mappy.libraries.yml</span>
+<span class="s">leaflet</span><span class="pi">:</span>
+  <span class="s">css</span><span class="pi">:</span>
+    <span class="s">theme</span><span class="pi">:</span>
+      <span class="s">css/leaflet.css</span><span class="pi">:</span> <span class="pi">{}</span>
+  <span class="s">js</span><span class="pi">:</span>
+    <span class="s">js/leaflet.js</span><span class="pi">:</span> <span class="pi">{}</span>
+    <span class="s">js/map.js</span><span class="pi">:</span> <span class="pi">{}</span>
+  <span class="s">dependencies</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">core/jquery</span>
+</code></pre>
+</div>
+
+<p>Once the library is defined, you need to include it on your page. This can be done globally by including the following in your [theme].info.yml file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1"># In mappy.info.yml</span>
+<span class="s">libraries</span><span class="pi">:</span>
+ <span class="pi">-</span> <span class="s">mappy/leaflet</span>
+</code></pre>
+</div>
+
+<p>You could also attach the library in a Twig template:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+{# In some .html.twig file #}
+<span class="p">{{</span><span class="w"> </span><span class="nv">attach_library</span><span class="err">(</span><span class="s1">'mappy/leaflet'</span><span class="err">)</span><span class="w"> </span><span class="p">}}</span>
+
+</code></pre>
+</div>
+
+<p>For more methods of attaching assets to pages and elements, check out Drupal.org’s <a href="https://www.drupal.org/developing/api/8/assets">writeup</a> on the matter.</p>
+
+<h2 id="define-a-new-content-type">Define a new content type</h2>
+
+<p>Now we need a content type that includes a location field.</p>
+
+<ol>
+  <li>Navigate to <code class="highlighter-rouge">admin/structure/types/add</code></li>
+  <li>Give your new content type a name (we called ours “Place”), then click “Save and manage fields.”</li>
+  <li>Add a new field with the field type Geofield. If Geofield isn’t an option, you should double-check that the Geofield module is installed. Add a label (we used “Location Coordinates”), then click “Save and continue.”
+<img src="/assets/img/blog/map-in-drupal-8/geofield_creation.png" alt="Screenshot of geofield creation" class="blog-image-large" /></li>
+  <li>On the next page, leave the number of maxiumum values at 1 and click “Save field settings.”</li>
+</ol>
+
+<p>That’s it! Obviously you can add more fields to your content type if you’d like, but all we need to generate a map marker is the geofield that we created.</p>
+
+<h2 id="add-some-content">Add some content</h2>
+
+<p>Next, add a few points by navigating to “node/add/place” (or node/add/whatever your content type is called) and create a few nodes representing different locations. A quick Google search can provide you with the latitude and longitude of any location you’d like to include.</p>
+
+<h2 id="add-a-new-view">Add a new view</h2>
+
+<p>Next we’ll add a view that will output a list of our “place” nodes as GeoJSON thanks to the Views GeoJSON plugin.</p>
+
+<ol>
+  <li>Navigate to <code class="highlighter-rouge">admin/structure/views/add</code></li>
+  <li>Give your new view a name - ours is called “Points.”</li>
+  <li>Under View Settings, show content of type “Place” (or whatever you named your new content type).</li>
+  <li>Check the “Provide a REST export” box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose “/points”. Click “Save and edit.”</li>
+  <li>Add the Location Coordinates field and choose GeoJSON as the output format. You can add other fields if you want to, but we’ll definitely need this one.</li>
+  <li>Under “Format,” click on “Serializer.” Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
+  <img src="/assets/img/blog/map-in-drupal-8/rest-export-settings.png" alt="Screenshot the rest export settings for the Places view" class="blog-image-large" width="440px" /></li>
+  <li>Under “Pager,” change the number of fields to display to 0 (which means unlimited in this case).</li>
+</ol>
+
+<p>For reference, here’s the settings for my Places view:
+<img src="/assets/img/blog/map-in-drupal-8/places-view.png" alt="Screenshot of settings for the Places view" class="blog-image-xl" /></p>
+
+<p>We’ve just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we’ll use this page to populate our map with points.</p>
+
+<h2 id="create-the-map-div-and-add-a-base-map">Create the map div and add a base map</h2>
+
+<p>The first thing we need to do is create a div with the id “map” in our template file. Our map is on the front page so I’ve inserted the following into <code class="highlighter-rouge">page--front.html.twig</code>. Place this code in the template your map will reside in. Feel free to customize the class, but the ID should remain “map.”</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span> <span class="na">class=</span><span class="s">"map--front"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<p>We also need to define a height and width of the map div. Ours is going to span the entire page background so I’ve included the following in my Sass file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.map--front</span> <span class="p">{</span>
+  <span class="c1">// Set these to whatever you want.
+</span>  <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Previously we created a custom JavaScript file to hold our map code. Ours is called <code class="highlighter-rouge">map.js</code> and is located in our custom theme’s <code class="highlighter-rouge">js</code> directory. In the code below, we’ve added the map itself and set a center point and a zoom level. We’ve centered over our hometown of Durham, NC and selected a zoom level of 12 since all of our map markers are viewable within this region. Check out <a href="https://www.mapbox.com/guides/how-web-maps-work/#tiles-and-zoom-levels">this explanation</a> of zoom levels, or go for a little trial and error to get the right one for your map.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Create map and set center and zoom.</span>
+  <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">'map'</span><span class="p">,</span> <span class="p">{</span> <span class="c1">// The `L` stands for the Leaflet library.</span>
+    <span class="na">scrollWheelZoom</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">center</span><span class="p">:</span> <span class="p">[</span><span class="mf">35.9908385</span><span class="p">,</span> <span class="o">-</span><span class="mf">78.9005222</span><span class="p">],</span>
+    <span class="na">zoom</span><span class="p">:</span> <span class="mi">12</span>
+  <span class="p">});</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Now we need to add a base map. We’re using Positron by CartoDB. We’ll import the tiles and attribution, then add them as a layer to our map.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Add basemap tiles and attribution.</span>
+  <span class="kd">var</span> <span class="nx">baseLayer</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">attribution</span><span class="p">:</span> <span class="s1">'&amp;copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, &amp;copy; &lt;a href="http://cartodb.com/attributions"&gt;CartoDB&lt;/a&gt;'</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Create map and set center and zoom.</span>
+  <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">'map'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">scrollWheelZoom</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">center</span><span class="p">:</span> <span class="p">[</span><span class="mf">35.9908385</span><span class="p">,</span> <span class="o">-</span><span class="mf">78.9005222</span><span class="p">],</span>
+    <span class="na">zoom</span><span class="p">:</span> <span class="mi">12</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Add basemap to map.</span>
+  <span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">baseLayer</span><span class="p">);</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Go to your Drupal site and rebuild your cache and you should see your base map!</p>
+
+<p><img src="/assets/img/blog/map-in-drupal-8/map-without-markers.png" alt="Screenshot the base map" class="blog-image-xl" /></p>
+
+<h2 id="add-our-points">Add our points</h2>
+
+<p>Next, we’re going to access the GeoJSON we’re outputting via our view to add points to our map. First, let’s add the path to our marker image.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">L</span><span class="p">.</span><span class="nx">Icon</span><span class="p">.</span><span class="nx">Default</span><span class="p">.</span><span class="nx">imagePath</span> <span class="o">=</span> <span class="s1">'/themes/custom/mappy/images/leaflet/'</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>Now we’ll use <code class="highlighter-rouge">.getJSON</code> to retrieve our data from the url “/points,” then trigger the <code class="highlighter-rouge">addDataToMap</code> function to create a new layer containing our points via Leaflet’s geoJson function.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Add points.</span>
+  <span class="kd">function</span> <span class="nx">addDataToMap</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">dataLayer</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">geoJson</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="nx">dataLayer</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'/points'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">addDataToMap</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">map</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Refresh - we’ve got points!</p>
+
+<p><img src="/assets/img/blog/map-in-drupal-8/map-with-markers.png" alt="Screenshot of the map with markers" class="blog-image-xl" /></p>
+
+<h2 id="add-popups">Add popups</h2>
+
+<p>The last thing to do is add popups to each point when they’re clicked. We’ll insert this code in the <code class="highlighter-rouge">addDataToMap</code> function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.</p>
+
+<p><img src="/assets/img/blog/map-in-drupal-8/geojson-points.png" alt="Screenshot of GeoJSON" class="blog-image-xl" /></p>
+
+<p>I want to display the node title in the popup, which I can see is at <code class="highlighter-rouge">feature.property.name</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">addDataToMap</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">dataLayer</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">geoJson</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">onEachFeature</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">feature</span><span class="p">,</span> <span class="nx">layer</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">popupText</span> <span class="o">=</span> <span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+                <span class="nx">layer</span><span class="p">.</span><span class="nx">bindPopup</span><span class="p">(</span><span class="nx">popupText</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="nx">dataLayer</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Now when I click on a point I get a nice little popup with the node title.</p>
+
+<p><img src="/assets/img/blog/map-in-drupal-8/map-with-popup.png" alt="Screenshot of the map with a popup open" class="blog-image-xl" /></p>
+
+<p>Check out the entire <a href="https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js">map.js file</a> and be sure to visit Savas Labs GitHub repository for the <a href="https://github.com/savaslabs/durham-civil-rights-map">Durham Civil Rights Mapping project</a> and the <a href="http://www.durhamcivilrightsmap.org/">completed site</a> to see a Drupal 8 site in action!</p>
+
+    <hr>
+
+    
+      <div class="post-comments">
+  
+    <div class="expander">
+      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Comments!</a>
+      <div id="js-expander-content" class="expander-content">
+        <!-- If there are existing comments, output them here. -->
+        <div id="post-comments" class="post-comments"></div>
+        <!-- New comment form -->
+        <form id="comment-form">
+          <h4>Leave a comment</h4>
+          <div class="comment-name">
+            <p>Name</p> <input type='text' name='name' id='name' required /><br>
+          </div>
+
+          <div class="comment-email">
+            <p>Email</p> <input type='email' name='email' id='email' required />
+            <p class="email-disclaimer">Savas Labs will never sell your email address or spam you.</p><br>
+          </div>
+
+          <p>Comment</p>
+          <textarea name='comment' id='comment' required></textarea>
+          <p class="hint below-textarea">Plain text format only please.</p>
+
+          <input type='hidden' name='slug' id='slug' value='/2015/07/06/map-in-drupal-8.html' />
+          <input type='text' name='url' id='url' />
+
+          <div class='are-you-human'>
+            <div class='are-you-human-owl'>
+              <img src="/assets/img/owl.png" alt="Savas Labs logo">
+            </div>
+            <div class='are-you-human-field'>
+              <p>What type of animal is the Savas Labs logo?</p>
+              <input type='text' name='nocaptcha' id='nocaptcha' class='nocaptcha'>
+              <p class="hint">Hint: 3 letters long, starts with an 'o' and ends with an 'l'.</p>
+            </div>
+          </div>
+
+          <input type='submit' value='Submit' id='submit' class="submit-comment"/>
+        </form>
+      </div>
+    </div>
+  
+  <hr>
+</div>
+
+    
+    <div class="post-bottom">
+  <div class="post-meta">
+    <h4>About the author</h4>
+    
+      <a href="/team/anne-tomasevich">
+        <img src="/assets/img/team/anne-tomasevich.jpg" alt="Anne Tomasevich">
+      </a>
+      <p class="post-author-desc">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
+    
+  </div>
+    <!-- Once we have more content, change this to posts related by tag -->
+  <div class="post-related flex-container">
+    <h4>Recent posts by Savas Labs</h4>
+    <div class="cards">
+      
+      
+        
+        
+          <div class="card">
+            <a href="/2016/09/23/supercharged-seo-with-drupal-8.html">
+              <div class="card-header">
+                  Supercharged SEO with Drupal 8
+              </div>
+              <div class="card-copy">
+                <p>Sep 23, 2016</p>
+                <p><p>SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/08/29/internship-thoughts.html">
+              <div class="card-header">
+                  A Savas Labs Internship
+              </div>
+              <div class="card-copy">
+                <p>Aug 29, 2016</p>
+                <p><p>What it’s like to learn at Savas Labs.</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/06/22/user-testing.html">
+              <div class="card-header">
+                  Usability Testing - Our Process and Favorite Practices
+              </div>
+              <div class="card-copy">
+                <p>Jun 22, 2016</p>
+                <p><p>Our approach to designing, conducting, and learning from user testing and other analyses.</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+</div>
+
+    <div class="previous-next-links">
+  <div class="next">
+    
+      <a href="/2015/07/09/personal-git-workflow.html"><i class="fa fa-long-arrow-left "></i> Personal git workflow... for collaboration</a>
+    
+  </div>
+  <div class="previous">
+    
+      <a href="/2015/06/23/implementing-ctools-multi-step-form-block.html"> Implementing a CTools multi-step form in a block <i class="fa fa-long-arrow-right"></i></a>
+    
+  </div>
+</div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <div class="contact-block">
+  <div class="contact-block__items">
+    <h3>Interested in working with us?</h3>
+    <a href="/contact">Get in touch!</a>
+  </div>
+</div>
+    <footer class="footer" role="contentinfo">
+  <div class="footer-links">
+    <ul>
+      <li><h3>Location</h3></li>
+      <li>Savas Labs<br />
+          PMB 114<br />
+          201 W Main Street, Suite 100<br />
+          Durham, NC 27701<br /></li>
+    </ul>
+    <ul>
+      <li><h3>Around the Web</h3></li>
+      <ul>
+        <li><a href="https://github.com/savaslabs"><span class="mega-octicon octicon-mark-github"></span></a></li>
+        <li><a href="https://www.drupal.org/node/2466865"><i class="fa fa-drupal fa-lg fa-2x"></i></a></li>
+        <li><a href="https://twitter.com/savas_labs"><i class="fa fa-twitter fa-lg fa-2x"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/savas-labs"><i class="fa fa-linkedin fa-lg fa-2x"></i></a></li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h3>Contact</h3></li>
+      <li><a href="mailto:info@savaslabs.com">info@savaslabs.com</a></li>
+      <li>(919) 432-4660</li>
+    </ul>
+  </div>
+
+</footer>
+
+<div class="footer-copyright">
+  <p>Copyright &copy; Savas Labs 2016</p>
+</div>
+
+
+  </body>
+
+</html>

@@ -6,8 +6,8 @@
 </description>
     <link>/</link>
     <atom:link href="/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Oct 2016 18:31:16 +0000</pubDate>
-    <lastBuildDate>Tue, 04 Oct 2016 18:31:16 +0000</lastBuildDate>
+    <pubDate>Thu, 06 Oct 2016 22:08:51 +0000</pubDate>
+    <lastBuildDate>Thu, 06 Oct 2016 22:08:51 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
     
@@ -375,6 +375,37 @@ We discuss how to use a drush hook on the `drush sqlsan` command to ensure prope
       
     
     
+    
+    
+      <item>
+        <title>Building a map in Drupal 8</title>
+        <description>
+          &lt;p&gt;
+            
+            Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don&#39;t have an 8.x branch ready and therefore aren&#39;t usable in Drupal 8. Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.
+
+In this post we&#39;ll add the Leaflet library to a custom theme using the new *.libaries.yml file, write a little Javascript to create our map, and pull in map points via a REST export view.
+
+                &lt;a href=&quot;/2015/07/06/map-in-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
+          &lt;/p&gt;
+        </description>
+        <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
+        <link>/2015/07/06/map-in-drupal-8.html</link>
+        <guid isPermaLink="true">/2015/07/06/map-in-drupal-8.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal8</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>cartography</category>
+        
+        <category>leaflet</category>
+        
+        
+      </item>
+      
     
     
       <item>
