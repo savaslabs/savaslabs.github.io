@@ -7,17 +7,12 @@ branches:
   except:
   - master
 node_js:
- - 4
+ - '6.1'
 before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
-  - curl https://www.teleconsole.com/get.sh | sh
-  - teleconsole
-  - sleep 60
   - rvm install 2.1
   - rvm use 2.1
   - gem install bundler
-  - gem install jekyll
-  - gem install sass
   - bundle install
 env:
   global:
