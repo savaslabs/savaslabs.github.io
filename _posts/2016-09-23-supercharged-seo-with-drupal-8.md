@@ -5,7 +5,7 @@ date: 2016-09-23
 author: Oksana Cyrwus
 tags: drupal drupal8 drupal-planet marketing
 summary: SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.
-featured_image: "/assets/img/blog/supercharged-seo-with-drupal-8.jpg"
+featured_image: "/blog/supercharged-seo-with-drupal-8.jpg"
 featured_image_alt: "Supercharged SEO with Drupal 8"
 drupal_planet_summary:
   SEO trends 2017 and an in depth look at Drupal 8's new features that make Drupal the best option for your long-term marketing campaign.
