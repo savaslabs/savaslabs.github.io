@@ -40,3 +40,4 @@ git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
 ls -la
 # TODO: Uncomment when ready.
 # git push --quiet origin master > /dev/null 2>&1
+teleconsole
