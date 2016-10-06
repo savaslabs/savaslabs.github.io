@@ -3,8 +3,8 @@ name: Oksana Cyrwus
 layout: team
 job_title: Drupal Developer
 job_description: Oksana is a Drupal Developer at Savas Labs. Her technical inputs include back-end, front-end development and site architecture.
-photo: "assets/img/team/oksana-cyrwus.jpg"
-card: "assets/img/team/cards/oksana-card.jpg"
+photo: "/team/oksana-cyrwus.jpg"
+card: "/team/cards/oksana-card.jpg"
 drupal: oksana-c
 github: oksana-c
 linkedin: oksanacyrwus

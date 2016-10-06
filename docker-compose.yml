@@ -1,0 +1,18 @@
+version: '2'
+services:
+  app:
+    image: savaslabs/savaslabs.com
+    build: .
+    entrypoint: ./start.sh
+    command: "serve"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app/
+      - gem-data:/gems
+      - npm-data:/npm
+volumes:
+  gem-data:
+    driver: local
+  npm-data:
+    driver: local

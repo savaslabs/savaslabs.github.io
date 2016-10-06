@@ -52,7 +52,7 @@
             {{ page.project_objective | markdownify }}
           </div>
           <div class="case-study__square-image case-study__square-image--objective">
-            <img src="{{ page.project_objective_image }}" alt="{{ page.project_objective_image_alt }}">
+            {% picture case_study {{ page.project_objective_image }} alt="{{ page.project_objective_image_alt }}" %}
           </div>
         </div>
 
@@ -62,8 +62,7 @@
             {{ page.project_process | markdownify }}
           </div>
           <div class="case-study__square-image case-study__square-image--process">
-            <img src="{{ page.project_process_image }}" alt="{{ page.project_process_image_alt }}">
-          </div>
+            {% picture case_study {{ page.project_process_image }} alt="{{ page.project_process_image_alt }}" %}          </div>
         </div>
 
         <div class="case-study__content case-study__content--results">
@@ -72,8 +71,7 @@
               {{ page.project_results | markdownify }}
           </div>
           <div class="case-study__square-image case-study__square-image--results">
-            <img src="{{ page.project_results_image }}" alt="{{ page.project_results_image_alt }}">
-          </div>
+            {% picture case_study {{ page.project_results_image }} alt="{{ page.project_results_image_alt }}" %}          </div>
         </div>
         </div>
 

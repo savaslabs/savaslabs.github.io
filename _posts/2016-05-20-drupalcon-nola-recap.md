@@ -7,9 +7,9 @@ tags: drupal drupal8 drupalcon event
 summary: The ins and outs of the talks, sessions, parties, and more from Drupalcon New Orleans 2016.
 ---
 
-<img src="/assets/img/blog/drupalcon-nola.png" alt="Drupalcon New Orleans logo">
+<img src="/assets/img/blog/drupalcon-nola.jpg" alt="Drupalcon New Orleans logo">
 
-A week full of summits, sessions, a presentation, some parties and a fair amount of tweeting <img src="/assets/icons/twitter-bird.svg" height="24" alt="Twitter bird"> was one for the books at Drupalcon NOLA 2016. Come along for a Twitter-assisted chronological journey for Savas Labs in New Orleans.
+A week full of summits, sessions, a presentation, some parties and a fair amount of tweeting <img src="/assets/img/icons-and-logos/twitter-bird.svg" height="24" alt="Twitter bird"> was one for the books at Drupalcon NOLA 2016. Come along for a Twitter-assisted chronological journey for Savas Labs in New Orleans.
 
 ### Saturday / Sunday: Arrive, play soccer, get acquainted
 

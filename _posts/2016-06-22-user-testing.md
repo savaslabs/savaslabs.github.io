@@ -5,7 +5,7 @@ date: 2016-06-22
 author: Anne Tomasevich
 tags: user-experience best-practices
 summary: Our approach to designing, conducting, and learning from user testing and other analyses.
-featured_image: "/assets/img/blog/usability-testing.png"
+featured_image: "/blog/usability-testing.jpg"
 featured_image_alt: "Two people comparing notes while using computers"
 ---
 
