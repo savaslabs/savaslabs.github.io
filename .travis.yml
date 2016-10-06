@@ -1,16 +1,19 @@
 language: node_js
-script: "./_scripts/run-tests.sh"
+sudo: required
+script:
+  - ./_scripts/run-tests.sh
 branches:
   except:
   - master
-cache: bundler
 node_js:
- - 4
+ - '6.1'
 before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
   - rvm install 2.1
+  - rvm use 2.1
+  - . $HOME/.nvm/nvm.sh && nvm install 6.1 && nvm use 6.1
   - gem install bundler
-  - bundle install
+  - bundle check || bundle install
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -19,5 +22,6 @@ env:
 deploy:
   provider: script
   script: "./_scripts/build.sh"
+  skip_cleanup: false
   on:
     branch: source

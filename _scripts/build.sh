@@ -3,17 +3,19 @@
 # Enable error reporting to the console.
 set -e
 
+# Install bundles if needed
+bundle check || bundle install
+
+# NPM install if needed.
+. $HOME/.nvm/nvm.sh && nvm install 6.1 && nvm use 6.1
+npm install
+
 # Build the site.
 gulp
 
-# Clone repo (defaulted to source branch) into a new directory using encrypted
-# GH_TOKEN for authentication.
+# Checkout master and remove everything
 git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
-
-# Check out master branch on new repo and remove everything.
 cd ../savaslabs.github.io.master
-git config user.email ${GH_EMAIL}
-git config user.name "savas-bot"
 git checkout master
 rm -rf *
 
@@ -23,8 +25,11 @@ cp -R ../savaslabs.github.io/_site/* .
 
 # Make sure we have the updated .travis.yml file so tests won't run on master.
 cp ../savaslabs.github.io/.travis.yml .
+git config user.email ${GH_EMAIL}
+git config user.name "savas-bot"
 
 # Commit and push generated content to master branch.
+git status
 git add -A .
 git status
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
