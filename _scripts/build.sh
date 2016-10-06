@@ -3,7 +3,6 @@
 # Enable error reporting to the console.
 set -e
 
-curl https://www.teleconsole.com/get.sh | sh
 teleconsole
 sleep 600
 
@@ -14,12 +13,13 @@ bundle check || bundle install
 npm install
 
 # Build the site.
-ls -la
-gulp && echo "Done"
-ls -la
+gulp
+
+ls -la _site
+ls -la /tmp
 
 # Stash built site.
-cp -a _site /tmp/_site
+cp -a _site /tmp/
 cp .travis.yml /tmp/.travis.yml
 
 # Checkout master and remove everything
