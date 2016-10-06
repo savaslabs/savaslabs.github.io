@@ -8,7 +8,7 @@ summary: Learn how to use Docker, Docker Compose, and Bowline to set up a standa
 drupal_planet_summary: |
   In this post I explain how my team used Docker, Docker Compose, and Bowline to spin up consistent local dev environments on OS X as part of a Drupal 8 contrib module sprint.
 disclaimer: |
-  This post contains outdated information as Boot2Docker is now deprecated in favor of Docker Machine.
+  This post contains outdated information as Boot2Docker is now deprecated in favor of [Docker for Mac](https://docs.docker.com/docker-for-mac/).
 ---
 In preparation for a [code sprint our team is organizing to port Views GeoJSON to Drupal 8](/2015/04/16/codesprint-port-views-geojson-drupal-8.html), we decided it would be a great opportunity to standardize our Drupal 8 local development environments. To ease this process, we ended up using Docker, Docker Compose, and Bowline.
 
@@ -21,7 +21,7 @@ There are a lot of different ways to setup a local development environment, and 
 First off what are Docker, Docker Compose, and Bowline?
 
 * Docker is ["an open-source project that automates the deployment of applications inside software containers."](http://en.wikipedia.org/wiki/Docker_%28software%29) Essentially, Docker runs a processes from within a container that includes all dependencies the process needs to run. This allows containers to run almost anywhere. For example, you may have a container for running MySQL.
-* Docker Compose ["allows you to define an application's components -- their containers, configuration, links and volumes -- in a single file. Then a single command will set everything up and start your application running."](https://docs.docker.com/userguide/) For example, you may use Docker Compose to bundle a web server container and a MySQL container.
+* Docker Compose ["allows you to define an application's components -- their containers, configuration, links and volumes -- in a single file. Then a single command will set everything up and start your application running."](https://docs.docker.com/engine/userguide/intro/) For example, you may use Docker Compose to bundle a web server container and a MySQL container.
 * Bowline is a ["Drupal focused docker container helper that ties everything together."](https://github.com/davenuman/bowline) Bowline can be used to easily create a standard, local Drupal development environment for you by building the requisite Docker containers and configuring your settings. By default, [Bowline creates two containers: mysql 5.5 and a web container that provides apache, php 5.4, and related software.](http://www.civicactions.com/blog/2015/jan/27/dockerizing-drupal-project-development-and-testing)
 
 By using these tools, you can ensure that each member of your team has the same local setup. That way, if code works in one environment, then it works in all of them.
@@ -32,11 +32,11 @@ Now I’ll go through the steps I followed to set everything up on my Mac. For t
 
 ### Install Docker on your machine
 
-Unfortunately, [you can’t run Docker natively in OS X](https://docs.docker.com/installation/mac/), as explained in the Docker documentation:
+Unfortunately, you can’t run Docker natively in OS X, as explained in the Docker documentation:
 
 > Instead, you must install the Boot2Docker application. The application includes a VirtualBox Virtual Machine (VM), Docker itself, and the Boot2Docker management tool. The Boot2Docker management tool is a lightweight Linux virtual machine made specifically to run the Docker daemon on Mac OS X.
 
-To install Boot2Docker, I followed the [Docker Mac installation instructions.](https://docs.docker.com/installation/mac/). First, I installed Boot2Docker from [boot2docker/osx-installer](https://github.com/boot2docker/osx-installer/releases/latest) as explained in that tutorial. The docker and boot2docker binaries are installed in `/usr/local/bin` which you can access from your terminal. I then followed the instructions for starting Boot2Docker from the command line, running the following commands:
+To install Boot2Docker, I followed the Docker Mac installation instructions. First, I installed Boot2Docker from [boot2docker/osx-installer](https://github.com/boot2docker/osx-installer/releases/latest) as explained in that tutorial. The docker and boot2docker binaries are installed in `/usr/local/bin` which you can access from your terminal. I then followed the instructions for starting Boot2Docker from the command line, running the following commands:
 
 Setup Boot2Docker, this only needs to be run once during initial setup:
 
