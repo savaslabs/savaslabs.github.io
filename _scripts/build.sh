@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # Enable error reporting to the console.
-# set -e
-
-curl https://www.teleconsole.com/get.sh | sh
-# sleep 60
+set -e
 
 # Install bundles if needed
 bundle check || bundle install
@@ -17,7 +14,7 @@ npm install
 gulp
 
 # Checkout master and remove everything
-git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master && echo $? && echo "Done cloning repo"
+git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
 cd ../savaslabs.github.io.master
 git checkout master
 rm -rf *
@@ -36,7 +33,4 @@ git status
 git add -A .
 git status
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-ls -la
-# TODO: Uncomment when ready.
-# git push --quiet origin master > /dev/null 2>&1
-teleconsole
+git push --quiet origin master > /dev/null 2>&1
