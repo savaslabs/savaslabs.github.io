@@ -10,7 +10,7 @@ excerpt: Savas Labs is a full-service digital agency leveraging the power of Dru
   {% for service in services limit:4 %}
   <div class="services__service" id="{{ service.slug }}">
     <h2>{{ service.title }}</h2>
-    <img src="/assets/icons/{{ service.icon }}.png" class="services__service__icon" alt="{{ service.title }} icon" width="90px" height="90px">
+    <img src="/assets/img/icons-and-logos/{{ service.icon }}.svg" class="services__service__icon" alt="{{ service.title }} icon" width="90px" height="90px">
     {{ service.summary | markdownify }}
   </div>
   {% endfor %}

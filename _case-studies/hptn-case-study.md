@@ -31,12 +31,12 @@ technologies_used: |
 client_logo: "/assets/img/work/hptn-case-study/hptn-logo.png"
 client_logo_width: "229"
 client_logo_height: "91"
-client_hero_image: "/assets/img/work/hptn-case-study/hptn-hero.png"
-project_objective_image: "/assets/img/work/hptn-case-study/hptn-objective.png"
+client_hero_image: "/assets/img/work/hptn-case-study/hptn-hero.jpg"
+project_objective_image: "/work/hptn-case-study/hptn-objective.jpg"
 project_objective_image_alt: "HPTN website redesign mockups."
-project_process_image: "/assets/img/work/hptn-case-study/hptn-process.png"
+project_process_image: "/work/hptn-case-study/hptn-process.jpg"
 project_process_image_alt: "HPTN studies page on desktop and mobile."
-project_results_image: "/assets/img/work/hptn-case-study/hptn-results.png"
+project_results_image: "/work/hptn-case-study/hptn-results.jpg"
 project_results_image_alt: "The HPTN news page on multiple screen sizes."
 
 ---

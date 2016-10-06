@@ -3,7 +3,7 @@ layout: portfolio
 title: Transaction Advisors
 client_url: "https://www.transactionadvisors.com"
 client_since: 2014 - present
-image: "assets/img/work/transaction-advisors.png"
+image: "/assets/img/work/transaction-advisors.png"
 short_description: >
   Transaction Advisors is a prestigious technical journal that publishes select white papers, technical articles, and research studies on the critical issues impacting corporate transaction planning, structuring, and execution.
 services:
