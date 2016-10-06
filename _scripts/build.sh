@@ -18,7 +18,7 @@ npm install
 gulp
 
 # Checkout master and remove everything
-git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
+git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master && echo "Done cloning repo"
 cd ../savaslabs.github.io.master
 git checkout master
 rm -rf *
@@ -38,6 +38,5 @@ git add -A .
 git status
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
 ls -la
-git log --patch
 # TODO: Uncomment when ready.
 # git push --quiet origin master > /dev/null 2>&1
