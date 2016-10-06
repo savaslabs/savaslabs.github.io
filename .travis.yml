@@ -1,19 +1,18 @@
 language: node_js
+sudo: required
 script:
   - ./_scripts/run-tests.sh
   - ./_scripts/build.sh
 branches:
   except:
   - master
-cache: bundler
 node_js:
  - 4
 before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
-  - rvm install 2.1
+  - sudo rvm install 2.1
   - gem install bundler
-  - mkdir -p ~/.bundle
-  - export BUNDLE_PATH=~/.bundle
+  - gem install jekyll
   - bundle install
 env:
   global:
