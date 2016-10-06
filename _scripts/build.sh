@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Enable error reporting to the console.
-set -e
+# set -e
 
 # curl https://www.teleconsole.com/get.sh | sh
 # teleconsole
