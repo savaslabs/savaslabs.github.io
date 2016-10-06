@@ -3,6 +3,9 @@
 # Enable error reporting to the console.
 set -e
 
+# Install bundles if needed
+bundle_check || bundle install --path vendor/bundle
+
 # Build the site.
 gulp
 
@@ -28,4 +31,7 @@ cp ../savaslabs.github.io/.travis.yml .
 git add -A .
 git status
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-git push --quiet origin master > /dev/null 2>&1
+ls -la
+git log --patch
+# TODO: Uncomment when ready.
+# git push --quiet origin master > /dev/null 2>&1
