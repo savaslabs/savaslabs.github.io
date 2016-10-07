@@ -2,15 +2,41 @@
 
 This is the website for [Savas Labs](http://savaslabs.com).
 
-The site is built using Jekyll. To run locally:
+The site is built using Jekyll and Gulp.
 
-1. Make sure [Bundler](http://bundler.io) and [Jekyll](http://jekyllrb.com/docs/installation/) are installed
+TODO: add info about image optimization/processing.
+
+### Installation
+
+1. Make sure [Bundler](http://bundler.io) and [Jekyll](http://jekyllrb.com/docs/installation/) are installed.
    * `gem install bundler`
    * `gem install jekyll`
-2. Clone the repo
-3. `bundle install`
-4. `bundle exec jekyll serve --config _config.yml,_config.test.yml,_config.dev.yml`
- - This convenient script also captures the config files specified above: `./_scripts/jekyll.sh`
+2. Clone the repo (default branch is `source`; do not use master.)
+3. Run `bundle install` (or `bundle install --path vendor/bundle` if preferred)
+4. Make sure [node.js and npm](https://docs.npmjs.com/getting-started/installing-node) are installed.
+5. Run `npm install` to install node modules. This takes a few minutes.
+6. Make sure [ImageMagick](http://www.imagemagick.org/script/index.php) is installed.
+   * `brew install imagemagick` should work on OSX
+
+### Local development
+
+To serve the site, run `gulp serve`. This uses the test and dev config files for
+local development.
+
+Thanks to `gulp.watch` and Browsersync, any changes you make will trigger Gulp
+to either regenerate the Jekyll site and automatically refresh your browser or,
+if they're changes to CSS or images, inject the updated file(s) so a refresh
+isn't needed. It's pretty cool!
+
+You can toggle some options in the gulpfile:
+
+- In the `serve` task, change `ghostMode` to `true` if you want to mirror clicks,
+reloads, etc. across browsers. Useful for testing, hard on performance.
+- In the `serve` task, change `open` to `false` if you don't want Browsersync to
+automatically open a browser window for you when you serve the site.
+- TODO: allow devs to use the `--drafts` tag to show works in progress. For now
+you can update the build command in the `build:jekyll:local` task to include the
+`--drafts` tag.
 
 ### Git workflow
 
@@ -37,6 +63,10 @@ top-level headings should be H2's (##), then H3's (###), etc.
 You can include a featured image in the front matter using the `featured_image`
 and `featured_image_alt` keys. This will work for our site and for Drupal Planet.
 Please try to do this for every post!
+
+Your image should be 1474px wide. Blog images should be placed in
+`_/assets/img/blog`, but you should only include `/blog/[filename].jpg` in the
+front matter of your post.
 
 ### Syntax Highlighting
 

@@ -11,32 +11,12 @@ url: "http://savaslabs.com"
 comment_server_url: http://comments.savaslabs.com
 comment_server_enabled: 1
 
-# Nav links
-navigation:
-  - title: Who we are
-    url: javascript:void(0)
-    sub-menu:
-      - title: Team
-        url: /team
-      - title: Mission & values
-        url: /mission-and-values
-  - title: Services
-    url: /services
-  - title: Our work
-    url: /work
-  - title: Blog
-    url: /blog
-  - title: Contact
-    url: /contact
-
 # Professional and social media links
 twitter_username: savas_labs
 github_username: savaslabs
 
 # Languages and syntax highlighting
 markdown: kramdown
-sass:
-  sass_dir: assets/styles
 kramdown:
   input: GFM
   hard_wrap: false
@@ -49,8 +29,14 @@ include: ["_pages"]
 paginate: 6
 paginate_path: "/blog/:num/"
 
-# For Travis CI
-exclude: [vendor]
+# For Travis CI and gulp
+exclude: ["vendor",
+          "_assets",
+          "Gemfile",
+          "Gemfile.lock",
+          "gulpfile.js",
+          "node_modules",
+          "package.json"]
 
 # Collections
 collections:
@@ -72,3 +58,64 @@ gems:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate
+  - jekyll-picture-tag
+
+# Picture element presets
+picture:
+  source: "assets/img"
+  output: "assets/processed-img"
+  markup: "picture"
+  presets:
+    team_square:
+      attr:
+        class: "image--team-square"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "334"
+      source_default:
+        width: "254"
+    team_individual:
+      attr:
+        class: "image--team-individual"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "350"
+      source_default:
+        width: "288"
+    team_post_meta:
+      attr:
+        class: "image--team-post-meta"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_default:
+        width: "288"
+    case_study:
+      attr:
+        class: "image--case-study"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_860:
+        media: "(min-width: 860px)"
+        width: "560"
+      source_640:
+        media: "(min-width: 640px)"
+        width: "430"
+      source_400:
+        media: "(min-width: 400px)"
+        width: "560"
+      source_default:
+        width: "400"
+    post_featured_image:
+      attr:
+        class: "image--post-featured-image"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_1120:
+        media: "(min-width: 400px)"
+        width: "737"
+      source_default:
+        width: "400"

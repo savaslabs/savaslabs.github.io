@@ -5,8 +5,8 @@ job_title: Senior Drupal Developer
 job_description:
   Yonas develops back-end Drupal solutions and helps
   mentor new Drupal recruits.
-photo: "assets/img/team/yonas-yanfa.jpg"
-card: "assets/img/team/cards/yonas-card.jpg"
+photo: "/team/yonas-yanfa.jpg"
+card: "/team/cards/yonas-card.jpg"
 drupal: fizk
 github: yonas
 twitter: yonasyanfa

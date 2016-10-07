@@ -16,7 +16,7 @@ layout: default
     {% endif %}
     {% if page.featured_image %}
       <div class="post-featured-image">
-        <img class="post-hero-image" src="{{ page.featured_image }}" alt="{{ page.featured_image_alt }}">
+        {% picture post_featured_image {{ page.featured_image }} alt="{{ page.featured_image_alt }}" %}
       </div>
     {% endif %}
   </header>
@@ -35,7 +35,9 @@ layout: default
     {% if site.comment_server_enabled == 1 %}
       {% include comment-form.html %}
     {% endif %}
-    {% include post-meta.html %}
+    {% if page %}
+      {% include post-meta.html %}
+    {% endif %}
     {% include previous-next-links.html %}
 
   </article>
