@@ -4,10 +4,10 @@
     <title>Savas Labs</title>
     <description>A full-service web agency leveraging the power of Drupal.
 </description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Oct 2016 22:08:51 +0000</pubDate>
-    <lastBuildDate>Thu, 06 Oct 2016 22:08:51 +0000</lastBuildDate>
+    <link>http://savaslabs.com/</link>
+    <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 07 Oct 2016 17:09:17 +0000</pubDate>
+    <lastBuildDate>Fri, 07 Oct 2016 17:09:17 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -157,8 +157,8 @@
 &lt;p&gt;&lt;strong&gt;Drupal 8 satisfies current SEO trends enabling marketers do their job effectively and efficiently! Even with minimal configuration, Drupal 8 lays a solid base for future marketing performance.&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
-        <link>/2016/09/23/supercharged-seo-with-drupal-8.html</link>
-        <guid isPermaLink="true">/2016/09/23/supercharged-seo-with-drupal-8.html</guid>
+        <link>http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</guid>
         
         <category>drupal</category>
         
@@ -191,7 +191,7 @@
 
 &lt;p&gt;Everyone at Savas Labs contributed to my learning! I was encouraged by the entire team, and no one was above taking the time to show me how to &lt;a href=&quot;https://www.drupal.org/node/1791676&quot;&gt;install Composer&lt;/a&gt; or configure &lt;a href=&quot;https://www.drupalvm.com/&quot;&gt;DrupalVM&lt;/a&gt;. I felt comfortable asking questions and was encouraged to do so from the beginning.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/internship-encouragement.png&quot; class=&quot;blog-image-large&quot; alt=&quot;Slack Encouragement&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/internship-encouragement.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;Slack Encouragement&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Supportive Savasians!&lt;/span&gt;&lt;/p&gt;
 
@@ -244,8 +244,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 29 Aug 2016 00:00:00 +0000</pubDate>
-        <link>/2016/08/29/internship-thoughts.html</link>
-        <guid isPermaLink="true">/2016/08/29/internship-thoughts.html</guid>
+        <link>http://savaslabs.com/2016/08/29/internship-thoughts.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/08/29/internship-thoughts.html</guid>
         
         <category>internship</category>
         
@@ -453,8 +453,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 22 Jun 2016 00:00:00 +0000</pubDate>
-        <link>/2016/06/22/user-testing.html</link>
-        <guid isPermaLink="true">/2016/06/22/user-testing.html</guid>
+        <link>http://savaslabs.com/2016/06/22/user-testing.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/06/22/user-testing.html</guid>
         
         <category>user-experience</category>
         
@@ -484,7 +484,7 @@
 
 &lt;p&gt;You can also go directly to a specific run report via the URL &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;my-local-site&amp;gt;/xhprof/index.php?run=&amp;lt;run-id&amp;gt;&amp;amp;source=&amp;lt;source-id&amp;gt;&lt;/code&gt; (which you should have been logging already via an &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; statement or &lt;code class=&quot;highlighter-rouge&quot;&gt;dblog&lt;/code&gt; if you followed the last post).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-page-screenshot.png&quot; alt=&quot;Header of an XHProf run report&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-page-screenshot.jpg&quot; alt=&quot;Header of an XHProf run report&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The core of the run report is a table of each function or method which your code called while it was being profiled, along with a set of statistics about that function. This allows you to understand which parts of your code are most resource-intensive, and which are being called frequently in the use case that you’re profiling. Clicking on any one of the column headers will sort the list by that metric. To understand this report, it’s helpful to have some terminology:&lt;/p&gt;
 
@@ -508,7 +508,7 @@
 
 &lt;p&gt;Keeping your different runs organized is probably the most important part of successfully profiling module code using XHProf! Each run has a unique run ID, but &lt;strong&gt;you&lt;/strong&gt; are solely responsible for knowing which use case scenario and which version of the codebase that run ID corresponds to. I set up a basic spreadsheet in OpenOffice where I could paste in run numbers and basic run stats to compare (but there’s almost certainly a nicer automated way to do this than what I used).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-spreadsheet.png&quot; alt=&quot;Screenshot of an OpenOffice spreadsheet summarizing XHProf results for various runs&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-spreadsheet.jpg&quot; alt=&quot;Screenshot of an OpenOffice spreadsheet summarizing XHProf results for various runs&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have a set of run IDs for a given use case + codebase version, you can generate a &lt;em&gt;composite&lt;/em&gt; xhprof report using the query string syntax &lt;code class=&quot;highlighter-rouge&quot;&gt;http://&amp;lt;your-local-site&amp;gt;/xhprof/index.php?run=&amp;lt;first-run-id&amp;gt;,&amp;lt;second-run-id&amp;gt;,&amp;lt;third-run-id&amp;gt;&amp;amp;source=&amp;lt;source-string&amp;gt;&lt;/code&gt; Averaging out across a few runs should give you more &lt;a href=&quot;https://en.wikipedia.org/wiki/Accuracy_and_precision&quot;&gt;precise&lt;/a&gt; measurements for CPU time and memory usage, but beware that if parts of your code involve caching you may want to either throw out the first run’s results in each version of the code base, since that’s where the cache will be generated, or clear the cache between runs.&lt;/p&gt;
 
@@ -518,7 +518,7 @@
 
 &lt;p&gt;After all this set-up, you should be ready to experiment and see what the impact of changes in your code base are on the metrics that you want to shift. In my case, the code I was working on used a &lt;a href=&quot;https://github.com/squix78/jsonstreamingparser&quot;&gt;streaming JSON parser class&lt;/a&gt;, and I noticed that one of the top function calls in the inital profiler report was the &lt;code class=&quot;highlighter-rouge&quot;&gt;consumeChar&lt;/code&gt; method of the parser.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-page.png&quot; alt=&quot;Image of XHProf profiler report with the method consumeChar highlighted in yellow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-page.jpg&quot; alt=&quot;Image of XHProf profiler report with the method consumeChar highlighted in yellow&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It turns out that the JSON files I was importing were pretty-printed, thus containing more whitespace than they needed to. Sine the &lt;code class=&quot;highlighter-rouge&quot;&gt;consumeChar&lt;/code&gt; method gets called on each incoming character of the input stream, that added up to a lot of unnecessary method calls in the original code. By tweaking the JSON file export code to remove the pretty print flag, I cut down the number of times this method was called from 729,099 to 499,809, saving .2 seconds of run time right off the bat.&lt;/p&gt;
 
@@ -530,15 +530,15 @@
 
 &lt;p&gt;As the results below show, using XHProf and some thoughtful optimizations I was able to cut total run time significantly in one use case (Case 2) and slightly in another use case (Case 1). Case 1 was already running in a reasonable amount of time, so here I was mostly interested in the Case 2 numbers (assuming I didn’t make anything too much worse).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-graph.png&quot; alt=&quot;Bar chart comparing the run time of various runs&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-graph.jpg&quot; alt=&quot;Bar chart comparing the run time of various runs&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;think-of-the-big-picture-part-2&quot;&gt;Think of the big picture, part 2&lt;/h3&gt;
 
 &lt;p&gt;Remember that controlled experimental metrics are just a means to understanding and improving real-world performance (which you can also measure directly using tools like &lt;a href=&quot;https://blackfire.io/&quot;&gt;blackfire&lt;/a&gt;, but that’s another blog post). In my case, at the end of the day we decided that the most important thing was to ensure that there wasn’t a performance impact on the production site while this background import code was running; so one of the optimizations we actually ended up implementing was to force this code to run &lt;strong&gt;slower&lt;/strong&gt; by throttling &lt;code class=&quot;highlighter-rouge&quot;&gt;$entity-&amp;gt;save()&lt;/code&gt; operations to maximally 1 every 1/2 second or so, as a way to minimize the number of requests MySQL was having to respond to from the importer. XHProf is a powerful tool, but don’t lose the forest for the trees when it comes to optimization.&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jun 2016 00:00:00 +0000</pubDate>
-        <link>/2016/06/16/using-xhprof.html</link>
-        <guid isPermaLink="true">/2016/06/16/using-xhprof.html</guid>
+        <link>http://savaslabs.com/2016/06/16/using-xhprof.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/06/16/using-xhprof.html</guid>
         
         <category>php</category>
         
@@ -636,7 +636,7 @@
 
 &lt;p&gt;I prefer merge tools (such as the P4Merge tool shown below) which also include a fourth display panel showing the version of that file in the merge base:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/P4Merge_screenshot.png&quot; alt=&quot;P4Merge tool screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/P4Merge_screenshot.jpg&quot; alt=&quot;P4Merge tool screenshot&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;There are many visual merge tools to choose from, some of which may already be installed on your system.&lt;/p&gt;
 
@@ -653,8 +653,8 @@
 &lt;p&gt;Encountering merge conflicts can often be intimidating since you don’t want to make inadvertent changes to the code base. But armed with the right tools, the process becomes much easier and more intentional. With knowledge of the merge base, use of the &lt;code class=&quot;highlighter-rouge&quot;&gt;git log --follow -p -- file&lt;/code&gt; command, and the help of a visual merge tool you can go forth confidently when resolving merge conflicts!&lt;/p&gt;
 </description>
         <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
-        <link>/2016/06/15/git-merge-conflict-strategies.html</link>
-        <guid isPermaLink="true">/2016/06/15/git-merge-conflict-strategies.html</guid>
+        <link>http://savaslabs.com/2016/06/15/git-merge-conflict-strategies.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/06/15/git-merge-conflict-strategies.html</guid>
         
         <category>git</category>
         
@@ -797,8 +797,8 @@ sudo apt-get install php5-dev
 
 </description>
         <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
-        <link>/2016/05/26/installing-xhprof.html</link>
-        <guid isPermaLink="true">/2016/05/26/installing-xhprof.html</guid>
+        <link>http://savaslabs.com/2016/05/26/installing-xhprof.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/05/26/installing-xhprof.html</guid>
         
         <category>php</category>
         
@@ -815,9 +815,9 @@ sudo apt-get install php5-dev
     
       <item>
         <title>Drupalcon New Orleans 2016: a Twitter recap</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog/drupalcon-nola.png&quot; alt=&quot;Drupalcon New Orleans logo&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog/drupalcon-nola.jpg&quot; alt=&quot;Drupalcon New Orleans logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;A week full of summits, sessions, a presentation, some parties and a fair amount of tweeting &lt;img src=&quot;/assets/icons/twitter-bird.svg&quot; height=&quot;24&quot; alt=&quot;Twitter bird&quot; /&gt; was one for the books at Drupalcon NOLA 2016. Come along for a Twitter-assisted chronological journey for Savas Labs in New Orleans.&lt;/p&gt;
+&lt;p&gt;A week full of summits, sessions, a presentation, some parties and a fair amount of tweeting &lt;img src=&quot;/assets/img/icons-and-logos/twitter-bird.svg&quot; height=&quot;24&quot; alt=&quot;Twitter bird&quot; /&gt; was one for the books at Drupalcon NOLA 2016. Come along for a Twitter-assisted chronological journey for Savas Labs in New Orleans.&lt;/p&gt;
 
 &lt;h3 id=&quot;saturday--sunday-arrive-play-soccer-get-acquainted&quot;&gt;Saturday / Sunday: Arrive, play soccer, get acquainted&lt;/h3&gt;
 
@@ -928,8 +928,8 @@ and made our way on over to the &lt;a href=&quot;https://events.drupal.org/newor
 
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 +0000</pubDate>
-        <link>/2016/05/20/drupalcon-nola-recap.html</link>
-        <guid isPermaLink="true">/2016/05/20/drupalcon-nola-recap.html</guid>
+        <link>http://savaslabs.com/2016/05/20/drupalcon-nola-recap.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/05/20/drupalcon-nola-recap.html</guid>
         
         <category>drupal</category>
         
@@ -1014,8 +1014,8 @@ and made our way on over to the &lt;a href=&quot;https://events.drupal.org/newor
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-        <link>/2016/04/20/squabble-comments.html</link>
-        <guid isPermaLink="true">/2016/04/20/squabble-comments.html</guid>
+        <link>http://savaslabs.com/2016/04/20/squabble-comments.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/04/20/squabble-comments.html</guid>
         
         <category>jekyll</category>
         
@@ -1034,8 +1034,8 @@ and made our way on over to the &lt;a href=&quot;https://events.drupal.org/newor
 
 </description>
         <pubDate>Tue, 22 Mar 2016 00:00:00 +0000</pubDate>
-        <link>/2016/03/22/tridug-lightning-talks.html</link>
-        <guid isPermaLink="true">/2016/03/22/tridug-lightning-talks.html</guid>
+        <link>http://savaslabs.com/2016/03/22/tridug-lightning-talks.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/03/22/tridug-lightning-talks.html</guid>
         
         <category>drupal</category>
         
@@ -1204,8 +1204,8 @@ An Event Apart excited, motivated, and frantically trying to decide which of
 the things I learned to explore first.&lt;/p&gt;
 </description>
         <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
-        <link>/2016/03/21/an-event-apart-nashville.html</link>
-        <guid isPermaLink="true">/2016/03/21/an-event-apart-nashville.html</guid>
+        <link>http://savaslabs.com/2016/03/21/an-event-apart-nashville.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/03/21/an-event-apart-nashville.html</guid>
         
         <category>conference</category>
         

@@ -5,18 +5,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   
   <title>Building a map in Drupal 8 | Savas Labs</title>
   
   <meta name="description" content="Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modu...">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Bitter|Source+Sans+Pro' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/assets/styles/main.css">
-  <link rel="stylesheet" href="/assets/icons/octicons/octicons.css">
-  <link rel="canonical" href="/2015/07/06/map-in-drupal-8.html">
-  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="/feed.xml" />
-  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <link rel="stylesheet" href="http://savaslabs.com/assets/styles/main.css">
+  <link rel="canonical" href="http://savaslabs.com/2015/07/06/map-in-drupal-8.html">
+  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
+  <script type="text/javascript" src="http://savaslabs.com/assets/js/main.js"></script>
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -109,7 +107,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;h2 id=&quot;add-the-leaflet-library&quot;&gt;Add the Leaflet library&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/leaflet-files.png&quot; alt=&quot;Screenshot of the Mappy theme showing Leaflet file locations&quot; class=&quot;blog-image wrap-left&quot; width=&quot;256&quot; height=&quot;504&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/leaflet-files.jpg&quot; alt=&quot;Screenshot of the Mappy theme showing Leaflet file locations&quot; class=&quot;blog-image wrap-left&quot; width=&quot;256&quot; height=&quot;504&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Head over to &lt;a href=&quot;http://leafletjs.com/download.html&quot;&gt;Leaflet’s website&lt;/a&gt; and download the latest stable release of the Leaflet library.&lt;/p&gt;
 
@@ -161,7 +159,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
   &lt;li&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;admin/structure/types/add&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Give your new content type a name (we called ours “Place”), then click “Save and manage fields.”&lt;/li&gt;
   &lt;li&gt;Add a new field with the field type Geofield. If Geofield isn’t an option, you should double-check that the Geofield module is installed. Add a label (we used “Location Coordinates”), then click “Save and continue.”
-&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geofield_creation.png&quot; alt=&quot;Screenshot of geofield creation&quot; class=&quot;blog-image-large&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geofield_creation.jpg&quot; alt=&quot;Screenshot of geofield creation&quot; class=&quot;blog-image-large&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;On the next page, leave the number of maxiumum values at 1 and click “Save field settings.”&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -182,12 +180,12 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
   &lt;li&gt;Check the “Provide a REST export” box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose “/points”. Click “Save and edit.”&lt;/li&gt;
   &lt;li&gt;Add the Location Coordinates field and choose GeoJSON as the output format. You can add other fields if you want to, but we’ll definitely need this one.&lt;/li&gt;
   &lt;li&gt;Under “Format,” click on “Serializer.” Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
-  &lt;img src=&quot;/assets/img/blog/map-in-drupal-8/rest-export-settings.png&quot; alt=&quot;Screenshot the rest export settings for the Places view&quot; class=&quot;blog-image-large&quot; width=&quot;440px&quot; /&gt;&lt;/li&gt;
+  &lt;img src=&quot;/assets/img/blog/map-in-drupal-8/rest-export-settings.jpg&quot; alt=&quot;Screenshot the rest export settings for the Places view&quot; class=&quot;blog-image-large&quot; width=&quot;440px&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Under “Pager,” change the number of fields to display to 0 (which means unlimited in this case).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;For reference, here’s the settings for my Places view:
-&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/places-view.png&quot; alt=&quot;Screenshot of settings for the Places view&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/places-view.jpg&quot; alt=&quot;Screenshot of settings for the Places view&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We’ve just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we’ll use this page to populate our map with points.&lt;/p&gt;
 
@@ -245,7 +243,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;p&gt;Go to your Drupal site and rebuild your cache and you should see your base map!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-without-markers.png&quot; alt=&quot;Screenshot the base map&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-without-markers.jpg&quot; alt=&quot;Screenshot the base map&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;add-our-points&quot;&gt;Add our points&lt;/h2&gt;
 
@@ -271,13 +269,13 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;p&gt;Refresh - we’ve got points!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-markers.png&quot; alt=&quot;Screenshot of the map with markers&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-markers.jpg&quot; alt=&quot;Screenshot of the map with markers&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;add-popups&quot;&gt;Add popups&lt;/h2&gt;
 
 &lt;p&gt;The last thing to do is add popups to each point when they’re clicked. We’ll insert this code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;addDataToMap&lt;/code&gt; function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geojson-points.png&quot; alt=&quot;Screenshot of GeoJSON&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geojson-points.jpg&quot; alt=&quot;Screenshot of GeoJSON&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I want to display the node title in the popup, which I can see is at &lt;code class=&quot;highlighter-rouge&quot;&gt;feature.property.name&lt;/code&gt;.&lt;/p&gt;
 
@@ -295,7 +293,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;p&gt;Now when I click on a point I get a nice little popup with the node title.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-popup.png&quot; alt=&quot;Screenshot of the map with a popup open&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-popup.jpg&quot; alt=&quot;Screenshot of the map with a popup open&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Check out the entire &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js&quot;&gt;map.js file&lt;/a&gt; and be sure to visit Savas Labs GitHub repository for the &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;Durham Civil Rights Mapping project&lt;/a&gt; and the &lt;a href=&quot;http://www.durhamcivilrightsmap.org/&quot;&gt;completed site&lt;/a&gt; to see a Drupal 8 site in action!&lt;/p&gt;
 
@@ -330,7 +328,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
           &lt;div class=&#39;are-you-human&#39;&gt;
             &lt;div class=&#39;are-you-human-owl&#39;&gt;
-              &lt;img src=&quot;/assets/img/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
             &lt;/div&gt;
             &lt;div class=&#39;are-you-human-field&#39;&gt;
               &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
@@ -348,12 +346,18 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 &lt;/div&gt;
 
     
-    &lt;div class=&quot;post-bottom&quot;&gt;
+    
+      &lt;div class=&quot;post-bottom&quot;&gt;
   &lt;div class=&quot;post-meta&quot;&gt;
     &lt;h4&gt;About the author&lt;/h4&gt;
     
       &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
-        &lt;img src=&quot;/assets/img/team/anne-tomasevich.jpg&quot; alt=&quot;Anne Tomasevich&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-eeafb6.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Anne Tomasevich&quot; &gt;
+  &lt;/picture&gt;
+
       &lt;/a&gt;
       &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
     
@@ -373,6 +377,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -389,6 +394,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -405,6 +411,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Jun 22, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -494,6 +501,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
   &lt;/div&gt;
 &lt;/div&gt;
 
+    
     &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
     
@@ -584,7 +592,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;h2 id=&quot;add-the-leaflet-library&quot;&gt;Add the Leaflet library&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/leaflet-files.png&quot; alt=&quot;Screenshot of the Mappy theme showing Leaflet file locations&quot; class=&quot;blog-image wrap-left&quot; width=&quot;256&quot; height=&quot;504&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/leaflet-files.jpg&quot; alt=&quot;Screenshot of the Mappy theme showing Leaflet file locations&quot; class=&quot;blog-image wrap-left&quot; width=&quot;256&quot; height=&quot;504&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Head over to &lt;a href=&quot;http://leafletjs.com/download.html&quot;&gt;Leaflet’s website&lt;/a&gt; and download the latest stable release of the Leaflet library.&lt;/p&gt;
 
@@ -636,7 +644,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
   &lt;li&gt;Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;admin/structure/types/add&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Give your new content type a name (we called ours “Place”), then click “Save and manage fields.”&lt;/li&gt;
   &lt;li&gt;Add a new field with the field type Geofield. If Geofield isn’t an option, you should double-check that the Geofield module is installed. Add a label (we used “Location Coordinates”), then click “Save and continue.”
-&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geofield_creation.png&quot; alt=&quot;Screenshot of geofield creation&quot; class=&quot;blog-image-large&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geofield_creation.jpg&quot; alt=&quot;Screenshot of geofield creation&quot; class=&quot;blog-image-large&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;On the next page, leave the number of maxiumum values at 1 and click “Save field settings.”&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -657,12 +665,12 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
   &lt;li&gt;Check the “Provide a REST export” box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose “/points”. Click “Save and edit.”&lt;/li&gt;
   &lt;li&gt;Add the Location Coordinates field and choose GeoJSON as the output format. You can add other fields if you want to, but we’ll definitely need this one.&lt;/li&gt;
   &lt;li&gt;Under “Format,” click on “Serializer.” Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
-  &lt;img src=&quot;/assets/img/blog/map-in-drupal-8/rest-export-settings.png&quot; alt=&quot;Screenshot the rest export settings for the Places view&quot; class=&quot;blog-image-large&quot; width=&quot;440px&quot; /&gt;&lt;/li&gt;
+  &lt;img src=&quot;/assets/img/blog/map-in-drupal-8/rest-export-settings.jpg&quot; alt=&quot;Screenshot the rest export settings for the Places view&quot; class=&quot;blog-image-large&quot; width=&quot;440px&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;Under “Pager,” change the number of fields to display to 0 (which means unlimited in this case).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;For reference, here’s the settings for my Places view:
-&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/places-view.png&quot; alt=&quot;Screenshot of settings for the Places view&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/places-view.jpg&quot; alt=&quot;Screenshot of settings for the Places view&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We’ve just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we’ll use this page to populate our map with points.&lt;/p&gt;
 
@@ -720,7 +728,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;p&gt;Go to your Drupal site and rebuild your cache and you should see your base map!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-without-markers.png&quot; alt=&quot;Screenshot the base map&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-without-markers.jpg&quot; alt=&quot;Screenshot the base map&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;add-our-points&quot;&gt;Add our points&lt;/h2&gt;
 
@@ -746,13 +754,13 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;p&gt;Refresh - we’ve got points!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-markers.png&quot; alt=&quot;Screenshot of the map with markers&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-markers.jpg&quot; alt=&quot;Screenshot of the map with markers&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;add-popups&quot;&gt;Add popups&lt;/h2&gt;
 
 &lt;p&gt;The last thing to do is add popups to each point when they’re clicked. We’ll insert this code in the &lt;code class=&quot;highlighter-rouge&quot;&gt;addDataToMap&lt;/code&gt; function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geojson-points.png&quot; alt=&quot;Screenshot of GeoJSON&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/geojson-points.jpg&quot; alt=&quot;Screenshot of GeoJSON&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I want to display the node title in the popup, which I can see is at &lt;code class=&quot;highlighter-rouge&quot;&gt;feature.property.name&lt;/code&gt;.&lt;/p&gt;
 
@@ -770,7 +778,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
 &lt;p&gt;Now when I click on a point I get a nice little popup with the node title.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-popup.png&quot; alt=&quot;Screenshot of the map with a popup open&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/map-in-drupal-8/map-with-popup.jpg&quot; alt=&quot;Screenshot of the map with a popup open&quot; class=&quot;blog-image-xl&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Check out the entire &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js&quot;&gt;map.js file&lt;/a&gt; and be sure to visit Savas Labs GitHub repository for the &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;Durham Civil Rights Mapping project&lt;/a&gt; and the &lt;a href=&quot;http://www.durhamcivilrightsmap.org/&quot;&gt;completed site&lt;/a&gt; to see a Drupal 8 site in action!&lt;/p&gt;
 
@@ -805,7 +813,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
           &lt;div class=&#39;are-you-human&#39;&gt;
             &lt;div class=&#39;are-you-human-owl&#39;&gt;
-              &lt;img src=&quot;/assets/img/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
             &lt;/div&gt;
             &lt;div class=&#39;are-you-human-field&#39;&gt;
               &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
@@ -823,12 +831,18 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 &lt;/div&gt;
 
     
-    &lt;div class=&quot;post-bottom&quot;&gt;
+    
+      &lt;div class=&quot;post-bottom&quot;&gt;
   &lt;div class=&quot;post-meta&quot;&gt;
     &lt;h4&gt;About the author&lt;/h4&gt;
     
       &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
-        &lt;img src=&quot;/assets/img/team/anne-tomasevich.jpg&quot; alt=&quot;Anne Tomasevich&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-eeafb6.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Anne Tomasevich&quot; &gt;
+  &lt;/picture&gt;
+
       &lt;/a&gt;
       &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
     
@@ -848,6 +862,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -864,6 +879,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -880,6 +896,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Jun 22, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -969,6 +986,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
   &lt;/div&gt;
 &lt;/div&gt;
 
+    
     &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
     
@@ -991,11 +1009,12 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
     "inLanguage": "en-US",
     "dateCreated": "2015-07-06 00:00:00 +0000",
     "datePublished": "2015-07-06 00:00:00 +0000",
-    "url": "/2015/07/06/map-in-drupal-8.html"
+    "url": "http://savaslabs.com/2015/07/06/map-in-drupal-8.html"
   }
 </script>
 
   <script>
+  // TODO: URL isn't quite working.
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -1005,8 +1024,6 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
   ga('send', 'pageview');
 
 </script>
-
-  
 
   
 </head>
@@ -1019,7 +1036,7 @@ composer require &lt;span class=&quot;s2&quot;&gt;&quot;phayes/geophp&quot;&lt;/
 
     <!-- Savas Labs logo. -->
     <a href="/" class="logo">
-        <img src="/assets/img/logo.png" alt="Savas Labs logo">
+        <img src="http://savaslabs.com/assets/img/logo.png" alt="Savas Labs logo">
     </a>
 
     <!-- Mobile menu button. -->
@@ -1216,7 +1233,7 @@ composer require <span class="s2">"phayes/geophp"</span>
 
 <h2 id="add-the-leaflet-library">Add the Leaflet library</h2>
 
-<p><img src="/assets/img/blog/map-in-drupal-8/leaflet-files.png" alt="Screenshot of the Mappy theme showing Leaflet file locations" class="blog-image wrap-left" width="256" height="504" /></p>
+<p><img src="/assets/img/blog/map-in-drupal-8/leaflet-files.jpg" alt="Screenshot of the Mappy theme showing Leaflet file locations" class="blog-image wrap-left" width="256" height="504" /></p>
 
 <p>Head over to <a href="http://leafletjs.com/download.html">Leaflet’s website</a> and download the latest stable release of the Leaflet library.</p>
 
@@ -1268,7 +1285,7 @@ composer require <span class="s2">"phayes/geophp"</span>
   <li>Navigate to <code class="highlighter-rouge">admin/structure/types/add</code></li>
   <li>Give your new content type a name (we called ours “Place”), then click “Save and manage fields.”</li>
   <li>Add a new field with the field type Geofield. If Geofield isn’t an option, you should double-check that the Geofield module is installed. Add a label (we used “Location Coordinates”), then click “Save and continue.”
-<img src="/assets/img/blog/map-in-drupal-8/geofield_creation.png" alt="Screenshot of geofield creation" class="blog-image-large" /></li>
+<img src="/assets/img/blog/map-in-drupal-8/geofield_creation.jpg" alt="Screenshot of geofield creation" class="blog-image-large" /></li>
   <li>On the next page, leave the number of maxiumum values at 1 and click “Save field settings.”</li>
 </ol>
 
@@ -1289,12 +1306,12 @@ composer require <span class="s2">"phayes/geophp"</span>
   <li>Check the “Provide a REST export” box. Note that this box will only be available if the rest module is installed. Enter a path for your data to be output - we chose “/points”. Click “Save and edit.”</li>
   <li>Add the Location Coordinates field and choose GeoJSON as the output format. You can add other fields if you want to, but we’ll definitely need this one.</li>
   <li>Under “Format,” click on “Serializer.” Change the style to GeoJSON. When the GeoJSON settings pop up, add the following settings:
-  <img src="/assets/img/blog/map-in-drupal-8/rest-export-settings.png" alt="Screenshot the rest export settings for the Places view" class="blog-image-large" width="440px" /></li>
+  <img src="/assets/img/blog/map-in-drupal-8/rest-export-settings.jpg" alt="Screenshot the rest export settings for the Places view" class="blog-image-large" width="440px" /></li>
   <li>Under “Pager,” change the number of fields to display to 0 (which means unlimited in this case).</li>
 </ol>
 
 <p>For reference, here’s the settings for my Places view:
-<img src="/assets/img/blog/map-in-drupal-8/places-view.png" alt="Screenshot of settings for the Places view" class="blog-image-xl" /></p>
+<img src="/assets/img/blog/map-in-drupal-8/places-view.jpg" alt="Screenshot of settings for the Places view" class="blog-image-xl" /></p>
 
 <p>We’ve just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we’ll use this page to populate our map with points.</p>
 
@@ -1352,7 +1369,7 @@ composer require <span class="s2">"phayes/geophp"</span>
 
 <p>Go to your Drupal site and rebuild your cache and you should see your base map!</p>
 
-<p><img src="/assets/img/blog/map-in-drupal-8/map-without-markers.png" alt="Screenshot the base map" class="blog-image-xl" /></p>
+<p><img src="/assets/img/blog/map-in-drupal-8/map-without-markers.jpg" alt="Screenshot the base map" class="blog-image-xl" /></p>
 
 <h2 id="add-our-points">Add our points</h2>
 
@@ -1378,13 +1395,13 @@ composer require <span class="s2">"phayes/geophp"</span>
 
 <p>Refresh - we’ve got points!</p>
 
-<p><img src="/assets/img/blog/map-in-drupal-8/map-with-markers.png" alt="Screenshot of the map with markers" class="blog-image-xl" /></p>
+<p><img src="/assets/img/blog/map-in-drupal-8/map-with-markers.jpg" alt="Screenshot of the map with markers" class="blog-image-xl" /></p>
 
 <h2 id="add-popups">Add popups</h2>
 
 <p>The last thing to do is add popups to each point when they’re clicked. We’ll insert this code in the <code class="highlighter-rouge">addDataToMap</code> function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.</p>
 
-<p><img src="/assets/img/blog/map-in-drupal-8/geojson-points.png" alt="Screenshot of GeoJSON" class="blog-image-xl" /></p>
+<p><img src="/assets/img/blog/map-in-drupal-8/geojson-points.jpg" alt="Screenshot of GeoJSON" class="blog-image-xl" /></p>
 
 <p>I want to display the node title in the popup, which I can see is at <code class="highlighter-rouge">feature.property.name</code>.</p>
 
@@ -1402,7 +1419,7 @@ composer require <span class="s2">"phayes/geophp"</span>
 
 <p>Now when I click on a point I get a nice little popup with the node title.</p>
 
-<p><img src="/assets/img/blog/map-in-drupal-8/map-with-popup.png" alt="Screenshot of the map with a popup open" class="blog-image-xl" /></p>
+<p><img src="/assets/img/blog/map-in-drupal-8/map-with-popup.jpg" alt="Screenshot of the map with a popup open" class="blog-image-xl" /></p>
 
 <p>Check out the entire <a href="https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js">map.js file</a> and be sure to visit Savas Labs GitHub repository for the <a href="https://github.com/savaslabs/durham-civil-rights-map">Durham Civil Rights Mapping project</a> and the <a href="http://www.durhamcivilrightsmap.org/">completed site</a> to see a Drupal 8 site in action!</p>
 
@@ -1437,7 +1454,7 @@ composer require <span class="s2">"phayes/geophp"</span>
 
           <div class='are-you-human'>
             <div class='are-you-human-owl'>
-              <img src="/assets/img/owl.png" alt="Savas Labs logo">
+              <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
             </div>
             <div class='are-you-human-field'>
               <p>What type of animal is the Savas Labs logo?</p>
@@ -1455,12 +1472,18 @@ composer require <span class="s2">"phayes/geophp"</span>
 </div>
 
     
-    <div class="post-bottom">
+    
+      <div class="post-bottom">
   <div class="post-meta">
     <h4>About the author</h4>
     
       <a href="/team/anne-tomasevich">
-        <img src="/assets/img/team/anne-tomasevich.jpg" alt="Anne Tomasevich">
+        <picture>
+    <source srcset="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-eeafb6.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg">
+    <img src="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg" class="image--team-post-meta" itemprop="image" alt="Anne Tomasevich" >
+  </picture>
+
       </a>
       <p class="post-author-desc">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
     
@@ -1480,6 +1503,7 @@ composer require <span class="s2">"phayes/geophp"</span>
               </div>
               <div class="card-copy">
                 <p>Sep 23, 2016</p>
+                
                 <p><p>SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.</p>
 </p>
               </div>
@@ -1496,6 +1520,7 @@ composer require <span class="s2">"phayes/geophp"</span>
               </div>
               <div class="card-copy">
                 <p>Aug 29, 2016</p>
+                
                 <p><p>What it’s like to learn at Savas Labs.</p>
 </p>
               </div>
@@ -1512,6 +1537,7 @@ composer require <span class="s2">"phayes/geophp"</span>
               </div>
               <div class="card-copy">
                 <p>Jun 22, 2016</p>
+                
                 <p><p>Our approach to designing, conducting, and learning from user testing and other analyses.</p>
 </p>
               </div>
@@ -1601,6 +1627,7 @@ composer require <span class="s2">"phayes/geophp"</span>
   </div>
 </div>
 
+    
     <div class="previous-next-links">
   <div class="next">
     

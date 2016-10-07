@@ -5,18 +5,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   
   <title>Mapping external GeoJSON data | Savas Labs</title>
   
   <meta name="description" content="Leaflet.js is a powerful, light-weight javascript API for mapping. In this post, I’ll walk through how to use Leaflet to map GeoJSON data. By the end, we’ll ...">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Bitter|Source+Sans+Pro' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/assets/styles/main.css">
-  <link rel="stylesheet" href="/assets/icons/octicons/octicons.css">
-  <link rel="canonical" href="/2015/05/18/mapping-geojson.html">
-  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="/feed.xml" />
-  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <link rel="stylesheet" href="http://savaslabs.com/assets/styles/main.css">
+  <link rel="canonical" href="http://savaslabs.com/2015/05/18/mapping-geojson.html">
+  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
+  <script type="text/javascript" src="http://savaslabs.com/assets/js/main.js"></script>
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -136,7 +134,7 @@
 
 &lt;div id=&quot;map&quot; style=&quot;width: 100%; height: 300px;&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
-L.Icon.Default.imagePath = &quot;/assets/img&quot;;
+L.Icon.Default.imagePath = &quot;/assets/img/leaflet&quot;;
 var map = L.map(&#39;map&#39;);
 var terrainTiles = L.tileLayer.provider(&#39;OpenTopoMap&#39;);
 terrainTiles.addTo(map);
@@ -254,7 +252,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 
           &lt;div class=&#39;are-you-human&#39;&gt;
             &lt;div class=&#39;are-you-human-owl&#39;&gt;
-              &lt;img src=&quot;/assets/img/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
             &lt;/div&gt;
             &lt;div class=&#39;are-you-human-field&#39;&gt;
               &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
@@ -272,12 +270,18 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 &lt;/div&gt;
 
     
-    &lt;div class=&quot;post-bottom&quot;&gt;
+    
+      &lt;div class=&quot;post-bottom&quot;&gt;
   &lt;div class=&quot;post-meta&quot;&gt;
     &lt;h4&gt;About the author&lt;/h4&gt;
     
       &lt;a href=&quot;/team/tim-stallmann&quot;&gt;
-        &lt;img src=&quot;/assets/img/team/tim-stallmann.jpg&quot; alt=&quot;Tim Stallmann&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-576by509-a08682.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Tim Stallmann&quot; &gt;
+  &lt;/picture&gt;
+
       &lt;/a&gt;
       &lt;p class=&quot;post-author-desc&quot;&gt;Tim is a cartographer and developer at Savas Labs, implementing complex web applications for our clients.&lt;/p&gt;
     
@@ -297,6 +301,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -313,6 +318,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -329,6 +335,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Jun 22, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -418,6 +425,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
   &lt;/div&gt;
 &lt;/div&gt;
 
+    
     &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
     
@@ -535,7 +543,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 
 &lt;div id=&quot;map&quot; style=&quot;width: 100%; height: 300px;&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
-L.Icon.Default.imagePath = &quot;/assets/img&quot;;
+L.Icon.Default.imagePath = &quot;/assets/img/leaflet&quot;;
 var map = L.map(&#39;map&#39;);
 var terrainTiles = L.tileLayer.provider(&#39;OpenTopoMap&#39;);
 terrainTiles.addTo(map);
@@ -653,7 +661,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 
           &lt;div class=&#39;are-you-human&#39;&gt;
             &lt;div class=&#39;are-you-human-owl&#39;&gt;
-              &lt;img src=&quot;/assets/img/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
             &lt;/div&gt;
             &lt;div class=&#39;are-you-human-field&#39;&gt;
               &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
@@ -671,12 +679,18 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 &lt;/div&gt;
 
     
-    &lt;div class=&quot;post-bottom&quot;&gt;
+    
+      &lt;div class=&quot;post-bottom&quot;&gt;
   &lt;div class=&quot;post-meta&quot;&gt;
     &lt;h4&gt;About the author&lt;/h4&gt;
     
       &lt;a href=&quot;/team/tim-stallmann&quot;&gt;
-        &lt;img src=&quot;/assets/img/team/tim-stallmann.jpg&quot; alt=&quot;Tim Stallmann&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-576by509-a08682.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Tim Stallmann&quot; &gt;
+  &lt;/picture&gt;
+
       &lt;/a&gt;
       &lt;p class=&quot;post-author-desc&quot;&gt;Tim is a cartographer and developer at Savas Labs, implementing complex web applications for our clients.&lt;/p&gt;
     
@@ -696,6 +710,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -712,6 +727,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -728,6 +744,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Jun 22, 2016&lt;/p&gt;
+                
                 &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
 &lt;/p&gt;
               &lt;/div&gt;
@@ -817,6 +834,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
   &lt;/div&gt;
 &lt;/div&gt;
 
+    
     &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
     
@@ -839,11 +857,12 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
     "inLanguage": "en-US",
     "dateCreated": "2015-05-18 00:00:00 +0000",
     "datePublished": "2015-05-18 00:00:00 +0000",
-    "url": "/2015/05/18/mapping-geojson.html"
+    "url": "http://savaslabs.com/2015/05/18/mapping-geojson.html"
   }
 </script>
 
   <script>
+  // TODO: URL isn't quite working.
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -855,17 +874,11 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 </script>
 
   
+    
+    
       
-          <link rel="stylesheet" href="/assets/styles/leaflet.css" media="screen" type="text/css">
-      
-  
-
-  
-      
-          <script src='/assets/js/leaflet.js' type="text/javascript"></script>
-      
-          <script src='/assets/js/leaflet-providers.js' type="text/javascript"></script>
-      
+      <script src="http://savaslabs.com/assets/js/leaflet.js" type="text/javascript"></script>
+    
   
 </head>
 
@@ -877,7 +890,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 
     <!-- Savas Labs logo. -->
     <a href="/" class="logo">
-        <img src="/assets/img/logo.png" alt="Savas Labs logo">
+        <img src="http://savaslabs.com/assets/img/logo.png" alt="Savas Labs logo">
     </a>
 
     <!-- Mobile menu button. -->
@@ -1101,7 +1114,7 @@ $.getJSON(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 
 <div id="map" style="width: 100%; height: 300px;"></div>
 <script type="text/javascript">
-L.Icon.Default.imagePath = "/assets/img";
+L.Icon.Default.imagePath = "/assets/img/leaflet";
 var map = L.map('map');
 var terrainTiles = L.tileLayer.provider('OpenTopoMap');
 terrainTiles.addTo(map);
@@ -1219,7 +1232,7 @@ $.getJSON("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geoj
 
           <div class='are-you-human'>
             <div class='are-you-human-owl'>
-              <img src="/assets/img/owl.png" alt="Savas Labs logo">
+              <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
             </div>
             <div class='are-you-human-field'>
               <p>What type of animal is the Savas Labs logo?</p>
@@ -1237,12 +1250,18 @@ $.getJSON("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geoj
 </div>
 
     
-    <div class="post-bottom">
+    
+      <div class="post-bottom">
   <div class="post-meta">
     <h4>About the author</h4>
     
       <a href="/team/tim-stallmann">
-        <img src="/assets/img/team/tim-stallmann.jpg" alt="Tim Stallmann">
+        <picture>
+    <source srcset="http://savaslabs.com/assets/processed-img/team/tim-stallmann-576by509-a08682.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg">
+    <img src="http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg" class="image--team-post-meta" itemprop="image" alt="Tim Stallmann" >
+  </picture>
+
       </a>
       <p class="post-author-desc">Tim is a cartographer and developer at Savas Labs, implementing complex web applications for our clients.</p>
     
@@ -1262,6 +1281,7 @@ $.getJSON("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geoj
               </div>
               <div class="card-copy">
                 <p>Sep 23, 2016</p>
+                
                 <p><p>SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.</p>
 </p>
               </div>
@@ -1278,6 +1298,7 @@ $.getJSON("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geoj
               </div>
               <div class="card-copy">
                 <p>Aug 29, 2016</p>
+                
                 <p><p>What it’s like to learn at Savas Labs.</p>
 </p>
               </div>
@@ -1294,6 +1315,7 @@ $.getJSON("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geoj
               </div>
               <div class="card-copy">
                 <p>Jun 22, 2016</p>
+                
                 <p><p>Our approach to designing, conducting, and learning from user testing and other analyses.</p>
 </p>
               </div>
@@ -1383,6 +1405,7 @@ $.getJSON("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geoj
   </div>
 </div>
 
+    
     <div class="previous-next-links">
   <div class="next">
     
