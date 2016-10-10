@@ -1,0 +1,186 @@
+/**
+ * @file
+ *
+ * Styles for case study pages.
+ */
+
+// Case study pages.
+.case-study {
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+
+  .case-study__client {
+    background-color: lighten($light-gray, 10);
+    padding: $base-spacing $base-spacing $base-margin;
+
+    .wrapper {
+      .case-study__client__logo {
+        display: block;
+        height: auto;
+        margin: $base-spacing auto 0;
+
+        @include media($medium-screen-up) {
+          float: left;
+          margin: 0 $base-margin 0 0;
+          min-height: 60px;
+        }
+      }
+
+      p {
+        margin-top: $base-spacing;
+      }
+    }
+  }
+
+  .case-study__content {
+    padding: $base-spacing 0;
+
+    @include media($medium-screen-up) {
+      @include display(flex);
+      @include align-items(center);
+
+      padding: 0;
+    }
+
+    .case-study__content__text,
+    .case-study__square-image {
+      @include media($medium-screen-up) {
+        width: 50%;
+      }
+    }
+
+    .case-study__square-image {
+      img {
+        display: block;
+        height: auto;
+      }
+    }
+
+    .case-study__content__text {
+      h2 {
+        font-size: 1.8em;
+        margin-bottom: 0;
+        text-align: center;
+
+        @include media($medium-screen-up) {
+          font-size: 2em;
+          padding: .75em 3em .75em 1em;
+          text-align: left;
+        }
+      }
+
+      p {
+        padding: 1.667em;
+
+        @include media($medium-screen-up) {
+          padding-right: 3em;
+        }
+      }
+    }
+
+    &.case-study__content--objective {
+      h2 {
+        color: $fuschia;
+      }
+    }
+
+    &.case-study__content--process {
+
+      .case-study__content__text--process {
+        @include order(2);
+
+        h2 {
+          color: $dark-blue;
+
+          @include media($medium-screen-up) {
+            padding-left: 3em;
+            padding-right: 1em;
+            text-align: right;
+          }
+        }
+
+        p {
+          @include media($medium-screen-up) {
+            padding-left: 3em;
+            padding-right: 1.667em;
+          }
+        }
+      }
+    }
+
+    &.case-study__content--results {
+      padding-bottom: 0;
+
+      h2 {
+        color: $teal;
+      }
+    }
+  }
+
+  .case-study__square-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+  }
+
+  .case-study__client-quote {
+    background-color: lighten($light-gray, 10);
+    padding: $base-spacing;
+
+    @include media($medium-screen-up) {
+      padding: $base-spacing $base-margin;
+    }
+
+    @include media($large-screen-up) {
+      padding: $base-spacing $base-margin * 2;
+    }
+
+    .case-study__client-quote__quote {
+      font-style: normal;
+    }
+
+    .case-study__client-quote__attribution {
+      display: block;
+      margin-bottom: 0;
+      margin-top: .5em;
+      text-align: center;
+    }
+  }
+
+  .case-study__client-quote--top {
+    padding-top: 0;
+
+    blockquote {
+      margin-top: 0;
+    }
+  }
+
+  .case-study__details {
+    @include outer-container();
+    margin-top: $base-spacing * 2;
+
+    .wrapper {
+      @include media($medium-screen-up) {
+        @include span-columns(8);
+        @include shift(2);
+
+        td {
+          font-size: 1.2em;
+        }
+      }
+
+      ul {
+        margin-bottom: 0;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  .view-more-link {
+    margin-bottom: $base-margin;
+  }
+}

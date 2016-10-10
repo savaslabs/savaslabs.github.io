@@ -1,0 +1,76 @@
+/**
+ * @file
+ *
+ * Styles for cover images on case study pages.
+ */
+
+.case-study {
+  clear: both;
+
+  .case-study__header {
+    @include display(flex);
+    @include justify-content(space-around);
+    @include align-items(center);
+
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 88vh;
+    min-height: 320px;
+
+    // On medium screens, change height to account for menu height.
+    @include media($horizontal-bar-mode) {
+      height: 78vh;
+    }
+
+    // On large screens, adjust height to account for menu height.
+    @include media($large-screen-up) {
+      height: 88vh;
+    }
+
+    .case-study__header__text {
+      padding: 1em;
+
+      @include media($medium-screen-up) {
+        width: 80%;
+      }
+
+      @include media($large-screen-up) {
+        width: 60%;
+      }
+
+      h1 {
+        color: $base-background-color;
+        font-size: 2em;
+        margin-bottom: 1em;
+
+        @include media($medium-screen-up) {
+          font-size: 2.5em;
+        }
+      }
+
+      p,
+      .case-study__header__link {
+        color: $base-background-color;
+        font-size: 1.1em;
+        font-weight: bold;
+
+        @include media($medium-screen-up) {
+          font-size: 1.25em;
+        }
+      }
+
+      .case-study__header__link {
+        @extend %button-outline;
+
+        display: inline-block;
+        margin-top: $base-spacing;
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 0;
+  }
+}

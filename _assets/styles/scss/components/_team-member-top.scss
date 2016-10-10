@@ -1,7 +1,7 @@
 /**
  * @file
  *
- * Styles for /team and team member pages.
+ * Above the fold styles for team member pages.
  */
 
 .team-member {
@@ -41,54 +41,8 @@
     }
   }
 
-  .team-badges {
-    @include display(flex);
-    @include justify-content(center);
-    @include flex-wrap(wrap);
-
-    .team-badges__badge img {
-      max-width: 200px;
-      padding: 1em;
-    }
-  }
-
   // Link icons.
   .fa-file-text {
     font-size: 13px;
   }
-}
-
-.associations {
-  clear: both;
-  text-align: center;
-
-  .logos {
-    @include display(flex);
-    @include justify-content(center);
-    @include align-items(center);
-    height: 125px;
-    width: 100%;
-
-    img {
-      margin: 0 1em;
-    }
-  }
-}
-
-.team-recent-blog {
-  border-top: solid 1px $gainsboro;
-  margin-top: $base-margin;
-
-  h3 {
-    text-align: center;
-  }
-
-  p {
-    font-size: 1em;
-  }
-}
-
-.name-description {
-  padding-bottom: 0;
-  text-align: center;
 }

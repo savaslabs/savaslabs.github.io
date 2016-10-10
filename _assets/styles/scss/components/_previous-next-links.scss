@@ -1,0 +1,18 @@
+/**
+ * @file
+ *
+ * Styles previous/next links.
+ */
+
+.previous-next-links {
+  .next {
+    @include span-columns(6);
+    float: left;
+  }
+
+  .previous {
+    @include span-columns(6);
+    float: right;
+    text-align: right;
+  }
+}
