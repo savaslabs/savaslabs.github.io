@@ -10,7 +10,6 @@ github: kostajh
 twitter: kostajh
 linkedin: kostaharlan
 website: http://www.kostaharlan.net
-resume: http://stackoverflow.com/cv/kostajh
 badges:
   - image: "assets/img/team/association_ind_member_badge.svg"
     alt: "Drupal Association Individual Member"
