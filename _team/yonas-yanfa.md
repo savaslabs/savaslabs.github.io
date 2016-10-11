@@ -12,7 +12,6 @@ github: yonas
 twitter: yonasyanfa
 website: https://fizk.net
 linkedin: yonasyanfa
-resume: http://stackoverflow.com/cv/yonasyanfa
 ---
 
 Yonas Yanfa fell in love with open source software in 1997. He began working as
