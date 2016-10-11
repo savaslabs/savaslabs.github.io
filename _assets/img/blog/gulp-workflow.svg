@@ -31,8 +31,8 @@
                     <tspan x="23" y="60"></tspan>
                 </text>
             </g>
-            <polygon id="Triangle-Copy-3" fill="#501888" transform="translate(1300.032244, 312.032244) scale(-1, 1) rotate(-25.000000) translate(-1300.032244, -312.032244) " points="1300.03224 286.032244 1326.03224 338.032244 1274.03224 338.032244"></polygon>
-            <path d="M194,299 C194,299 232.53125,424.738281 752.632812,424.738281 C1272.73438,424.738281 1301.63281,319.121094 1301.63281,319.121094" id="Line" stroke="#501888" stroke-width="14" stroke-linecap="square"></path>
+            <polygon id="Triangle-Copy-3" fill="#F6433E" transform="translate(1300.032244, 312.032244) scale(-1, 1) rotate(-25.000000) translate(-1300.032244, -312.032244) " points="1300.03224 286.032244 1326.03224 338.032244 1274.03224 338.032244"></polygon>
+            <path d="M194,299 C194,299 232.53125,424.738281 752.632812,424.738281 C1272.73438,424.738281 1301.63281,319.121094 1301.63281,319.121094" id="Line" stroke="#F6433E" stroke-width="14" stroke-linecap="square"></path>
             <g id="Group-8" transform="translate(346.000000, 160.000000)">
                 <path d="M0,28 L232.5,28" id="Line" stroke="#9E023B" stroke-width="14" stroke-linecap="square"></path>
                 <polygon id="Triangle" fill="#9E023B" transform="translate(259.000000, 27.000000) rotate(90.000000) translate(-259.000000, -27.000000) " points="259 1 285 53 233 53"></polygon>
@@ -55,7 +55,7 @@
             </g>
             <g id="Group-6" transform="translate(642.000000, 394.000000)">
                 <rect id="Rectangle-4" fill="#FAEAD6" x="0" y="5" width="221" height="42"></rect>
-                <text id="gulp.watch" font-family="Roboto-Bold, Roboto" font-size="40" font-weight="bold" fill="#501888">
+                <text id="gulp.watch" font-family="Roboto-Bold, Roboto" font-size="40" font-weight="bold" fill="#F6433E">
                     <tspan x="12" y="37">gulp.watch</tspan>
                 </text>
             </g>

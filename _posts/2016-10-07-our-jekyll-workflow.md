@@ -3,11 +3,11 @@ layout: post
 title: Our Jekyll Workflow
 date: 2016-10-07
 author: Anne Tomasevich
-tags: performance jekyll javascript css sass front-end-dev best-practices
+tags: performance jekyll javascript css sass front-end-dev
 summary: |
   How we improved our company site's performance with a better Jekyll workflow
-featured_image: "/blog/usability-testing.jpg"
-featured_image_alt: "Two people comparing notes while using computers"
+featured_image: "/blog/test-tubes.jpg"
+featured_image_alt: "Test tubes with brightly color liquids inside"
 ---
 
 It's hard to believe it's been over a year and a half since our site's 
