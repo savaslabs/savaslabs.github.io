@@ -39,7 +39,7 @@ pre {
   font-family: $monospace-font !important;
   border: 1px solid $pre-border;
   line-height: 1.45em;
-  font-size: 13px;
+  font-size: 13px !important;
   margin: 0;
   color: $pre-color;
   overflow: auto;
@@ -60,6 +60,7 @@ p, li {
     margin: -1px 0;
   }
   pre code { font-size: 1em !important; background: none; border: none; }
+  a code { color: $teal; }
 }
 
 .pre-code {
