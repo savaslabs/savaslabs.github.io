@@ -45,6 +45,9 @@ gulp.task('build:styles:critical', function() {
         .on('error', gutil.log);
 });
 
+// Build all styles.
+gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
+
 gulp.task('clean:styles', function(callback) {
     del([paths.jekyllCssFiles + 'main.css',
         paths.siteCssFiles + 'main.css',
@@ -66,9 +69,6 @@ gulp.task('build:scripts:global', function() {
         .pipe(gulp.dest(paths.siteJsFiles))
         .on('error', gutil.log);
 });
-
-// Build all styles.
-gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
 
 gulp.task('clean:scripts', function(callback) {
     del([paths.jekyllJsFiles + 'main.js', paths.siteJsFiles + 'main.js']);

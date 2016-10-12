@@ -33,7 +33,29 @@ To see all of our current code, pop over to our
 
 ## Why the changes?
 
+We've wanted to make some improvements to our site's performance for a while,
+but our ultimate motivator was our not-so-great Google PageSpeed score.
 
+![Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!]({{ site.url }}/assets/img/blog/pagespeed-insights-initial.jpg)
+<span class="caption">Yikes!</span>
+
+Going off of these recommendations and adding a few things of our own, we ended
+up with a nice to-do list:
+
+1. Minify our main CSS file, use autoprefixer to add vendor prefixes (since this
+will be required for the soon-to-come Bourbon v5.0) and inline CSS that's
+critical to above-the-fold content
+2. Eliminate render-blocking JS above the fold
+3. Optimize images and use the `<picture>` element to serve the
+smallest image possible on all screen sizes and resolutions
+
+One thing on the PageSpeed page you won't see on our to-do list is "leverage
+browser caching" - we're not going to tackle this just yet since we're using
+GitHub Pages to host our site and we don't have control over caching headers. On
+a side note, if you have a solution to this problem, please leave us a comment!
+
+From here I'll go over how we set up gulp to work with our Jekyll site, then how
+we used gulp to accomplish the tasks above.
 
 ## Initial setup
 
@@ -93,9 +115,10 @@ local [comment server](https://github.com/savaslabs/squabble) for development
 purposes. These different config files will come into play as we set up the
 gulpfile.
 
-Finally, we updated our .gitignore to include the following:
+Finally, we updated our `.gitignore` to include the following:
 
-```
+```text
+# .gitignore
 node_modules
 assets
 ```
@@ -109,7 +132,7 @@ in version control.
 ### Paths file
 
 This comes straight from [Rob's post](https://robwise.github.io/blog/jekyll-and-gulp)
-and is a great organizational technique. In the `_assets` directory, I created a
+and is a great organization technique. In the `_assets` directory, I created a
 directory called `gulp_config` to hold `paths.js`, a list of all the paths we'll
 need set to javascript variables to be used in the gulpfile. We're going to be
 piping a lot of files to and from gulp tasks and they'll need to land in very
@@ -192,33 +215,81 @@ Getting gulp set up is a matter of a few commands:
 
 ```bash
 # Install gulp globally.
-npm install -g gulp
+$ npm install -g gulp
 
 # Initialize the project, following the prompts
 # (most of which can be left blank and filled in later).
-npm init
+$ npm init
 
 # Now that package.json has been created, start adding dependencies.
-npm install --save-dev gulp
+$ npm install --save-dev gulp
 
 # Create a gulpfile in the root of the repository.
-touch gulpfile.js
+$ touch gulpfile.js
 ```
 
-### Include paths
+### Set variables and include paths
+
+In the gulpfile, we'll start by setting up variables for the gulp plugins we'll
+be using and including our paths file.
+
+(P.S. If you're like me, you might find it easier to look at the entire gulpfile
+at once - you can view ours [on GitHub](https://github.com/savaslabs/savaslabs.github.io/blob/source/gulpfile.js).)
 
 ```js
+// gulpfile.js
+
+// Define variables.
+var autoprefixer = require('autoprefixer');
+var browserSync  = require('browser-sync').create();
+var cleancss     = require('gulp-clean-css');
+var concat       = require('gulp-concat');
+var del          = require('del');
+var gulp         = require('gulp');
+var gutil        = require('gulp-util');
+var imagemin     = require('gulp-imagemin');
+var jshint       = require('gulp-jshint');
+var notify       = require('gulp-notify');
+var postcss      = require('gulp-postcss');
+var rename       = require('gulp-rename');
+var run          = require('gulp-run');
+var runSequence  = require('run-sequence');
+var sass         = require('gulp-ruby-sass');
+var uglify       = require('gulp-uglify');
+
+// Include paths file.
 var paths = require('./_assets/gulp_config/paths');
 ```
 
-### Outline gulp tasks
+Each plugin will need to be installed locally either by copying our
+[`packages.json`](https://github.com/savaslabs/savaslabs.github.io/blob/source/package.json)
+file and running `npm install`, or by running the following for each
+plugin:
+
+```bash
+$ npm install --save-dev [plugin-name]
+```
+
+This will install the package and add it to your `package.json` file.
+
+## Gulp tasks
+
+Below is an outline of the gulp tasks we'll be writing. From here, I'll go
+through each individual task, then the default `gulp` and `gulp serve` commands
+that tie the tasks together to build the site or serve it locally.
 
 ```
-// Define variables.
+// gulpfile.js
 
 // Process SCSS.
-gulp.task('build:styles', function() {
+gulp.task('build:styles:main', function() {
   // Compile SCSS, run autoprefixer, and minify CSS.
+});
+
+// Create critical CSS file.
+gulp.task('build:styles:critical', function() {
+  // Compile critical SCSS rules, run autoprefixer, minify CSS, and place in
+  // appropriate location so it can be inlined in the HTML head.
 });
 
 // Process JS.
@@ -250,21 +321,16 @@ gulp.task('serve', ['build'], function() {
 });
 ```
 
-## Handle CSS
+### Handle CSS
 
 Jekyll compiles SCSS out of the box, but using gulp to process our SCSS gives us the power to do other useful things like minify our CSS, add vendor prefixes, and direct our critical CSS to the `<head>` element.
 
-### Process all SCSS
+#### Process all SCSS
 
 ```js
-var autoprefixer = require('autoprefixer');
-var cleancss    = require('gulp-clean-css');
-var postcss     = require('gulp-postcss');
-var sass        = require('gulp-ruby-sass');
-
 // Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
 // outputs file to the appropriate location.
-gulp.task('build:styles', function() {
+gulp.task('build:styles:main', function() {
     return sass(paths.sassFiles + '/main.scss', {
         style: 'compressed',
         trace: true,
@@ -278,57 +344,255 @@ gulp.task('build:styles', function() {
 });
 ```
 
+This task will output `main.css` in `_site/assets/styles`.
+
 Some notes:
 
-- We're including all our SCSS partials in our [main.scss](), but you could point to a directory or file glob if needed.
-- We're using the [autoprefixer plugin](https://github.com/postcss/autoprefixer) for postcss. We're making heavy use of the Bourbon mixin library which currently handles some autoprefixing, but this will be dropped (hopefully soon!) in Bourbon v5.0 at which time [autoprefixer will be recommended](https://github.com/postcss/autoprefixer)
+- We're including all our SCSS partials in our [main.scss](https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/main.scss)
+file, but you could point to a directory or file glob if needed.
+- We're using the [autoprefixer plugin](https://github.com/postcss/autoprefixer) for postcss. We're making heavy use of the Bourbon mixin library which currently handles some autoprefixing, but this will be dropped (hopefully soon!) in Bourbon v5.0 at which time [autoprefixer will be recommended](https://github.com/postcss/autoprefixer).
 
-### Critical CSS
+#### Critical CSS
 
-## Compile/process JS
+It's considered a good practice to inline CSS critical to above-the-fold content 
+in `<style>` tags in the HTML `<head>` to avoid needing to wait on the server to
+load CSS on the initial page load. Identifying critical styles and pulling them
+into a single file may seem daunting but there are a 
+[number of ways](https://css-tricks.com/authoring-critical-fold-css/#article-header-id-1)
+to do this automatically. However, we found the easiest way to consolidate
+critical styles for all pages on our site was to follow
+[Chris Ferdinandi's method](https://gomakethings.com/inlining-critical-css-for-better-web-performance/)
+and separate critical styles into their own Sass partials, then include these
+partials in a `critical.scss` file. This took a 
+[little refactoring](https://github.com/savaslabs/savaslabs.github.io/commit/53b6d3edbace9ca7a85bd3d3d2e02e88087862b0),
+but it certainly didn't hurt to make our Sass files even more modular.
 
-### async
+After we created our `critical.scss` file, we added another gulp task to process
+it:
 
-## Process images
+```js
+// Processes critical CSS, to be included in head.html.
+gulp.task('build:styles:critical', function() {
+    return sass(paths.sassFiles + '/critical.scss', {
+        style: 'compressed',
+        trace: true,
+        loadPath: [paths.sassFiles]
+    }).pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(cleancss())
+        .pipe(gulp.dest('_includes'))
+        .on('error', gutil.log);
+});
+```
 
-### manual updates to images
+This outputs a (git-ignored) `critical.css` file into our `_includes` directory.
+We added the critical CSS file to our `head.html` template:
 
-### imagemin
+```html
+{# in head.html #}
+<head>
+  {% raw %}
+  {# Other stuff... #}
 
-### picture tag
+  <style>{% include critical.css %}</style>
+  {% endraw %}
+</head>
+```
+
+Next, instead of loading the main CSS file all at once, we used 
+[Filament Group's `loadCSS` function](https://github.com/filamentgroup/loadCSS)
+to load the main CSS asynchronously (plus our Google fonts):
+
+```html
+{# in head.html #}
+<head>
+  {% raw %}
+  {# Other stuff... #}
+
+  <script>
+    !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function l(){d.addEventListener&&d.removeEventListener("load",l),d.media=r||"all"}var a,i=e.document,d=i.createElement("link");if(n)a=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;a=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){a.parentNode.insertBefore(d,n?a:a.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",l),d.onloadcssdefined=f,f(l),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)})}}}(this);
+    loadCSS('/assets/styles/main.css');
+    loadCSS('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro');
+  </script>
+
+  <style>{% include critical.css %}</style>
+  {% endraw %}
+</head>
+```
+
+Finally, as a fallback, we're loading the CSS files normally in `<noscript>` tags
+in a `scripts.html` template that's included on each page after the footer.
+
+```html
+{# in scripts.html #}
+<noscript>
+  <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</noscript>
+```
+
+#### Tasks to build all styles and delete all styles
+
+To wrap things up, we have a task to build all styles, and a task to delete all
+styles. These will come into play when we set up our main build and serve tasks.
+
+```js
+// Build all styles.
+gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
+
+gulp.task('clean:styles', function(callback) {
+    del([paths.jekyllCssFiles + 'main.css',
+        paths.siteCssFiles + 'main.css',
+        '_includes/critical.css'
+    ]);
+    callback();
+});
+```
+
+### Process JS and load it asyncronously
+
+```js
+// Concatenates and uglifies global JS files and outputs result to the
+// appropriate location.
+ gulp.task('build:scripts', function() {
+     return gulp.src([
+         paths.jsFiles + '/global/lib' + paths.jsPattern,
+         paths.jsFiles + '/global/*.js'
+     ])
+         .pipe(concat('main.js'))
+         .pipe(uglify())
+         .pipe(gulp.dest(paths.jekyllJsFiles))
+         .pipe(gulp.dest(paths.siteJsFiles))
+         .on('error', gutil.log);
+ });
+```
+
+This task outputs `main.js` to `_site/assets/js/main.js`. To avoid delaying the
+initial render, we're loading the scripts asyncronously via the `async`
+attribute in our `scripts.html` template included on each page after the footer.
+
+```html
+{# in scripts.html #}
+<script type="text/javascript" src="{{ '/assets/js/main.js' | prepend: site.baseurl | prepend: site.url }}" async></script>
+<noscript>
+  <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</noscript>
+```
+
+As before, we also have a task to delete all processed scripts.
+
+```js
+gulp.task('clean:scripts', function(callback) {
+    del([paths.jekyllJsFiles + 'main.js', paths.siteJsFiles + 'main.js']);
+    callback();
+});
+```
+
+### Process images
+
+We took a few steps to optimize our site's existing images and ensure that
+future images could be optimized automatically via gulp and the Jekyll build
+process.
+
+#### Manual updates to images
+
+We knocked out some low-hanging fruit by ensuring we were using the proper image
+format and the smallest images possible. Google has a [great writeup on image
+optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization)
+I'd highly recommend, but the basic gist is:
+
+- Don't use images if you can use CSS or webfonts
+- Choose the right image format:
+  - If it's a vector graphic or can be converted to one, use SVG
+  - If you need transparency or fine detail, use PNG
+  - If you need animation, use GIF
+  - Otherwise, use JPEG
+- Play around with image quality to find the lowest quality that still looks great
+- Your images shouldn't be any larger than the largest they'll display on your
+site (keeping in mind this might be 2x for high resolution displays)
+
+On my Mac, I used Sketch to convert some of our images from PNG to JPEG at a
+slightly lower quality, to save vector graphics as SVGs when possible, and to
+trim images down when they were larger than they needed to be. We also
+established these rules as a team for future images to be added to our site.
+
+#### Minify images via gulp
+
+Next, we wrote a gulp task to run our images through the `imagemin` plugin.
+
+```js
+// Optimizes and copies image files.
+gulp.task('build:images', function() {
+    return gulp.src(paths.imageFilesGlob)
+        .pipe(imagemin())
+        .pipe(gulp.dest(paths.jekyllImageFiles))
+        .pipe(gulp.dest(paths.siteImageFiles))
+        .pipe(browserSync.stream());
+});
+```
+
+This task outputs optimized images in `_site/assets/img`.
+
+We also have a task to delete all processed images.
+
+```js
+gulp.task('clean:images', function(callback) {
+    del([paths.jekyllImageFiles, paths.siteImageFiles]);
+    callback();
+});
+```
+
+#### Jekyll Picture Tag plugin
+
+Between our manual updates and `imagemin`, we cut our image sizes down
+drastically! Our final step was to use the Jekyll Picture Tag plugin
+
+### Build and serve tasks
+
+To pull it all together, we have a default task to build the site (creating the
+`_site` directory which holds the compiled code that essentially is our site)
+and a `serve` task to watch our files and rebuild the appropriate files or the
+entire site when those files change.
+
+The default task deletes the site by running the `clean` tasks then runs all the
+`build` tasks, then the `jekyll build` command to build the site using our
+processed assets.
+
+```js
+// Delete _site directory and processed assets.
+gulp.task('clean', ['clean:jekyll',
+    'clean:fonts',
+    'clean:images',
+    'clean:scripts',
+    'clean:styles']);
+
+// Builds site anew.
+gulp.task('build', function(callback) {
+    runSequence('clean',
+        ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        'build:jekyll',
+        callback);
+});
+
+// Default Task: builds site.
+gulp.task('default', ['build']);
+
+```
 
 ## The Results
 
-After implementing these changes, our PageSpeed score shot up to a beautiful 96/100!
+After implementing these changes, our mobile PageSpeed score shot up to 92/100,
+with our desktop score at 95/100!
 
 TODO: fill this in with screenshot
 
-To pat myself on the back a little more, I should mention that we were already doing great in the user experience department.
+To pat myself on the back a little more, I should mention that we were already
+doing great in the user experience department.
 
 <img src="/assets/img/blog/pagespeed-insights-user-experience.jpg" class="blog-image-xl" alt="Passing Google PageSpeed Insights user experience items.">
 
+That's grounds for a little celebration in my opinion!
+
 <img src="/assets/img/blog/liz-lemon-self-five.gif" class="blog-image" style="max-width: 300px;" alt="Tina Fey as Liz Lemon giving herself an awesome high five.">
 
-
-
-I've been a big fan of [Jekyll](https://jekyllrb.com/) since we began using it to build our company website, and it's hard to imagine a simpler hosting provider than the wonderful (and free) [GitHub Pages](https://pages.github.com/). In a work environment full of VMs and Docker containers and giant databases to import and complex hosting environments, I've learned to enjoy spinning up my local Jekyll site, making a few changes, and pushing to master to let GitHub Pages do the rest.
-
-<br>
-
-<img src="/assets/img/blog/pagespeed-insights-initial.jpg" class="blog-image-xl" alt="Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!">
-<span class="caption">Wrong.</span>
-
-## Reality check, brought to you by Google PageSpeed Insights
-
-At first the perfectionist in me was affronted by the seemingly harsh 54/100 score (not to mention the scary orange and red exclamation points), but PageSpeed gives us all kinds of useful information about exactly what we can do to improve performance in each area. Clicking on "Show how to fix" expands a more detailed explanation of the issue and a link to an relevant article for further information. Thanks to PageSpeed, we knew we needed to:
-
-1. Optimize our images
-2. Change the way we're serving up CSS and JS assets so "above the fold" content isn't blocked by loading these items
-3. Minify our CSS
-
-TODO: talk about "leverage browser caching"
-
-## The Plan
-
-To solve these issues, we decided to use a taskrunner to process CSS, JS, and image asset, do some manual image optimization, and use the Jekyll Picture Tag plugin to help us serve up appropriately-sized images depending on screen size and resolution.
 
