@@ -10,7 +10,7 @@ featured_image: "/blog/test-tubes.jpg"
 featured_image_alt: "Test tubes with brightly color liquids inside"
 ---
 
-It's hard to believe it's been over a year and a half since our site's 
+It's hard to believe it's been over a year and a half since our site's
 [inaugural blog post](http://localhost:3000/2015/04/01/building-our-site.html)
 (written just two months after my career change into web development!) It's been
 great fun building our site and adding content thanks to the power and simplicity
@@ -21,7 +21,7 @@ built-in `jekyll` commands to build the site. Instead, we're using
 website, a "streaming build system". In this post I'll go over our motivations
 for this change, how we integrated gulp with Jekyll, and the awesome results!
 
-We based a lot of our gulp workflow on 
+We based a lot of our gulp workflow on
 [this excellent post](https://robwise.github.io/blog/jekyll-and-gulp) by Rob Wise.
 Our workflow includes a few additional features like:
 
@@ -86,7 +86,7 @@ Since we're going to be processing our assets with gulp instead, we moved the
 
 Our basic workflow is to use gulp to process the contents of `_assets`,
 outputting them into a git-ignored directory `assets` which will be copied by
-Jekyll into the generated `_site` directory. In addition, for local development 
+Jekyll into the generated `_site` directory. In addition, for local development
 we created a `gulp serve` task using `gulp.watch()` to process assets as
 they're updated and copy them directly into the `_site` directory, then push the
 changes to the browser via BrowserSync.
@@ -111,7 +111,6 @@ exclude: ["vendor",
           "gulpfile.js",
           "node_modules",
           "package.json"]
- 
 ```
 
 I'd also like to note that we're using a few different config files: our default
@@ -359,16 +358,16 @@ file, but you could point to a directory or file glob if needed.
 
 #### Critical CSS
 
-It's considered a good practice to inline CSS critical to above-the-fold content 
+It's considered a good practice to inline CSS critical to above-the-fold content
 in `<style>` tags in the HTML `<head>` to avoid waiting on the server to
 load CSS on the initial page load. Identifying critical styles and pulling them
-into a single file may seem daunting but there are a 
+into a single file may seem daunting but there are a
 [number of ways](https://css-tricks.com/authoring-critical-fold-css/#article-header-id-1)
 to do this automatically. However, we found the easiest way to consolidate
 critical styles for all pages on our site was to follow
 [Chris Ferdinandi's method](https://gomakethings.com/inlining-critical-css-for-better-web-performance/)
 and separate critical styles into their own Sass partials, then include these
-partials in a `critical.scss` file. This took a 
+partials in a `critical.scss` file. This took a
 [little refactoring](https://github.com/savaslabs/savaslabs.github.io/commit/53b6d3edbace9ca7a85bd3d3d2e02e88087862b0),
 but it certainly didn't hurt to make our Sass files even more modular.
 
@@ -403,7 +402,7 @@ We added the critical CSS file to our `head.html` template:
 </head>
 ```
 
-Next, instead of loading the main CSS file all at once, we used 
+Next, instead of loading the main CSS file all at once, we used
 [Filament Group's `loadCSS` function](https://github.com/filamentgroup/loadCSS)
 to load the main CSS asynchronously (plus our Google fonts):
 
@@ -663,7 +662,7 @@ picture:
 ```
 
 First we set the source directory to `assets/img`, which is where images are
-sent by gulp after being optimized. Resized images will be output to 
+sent by gulp after being optimized. Resized images will be output to
 `assets/processed-img`. Keep in mind that since this is being done during the
 `jekyll build` process, the processed image directory will be inside the `_site`
 directory.
@@ -894,7 +893,6 @@ There are a couple things I'd like to improve with this process:
 deployment and for spinning up the site locally.
 - Similarly, once an image is processed by Jekyll Picture Tag it doesn't need to
 be re-processed on every run of `jekyll build`.
-
 
 ## Further Resources
 
