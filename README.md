@@ -20,8 +20,9 @@ TODO: add info about image optimization/processing.
 
 ### Local development
 
-To serve the site, run `gulp serve`. This uses the test and dev config files for
-local development.
+To serve the site, run `gulp serve`. If you do not have Gulp installed locally
+then you can install it globally via `npm install -g gulp`. This uses the test
+and dev config files for local development.
 
 Thanks to `gulp.watch` and Browsersync, any changes you make will trigger Gulp
 to either regenerate the Jekyll site and automatically refresh your browser or,
