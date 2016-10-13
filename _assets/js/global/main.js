@@ -51,7 +51,7 @@ $(document).ready(
         // Give article headings direct links to anchors.
         // Thanks to felicianotech at https://github.com/circleci/circleci-docs.
         $("article h2, article h3, article h4, article h5, article h6").filter("[id]").each(function () {
-            $(this).append('<a href="#' + $(this).attr("id") + '"><i class="fa fa-link"></i></a>');
+            $(this).append('<a class="heading-link" href="#' + $(this).attr("id") + '"><i class="fa fa-link"></i></a>');
         });
 
     });

@@ -10,7 +10,7 @@
   h4,
   h5,
   h6 {
-    a {
+    .heading-link {
       @include transition(all .2s ease-in-out);
 
       opacity: 0;
