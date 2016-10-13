@@ -18,8 +18,7 @@ with me, they know I have an odd obsession with
 This is why, when we asked [Harbor](http://www.studioharbor.com) to help us
 come up with a company identity, including designing our logo and assissting us
 with our name selection, "palindrome" was naturally a category of options for
-names... e pluribus unum
- <img alt="winking emoji"  class="emoji" src="http://www.emoji-cheat-sheet.com/graphics/emojis/wink.png">
+names... e pluribus unum :wink:
 
 ## Really though?
 While the original impetus for choosing a name that is a palindrome _did_ stem
@@ -38,8 +37,7 @@ top contenders, we discovered people found it alluring, and also tied it to
 
 ### Fun palindromic facts
 - Our area code in Durham, NC is a palindrome: 919
-- One of the team's house number is a palindrome: not going to tell you who or what
-<img alt="winking emoji" class="emoji" src="http://www.emoji-cheat-sheet.com/graphics/emojis/stuck_out_tongue_winking_eye.png">
+- One of the team's house number is a palindrome: not going to tell you who or what :wink:
 - In writing this, I learned a *new* literary term: [Semordnilap](http://en.wikipedia.org/wiki/Palindrome#Semordnilaps)
 which is a word when read backward is a different word! E.g. repaid
 - The world's longest palindromic phrase, at least so far _and_ according to [these guys](http://norvig.com/palindrome.html)

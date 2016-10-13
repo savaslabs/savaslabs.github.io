@@ -85,8 +85,7 @@ upstream  git@github.com:chrisarusso/Tilthy-Rich-Compost-Website.git (push)
 ## Write verbose messages, format **NOTHING**
 Worry about cleanliness **LATER**, we will get to that. Write lots of messages,
 comment everything, write todos, write questions, write in your native tongue
- <img alt="tongue emoji" class="emoji" src="http://www.emoji-cheat-sheet.com/graphics/emojis/tongue.png">,
-anything that will help you
+:tongue: anything that will help you
 understand your thoughts and intentions later. To be clear, yes, commit this:
 
 ```php
