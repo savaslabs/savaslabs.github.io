@@ -7,7 +7,6 @@ var del          = require('del');
 var gulp         = require('gulp');
 var gutil        = require('gulp-util');
 var imagemin     = require('gulp-imagemin');
-var jshint       = require('gulp-jshint');
 var notify       = require('gulp-notify');
 var postcss      = require('gulp-postcss');
 var rename       = require('gulp-rename');
@@ -45,7 +44,7 @@ gulp.task('build:styles:critical', function() {
         .on('error', gutil.log);
 });
 
-// Build all styles.
+// Builds all styles.
 gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
 
 gulp.task('clean:styles', function(callback) {
@@ -94,7 +93,7 @@ gulp.task('clean:scripts:leaflet', function(callback) {
     callback();
 });
 
-// Build all scripts.
+// Builds all scripts.
 gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
 
 // Optimizes and copies image files.

@@ -17,21 +17,27 @@ great fun building our site and adding content thanks to the power and simplicit
 of [Jekyll](https://jekyllrb.com/). We recently deployed a series of changes to
 optimize our CSS, JS, and images and, in doing so, finally moved away from using
 built-in `jekyll` commands to build the site. Instead, we're using
-[gulp](http://gulpjs.com/), a task runner (or, as they put so nicely on their
-website, a "streaming build system"). In this post I'll go over our motivations
+[gulp](http://gulpjs.com/), a task runner — or, as they put so nicely on their
+website, a "streaming build system". In this post I'll go over our motivations
 for this change, how we integrated gulp with Jekyll, and the awesome results!
 
 We based a lot of our gulp workflow on 
-[this great post](https://robwise.github.io/blog/jekyll-and-gulp) by Rob Wise.
-Our workflow also includes separate gulp tasks for building the site locally,
-for testing purposes, and for production, as well as some updated gulp plugins,
-but I'd definitely recommend his post and you'll see some of his code and
+[this excellent post](https://robwise.github.io/blog/jekyll-and-gulp) by Rob Wise.
+Our workflow includes a few additional features like:
+
+- Separate gulp tasks for building the site locally,
+for testing purposes, and for production
+- Some updated gulp plugins
+- Inlining of critical CSS
+- Some further improvements to responsive images
+
+...but I'd definitely recommend his post and you'll see some of his code and
 architecture throughout this article.
 
 To see all of our current code, pop over to our
 [GitHub repo](https://github.com/savaslabs/savaslabs.github.io).
 
-## Why the changes?
+## Motivation
 
 We've wanted to make some improvements to our site's performance for a while,
 but our ultimate motivator was our not-so-great Google PageSpeed score.
@@ -49,8 +55,8 @@ critical to above-the-fold content
 3. Optimize images and use the `<picture>` element to serve the
 smallest image possible on all screen sizes and resolutions
 
-One thing on the PageSpeed page you won't see on our to-do list is "leverage
-browser caching" - we're not going to tackle this just yet since we're using
+One thing on the PageSpeed page not on our to-do list is "leverage
+browser caching" — we're not going to tackle this just yet since we're using
 GitHub Pages to host our site and we don't have control over caching headers. On
 a side note, if you have a solution to this problem, please leave us a comment!
 
@@ -78,12 +84,12 @@ theme the site.
 Since we're going to be processing our assets with gulp instead, we moved the
 `assets` directory to `_assets` to indicate that it should be ignored by Jekyll.
 
-Our basic workflow will be to use gulp to process the contents of `_assets`,
+Our basic workflow is to use gulp to process the contents of `_assets`,
 outputting them into a git-ignored directory `assets` which will be copied by
-Jekyll into the generated `_site` directory. In addition, we will create a `gulp
-serve` task using `gulp.watch()` to process assets as they're updated and copy
-them directly into the `_site` directory, then push the changes to the Browser
-via BrowserSync.
+Jekyll into the generated `_site` directory. In addition, for local development 
+we created a `gulp serve` task using `gulp.watch()` to process assets as
+they're updated and copy them directly into the `_site` directory, then push the
+changes to the browser via BrowserSync.
 
 ![Diagram of our basic gulp workflow]({{ site.url }}/assets/img/blog/gulp-workflow.svg)
 
@@ -248,7 +254,6 @@ var del          = require('del');
 var gulp         = require('gulp');
 var gutil        = require('gulp-util');
 var imagemin     = require('gulp-imagemin');
-var jshint       = require('gulp-jshint');
 var notify       = require('gulp-notify');
 var postcss      = require('gulp-postcss');
 var rename       = require('gulp-rename');
@@ -270,7 +275,7 @@ plugin:
 $ npm install --save-dev [plugin-name]
 ```
 
-This will install the package and add it to your `package.json` file.
+This will install the package and add it to the `package.json` file.
 
 ## Gulp tasks
 
@@ -278,21 +283,21 @@ Below is an outline of the gulp tasks we'll be writing. From here, I'll go
 through each individual task, then the default `gulp` and `gulp serve` commands
 that tie the tasks together to build the site or serve it locally.
 
-```
+```js
 // gulpfile.js
 
-// Process SCSS.
+// Processes SCSS.
 gulp.task('build:styles:main', function() {
   // Compile SCSS, run autoprefixer, and minify CSS.
 });
 
-// Create critical CSS file.
+// Creates critical CSS file.
 gulp.task('build:styles:critical', function() {
   // Compile critical SCSS rules, run autoprefixer, minify CSS, and place in
   // appropriate location so it can be inlined in the HTML head.
 });
 
-// Process JS.
+// Processes JS.
 gulp.task('build:scripts', function() {
   // Concatenate and uglify JS.
 });
@@ -315,7 +320,7 @@ gulp.task('build', function() {
 // Default Task: builds site.
 gulp.task('default', ['build']);
 
-// Serve site and watch files.
+// Serves site and watches files.
 gulp.task('serve', ['build'], function() {
   // Watch for changes and run appropriate build tasks when needed.
 });
@@ -355,7 +360,7 @@ file, but you could point to a directory or file glob if needed.
 #### Critical CSS
 
 It's considered a good practice to inline CSS critical to above-the-fold content 
-in `<style>` tags in the HTML `<head>` to avoid needing to wait on the server to
+in `<style>` tags in the HTML `<head>` to avoid waiting on the server to
 load CSS on the initial page load. Identifying critical styles and pulling them
 into a single file may seem daunting but there are a 
 [number of ways](https://css-tricks.com/authoring-critical-fold-css/#article-header-id-1)
@@ -436,9 +441,10 @@ To wrap things up, we have a task to build all styles, and a task to delete all
 styles. These will come into play when we set up our main build and serve tasks.
 
 ```js
-// Build all styles.
+// Builds all styles.
 gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
 
+// Deletes CSS.
 gulp.task('clean:styles', function(callback) {
     del([paths.jekyllCssFiles + 'main.css',
         paths.siteCssFiles + 'main.css',
@@ -482,8 +488,35 @@ attribute in our `scripts.html` template included on each page after the footer.
 As before, we also have a task to delete all processed scripts.
 
 ```js
+// Deletes processed JS.
 gulp.task('clean:scripts', function(callback) {
     del([paths.jekyllJsFiles + 'main.js', paths.siteJsFiles + 'main.js']);
+    callback();
+});
+```
+
+### Copy fonts
+
+I'll quickly note that we set up a task to copy our fonts to the appropriate
+directory, but we're only doing this with Font Awesome at the moment.
+
+```js
+// Copies fonts.
+gulp.task('build:fonts', ['fontawesome']);
+
+// Places Font Awesome fonts in proper location.
+gulp.task('fontawesome', function() {
+    return gulp.src(paths.fontFiles + '/font-awesome/**.*')
+        .pipe(rename(function(path) {path.dirname = '';}))
+        .pipe(gulp.dest(paths.jekyllFontFiles))
+        .pipe(gulp.dest(paths.siteFontFiles))
+        .pipe(browserSync.stream())
+        .on('error', gutil.log);
+});
+
+// Deletes processed fonts.
+gulp.task('clean:fonts', function(callback) {
+    del([paths.jekyllFontFiles, paths.siteFontFiles]);
     callback();
 });
 ```
@@ -497,9 +530,9 @@ process.
 #### Manual updates to images
 
 We knocked out some low-hanging fruit by ensuring we were using the proper image
-format and the smallest images possible. Google has a [great writeup on image
+formats and the smallest images possible. Google has a [great writeup on image
 optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization)
-I'd highly recommend, but the basic gist is:
+I'd highly recommend, but the gist is:
 
 - Don't use images if you can use CSS or webfonts
 - Choose the right image format:
@@ -536,6 +569,7 @@ This task outputs optimized images in `_site/assets/img`.
 We also have a task to delete all processed images.
 
 ```js
+// Deletes processed images.
 gulp.task('clean:images', function(callback) {
     del([paths.jekyllImageFiles, paths.siteImageFiles]);
     callback();
@@ -545,12 +579,147 @@ gulp.task('clean:images', function(callback) {
 #### Jekyll Picture Tag plugin
 
 Between our manual updates and `imagemin`, we cut our image sizes down
-drastically! Our final step was to use the Jekyll Picture Tag plugin
+drastically! Our next step was to set up the
+[Jekyll Picture Tag plugin](https://github.com/robwierzbowski/jekyll-picture-tag).
+This plugin supplies a Liquid tag to insert a `<picture>` element, which
+allows the browser to choose the most appropriate image from an array of sizes.
+The plugin also generates the differently sized images based on some simple config. Since
+the `<picture>` element has very low browser support at this time,
+[Picturefill](https://github.com/scottjehl/picturefill) is used as a polyfill.
+
+But wait - how can we use a Jekyll plugin while we're hosting our site on GitHub
+Pages? GitHub Pages only allows
+[a few Jekyll plugins](https://pages.github.com/versions/) when it builds a site
+for deployment, a well-known limitation. Come back soon for a post on how we're
+using Travis CI to build our site for testing and deployment to GitHub Pages!
+
+The [installation and usage](https://github.com/robwierzbowski/jekyll-picture-tag#installation)
+documentation on Jekyll Picture Tag's GitHub repo is great, and setup is a quick
+matter of installing the gem and the Picturefill script. From there, we set up
+presets for repeated image styles on our site - team photos, featured
+blog images, etc.
+
+```yaml
+# in config.yml
+# Picture element presets
+picture:
+  source: "assets/img"
+  output: "assets/processed-img"
+  markup: "picture"
+  presets:
+    team_square:
+      attr:
+        class: "image--team-square"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "334"
+      source_default:
+        width: "254"
+    team_individual:
+      attr:
+        class: "image--team-individual"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_400:
+        media: "(min-width: 400px)"
+        width: "350"
+      source_default:
+        width: "288"
+    team_post_meta:
+      attr:
+        class: "image--team-post-meta"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_default:
+        width: "288"
+    case_study:
+      attr:
+        class: "image--case-study"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_860:
+        media: "(min-width: 860px)"
+        width: "560"
+      source_640:
+        media: "(min-width: 640px)"
+        width: "430"
+      source_400:
+        media: "(min-width: 400px)"
+        width: "560"
+      source_default:
+        width: "400"
+    post_featured_image:
+      attr:
+        class: "image--post-featured-image"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_1120:
+        media: "(min-width: 400px)"
+        width: "737"
+      source_default:
+        width: "400"
+```
+
+First we set the source directory to `assets/img`, which is where images are
+sent by gulp after being optimized. Resized images will be output to 
+`assets/processed-img`. Keep in mind that since this is being done during the
+`jekyll build` process, the processed image directory will be inside the `_site`
+directory.
+
+Each preset has the following configured:
+
+- A BEM-style class (other attributes can be added too).
+- An array of resolutions. `[1, 2]` will generate images at 1 and 2 times the
+specified dimensions, and the double-sized image will be served on devices with
+a resolution of at least 2dppx.
+- Source specifications. Each source contains a media query and a width to be
+used at that screen size (I didn't include height so the images will be scaled
+proportionally)
+
+From here we use a simple Liquid tag to create the markup. For our
+individual team member pages we insert the team member's photo with:
+
+```html
+{% raw %}
+{% picture team_individual {{ page.photo }} alt="{{ page.name }}" %}
+{% endraw %}
+```
+
+We're using the `team_individual` preset, so four versions of the image will be
+created (two at each specified width, and two images at double those dimensions
+for hi-res displays). The markup ends up like this:
+
+```html
+<picture>
+  <source srcset="/assets/processed-img/team/anne-tomasevich-700by710-eeafb6.jpg" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
+  <source srcset="/assets/processed-img/team/anne-tomasevich-350by355-eeafb6.jpg" media="(min-width: 400px)">
+  <source srcset="/assets/processed-img/team/anne-tomasevich-576by584-eeafb6.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+  <source srcset="/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg">
+  <img src="/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg" class="image--team-individual" itemprop="image" alt="Anne Tomasevich">
+</picture>
+```
+
+With some easy setup, we're cutting down drastically on the sizes of images
+served at smaller screen sizes and lower resolutions!
+
+#### Background images
+
+One place we couldn't use this plugin is for images displayed via the CSS
+`background-image` property, which we're using for some hero images. For the
+large image on the home page, I manually created a variety of images (known in
+the responsive image world as [art direction](https://developers.google.com/web/fundamentals/design-and-ui/media/images#art_direction))
+then used media queries to display the appropriate image as the background image.
+You can check out the [SCSS on GitHub](https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/scss/components/_home-cover-image.scss).
+Since this is a much more time-consuming process I haven't implemented this for
+all of our background images yet, but taking the time to create images that will
+look exactly how we want them at all screen sizes will be well worth it!
 
 ### Build and serve tasks
 
 To pull it all together, we have a default task to build the site (creating the
-`_site` directory which holds the compiled code that essentially is our site)
+`_site` directory which holds the compiled HTML, CSS, JS, and images that comprise our site)
 and a `serve` task to watch our files and rebuild the appropriate files or the
 entire site when those files change.
 
@@ -558,8 +727,31 @@ The default task deletes the site by running the `clean` tasks then runs all the
 `build` tasks, then the `jekyll build` command to build the site using our
 processed assets.
 
+A little gulp tip: tasks passed within square brackets are run concurrently (one
+of the major advantages of using gulp over Grunt, which can only run one task at
+a time), while items in a comma-separated list are run sequentially. We'll need
+this to run the build tasks in the correct order since we need to create our
+`assets` directory before running `build:jekyll`, which will copy `assets` to
+`_site/assets`.
+
 ```js
-// Delete _site directory and processed assets.
+// Runs jekyll build command.
+gulp.task('build:jekyll', function() {
+    var shellCommand = 'bundle exec jekyll build --config _config.yml';
+
+    return gulp.src('')
+        .pipe(run(shellCommand))
+        .on('error', gutil.log);
+});
+
+// Deletes the entire _site directory.
+gulp.task('clean:jekyll', function(callback) {
+    del(['_site']);
+    callback();
+});
+
+// Main clean task.
+// Deletes _site directory and processed assets.
 gulp.task('clean', ['clean:jekyll',
     'clean:fonts',
     'clean:images',
@@ -576,17 +768,115 @@ gulp.task('build', function(callback) {
 
 // Default Task: builds site.
 gulp.task('default', ['build']);
-
 ```
+
+Now, `gulp` will run the default task `build` and will build the `_site`
+directory. This is what we want in production, but let's go back to our three
+separate Jekyll configuration files. We want to create gulp tasks using
+`config.test.yml` for running our test script and `config.dev.yml` for local
+development.
+
+```js
+// Runs jekyll build command using test config.
+gulp.task('build:jekyll:test', function() {
+    var shellCommand = 'bundle exec jekyll build --config _config.yml,_config.test.yml';
+
+    return gulp.src('')
+        .pipe(run(shellCommand))
+        .on('error', gutil.log);
+});
+
+// Runs jekyll build command using local config.
+gulp.task('build:jekyll:local', function() {
+    var shellCommand = 'bundle exec jekyll build --config _config.yml,_config.test.yml,_config.dev.yml';
+
+    return gulp.src('')
+        .pipe(run(shellCommand))
+        .on('error', gutil.log);
+});
+```
+
+The last thing we needed is a gulp command to serve the site and watch for file
+changes. To accomplish this we're using `gulp.watch()`, which tells gulp to run
+a specified task if the targeted files are changed. We also created a couple of
+special tasks to tell the browser to reload the served site on changes to Jekyll
+files (templates, config, etc.) or Javascript files. We already included
+`.pipe(browserSync.stream())` in our `build:styles:main` and `build:images` tasks, so
+when these files are updated the changes will be injected into our local site so
+we won't even need a refresh.
+
+```js
+// Special tasks for building and then reloading BrowserSync.
+gulp.task('build:jekyll:watch', ['build:jekyll:local'], function(callback) {
+    browserSync.reload();
+    callback();
+});
+
+gulp.task('build:scripts:watch', ['build:scripts'], function(callback) {
+    browserSync.reload();
+    callback();
+});
+
+// Static Server + watching files.
+// Note: passing anything besides hard-coded literal paths with globs doesn't
+// seem to work with gulp.watch().
+gulp.task('serve', ['build:local'], function() {
+
+    browserSync.init({
+        server: paths.siteDir,
+        ghostMode: false, // Toggle to mirror clicks, reloads etc. (performance)
+        logFileChanges: true,
+        logLevel: 'debug',
+        open: true        // Toggle to automatically open page when starting.
+    });
+
+    // Watch site settings.
+    gulp.watch(['_config.yml'], ['build:jekyll:watch']);
+
+    // Watch .scss files; changes are piped to browserSync.
+    gulp.watch('_assets/styles/**/*.scss', ['build:styles']);
+
+    // Watch .js files.
+    gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
+
+    // Watch image files; changes are piped to browserSync.
+    gulp.watch('_assets/img/**/*', ['build:images']);
+
+    // Watch posts.
+    gulp.watch('_posts/**/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+
+    // Watch drafts if --drafts flag was passed.
+    if (module.exports.drafts) {
+        gulp.watch('_drafts/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+    }
+
+    // Watch html and markdown files.
+    gulp.watch(['**/*.+(html|md|markdown|MD)', '!_site/**/*.*'], ['build:jekyll:watch']);
+
+    // Watch RSS feed XML file.
+    gulp.watch('feed.xml', ['build:jekyll:watch']);
+
+    // Watch data files.
+    gulp.watch('_data/**.*+(yml|yaml|csv|json)', ['build:jekyll:watch']);
+
+    // Watch favicon.png.
+    gulp.watch('favicon.png', ['build:jekyll:watch']);
+});
+```
+
+With this, we can run `gulp serve` to fire up our site locally. The initial
+build takes a bit longer than `jekyll serve` but the convenience of
+automatically opening a browser window, automatic refreshing, and new CSS being
+injected is fantastic!
 
 ## The Results
 
 After implementing these changes, our mobile PageSpeed score shot up to 92/100,
 with our desktop score at 95/100!
 
-TODO: fill this in with screenshot
+<img src="/assets/img/blog/pagespeed-insights-results.jpg" class="blog-image-xl" alt="95/100 Google PageSpeed Insights score!">
 
-To pat myself on the back a little more, I should mention that we were already
+To pat ourselves on the back a little more, I should mention that we were already
 doing great in the user experience department.
 
 <img src="/assets/img/blog/pagespeed-insights-user-experience.jpg" class="blog-image-xl" alt="Passing Google PageSpeed Insights user experience items.">
@@ -595,4 +885,21 @@ That's grounds for a little celebration in my opinion!
 
 <img src="/assets/img/blog/liz-lemon-self-five.gif" class="blog-image" style="max-width: 300px;" alt="Tina Fey as Liz Lemon giving herself an awesome high five.">
 
+## Next Steps
 
+There are a couple things I'd like to improve with this process:
+
+- Once an image is optimized via imagemin it shouldn't be processed every time
+`build:images` runs to save time both when building the site for testing and
+deployment and for spinning up the site locally.
+- Similarly, once an image is processed by Jekyll Picture Tag it doesn't need to
+be re-processed on every run of `jekyll build`.
+
+
+## Further Resources
+
+- [Aaron Lasseigne's take on gulp + Jekyll](https://aaronlasseigne.com/2016/02/03/using-gulp-with-jekyll/),
+which breaks down the gulp tasks nicely
+- [Smashing Magazine's deep dive into gulp](https://www.smashingmagazine.com/2014/06/building-with-gulp/),
+a must-read for gulp beginners!
+- [Smashing Magazine's guide to the `<picture>` element](https://www.smashingmagazine.com/2014/05/responsive-images-done-right-guide-picture-srcset/)
