@@ -115,8 +115,7 @@ commands.
 ## The solution in action
 So [now when running `drush sqlsan`](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/commit/cf8f04f65b9f782ebaaf84d4348043f5aeec8409),
 we can truly feel safe that we won't send emails to anyone we didn't mean to.
-You're welcome community
-<img src="http://www.emoji-cheat-sheet.com/graphics/emojis/wink.png" alt="winking emoji" class="emoji">
+You're welcome community :wink:
 
 ## Will `user_revision` exist in D8?
 It's not clear, though [some](https://www.drupal.org/sandbox/devpreview/2444961)

@@ -26,8 +26,7 @@ and fix it. We are very honest, yet **very respectful**; this is not a cut-throa
 environment.
 We take a lot of pride in the quality of our work. We value a work/life **balance**
 that keeps us productive and happy. We like to have **fun**.
-We use emoji _a lot_ <img src="http://www.emoji-cheat-sheet.com/graphics/emojis/thumbsup.png" alt="thumbs up emoji" class="emoji">.
-You **absolutely** don't have to <img src="http://www.emoji-cheat-sheet.com/graphics/emojis/relieved.png" alt="relived emoji" class="emoji">,
+We use emoji _a lot_ :+1:. You **absolutely** don't have to :relieved:,
 since **we greatly embrace diversity**!
 
 ### Employment benefits
