@@ -13,10 +13,13 @@ TODO: add info about image optimization/processing.
    * `gem install jekyll`
 2. Clone the repo (default branch is `source`; do not use master.)
 3. Run `bundle install` (or `bundle install --path vendor/bundle` if preferred)
-4. Make sure [node.js and npm](https://docs.npmjs.com/getting-started/installing-node) are installed.
-5. Run `npm install` to install node modules. This takes a few minutes.
+4. Make sure [node.js and npm](https://docs.npmjs.com/getting-started/installing-node) are installed. For npm, you should be running at least major version 3.
+   * To update npm to the latest version, run `npm install npm@latest -g`
+5. Install gulp globally.
+   * `npm install -g gulp`
 6. Make sure [ImageMagick](http://www.imagemagick.org/script/index.php) is installed.
    * `brew install imagemagick` should work on OSX
+7. Run `npm install` to install node modules. This takes a few minutes.
 
 ### Local development
 
@@ -81,6 +84,8 @@ Special tips:
 space e.g. ```bash
 2. The syntax block must be proceeded and followed by blank lines.
 3. For php you must including an opening php tag to get proper highlighting.
+4. To display raw Liquid code, you'll need to wrap your code in {% raw %} and
+{% endraw %} tags.
 
 ### Tags
 
