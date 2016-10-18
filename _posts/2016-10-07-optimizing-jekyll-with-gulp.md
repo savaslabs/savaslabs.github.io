@@ -75,8 +75,6 @@ up with a nice to-do list:
     the browser to pick the smallest one that will look good on the user's
     screen size and resolution.
 
-
-
 One thing reported by PageSpeed not yet on our to-do list is "leverage
 browser caching" — we're not going to tackle this just yet since we're using
 GitHub Pages to host our site and we don't have control over caching headers. On
