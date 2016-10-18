@@ -231,16 +231,11 @@ gulp.task('serve', ['build:local'], function() {
     // Watch image files; changes are piped to browserSync.
     gulp.watch('_assets/img/**/*', ['build:images']);
 
-    // Watch posts.
-    gulp.watch('_posts/**/*.+(md|markdown|MD)', ['build:jekyll:watch']);
-
-    // Watch drafts if --drafts flag was passed.
-    if (module.exports.drafts) {
-        gulp.watch('_drafts/*.+(md|markdown|MD)', ['build:jekyll:watch']);
-    }
-
     // Watch html and markdown files.
-    gulp.watch(['**/*.+(html|md|markdown|MD)', '!_site/**/*.*'], ['build:jekyll:watch']);
+    gulp.watch('**/*.html', ['build:jekyll:watch']);
+    gulp.watch('**/*.md', ['build:jekyll:watch']);
+    gulp.watch('**/*.markdown', ['build:jekyll:watch']);
+    gulp.watch('**/*.MD', ['build:jekyll:watch']);
 
     // Watch RSS feed XML file.
     gulp.watch('feed.xml', ['build:jekyll:watch']);
