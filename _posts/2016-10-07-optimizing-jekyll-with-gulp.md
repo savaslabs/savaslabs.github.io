@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Our Jekyll Workflow
+title: Using Gulp in our Jekyll Workflow to Optimize Performance
 date: 2016-10-07
 author: Anne Tomasevich
 tags: performance jekyll javascript css sass front-end-dev
@@ -39,8 +39,12 @@ To see all of our current code, pop over to our
 
 ## Motivation
 
-We've wanted to make some improvements to our site's performance for a while,
-but our ultimate motivator was our not-so-great Google PageSpeed score.
+We know how important site performance is to
+[user experience](http://alistapart.com/article/improving-ux-through-front-end-performance).
+We've been showing this to our clients for years, and we finally found the time
+to be able to practice what we preach!
+
+Our ultimate motivator was our not-so-great Google PageSpeed score.
 
 ![Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!]({{ site.url }}/assets/img/blog/pagespeed-insights-initial.jpg)
 <span class="caption">Yikes!</span>
@@ -48,14 +52,32 @@ but our ultimate motivator was our not-so-great Google PageSpeed score.
 Going off of these recommendations and adding a few things of our own, we ended
 up with a nice to-do list:
 
-1. Minify our main CSS file, use autoprefixer to add vendor prefixes (since this
-will be required for the soon-to-come Bourbon v5.0) and inline CSS that's
-critical to above-the-fold content
-2. Eliminate render-blocking JS above the fold
-3. Optimize images and use the `<picture>` element to serve the
-smallest image possible on all screen sizes and resolutions
+1. Optimize CSS:
+   - [Minifying](https://en.wikipedia.org/wiki/Minification_(programming)) our main
+   CSS file to remove unnecessary characters and shrink the filesize.
+   - Use autoprefixer to add
+   [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)
+   (since this will be required for the soon-to-come Bourbon v5.0).
+   - To prevent our large CSS file from delaying the initial render for the end
+   user, insert CSS that's critical to above-the-fold content into the HTML
+   head. By "above the fold" I mean content viewable to the user on the initial
+   page load before interacting with the site.
+2. Optimize JS:
+   - Concatenate and uglify our JS files to create a single, minified file,
+   smaller than the larger files we started with.
+   - Execute our JS asynchronously, meaning it will be executed when it's ready
+   while the page is loading without interfering with the render.
+3. Optimize images:
+   - Manually shrink our image file sizes, then set up gulp to optimize them
+   even further for the smallest images possible.
+   - Use the `<picture>` element over simple `<img>` tags. The `<picture>`
+    element contains an array of different sizes of the same image and allows
+    the browser to pick the smallest one that will look good on the user's
+    screen size and resolution.
 
-One thing on the PageSpeed page not on our to-do list is "leverage
+
+
+One thing reported by PageSpeed not yet on our to-do list is "leverage
 browser caching" — we're not going to tackle this just yet since we're using
 GitHub Pages to host our site and we don't have control over caching headers. On
 a side note, if you have a solution to this problem, please leave us a comment!
@@ -453,7 +475,7 @@ gulp.task('clean:styles', function(callback) {
 });
 ```
 
-### Process JS and load it asyncronously
+### Process JS and load it asynchronously
 
 ```js
 // Concatenates and uglifies global JS files and outputs result to the
@@ -472,7 +494,7 @@ gulp.task('clean:styles', function(callback) {
 ```
 
 This task outputs `main.js` to `_site/assets/js/main.js`. To avoid delaying the
-initial render, we're loading the scripts asyncronously via the `async`
+initial render, we're loading the scripts asynchronously via the `async`
 attribute in our `scripts.html` template included on each page after the footer.
 
 ```html
@@ -543,10 +565,11 @@ I'd highly recommend, but the gist is:
 - Your images shouldn't be any larger than the largest they'll display on your
 site (keeping in mind this might be 2x for high resolution displays)
 
-On my Mac, I used Sketch to convert some of our images from PNG to JPEG at a
-slightly lower quality, to save vector graphics as SVGs when possible, and to
-trim images down when they were larger than they needed to be. We also
-established these rules as a team for future images to be added to our site.
+On my Mac, I used [Sketch](https://www.sketchapp.com/) to convert some of our
+images from PNG to JPEG at a slightly lower quality, to save vector graphics as
+SVGs when possible, and to trim images down when they were larger than they
+needed to be. We also established these rules as a team for future images to be
+added to our site.
 
 #### Minify images via gulp
 
@@ -582,9 +605,14 @@ drastically! Our next step was to set up the
 [Jekyll Picture Tag plugin](https://github.com/robwierzbowski/jekyll-picture-tag).
 This plugin supplies a Liquid tag to insert a `<picture>` element, which
 allows the browser to choose the most appropriate image from an array of sizes.
-The plugin also generates the differently sized images based on some simple config. Since
-the `<picture>` element has very low browser support at this time,
-[Picturefill](https://github.com/scottjehl/picturefill) is used as a polyfill.
+Since our sites are viewed on so many different devices, we need to send these
+devices images that make sense - loading a huge image meant for a large retina
+screen on a tiny mobile phone is just a waste of time and resources. The Liquid
+tag provided by the plugin is much simpler than typing out all the `<picture>`
+markup, and the plugin also generates the differently sized images based on some
+simple config. Since the `<picture>` element has very low browser support at
+this time, [Picturefill](https://github.com/scottjehl/picturefill) is used as a
+polyfill, meaning the resulting markup will work on all modern browsers.
 
 But wait - how can we use a Jekyll plugin while we're hosting our site on GitHub
 Pages? GitHub Pages only allows
@@ -669,13 +697,14 @@ directory.
 
 Each preset has the following configured:
 
-- A BEM-style class (other attributes can be added too).
+- A [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)-style
+class (other attributes can be added too).
 - An array of resolutions. `[1, 2]` will generate images at 1 and 2 times the
 specified dimensions, and the double-sized image will be served on devices with
-a resolution of at least 2dppx.
+a resolution of at least 2 dots per pixel (better known as Retina screens).
 - Source specifications. Each source contains a media query and a width to be
 used at that screen size (I didn't include height so the images will be scaled
-proportionally)
+proportionally).
 
 From here we use a simple Liquid tag to create the markup. For our
 individual team member pages we insert the team member's photo with:
@@ -801,8 +830,8 @@ a specified task if the targeted files are changed. We also created a couple of
 special tasks to tell the browser to reload the served site on changes to Jekyll
 files (templates, config, etc.) or Javascript files. We already included
 `.pipe(browserSync.stream())` in our `build:styles:main` and `build:images` tasks, so
-when these files are updated the changes will be injected into our local site so
-we won't even need a refresh.
+when these files are updated the changes will be injected into our local site
+and we won't even need a refresh.
 
 ```js
 // Special tasks for building and then reloading BrowserSync.
@@ -884,13 +913,20 @@ That's grounds for a little celebration in my opinion!
 
 <img src="/assets/img/blog/liz-lemon-self-five.gif" class="blog-image" style="max-width: 300px;" alt="Tina Fey as Liz Lemon giving herself an awesome high five.">
 
+In addition to improving performance on our existing site, we now have a
+framework in place to ensure good performance in the future — using gulp to
+build the site for production will automatically optimize our CSS, JS, and image
+assets. Plus, our local development workflow is more streamlined both because
+we took the time to think through our asset pipeline and because we can
+capitalize on tools like Browsersync to enhance the development experience.
+
 ## Next Steps
 
 There are a couple things I'd like to improve with this process:
 
-- Once an image is optimized via imagemin it shouldn't be processed every time
-`build:images` runs to save time both when building the site for testing and
-deployment and for spinning up the site locally.
+- Once an image is optimized via imagemin it shouldn't be processed each time
+`build:images` runs. By doing this, we'll save time both when building the site
+for testing and deployment and for spinning up the site locally.
 - Similarly, once an image is processed by Jekyll Picture Tag it doesn't need to
 be re-processed on every run of `jekyll build`.
 
