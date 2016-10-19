@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Gulp in our Jekyll Workflow to Optimize Performance
-date: 2016-10-07
+date: 2016-10-19
 author: Anne Tomasevich
 tags: performance jekyll javascript css sass front-end-dev
 summary: |
@@ -15,7 +15,7 @@ It's hard to believe it's been over a year and a half since our site's
 (written just two months after my career change into web development!) It's been
 great fun building our site and adding content thanks to the power and simplicity
 of [Jekyll](https://jekyllrb.com/). We recently deployed a series of changes to
-optimize our CSS, JS, and images and, in doing so, finally moved away from using
+optimize our CSS, JS, and images, and in doing so finally moved away from using
 built-in `jekyll` commands to build the site. Instead, we're using
 [gulp](http://gulpjs.com/), a task runner — or, as they put so nicely on their
 website, a "streaming build system". In this post I'll go over our motivations
@@ -53,7 +53,7 @@ Going off of these recommendations and adding a few things of our own, we ended
 up with a nice to-do list:
 
 1. Optimize CSS:
-   - [Minifying](https://en.wikipedia.org/wiki/Minification_(programming)) our main
+   - [Minify](https://en.wikipedia.org/wiki/Minification_(programming)) our main
    CSS file to remove unnecessary characters and shrink the filesize.
    - Use autoprefixer to add
    [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)
@@ -68,12 +68,13 @@ up with a nice to-do list:
    - Execute our JS asynchronously, meaning it will be executed when it's ready
    while the page is loading without interfering with the render.
 3. Optimize images:
-   - Manually shrink our image file sizes, then set up gulp to optimize them
-   even further for the smallest images possible.
+   - Manually shrink our image file sizes, then set up gulp to 
+   [optimize](https://github.com/imagemin/imagemin) them even further for the
+   smallest images possible.
    - Use the `<picture>` element over simple `<img>` tags. The `<picture>`
     element contains an array of different sizes of the same image and allows
     the browser to pick the smallest one that will look good on the user's
-    screen size and resolution.
+    screen size and resolution, so only the smallest possible image is loaded.
 
 One thing reported by PageSpeed not yet on our to-do list is "leverage
 browser caching" — we're not going to tackle this just yet since we're using
@@ -378,10 +379,10 @@ file, but you could point to a directory or file glob if needed.
 
 #### Critical CSS
 
-It's considered a good practice to inline CSS critical to above-the-fold content
-in `<style>` tags in the HTML `<head>` to avoid waiting on the server to
-load CSS on the initial page load. Identifying critical styles and pulling them
-into a single file may seem daunting but there are a
+Placing the CSS that's critical to above-the-fold content in `<style>` tags in
+the HTML `<head>` to means our end user can avoid waiting on the server to load
+the full CSS file on the initial page load. Identifying critical styles and 
+pulling them into a single file may seem daunting but there are a
 [number of ways](https://css-tricks.com/authoring-critical-fold-css/#article-header-id-1)
 to do this automatically. However, we found the easiest way to consolidate
 critical styles for all pages on our site was to follow
@@ -422,6 +423,8 @@ We added the critical CSS file to our `head.html` template:
 </head>
 ```
 
+#### Load CSS asynchronously
+
 Next, instead of loading the main CSS file all at once, we used
 [Filament Group's `loadCSS` function](https://github.com/filamentgroup/loadCSS)
 to load the main CSS asynchronously (plus our Google fonts):
@@ -443,7 +446,7 @@ to load the main CSS asynchronously (plus our Google fonts):
 </head>
 ```
 
-Finally, as a fallback, we're loading the CSS files normally in `<noscript>` tags
+As a fallback, we're loading the CSS files normally in `<noscript>` tags
 in a `scripts.html` template that's included on each page after the footer.
 
 ```html
@@ -551,7 +554,7 @@ process.
 We knocked out some low-hanging fruit by ensuring we were using the proper image
 formats and the smallest images possible. Google has a [great writeup on image
 optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization)
-I'd highly recommend, but the gist is:
+that I'd highly recommend reading, but the gist is:
 
 - Don't use images if you can use CSS or webfonts
 - Choose the right image format:
@@ -604,13 +607,13 @@ drastically! Our next step was to set up the
 This plugin supplies a Liquid tag to insert a `<picture>` element, which
 allows the browser to choose the most appropriate image from an array of sizes.
 Since our sites are viewed on so many different devices, we need to send these
-devices images that make sense - loading a huge image meant for a large retina
-screen on a tiny mobile phone is just a waste of time and resources. The Liquid
+devices images that make sense — loading a huge image meant for a large retina
+screen on a tiny mobile phone is a waste of time and resources. The Liquid
 tag provided by the plugin is much simpler than typing out all the `<picture>`
 markup, and the plugin also generates the differently sized images based on some
 simple config. Since the `<picture>` element has very low browser support at
 this time, [Picturefill](https://github.com/scottjehl/picturefill) is used as a
-polyfill, meaning the resulting markup will work on all modern browsers.
+polyfill, meaning the resulting markup will work in all modern browsers.
 
 But wait - how can we use a Jekyll plugin while we're hosting our site on GitHub
 Pages? GitHub Pages only allows
