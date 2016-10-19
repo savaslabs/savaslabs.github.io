@@ -241,8 +241,8 @@ gulp.task('serve', ['build:local'], function() {
     // Watch html and markdown files.
     gulp.watch(['**/*.+(html|md|markdown|MD)', '!_site/**/*.*'], ['build:jekyll:watch']);
 
-    // Watch RSS feed XML file.
-    gulp.watch('feed.xml', ['build:jekyll:watch']);
+    // Watch RSS feed XML files.
+    gulp.watch('**.xml', ['build:jekyll:watch']);
 
     // Watch data files.
     gulp.watch('_data/**.*+(yml|yaml|csv|json)', ['build:jekyll:watch']);
