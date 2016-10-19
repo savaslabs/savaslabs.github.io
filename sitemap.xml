@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html</loc>
+<lastmod>2016-10-19T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</loc>
 <lastmod>2016-09-23T00:00:00+00:00</lastmod>
 </url>
@@ -248,6 +252,9 @@
 </url>
 <url>
 <loc>http://savaslabs.com/blog/tag/internship/</loc>
+</url>
+<url>
+<loc>http://savaslabs.com/blog/tag/javascript/</loc>
 </url>
 <url>
 <loc>http://savaslabs.com/blog/tag/jekyll/</loc>
