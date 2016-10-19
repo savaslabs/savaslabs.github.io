@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Gulp in our Jekyll Workflow to Optimize Performance
+title: Optimizing Jekyll Performance with Gulp
 date: 2016-10-19
 author: Anne Tomasevich
 tags: performance jekyll javascript css sass front-end-dev
@@ -63,8 +63,8 @@ up with a nice to-do list:
    head. By "above the fold" I mean content viewable to the user on the initial
    page load before interacting with the site.
 2. Optimize JS:
-   - Concatenate and uglify our JS files to create a single, minified file,
-   smaller than the larger files we started with.
+   - Concatenate and [uglify](https://github.com/mishoo/UglifyJS) our JS files
+   to create a single, minified file, smaller than the larger files we started with.
    - Execute our JS asynchronously, meaning it will be executed when it's ready
    while the page is loading without interfering with the render.
 3. Optimize images:
