@@ -6,8 +6,8 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Oct 2016 19:19:37 +0000</pubDate>
-    <lastBuildDate>Wed, 19 Oct 2016 19:19:37 +0000</lastBuildDate>
+    <pubDate>Wed, 19 Oct 2016 19:23:15 +0000</pubDate>
+    <lastBuildDate>Wed, 19 Oct 2016 19:23:15 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
     
@@ -18,7 +18,8 @@
         <description>
           &lt;p&gt;
             
-              &lt;img src=&quot;http://savaslabs.com/blog/supercharged-seo-with-drupal-8.jpg&quot; alt=&quot;Supercharged SEO with Drupal 8&quot; &gt;
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/supercharged-seo-with-drupal-8.jpg&quot; alt=&quot;Supercharged SEO with Drupal 8&quot; &gt;
             
             SEO trends 2017 and an in depth look at Drupal 8&#39;s new features that make Drupal the best option for your long-term marketing campaign.
                 &lt;a href=&quot;http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
@@ -80,7 +81,8 @@
         <description>
           &lt;p&gt;
             
-              &lt;img src=&quot;http://savaslabs.com/blog/xhprof-callgraph.jpg&quot; alt=&quot;an XHProf callgraph&quot; &gt;
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/xhprof-callgraph.jpg&quot; alt=&quot;an XHProf callgraph&quot; &gt;
             
             First part in a series of how to use XHProf effectively within a VM for a Drupal website.
                 &lt;a href=&quot;http://savaslabs.com/2016/05/26/installing-xhprof.html&quot;&gt;Continue reading…&lt;/a&gt;
@@ -126,7 +128,8 @@
         <description>
           &lt;p&gt;
             
-              &lt;img src=&quot;http://savaslabs.com/blog/retirement.jpg&quot; alt=&quot;a retirement sign at the beach&quot; &gt;
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/retirement.jpg&quot; alt=&quot;a retirement sign at the beach&quot; &gt;
             
             Part 4 of a series investigating what options you have with your Drupal 6 site as EOL has now come. We discuss whether Drupal 7 or Drupal 8 make sense for your site.
                 &lt;a href=&quot;http://savaslabs.com/2016/02/24/drupal-6-part-4.html&quot;&gt;Continue reading…&lt;/a&gt;
@@ -152,7 +155,8 @@
         <description>
           &lt;p&gt;
             
-              &lt;img src=&quot;http://savaslabs.com/blog/options.jpg&quot; alt=&quot;a highway-looking sign with arrows pointing to many possibilities&quot; &gt;
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/options.jpg&quot; alt=&quot;a highway-looking sign with arrows pointing to many possibilities&quot; &gt;
             
             Part 3 of a series investigating what options you have with your Drupal 6 site as EOL approaches. We discuss what your options really are given the many difficult decisions you are likely faced given your organization&#39;s budget, level of risk and tolerance for it, and other business priorities.
                 &lt;a href=&quot;http://savaslabs.com/2016/01/25/drupal-6-part-3.html&quot;&gt;Continue reading…&lt;/a&gt;
@@ -178,7 +182,8 @@
         <description>
           &lt;p&gt;
             
-              &lt;img src=&quot;http://savaslabs.com/blog/composer.jpg&quot; alt=&quot;composer&quot; &gt;
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/composer.jpg&quot; alt=&quot;composer&quot; &gt;
             
             A demonstration on how to use Composer Manager and the MailChimp PHP library to simply and easily subscribe users to mailing lists without using the MailChimp contributed module.
 
@@ -209,7 +214,8 @@
         <description>
           &lt;p&gt;
             
-              &lt;img src=&quot;http://savaslabs.com/blog/crossed-out-angel.jpg&quot; alt=&quot;Crossed out angel&quot; &gt;
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/crossed-out-angel.jpg&quot; alt=&quot;Crossed out angel&quot; &gt;
             
             Part 2 of a series investigating what to do with your Drupal 6 site as
 EOL approaches. This post takes a deep dive into the risks specifically.
