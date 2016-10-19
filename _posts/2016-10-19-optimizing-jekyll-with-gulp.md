@@ -68,7 +68,7 @@ up with a nice to-do list:
    - Execute our JS asynchronously, meaning it will be executed when it's ready
    while the page is loading without interfering with the render.
 3. Optimize images:
-   - Manually shrink our image file sizes, then set up gulp to 
+   - Manually shrink our image file sizes, then set up gulp to
    [optimize](https://github.com/imagemin/imagemin) them even further for the
    smallest images possible.
    - Use the `<picture>` element over simple `<img>` tags. The `<picture>`
@@ -381,7 +381,7 @@ file, but you could point to a directory or file glob if needed.
 
 Placing the CSS that's critical to above-the-fold content in `<style>` tags in
 the HTML `<head>` to means our end user can avoid waiting on the server to load
-the full CSS file on the initial page load. Identifying critical styles and 
+the full CSS file on the initial page load. Identifying critical styles and
 pulling them into a single file may seem daunting but there are a
 [number of ways](https://css-tricks.com/authoring-critical-fold-css/#article-header-id-1)
 to do this automatically. However, we found the easiest way to consolidate
