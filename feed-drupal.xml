@@ -17,7 +17,8 @@
         <description>
           &lt;p&gt;
             {% if post.featured_image %}
-              &lt;img src=&quot;{{ site.url}}{{ post.featured_image }}&quot; alt=&quot;{{ post.featured_image_alt }}&quot; &gt;
+              {% capture img_directory %}/assets/img{% endcapture %}
+              &lt;img src=&quot;{{ site.url}}{{ img_directory }}{{ post.featured_image }}&quot; alt=&quot;{{ post.featured_image_alt }}&quot; &gt;
             {% endif %}
             {{ post.drupal_planet_summary | xml_escape }}
                 &lt;a href=&quot;{{ site.url }}{{ post.url }}&quot;&gt;Continue reading…&lt;/a&gt;
