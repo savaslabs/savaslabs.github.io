@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deploying Jekyll to Github Pages with Travis and Gulp
-date: 2016-10-15
+date: 2016-10-24
 author: Anne Tomasevich
 tags: jekyll travis
 summary: |
@@ -26,7 +26,7 @@ Jekyll Plugins are included. In our new workflow:
 
 1. We'll create a new default branch so the `master` branch can be cleared
 out and used by Travis.
-2. When this new branch is updated (e.g. a pull request is merged), Travis will
+2. When this new branch is updated (i.e. a pull request is merged), Travis will
 build the site.
 3. Using a GitHub token for authorization, Travis will commit the `_site`
 directory to the `master` branch, then push the `master` branch.
@@ -186,7 +186,7 @@ Some important notes:
 ## Deployment and debugging
 
 Merging this code into `source` was the easiest way for us to test if our new process worked
-— scary, right? Fortunately, if the build script failed (and it did many
+— scary, right? Fortunately, if the build script failed (and it did several
 times until we could get the npm and node versions correct and the ruby gems
 installing properly) nothing got pushed to `master` so nothing was deployed,
 meaning no downtime on our site. We also used 
@@ -219,10 +219,10 @@ hugely helpful!
 
 We'd like to implement some improvements on this process in the future:
 
-- With our current setup, it's impossible to deploy with failing tests
+- With our current setup, we can't deploy when our tests are failing.
 - Managing ruby and node dependencies has proven difficult across our team and
-for Travis. We've considered Dockerizing our site but that's a subject for
-another post!
+within the Travis environment. We've considered Dockerizing our site but that's
+a subject for another post!
 
 ## Resources
 
