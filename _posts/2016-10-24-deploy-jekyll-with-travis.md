@@ -5,7 +5,7 @@ date: 2016-10-24
 author: Anne Tomasevich
 tags: jekyll travis
 summary: |
-  A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub 
+  A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub
   Pages using Travis, opening the door for us to use Jekyll Plugins.
 ---
 
@@ -34,7 +34,7 @@ directory to the `master` branch, then push the `master` branch.
 
 ### Create a new default branch
 
-We created a new branch off `master` called `source` and set it to the default 
+We created a new branch off `master` called `source` and set it to the default
 branch on GitHub. Each time the deploy process is run, we'll have Travis delete
 the files on the `master` branch, then commit the entire compiled `_site`
 directory. This will ensure that all changes (including deletions) are captured.
@@ -50,7 +50,7 @@ use one of our personal accounts.
 ![Generating a personal access token in GitHub]({{ site.url }}/assets/img/blog/github-token.jpg)
 
 We'll need to use the access token and the account's email address in our
-deployment script, so to keep those items out of version control we used 
+deployment script, so to keep those items out of version control we used
 `travis encrypt`:
 
 ```bash
@@ -189,7 +189,7 @@ Merging this code into `source` was the easiest way for us to test if our new pr
 — scary, right? Fortunately, if the build script failed (and it did several
 times until we could get the npm and node versions correct and the ruby gems
 installing properly) nothing got pushed to `master` so nothing was deployed,
-meaning no downtime on our site. We also used 
+meaning no downtime on our site. We also used
 [Teleconsole](https://www.teleconsole.com/) to debug from inside the Travis
 environment.
 
