@@ -618,8 +618,9 @@ polyfill, meaning the resulting markup will work in all modern browsers.
 But wait - how can we use a Jekyll plugin while we're hosting our site on GitHub
 Pages? GitHub Pages only allows
 [a few Jekyll plugins](https://pages.github.com/versions/) when it builds a site
-for deployment, a well-known limitation. Come back soon for a post on how we're
-using Travis CI to build our site for testing and deployment to GitHub Pages!
+for deployment, a well-known limitation. [Read about how we're using Travis CI
+to build our site for testing and deployment to GitHub Pages so we can use
+Jekyll plugins.](/2016/10/25/deploy-jekyll-with-travis.html)
 
 The [installation and usage](https://github.com/robwierzbowski/jekyll-picture-tag#installation)
 documentation on Jekyll Picture Tag's GitHub repo is great, and setup is a quick
