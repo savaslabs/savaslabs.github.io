@@ -334,7 +334,7 @@ consistent.&lt;/p&gt;
 be using and including our paths file.&lt;/p&gt;
 
 &lt;p&gt;(P.S. If you’re like me, you might find it easier to look at the entire gulpfile
-at once - you can view ours &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/gulpfile.js&quot;&gt;on GitHub&lt;/a&gt;.)&lt;/p&gt;
+at once - you can view ours &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/926c11c60eeb774b9644fb72ee1e8383e3a09bb8/gulpfile.js&quot;&gt;on GitHub&lt;/a&gt;.)&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// gulpfile.js&lt;/span&gt;
 
@@ -361,7 +361,7 @@ at once - you can view ours &lt;a href=&quot;https://github.com/savaslabs/savasl
 &lt;/div&gt;
 
 &lt;p&gt;Each plugin will need to be installed locally either by copying our
-&lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/package.json&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;packages.json&lt;/code&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/84ff592ff2fc8c9bf57b1226c76df66bb9d53b25/gulpfile.js&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;packages.json&lt;/code&gt;&lt;/a&gt;
 file and running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt;, or by running the following for each
 plugin:&lt;/p&gt;
 
@@ -448,7 +448,7 @@ that tie the tasks together to build the site or serve it locally.&lt;/p&gt;
 &lt;p&gt;Some notes:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;We’re including all our SCSS partials in our &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/main.scss&quot;&gt;main.scss&lt;/a&gt;
+  &lt;li&gt;We’re including all our SCSS partials in our &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/220e13c1878b5f2b168d941463ad9d6a332f741a/_assets/styles/main.scss&quot;&gt;main.scss&lt;/a&gt;
 file, but you could point to a directory or file glob if needed.&lt;/li&gt;
   &lt;li&gt;We’re using the &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;autoprefixer plugin&lt;/a&gt; for postcss. We’re making heavy use of the Bourbon mixin library which currently handles some autoprefixing, but this will be dropped (hopefully soon!) in Bourbon v5.0 at which time &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;autoprefixer will be recommended&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -699,8 +699,9 @@ polyfill, meaning the resulting markup will work in all modern browsers.&lt;/p&g
 &lt;p&gt;But wait - how can we use a Jekyll plugin while we’re hosting our site on GitHub
 Pages? GitHub Pages only allows
 &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;a few Jekyll plugins&lt;/a&gt; when it builds a site
-for deployment, a well-known limitation. Come back soon for a post on how we’re
-using Travis CI to build our site for testing and deployment to GitHub Pages!&lt;/p&gt;
+for deployment, a well-known limitation. &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;Read about how we’re using Travis CI
+to build our site for testing and deployment to GitHub Pages so we can use
+Jekyll plugins.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://github.com/robwierzbowski/jekyll-picture-tag#installation&quot;&gt;installation and usage&lt;/a&gt;
 documentation on Jekyll Picture Tag’s GitHub repo is great, and setup is a quick
@@ -823,7 +824,7 @@ served at smaller screen sizes and lower resolutions!&lt;/p&gt;
 large image on the home page, I manually created a variety of images (known in
 the responsive image world as &lt;a href=&quot;https://developers.google.com/web/fundamentals/design-and-ui/media/images#art_direction&quot;&gt;art direction&lt;/a&gt;)
 then used media queries to display the appropriate image as the background image.
-You can check out the &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/scss/components/_home-cover-image.scss&quot;&gt;SCSS on GitHub&lt;/a&gt;.
+You can check out the &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/e61687f846a2ee605a5141cb9fa8a16c2de28339/_assets/styles/scss/components/_home-cover-image.scss&quot;&gt;SCSS on GitHub&lt;/a&gt;.
 Since this is a much more time-consuming process I haven’t implemented this for
 all of our background images yet, but taking the time to create images that will
 look exactly how we want them at all screen sizes will be well worth it!&lt;/p&gt;
@@ -1098,6 +1099,22 @@ a must-read for gulp beginners!&lt;/li&gt;
       
       
         
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Deploying Jekyll to Github Pages with Travis and Gulp
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Oct 25, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub Pages using Travis, opening the door for...&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
       
         
         
@@ -1133,21 +1150,6 @@ a must-read for gulp beginners!&lt;/li&gt;
           &lt;/div&gt;
         
       
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/06/22/user-testing.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Usability Testing - Our Process and Favorite Practices
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Jun 22, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
         
       
         
@@ -1235,6 +1237,8 @@ a must-read for gulp beginners!&lt;/li&gt;
     
     &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
+    
+      &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; Deploying Jekyll to Github Pages with Travis and Gulp&lt;/a&gt;
     
   &lt;/div&gt;
   &lt;div class=&quot;previous&quot;&gt;
@@ -1550,7 +1554,7 @@ consistent.&lt;/p&gt;
 be using and including our paths file.&lt;/p&gt;
 
 &lt;p&gt;(P.S. If you’re like me, you might find it easier to look at the entire gulpfile
-at once - you can view ours &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/gulpfile.js&quot;&gt;on GitHub&lt;/a&gt;.)&lt;/p&gt;
+at once - you can view ours &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/926c11c60eeb774b9644fb72ee1e8383e3a09bb8/gulpfile.js&quot;&gt;on GitHub&lt;/a&gt;.)&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// gulpfile.js&lt;/span&gt;
 
@@ -1577,7 +1581,7 @@ at once - you can view ours &lt;a href=&quot;https://github.com/savaslabs/savasl
 &lt;/div&gt;
 
 &lt;p&gt;Each plugin will need to be installed locally either by copying our
-&lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/package.json&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;packages.json&lt;/code&gt;&lt;/a&gt;
+&lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/84ff592ff2fc8c9bf57b1226c76df66bb9d53b25/gulpfile.js&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;packages.json&lt;/code&gt;&lt;/a&gt;
 file and running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt;, or by running the following for each
 plugin:&lt;/p&gt;
 
@@ -1664,7 +1668,7 @@ that tie the tasks together to build the site or serve it locally.&lt;/p&gt;
 &lt;p&gt;Some notes:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;We’re including all our SCSS partials in our &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/main.scss&quot;&gt;main.scss&lt;/a&gt;
+  &lt;li&gt;We’re including all our SCSS partials in our &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/220e13c1878b5f2b168d941463ad9d6a332f741a/_assets/styles/main.scss&quot;&gt;main.scss&lt;/a&gt;
 file, but you could point to a directory or file glob if needed.&lt;/li&gt;
   &lt;li&gt;We’re using the &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;autoprefixer plugin&lt;/a&gt; for postcss. We’re making heavy use of the Bourbon mixin library which currently handles some autoprefixing, but this will be dropped (hopefully soon!) in Bourbon v5.0 at which time &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;autoprefixer will be recommended&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1915,8 +1919,9 @@ polyfill, meaning the resulting markup will work in all modern browsers.&lt;/p&g
 &lt;p&gt;But wait - how can we use a Jekyll plugin while we’re hosting our site on GitHub
 Pages? GitHub Pages only allows
 &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;a few Jekyll plugins&lt;/a&gt; when it builds a site
-for deployment, a well-known limitation. Come back soon for a post on how we’re
-using Travis CI to build our site for testing and deployment to GitHub Pages!&lt;/p&gt;
+for deployment, a well-known limitation. &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;Read about how we’re using Travis CI
+to build our site for testing and deployment to GitHub Pages so we can use
+Jekyll plugins.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://github.com/robwierzbowski/jekyll-picture-tag#installation&quot;&gt;installation and usage&lt;/a&gt;
 documentation on Jekyll Picture Tag’s GitHub repo is great, and setup is a quick
@@ -2039,7 +2044,7 @@ served at smaller screen sizes and lower resolutions!&lt;/p&gt;
 large image on the home page, I manually created a variety of images (known in
 the responsive image world as &lt;a href=&quot;https://developers.google.com/web/fundamentals/design-and-ui/media/images#art_direction&quot;&gt;art direction&lt;/a&gt;)
 then used media queries to display the appropriate image as the background image.
-You can check out the &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/scss/components/_home-cover-image.scss&quot;&gt;SCSS on GitHub&lt;/a&gt;.
+You can check out the &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/e61687f846a2ee605a5141cb9fa8a16c2de28339/_assets/styles/scss/components/_home-cover-image.scss&quot;&gt;SCSS on GitHub&lt;/a&gt;.
 Since this is a much more time-consuming process I haven’t implemented this for
 all of our background images yet, but taking the time to create images that will
 look exactly how we want them at all screen sizes will be well worth it!&lt;/p&gt;
@@ -2314,6 +2319,22 @@ a must-read for gulp beginners!&lt;/li&gt;
       
       
         
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Deploying Jekyll to Github Pages with Travis and Gulp
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Oct 25, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub Pages using Travis, opening the door for...&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
       
         
         
@@ -2349,21 +2370,6 @@ a must-read for gulp beginners!&lt;/li&gt;
           &lt;/div&gt;
         
       
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/06/22/user-testing.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Usability Testing - Our Process and Favorite Practices
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Jun 22, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;Our approach to designing, conducting, and learning from user testing and other analyses.&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
         
       
         
@@ -2451,6 +2457,8 @@ a must-read for gulp beginners!&lt;/li&gt;
     
     &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
+    
+      &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; Deploying Jekyll to Github Pages with Travis and Gulp&lt;/a&gt;
     
   &lt;/div&gt;
   &lt;div class=&quot;previous&quot;&gt;
@@ -2926,7 +2934,7 @@ consistent.</p>
 be using and including our paths file.</p>
 
 <p>(P.S. If you’re like me, you might find it easier to look at the entire gulpfile
-at once - you can view ours <a href="https://github.com/savaslabs/savaslabs.github.io/blob/source/gulpfile.js">on GitHub</a>.)</p>
+at once - you can view ours <a href="https://github.com/savaslabs/savaslabs.github.io/blob/926c11c60eeb774b9644fb72ee1e8383e3a09bb8/gulpfile.js">on GitHub</a>.)</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// gulpfile.js</span>
 
@@ -2953,7 +2961,7 @@ at once - you can view ours <a href="https://github.com/savaslabs/savaslabs.gith
 </div>
 
 <p>Each plugin will need to be installed locally either by copying our
-<a href="https://github.com/savaslabs/savaslabs.github.io/blob/source/package.json"><code class="highlighter-rouge">packages.json</code></a>
+<a href="https://github.com/savaslabs/savaslabs.github.io/blob/84ff592ff2fc8c9bf57b1226c76df66bb9d53b25/gulpfile.js"><code class="highlighter-rouge">packages.json</code></a>
 file and running <code class="highlighter-rouge">npm install</code>, or by running the following for each
 plugin:</p>
 
@@ -3040,7 +3048,7 @@ that tie the tasks together to build the site or serve it locally.</p>
 <p>Some notes:</p>
 
 <ul>
-  <li>We’re including all our SCSS partials in our <a href="https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/main.scss">main.scss</a>
+  <li>We’re including all our SCSS partials in our <a href="https://github.com/savaslabs/savaslabs.github.io/blob/220e13c1878b5f2b168d941463ad9d6a332f741a/_assets/styles/main.scss">main.scss</a>
 file, but you could point to a directory or file glob if needed.</li>
   <li>We’re using the <a href="https://github.com/postcss/autoprefixer">autoprefixer plugin</a> for postcss. We’re making heavy use of the Bourbon mixin library which currently handles some autoprefixing, but this will be dropped (hopefully soon!) in Bourbon v5.0 at which time <a href="https://github.com/postcss/autoprefixer">autoprefixer will be recommended</a>.</li>
 </ul>
@@ -3291,8 +3299,9 @@ polyfill, meaning the resulting markup will work in all modern browsers.</p>
 <p>But wait - how can we use a Jekyll plugin while we’re hosting our site on GitHub
 Pages? GitHub Pages only allows
 <a href="https://pages.github.com/versions/">a few Jekyll plugins</a> when it builds a site
-for deployment, a well-known limitation. Come back soon for a post on how we’re
-using Travis CI to build our site for testing and deployment to GitHub Pages!</p>
+for deployment, a well-known limitation. <a href="/2016/10/25/deploy-jekyll-with-travis.html">Read about how we’re using Travis CI
+to build our site for testing and deployment to GitHub Pages so we can use
+Jekyll plugins.</a></p>
 
 <p>The <a href="https://github.com/robwierzbowski/jekyll-picture-tag#installation">installation and usage</a>
 documentation on Jekyll Picture Tag’s GitHub repo is great, and setup is a quick
@@ -3415,7 +3424,7 @@ served at smaller screen sizes and lower resolutions!</p>
 large image on the home page, I manually created a variety of images (known in
 the responsive image world as <a href="https://developers.google.com/web/fundamentals/design-and-ui/media/images#art_direction">art direction</a>)
 then used media queries to display the appropriate image as the background image.
-You can check out the <a href="https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/scss/components/_home-cover-image.scss">SCSS on GitHub</a>.
+You can check out the <a href="https://github.com/savaslabs/savaslabs.github.io/blob/e61687f846a2ee605a5141cb9fa8a16c2de28339/_assets/styles/scss/components/_home-cover-image.scss">SCSS on GitHub</a>.
 Since this is a much more time-consuming process I haven’t implemented this for
 all of our background images yet, but taking the time to create images that will
 look exactly how we want them at all screen sizes will be well worth it!</p>
@@ -3690,6 +3699,22 @@ a must-read for gulp beginners!</li>
       
       
         
+        
+          <div class="card">
+            <a href="/2016/10/25/deploy-jekyll-with-travis.html">
+              <div class="card-header">
+                  Deploying Jekyll to Github Pages with Travis and Gulp
+              </div>
+              <div class="card-copy">
+                <p>Oct 25, 2016</p>
+                
+                <p><p>A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub Pages using Travis, opening the door for...</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
       
         
         
@@ -3725,21 +3750,6 @@ a must-read for gulp beginners!</li>
           </div>
         
       
-        
-        
-          <div class="card">
-            <a href="/2016/06/22/user-testing.html">
-              <div class="card-header">
-                  Usability Testing - Our Process and Favorite Practices
-              </div>
-              <div class="card-copy">
-                <p>Jun 22, 2016</p>
-                
-                <p><p>Our approach to designing, conducting, and learning from user testing and other analyses.</p>
-</p>
-              </div>
-            </a>
-          </div>
         
       
         
@@ -3827,6 +3837,8 @@ a must-read for gulp beginners!</li>
     
     <div class="previous-next-links">
   <div class="next">
+    
+      <a href="/2016/10/25/deploy-jekyll-with-travis.html"><i class="fa fa-long-arrow-left "></i> Deploying Jekyll to Github Pages with Travis and Gulp</a>
     
   </div>
   <div class="previous">

@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Deploying Jekyll to Github Pages with Travis and Gulp | Savas Labs</title>
+  
+  <meta name="description" content="Since our company’s inception, we at Savas Labs have used Jekyll to build our company website and GitHub Pages to host it with great success. Jekyll is a pow...">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="http://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html">
+  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Durham, North Carolina",
+        "postalCode": "27701",
+        "streetAddress": "201 W Main St."
+      },
+      "description": "A full-service web agency leveraging the power of Drupal.
+",
+      "email": "info@savaslabs.com",
+      "name": "Savas Labs",
+      "telephone": "(919) 432-4660",
+      "url": "http://savaslabs.com",
+      "logo": "http://savaslabs.com/assets/img/logo.png"
+    }
+</script>
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Deploying Jekyll to Github Pages with Travis and Gulp",
+    "about": "A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub
+Pages using Travis, opening the door for us to use Jekyll Plugins.
+",
+    "articleBody": "
+
+
+&lt;div class=&quot;post&quot;&gt;
+  &lt;header class=&quot;post-header&quot;&gt;
+    &lt;h1 class=&quot;post-title&quot;&gt;Deploying Jekyll to Github Pages with Travis and Gulp&lt;/h1&gt;
+    &lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
+    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
+    &lt;p&gt;Oct 25, 2016 &lt;/p&gt;&lt;br&gt;
+    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;Jekyll&lt;/a&gt;, &lt;a href=&quot;/blog/tag/travis/&quot;&gt;Travis CI&lt;/a&gt;&lt;/p&gt;
+    
+    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
+    
+    
+      &lt;div class=&quot;post-featured-image&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png&quot; media=&quot;(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-737by370-d50036.png&quot; media=&quot;(min-width: 400px)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-800by401-d50036.png&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png&quot; class=&quot;image--post-featured-image&quot; itemprop=&quot;image&quot; alt=&quot;Jekyll, Gulp, Travis, and GitHub logos&quot; &gt;
+  &lt;/picture&gt;
+
+      &lt;/div&gt;
+    
+  &lt;/header&gt;
+
+  
+
+  &lt;article class=&quot;post-content&quot;&gt;
+    &lt;p&gt;Since our company’s inception, we at Savas Labs have used &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; to build our company website and &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; to host it with great success. Jekyll is a powerful tool out of the box, and it’s hard to imagine a simpler hosting strategy than GitHub Pages, which only requires a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot;&gt;specifically named branch&lt;/a&gt; and a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages&quot;&gt;single settings update&lt;/a&gt; to get your site live for free. Although we often use &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt; to build complex, data-heavy systems that need to have a simple workflow for site admins, for our own site we recognized that Jekyll was a better tool for our workflow that would mitigate security risks, eliminate site hosting costs, and reduce complexity since there’s no need for a database back-end.&lt;/p&gt;
+
+&lt;p&gt;One well-known limitation of this workflow: any Jekyll plugins not &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;whitelisted by GitHub Pages&lt;/a&gt; will be disabled when GitHub Pages builds the site, since &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; is run with the &lt;code class=&quot;highlighter-rouge&quot;&gt;--safe&lt;/code&gt; tag. We recently wanted to start using the &lt;a href=&quot;https://github.com/robwierzbowski/jekyll-picture-tag&quot;&gt;Jekyll Picture Tag&lt;/a&gt; plugin (&lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html#jekyll-picture-tag-plugin&quot;&gt;read about why&lt;/a&gt;), and the incredibly crucial &lt;a href=&quot;https://github.com/jekyll/jemoji&quot;&gt;Jemoji&lt;/a&gt; plugin &lt;img class=&quot;emoji&quot; title=&quot;:joy_cat:&quot; alt=&quot;:joy_cat:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f639.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;, so we needed to find a way to build our site before pushing it to GitHub Pages for deployment. To complicate matters a bit more, we recently starting &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;building our site with gulp&lt;/a&gt;, which introduced another layer of dependencies to the mix.&lt;/p&gt;
+
+&lt;p&gt;Many solutions exist for building the site before pushing to GitHub Pages. We chose to use Travis CI to run our gulp command to build the site, then commit the changes to our &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch so GitHub Pages will deploy the updated site.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-workflow&quot;&gt;Basic workflow&lt;/h2&gt;
+
+&lt;p&gt;Our site was already using Travis CI to run our
+&lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/70420c8afcf59b8d91fba3b57d2ca8241c71f211/_scripts/run-tests.sh&quot;&gt;test script&lt;/a&gt;
+on pull requests and merges to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch. You can learn about setting
+up Travis in their &lt;a href=&quot;https://docs.travis-ci.com/&quot;&gt;docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Previously, Travis would build the site and run our tests, then we would merge
+branches into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, triggering GitHub Pages to rebuild and deploy our site.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Original deployment workflow&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, we want to build our site before it gets to GitHub Pages to ensure our
+Jekyll Plugins are included. In our new workflow:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We created a new default branch so the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch can be cleared
+out and used by Travis.&lt;/li&gt;
+  &lt;li&gt;When this new branch is updated (i.e. a pull request is merged), Travis
+builds the site.&lt;/li&gt;
+  &lt;li&gt;Using a GitHub token for authorization, Travis commits the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;
+directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, then pushes the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch.&lt;/li&gt;
+  &lt;li&gt;This triggers GitHub Pages to deploy our pre-built site.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;New deployment workflow&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-new-default-branch&quot;&gt;Create a new default branch&lt;/h3&gt;
+
+&lt;p&gt;We created a new branch off &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; and set it to the default
+branch on GitHub. &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; contains what the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch used to — the
+Jekyll config file(s), HTML files and partials, data files, styles and JS, etc.
+Each time the deploy process is run, Travis deletes all the files on the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, then commits the entire compiled &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory. So, the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch only contains the compiled site, which is deployed by
+GitHub Pages.&lt;/p&gt;
+
+&lt;p&gt;Why delete all files on &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; before committing the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory? This
+ensures that all changes (including deletions) are captured in each deployment.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up-a-github-token-for-travis&quot;&gt;Set up a GitHub token for Travis&lt;/h3&gt;
+
+&lt;p&gt;To give Travis the authority to commit and push to our repository, we generated
+a personal access token by visiting the
+&lt;a href=&quot;https://github.com/settings/tokens&quot;&gt;settings page&lt;/a&gt; on GitHub and generating a
+new token. We used a bot account that has access to our repository to avoid
+needing to use one of our personal accounts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ll need to use the access token and the account’s email address in our
+deployment script, so to keep those items out of version control we used
+&lt;code class=&quot;highlighter-rouge&quot;&gt;travis encrypt&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;travis encrypt &lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;token&amp;gt; --add env.global
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;travis encrypt &lt;span class=&quot;nv&quot;&gt;GH_EMAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;email&amp;gt; --add env.global
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This adds encrypted versions of these sensitive items to &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;big long encrypted string...&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;...and another&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With that, we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;GH_TOKEN&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GH_EMAIL&lt;/code&gt; variables in our
+deployment script. See &lt;a href=&quot;https://docs.travis-ci.com/user/encryption-keys/&quot;&gt;Travis’ docs for more inforamtion.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;configure-deployment&quot;&gt;Configure deployment&lt;/h3&gt;
+
+&lt;p&gt;Next we added the following to our &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Keep Travis from testing `master` branch&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Deployment config&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./_scripts/build.sh&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We don’t want Travis running the test script on the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch anymore since it
+only contains the compiled site, and we only want Travis to run the
+deployment script on the &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; branch. We’re also telling Travis which script
+to run on deployment, and to destroy the site after the test script is run with our
+&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.test.yml&lt;/code&gt; file so the deployment script can rebuild the site with our
+default &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file. Check out &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/95bb1d70790acf4c33b7c121e2ff462af5096d73/.travis.yml&quot;&gt;this revision of the full .travis.yml file here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That revision of &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; worked for us when we were using &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; to
+compile the site, but things got trickier when we started using gulp. We had to
+set the proper versions of npm and node.js and ensure that our ruby gems were
+installed properly. Here’s the full Travis config we needed to get things
+running with gulp:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# .travis.yml&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;required&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./_scripts/run-tests.sh&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;6.1&#39;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rvm install 2.1&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rvm use 2.1&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;. $HOME/.nvm/nvm.sh &amp;amp;&amp;amp; nvm install 6.1 &amp;amp;&amp;amp; nvm use 6.1&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gem install bundler&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle check || bundle install&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;NOKOGIRI_USE_SYSTEM_LIBRARIES=true&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stuff&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;more stuff&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./_scripts/build.sh&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or view it &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/9434cee6fe1cce54de4bc0294da1c6e9f52476e0/.travis.yml&quot;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-deployment-script&quot;&gt;The deployment script&lt;/h3&gt;
+
+&lt;p&gt;When the &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; branch is updated and our tests pass, the deployment script
+&lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt; is executed.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Enable error reporting to the console.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -e
+
+&lt;span class=&quot;c&quot;&gt;# Install bundles if needed.&lt;/span&gt;
+bundle check &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; bundle install
+
+&lt;span class=&quot;c&quot;&gt;# NPM install if needed.&lt;/span&gt;
+. &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.nvm/nvm.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nvm install 6.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nvm use 6.1
+npm install
+
+&lt;span class=&quot;c&quot;&gt;# Build the site.&lt;/span&gt;
+gulp
+
+&lt;span class=&quot;c&quot;&gt;# Checkout `master` and remove everything.&lt;/span&gt;
+git clone https://&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../savaslabs.github.io.master
+git checkout master
+rm -rf &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Copy generated HTML site from source branch in original repository.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Now the `master` branch will contain only the contents of the _site directory.&lt;/span&gt;
+cp -R ../savaslabs.github.io/_site/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; .
+
+&lt;span class=&quot;c&quot;&gt;# Make sure we have the updated .travis.yml file so tests won&#39;t run on master.&lt;/span&gt;
+cp ../savaslabs.github.io/.travis.yml .
+git config user.email &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_EMAIL&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+git config user.name &lt;span class=&quot;s2&quot;&gt;&quot;savas-bot&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Commit and push generated content to `master` branch.&lt;/span&gt;
+git status
+git add -A .
+git status
+git commit -a -m &lt;span class=&quot;s2&quot;&gt;&quot;Travis #&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TRAVIS_BUILD_NUMBER&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+git push --quiet origin &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;master&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Some important notes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Make sure the script file is executable!&lt;/li&gt;
+  &lt;li&gt;The last line ensures that our encrypted token won’t end up in git logs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deployment-and-debugging&quot;&gt;Deployment and debugging&lt;/h2&gt;
+
+&lt;p&gt;Merging this code into &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; was the easiest way for us to test if our new process worked
+— scary, right? Fortunately, if the build script failed (and it did several
+times until we could get the npm and node versions correct and the ruby gems
+installing properly) nothing got pushed to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; so nothing was deployed,
+meaning no downtime on our site.&lt;/p&gt;
+
+&lt;p&gt;We also used
+&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; to debug from inside the Travis
+environment. To do this, we commented out the &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; line and added the following to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl https://www.teleconsole.com/get.sh | sh
+teleconsole
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This printed a session ID in the Travis CI output. With a couple of commands, we
+could enter the session from our local machines:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Install teleconsole&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;curl https://www.teleconsole.com/get.sh | sh
+
+&lt;span class=&quot;c&quot;&gt;# Join session&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;teleconsole join &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;session ID]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Being able to look around and run commands within the Travis environment was
+hugely helpful!&lt;/p&gt;
+
+&lt;h2 id=&quot;future-work&quot;&gt;Future work&lt;/h2&gt;
+
+&lt;p&gt;We’d like to implement some improvements on this process in the future:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;With our current setup, we can’t deploy when our tests are failing.&lt;/li&gt;
+  &lt;li&gt;Providing consistency with Ruby and Node dependencies across different
+operating systems and environments has proven difficult. We’ve considered
+Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;We’d like to give credit to these helpful posts, which we adapted for our site:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://eshepelyuk.github.io/2014/10/28/automate-github-pages-travisci.html&quot;&gt;Automate GitHub Pages publishing with Jekyll and Travis CI&lt;/a&gt; by Evgeny Shepelyuk&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mlota.github.io/2015/11/23/automating-deployment-github-pages-jekyll-travis.html&quot;&gt;Automating deployment of a GitHub Pages hosted site with Jekyll and Travis CI&lt;/a&gt; by Mel Lota&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;hr&gt;
+
+    
+      &lt;div class=&quot;post-comments&quot;&gt;
+  
+    &lt;div class=&quot;expander&quot;&gt;
+      &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
+      &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
+        &lt;!-- If there are existing comments, output them here. --&gt;
+        &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
+        &lt;!-- New comment form --&gt;
+        &lt;form id=&quot;comment-form&quot;&gt;
+          &lt;h4&gt;Leave a comment&lt;/h4&gt;
+          &lt;div class=&quot;comment-name&quot;&gt;
+            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;comment-email&quot;&gt;
+            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
+            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;p&gt;Comment&lt;/p&gt;
+          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
+          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
+
+          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2016/10/25/deploy-jekyll-with-travis.html&#39; /&gt;
+          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
+
+          &lt;div class=&#39;are-you-human&#39;&gt;
+            &lt;div class=&#39;are-you-human-owl&#39;&gt;
+              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&#39;are-you-human-field&#39;&gt;
+              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
+              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
+              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+  &lt;hr&gt;
+&lt;/div&gt;
+
+    
+    
+      &lt;div class=&quot;post-bottom&quot;&gt;
+  &lt;div class=&quot;post-meta&quot;&gt;
+    &lt;h4&gt;About the author&lt;/h4&gt;
+    
+      &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-eeafb6.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Anne Tomasevich&quot; &gt;
+  &lt;/picture&gt;
+
+      &lt;/a&gt;
+      &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
+    
+  &lt;/div&gt;
+    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
+  &lt;div class=&quot;post-related flex-container&quot;&gt;
+    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
+    &lt;div class=&quot;cards&quot;&gt;
+      
+      
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Optimizing Jekyll Performance with Gulp
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Oct 19, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;How we improved our company site’s performance with a better Jekyll workflow&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Supercharged SEO with Drupal 8
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/08/29/internship-thoughts.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  A Savas Labs Internship
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+    
+    &lt;div class=&quot;previous-next-links&quot;&gt;
+  &lt;div class=&quot;next&quot;&gt;
+    
+  &lt;/div&gt;
+  &lt;div class=&quot;previous&quot;&gt;
+    
+      &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt; Optimizing Jekyll Performance with Gulp &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+  &lt;/article&gt;
+
+&lt;/div&gt;
+",
+      "author": {
+          "@context": "http://schema.org",
+          "@type": "Person",
+          "name": "Anne Tomasevich",
+          "affiliation": "Savas Labs",
+          "worksFor": "Savas Labs"
+      },
+    "keywords": "jekyll, travis",
+    "text": "
+
+
+&lt;div class=&quot;post&quot;&gt;
+  &lt;header class=&quot;post-header&quot;&gt;
+    &lt;h1 class=&quot;post-title&quot;&gt;Deploying Jekyll to Github Pages with Travis and Gulp&lt;/h1&gt;
+    &lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
+    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
+    &lt;p&gt;Oct 25, 2016 &lt;/p&gt;&lt;br&gt;
+    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;Jekyll&lt;/a&gt;, &lt;a href=&quot;/blog/tag/travis/&quot;&gt;Travis CI&lt;/a&gt;&lt;/p&gt;
+    
+    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
+    
+    
+      &lt;div class=&quot;post-featured-image&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png&quot; media=&quot;(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-737by370-d50036.png&quot; media=&quot;(min-width: 400px)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-800by401-d50036.png&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png&quot; class=&quot;image--post-featured-image&quot; itemprop=&quot;image&quot; alt=&quot;Jekyll, Gulp, Travis, and GitHub logos&quot; &gt;
+  &lt;/picture&gt;
+
+      &lt;/div&gt;
+    
+  &lt;/header&gt;
+
+  
+
+  &lt;article class=&quot;post-content&quot;&gt;
+    &lt;p&gt;Since our company’s inception, we at Savas Labs have used &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; to build our company website and &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; to host it with great success. Jekyll is a powerful tool out of the box, and it’s hard to imagine a simpler hosting strategy than GitHub Pages, which only requires a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot;&gt;specifically named branch&lt;/a&gt; and a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages&quot;&gt;single settings update&lt;/a&gt; to get your site live for free. Although we often use &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt; to build complex, data-heavy systems that need to have a simple workflow for site admins, for our own site we recognized that Jekyll was a better tool for our workflow that would mitigate security risks, eliminate site hosting costs, and reduce complexity since there’s no need for a database back-end.&lt;/p&gt;
+
+&lt;p&gt;One well-known limitation of this workflow: any Jekyll plugins not &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;whitelisted by GitHub Pages&lt;/a&gt; will be disabled when GitHub Pages builds the site, since &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; is run with the &lt;code class=&quot;highlighter-rouge&quot;&gt;--safe&lt;/code&gt; tag. We recently wanted to start using the &lt;a href=&quot;https://github.com/robwierzbowski/jekyll-picture-tag&quot;&gt;Jekyll Picture Tag&lt;/a&gt; plugin (&lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html#jekyll-picture-tag-plugin&quot;&gt;read about why&lt;/a&gt;), and the incredibly crucial &lt;a href=&quot;https://github.com/jekyll/jemoji&quot;&gt;Jemoji&lt;/a&gt; plugin &lt;img class=&quot;emoji&quot; title=&quot;:joy_cat:&quot; alt=&quot;:joy_cat:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f639.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;, so we needed to find a way to build our site before pushing it to GitHub Pages for deployment. To complicate matters a bit more, we recently starting &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;building our site with gulp&lt;/a&gt;, which introduced another layer of dependencies to the mix.&lt;/p&gt;
+
+&lt;p&gt;Many solutions exist for building the site before pushing to GitHub Pages. We chose to use Travis CI to run our gulp command to build the site, then commit the changes to our &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch so GitHub Pages will deploy the updated site.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-workflow&quot;&gt;Basic workflow&lt;/h2&gt;
+
+&lt;p&gt;Our site was already using Travis CI to run our
+&lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/70420c8afcf59b8d91fba3b57d2ca8241c71f211/_scripts/run-tests.sh&quot;&gt;test script&lt;/a&gt;
+on pull requests and merges to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch. You can learn about setting
+up Travis in their &lt;a href=&quot;https://docs.travis-ci.com/&quot;&gt;docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Previously, Travis would build the site and run our tests, then we would merge
+branches into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, triggering GitHub Pages to rebuild and deploy our site.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Original deployment workflow&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, we want to build our site before it gets to GitHub Pages to ensure our
+Jekyll Plugins are included. In our new workflow:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We created a new default branch so the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch can be cleared
+out and used by Travis.&lt;/li&gt;
+  &lt;li&gt;When this new branch is updated (i.e. a pull request is merged), Travis
+builds the site.&lt;/li&gt;
+  &lt;li&gt;Using a GitHub token for authorization, Travis commits the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;
+directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, then pushes the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch.&lt;/li&gt;
+  &lt;li&gt;This triggers GitHub Pages to deploy our pre-built site.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;New deployment workflow&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-new-default-branch&quot;&gt;Create a new default branch&lt;/h3&gt;
+
+&lt;p&gt;We created a new branch off &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; and set it to the default
+branch on GitHub. &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; contains what the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch used to — the
+Jekyll config file(s), HTML files and partials, data files, styles and JS, etc.
+Each time the deploy process is run, Travis deletes all the files on the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, then commits the entire compiled &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory. So, the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch only contains the compiled site, which is deployed by
+GitHub Pages.&lt;/p&gt;
+
+&lt;p&gt;Why delete all files on &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; before committing the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory? This
+ensures that all changes (including deletions) are captured in each deployment.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up-a-github-token-for-travis&quot;&gt;Set up a GitHub token for Travis&lt;/h3&gt;
+
+&lt;p&gt;To give Travis the authority to commit and push to our repository, we generated
+a personal access token by visiting the
+&lt;a href=&quot;https://github.com/settings/tokens&quot;&gt;settings page&lt;/a&gt; on GitHub and generating a
+new token. We used a bot account that has access to our repository to avoid
+needing to use one of our personal accounts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ll need to use the access token and the account’s email address in our
+deployment script, so to keep those items out of version control we used
+&lt;code class=&quot;highlighter-rouge&quot;&gt;travis encrypt&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;travis encrypt &lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;token&amp;gt; --add env.global
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;travis encrypt &lt;span class=&quot;nv&quot;&gt;GH_EMAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;email&amp;gt; --add env.global
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This adds encrypted versions of these sensitive items to &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;big long encrypted string...&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;...and another&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With that, we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;GH_TOKEN&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GH_EMAIL&lt;/code&gt; variables in our
+deployment script. See &lt;a href=&quot;https://docs.travis-ci.com/user/encryption-keys/&quot;&gt;Travis’ docs for more inforamtion.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;configure-deployment&quot;&gt;Configure deployment&lt;/h3&gt;
+
+&lt;p&gt;Next we added the following to our &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Keep Travis from testing `master` branch&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Deployment config&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./_scripts/build.sh&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We don’t want Travis running the test script on the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch anymore since it
+only contains the compiled site, and we only want Travis to run the
+deployment script on the &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; branch. We’re also telling Travis which script
+to run on deployment, and to destroy the site after the test script is run with our
+&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.test.yml&lt;/code&gt; file so the deployment script can rebuild the site with our
+default &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file. Check out &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/95bb1d70790acf4c33b7c121e2ff462af5096d73/.travis.yml&quot;&gt;this revision of the full .travis.yml file here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That revision of &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; worked for us when we were using &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; to
+compile the site, but things got trickier when we started using gulp. We had to
+set the proper versions of npm and node.js and ensure that our ruby gems were
+installed properly. Here’s the full Travis config we needed to get things
+running with gulp:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# .travis.yml&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;required&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./_scripts/run-tests.sh&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;6.1&#39;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rvm install 2.1&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rvm use 2.1&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;. $HOME/.nvm/nvm.sh &amp;amp;&amp;amp; nvm install 6.1 &amp;amp;&amp;amp; nvm use 6.1&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gem install bundler&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle check || bundle install&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;NOKOGIRI_USE_SYSTEM_LIBRARIES=true&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stuff&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;more stuff&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./_scripts/build.sh&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or view it &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/9434cee6fe1cce54de4bc0294da1c6e9f52476e0/.travis.yml&quot;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-deployment-script&quot;&gt;The deployment script&lt;/h3&gt;
+
+&lt;p&gt;When the &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; branch is updated and our tests pass, the deployment script
+&lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt; is executed.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Enable error reporting to the console.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -e
+
+&lt;span class=&quot;c&quot;&gt;# Install bundles if needed.&lt;/span&gt;
+bundle check &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; bundle install
+
+&lt;span class=&quot;c&quot;&gt;# NPM install if needed.&lt;/span&gt;
+. &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.nvm/nvm.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nvm install 6.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nvm use 6.1
+npm install
+
+&lt;span class=&quot;c&quot;&gt;# Build the site.&lt;/span&gt;
+gulp
+
+&lt;span class=&quot;c&quot;&gt;# Checkout `master` and remove everything.&lt;/span&gt;
+git clone https://&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../savaslabs.github.io.master
+git checkout master
+rm -rf &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Copy generated HTML site from source branch in original repository.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Now the `master` branch will contain only the contents of the _site directory.&lt;/span&gt;
+cp -R ../savaslabs.github.io/_site/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; .
+
+&lt;span class=&quot;c&quot;&gt;# Make sure we have the updated .travis.yml file so tests won&#39;t run on master.&lt;/span&gt;
+cp ../savaslabs.github.io/.travis.yml .
+git config user.email &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_EMAIL&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+git config user.name &lt;span class=&quot;s2&quot;&gt;&quot;savas-bot&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Commit and push generated content to `master` branch.&lt;/span&gt;
+git status
+git add -A .
+git status
+git commit -a -m &lt;span class=&quot;s2&quot;&gt;&quot;Travis #&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TRAVIS_BUILD_NUMBER&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+git push --quiet origin &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;master&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Some important notes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Make sure the script file is executable!&lt;/li&gt;
+  &lt;li&gt;The last line ensures that our encrypted token won’t end up in git logs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deployment-and-debugging&quot;&gt;Deployment and debugging&lt;/h2&gt;
+
+&lt;p&gt;Merging this code into &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; was the easiest way for us to test if our new process worked
+— scary, right? Fortunately, if the build script failed (and it did several
+times until we could get the npm and node versions correct and the ruby gems
+installing properly) nothing got pushed to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; so nothing was deployed,
+meaning no downtime on our site.&lt;/p&gt;
+
+&lt;p&gt;We also used
+&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; to debug from inside the Travis
+environment. To do this, we commented out the &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; line and added the following to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl https://www.teleconsole.com/get.sh | sh
+teleconsole
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This printed a session ID in the Travis CI output. With a couple of commands, we
+could enter the session from our local machines:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Install teleconsole&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;curl https://www.teleconsole.com/get.sh | sh
+
+&lt;span class=&quot;c&quot;&gt;# Join session&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;teleconsole join &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;session ID]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Being able to look around and run commands within the Travis environment was
+hugely helpful!&lt;/p&gt;
+
+&lt;h2 id=&quot;future-work&quot;&gt;Future work&lt;/h2&gt;
+
+&lt;p&gt;We’d like to implement some improvements on this process in the future:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;With our current setup, we can’t deploy when our tests are failing.&lt;/li&gt;
+  &lt;li&gt;Providing consistency with Ruby and Node dependencies across different
+operating systems and environments has proven difficult. We’ve considered
+Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;We’d like to give credit to these helpful posts, which we adapted for our site:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://eshepelyuk.github.io/2014/10/28/automate-github-pages-travisci.html&quot;&gt;Automate GitHub Pages publishing with Jekyll and Travis CI&lt;/a&gt; by Evgeny Shepelyuk&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mlota.github.io/2015/11/23/automating-deployment-github-pages-jekyll-travis.html&quot;&gt;Automating deployment of a GitHub Pages hosted site with Jekyll and Travis CI&lt;/a&gt; by Mel Lota&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;hr&gt;
+
+    
+      &lt;div class=&quot;post-comments&quot;&gt;
+  
+    &lt;div class=&quot;expander&quot;&gt;
+      &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
+      &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
+        &lt;!-- If there are existing comments, output them here. --&gt;
+        &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
+        &lt;!-- New comment form --&gt;
+        &lt;form id=&quot;comment-form&quot;&gt;
+          &lt;h4&gt;Leave a comment&lt;/h4&gt;
+          &lt;div class=&quot;comment-name&quot;&gt;
+            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;comment-email&quot;&gt;
+            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
+            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
+          &lt;/div&gt;
+
+          &lt;p&gt;Comment&lt;/p&gt;
+          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
+          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
+
+          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2016/10/25/deploy-jekyll-with-travis.html&#39; /&gt;
+          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
+
+          &lt;div class=&#39;are-you-human&#39;&gt;
+            &lt;div class=&#39;are-you-human-owl&#39;&gt;
+              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&#39;are-you-human-field&#39;&gt;
+              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
+              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
+              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+  &lt;hr&gt;
+&lt;/div&gt;
+
+    
+    
+      &lt;div class=&quot;post-bottom&quot;&gt;
+  &lt;div class=&quot;post-meta&quot;&gt;
+    &lt;h4&gt;About the author&lt;/h4&gt;
+    
+      &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
+        &lt;picture&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-eeafb6.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
+    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot;&gt;
+    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Anne Tomasevich&quot; &gt;
+  &lt;/picture&gt;
+
+      &lt;/a&gt;
+      &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
+    
+  &lt;/div&gt;
+    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
+  &lt;div class=&quot;post-related flex-container&quot;&gt;
+    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
+    &lt;div class=&quot;cards&quot;&gt;
+      
+      
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Optimizing Jekyll Performance with Gulp
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Oct 19, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;How we improved our company site’s performance with a better Jekyll workflow&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  Supercharged SEO with Drupal 8
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Sep 23, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+        
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;a href=&quot;/2016/08/29/internship-thoughts.html&quot;&gt;
+              &lt;div class=&quot;card-header&quot;&gt;
+                  A Savas Labs Internship
+              &lt;/div&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p&gt;Aug 29, 2016&lt;/p&gt;
+                
+                &lt;p&gt;&lt;p&gt;What it’s like to learn at Savas Labs.&lt;/p&gt;
+&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+    
+    &lt;div class=&quot;previous-next-links&quot;&gt;
+  &lt;div class=&quot;next&quot;&gt;
+    
+  &lt;/div&gt;
+  &lt;div class=&quot;previous&quot;&gt;
+    
+      &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt; Optimizing Jekyll Performance with Gulp &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+  &lt;/article&gt;
+
+&lt;/div&gt;
+",
+    "sourceOrganization": "Savas Labs",
+    "inLanguage": "en-US",
+    "dateCreated": "2016-10-25 00:00:00 +0000",
+    "datePublished": "2016-10-25 00:00:00 +0000",
+    "url": "http://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html"
+  }
+</script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61514316-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <script>
+    !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function l(){d.addEventListener&&d.removeEventListener("load",l),d.media=r||"all"}var a,i=e.document,d=i.createElement("link");if(n)a=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;a=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){a.parentNode.insertBefore(d,n?a:a.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",l),d.onloadcssdefined=f,f(l),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)})}}}(this);
+    loadCSS('/assets/styles/main.css');
+    loadCSS('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro');
+  </script>
+  <style>img,legend{border:0}pre,textarea{overflow:auto}.table-minimal,table{border-spacing:0;width:100%}html{box-sizing:border-box;font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}*,::after,::before{box-sizing:inherit}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}legend{padding:0}textarea{resize:vertical}.case-studies .case-studies__case-study .case-study__description a,.case-study .case-study__header .case-study__header__text .case-study__header__link{border:2px solid #fff;border-radius:3px;color:#fff;font-family:"Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;margin-top:2em;padding:.5em 1em;transition:all .2s ease-in-out}.flash-alert,.flash-alert a,.flash-alert a:focus,.flash-alert a:hover,.flash-error,.flash-error a,.flash-error a:focus,.flash-error a:hover{color:rgba(0,0,0,.2)}.flash-alert,.flash-error,.flash-notice,.flash-success{padding:.75em;text-align:center;display:block;font-weight:600;margin-bottom:.75em}.case-studies .case-studies__case-study .case-study__description a:focus,.case-studies .case-studies__case-study .case-study__description a:hover,.case-study .case-study__header .case-study__header__text .case-study__header__link:focus,.case-study .case-study__header .case-study__header__text .case-study__header__link:hover{background-color:#0f7993}.flash-alert{background-color:rgba(242,163,36,.2)}.flash-alert a{text-decoration:underline}.flash-error{background-color:rgba(158,2,59,.2)}.flash-error a{text-decoration:underline}.flash-notice{background-color:rgba(246,67,62,.2);color:rgba(2,0,0,.2)}.flash-notice a,.flash-notice a:focus,.flash-notice a:hover,.flash-success,.flash-success a,.flash-success a:focus,.flash-success a:hover{color:rgba(0,0,0,.2)}.flash-notice a{text-decoration:underline}.flash-success{background-color:rgba(5,92,43,.2)}fieldset,p{margin:0 0 .75em}dl dd,ol,ul{margin:0}td,th{padding:.75em 0}.table-minimal th,th{text-align:left}.flash-success a{text-decoration:underline}.navigation a,a{text-decoration:none}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-webkit-font-smoothing:antialiased;background-color:#0a5365;border-radius:3px;border:none;color:#fff;cursor:pointer;display:inline-block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;font-weight:600;line-height:1;padding:.75em 1em;text-decoration:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;white-space:nowrap}button:focus,button:hover,input[type=button]:focus,input[type=button]:hover,input[type=reset]:focus,input[type=reset]:hover,input[type=submit]:focus,input[type=submit]:hover{background-color:#031a1f;color:#fff}button:disabled,input[type=button]:disabled,input[type=reset]:disabled,input[type=submit]:disabled{cursor:not-allowed;opacity:.5}fieldset{background-color:#f7f7f7;border:1px solid #ddd;padding:1.5em}input,label,select{display:block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em}label{font-weight:600;margin-bottom:.375em}label.required::after{content:"*"}label abbr{display:none}input[type=color],input[type=date],input[type=datetime],input[type=datetime-local],input[type=email],input[type=month],input[type=password],input[type=tel],input[type=text],input[type=time],input[type=url],input[type=week],input[type=number],input[type=search],select[multiple=multiple],textarea{background-color:#fff;border:1px solid #ddd;border-radius:3px;box-shadow:inset 0 1px 3px rgba(0,0,0,.06);box-sizing:border-box;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;margin-bottom:.75em;padding:.5em;transition:border-color;width:100%}input[type=color]:hover,input[type=date]:hover,input[type=datetime]:hover,input[type=datetime-local]:hover,input[type=email]:hover,input[type=month]:hover,input[type=password]:hover,input[type=tel]:hover,input[type=text]:hover,input[type=time]:hover,input[type=url]:hover,input[type=week]:hover,input[type=number]:hover,input[type=search]:hover,select[multiple=multiple]:hover,textarea:hover{border-color:#c4c4c4}input[type=color]:focus,input[type=date]:focus,input[type=datetime]:focus,input[type=datetime-local]:focus,input[type=email]:focus,input[type=month]:focus,input[type=password]:focus,input[type=tel]:focus,input[type=text]:focus,input[type=time]:focus,input[type=url]:focus,input[type=week]:focus,input[type=number]:focus,input[type=search]:focus,select[multiple=multiple]:focus,textarea:focus{border-color:#0a5365;box-shadow:inset 0 1px 3px rgba(0,0,0,.06),0 0 5px rgba(55,112,192,.7);outline:0}hr,td{border-bottom:1px solid #ddd}input[type=search]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}input[type=checkbox],input[type=radio]{display:inline;margin-right:.375em}input[type=file]{padding-bottom:.75em;width:100%}select{margin-bottom:1.5em;max-width:100%;width:auto}ol,ul{padding:0}dl{margin-bottom:.75em}dl dt{font-weight:700;margin-top:.75em}table{-ms-font-feature-settings:"kern","liga","tnum";font-feature-settings:"kern","liga","tnum";border-collapse:collapse;margin:.75em 0;table-layout:fixed}th{border-bottom:1px solid #b7b7b7;font-weight:600}td .label{font-weight:700}td,th,tr{vertical-align:middle}body{-ms-font-feature-settings:"kern","liga","pnum";font-feature-settings:"kern","liga","pnum";-webkit-font-smoothing:antialiased;font-size:1em;line-height:1.5;color:#14133b;font-family:"Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif}h1,h2,h3,h4,h5,h6{line-height:1.2;margin:0 0 .75em;color:#9e023b;font-family:"PT Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800}a{color:#0a5365;transition:all .1s linear}.card,.card .card-header,.card .card-image img,.team-card{transition:all .2s ease-in-out}a:active,a:focus,a:hover{color:#031a1f}a:active,a:focus{outline:0}hr{box-sizing:content-box;height:0;border-left:none;border-right:none;border-top:none}img,picture{margin:0;max-width:100%}.post,.wrapper{max-width:70em}.table-minimal{border-collapse:separate}.home__cover,.page-description,.view-all-link,.view-more-link,header{text-align:center}.table-minimal td{line-height:1.5}.table-minimal thead th{background-color:#fff;border-bottom:0;padding:.75em 1em}.table-minimal tbody{background-color:#fff}.table-minimal tbody td{border-bottom:0;border-top:1px solid #ddd;padding:.75em 1em}.table-minimal tbody td button{display:inline-block;font-size:.7em;line-height:1.5;margin-bottom:.3em;margin-right:.5em;outline:0;padding:.3em 1em;width:100%}@media screen and (min-width:40em){.table-minimal tbody td button{margin-bottom:0;width:auto}}.table-minimal tbody tr:hover>td,.table-minimal tbody tr:hover>th{background-color:#fafafa}.table-minimal tbody tr:first-child td{border-top:2px solid #ddd}.portfolio h2,.portfolio h3,.portfolio h4,.portfolio h5,.portfolio h6,.post h2,.post h3,.post h4,.post h5,.post h6{margin-top:1.5em}h1{font-size:250%}h2{font-size:200%}h3{font-size:160%}h4{font-size:140%}h5{font-size:120%}h6{font-size:100%}a:focus,a:hover{color:#0f7993}.post li a,p a{border-bottom:.1em solid rgba(10,83,101,.1)}.post li a:focus,.post li a:hover,p a:focus,p a:hover{border-bottom:.1em solid #0f7993}.name-description p,.page-description,.portfolio,.post,.services__service p,.team-member p{color:#14133b;font-size:1.2em}ul{list-style-type:square}ol{list-style-type:decimal}ol,ul{margin-bottom:1em;margin-left:2em}ol ol,ol ol li,ol ul,ol ul li,ul ol,ul ol li,ul ul,ul ul li{font-size:1em}hr{clear:both;margin:3em 0}blockquote{background-color:#f7f7f7;border-left:10px solid rgba(20,19,59,.4);border-radius:0 9px 9px 0;font-style:italic;margin:2em 0;padding:1em;quotes:'\201C' '\201D'}blockquote::before{color:rgba(20,19,59,.4);content:open-quote;font-family:'Source Sans Pro',sans-serif;font-size:4em;line-height:.1em;margin-right:.25em;vertical-align:-.4em}blockquote p{display:inline}.callout{background-color:#14133b;border-left:solid 1em #9e023b;border-radius:6px;margin:1.5em auto;padding:1em;width:100%}.callout p{color:#fff;font-size:1.5em;margin-bottom:0}.wrapper{margin-left:auto;margin-right:auto;padding:3em 1em;vertical-align:baseline}.wrapper::after{clear:both;content:"";display:table}.flex-container{float:left;display:block;margin-right:2.35765%;width:100%}.flex-container:last-child{margin-right:0}.page-description{margin-bottom:2em}@media screen and (min-width:53.75em){.wrapper{padding:3em 0}.column-8{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.column-8:last-child{margin-right:0}}.view-more-link{font-size:1.2em}.cards{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}.card{flex-basis:15em;-ms-flex-preferred-size:15em;-moz-flex-grow:1;flex-grow:1;-ms-flex-positive:1;background-color:#f7f7f7;border:1px solid #ddd;border-radius:3px;box-shadow:0 2px 4px #e6e6e6;cursor:auto;margin:0 1em 1.5em;position:relative}.card .card-image{max-height:200px;overflow:hidden}.card .card-image img{background:#ddd;border-top-left-radius:3px;border-top-right-radius:3px;width:100%}.card .card-header{background-color:#f7f7f7;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;font-weight:700;line-height:1.5em;padding:.5em .75em}.card .fa-comment-o{margin-right:4px}.card .card-copy{color:#14133b;font-size:.9em;line-height:1.5em;padding:.75em}.card .card-copy p{margin:0 0 .75em}.card:focus,.card:hover{background-color:#fff}.card:focus .card-image img,.card:hover .card-image img{background:#eaeaea}.card:focus .card-header,.card:hover .card-header{background-color:#fff}.card:active,.card:active .card-header{background-color:#f7f7f7}.team-card{flex-basis:21em;-ms-flex-preferred-size:21em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.team-card .card-image{max-height:350px;overflow:hidden}.team-card .card-image img{position:relative;top:-50px}.team-card .card-header{display:inline-block;font-size:1.1em;padding:.5em .75em 0}.team-card .card-copy{border-top:1px solid #dcdcdc;font-size:1em}.team-card .card-title{display:inline-block;float:right;font-size:.8em;line-height:2em;padding:.75em .75em 0;text-transform:uppercase}.work-card{flex-basis:21em;-ms-flex-preferred-size:21em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0;flex-shrink:1;-ms-flex-negative:1}.blog-card{flex-basis:20em;-ms-flex-preferred-size:20em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.case-studies{margin:3em 0}.case-studies .case-studies__case-study{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;background-position:top center;background-repeat:no-repeat;background-size:cover;margin:1.5em 0}.case-studies .case-studies__case-study a,.case-studies .case-studies__case-study h3,.case-studies .case-studies__case-study p{color:#fff;margin-bottom:0}.case-studies .case-studies__case-study .case-study__description,.case-studies .case-studies__case-study .case-study__title{padding:1.5em}@media screen and (min-width:40em){.case-studies .case-studies__case-study{-webkit-box-lines:single;-moz-box-lines:single;box-lines:single;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.case-studies .case-studies__case-study .case-study__description,.case-studies .case-studies__case-study .case-study__title{padding:3em 1.5em}}.case-studies .case-studies__case-study .case-study__title{padding-bottom:0;text-align:center}.case-studies .case-studies__case-study .case-study__title h3{font-size:200%}.case-studies .case-studies__case-study .case-study__description a,.case-studies .case-studies__case-study .case-study__description p{font-size:1.25em;font-weight:700;margin-bottom:0}.case-studies .case-studies__case-study .case-study__description a{display:inline-block;margin-top:1.5em}.case-studies .case-studies__case-study .case-study__description a i{margin-left:.5em}.home__cover{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;background:url(/assets/img/home-cover-image/home-cover-code-400.png) center center no-repeat #14133b;background-size:cover;height:88vh}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-800.png)}}@media screen and (min-width:25em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-640.png)}}@media only screen and (min-width:25em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:25em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:25em) and (min-resolution:192dpi),only screen and (min-width:25em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1280.png)}}@media screen and (min-width:40em){.case-studies .case-studies__case-study .case-study__title{padding-bottom:6em;width:40%}.case-studies .case-studies__case-study .case-study__description{width:60%}.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-860.png);height:78vh}}@media only screen and (min-width:40em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:40em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:40em) and (min-resolution:192dpi),only screen and (min-width:40em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1720.png)}}@media screen and (min-width:53.75em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1120.png);height:88vh}}@media only screen and (min-width:53.75em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min-resolution:192dpi),only screen and (min-width:53.75em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-2240.png)}}@media screen and (min-width:70em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1200.png)}}@media only screen and (min-width:70em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:70em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:70em) and (min-resolution:192dpi),only screen and (min-width:70em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code.png)}}.home__cover .home__cover__heading,.home__cover .home__cover__site-description{margin:0}.home__cover .home__cover__heading{font-size:2em;margin-top:30px}.home__cover hr{border:2px solid #0a5365;border-radius:.5px;margin:10px auto 15px;width:170px}.home__cover .home__cover__site-description{color:#fff;font-size:1.5em;line-height:1.3em;width:230px}.home__cover i{color:#0a5365;font-size:2.8em;padding-top:20px}.navigation{background-color:#0a5365;min-height:70px;width:100%;z-index:999}.navigation .navigation-wrapper{max-width:70em;margin-left:auto;margin-right:auto;padding:25px 0;position:relative;z-index:9999}.navigation .navigation-wrapper::after{clear:both;content:"";display:table}.navigation .logo{background-color:#14133b;border-radius:6px;display:inline-block;float:left;margin:0 0 0 1em;max-height:70px;padding-left:1em;padding-right:1em}@media screen and (min-width:40em){.navigation .logo{float:none;margin:0 auto}}@media screen and (min-width:53.75em){.navigation .logo{float:left;margin:0 0 0 1em}}.navigation .logo img{max-height:70px;padding:.8em 0}.navigation .navigation-menu-button{color:rgba(255,255,255,.7);display:block;float:right;font-weight:700;line-height:70px;margin:0;padding-right:1em;text-transform:uppercase}.navigation .navigation-menu-button:focus,.navigation .navigation-menu-button:hover{color:#fff}.navigation nav{float:none;min-height:70px;z-index:9999999}@media screen and (min-width:40em){.navigation .navigation-menu-button{display:none}.navigation nav{clear:left;margin:0 auto}}@media screen and (min-width:53.75em){.navigation nav{clear:none;float:right}}.navigation .navigation-menu{clear:both;display:none;margin:0 auto;overflow:visible;padding:0;-webkit-transform-style:preserve-3d;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .navigation-menu{display:inline;margin:0;padding:0}}.navigation .navigation-menu.show{display:block}.navigation .nav-link{background:#0a5365;display:block;line-height:70px;overflow:hidden;padding-right:.8em;text-align:right;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .nav-link{background:0 0;display:inline;line-height:70px;text-decoration:none;width:auto}.navigation .nav-link a{padding-right:.5em}}.navigation .nav-link a{color:rgba(255,255,255,.7);display:inline-block;font-size:1.1em;font-weight:400;text-transform:uppercase}@media screen and (min-width:53.75em){.navigation .nav-link a{padding-right:1em}}.navigation .active-nav-item a,.navigation .nav-link a:focus,.navigation .nav-link a:hover{color:#fff}.navigation .more.nav-link{overflow:visible;padding-right:0}@media screen and (min-width:40em){.navigation .more.nav-link{padding-right:.8em;position:relative}.navigation .more.nav-link>ul>li:first-child a{padding-top:1em}.navigation .more.nav-link>a{margin-right:1em}}.navigation .more.nav-link a{padding-right:.8em}.navigation .more.nav-link>a{padding-right:.6em;position:relative}.navigation .more.nav-link>a::after{position:absolute;top:auto;right:-.4em;bottom:auto;left:auto;color:rgba(255,255,255,.7)}@media screen and (min-width:40em){.navigation .more.nav-link>a::after{content:'\25BE'}.navigation .submenu{left:-1em;position:absolute;top:1.5em}}.portfolio::after,.post::after,.team-member::after{clear:both;content:""}.navigation .more.nav-link:focus>.submenu,.navigation .more.nav-link:hover>.submenu{display:block}.navigation .submenu{display:none;padding-left:0}.navigation .submenu li{display:block;padding-right:0}.navigation .submenu li a{background-color:#094857;display:inline-block;text-align:right;width:100%}@media screen and (min-width:40em){.navigation .submenu li{line-height:53.85px}.navigation .submenu li:first-child>a{border-top-left-radius:3px;border-top-right-radius:3px}.navigation .submenu li:last-child>a{border-bottom-left-radius:3px;border-bottom-right-radius:3px;padding-bottom:.7em}.navigation .submenu li a{background-color:#0a5365;padding-left:1em;text-align:left;width:10em}}.caption,.page-work h2,.team-member .team-links{text-align:center}.post{margin-left:auto;margin-right:auto}.post::after{display:table}@media screen and (min-width:53.75em){.post{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.post:last-child{margin-right:0}}.post .post-header{margin-bottom:1.875em}.post .post-header p{display:inline}.post .post-header i{color:#14133b;margin-right:5px}.post .post-header .centerdot{font-weight:700}.post .post-header .post-featured-image{margin:3em 0}.post .disclaimer{background-color:rgba(158,2,59,.1);border:1px solid rgba(158,2,59,.3);border-radius:5px;margin-bottom:1.875em;padding:1em}.post .disclaimer h5{margin-top:0}.post .twitter-tweet{margin:3em auto!important}.post .table-minimal{margin-bottom:3em;margin-top:3em}.post ul ul{margin-bottom:0}.blog-image,.blog-image-large,.blog-image-xl{background:#dcdcdc;box-shadow:0 2px 4px #c3c3c3;display:block;margin:1em auto;max-width:250px}@media screen and (min-width:40em){.blog-image.wrap-right,.wrap-right.blog-image-large,.wrap-right.blog-image-xl{float:left;margin-right:40px}.blog-image.wrap-left,.wrap-left.blog-image-large,.wrap-left.blog-image-xl{float:right;margin-left:40px}}.blog-image p,.blog-image-large p,.blog-image-xl p{font-size:smaller;font-weight:700;text-align:center}.blog-image-large{max-width:500px;width:100%}.blog-image-xl{height:auto;max-width:737px;width:100%}.caption{display:block;font-size:.9em;margin:0 auto 2em}.services{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap}.services .services__service{margin-bottom:3em}.services .services__service .services__service__icon{float:left}.services .services__service p{display:inline;margin:0}@media screen and (min-width:53.75em){.services--main .services__service{margin-bottom:0;padding:1.5em;width:50%}}.services--main .services__service:last-child{margin-bottom:0}.services--main .services__service .services__service__icon{margin-right:1em}.team-member{max-width:70em;margin-left:auto;margin-right:auto}.team-member::after{display:table}@media screen and (min-width:40em){.team-member{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.team-member:last-child{margin-right:0}}.team-member .team-header img{border-radius:3px;max-width:100%;width:350px}.team-member .team-links{margin:1em auto 3em}.team-member .team-links li{display:inline-block;list-style-type:none;min-width:45%;padding:0 .75em}.team-member .fa-file-text{font-size:13px}.case-study{clear:both}.case-study .case-study__header{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:distribute;-moz-justify-content:space-around;-ms-justify-content:space-around;-o-justify-content:space-around;justify-content:space-around;-ms-flex-pack:distribute;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;background-position:top center;background-repeat:no-repeat;background-size:cover;height:88vh;min-height:320px}@media screen and (min-width:40em){.team-member .team-links{width:60%}.case-study .case-study__header{height:78vh}}@media screen and (min-width:53.75em){.team-member .team-links{width:100%}.team-member .team-links li{min-width:1%}.case-study .case-study__header{height:88vh}}.case-study .case-study__header .case-study__header__text{padding:1em}.case-study .case-study__header .case-study__header__text h1{color:#fff;font-size:2em;margin-bottom:1em}@media screen and (min-width:40em){.case-study .case-study__header .case-study__header__text{width:80%}.case-study .case-study__header .case-study__header__text h1{font-size:2.5em}}.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{color:#fff;font-size:1.1em;font-weight:700}@media screen and (min-width:40em){.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{font-size:1.25em}}.case-study .case-study__header .case-study__header__text .case-study__header__link{display:inline-block;margin-top:1.5em}.case-study .wrapper{padding:0}.portfolio{max-width:70em;margin-left:auto;margin-right:auto}.portfolio::after{display:table}@media screen and (min-width:53.75em){.case-study .case-study__header .case-study__header__text{width:60%}.portfolio{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.portfolio:last-child{margin-right:0}}</style>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+
+    <!-- Savas Labs logo. -->
+    <a href="/" class="logo">
+        <img width="101px" height="70px" src="http://savaslabs.com/assets/img/logo.png" alt="Savas Labs logo">
+    </a>
+
+    <!-- Mobile menu button. -->
+    <a href="/" id="js-mobile-menu" class="navigation-menu-button">MENU</a>
+
+    <!-- Main menu. -->
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+
+        <!-- Loop through nav items in config.yml. -->
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  more">
+            <a href="javascript:void(0)">Who we are</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+
+              <ul class="submenu">
+                
+
+                  <!-- Assign active nav item class. -->
+                  
+                  
+
+                  <li class="nav-link ">
+                    <a href="/team">Team</a>
+                  </li>
+                
+
+                  <!-- Assign active nav item class. -->
+                  
+                  
+
+                  <li class="nav-link ">
+                    <a href="/mission-and-values">Mission & values</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/services">Services</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/work">Our work</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/blog">Blog</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/contact">Contact</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        
+
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Deploying Jekyll to Github Pages with Travis and Gulp</h1>
+    <p>By <a href="/team/anne-tomasevich">Anne Tomasevich</a></p>
+    <p class="centerdot">&centerdot; </p>
+    <p>Oct 25, 2016 </p><br>
+    <i class="fa fa-tags"></i><p><a href="/blog/tag/jekyll/">Jekyll</a>, <a href="/blog/tag/travis/">Travis CI</a></p>
+    
+    <div><p><span id="comment-count"></span></p></div>
+    
+    
+      <div class="post-featured-image">
+        <picture>
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-737by370-d50036.png" media="(min-width: 400px)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-800by401-d50036.png" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png">
+    <img src="http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png" class="image--post-featured-image" itemprop="image" alt="Jekyll, Gulp, Travis, and GitHub logos" >
+  </picture>
+
+      </div>
+    
+  </header>
+
+  
+
+  <article class="post-content">
+    <p>Since our company’s inception, we at Savas Labs have used <a href="https://jekyllrb.com/">Jekyll</a> to build our company website and <a href="https://pages.github.com/">GitHub Pages</a> to host it with great success. Jekyll is a powerful tool out of the box, and it’s hard to imagine a simpler hosting strategy than GitHub Pages, which only requires a <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">specifically named branch</a> and a <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages">single settings update</a> to get your site live for free. Although we often use <a href="/blog/tag/drupal/">Drupal</a> to build complex, data-heavy systems that need to have a simple workflow for site admins, for our own site we recognized that Jekyll was a better tool for our workflow that would mitigate security risks, eliminate site hosting costs, and reduce complexity since there’s no need for a database back-end.</p>
+
+<p>One well-known limitation of this workflow: any Jekyll plugins not <a href="https://pages.github.com/versions/">whitelisted by GitHub Pages</a> will be disabled when GitHub Pages builds the site, since <code class="highlighter-rouge">jekyll build</code> is run with the <code class="highlighter-rouge">--safe</code> tag. We recently wanted to start using the <a href="https://github.com/robwierzbowski/jekyll-picture-tag">Jekyll Picture Tag</a> plugin (<a href="/2016/10/19/optimizing-jekyll-with-gulp.html#jekyll-picture-tag-plugin">read about why</a>), and the incredibly crucial <a href="https://github.com/jekyll/jemoji">Jemoji</a> plugin <img class="emoji" title=":joy_cat:" alt=":joy_cat:" src="https://assets.github.com/images/icons/emoji/unicode/1f639.png" height="20" width="20" align="absmiddle" />, so we needed to find a way to build our site before pushing it to GitHub Pages for deployment. To complicate matters a bit more, we recently starting <a href="/2016/10/19/optimizing-jekyll-with-gulp.html">building our site with gulp</a>, which introduced another layer of dependencies to the mix.</p>
+
+<p>Many solutions exist for building the site before pushing to GitHub Pages. We chose to use Travis CI to run our gulp command to build the site, then commit the changes to our <code class="highlighter-rouge">master</code> branch so GitHub Pages will deploy the updated site.</p>
+
+<h2 id="basic-workflow">Basic workflow</h2>
+
+<p>Our site was already using Travis CI to run our
+<a href="https://github.com/savaslabs/savaslabs.github.io/blob/70420c8afcf59b8d91fba3b57d2ca8241c71f211/_scripts/run-tests.sh">test script</a>
+on pull requests and merges to the <code class="highlighter-rouge">master</code> branch. You can learn about setting
+up Travis in their <a href="https://docs.travis-ci.com/">docs</a>.</p>
+
+<p>Previously, Travis would build the site and run our tests, then we would merge
+branches into <code class="highlighter-rouge">master</code>, triggering GitHub Pages to rebuild and deploy our site.</p>
+
+<p><img src="http://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg" alt="Diagram of original deployment workflow" />
+<span class="caption">Original deployment workflow</span></p>
+
+<p>Now, we want to build our site before it gets to GitHub Pages to ensure our
+Jekyll Plugins are included. In our new workflow:</p>
+
+<ol>
+  <li>We created a new default branch so the <code class="highlighter-rouge">master</code> branch can be cleared
+out and used by Travis.</li>
+  <li>When this new branch is updated (i.e. a pull request is merged), Travis
+builds the site.</li>
+  <li>Using a GitHub token for authorization, Travis commits the <code class="highlighter-rouge">_site</code>
+directory to the <code class="highlighter-rouge">master</code> branch, then pushes the <code class="highlighter-rouge">master</code> branch.</li>
+  <li>This triggers GitHub Pages to deploy our pre-built site.</li>
+</ol>
+
+<p><img src="http://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg" alt="Diagram of new deployment workflow" />
+<span class="caption">New deployment workflow</span></p>
+
+<h3 id="create-a-new-default-branch">Create a new default branch</h3>
+
+<p>We created a new branch off <code class="highlighter-rouge">master</code> called <code class="highlighter-rouge">source</code> and set it to the default
+branch on GitHub. <code class="highlighter-rouge">source</code> contains what the <code class="highlighter-rouge">master</code> branch used to — the
+Jekyll config file(s), HTML files and partials, data files, styles and JS, etc.
+Each time the deploy process is run, Travis deletes all the files on the
+<code class="highlighter-rouge">master</code> branch, then commits the entire compiled <code class="highlighter-rouge">_site</code> directory. So, the
+<code class="highlighter-rouge">master</code> branch only contains the compiled site, which is deployed by
+GitHub Pages.</p>
+
+<p>Why delete all files on <code class="highlighter-rouge">master</code> before committing the <code class="highlighter-rouge">_site</code> directory? This
+ensures that all changes (including deletions) are captured in each deployment.</p>
+
+<h3 id="set-up-a-github-token-for-travis">Set up a GitHub token for Travis</h3>
+
+<p>To give Travis the authority to commit and push to our repository, we generated
+a personal access token by visiting the
+<a href="https://github.com/settings/tokens">settings page</a> on GitHub and generating a
+new token. We used a bot account that has access to our repository to avoid
+needing to use one of our personal accounts.</p>
+
+<p><img src="http://savaslabs.com/assets/img/blog/github-token.jpg" alt="Generating a personal access token in GitHub" /></p>
+
+<p>We’ll need to use the access token and the account’s email address in our
+deployment script, so to keep those items out of version control we used
+<code class="highlighter-rouge">travis encrypt</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>travis encrypt <span class="nv">GH_TOKEN</span><span class="o">=</span>&lt;token&gt; --add env.global
+<span class="gp">$ </span>travis encrypt <span class="nv">GH_EMAIL</span><span class="o">=</span>&lt;email&gt; --add env.global
+</code></pre>
+</div>
+
+<p>This adds encrypted versions of these sensitive items to <code class="highlighter-rouge">.travis.yml</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">env</span><span class="pi">:</span>
+  <span class="s">global</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">secure</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">big long encrypted string...</span><span class="pi">]</span>
+  <span class="pi">-</span> <span class="s">secure</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">...and another</span><span class="pi">]</span>
+</code></pre>
+</div>
+
+<p>With that, we can use the <code class="highlighter-rouge">GH_TOKEN</code> and <code class="highlighter-rouge">GH_EMAIL</code> variables in our
+deployment script. See <a href="https://docs.travis-ci.com/user/encryption-keys/">Travis’ docs for more inforamtion.</a></p>
+
+<h3 id="configure-deployment">Configure deployment</h3>
+
+<p>Next we added the following to our <code class="highlighter-rouge">.travis.yml</code> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1"># Keep Travis from testing `master` branch</span>
+<span class="s">branches</span><span class="pi">:</span>
+  <span class="s">except</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">master</span>
+
+<span class="c1"># Deployment config</span>
+<span class="s">deploy</span><span class="pi">:</span>
+  <span class="s">provider</span><span class="pi">:</span> <span class="s">script</span>
+  <span class="s">script</span><span class="pi">:</span> <span class="s2">"</span><span class="s">./_scripts/build.sh"</span>
+  <span class="s">skip_cleanup</span><span class="pi">:</span> <span class="s">false</span>
+  <span class="s">on</span><span class="pi">:</span>
+    <span class="s">branch</span><span class="pi">:</span> <span class="s">source</span>
+</code></pre>
+</div>
+
+<p>We don’t want Travis running the test script on the <code class="highlighter-rouge">master</code> branch anymore since it
+only contains the compiled site, and we only want Travis to run the
+deployment script on the <code class="highlighter-rouge">source</code> branch. We’re also telling Travis which script
+to run on deployment, and to destroy the site after the test script is run with our
+<code class="highlighter-rouge">_config.test.yml</code> file so the deployment script can rebuild the site with our
+default <code class="highlighter-rouge">_config.yml</code> file. Check out <a href="https://github.com/savaslabs/savaslabs.github.io/blob/95bb1d70790acf4c33b7c121e2ff462af5096d73/.travis.yml">this revision of the full .travis.yml file here</a>.</p>
+
+<p>That revision of <code class="highlighter-rouge">.travis.yml</code> worked for us when we were using <code class="highlighter-rouge">jekyll build</code> to
+compile the site, but things got trickier when we started using gulp. We had to
+set the proper versions of npm and node.js and ensure that our ruby gems were
+installed properly. Here’s the full Travis config we needed to get things
+running with gulp:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1"># .travis.yml</span>
+
+<span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
+<span class="s">sudo</span><span class="pi">:</span> <span class="s">required</span>
+<span class="s">script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">./_scripts/run-tests.sh</span>
+<span class="s">branches</span><span class="pi">:</span>
+  <span class="s">except</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">master</span>
+<span class="s">node_js</span><span class="pi">:</span>
+ <span class="pi">-</span> <span class="s1">'</span><span class="s">6.1'</span>
+<span class="s">before_install</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi</span>
+  <span class="pi">-</span> <span class="s">rvm install 2.1</span>
+  <span class="pi">-</span> <span class="s">rvm use 2.1</span>
+  <span class="pi">-</span> <span class="s">. $HOME/.nvm/nvm.sh &amp;&amp; nvm install 6.1 &amp;&amp; nvm use 6.1</span>
+  <span class="pi">-</span> <span class="s">gem install bundler</span>
+  <span class="pi">-</span> <span class="s">bundle check || bundle install</span>
+<span class="s">env</span><span class="pi">:</span>
+  <span class="s">global</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">NOKOGIRI_USE_SYSTEM_LIBRARIES=true</span>
+  <span class="pi">-</span> <span class="s">secure</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">stuff</span><span class="pi">]</span>
+  <span class="pi">-</span> <span class="s">secure</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">more stuff</span><span class="pi">]</span>
+<span class="s">deploy</span><span class="pi">:</span>
+  <span class="s">provider</span><span class="pi">:</span> <span class="s">script</span>
+  <span class="s">script</span><span class="pi">:</span> <span class="s2">"</span><span class="s">./_scripts/build.sh"</span>
+  <span class="s">skip_cleanup</span><span class="pi">:</span> <span class="s">false</span>
+  <span class="s">on</span><span class="pi">:</span>
+    <span class="s">branch</span><span class="pi">:</span> <span class="s">source</span>
+</code></pre>
+</div>
+
+<p>Or view it <a href="https://github.com/savaslabs/savaslabs.github.io/blob/9434cee6fe1cce54de4bc0294da1c6e9f52476e0/.travis.yml">on GitHub</a>.</p>
+
+<h3 id="the-deployment-script">The deployment script</h3>
+
+<p>When the <code class="highlighter-rouge">source</code> branch is updated and our tests pass, the deployment script
+<code class="highlighter-rouge">build.sh</code> is executed.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c"># Enable error reporting to the console.</span>
+<span class="nb">set</span> -e
+
+<span class="c"># Install bundles if needed.</span>
+bundle check <span class="o">||</span> bundle install
+
+<span class="c"># NPM install if needed.</span>
+. <span class="nv">$HOME</span>/.nvm/nvm.sh <span class="o">&amp;&amp;</span> nvm install 6.1 <span class="o">&amp;&amp;</span> nvm use 6.1
+npm install
+
+<span class="c"># Build the site.</span>
+gulp
+
+<span class="c"># Checkout `master` and remove everything.</span>
+git clone https://<span class="k">${</span><span class="nv">GH_TOKEN</span><span class="k">}</span>@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
+<span class="nb">cd</span> ../savaslabs.github.io.master
+git checkout master
+rm -rf <span class="k">*</span>
+
+<span class="c"># Copy generated HTML site from source branch in original repository.</span>
+<span class="c"># Now the `master` branch will contain only the contents of the _site directory.</span>
+cp -R ../savaslabs.github.io/_site/<span class="k">*</span> .
+
+<span class="c"># Make sure we have the updated .travis.yml file so tests won't run on master.</span>
+cp ../savaslabs.github.io/.travis.yml .
+git config user.email <span class="k">${</span><span class="nv">GH_EMAIL</span><span class="k">}</span>
+git config user.name <span class="s2">"savas-bot"</span>
+
+<span class="c"># Commit and push generated content to `master` branch.</span>
+git status
+git add -A .
+git status
+git commit -a -m <span class="s2">"Travis #</span><span class="nv">$TRAVIS_BUILD_NUMBER</span><span class="s2">"</span>
+git push --quiet origin <span class="sb">`</span>master<span class="sb">`</span> &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+</div>
+
+<p>Some important notes:</p>
+
+<ul>
+  <li>Make sure the script file is executable!</li>
+  <li>The last line ensures that our encrypted token won’t end up in git logs.</li>
+</ul>
+
+<h2 id="deployment-and-debugging">Deployment and debugging</h2>
+
+<p>Merging this code into <code class="highlighter-rouge">source</code> was the easiest way for us to test if our new process worked
+— scary, right? Fortunately, if the build script failed (and it did several
+times until we could get the npm and node versions correct and the ruby gems
+installing properly) nothing got pushed to <code class="highlighter-rouge">master</code> so nothing was deployed,
+meaning no downtime on our site.</p>
+
+<p>We also used
+<a href="https://www.teleconsole.com/">Teleconsole</a> to debug from inside the Travis
+environment. To do this, we commented out the <code class="highlighter-rouge">git push</code> line and added the following to
+<code class="highlighter-rouge">build.sh</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl https://www.teleconsole.com/get.sh | sh
+teleconsole
+</code></pre>
+</div>
+
+<p>This printed a session ID in the Travis CI output. With a couple of commands, we
+could enter the session from our local machines:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Install teleconsole</span>
+<span class="gp">$ </span>curl https://www.teleconsole.com/get.sh | sh
+
+<span class="c"># Join session</span>
+<span class="gp">$ </span>teleconsole join <span class="o">[</span>session ID]
+</code></pre>
+</div>
+
+<p>Being able to look around and run commands within the Travis environment was
+hugely helpful!</p>
+
+<h2 id="future-work">Future work</h2>
+
+<p>We’d like to implement some improvements on this process in the future:</p>
+
+<ul>
+  <li>With our current setup, we can’t deploy when our tests are failing.</li>
+  <li>Providing consistency with Ruby and Node dependencies across different
+operating systems and environments has proven difficult. We’ve considered
+Dockerizing our site but that’s a subject for another post!</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<p>We’d like to give credit to these helpful posts, which we adapted for our site:</p>
+
+<ul>
+  <li><a href="http://eshepelyuk.github.io/2014/10/28/automate-github-pages-travisci.html">Automate GitHub Pages publishing with Jekyll and Travis CI</a> by Evgeny Shepelyuk</li>
+  <li><a href="http://mlota.github.io/2015/11/23/automating-deployment-github-pages-jekyll-travis.html">Automating deployment of a GitHub Pages hosted site with Jekyll and Travis CI</a> by Mel Lota</li>
+</ul>
+
+    <hr>
+
+    
+      <div class="post-comments">
+  
+    <div class="expander">
+      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Comments!</a>
+      <div id="js-expander-content" class="expander-content">
+        <!-- If there are existing comments, output them here. -->
+        <div id="post-comments" class="post-comments"></div>
+        <!-- New comment form -->
+        <form id="comment-form">
+          <h4>Leave a comment</h4>
+          <div class="comment-name">
+            <p>Name</p> <input type='text' name='name' id='name' required /><br>
+          </div>
+
+          <div class="comment-email">
+            <p>Email</p> <input type='email' name='email' id='email' required />
+            <p class="email-disclaimer">Savas Labs will never sell your email address or spam you.</p><br>
+          </div>
+
+          <p>Comment</p>
+          <textarea name='comment' id='comment' required></textarea>
+          <p class="hint below-textarea">Plain text format only please.</p>
+
+          <input type='hidden' name='slug' id='slug' value='/2016/10/25/deploy-jekyll-with-travis.html' />
+          <input type='text' name='url' id='url' />
+
+          <div class='are-you-human'>
+            <div class='are-you-human-owl'>
+              <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
+            </div>
+            <div class='are-you-human-field'>
+              <p>What type of animal is the Savas Labs logo?</p>
+              <input type='text' name='nocaptcha' id='nocaptcha' class='nocaptcha'>
+              <p class="hint">Hint: 3 letters long, starts with an 'o' and ends with an 'l'.</p>
+            </div>
+          </div>
+
+          <input type='submit' value='Submit' id='submit' class="submit-comment"/>
+        </form>
+      </div>
+    </div>
+  
+  <hr>
+</div>
+
+    
+    
+      <div class="post-bottom">
+  <div class="post-meta">
+    <h4>About the author</h4>
+    
+      <a href="/team/anne-tomasevich">
+        <picture>
+    <source srcset="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-eeafb6.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg">
+    <img src="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-eeafb6.jpg" class="image--team-post-meta" itemprop="image" alt="Anne Tomasevich" >
+  </picture>
+
+      </a>
+      <p class="post-author-desc">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
+    
+  </div>
+    <!-- Once we have more content, change this to posts related by tag -->
+  <div class="post-related flex-container">
+    <h4>Recent posts by Savas Labs</h4>
+    <div class="cards">
+      
+      
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/10/19/optimizing-jekyll-with-gulp.html">
+              <div class="card-header">
+                  Optimizing Jekyll Performance with Gulp
+              </div>
+              <div class="card-copy">
+                <p>Oct 19, 2016</p>
+                
+                <p><p>How we improved our company site’s performance with a better Jekyll workflow</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/09/23/supercharged-seo-with-drupal-8.html">
+              <div class="card-header">
+                  Supercharged SEO with Drupal 8
+              </div>
+              <div class="card-copy">
+                <p>Sep 23, 2016</p>
+                
+                <p><p>SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/08/29/internship-thoughts.html">
+              <div class="card-header">
+                  A Savas Labs Internship
+              </div>
+              <div class="card-copy">
+                <p>Aug 29, 2016</p>
+                
+                <p><p>What it’s like to learn at Savas Labs.</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+    <div class="previous-next-links">
+  <div class="next">
+    
+  </div>
+  <div class="previous">
+    
+      <a href="/2016/10/19/optimizing-jekyll-with-gulp.html"> Optimizing Jekyll Performance with Gulp <i class="fa fa-long-arrow-right"></i></a>
+    
+  </div>
+</div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <div class="contact-block">
+  <div class="contact-block__items">
+    <h3>Interested in working with us?</h3>
+    <a href="/contact">Get in touch!</a>
+  </div>
+</div>
+    <footer class="footer" role="contentinfo">
+  <div class="footer-links">
+    <ul>
+      <li><h3>Location</h3></li>
+      <li>Savas Labs<br />
+          PMB 210<br />
+          201 W Main Street, Suite 100<br />
+          Durham, NC 27701<br /></li>
+    </ul>
+    <ul>
+      <li><h3>Around the Web</h3></li>
+      <ul>
+        <li><a href="https://github.com/savaslabs"><span class="mega-octicon octicon-mark-github"></span></a></li>
+        <li><a href="https://www.drupal.org/node/2466865"><i class="fa fa-drupal fa-lg fa-2x"></i></a></li>
+        <li><a href="https://twitter.com/savas_labs"><i class="fa fa-twitter fa-lg fa-2x"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/savas-labs"><i class="fa fa-linkedin fa-lg fa-2x"></i></a></li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h3>Contact</h3></li>
+      <li><a href="mailto:info@savaslabs.com">info@savaslabs.com</a></li>
+      <li>(919) 432-4660</li>
+    </ul>
+  </div>
+
+</footer>
+
+<div class="footer-copyright">
+  <p>Copyright &copy; Savas Labs 2016</p>
+</div>
+
+    <script type="text/javascript" src="http://savaslabs.com/assets/js/main.js" async></script>
+
+<noscript>
+  <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</noscript>
+
+  </body>
+
+</html>
