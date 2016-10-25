@@ -12,65 +12,21 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="http://savaslabs.com/2016/05/26/installing-xhprof.html">
   <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
+  
+  
+  
+  
+
+
+
+  
+  
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
-      "@type": "Organization",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Durham, North Carolina",
-        "postalCode": "27701",
-        "streetAddress": "201 W Main St."
-      },
-      "description": "A full-service web agency leveraging the power of Drupal.
-",
-      "email": "info@savaslabs.com",
-      "name": "Savas Labs",
-      "telephone": "(919) 432-4660",
-      "url": "http://savaslabs.com",
-      "logo": "http://savaslabs.com/assets/img/logo.png"
-    }
-</script>
-
-  
-  
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Installing XHProf to profile your Drupal module",
-    "about": "Step-by-step, how to install and use XHProf to profile your Drupal module.",
-    "articleBody": "
-
-
-&lt;div class=&quot;post&quot;&gt;
-  &lt;header class=&quot;post-header&quot;&gt;
-    &lt;h1 class=&quot;post-title&quot;&gt;Installing XHProf to profile your Drupal module&lt;/h1&gt;
-    &lt;p&gt;By &lt;a href=&quot;/team/tim-stallmann&quot;&gt;Tim Stallmann&lt;/a&gt;&lt;/p&gt;
-    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
-    &lt;p&gt;May 26, 2016 &lt;/p&gt;&lt;br&gt;
-    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/php/&quot;&gt;PHP&lt;/a&gt;, &lt;a href=&quot;/blog/tag/performance/&quot;&gt;Performance&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/module-development/&quot;&gt;Module Development&lt;/a&gt;&lt;/p&gt;
-    
-    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
-    
-    
-      &lt;div class=&quot;post-featured-image&quot;&gt;
-        &lt;picture&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-1000by1000-c366a8.jpg&quot; media=&quot;(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-737by737-c366a8.jpg&quot; media=&quot;(min-width: 400px)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-800by800-c366a8.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-400by400-c366a8.jpg&quot;&gt;
-    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-400by400-c366a8.jpg&quot; class=&quot;image--post-featured-image&quot; itemprop=&quot;image&quot; alt=&quot;an XHProf callgraph&quot; &gt;
-  &lt;/picture&gt;
-
-      &lt;/div&gt;
-    
-  &lt;/header&gt;
-
-  
-
-  &lt;article class=&quot;post-content&quot;&gt;
-    &lt;p&gt;XHProf is a profiling tool for PHP code – it tracks the amount of time and memory your code spends in each function call, allowing you to spot bottlenecks in the code and identify where it’s worth spending resources on optimization. There are have been a &lt;a href=&quot;http://www.linuxjournal.com/article/7213&quot;&gt;number of PHP profilers over the years&lt;/a&gt;, and XDebug has &lt;a href=&quot;https://xdebug.org/docs/profiler&quot;&gt;a profiler as well&lt;/a&gt;, but XHProf is the first one I’ve successfully managed to configure correctly and interpret the output of.&lt;/p&gt;
+      "@type": "BlogPosting",
+      "about": "Step-by-step, how to install and use XHProf to profile your Drupal module.",
+      "articleBody": "&lt;p&gt;XHProf is a profiling tool for PHP code – it tracks the amount of time and memory your code spends in each function call, allowing you to spot bottlenecks in the code and identify where it’s worth spending resources on optimization. There are have been a &lt;a href=&quot;http://www.linuxjournal.com/article/7213&quot;&gt;number of PHP profilers over the years&lt;/a&gt;, and XDebug has &lt;a href=&quot;https://xdebug.org/docs/profiler&quot;&gt;a profiler as well&lt;/a&gt;, but XHProf is the first one I’ve successfully managed to configure correctly and interpret the output of.&lt;/p&gt;
 
 &lt;p&gt;I had run across a number of blog posts about using XHProf + Drupal, but never actually got it to work sucessfully for a project. Because so much of the documentation online is incomplete or out-of-date, I thought it would be useful to document my process using XHProf to profile a Drupal 8 custom module here. YMMV, but please post your thoughts/experiences in the comments!&lt;/p&gt;
 
@@ -202,272 +158,57 @@ sudo apt-get install php5-dev
 
 &lt;p&gt;Now you’ve got all this data – how to make sense of it? What to do with it? Stay tuned for more discussion of how to interpret XHProf results and a real-world example of profiling a D8 module, next week!&lt;/p&gt;
 
-
-    &lt;hr&gt;
-
-    
-      &lt;div class=&quot;post-comments&quot;&gt;
-  
-    &lt;div class=&quot;expander&quot;&gt;
-      &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
-      &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
-        &lt;!-- If there are existing comments, output them here. --&gt;
-        &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
-        &lt;!-- New comment form --&gt;
-        &lt;form id=&quot;comment-form&quot;&gt;
-          &lt;h4&gt;Leave a comment&lt;/h4&gt;
-          &lt;div class=&quot;comment-name&quot;&gt;
-            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
-          &lt;/div&gt;
-
-          &lt;div class=&quot;comment-email&quot;&gt;
-            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
-            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
-          &lt;/div&gt;
-
-          &lt;p&gt;Comment&lt;/p&gt;
-          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
-          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
-
-          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2016/05/26/installing-xhprof.html&#39; /&gt;
-          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
-
-          &lt;div class=&#39;are-you-human&#39;&gt;
-            &lt;div class=&#39;are-you-human-owl&#39;&gt;
-              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&#39;are-you-human-field&#39;&gt;
-              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
-              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
-              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-
-          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  
-  &lt;hr&gt;
-&lt;/div&gt;
-
-    
-    
-      &lt;div class=&quot;post-bottom&quot;&gt;
-  &lt;div class=&quot;post-meta&quot;&gt;
-    &lt;h4&gt;About the author&lt;/h4&gt;
-    
-      &lt;a href=&quot;/team/tim-stallmann&quot;&gt;
-        &lt;picture&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-576by509-a08682.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot;&gt;
-    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Tim Stallmann&quot; &gt;
-  &lt;/picture&gt;
-
-      &lt;/a&gt;
-      &lt;p class=&quot;post-author-desc&quot;&gt;Tim is a cartographer and developer at Savas Labs, implementing complex web applications for our clients.&lt;/p&gt;
-    
-  &lt;/div&gt;
-    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
-  &lt;div class=&quot;post-related flex-container&quot;&gt;
-    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
-    &lt;div class=&quot;cards&quot;&gt;
-      
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Deploying Jekyll to Github Pages with Travis and Gulp
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Oct 25, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub Pages using Travis, opening the door for...&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Optimizing Jekyll Performance with Gulp
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Oct 19, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;How we improved our company site’s performance with a better Jekyll workflow&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Supercharged SEO with Drupal 8
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Sep 23, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-    
-    &lt;div class=&quot;previous-next-links&quot;&gt;
-  &lt;div class=&quot;next&quot;&gt;
-    
-      &lt;a href=&quot;/2016/06/15/git-merge-conflict-strategies.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; Strategies and tools for resolving Git merge conflicts&lt;/a&gt;
-    
-  &lt;/div&gt;
-  &lt;div class=&quot;previous&quot;&gt;
-    
-      &lt;a href=&quot;/2016/05/20/drupalcon-nola-recap.html&quot;&gt; Drupalcon New Orleans 2016: a Twitter recap &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-  &lt;/article&gt;
-
-&lt;/div&gt;
 ",
       "author": {
-          "@context": "http://schema.org",
-          "@type": "Person",
-          "name": "Tim Stallmann",
-          "affiliation": "Savas Labs",
-          "worksFor": "Savas Labs"
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Tim Stallmann",
+        "affiliation": "Savas Labs",
+        "worksFor": "Savas Labs"
       },
-    "keywords": "php, performance, drupal, drupal-planet, module-development",
-    "text": "
-
-
-&lt;div class=&quot;post&quot;&gt;
-  &lt;header class=&quot;post-header&quot;&gt;
-    &lt;h1 class=&quot;post-title&quot;&gt;Installing XHProf to profile your Drupal module&lt;/h1&gt;
-    &lt;p&gt;By &lt;a href=&quot;/team/tim-stallmann&quot;&gt;Tim Stallmann&lt;/a&gt;&lt;/p&gt;
-    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
-    &lt;p&gt;May 26, 2016 &lt;/p&gt;&lt;br&gt;
-    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/php/&quot;&gt;PHP&lt;/a&gt;, &lt;a href=&quot;/blog/tag/performance/&quot;&gt;Performance&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/module-development/&quot;&gt;Module Development&lt;/a&gt;&lt;/p&gt;
-    
-    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
-    
-    
-      &lt;div class=&quot;post-featured-image&quot;&gt;
-        &lt;picture&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-1000by1000-c366a8.jpg&quot; media=&quot;(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-737by737-c366a8.jpg&quot; media=&quot;(min-width: 400px)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-800by800-c366a8.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-400by400-c366a8.jpg&quot;&gt;
-    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/blog/xhprof-callgraph-400by400-c366a8.jpg&quot; class=&quot;image--post-featured-image&quot; itemprop=&quot;image&quot; alt=&quot;an XHProf callgraph&quot; &gt;
-  &lt;/picture&gt;
-
-      &lt;/div&gt;
-    
-  &lt;/header&gt;
-
-  
-
-  &lt;article class=&quot;post-content&quot;&gt;
-    &lt;p&gt;XHProf is a profiling tool for PHP code – it tracks the amount of time and memory your code spends in each function call, allowing you to spot bottlenecks in the code and identify where it’s worth spending resources on optimization. There are have been a &lt;a href=&quot;http://www.linuxjournal.com/article/7213&quot;&gt;number of PHP profilers over the years&lt;/a&gt;, and XDebug has &lt;a href=&quot;https://xdebug.org/docs/profiler&quot;&gt;a profiler as well&lt;/a&gt;, but XHProf is the first one I’ve successfully managed to configure correctly and interpret the output of.&lt;/p&gt;
+      "dateCreated": "2016-05-26 00:00:00 +0000",
+      "dateModified": "2016-05-26 00:00:00 +0000",
+      "datePublished": "2016-05-26 00:00:00 +0000",
+      "headline": "Installing XHProf to profile your Drupal module",
+      "image": {
+        "@context": "http://schema.org",
+        "@type": "ImageObject",
+        "author": "Tim Stallmann",
+        "datePublished": "2016-05-26 00:00:00 +0000",
+        "description": "an XHProf callgraph",
+        "height": "1000px",
+        "url": "http://savaslabs.com/assets/img/blog/xhprof-callgraph.jpg",
+        "width": "1000px"
+      },
+      "inLanguage": "en-US",
+      "keywords": "php, performance, drupal, drupal-planet, module-development",
+      "mainEntityOfPage": "http://savaslabs.com/2016/05/26/installing-xhprof.html",
+      "publisher": {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durham, North Carolina",
+          "postalCode": "27701",
+          "streetAddress": "201 W Main St."
+        },
+        "description": "A full-service web agency leveraging the power of Drupal.
+",
+        "email": "info@savaslabs.com",
+        "logo": {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "description": "Savas Labs logo",
+          "height": "50px",
+          "url": "http://savaslabs.com/assets/img/logo.png",
+          "width": "114px"
+        },
+        "name": "Savas Labs",
+        "telephone": "(919) 432-4660",
+        "url": "http://savaslabs.com"
+      },
+      "sourceOrganization": "Savas Labs",
+      "text": "&lt;p&gt;XHProf is a profiling tool for PHP code – it tracks the amount of time and memory your code spends in each function call, allowing you to spot bottlenecks in the code and identify where it’s worth spending resources on optimization. There are have been a &lt;a href=&quot;http://www.linuxjournal.com/article/7213&quot;&gt;number of PHP profilers over the years&lt;/a&gt;, and XDebug has &lt;a href=&quot;https://xdebug.org/docs/profiler&quot;&gt;a profiler as well&lt;/a&gt;, but XHProf is the first one I’ve successfully managed to configure correctly and interpret the output of.&lt;/p&gt;
 
 &lt;p&gt;I had run across a number of blog posts about using XHProf + Drupal, but never actually got it to work sucessfully for a project. Because so much of the documentation online is incomplete or out-of-date, I thought it would be useful to document my process using XHProf to profile a Drupal 8 custom module here. YMMV, but please post your thoughts/experiences in the comments!&lt;/p&gt;
 
@@ -599,241 +340,11 @@ sudo apt-get install php5-dev
 
 &lt;p&gt;Now you’ve got all this data – how to make sense of it? What to do with it? Stay tuned for more discussion of how to interpret XHProf results and a real-world example of profiling a D8 module, next week!&lt;/p&gt;
 
-
-    &lt;hr&gt;
-
-    
-      &lt;div class=&quot;post-comments&quot;&gt;
-  
-    &lt;div class=&quot;expander&quot;&gt;
-      &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
-      &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
-        &lt;!-- If there are existing comments, output them here. --&gt;
-        &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
-        &lt;!-- New comment form --&gt;
-        &lt;form id=&quot;comment-form&quot;&gt;
-          &lt;h4&gt;Leave a comment&lt;/h4&gt;
-          &lt;div class=&quot;comment-name&quot;&gt;
-            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
-          &lt;/div&gt;
-
-          &lt;div class=&quot;comment-email&quot;&gt;
-            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
-            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
-          &lt;/div&gt;
-
-          &lt;p&gt;Comment&lt;/p&gt;
-          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
-          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
-
-          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2016/05/26/installing-xhprof.html&#39; /&gt;
-          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
-
-          &lt;div class=&#39;are-you-human&#39;&gt;
-            &lt;div class=&#39;are-you-human-owl&#39;&gt;
-              &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&#39;are-you-human-field&#39;&gt;
-              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
-              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
-              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-
-          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  
-  &lt;hr&gt;
-&lt;/div&gt;
-
-    
-    
-      &lt;div class=&quot;post-bottom&quot;&gt;
-  &lt;div class=&quot;post-meta&quot;&gt;
-    &lt;h4&gt;About the author&lt;/h4&gt;
-    
-      &lt;a href=&quot;/team/tim-stallmann&quot;&gt;
-        &lt;picture&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-576by509-a08682.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot;&gt;
-    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/tim-stallmann-288by254-a08682.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Tim Stallmann&quot; &gt;
-  &lt;/picture&gt;
-
-      &lt;/a&gt;
-      &lt;p class=&quot;post-author-desc&quot;&gt;Tim is a cartographer and developer at Savas Labs, implementing complex web applications for our clients.&lt;/p&gt;
-    
-  &lt;/div&gt;
-    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
-  &lt;div class=&quot;post-related flex-container&quot;&gt;
-    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
-    &lt;div class=&quot;cards&quot;&gt;
-      
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Deploying Jekyll to Github Pages with Travis and Gulp
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Oct 25, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub Pages using Travis, opening the door for...&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Optimizing Jekyll Performance with Gulp
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Oct 19, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;How we improved our company site’s performance with a better Jekyll workflow&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                  Supercharged SEO with Drupal 8
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Sep 23, 2016&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-    
-    &lt;div class=&quot;previous-next-links&quot;&gt;
-  &lt;div class=&quot;next&quot;&gt;
-    
-      &lt;a href=&quot;/2016/06/15/git-merge-conflict-strategies.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; Strategies and tools for resolving Git merge conflicts&lt;/a&gt;
-    
-  &lt;/div&gt;
-  &lt;div class=&quot;previous&quot;&gt;
-    
-      &lt;a href=&quot;/2016/05/20/drupalcon-nola-recap.html&quot;&gt; Drupalcon New Orleans 2016: a Twitter recap &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-  &lt;/article&gt;
-
-&lt;/div&gt;
 ",
-    "sourceOrganization": "Savas Labs",
-    "inLanguage": "en-US",
-    "dateCreated": "2016-05-26 00:00:00 +0000",
-    "datePublished": "2016-05-26 00:00:00 +0000",
-    "url": "http://savaslabs.com/2016/05/26/installing-xhprof.html"
-  }
-</script>
-
+      "url": "http://savaslabs.com/2016/05/26/installing-xhprof.html"
+    }
+  </script>
+}
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
