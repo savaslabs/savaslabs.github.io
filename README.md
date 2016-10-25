@@ -72,6 +72,9 @@ Your image should be 1474px wide. Blog images should be placed in
 `_/assets/img/blog`, but you should only include `/blog/[filename].jpg` in the
 front matter of your post.
 
+Lastly, please include `featured_image_width` and `featured_image_height` in
+pixels to satisfy Google's structured data requirements.
+
 ### Syntax Highlighting
 
 Since updating to Jekyll 3.0.2 which uses Kramdown/Rouge, to use syntax
