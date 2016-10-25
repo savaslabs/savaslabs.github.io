@@ -1,54 +1,96 @@
-{% capture image_path_start %}/assets/img{% endcapture %}
-{% capture image_path %}{{ page.featured_image | prepend: image_path_start }}{% endcapture %}
 {% assign date_modified = page.date %}
 {% if page.date_modified %}
   {% assign date_modified = page.date_modified %}
 {% endif %}
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "about": "{{ page.summary }}",
-    "articleBody": "{{ content | escape }}",
-    "author": {
+
+{% if page.featured_image %}
+  {% capture image_path_start %}/assets/img{% endcapture %}
+  {% capture image_path %}{{ page.featured_image | prepend: image_path_start }}{% endcapture %}
+  <script type="application/ld+json">
+    {
       "@context": "http://schema.org",
-      "@type": "Person",
-      "name": "{{ page.author }}",
-      "affiliation": "Savas Labs",
-      "worksFor": "Savas Labs"
-    },
-    "dateCreated": "{{ page.date }}",
-    "dateModified": "{{ date_modified }}",
-    "datePublished": "{{ page.date }}",
-    "headline": "{{ page.title }}",
-    "image": {
-      "@context": "http://schema.org",
-      "@type": "ImageObject",
-      "author": "{{ page.author }}",
+      "@type": "BlogPosting",
+      "about": "{{ page.summary }}",
+      "articleBody": "{{ content | escape }}",
+      "author": {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "{{ page.author }}",
+        "affiliation": "Savas Labs",
+        "worksFor": "Savas Labs"
+      },
+      "dateCreated": "{{ page.date }}",
+      "dateModified": "{{ date_modified }}",
       "datePublished": "{{ page.date }}",
-      "description": "{{ page.featured_image_alt }}",
-      "height": "{{ page.featured_image_height }}",
-      "url": "{{ image_path | prepend: site.url }}",
-      "width": "{{ page.featured_image_width }}"
-    },
-    "inLanguage": "en-US",
-    "keywords": "{{ page.tags | join: ', ' }}",
-    "mainEntityOfPage": "{{ page.url | prepend: site.url }}",
-    "publisher": {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": "Savas Labs",
-      "logo": {
+      "headline": "{{ page.title }}",
+      "image": {
         "@context": "http://schema.org",
         "@type": "ImageObject",
-        "description": "Savas Labs logo",
-        "height": "50px",
-        "url": "http://savaslabs.com/assets/img/logo.png",
-        "width": "114px"
-      }
-    },
-    "sourceOrganization": "Savas Labs",
-    "text": "{{ content | escape | textify }}",
-    "url": "{{ page.url | prepend: site.url }}"
-  }
-</script>
+        "author": "{{ page.author }}",
+        "datePublished": "{{ page.date }}",
+        "description": "{{ page.featured_image_alt }}",
+        "height": "{{ page.featured_image_height }}",
+        "url": "{{ image_path | prepend: site.url }}",
+        "width": "{{ page.featured_image_width }}"
+      },
+      "inLanguage": "en-US",
+      "keywords": "{{ page.tags | join: ', ' }}",
+      "mainEntityOfPage": "{{ page.url | prepend: site.url }}",
+      "publisher": {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Savas Labs",
+        "logo": {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "description": "Savas Labs logo",
+          "height": "50px",
+          "url": "http://savaslabs.com/assets/img/logo.png",
+          "width": "114px"
+        }
+      },
+      "sourceOrganization": "Savas Labs",
+      "text": "{{ content | escape | textify }}",
+      "url": "{{ page.url | prepend: site.url }}"
+    }
+  </script>
+{% else %}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "about": "{{ page.summary }}",
+      "articleBody": "{{ content | escape }}",
+      "author": {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "{{ page.author }}",
+        "affiliation": "Savas Labs",
+        "worksFor": "Savas Labs"
+      },
+      "dateCreated": "{{ page.date }}",
+      "dateModified": "{{ date_modified }}",
+      "datePublished": "{{ page.date }}",
+      "headline": "{{ page.title }}",
+      "inLanguage": "en-US",
+      "keywords": "{{ page.tags | join: ', ' }}",
+      "mainEntityOfPage": "{{ page.url | prepend: site.url }}",
+      "publisher": {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Savas Labs",
+        "logo": {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "description": "Savas Labs logo",
+          "height": "50px",
+          "url": "http://savaslabs.com/assets/img/logo.png",
+          "width": "114px"
+        }
+      },
+      "sourceOrganization": "Savas Labs",
+      "text": "{{ content | escape | textify }}",
+      "url": "{{ page.url | prepend: site.url }}"
+    }
+  </script>
+{% endif %}}
