@@ -18,7 +18,7 @@ Many solutions exist for building the site before pushing to GitHub Pages. We ch
 ## Basic workflow
 
 Our site was already using Travis CI to run our
-[test script](https://github.com/savaslabs/savaslabs.github.io/blob/source/_scripts/run-tests.sh)
+[test script](https://github.com/savaslabs/savaslabs.github.io/blob/70420c8afcf59b8d91fba3b57d2ca8241c71f211/_scripts/run-tests.sh)
 on pull requests and merges to the `master` branch. You can learn about setting
 up Travis in their [docs](https://docs.travis-ci.com/).
 
@@ -192,7 +192,7 @@ git push --quiet origin `master` > /dev/null 2>&1
 Some important notes:
 
 - Make sure the script file is executable!
-- The last line ensures that our encrypted token won't end up in git logs
+- The last line ensures that our encrypted token won't end up in git logs.
 
 ## Deployment and debugging
 
