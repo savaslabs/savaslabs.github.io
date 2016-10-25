@@ -8,6 +8,8 @@ summary: |
   How we improved our company site's performance with a better Jekyll workflow
 featured_image: "/blog/test-tubes.jpg"
 featured_image_alt: "Test tubes with brightly color liquids inside"
+featured_image_height: "912px"
+featured_image_width: "1474px"
 ---
 
 It's hard to believe it's been over a year and a half since our site's

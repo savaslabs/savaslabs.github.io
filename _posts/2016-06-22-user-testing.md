@@ -7,6 +7,8 @@ tags: user-experience best-practices
 summary: Our approach to designing, conducting, and learning from user testing and other analyses.
 featured_image: "/blog/usability-testing.jpg"
 featured_image_alt: "Two people comparing notes while using computers"
+featured_image_height: "984px"
+featured_image_width: "1474px"
 ---
 
 One of my favorite lines about usability testing comes from Jakob Nielson of the Nielson Norman Group in his article [Why You Only Need to Test with 5 Users](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/), regarding a graph of number of user test participants versus percentage of usability problems found:
