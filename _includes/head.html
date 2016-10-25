@@ -11,9 +11,9 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}" />
-  {% include schema-organization.html %}
+  {% if page.permalink == "/" or page.permalink == "/team/" or page.permalink == "/mission-and-values/" or page.permalink == "/services/" or page.permalink == "/blog/" or page.permalink == "/contact/" %}{% include schema-organization.html %}{% endif %}
   {% if page.layout == "team" %}{% include schema-team.html %}{% endif %}
-  {% if page.permalink == "/what-we-do/" or page.permalink == "/drupal-training/" %}{% include schema-professional-service.html %}{% endif %}
+  {% if page.permalink == "/services/" %}{% include schema-professional-service.html %}{% endif %}
   {% if page.path contains "_posts" %}{% include schema-blog.html %}{% endif %}
   {% include googleanalytics.html %}
   <script>

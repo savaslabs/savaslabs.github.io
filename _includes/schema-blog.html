@@ -39,7 +39,14 @@
       "publisher": {
         "@context": "http://schema.org",
         "@type": "Organization",
-        "name": "Savas Labs",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durham, North Carolina",
+          "postalCode": "27701",
+          "streetAddress": "201 W Main St."
+        },
+        "description": "{{ site.description }}",
+        "email": "info@savaslabs.com",
         "logo": {
           "@context": "http://schema.org",
           "@type": "ImageObject",
@@ -47,7 +54,10 @@
           "height": "50px",
           "url": "http://savaslabs.com/assets/img/logo.png",
           "width": "114px"
-        }
+        },
+        "name": "Savas Labs",
+        "telephone": "(919) 432-4660",
+        "url": "http://savaslabs.com"
       },
       "sourceOrganization": "Savas Labs",
       "text": "{{ content | escape | textify }}",

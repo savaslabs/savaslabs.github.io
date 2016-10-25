@@ -1,18 +1,25 @@
 <script type="application/ld+json">
-    {
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Durham, North Carolina",
+      "postalCode": "27701",
+      "streetAddress": "201 W Main St."
+    },
+    "description": "{{ site.description }}",
+    "email": "info@savaslabs.com",
+    "logo": {
       "@context": "http://schema.org",
-      "@type": "Organization",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Durham, North Carolina",
-        "postalCode": "27701",
-        "streetAddress": "201 W Main St."
-      },
-      "description": "{{ site.description }}",
-      "email": "info@savaslabs.com",
-      "name": "Savas Labs",
-      "telephone": "(919) 432-4660",
-      "url": "http://savaslabs.com",
-      "logo": "http://savaslabs.com/assets/img/logo.png"
-    }
+      "@type": "ImageObject",
+      "description": "Savas Labs logo",
+      "height": "50px",
+      "url": "http://savaslabs.com/assets/img/logo.png",
+      "width": "114px"
+    },
+    "name": "Savas Labs",
+    "telephone": "(919) 432-4660",
+    "url": "http://savaslabs.com"
+  }
 </script>
