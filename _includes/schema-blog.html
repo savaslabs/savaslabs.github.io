@@ -11,7 +11,7 @@
       "@context": "http://schema.org",
       "@type": "BlogPosting",
       "about": "{{ page.summary }}",
-      "articleBody": "{{ content | escape }}",
+      "articleBody": "{{ page.content | escape }}",
       "author": {
         "@context": "http://schema.org",
         "@type": "Person",
@@ -60,7 +60,7 @@
         "url": "http://savaslabs.com"
       },
       "sourceOrganization": "Savas Labs",
-      "text": "{{ content | escape | textify }}",
+      "text": "{{ page.content | escape | textify }}",
       "url": "{{ page.url | prepend: site.url }}"
     }
   </script>
