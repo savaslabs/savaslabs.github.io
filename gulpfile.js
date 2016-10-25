@@ -219,7 +219,7 @@ gulp.task('serve', ['build:local'], function() {
     });
 
     // Watch site settings.
-    gulp.watch(['_config.yml'], ['build:jekyll:watch']);
+    gulp.watch(['_config*.yml'], ['build:jekyll:watch']);
 
     // Watch .scss files; changes are piped to browserSync.
     gulp.watch('_assets/styles/**/*.scss', ['build:styles']);
