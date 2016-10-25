@@ -9,7 +9,7 @@ summary: |
   Pages using Travis, opening the door for us to use Jekyll Plugins.
 ---
 
-Since our company's inception, we at Savas Labs have used [Jekyll](https://jekyllrb.com/) to build our company website and [GitHub Pages](https://pages.github.com/) to host it with great success. Jekyll is a powerful tool out of the box, and it's hard to imagine a simpler hosting strategy than GitHub Pages, which only requires a [specifically named branch](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) and a [single settings update](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages) to get your site live for free. Although we often use [Drupal](/blog/tag/drupal/) to build complex, data-heavy systems that need to have a simple workflow for site admins, for our own site we recognized that Jekyll was a better tool for our workflow that would mitigate security risks, eliminate site hosting costs, and reduce complexity since there's no need for a database back-end. 
+Since our company's inception, we at Savas Labs have used [Jekyll](https://jekyllrb.com/) to build our company website and [GitHub Pages](https://pages.github.com/) to host it with great success. Jekyll is a powerful tool out of the box, and it's hard to imagine a simpler hosting strategy than GitHub Pages, which only requires a [specifically named branch](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) and a [single settings update](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages) to get your site live for free. Although we often use [Drupal](/blog/tag/drupal/) to build complex, data-heavy systems that need to have a simple workflow for site admins, for our own site we recognized that Jekyll was a better tool for our workflow that would mitigate security risks, eliminate site hosting costs, and reduce complexity since there's no need for a database back-end.
 
 One well-known limitation of this workflow: any Jekyll plugins not [whitelisted by GitHub Pages](https://pages.github.com/versions/) will be disabled when GitHub Pages builds the site, since `jekyll build` is run with the `--safe` tag. We recently wanted to start using the [Jekyll Picture Tag](https://github.com/robwierzbowski/jekyll-picture-tag) plugin ([read about why](/2016/10/19/optimizing-jekyll-with-gulp.html#jekyll-picture-tag-plugin)), and the incredibly crucial [Jemoji](https://github.com/jekyll/jemoji) plugin :joy_cat:, so we needed to find a way to build our site before pushing it to GitHub Pages for deployment. To complicate matters a bit more, we recently starting [building our site with gulp](2016/10/19/optimizing-jekyll-with-gulp.html), which introduced another layer of dependencies to the mix.
 
@@ -40,7 +40,7 @@ directory to the `master` branch, then pushes the `master` branch.
 We created a new branch off `master` called `source` and set it to the default
 branch on GitHub. `source` contains what the `master` branch used to — the
 Jekyll config file(s), HTML files and partials, data files, styles and JS, etc.
-Each time the deploy process is run, Travis deletes all the files on the 
+Each time the deploy process is run, Travis deletes all the files on the
 `master` branch, then commits the entire compiled `_site` directory. So, the
 `master` branch only contains the compiled site, which is deployed by
 GitHub Pages.
