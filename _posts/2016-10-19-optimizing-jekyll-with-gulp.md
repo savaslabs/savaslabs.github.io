@@ -260,7 +260,7 @@ In the gulpfile, we'll start by setting up variables for the gulp plugins we'll
 be using and including our paths file.
 
 (P.S. If you're like me, you might find it easier to look at the entire gulpfile
-at once - you can view ours [on GitHub](https://github.com/savaslabs/savaslabs.github.io/blob/source/gulpfile.js).)
+at once - you can view ours [on GitHub](https://github.com/savaslabs/savaslabs.github.io/blob/926c11c60eeb774b9644fb72ee1e8383e3a09bb8/gulpfile.js).)
 
 ```js
 // gulpfile.js
@@ -287,7 +287,7 @@ var paths = require('./_assets/gulp_config/paths');
 ```
 
 Each plugin will need to be installed locally either by copying our
-[`packages.json`](https://github.com/savaslabs/savaslabs.github.io/blob/source/package.json)
+[`packages.json`](https://github.com/savaslabs/savaslabs.github.io/blob/84ff592ff2fc8c9bf57b1226c76df66bb9d53b25/gulpfile.js)
 file and running `npm install`, or by running the following for each
 plugin:
 
@@ -373,7 +373,7 @@ This task will output `main.css` in `_site/assets/styles`.
 
 Some notes:
 
-- We're including all our SCSS partials in our [main.scss](https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/main.scss)
+- We're including all our SCSS partials in our [main.scss](https://github.com/savaslabs/savaslabs.github.io/blob/220e13c1878b5f2b168d941463ad9d6a332f741a/_assets/styles/main.scss)
 file, but you could point to a directory or file glob if needed.
 - We're using the [autoprefixer plugin](https://github.com/postcss/autoprefixer) for postcss. We're making heavy use of the Bourbon mixin library which currently handles some autoprefixing, but this will be dropped (hopefully soon!) in Bourbon v5.0 at which time [autoprefixer will be recommended](https://github.com/postcss/autoprefixer).
 
@@ -618,8 +618,9 @@ polyfill, meaning the resulting markup will work in all modern browsers.
 But wait - how can we use a Jekyll plugin while we're hosting our site on GitHub
 Pages? GitHub Pages only allows
 [a few Jekyll plugins](https://pages.github.com/versions/) when it builds a site
-for deployment, a well-known limitation. Come back soon for a post on how we're
-using Travis CI to build our site for testing and deployment to GitHub Pages!
+for deployment, a well-known limitation. [Read about how we're using Travis CI
+to build our site for testing and deployment to GitHub Pages so we can use
+Jekyll plugins.](/2016/10/25/deploy-jekyll-with-travis.html)
 
 The [installation and usage](https://github.com/robwierzbowski/jekyll-picture-tag#installation)
 documentation on Jekyll Picture Tag's GitHub repo is great, and setup is a quick
@@ -740,7 +741,7 @@ One place we couldn't use this plugin is for images displayed via the CSS
 large image on the home page, I manually created a variety of images (known in
 the responsive image world as [art direction](https://developers.google.com/web/fundamentals/design-and-ui/media/images#art_direction))
 then used media queries to display the appropriate image as the background image.
-You can check out the [SCSS on GitHub](https://github.com/savaslabs/savaslabs.github.io/blob/source/_assets/styles/scss/components/_home-cover-image.scss).
+You can check out the [SCSS on GitHub](https://github.com/savaslabs/savaslabs.github.io/blob/e61687f846a2ee605a5141cb9fa8a16c2de28339/_assets/styles/scss/components/_home-cover-image.scss).
 Since this is a much more time-consuming process I haven't implemented this for
 all of our background images yet, but taking the time to create images that will
 look exactly how we want them at all screen sizes will be well worth it!
