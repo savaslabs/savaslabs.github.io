@@ -24,6 +24,10 @@ up Travis in their [docs](https://docs.travis-ci.com/).
 
 Previously, Travis would build the site and run our tests, then we would merge
 branches into `master`, triggering GitHub Pages to rebuild and deploy our site.
+
+![none]({{ site.url }}/assets/img/blog/original-deployment-workflow.jpg)
+<span class="caption">Original deployment workflow</span>
+
 Now, we want to build our site before it gets to GitHub Pages to ensure our
 Jekyll Plugins are included. In our new workflow:
 
@@ -34,6 +38,9 @@ builds the site.
 3. Using a GitHub token for authorization, Travis commits the `_site`
 directory to the `master` branch, then pushes the `master` branch.
 4. This triggers GitHub Pages to deploy our pre-built site.
+
+![none]({{ site.url }}/assets/img/blog/new-deployment-workflow.jpg)
+<span class="caption">New deployment workflow</span>
 
 ### Create a new default branch
 
