@@ -4,6 +4,8 @@ title: Deploying Jekyll to Github Pages with Travis and Gulp
 date: 2016-10-25
 author: Anne Tomasevich
 tags: jekyll travis
+featured_image: "/blog/travis-hero.png"
+featured_image_alt: "Jekyll, Gulp, Travis, and GitHub logos"
 summary: |
   A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub
   Pages using Travis, opening the door for us to use Jekyll Plugins.
