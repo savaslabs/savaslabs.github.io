@@ -6,6 +6,8 @@ author: Anne Tomasevich
 tags: jekyll travis
 featured_image: "/blog/travis-hero.png"
 featured_image_alt: "Jekyll, Gulp, Travis, and GitHub logos"
+featured_image_height: "739px"
+featured_image_width: "1474px"
 summary: |
   A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub
   Pages using Travis, opening the door for us to use Jekyll Plugins.
