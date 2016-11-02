@@ -112,6 +112,13 @@
     margin-top: 2.5em;
 
     .comment {
+      .comment__logo {
+        float: left;
+        height: 1.44em;
+        margin-right: .5em;
+        padding: .25em 0;
+      }
+
       h5 {
         margin-bottom: 0;
       }
@@ -120,6 +127,11 @@
         color: darken($light-gray, 25%);
         font-size: .9em;
         margin: .5em 0 .4em;
+      }
+
+      .comment-date,
+      .comment-text {
+        margin-left: 1em;
       }
     }
   }

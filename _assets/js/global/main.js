@@ -143,9 +143,17 @@ function enableCommentForm($id) {
                         var name = json.data[i].name;
                         var created = json.data[i].created_at;
                         var comment = json.data[i].comment;
+                        var commentClass = 'comment';
+                        if (json.data[i].savasian == 1) {
+                            commentClass = 'comment savasian';
+                        }
 
                         // Create HTML output.
-                        outhtml = outhtml + '<div class="comment"><h5>' + name + ' says:</h5>';
+                        outhtml = outhtml + '<div class="' + commentClass + '">';
+                        if (json.data[i].savasian == 1) {
+                            outhtml = outhtml + '<img src="/assets/img/logo.png" class="comment__logo" alt="Savas Labs logo">'
+                        }
+                        outhtml = outhtml + '<h5>' + name + ' says:</h5>';
                         outhtml = outhtml + '<p class="comment-date">' + created + '</p>';
                         outhtml = outhtml + '<p class="comment-text">' + comment + '</p></div>';
                     });
