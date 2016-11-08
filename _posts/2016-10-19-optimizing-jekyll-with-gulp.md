@@ -13,7 +13,7 @@ featured_image_width: "1474px"
 ---
 
 It's hard to believe it's been over a year and a half since our site's
-[inaugural blog post](http://localhost:3000/2015/04/01/building-our-site.html)
+[inaugural blog post]({{ site.url }}/2015/04/01/building-our-site.html)
 (written just two months after my career change into web development!) It's been
 great fun building our site and adding content thanks to the power and simplicity
 of [Jekyll](https://jekyllrb.com/). We recently deployed a series of changes to
