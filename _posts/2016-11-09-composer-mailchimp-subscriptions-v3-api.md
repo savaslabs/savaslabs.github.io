@@ -55,7 +55,7 @@ To use this new library, we must specify it as a dependency of our custom module
 
 ### Install the library
 
-Composer is intended for projects and therefore requires a Drupal site to have a single `composer.json`, so things get complicated when individual modules specify their own dependencies. 
+Composer is intended for projects and therefore requires a Drupal site to have a single `composer.json`, so things get complicated when individual modules specify their own dependencies.
 
 For Drupal 7 sites (or still active Drupal 6 sites), the [Composer Manager](https://www.drupal.org/project/composer_manager) contributed module handles this by merging all custom and contributed module requirements into a single, consolidated, site-wide `composer.json` file.
 
