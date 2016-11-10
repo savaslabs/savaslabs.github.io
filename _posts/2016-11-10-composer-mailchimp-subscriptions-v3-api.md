@@ -41,7 +41,7 @@ There are a few steps we must take so that we can subscribe users to mailing lis
 
 ### Specify the dependency
 
-ThinkShout maintains the [Mailchimp contributed module]() and we were very excited to see that as part of the effort to ["get Drupal off the island"](http://www.garfieldtech.com/blog/off-the-island-2013) they also released [a PHP library for MailChimp API v3.0](https://packagist.org/packages/thinkshout/mailchimp-api-php).
+ThinkShout maintains the [Mailchimp contributed module](https://www.drupal.org/project/mailchimp) and we were very excited to see that as part of the effort to ["get Drupal off the island"](http://www.garfieldtech.com/blog/off-the-island-2013) they also released [a PHP library for MailChimp API v3.0](https://packagist.org/packages/thinkshout/mailchimp-api-php).
 
 To use this new library, we must specify it as a dependency of our custom module. We do that in a `composer.json` file that sits in our custom module's root directory and requires that library via the following code:
 
