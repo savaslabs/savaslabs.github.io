@@ -57,7 +57,7 @@ To use this new library, we must specify it as a dependency of our custom module
 
 Composer is intended for projects and therefore requires a Drupal site to have a single `composer.json`, so things get complicated when individual modules specify their own dependencies.
 
-For Drupal 7 sites (or still active Drupal 6 sites), the [Composer Manager](https://www.drupal.org/project/composer_manager) contributed module handles this by merging all custom and contributed module requirements into a single, consolidated, site-wide `composer.json` file.
+For Drupal 7 sites (or still active Drupal 6 sites), the [Composer Manager](https://www.drupal.org/project/composer_manager) contributed module handles this by merging the requirements specified by each custom and contributed module's `composer.json` files into a single, consolidated, site-wide `composer.json` file.
 
 So for Drupal 6/7 projects we'll need Composer Manager installed and enabled.
 
@@ -160,4 +160,4 @@ mymodule_subscribe_user($api_key, $list_id, $email);
 
 By taking advantage of the modern PHP ecosystem built on reusable Composer managed packages, we can easily build or adapt a custom module to subscribe users to mailing lists without the MailChimp contributed module.
 
-Lastly, a special thanks to Thinkshout for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!
+Lastly, a special thanks to [ThinkShout](https://thinkshout.com/) for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!
