@@ -12,7 +12,7 @@ featured_image_width: "670px"
 drupal_planet_summary: |
   A demonstration on how to use Composer Manager and the MailChimp PHP library to simply and easily subscribe users to mailing lists without using the MailChimp contributed module.
 disclaimer: |
-  This post contains outdated information as it uses MailChimp API v2.0. Mailchimp has released MailChimp API v3.0 and prior versions will no longer be supported after 2016. To learn how to transition to v3.0 of the API, please see [my more recent blog post on subscribing users to MailChimp lists using API v3.0](/2016/11/09/composer-mailchimp-subscriptions-v3-api.html)
+  This post contains outdated information as it uses MailChimp API v2.0. Mailchimp has released MailChimp API v3.0 and prior versions will no longer be supported after 2016. To learn how to transition to v3.0 of the API, please see [my more recent blog post on subscribing users to MailChimp lists using API v3.0](/2016/11/10/composer-mailchimp-subscriptions-v3-api.html)
 ---
 
 ## Overview
