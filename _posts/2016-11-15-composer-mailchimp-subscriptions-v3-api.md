@@ -13,6 +13,8 @@ drupal_planet_summary: |
   A tutorial that shows you how to use Composer and ThinkShout's new PHP library for MailChimp API v3.0 to easily subscribe users to mailing lists in Drupal custom modules without using the MailChimp contributed module. This is a follow-up to a previous post that used the old API, and also includes some new Drupal 8 specifics.
 ---
 
+Our clients are often looking to reach their audiences via email campaigns, and [MailChimp](https://mailchimp.com/) is one of the solutions we frequently recommend for this. MailChimp makes it easy to create and manage email campaigns while also providing beneficial analytics on user behavior.
+
 Earlier this year I wrote [a blog post](/2016/01/22/composer-mailchimp-subscriptions.html) showing how to use [Composer Manager](https://www.drupal.org/project/composer_manager) along with the Mailchimp API v2.0 PHP package to subscribe users to mailing lists in a Drupal 6 or 7 custom module without the need for the Mailchimp contributed module.
 
 However, since then, MailChimp API v3.0 was released and Mailchimp announced that v2.0 (and all prior versions) will no longer be supported after 2016.
