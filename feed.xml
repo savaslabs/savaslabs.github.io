@@ -6,9 +6,183 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Nov 2016 15:20:41 +0000</pubDate>
-    <lastBuildDate>Wed, 09 Nov 2016 15:20:41 +0000</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 15:32:59 +0000</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 15:32:59 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules</title>
+        <description>&lt;p&gt;Our clients are often looking to reach their audiences via email campaigns, and &lt;a href=&quot;https://mailchimp.com/&quot;&gt;MailChimp&lt;/a&gt; is one of the solutions we frequently recommend for this. MailChimp makes it easy to create and manage email campaigns while also providing beneficial analytics on user behavior.&lt;/p&gt;
+
+&lt;p&gt;Earlier this year I wrote &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;a blog post&lt;/a&gt; showing how to use &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; along with the Mailchimp API v2.0 PHP package to subscribe users to mailing lists in a Drupal 6 or 7 custom module without the need for the Mailchimp contributed module.&lt;/p&gt;
+
+&lt;p&gt;However, since then, MailChimp API v3.0 was released and Mailchimp announced that v2.0 (and all prior versions) will no longer be supported after 2016.&lt;/p&gt;
+
+&lt;p&gt;So in this blog post, I’ll demonstrate how to accomplish the same objective using the new MailChimp API v3.0, and I’ll expand the tutorial to also include some Drupal 8 specifics.&lt;/p&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;To quickly summarize the key takeaways from my previous blog posts &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;on Composer Manager&lt;/a&gt; and &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;subscribing users to MailChimp lists using the old API&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Composer is a tool for managing PHP libraries that your project depends on.&lt;/li&gt;
+  &lt;li&gt;Challenges arise managing project-wide dependencies when custom and contributed modules specify their own unique dependencies.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; is a contributed module for Drupal 7 (and formerly Drupal 6) that addresses these challenges and allows contributed and custom modules to depend on PHP libraries managed via Composer.&lt;/li&gt;
+  &lt;li&gt;Using a Composer managed PHP package for the MailChimp API, we can easily subscribe users to MailChimp lists in a Drupal custom module without relying on the Mailchimp module.&lt;/li&gt;
+  &lt;li&gt;While the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; is great, sometimes all you need is a simple, lightweight method for subscribing users to mailing lists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One important development since my previous posts is that Composer Manager has been deprecated for Drupal 8. &lt;a href=&quot;https://www.drupal.org/project/drupal/releases/8.1.0&quot;&gt;Improvements introduced in Drupal 8.1.0&lt;/a&gt; allow modules to rely on Composer managed dependencies without the need for the Composer Manager module.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;There are a few steps we must take so that we can subscribe users to mailing lists in our custom module. We’ll review each of these steps in detail:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add the MailChimp API v3.0 PHP library as a dependency of our custom module.&lt;/li&gt;
+  &lt;li&gt;Ensure that the library is installed for our project.&lt;/li&gt;
+  &lt;li&gt;Properly use the library in our custom module to subscribe users to mailing lists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;specify-the-dependency&quot;&gt;Specify the dependency&lt;/h3&gt;
+
+&lt;p&gt;ThinkShout maintains the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; and we were very excited to see that as part of the effort to &lt;a href=&quot;http://www.garfieldtech.com/blog/off-the-island-2013&quot;&gt;“get Drupal off the island”&lt;/a&gt; they also released &lt;a href=&quot;https://packagist.org/packages/thinkshout/mailchimp-api-php&quot;&gt;a PHP library for MailChimp API v3.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To use this new library, we must specify it as a dependency of our custom module. We do that in a &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file that sits in our custom module’s root directory and requires that library via the following code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;thinkshout/mailchimp-api-php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=1.0.3&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;install-the-library&quot;&gt;Install the library&lt;/h3&gt;
+
+&lt;p&gt;Composer is intended for projects and therefore requires a Drupal site to have a single &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;, so things get complicated when individual modules specify their own dependencies.&lt;/p&gt;
+
+&lt;p&gt;For Drupal 7 sites (or still active Drupal 6 sites), the &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; contributed module handles this by merging the requirements specified by each custom and contributed module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; files into a single, consolidated, site-wide &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;So for Drupal 6/7 projects we’ll need Composer Manager installed and enabled.&lt;/p&gt;
+
+&lt;p&gt;Once enabled, we can generate the consolidated &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; and then install all of the site’s dependencies that file specifies (including the MailChimp API v3.0 PHP library specified by our custom module) in one of two ways:&lt;/p&gt;
+
+&lt;p&gt;From the command line, we can run the following drush commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-manager install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alternatively, we could include the following lines in an update hook:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Re-build Composer Manager composer.json and run composer update.
+drush_composer_manager_composer_json_rebuild&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;;
+drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;update&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For Drupal 8 sites, the process is slightly different. As mentioned previously, as of release 8.1.0, Drupal core directly uses Composer to manage dependencies and the Composer Manager module is no longer necessary. For Drupal 8 sites, we should follow the &lt;a href=&quot;https://www.drupal.org/node/2822349&quot;&gt;Drupal.org instructions for managing dependencies for a custom project&lt;/a&gt;. Following those instructions ensures that all of the site’s dependencies, including the MailChimp library specified by our custom module, are installed.&lt;/p&gt;
+
+&lt;h3 id=&quot;use-the-library&quot;&gt;Use the library&lt;/h3&gt;
+
+&lt;p&gt;Once we have the MailChimp API v3.0 PHP library installed, we can use it in our custom module to subscribe users to mailing lists.&lt;/p&gt;
+
+&lt;p&gt;We suggest creating a dedicated function for subscribing users to email lists which can then be called throughout the custom module. For our purposes, we modeled that function off of the Mailchimp module (version 7.x-4.6) &lt;code class=&quot;highlighter-rouge&quot;&gt;mailchimp_subscribe_process()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;We implemented the following function, which can be reviewed and modified for your specific purposes:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;/**
+ * Add an email to a MailChimp list.
+ *
+ * This code is based on the 7.x-4.6 version of the Mailchimp module,
+ * specifically the mailchimp_subscribe_process() function. That version of
+ * the Mailchimp contrib module makes use of the ThinkShout PHP library for
+ * version 3.0 of the MailChimp API. See the following for more detail:
+ * https://www.drupal.org/project/mailchimp
+ * https://github.com/thinkshout/mailchimp-api-php.
+ *
+ * @see Mailchimp_Lists::subscribe()
+ *
+ * @param string $api_key
+ *   The MailChimp API key.
+ * @param string $list_id
+ *   The MailChimp list id that the user should be subscribed to.
+ * @param string $email
+ *   The email address for the user being subscribed to the mailing list.
+ */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mymodule_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Set the timeout to something that won&#39;t take down the Drupal site:
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Get an instance of the MailchimpLists class.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;apikey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Use MEMBER_STATUS_PENDING to require double opt-in for the subscriber. Otherwise, use MEMBER_STATUS_SUBSCRIBED.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;status&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MEMBER_STATUS_PENDING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;email_type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Subscribe user to the list.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addOrUpdateMember&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@email was subscribed to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_NOTICE&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;A problem occurred subscribing @email to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// The user was not subscribed so log to watchdog.
+&lt;/span&gt;    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;An error occurred subscribing @email to list @list. Status code @code. &quot;%message&quot;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;%message&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@code&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With that function defined, we can then subscribe an email address to a specific Mailchimp mailing list through the following function call in our custom module:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mymodule_subscribe_user($api_key, $list_id, $email);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;By taking advantage of the modern PHP ecosystem built on reusable Composer managed packages, we can easily build or adapt a custom module to subscribe users to mailing lists without the MailChimp contributed module.&lt;/p&gt;
+
+&lt;p&gt;Lastly, a special thanks to &lt;a href=&quot;https://thinkshout.com/&quot;&gt;ThinkShout&lt;/a&gt; for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>composer</category>
+        
+        <category>module-development</category>
+        
+        <category>mailchimp</category>
+        
+        
+      </item>
     
       <item>
         <title>Deploying Jekyll to Github Pages with Travis and Gulp</title>
@@ -2176,86 +2350,6 @@ and made our way on over to the &lt;a href=&quot;https://events.drupal.org/newor
         <category>drupalcon</category>
         
         <category>event</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How we added comments to our Jekyll site</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/2015/04/01/building-our-site.html&quot;&gt;Avid readers of our blog&lt;/a&gt; know that it’s built using the amazing and lovely open-source static site generator known as &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Jekyll is a great solution for a site like ours because we get an always-on&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, super fast, database-free site that’s also capable of many of the things you’d typically associate with a database-driven site: tagging, content organization, advanced templating, etc. Best of all, it’s one less application for us to host and keep up-to-date with the latest security patches.&lt;/p&gt;
-
-&lt;p&gt;However, as much as we like our static HTML, we also care about you, dear reader, and we wanted to provide an easy way for you to comment on and contribute to discussion on our site’s content.&lt;/p&gt;
-
-&lt;p&gt;This post provides an overview of how and why we implemented comments for our Jekyll site. If you find it interesting or helpful… leave a comment!&lt;/p&gt;
-
-&lt;h2 id=&quot;how-most-people-solve-the-problem&quot;&gt;How most people solve the problem&lt;/h2&gt;
-
-&lt;p&gt;Most folks using static site generators include comments by outsourcing their site’s comment section to &lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Disqus works like this: you sign up for their service and get a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; embed code that you place in your page template. When the user visits that page, their browser will load the Disqus commenting widget. All comments are stored on Disqus’ servers, the script loads any comments stored in Disqus for the particular URL the user is on.&lt;/p&gt;
-
-&lt;p&gt;This is an elegant solution, but there are some problems. For one, you don’t own your comments; they reside in a third-party service. And as &lt;a href=&quot;http://ourincrediblejourney.tumblr.com/&quot;&gt;Our Incredible Journey&lt;/a&gt; has well documented, services, even big ones like Disqus, sometimes disappear without much warning.&lt;/p&gt;
-
-&lt;p&gt;More importantly, Disqus doesn’t have a great track record on privacy. By default, they track your activity while you browse sites across the web:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;We strive to make the Disqus experience as personalized and relevant as possible for all users. In doing so, we collect non-personally identifiable interest information to deliver targeted content and advertising on websites that use Disqus, as well as other websites you may visit.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This is somewhat mitigated by this &lt;a href=&quot;https://help.disqus.com/customer/portal/articles/1657951&quot;&gt;semi-hidden setting&lt;/a&gt; that lets you opt out of some of their tracking, but I’m willing to venture that the vast majority of Disqus users don’t know about this. And the “non-personally identifiable information” term is a &lt;a href=&quot;https://www.eff.org/deeplinks/2009/09/what-information-personally-identifiable&quot;&gt;bit of a misnomer&lt;/a&gt; in any case.&lt;/p&gt;
-
-&lt;p&gt;(Full disclosure: we’re not entirely innocent in this respect either, since we’re using Google Analytics on our site, so if you are not doing so already, we invite you to go install an ad blocker plugin for your browser and come back to finish the article!)&lt;/p&gt;
-
-&lt;h2 id=&quot;creating-an-alternative&quot;&gt;Creating an alternative&lt;/h2&gt;
-
-&lt;p&gt;The privacy concerns and content ownership issues with Disqus were enough to make us look elsewhere for other solutions, and when the alternatives weren’t exactly what we were looking for, we decided to roll our own.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;Our requirements were simple: allow users to leave a comment on a post, have that comment show up to other users who visit the post.&lt;/p&gt;
-
-&lt;p&gt;The basic plan for implementing our Disqus alternative was similar to the Disqus model: on the Savas Labs website, embed some JavaScript in our page template; that JavaScript is then responsible for (1) loading any comments housed in our comment application, and (2) posting new comments to the comment application. The comment application, in turn, is a PHP application with an API that provides create/read/delete operations to users of our website.&lt;/p&gt;
-
-&lt;h3 id=&quot;built-on-lumen&quot;&gt;Built on Lumen&lt;/h3&gt;
-
-&lt;p&gt;Looking around the open source landscape for the right tool to build this app, we came across &lt;a href=&quot;https://lumen.laravel.com/&quot;&gt;Lumen&lt;/a&gt;, a slimmed down version of the well-known &lt;a href=&quot;https://www.laravel.com&quot;&gt;Laravel&lt;/a&gt; project. Lumen was very simple to get up and running with thanks to the &lt;a href=&quot;https://lumen.laravel.com/docs/5.2&quot;&gt;clear documentation examples&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The entry point of our application are some &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/routes.php&quot;&gt;routing rules&lt;/a&gt; that determine what data to give back to the user when they visit a particular API endpoint.&lt;/p&gt;
-
-&lt;p&gt;From there, the requests are processed in the &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php&quot;&gt;CommentController&lt;/a&gt; — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the &lt;a href=&quot;/news&quot;&gt;News&lt;/a&gt; page to show the comment count per article).&lt;/p&gt;
-
-&lt;p&gt;The application runs on one of our cloud servers on Linode, and uses a SQLite backend. Because the Lumen framework is very lean, and the application does relatively little, it’s very fast — the &lt;code class=&quot;highlighter-rouge&quot;&gt;api/comments/count&lt;/code&gt; call takes ~84 ms while loading all comments (&lt;code class=&quot;highlighter-rouge&quot;&gt;api/comments&lt;/code&gt;) takes about 125 ms.&lt;/p&gt;
-
-&lt;h3 id=&quot;tying-it-all-together&quot;&gt;Tying it all together&lt;/h3&gt;
-
-&lt;p&gt;Now that we set up our backend application for managing comments, we needed a way to interact with it. On this site, we have some JavaScript to interact with the API. You can look at our Jekyll site’s &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/master/assets/js/main.js&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;main.js&lt;/code&gt;&lt;/a&gt; for the gory details, but basically we make use of the jQuery &lt;code class=&quot;highlighter-rouge&quot;&gt;ajax()&lt;/code&gt; method to &lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;POST&lt;/code&gt; data from and to our commenting API.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;And now you know how and why the “Comments” section on this post appears as it does!&lt;/p&gt;
-
-&lt;p&gt;In conclusion, I should mention that the major downside of building your own comment hosting application is that you have to … build your own comment hosting application. In other words, nothing comes for free — you have to build every feature yourself.&lt;/p&gt;
-
-&lt;p&gt;That’s why, for example, we don’t (yet) have nicely formatted comments (they are plain text only), and users don’t get notifications when someone replies to their comment, there’s no comment threading, etc. On the other hand, what we have met our team’s expectations for minimum viable/lovable product, and it was a good learning experience for our team to develop this application over the last year.&lt;/p&gt;
-
-&lt;p&gt;Our &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io&quot;&gt;website&lt;/a&gt; and &lt;a href=&quot;https://github.com/savaslabs/squabble&quot;&gt;comment application&lt;/a&gt; code is all open source, so have a look and feel free to use it for your own projects.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://twitter.com/githubstatus/status/711965206029725697&quot;&gt;Nearly&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;I should mention we investigated some alternatives too; writing code from scratch that we have to then maintain is rarely our first choice. The &lt;a href=&quot;https://posativ.org/isso/&quot;&gt;Isso&lt;/a&gt; project is very cool but seemed a little complex to deploy and maintain. And &lt;a href=&quot;http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html&quot;&gt;this person&lt;/a&gt; came up with a solution that cleverly uses GitHub Issues for gathering comments, but then we’d shut the door on anyone without a GitHub account, and having to visit GitHub to leave a comment is more than a little awkward. Another benefit to writing our own implementation: a great opportunity for the team to stay current with the latest technology and make use of a popular PHP framework. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/04/20/squabble-comments.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/04/20/squabble-comments.html</guid>
-        
-        <category>jekyll</category>
         
         
       </item>

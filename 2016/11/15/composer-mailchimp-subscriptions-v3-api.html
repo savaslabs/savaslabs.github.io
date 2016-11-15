@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules | Savas Labs</title>
+  
+  <meta name="description" content="Our clients are often looking to reach their audiences via email campaigns, and MailChimp is one of the solutions we frequently recommend for this. MailChimp...">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html">
+  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
+  
+  
+  
+  
+
+
+
+  
+  
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "about": "How to use Composer along with the ThinkShout PHP library for MailChimp API v3.0 to easily subscribe users to mailing lists without the MailChimp contributed module.",
+      "articleBody": "&lt;p&gt;Our clients are often looking to reach their audiences via email campaigns, and &lt;a href=&quot;https://mailchimp.com/&quot;&gt;MailChimp&lt;/a&gt; is one of the solutions we frequently recommend for this. MailChimp makes it easy to create and manage email campaigns while also providing beneficial analytics on user behavior.&lt;/p&gt;
+
+&lt;p&gt;Earlier this year I wrote &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;a blog post&lt;/a&gt; showing how to use &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; along with the Mailchimp API v2.0 PHP package to subscribe users to mailing lists in a Drupal 6 or 7 custom module without the need for the Mailchimp contributed module.&lt;/p&gt;
+
+&lt;p&gt;However, since then, MailChimp API v3.0 was released and Mailchimp announced that v2.0 (and all prior versions) will no longer be supported after 2016.&lt;/p&gt;
+
+&lt;p&gt;So in this blog post, I’ll demonstrate how to accomplish the same objective using the new MailChimp API v3.0, and I’ll expand the tutorial to also include some Drupal 8 specifics.&lt;/p&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;To quickly summarize the key takeaways from my previous blog posts &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;on Composer Manager&lt;/a&gt; and &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;subscribing users to MailChimp lists using the old API&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Composer is a tool for managing PHP libraries that your project depends on.&lt;/li&gt;
+  &lt;li&gt;Challenges arise managing project-wide dependencies when custom and contributed modules specify their own unique dependencies.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; is a contributed module for Drupal 7 (and formerly Drupal 6) that addresses these challenges and allows contributed and custom modules to depend on PHP libraries managed via Composer.&lt;/li&gt;
+  &lt;li&gt;Using a Composer managed PHP package for the MailChimp API, we can easily subscribe users to MailChimp lists in a Drupal custom module without relying on the Mailchimp module.&lt;/li&gt;
+  &lt;li&gt;While the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; is great, sometimes all you need is a simple, lightweight method for subscribing users to mailing lists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One important development since my previous posts is that Composer Manager has been deprecated for Drupal 8. &lt;a href=&quot;https://www.drupal.org/project/drupal/releases/8.1.0&quot;&gt;Improvements introduced in Drupal 8.1.0&lt;/a&gt; allow modules to rely on Composer managed dependencies without the need for the Composer Manager module.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;There are a few steps we must take so that we can subscribe users to mailing lists in our custom module. We’ll review each of these steps in detail:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add the MailChimp API v3.0 PHP library as a dependency of our custom module.&lt;/li&gt;
+  &lt;li&gt;Ensure that the library is installed for our project.&lt;/li&gt;
+  &lt;li&gt;Properly use the library in our custom module to subscribe users to mailing lists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;specify-the-dependency&quot;&gt;Specify the dependency&lt;/h3&gt;
+
+&lt;p&gt;ThinkShout maintains the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; and we were very excited to see that as part of the effort to &lt;a href=&quot;http://www.garfieldtech.com/blog/off-the-island-2013&quot;&gt;“get Drupal off the island”&lt;/a&gt; they also released &lt;a href=&quot;https://packagist.org/packages/thinkshout/mailchimp-api-php&quot;&gt;a PHP library for MailChimp API v3.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To use this new library, we must specify it as a dependency of our custom module. We do that in a &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file that sits in our custom module’s root directory and requires that library via the following code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;thinkshout/mailchimp-api-php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=1.0.3&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;install-the-library&quot;&gt;Install the library&lt;/h3&gt;
+
+&lt;p&gt;Composer is intended for projects and therefore requires a Drupal site to have a single &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;, so things get complicated when individual modules specify their own dependencies.&lt;/p&gt;
+
+&lt;p&gt;For Drupal 7 sites (or still active Drupal 6 sites), the &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; contributed module handles this by merging the requirements specified by each custom and contributed module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; files into a single, consolidated, site-wide &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;So for Drupal 6/7 projects we’ll need Composer Manager installed and enabled.&lt;/p&gt;
+
+&lt;p&gt;Once enabled, we can generate the consolidated &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; and then install all of the site’s dependencies that file specifies (including the MailChimp API v3.0 PHP library specified by our custom module) in one of two ways:&lt;/p&gt;
+
+&lt;p&gt;From the command line, we can run the following drush commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-manager install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alternatively, we could include the following lines in an update hook:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Re-build Composer Manager composer.json and run composer update.
+drush_composer_manager_composer_json_rebuild&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;;
+drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;update&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For Drupal 8 sites, the process is slightly different. As mentioned previously, as of release 8.1.0, Drupal core directly uses Composer to manage dependencies and the Composer Manager module is no longer necessary. For Drupal 8 sites, we should follow the &lt;a href=&quot;https://www.drupal.org/node/2822349&quot;&gt;Drupal.org instructions for managing dependencies for a custom project&lt;/a&gt;. Following those instructions ensures that all of the site’s dependencies, including the MailChimp library specified by our custom module, are installed.&lt;/p&gt;
+
+&lt;h3 id=&quot;use-the-library&quot;&gt;Use the library&lt;/h3&gt;
+
+&lt;p&gt;Once we have the MailChimp API v3.0 PHP library installed, we can use it in our custom module to subscribe users to mailing lists.&lt;/p&gt;
+
+&lt;p&gt;We suggest creating a dedicated function for subscribing users to email lists which can then be called throughout the custom module. For our purposes, we modeled that function off of the Mailchimp module (version 7.x-4.6) &lt;code class=&quot;highlighter-rouge&quot;&gt;mailchimp_subscribe_process()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;We implemented the following function, which can be reviewed and modified for your specific purposes:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;/**
+ * Add an email to a MailChimp list.
+ *
+ * This code is based on the 7.x-4.6 version of the Mailchimp module,
+ * specifically the mailchimp_subscribe_process() function. That version of
+ * the Mailchimp contrib module makes use of the ThinkShout PHP library for
+ * version 3.0 of the MailChimp API. See the following for more detail:
+ * https://www.drupal.org/project/mailchimp
+ * https://github.com/thinkshout/mailchimp-api-php.
+ *
+ * @see Mailchimp_Lists::subscribe()
+ *
+ * @param string $api_key
+ *   The MailChimp API key.
+ * @param string $list_id
+ *   The MailChimp list id that the user should be subscribed to.
+ * @param string $email
+ *   The email address for the user being subscribed to the mailing list.
+ */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mymodule_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Set the timeout to something that won&#39;t take down the Drupal site:
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Get an instance of the MailchimpLists class.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;apikey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Use MEMBER_STATUS_PENDING to require double opt-in for the subscriber. Otherwise, use MEMBER_STATUS_SUBSCRIBED.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;status&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MEMBER_STATUS_PENDING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;email_type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Subscribe user to the list.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addOrUpdateMember&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@email was subscribed to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_NOTICE&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;A problem occurred subscribing @email to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// The user was not subscribed so log to watchdog.
+&lt;/span&gt;    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;An error occurred subscribing @email to list @list. Status code @code. &quot;%message&quot;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;%message&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@code&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With that function defined, we can then subscribe an email address to a specific Mailchimp mailing list through the following function call in our custom module:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mymodule_subscribe_user($api_key, $list_id, $email);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;By taking advantage of the modern PHP ecosystem built on reusable Composer managed packages, we can easily build or adapt a custom module to subscribe users to mailing lists without the MailChimp contributed module.&lt;/p&gt;
+
+&lt;p&gt;Lastly, a special thanks to &lt;a href=&quot;https://thinkshout.com/&quot;&gt;ThinkShout&lt;/a&gt; for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!&lt;/p&gt;
+",
+      "author": {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Dan Murphy",
+        "affiliation": "Savas Labs",
+        "worksFor": "Savas Labs"
+      },
+      "dateCreated": "2016-11-15 00:00:00 +0000",
+      "dateModified": "2016-11-15 00:00:00 +0000",
+      "datePublished": "2016-11-15 00:00:00 +0000",
+      "headline": "Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules",
+      "image": {
+        "@context": "http://schema.org",
+        "@type": "ImageObject",
+        "author": "Dan Murphy",
+        "datePublished": "2016-11-15 00:00:00 +0000",
+        "description": "sheet music",
+        "height": "983px",
+        "url": "http://savaslabs.com/assets/img/blog/mailchimp_3_drupal_composer_3.jpg",
+        "width": "1474px"
+      },
+      "inLanguage": "en-US",
+      "keywords": "drupal, drupal-planet, composer, module-development, mailchimp",
+      "mainEntityOfPage": "http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html",
+      "publisher": {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durham, North Carolina",
+          "postalCode": "27701",
+          "streetAddress": "201 W Main St."
+        },
+        "description": "A full-service web agency leveraging the power of Drupal.
+",
+        "email": "info@savaslabs.com",
+        "logo": {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "description": "Savas Labs logo",
+          "height": "50px",
+          "url": "http://savaslabs.com/assets/img/logo.png",
+          "width": "114px"
+        },
+        "name": "Savas Labs",
+        "telephone": "(919) 432-4660",
+        "url": "http://savaslabs.com"
+      },
+      "sourceOrganization": "Savas Labs",
+      "text": "&lt;p&gt;Our clients are often looking to reach their audiences via email campaigns, and &lt;a href=&quot;https://mailchimp.com/&quot;&gt;MailChimp&lt;/a&gt; is one of the solutions we frequently recommend for this. MailChimp makes it easy to create and manage email campaigns while also providing beneficial analytics on user behavior.&lt;/p&gt;
+
+&lt;p&gt;Earlier this year I wrote &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;a blog post&lt;/a&gt; showing how to use &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; along with the Mailchimp API v2.0 PHP package to subscribe users to mailing lists in a Drupal 6 or 7 custom module without the need for the Mailchimp contributed module.&lt;/p&gt;
+
+&lt;p&gt;However, since then, MailChimp API v3.0 was released and Mailchimp announced that v2.0 (and all prior versions) will no longer be supported after 2016.&lt;/p&gt;
+
+&lt;p&gt;So in this blog post, I’ll demonstrate how to accomplish the same objective using the new MailChimp API v3.0, and I’ll expand the tutorial to also include some Drupal 8 specifics.&lt;/p&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;To quickly summarize the key takeaways from my previous blog posts &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;on Composer Manager&lt;/a&gt; and &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;subscribing users to MailChimp lists using the old API&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Composer is a tool for managing PHP libraries that your project depends on.&lt;/li&gt;
+  &lt;li&gt;Challenges arise managing project-wide dependencies when custom and contributed modules specify their own unique dependencies.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; is a contributed module for Drupal 7 (and formerly Drupal 6) that addresses these challenges and allows contributed and custom modules to depend on PHP libraries managed via Composer.&lt;/li&gt;
+  &lt;li&gt;Using a Composer managed PHP package for the MailChimp API, we can easily subscribe users to MailChimp lists in a Drupal custom module without relying on the Mailchimp module.&lt;/li&gt;
+  &lt;li&gt;While the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; is great, sometimes all you need is a simple, lightweight method for subscribing users to mailing lists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One important development since my previous posts is that Composer Manager has been deprecated for Drupal 8. &lt;a href=&quot;https://www.drupal.org/project/drupal/releases/8.1.0&quot;&gt;Improvements introduced in Drupal 8.1.0&lt;/a&gt; allow modules to rely on Composer managed dependencies without the need for the Composer Manager module.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;There are a few steps we must take so that we can subscribe users to mailing lists in our custom module. We’ll review each of these steps in detail:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add the MailChimp API v3.0 PHP library as a dependency of our custom module.&lt;/li&gt;
+  &lt;li&gt;Ensure that the library is installed for our project.&lt;/li&gt;
+  &lt;li&gt;Properly use the library in our custom module to subscribe users to mailing lists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;specify-the-dependency&quot;&gt;Specify the dependency&lt;/h3&gt;
+
+&lt;p&gt;ThinkShout maintains the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; and we were very excited to see that as part of the effort to &lt;a href=&quot;http://www.garfieldtech.com/blog/off-the-island-2013&quot;&gt;“get Drupal off the island”&lt;/a&gt; they also released &lt;a href=&quot;https://packagist.org/packages/thinkshout/mailchimp-api-php&quot;&gt;a PHP library for MailChimp API v3.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To use this new library, we must specify it as a dependency of our custom module. We do that in a &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file that sits in our custom module’s root directory and requires that library via the following code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;thinkshout/mailchimp-api-php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=1.0.3&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;install-the-library&quot;&gt;Install the library&lt;/h3&gt;
+
+&lt;p&gt;Composer is intended for projects and therefore requires a Drupal site to have a single &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;, so things get complicated when individual modules specify their own dependencies.&lt;/p&gt;
+
+&lt;p&gt;For Drupal 7 sites (or still active Drupal 6 sites), the &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; contributed module handles this by merging the requirements specified by each custom and contributed module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; files into a single, consolidated, site-wide &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;So for Drupal 6/7 projects we’ll need Composer Manager installed and enabled.&lt;/p&gt;
+
+&lt;p&gt;Once enabled, we can generate the consolidated &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; and then install all of the site’s dependencies that file specifies (including the MailChimp API v3.0 PHP library specified by our custom module) in one of two ways:&lt;/p&gt;
+
+&lt;p&gt;From the command line, we can run the following drush commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-manager install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alternatively, we could include the following lines in an update hook:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Re-build Composer Manager composer.json and run composer update.
+drush_composer_manager_composer_json_rebuild&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;;
+drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;update&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For Drupal 8 sites, the process is slightly different. As mentioned previously, as of release 8.1.0, Drupal core directly uses Composer to manage dependencies and the Composer Manager module is no longer necessary. For Drupal 8 sites, we should follow the &lt;a href=&quot;https://www.drupal.org/node/2822349&quot;&gt;Drupal.org instructions for managing dependencies for a custom project&lt;/a&gt;. Following those instructions ensures that all of the site’s dependencies, including the MailChimp library specified by our custom module, are installed.&lt;/p&gt;
+
+&lt;h3 id=&quot;use-the-library&quot;&gt;Use the library&lt;/h3&gt;
+
+&lt;p&gt;Once we have the MailChimp API v3.0 PHP library installed, we can use it in our custom module to subscribe users to mailing lists.&lt;/p&gt;
+
+&lt;p&gt;We suggest creating a dedicated function for subscribing users to email lists which can then be called throughout the custom module. For our purposes, we modeled that function off of the Mailchimp module (version 7.x-4.6) &lt;code class=&quot;highlighter-rouge&quot;&gt;mailchimp_subscribe_process()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;We implemented the following function, which can be reviewed and modified for your specific purposes:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;/**
+ * Add an email to a MailChimp list.
+ *
+ * This code is based on the 7.x-4.6 version of the Mailchimp module,
+ * specifically the mailchimp_subscribe_process() function. That version of
+ * the Mailchimp contrib module makes use of the ThinkShout PHP library for
+ * version 3.0 of the MailChimp API. See the following for more detail:
+ * https://www.drupal.org/project/mailchimp
+ * https://github.com/thinkshout/mailchimp-api-php.
+ *
+ * @see Mailchimp_Lists::subscribe()
+ *
+ * @param string $api_key
+ *   The MailChimp API key.
+ * @param string $list_id
+ *   The MailChimp list id that the user should be subscribed to.
+ * @param string $email
+ *   The email address for the user being subscribed to the mailing list.
+ */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mymodule_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Set the timeout to something that won&#39;t take down the Drupal site:
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Get an instance of the MailchimpLists class.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;apikey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Use MEMBER_STATUS_PENDING to require double opt-in for the subscriber. Otherwise, use MEMBER_STATUS_SUBSCRIBED.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;status&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MEMBER_STATUS_PENDING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;email_type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Subscribe user to the list.
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addOrUpdateMember&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@email was subscribed to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_NOTICE&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;A problem occurred subscribing @email to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// The user was not subscribed so log to watchdog.
+&lt;/span&gt;    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;An error occurred subscribing @email to list @list. Status code @code. &quot;%message&quot;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;%message&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;@code&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With that function defined, we can then subscribe an email address to a specific Mailchimp mailing list through the following function call in our custom module:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mymodule_subscribe_user($api_key, $list_id, $email);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;By taking advantage of the modern PHP ecosystem built on reusable Composer managed packages, we can easily build or adapt a custom module to subscribe users to mailing lists without the MailChimp contributed module.&lt;/p&gt;
+
+&lt;p&gt;Lastly, a special thanks to &lt;a href=&quot;https://thinkshout.com/&quot;&gt;ThinkShout&lt;/a&gt; for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!&lt;/p&gt;
+",
+      "url": "http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html"
+    }
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61514316-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <script>
+    !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function l(){d.addEventListener&&d.removeEventListener("load",l),d.media=r||"all"}var a,i=e.document,d=i.createElement("link");if(n)a=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;a=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){a.parentNode.insertBefore(d,n?a:a.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",l),d.onloadcssdefined=f,f(l),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)})}}}(this);
+    loadCSS('/assets/styles/main.css');
+    loadCSS('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro');
+  </script>
+  <style>img,legend{border:0}pre,textarea{overflow:auto}.table-minimal,table{border-spacing:0;width:100%}html{box-sizing:border-box;font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}*,::after,::before{box-sizing:inherit}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}legend{padding:0}textarea{resize:vertical}.case-studies .case-studies__case-study .case-study__description a,.case-study .case-study__header .case-study__header__text .case-study__header__link{border:2px solid #fff;border-radius:3px;color:#fff;font-family:"Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;margin-top:2em;padding:.5em 1em;transition:all .2s ease-in-out}.flash-alert,.flash-alert a,.flash-alert a:focus,.flash-alert a:hover,.flash-error,.flash-error a,.flash-error a:focus,.flash-error a:hover{color:rgba(0,0,0,.2)}.flash-alert,.flash-error,.flash-notice,.flash-success{padding:.75em;text-align:center;display:block;font-weight:600;margin-bottom:.75em}.case-studies .case-studies__case-study .case-study__description a:focus,.case-studies .case-studies__case-study .case-study__description a:hover,.case-study .case-study__header .case-study__header__text .case-study__header__link:focus,.case-study .case-study__header .case-study__header__text .case-study__header__link:hover{background-color:#0f7993}.flash-alert{background-color:rgba(242,163,36,.2)}.flash-alert a{text-decoration:underline}.flash-error{background-color:rgba(158,2,59,.2)}.flash-error a{text-decoration:underline}.flash-notice{background-color:rgba(246,67,62,.2);color:rgba(2,0,0,.2)}.flash-notice a,.flash-notice a:focus,.flash-notice a:hover,.flash-success,.flash-success a,.flash-success a:focus,.flash-success a:hover{color:rgba(0,0,0,.2)}.flash-notice a{text-decoration:underline}.flash-success{background-color:rgba(5,92,43,.2)}fieldset,p{margin:0 0 .75em}dl dd,ol,ul{margin:0}td,th{padding:.75em 0}.table-minimal th,th{text-align:left}.flash-success a{text-decoration:underline}.navigation a,a{text-decoration:none}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-webkit-font-smoothing:antialiased;background-color:#0a5365;border-radius:3px;border:none;color:#fff;cursor:pointer;display:inline-block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;font-weight:600;line-height:1;padding:.75em 1em;text-decoration:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;white-space:nowrap}button:focus,button:hover,input[type=button]:focus,input[type=button]:hover,input[type=reset]:focus,input[type=reset]:hover,input[type=submit]:focus,input[type=submit]:hover{background-color:#031a1f;color:#fff}button:disabled,input[type=button]:disabled,input[type=reset]:disabled,input[type=submit]:disabled{cursor:not-allowed;opacity:.5}fieldset{background-color:#f7f7f7;border:1px solid #ddd;padding:1.5em}input,label,select{display:block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em}label{font-weight:600;margin-bottom:.375em}label.required::after{content:"*"}label abbr{display:none}input[type=color],input[type=date],input[type=datetime],input[type=datetime-local],input[type=email],input[type=month],input[type=password],input[type=tel],input[type=text],input[type=time],input[type=url],input[type=week],input[type=number],input[type=search],select[multiple=multiple],textarea{background-color:#fff;border:1px solid #ddd;border-radius:3px;box-shadow:inset 0 1px 3px rgba(0,0,0,.06);box-sizing:border-box;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;margin-bottom:.75em;padding:.5em;transition:border-color;width:100%}input[type=color]:hover,input[type=date]:hover,input[type=datetime]:hover,input[type=datetime-local]:hover,input[type=email]:hover,input[type=month]:hover,input[type=password]:hover,input[type=tel]:hover,input[type=text]:hover,input[type=time]:hover,input[type=url]:hover,input[type=week]:hover,input[type=number]:hover,input[type=search]:hover,select[multiple=multiple]:hover,textarea:hover{border-color:#c4c4c4}input[type=color]:focus,input[type=date]:focus,input[type=datetime]:focus,input[type=datetime-local]:focus,input[type=email]:focus,input[type=month]:focus,input[type=password]:focus,input[type=tel]:focus,input[type=text]:focus,input[type=time]:focus,input[type=url]:focus,input[type=week]:focus,input[type=number]:focus,input[type=search]:focus,select[multiple=multiple]:focus,textarea:focus{border-color:#0a5365;box-shadow:inset 0 1px 3px rgba(0,0,0,.06),0 0 5px rgba(55,112,192,.7);outline:0}hr,td{border-bottom:1px solid #ddd}input[type=search]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}input[type=checkbox],input[type=radio]{display:inline;margin-right:.375em}input[type=file]{padding-bottom:.75em;width:100%}select{margin-bottom:1.5em;max-width:100%;width:auto}ol,ul{padding:0}dl{margin-bottom:.75em}dl dt{font-weight:700;margin-top:.75em}table{-ms-font-feature-settings:"kern","liga","tnum";font-feature-settings:"kern","liga","tnum";border-collapse:collapse;margin:.75em 0;table-layout:fixed}th{border-bottom:1px solid #b7b7b7;font-weight:600}td .label{font-weight:700}td,th,tr{vertical-align:middle}body{-ms-font-feature-settings:"kern","liga","pnum";font-feature-settings:"kern","liga","pnum";-webkit-font-smoothing:antialiased;font-size:1em;line-height:1.5;color:#14133b;font-family:"Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif}h1,h2,h3,h4,h5,h6{line-height:1.2;margin:0 0 .75em;color:#9e023b;font-family:"PT Serif","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800}a{color:#0a5365;transition:all .1s linear}.card,.card .card-header,.card .card-image img,.team-card{transition:all .2s ease-in-out}a:active,a:focus,a:hover{color:#031a1f}a:active,a:focus{outline:0}hr{box-sizing:content-box;height:0;border-left:none;border-right:none;border-top:none}img,picture{margin:0;max-width:100%}.post,.wrapper{max-width:70em}.table-minimal{border-collapse:separate}.home__cover,.page-description,.view-all-link,.view-more-link,header{text-align:center}.table-minimal td{line-height:1.5}.table-minimal thead th{background-color:#fff;border-bottom:0;padding:.75em 1em}.table-minimal tbody{background-color:#fff}.table-minimal tbody td{border-bottom:0;border-top:1px solid #ddd;padding:.75em 1em}.table-minimal tbody td button{display:inline-block;font-size:.7em;line-height:1.5;margin-bottom:.3em;margin-right:.5em;outline:0;padding:.3em 1em;width:100%}@media screen and (min-width:40em){.table-minimal tbody td button{margin-bottom:0;width:auto}}.table-minimal tbody tr:hover>td,.table-minimal tbody tr:hover>th{background-color:#fafafa}.table-minimal tbody tr:first-child td{border-top:2px solid #ddd}.portfolio h2,.portfolio h3,.portfolio h4,.portfolio h5,.portfolio h6,.post h2,.post h3,.post h4,.post h5,.post h6{margin-top:1.5em}h1{font-size:250%}h2{font-size:200%}h3{font-size:160%}h4{font-size:140%}h5{font-size:120%}h6{font-size:100%}a:focus,a:hover{color:#0f7993}.post li a,p a{border-bottom:.1em solid rgba(10,83,101,.1)}.post li a:focus,.post li a:hover,p a:focus,p a:hover{border-bottom:.1em solid #0f7993}.name-description p,.page-description,.portfolio,.post,.services__service p,.team-member p{color:#14133b;font-size:1.2em}ul{list-style-type:square}ol{list-style-type:decimal}ol,ul{margin-bottom:1em;margin-left:2em}ol ol,ol ol li,ol ul,ol ul li,ul ol,ul ol li,ul ul,ul ul li{font-size:1em}hr{clear:both;margin:3em 0}blockquote{background-color:#f7f7f7;border-left:10px solid rgba(20,19,59,.4);border-radius:0 9px 9px 0;font-style:italic;margin:2em 0;padding:1em;quotes:'\201C' '\201D'}blockquote::before{color:rgba(20,19,59,.4);content:open-quote;font-family:'Source Sans Pro',sans-serif;font-size:4em;line-height:.1em;margin-right:.25em;vertical-align:-.4em}blockquote p{display:inline}.callout{background-color:#14133b;border-left:solid 1em #9e023b;border-radius:6px;margin:1.5em auto;padding:1em;width:100%}.callout p{color:#fff;font-size:1.5em;margin-bottom:0}.wrapper{margin-left:auto;margin-right:auto;padding:3em 1em;vertical-align:baseline}.wrapper::after{clear:both;content:"";display:table}.flex-container{float:left;display:block;margin-right:2.35765%;width:100%}.flex-container:last-child{margin-right:0}.page-description{margin-bottom:2em}@media screen and (min-width:53.75em){.wrapper{padding:3em 0}.column-8{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.column-8:last-child{margin-right:0}}.view-more-link{font-size:1.2em}.cards{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}.card{flex-basis:15em;-ms-flex-preferred-size:15em;-moz-flex-grow:1;flex-grow:1;-ms-flex-positive:1;background-color:#f7f7f7;border:1px solid #ddd;border-radius:3px;box-shadow:0 2px 4px #e6e6e6;cursor:auto;margin:0 1em 1.5em;position:relative}.card .card-image{max-height:200px;overflow:hidden}.card .card-image img{background:#ddd;border-top-left-radius:3px;border-top-right-radius:3px;width:100%}.card .card-header{background-color:#f7f7f7;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;font-weight:700;line-height:1.5em;padding:.5em .75em}.card .fa-comment-o{margin-right:4px}.card .card-copy{color:#14133b;font-size:.9em;line-height:1.5em;padding:.75em}.card .card-copy p{margin:0 0 .75em}.card:focus,.card:hover{background-color:#fff}.card:focus .card-image img,.card:hover .card-image img{background:#eaeaea}.card:focus .card-header,.card:hover .card-header{background-color:#fff}.card:active,.card:active .card-header{background-color:#f7f7f7}.team-card{flex-basis:21em;-ms-flex-preferred-size:21em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.team-card .card-image{max-height:350px;overflow:hidden}.team-card .card-image img{position:relative;top:-50px}.team-card .card-header{display:inline-block;font-size:1.1em;padding:.5em .75em 0}.team-card .card-copy{border-top:1px solid #dcdcdc;font-size:1em}.team-card .card-title{display:inline-block;float:right;font-size:.8em;line-height:2em;padding:.75em .75em 0;text-transform:uppercase}.work-card{flex-basis:21em;-ms-flex-preferred-size:21em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0;flex-shrink:1;-ms-flex-negative:1}.blog-card{flex-basis:20em;-ms-flex-preferred-size:20em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.case-studies{margin:3em 0}.case-studies .case-studies__case-study{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;background-position:top center;background-repeat:no-repeat;background-size:cover;margin:1.5em 0}.case-studies .case-studies__case-study a,.case-studies .case-studies__case-study h3,.case-studies .case-studies__case-study p{color:#fff;margin-bottom:0}.case-studies .case-studies__case-study .case-study__description,.case-studies .case-studies__case-study .case-study__title{padding:1.5em}@media screen and (min-width:40em){.case-studies .case-studies__case-study{-webkit-box-lines:single;-moz-box-lines:single;box-lines:single;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.case-studies .case-studies__case-study .case-study__description,.case-studies .case-studies__case-study .case-study__title{padding:3em 1.5em}}.case-studies .case-studies__case-study .case-study__title{padding-bottom:0;text-align:center}.case-studies .case-studies__case-study .case-study__title h3{font-size:200%}.case-studies .case-studies__case-study .case-study__description a,.case-studies .case-studies__case-study .case-study__description p{font-size:1.25em;font-weight:700;margin-bottom:0}.case-studies .case-studies__case-study .case-study__description a{display:inline-block;margin-top:1.5em}.case-studies .case-studies__case-study .case-study__description a i{margin-left:.5em}.home__cover{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;background:url(/assets/img/home-cover-image/home-cover-code-400.png) center center no-repeat #14133b;background-size:cover;height:88vh}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-800.png)}}@media screen and (min-width:25em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-640.png)}}@media only screen and (min-width:25em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:25em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:25em) and (min-resolution:192dpi),only screen and (min-width:25em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1280.png)}}@media screen and (min-width:40em){.case-studies .case-studies__case-study .case-study__title{padding-bottom:6em;width:40%}.case-studies .case-studies__case-study .case-study__description{width:60%}.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-860.png);height:78vh}}@media only screen and (min-width:40em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:40em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:40em) and (min-resolution:192dpi),only screen and (min-width:40em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1720.png)}}@media screen and (min-width:53.75em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1120.png);height:88vh}}@media only screen and (min-width:53.75em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min-resolution:192dpi),only screen and (min-width:53.75em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-2240.png)}}@media screen and (min-width:70em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1200.png)}}@media only screen and (min-width:70em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:70em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:70em) and (min-resolution:192dpi),only screen and (min-width:70em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code.png)}}.home__cover .home__cover__heading,.home__cover .home__cover__site-description{margin:0}.home__cover .home__cover__heading{font-size:2em;margin-top:30px}.home__cover hr{border:2px solid #0a5365;border-radius:.5px;margin:10px auto 15px;width:170px}.home__cover .home__cover__site-description{color:#fff;font-size:1.5em;line-height:1.3em;width:230px}.home__cover i{color:#0a5365;font-size:2.8em;padding-top:20px}.navigation{background-color:#0a5365;min-height:70px;width:100%;z-index:999}.navigation .navigation-wrapper{max-width:70em;margin-left:auto;margin-right:auto;padding:25px 0;position:relative;z-index:9999}.navigation .navigation-wrapper::after{clear:both;content:"";display:table}.navigation .logo{background-color:#14133b;border-radius:6px;display:inline-block;float:left;margin:0 0 0 1em;max-height:70px;padding-left:1em;padding-right:1em}@media screen and (min-width:40em){.navigation .logo{float:none;margin:0 auto}}@media screen and (min-width:53.75em){.navigation .logo{float:left;margin:0 0 0 1em}}.navigation .logo img{max-height:70px;padding:.8em 0}.navigation .navigation-menu-button{color:rgba(255,255,255,.7);display:block;float:right;font-weight:700;line-height:70px;margin:0;padding-right:1em;text-transform:uppercase}.navigation .navigation-menu-button:focus,.navigation .navigation-menu-button:hover{color:#fff}.navigation nav{float:none;min-height:70px;z-index:9999999}@media screen and (min-width:40em){.navigation .navigation-menu-button{display:none}.navigation nav{clear:left;margin:0 auto}}@media screen and (min-width:53.75em){.navigation nav{clear:none;float:right}}.navigation .navigation-menu{clear:both;display:none;margin:0 auto;overflow:visible;padding:0;-webkit-transform-style:preserve-3d;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .navigation-menu{display:inline;margin:0;padding:0}}.navigation .navigation-menu.show{display:block}.navigation .nav-link{background:#0a5365;display:block;line-height:70px;overflow:hidden;padding-right:.8em;text-align:right;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .nav-link{background:0 0;display:inline;line-height:70px;text-decoration:none;width:auto}.navigation .nav-link a{padding-right:.5em}}.navigation .nav-link a{color:rgba(255,255,255,.7);display:inline-block;font-size:1.1em;font-weight:400;text-transform:uppercase}@media screen and (min-width:53.75em){.navigation .nav-link a{padding-right:1em}}.navigation .active-nav-item a,.navigation .nav-link a:focus,.navigation .nav-link a:hover{color:#fff}.navigation .more.nav-link{overflow:visible;padding-right:0}@media screen and (min-width:40em){.navigation .more.nav-link{padding-right:.8em;position:relative}.navigation .more.nav-link>ul>li:first-child a{padding-top:1em}.navigation .more.nav-link>a{margin-right:1em}}.navigation .more.nav-link a{padding-right:.8em}.navigation .more.nav-link>a{padding-right:.6em;position:relative}.navigation .more.nav-link>a::after{position:absolute;top:auto;right:-.4em;bottom:auto;left:auto;color:rgba(255,255,255,.7)}@media screen and (min-width:40em){.navigation .more.nav-link>a::after{content:'\25BE'}.navigation .submenu{left:-1em;position:absolute;top:1.5em}}.portfolio::after,.post::after,.team-member::after{clear:both;content:""}.navigation .more.nav-link:focus>.submenu,.navigation .more.nav-link:hover>.submenu{display:block}.navigation .submenu{display:none;padding-left:0}.navigation .submenu li{display:block;padding-right:0}.navigation .submenu li a{background-color:#094857;display:inline-block;text-align:right;width:100%}@media screen and (min-width:40em){.navigation .submenu li{line-height:53.85px}.navigation .submenu li:first-child>a{border-top-left-radius:3px;border-top-right-radius:3px}.navigation .submenu li:last-child>a{border-bottom-left-radius:3px;border-bottom-right-radius:3px;padding-bottom:.7em}.navigation .submenu li a{background-color:#0a5365;padding-left:1em;text-align:left;width:10em}}.caption,.page-work h2,.team-member .team-links{text-align:center}.post{margin-left:auto;margin-right:auto}.post::after{display:table}@media screen and (min-width:53.75em){.post{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.post:last-child{margin-right:0}}.post .post-header{margin-bottom:1.875em}.post .post-header p{display:inline}.post .post-header i{color:#14133b;margin-right:5px}.post .post-header .centerdot{font-weight:700}.post .post-header .post-featured-image{margin:3em 0}.post .disclaimer{background-color:rgba(158,2,59,.1);border:1px solid rgba(158,2,59,.3);border-radius:5px;margin-bottom:1.875em;padding:1em}.post .disclaimer h5{margin-top:0}.post .twitter-tweet{margin:3em auto!important}.post .table-minimal{margin-bottom:3em;margin-top:3em}.post ul ul{margin-bottom:0}.blog-image,.blog-image-large,.blog-image-xl{background:#dcdcdc;box-shadow:0 2px 4px #c3c3c3;display:block;margin:1em auto;max-width:250px}@media screen and (min-width:40em){.blog-image.wrap-right,.wrap-right.blog-image-large,.wrap-right.blog-image-xl{float:left;margin-right:40px}.blog-image.wrap-left,.wrap-left.blog-image-large,.wrap-left.blog-image-xl{float:right;margin-left:40px}}.blog-image p,.blog-image-large p,.blog-image-xl p{font-size:smaller;font-weight:700;text-align:center}.blog-image-large{max-width:500px;width:100%}.blog-image-xl{height:auto;max-width:737px;width:100%}.caption{display:block;font-size:.9em;margin:0 auto 2em}.services{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap}.services .services__service{margin-bottom:3em}.services .services__service .services__service__icon{float:left}.services .services__service p{display:inline;margin:0}@media screen and (min-width:53.75em){.services--main .services__service{margin-bottom:0;padding:1.5em;width:50%}}.services--main .services__service:last-child{margin-bottom:0}.services--main .services__service .services__service__icon{margin-right:1em}.team-member{max-width:70em;margin-left:auto;margin-right:auto}.team-member::after{display:table}@media screen and (min-width:40em){.team-member{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.team-member:last-child{margin-right:0}}.team-member .team-header img{border-radius:3px;max-width:100%;width:350px}.team-member .team-links{margin:1em auto 3em}.team-member .team-links li{display:inline-block;list-style-type:none;min-width:45%;padding:0 .75em}.team-member .fa-file-text{font-size:13px}.case-study{clear:both}.case-study .case-study__header{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:distribute;-moz-justify-content:space-around;-ms-justify-content:space-around;-o-justify-content:space-around;justify-content:space-around;-ms-flex-pack:distribute;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;background-position:top center;background-repeat:no-repeat;background-size:cover;height:88vh;min-height:320px}@media screen and (min-width:40em){.team-member .team-links{width:60%}.case-study .case-study__header{height:78vh}}@media screen and (min-width:53.75em){.team-member .team-links{width:100%}.team-member .team-links li{min-width:1%}.case-study .case-study__header{height:88vh}}.case-study .case-study__header .case-study__header__text{padding:1em}.case-study .case-study__header .case-study__header__text h1{color:#fff;font-size:2em;margin-bottom:1em}@media screen and (min-width:40em){.case-study .case-study__header .case-study__header__text{width:80%}.case-study .case-study__header .case-study__header__text h1{font-size:2.5em}}.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{color:#fff;font-size:1.1em;font-weight:700}@media screen and (min-width:40em){.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{font-size:1.25em}}.case-study .case-study__header .case-study__header__text .case-study__header__link{display:inline-block;margin-top:1.5em}.case-study .wrapper{padding:0}.portfolio{max-width:70em;margin-left:auto;margin-right:auto}.portfolio::after{display:table}@media screen and (min-width:53.75em){.case-study .case-study__header .case-study__header__text{width:60%}.portfolio{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.portfolio:last-child{margin-right:0}}</style>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+
+    <!-- Savas Labs logo. -->
+    <a href="/" class="logo">
+        <img width="101px" height="70px" src="http://savaslabs.com/assets/img/logo.png" alt="Savas Labs logo">
+    </a>
+
+    <!-- Mobile menu button. -->
+    <a href="/" id="js-mobile-menu" class="navigation-menu-button">MENU</a>
+
+    <!-- Main menu. -->
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+
+        <!-- Loop through nav items in config.yml. -->
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  more">
+            <a href="javascript:void(0)">Who we are</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+
+              <ul class="submenu">
+                
+
+                  <!-- Assign active nav item class. -->
+                  
+                  
+
+                  <li class="nav-link ">
+                    <a href="/team">Team</a>
+                  </li>
+                
+
+                  <!-- Assign active nav item class. -->
+                  
+                  
+
+                  <li class="nav-link ">
+                    <a href="/mission-and-values">Mission & values</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/services">Services</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/work">Our work</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/blog">Blog</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+
+          <!-- These variables will be used for special CSS classes. -->
+          
+
+          <!-- Assign active nav item class. -->
+          
+
+          <!-- Assign class for menu items with sub-links. -->
+          
+
+          <!-- Build links. -->
+          <li class="nav-link  ">
+            <a href="/contact">Contact</a>
+
+            <!-- If there are sub-links, create them. -->
+            
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        
+
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules</h1>
+    <p>By <a href="/team/dan-murphy">Dan Murphy</a></p>
+    <p class="centerdot">&centerdot; </p>
+    <p>Nov 15, 2016 </p><br>
+    <i class="fa fa-tags"></i><p><a href="/blog/tag/drupal/">Drupal</a>, <a href="/blog/tag/drupal-planet/">Drupal Planet</a>, <a href="/blog/tag/composer/">Composer</a>, <a href="/blog/tag/module-development/">Module Development</a>, <a href="/blog/tag/mailchimp/">MailChimp</a></p>
+    
+    <div><p><span id="comment-count"></span></p></div>
+    
+    
+      <div class="post-featured-image">
+        <picture>
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/mailchimp_3_drupal_composer_3-1474by710-ce9122.jpg" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/mailchimp_3_drupal_composer_3-737by355-ce9122.jpg" media="(min-width: 400px)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/mailchimp_3_drupal_composer_3-800by385-ce9122.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/mailchimp_3_drupal_composer_3-400by193-ce9122.jpg">
+    <img src="http://savaslabs.com/assets/processed-img/blog/mailchimp_3_drupal_composer_3-400by193-ce9122.jpg" class="image--post-featured-image" itemprop="image" alt="sheet music" >
+  </picture>
+
+      </div>
+    
+  </header>
+
+  
+
+  <article class="post-content">
+    <p>Our clients are often looking to reach their audiences via email campaigns, and <a href="https://mailchimp.com/">MailChimp</a> is one of the solutions we frequently recommend for this. MailChimp makes it easy to create and manage email campaigns while also providing beneficial analytics on user behavior.</p>
+
+<p>Earlier this year I wrote <a href="/2016/01/22/composer-mailchimp-subscriptions.html">a blog post</a> showing how to use <a href="https://www.drupal.org/project/composer_manager">Composer Manager</a> along with the Mailchimp API v2.0 PHP package to subscribe users to mailing lists in a Drupal 6 or 7 custom module without the need for the Mailchimp contributed module.</p>
+
+<p>However, since then, MailChimp API v3.0 was released and Mailchimp announced that v2.0 (and all prior versions) will no longer be supported after 2016.</p>
+
+<p>So in this blog post, I’ll demonstrate how to accomplish the same objective using the new MailChimp API v3.0, and I’ll expand the tutorial to also include some Drupal 8 specifics.</p>
+
+<h2 id="background">Background</h2>
+
+<p>To quickly summarize the key takeaways from my previous blog posts <a href="/2015/10/15/composing-with-composer-manager.html">on Composer Manager</a> and <a href="/2016/01/22/composer-mailchimp-subscriptions.html">subscribing users to MailChimp lists using the old API</a>:</p>
+
+<ul>
+  <li>Composer is a tool for managing PHP libraries that your project depends on.</li>
+  <li>Challenges arise managing project-wide dependencies when custom and contributed modules specify their own unique dependencies.</li>
+  <li><a href="https://www.drupal.org/project/composer_manager">Composer Manager</a> is a contributed module for Drupal 7 (and formerly Drupal 6) that addresses these challenges and allows contributed and custom modules to depend on PHP libraries managed via Composer.</li>
+  <li>Using a Composer managed PHP package for the MailChimp API, we can easily subscribe users to MailChimp lists in a Drupal custom module without relying on the Mailchimp module.</li>
+  <li>While the <a href="https://www.drupal.org/project/mailchimp">Mailchimp contributed module</a> is great, sometimes all you need is a simple, lightweight method for subscribing users to mailing lists.</li>
+</ul>
+
+<p>One important development since my previous posts is that Composer Manager has been deprecated for Drupal 8. <a href="https://www.drupal.org/project/drupal/releases/8.1.0">Improvements introduced in Drupal 8.1.0</a> allow modules to rely on Composer managed dependencies without the need for the Composer Manager module.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>There are a few steps we must take so that we can subscribe users to mailing lists in our custom module. We’ll review each of these steps in detail:</p>
+
+<ul>
+  <li>Add the MailChimp API v3.0 PHP library as a dependency of our custom module.</li>
+  <li>Ensure that the library is installed for our project.</li>
+  <li>Properly use the library in our custom module to subscribe users to mailing lists.</li>
+</ul>
+
+<h3 id="specify-the-dependency">Specify the dependency</h3>
+
+<p>ThinkShout maintains the <a href="https://www.drupal.org/project/mailchimp">Mailchimp contributed module</a> and we were very excited to see that as part of the effort to <a href="http://www.garfieldtech.com/blog/off-the-island-2013">“get Drupal off the island”</a> they also released <a href="https://packagist.org/packages/thinkshout/mailchimp-api-php">a PHP library for MailChimp API v3.0</a>.</p>
+
+<p>To use this new library, we must specify it as a dependency of our custom module. We do that in a <code class="highlighter-rouge">composer.json</code> file that sits in our custom module’s root directory and requires that library via the following code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"thinkshout/mailchimp-api-php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=1.0.3"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="install-the-library">Install the library</h3>
+
+<p>Composer is intended for projects and therefore requires a Drupal site to have a single <code class="highlighter-rouge">composer.json</code>, so things get complicated when individual modules specify their own dependencies.</p>
+
+<p>For Drupal 7 sites (or still active Drupal 6 sites), the <a href="https://www.drupal.org/project/composer_manager">Composer Manager</a> contributed module handles this by merging the requirements specified by each custom and contributed module’s <code class="highlighter-rouge">composer.json</code> files into a single, consolidated, site-wide <code class="highlighter-rouge">composer.json</code> file.</p>
+
+<p>So for Drupal 6/7 projects we’ll need Composer Manager installed and enabled.</p>
+
+<p>Once enabled, we can generate the consolidated <code class="highlighter-rouge">composer.json</code> and then install all of the site’s dependencies that file specifies (including the MailChimp API v3.0 PHP library specified by our custom module) in one of two ways:</p>
+
+<p>From the command line, we can run the following drush commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>drush composer-json-rebuild
+<span class="gp">$ </span>drush composer-manager install
+</code></pre>
+</div>
+
+<p>Alternatively, we could include the following lines in an update hook:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Re-build Composer Manager composer.json and run composer update.
+drush_composer_manager_composer_json_rebuild<span class="o">()</span>;
+drush_composer_manager<span class="o">(</span><span class="s1">'update'</span><span class="o">)</span>;
+</code></pre>
+</div>
+
+<p>For Drupal 8 sites, the process is slightly different. As mentioned previously, as of release 8.1.0, Drupal core directly uses Composer to manage dependencies and the Composer Manager module is no longer necessary. For Drupal 8 sites, we should follow the <a href="https://www.drupal.org/node/2822349">Drupal.org instructions for managing dependencies for a custom project</a>. Following those instructions ensures that all of the site’s dependencies, including the MailChimp library specified by our custom module, are installed.</p>
+
+<h3 id="use-the-library">Use the library</h3>
+
+<p>Once we have the MailChimp API v3.0 PHP library installed, we can use it in our custom module to subscribe users to mailing lists.</p>
+
+<p>We suggest creating a dedicated function for subscribing users to email lists which can then be called throughout the custom module. For our purposes, we modeled that function off of the Mailchimp module (version 7.x-4.6) <code class="highlighter-rouge">mailchimp_subscribe_process()</code> function.</p>
+
+<p>We implemented the following function, which can be reviewed and modified for your specific purposes:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="sd">/**
+ * Add an email to a MailChimp list.
+ *
+ * This code is based on the 7.x-4.6 version of the Mailchimp module,
+ * specifically the mailchimp_subscribe_process() function. That version of
+ * the Mailchimp contrib module makes use of the ThinkShout PHP library for
+ * version 3.0 of the MailChimp API. See the following for more detail:
+ * https://www.drupal.org/project/mailchimp
+ * https://github.com/thinkshout/mailchimp-api-php.
+ *
+ * @see Mailchimp_Lists::subscribe()
+ *
+ * @param string $api_key
+ *   The MailChimp API key.
+ * @param string $list_id
+ *   The MailChimp list id that the user should be subscribed to.
+ * @param string $email
+ *   The email address for the user being subscribed to the mailing list.
+ */</span>
+<span class="k">function</span> <span class="nf">mymodule_subscribe_user</span><span class="p">(</span><span class="nv">$api_key</span><span class="p">,</span> <span class="nv">$list_id</span><span class="p">,</span> <span class="nv">$email</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// Set the timeout to something that won't take down the Drupal site:
+</span>    <span class="nv">$timeout</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+    <span class="c1">// Get an instance of the MailchimpLists class.
+</span>    <span class="nv">$mailchimp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Mailchimp\MailchimpLists</span><span class="p">(</span><span class="nv">$api_key</span><span class="p">,</span> <span class="s1">'apikey'</span><span class="p">,</span> <span class="nv">$timeout</span><span class="p">);</span>
+
+    <span class="c1">// Use MEMBER_STATUS_PENDING to require double opt-in for the subscriber. Otherwise, use MEMBER_STATUS_SUBSCRIBED.
+</span>    <span class="nv">$parameters</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="nx">\Mailchimp\MailchimpLists</span><span class="o">::</span><span class="na">MEMBER_STATUS_PENDING</span><span class="p">,</span>
+      <span class="s1">'email_type'</span> <span class="o">=&gt;</span> <span class="s1">'html'</span><span class="p">,</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Subscribe user to the list.
+</span>    <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$mailchimp</span><span class="o">-&gt;</span><span class="na">addOrUpdateMember</span><span class="p">(</span><span class="nv">$list_id</span><span class="p">,</span> <span class="nv">$email</span><span class="p">,</span> <span class="nv">$parameters</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">watchdog</span><span class="p">(</span><span class="s1">'mymodule'</span><span class="p">,</span> <span class="s1">'@email was subscribed to list @list.'</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">'@email'</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">'@list'</span> <span class="o">=&gt;</span> <span class="nv">$list_id</span><span class="p">),</span> <span class="nx">WATCHDOG_NOTICE</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">watchdog</span><span class="p">(</span><span class="s1">'mymodule'</span><span class="p">,</span> <span class="s1">'A problem occurred subscribing @email to list @list.'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'@email'</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span>
+        <span class="s1">'@list'</span> <span class="o">=&gt;</span> <span class="nv">$list_id</span><span class="p">,</span>
+      <span class="p">),</span> <span class="nx">WATCHDOG_WARNING</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// The user was not subscribed so log to watchdog.
+</span>    <span class="nx">watchdog</span><span class="p">(</span><span class="s1">'mymodule'</span><span class="p">,</span> <span class="s1">'An error occurred subscribing @email to list @list. Status code @code. "%message"'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'@email'</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span>
+      <span class="s1">'@list'</span> <span class="o">=&gt;</span> <span class="nv">$list_id</span><span class="p">,</span>
+      <span class="s1">'%message'</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">(),</span>
+      <span class="s1">'@code'</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">(),</span>
+    <span class="p">),</span> <span class="nx">WATCHDOG_ERROR</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>With that function defined, we can then subscribe an email address to a specific Mailchimp mailing list through the following function call in our custom module:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mymodule_subscribe_user($api_key, $list_id, $email);
+</code></pre>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>By taking advantage of the modern PHP ecosystem built on reusable Composer managed packages, we can easily build or adapt a custom module to subscribe users to mailing lists without the MailChimp contributed module.</p>
+
+<p>Lastly, a special thanks to <a href="https://thinkshout.com/">ThinkShout</a> for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!</p>
+
+    <hr>
+
+    
+      <div class="post-comments">
+  
+    <div class="expander">
+      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Comments!</a>
+      <div id="js-expander-content" class="expander-content">
+        <!-- If there are existing comments, output them here. -->
+        <div id="post-comments" class="post-comments"></div>
+        <!-- New comment form -->
+        <form id="comment-form">
+          <h4>Leave a comment</h4>
+          <div class="comment-name">
+            <p>Name</p> <input type='text' name='name' id='name' required /><br>
+          </div>
+
+          <div class="comment-email">
+            <p>Email</p> <input type='email' name='email' id='email' required />
+            <p class="email-disclaimer">Savas Labs will never sell your email address or spam you.</p><br>
+          </div>
+
+          <p>Comment</p>
+          <textarea name='comment' id='comment' required></textarea>
+          <p class="hint below-textarea">Plain text format only please.</p>
+
+          <input type='hidden' name='slug' id='slug' value='/2016/11/15/composer-mailchimp-subscriptions-v3-api.html' />
+          <input type='text' name='url' id='url' />
+
+          <div class='are-you-human'>
+            <div class='are-you-human-owl'>
+              <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
+            </div>
+            <div class='are-you-human-field'>
+              <p>What type of animal is the Savas Labs logo?</p>
+              <input type='text' name='nocaptcha' id='nocaptcha' class='nocaptcha'>
+              <p class="hint">Hint: 3 letters long, starts with an 'o' and ends with an 'l'.</p>
+            </div>
+          </div>
+
+          <input type='submit' value='Submit' id='submit' class="submit-comment"/>
+        </form>
+      </div>
+    </div>
+  
+  <hr>
+</div>
+
+    
+    
+      <div class="post-bottom">
+  <div class="post-meta">
+    <h4>About the author</h4>
+    
+      <a href="/team/dan-murphy">
+        <picture>
+    <source srcset="http://savaslabs.com/assets/processed-img/team/dan-murphy-576by524-633aa3.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/team/dan-murphy-288by262-633aa3.jpg">
+    <img src="http://savaslabs.com/assets/processed-img/team/dan-murphy-288by262-633aa3.jpg" class="image--team-post-meta" itemprop="image" alt="Dan Murphy" >
+  </picture>
+
+      </a>
+      <p class="post-author-desc">Dan develops back-end solutions and front-end, responsive designs for Savas Labs clients.</p>
+    
+  </div>
+    <!-- Once we have more content, change this to posts related by tag -->
+  <div class="post-related flex-container">
+    <h4>Recent posts by Savas Labs</h4>
+    <div class="cards">
+      
+      
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/10/25/deploy-jekyll-with-travis.html">
+              <div class="card-header">
+                  Deploying Jekyll to Github Pages with Travis and Gulp
+              </div>
+              <div class="card-copy">
+                <p>Oct 25, 2016</p>
+                
+                <p><p>A step-by-step guide to how we deploy our gulpified Jekyll site to GitHub Pages using Travis, opening the door for...</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/10/19/optimizing-jekyll-with-gulp.html">
+              <div class="card-header">
+                  Optimizing Jekyll Performance with Gulp
+              </div>
+              <div class="card-copy">
+                <p>Oct 19, 2016</p>
+                
+                <p><p>How we improved our company site’s performance with a better Jekyll workflow</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+        
+          <div class="card">
+            <a href="/2016/09/23/supercharged-seo-with-drupal-8.html">
+              <div class="card-header">
+                  Supercharged SEO with Drupal 8
+              </div>
+              <div class="card-copy">
+                <p>Sep 23, 2016</p>
+                
+                <p><p>SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.</p>
+</p>
+              </div>
+            </a>
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+</div>
+
+    
+    <div class="previous-next-links">
+  <div class="next">
+    
+  </div>
+  <div class="previous">
+    
+      <a href="/2016/10/25/deploy-jekyll-with-travis.html"> Deploying Jekyll to Github Pages with Travis and Gulp <i class="fa fa-long-arrow-right"></i></a>
+    
+  </div>
+</div>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <div class="contact-block">
+  <div class="contact-block__items">
+    <h3>Interested in working with us?</h3>
+    <a href="/contact">Get in touch!</a>
+  </div>
+</div>
+    <footer class="footer" role="contentinfo">
+  <div class="footer-links">
+    <ul>
+      <li><h3>Location</h3></li>
+      <li>Savas Labs<br />
+          PMB 210<br />
+          201 W Main Street, Suite 100<br />
+          Durham, NC 27701<br /></li>
+    </ul>
+    <ul>
+      <li><h3>Around the Web</h3></li>
+      <ul>
+        <li><a href="https://github.com/savaslabs"><span class="mega-octicon octicon-mark-github"></span></a></li>
+        <li><a href="https://www.drupal.org/node/2466865"><i class="fa fa-drupal fa-lg fa-2x"></i></a></li>
+        <li><a href="https://twitter.com/savas_labs"><i class="fa fa-twitter fa-lg fa-2x"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/savas-labs"><i class="fa fa-linkedin fa-lg fa-2x"></i></a></li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h3>Contact</h3></li>
+      <li><a href="mailto:info@savaslabs.com">info@savaslabs.com</a></li>
+      <li>(919) 432-4660</li>
+    </ul>
+  </div>
+
+</footer>
+
+<div class="footer-copyright">
+  <p>Copyright &copy; Savas Labs 2016</p>
+</div>
+
+    <script type="text/javascript" src="http://savaslabs.com/assets/js/main.js" async></script>
+
+<noscript>
+  <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</noscript>
+
+  </body>
+
+</html>
