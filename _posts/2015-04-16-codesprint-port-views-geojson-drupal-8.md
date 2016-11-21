@@ -45,7 +45,3 @@ After cloning the repo, double check that you can enable it on your local Drupal
 Make sure you also fork the repo on GitHub so that you can submit pull requests to it. We'll be using pull requests to review code before merging it in. At the end of the day, we'll create a single patch against the `7.x-1.x` branch that we'll submit to the Views GeoJSON issue queue on Drupal.org.
 
 I've also created [issues in the GitHub repo](https://github.com/savaslabs/views_geojson/issues) that we can divvy up tomorrow.
-
-### Read through the Views plugins API docs
-
-It's worth spending some time glancing over the [Views plugin API docs for Drupal 8](https://api.drupal.org/api/drupal/core!modules!views!views.api.php/group/views_plugins/8).
