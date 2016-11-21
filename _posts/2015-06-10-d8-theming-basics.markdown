@@ -3,7 +3,7 @@ layout: post
 title: "Drupal 8 Theming Basics"
 date: 2015-06-10
 author: Anne Tomasevich
-tags: drupal8 drupal-planet theming drupal
+tags: drupal8 drupal-planet theming drupal front-end-dev
 summary: Theming in Drupal 8 means a lot of changes for current Drupalers and a lot of awesome stuff for everyone. I'll cover what's new and how to create a custom theme in Drupal 8.
 drupal_planet_summary: |
   Theming in Drupal 8 means a lot of changes for current Drupalers. These updates make Drupal more accessible to non-Drupalers and more modular, semantic, modern, and fun for everyone. Right now, documentation is scarce and often out-of-date, so I've collected all that I've learned while building my first Drupal 8 site.
