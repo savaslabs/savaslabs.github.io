@@ -6,8 +6,8 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 15:32:59 +0000</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 15:32:59 +0000</lastBuildDate>
+    <pubDate>Mon, 21 Nov 2016 21:33:56 +0000</pubDate>
+    <lastBuildDate>Mon, 21 Nov 2016 21:33:56 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
     
@@ -350,6 +350,8 @@ EOL approaches. This post takes a deep dive into the risks specifically.
         
         <category>bourbon</category>
         
+        <category>front-end-dev</category>
+        
         
       </item>
       
@@ -380,6 +382,8 @@ EOL approaches. This post takes a deep dive into the risks specifically.
         <category>sass</category>
         
         <category>bourbon</category>
+        
+        <category>front-end-dev</category>
         
         
       </item>
@@ -502,6 +506,8 @@ Since most contributed base themes don&#39;t have an 8.x branch in a useable sta
         <category>theming</category>
         
         <category>drupal</category>
+        
+        <category>front-end-dev</category>
         
         
       </item>
