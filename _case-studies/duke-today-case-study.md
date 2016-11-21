@@ -2,7 +2,7 @@
 layout: case-study
 featured: 1
 weight: -5
-project_title: Duke Today Drupal 6 to 7 Migration
+project_title: Duke Today Redesign
 client_name: Duke Today
 client_url: "https://today.duke.edu"
 client_quote: |
@@ -13,17 +13,18 @@ client_description: |
   Duke Today is a hub for news produced around Duke University. Articles are produced by staff and faculty across the university and health system to comprise a one-stop-shop for news from around Duke.
 client_dates: 2016 - present
 project_description: |
-  When Duke's flagship news site's upgrade from Drupal 6 to Drupal 7 needed a new development team, Savas Labs came in to complete their full content migration, provide a polished content editing interface, and deliver complex custom code, all on a Docker platform.
+  After multiple organizational transitions left Duke's flagship news outlet redesign languishing for nearly two years, Savas Labs, as the third development agency, rescued the project delivering complex content migration building on top of other agencies' code all within four-months!
 project_objective: |
-  During their project to upgrade the Duke Today website from Drupal 6 to Drupal 7, fellow Durham natives and design agency Cuberis parted ways with their initial development partner and were left with a half-built site and sixteen years' worth of nodes, files, and taxonomy terms to be migrated. Faced with a tight deadline, they contracted Savas Labs to set up and execute the complex content migration and implement custom functionality on the front end, in the content editing interface, and for various feeds used by Duke departments across the university. And, since Duke Today was to be served via Duke's in-house platform-as-a-service tool for running Dockerized Drupal sites, Savas Labs would need to Dockerize the site for both local development and deployment.
+ Given the lengthy project history which had gone through two development agencies, by the time Savas Labs was brought in by design partner and fellow Durham natives Cuberis, our edict was to deliver the finished product ASAP. While appreciating the urgency, we didn't cut corners, and provided insights into best practices for performance, monitoring and security.
 project_process: |
-  To do
+  To assess status and effort remaining as we joined the project well into development, we began with a standard audit assessing system quality and functional completion. Once we were better oriented with organizational goals and where the gaps in completion were, we charged ahead on weekly development sprints. We collaborated daily with the Cuberis team to ensure user experience and design carried as much weight as the functional improvements we implemented. We staged work on Duke's cutting-edge custom hosting infrastructure using Docker containerization to enlist consistent feedback from all stakeholders throughout.
 project_results: |
-  Over 120,000 nodes, files, and taxonomy terms migrated
+ With an appreciation for the urgency, we delivered the quality the Duke brand demands efficiently and expediently, and the results were celebrated across the university. In four months, we took sixteen years and 120,000 articles worth of rich inter-departmental content and with Cuberis's help, made it more engaging and accessible across the university.
 services_provided: |
+  - Standard Audit
   - [Drupal 6 to 7 migration](/blog/tag/drupal)
   - [Drupal theming and site-building](/blog/tag/theming/)
-  - [Drupal contrib module development](/blog/tag/drupal/)
+  - [Drupal custom module development](/blog/tag/drupal/)
 technologies_used: |
   - Drupal 7
   - Migrate module
@@ -53,6 +54,8 @@ project_results_image_alt: "TBD"
  - 100421 nodes (13 content types)
  - 115 taxonomy terms
 - Mention that it was important to migrate basically 100% of content, all the way back to year 2000
+
+Possibly also discuss how a more strategic migration strategy makes sense in other cases in which you only port over, for example, the top 10% but they needed/wanted it all so it was worth substantial investment
 
 ### Feeds?
 
