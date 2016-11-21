@@ -8,18 +8,22 @@ client_url: "https://www.hptn.org"
 client_description: |
   [The HIV Prevention Trials Network (HPTN)](https://www.hptn.org) is a worldwide collaborative clinical trials network that brings together investigators, ethicists, community and other partners to develop and test the safety and efficacy of interventions designed to prevent the acquisition and transmission of HIV.
 client_dates: 2015 - present
+client_quote: |
+  Leadership loves the new website. They had zero concerns or commentary other than being impressed. Awesome, guys.
+client_quote_author: Laura Smith, Web & Data Manager, HPTN
 project_description: |
-  When, after nearly seven years, HPTN decided to update their website to a modern, mobile-friendly site that was relatively easy to maintain and support, they started evaluating the capabitites of various content management systems that would meet their needs.  They settled on Drupal 8.
+  When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, they started evaluating the capabilities of various content management systems that would meet their needs. They settled on Drupal 8.
 project_objective: |
-  After HPTN made the definitive decision to move forward with plans for a website redesign using Drupal 8 as the basis for the content driven application, their primary objectives were: to provide their site users with a clean, modern site that loads easily on mobile devices in areas of the world with less than optimal bandwidth, and to provide the content maintainers with low maintenance, user friendly site that is intuitive and easy to use when adding and maintaining content.
+  For the redesign, HPTN prioritized providing their users with a clean, modern site that loads easily on mobile devices in areas of the world with less-than-optimal bandwidth, and to provide their content editors with a powerful, easy-to-use content management interface. They also needed to connect with their Microsoft SQL server to pull data on studies, study sites, publications, and network members.
 project_process: |
-  We evaluated the needs of the site's target audiences to determine the best path forward with the site design.  Once the design was completed, we began implementing the functional components of the site using Drupal 8.  We heavily relied on Drupal content entities to house data coming from legacy systems that was to be displayed on the site, themed the site so that it would render properly on a variety of mobile devices in use by remote scientists and clinical workers around the world, and leveraged both Drupal and external caching mechanisms to ensure prompt delivery of requests to end users.
+  Working with HPTN stakeholders, Savas Labs created a responsive design that would best serve each of HPTN's user groups, especially those accessing the site on mobile devices, and implemented that design in a custom Drupal 8 theme. Savas Labs heavily relied on Drupal content entities to pull and display data coming from legacy HPTN systems, and leveraged both Drupal and external caching mechanisms to ensure prompt delivery of requests to end users.
 project_results: |
-  Thanks to an integrated approach in which we worked closely with our client, the new site launched in time for the HPTN Annual Conference, the ongoing maintenance and administration of the content has decreased dramatically, and both the corporate site maintainers and the remote users reaped the benefits of an easily navigable, mobile-friendly delivery of data.
+  Thanks to an integrated approach in which Savas Labs worked closely with the client, the new site launched in time for the HPTN Annual Conference, the ongoing maintenance and administration of the content decreased dramatically, and both the corporate site maintainers and the remote users reaped the benefits of the easily navigable, mobile-friendly delivery of data.
 services_provided: |
-  - [Responsive design](/blog/tag/front-end-dev/)
+  - [Responsive web design](/blog/tag/front-end-dev/)
+  - [User Experience consulting](/blog/tag/user-experience/)
   - [Drupal theme development](/blog/tag/theming/)
-  - [Drupal 8 custom site](/blog/tag/drupal8/)
+  - [Drupal 8 custom site build](/blog/tag/drupal8/)
   - [Drupal 8 custom module development](/blog/tag/drupal/)
 technologies_used: |
   - Drupal 8
@@ -40,3 +44,22 @@ project_results_image: "/work/hptn-case-study/hptn-results.jpg"
 project_results_image_alt: "The HPTN news page on multiple screen sizes."
 
 ---
+
+Eventually we can talk more about:
+
+## Design
+
+- Goals/personas, consulting around these items
+- Styleguide
+- Branding/logo design
+- Design process
+- Wireframing
+
+## Theme development
+
+- We can go into a lot of detail here about integrating the styleguide with the theme, the tools we chose to use, and the fact that we built a custom theme completely from scratch
+- Talk about the benefits of D8 theming
+
+## Content management experience
+
+## Integration with MsSQL server

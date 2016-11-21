@@ -3,7 +3,7 @@ layout: post
 title: "Sassy Drupal theming: a lighter version of SMACSS"
 date: 2015-08-28
 author: Anne Tomasevich
-tags: drupal drupal-planet theming sass bourbon
+tags: drupal drupal-planet theming sass bourbon front-end-dev
 summary: We'll use SMACSS principles to organize our custom SCSS and keep it lean and maintainable.
 drupal_planet_summary: |
   It takes some forethought, but a well-organized theme means code that is modular and easy to maintain or pass off to another developer. SMACSS principles are becoming more and more widespread and can be applied to a Drupal theme. At Savas Labs we've picked out what we love from SMACSS and simplified the rest, creating a stylesheet organization method that works for us. In this post (part 2 of my three-part series on Drupal theming with Sass) I'll go through our version of SMACSS and link to real examples.
