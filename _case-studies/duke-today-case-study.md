@@ -13,13 +13,13 @@ client_description: |
   Duke Today is a hub for news produced around Duke University. Articles are produced by staff and faculty across the university and health system to comprise a one-stop-shop for news from around Duke.
 client_dates: 2016 - present
 project_description: |
-  After multiple organizational transitions left Duke's flagship news outlet redesign languishing for nearly two years, Savas Labs, as the third development agency, rescued the project delivering complex content migration building on top of other agencies' code all within four-months!
+  After multiple organizational transitions left Duke's flagship news outlet's redesign languishing for nearly two years, Savas Labs, as the third development agency, rescued the project delivering a complex content migration, building on top of other agencies' code, all within four months!
 project_objective: |
  Given the lengthy project history which had gone through two development agencies, by the time Savas Labs was brought in by design partner and fellow Durham natives Cuberis, our edict was to deliver the finished product ASAP. While appreciating the urgency, we didn't cut corners, and provided insights into best practices for performance, monitoring and security.
 project_process: |
-  To assess status and effort remaining as we joined the project well into development, we began with a standard audit assessing system quality and functional completion. Once we were better oriented with organizational goals and where the gaps in completion were, we charged ahead on weekly development sprints. We collaborated daily with the Cuberis team to ensure user experience and design carried as much weight as the functional improvements we implemented. We staged work on Duke's cutting-edge custom hosting infrastructure using Docker containerization to enlist consistent feedback from all stakeholders throughout.
+  To assess status and effort remaining, we began with a standard audit assessing system quality and functional completion. Once we were better oriented with organizational goals and the work that remained, we charged ahead on weekly development sprints. We collaborated daily with the Cuberis team to ensure user experience and design carried as much weight as the functional improvements we implemented. We staged work on Duke's cutting-edge custom hosting infrastructure using Docker containerization to enlist consistent feedback from all stakeholders throughout.
 project_results: |
- With an appreciation for the urgency, we delivered the quality the Duke brand demands efficiently and expediently, and the results were celebrated across the university. In four months, we took sixteen years and 120,000 articles worth of rich inter-departmental content and with Cuberis's help, made it more engaging and accessible across the university.
+ With attention to the project's urgency, we delivered the quality the Duke brand demands efficiently and expediently, and the results were celebrated across the University. In four months, we took sixteen years and 120,000 articles worth of rich inter-departmental content and, with Cuberis's help, made it more engaging and accessible for all users.
 services_provided: |
   - Standard Audit
   - [Drupal 6 to 7 migration](/blog/tag/drupal)
