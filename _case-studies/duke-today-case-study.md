@@ -15,7 +15,7 @@ client_dates: 2016 - present
 project_description: |
   After multiple organizational transitions left Duke's flagship news outlet's redesign incomplete and in need of a new development team nearly two years into the project, design and user experience agency Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration within a four-month turnaround.
 project_objective: |
- Given the prolonged project history which had gone through two development agencies, when design agency and fellow Durham natives Cuberis asked Savas Labs to partner, our edict was to determine what was complete, what remained and to deliver the finished product to an eager client as soon as possible.
+ Given the prolonged project history that had gone through two development agencies, when design agency and fellow Durham natives Cuberis asked Savas Labs to partner, our edict was to determine what was complete and what remained so we could deliver the finished product to an eager client as soon as possible.
 project_process: |
   We began the engagement with a standard audit assessing system quality and functional completion. Once we were better oriented with organizational goals and remaining work, we used an automated testing framework to ensure protection of crucial business goals during the fast-paced development that was required. We collaborated daily with the Cuberis team to tie the established user experience with our functional improvements. We implemented system monitoring and staged work on Duke's cutting-edge custom hosting infrastructure using Docker containerization to enlist consistent feedback from all stakeholders throughout.
 project_results: |
