@@ -25,7 +25,7 @@ I arrived Saturday evening after a few short flights from Durham, NC. My graciou
 
 ### Monday - Business Summit / Opening party
 
-Thanks to Kevin for my two wheels, this is what my commute looked like most days to and from the conference. Despite the condition of some roads, New Orleans has one of the highest ([sixth according to the 2009 census](http://www.nola.com/politics/index.ssf/2010/10/biking_new_orleans_might_be_le.html)) rates of citizens who commute by bicycle in the U.S. It's clearly also fairly horse-friendly as well.
+Thanks to Kevin for my two wheels, this is what my commute looked like most days to and from the conference. Despite the condition of some roads, New Orleans has one of the highest (sixth according to the 2009 census) rates of citizens who commute by bicycle in the U.S. It's clearly also fairly horse-friendly as well.
 
  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Nice commute alongside horse and buggy to the convention center en route to <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://twitter.com/hashtag/NOLA?src=hash">#NOLA</a> <a href="https://twitter.com/hashtag/DrupalCon2016?src=hash">#DrupalCon2016</a> <a href="https://t.co/BvvIEJqoga">pic.twitter.com/BvvIEJqoga</a></p>&mdash; Savas Labs (@Savas_Labs) <a href="https://twitter.com/Savas_Labs/status/729739990524174336">May 9, 2016</a></blockquote>
  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
