@@ -20,18 +20,17 @@ project_process: |
 project_results: |
   Thanks to an integrated approach in which Savas Labs worked closely with the client, the new site launched in time for the HPTN Annual Conference, the ongoing maintenance and administration of the content decreased dramatically, and both the corporate site maintainers and the remote users reaped the benefits of the easily navigable, mobile-friendly delivery of data.
 services_provided: |
-  - [Responsive web design](/blog/tag/front-end-dev/)
+  - [Web design](/services#design)
   - [User Experience consulting](/blog/tag/user-experience/)
-  - [Drupal theme development](/blog/tag/theming/)
-  - [Drupal 8 custom site build](/blog/tag/drupal8/)
-  - [Drupal 8 custom module development](/blog/tag/drupal/)
+  - [Drupal 8 custom theme and site build](/blog/tag/theming)
+  - [Drupal 8 custom module development](/services#development)
 technologies_used: |
-  - Drupal 8
-  - Memcached
-  - Varnish
+  - [Drupal 8](/blog/tag/drupal8/)
+  - [Responsive web design](/blog/tag/front-end-dev/)
+  - [Memcached](/blog/tag/performance)
+  - [Varnish](/blog/tag/performance)
   - Microsoft SQL Server data integration
   - Microsoft Azure Cloud Services
-
 client_logo: "/assets/img/work/hptn-case-study/hptn-logo.png"
 client_logo_width: "229"
 client_logo_height: "91"

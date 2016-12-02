@@ -19,14 +19,15 @@ project_process: |
 project_results: |
   MIT Press CogNet went from a desktop-only site to a clean, modern, easy to navigate site on all screen sizes. Thanks to our strong partnership with the client, effective planning, and the powerful technologies used, this project was delivered under budget.
 services_provided: |
-  - [Responsive design](/blog/tag/front-end-dev/)
+  - [Web design](/services#design)
   - [Drupal theme development](/blog/tag/theming/)
-  - [Drupal custom module development](/blog/tag/drupal/)
+  - [Drupal custom module development](/services#development)
 technologies_used: |
-  - Drupal 7
-  - Zurb Foundation theme
-  - Sass
-  - jQuery
+  - [Drupal 7](/blog/tag/drupal)
+  - [Zurb Foundation theme](/blog/tag/theming)
+  - [Responsive design](/blog/tag/front-end-dev/)
+  - [Sass](/blog/tag/sass)
+  - [jQuery](/blog/tag/javascript)
 client_logo: "/assets/img/work/cognet-case-study/cognet_logo.png"
 client_logo_width: "325px"
 client_logo_height: "60px"
