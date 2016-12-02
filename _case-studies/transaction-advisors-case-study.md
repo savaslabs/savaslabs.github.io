@@ -19,18 +19,19 @@ project_process: |
 project_results: |
   Thanks to an agile approach in which we worked closely with our client, the new sites launched in time for an important conference, the administrative burden from running three separate websites was reduced, and both the customers and the business felt the benefit of easy to manage subscriptions.
 services_provided: |
-  - [Responsive design](/blog/tag/front-end-dev/)
+  - [Web design](/services#design)
   - [Drupal theme development](/blog/tag/theming/)
-  - [Drupal custom module development](/blog/tag/drupal/)
-  - Multisite
-  - Payment processing
-  - Migration
+  - [Drupal custom module development](/services#development)
+  - [Multisite](/services#drupal)
+  - [Payment processing](/services#integrations)
+  - [Migration](/services#migration)
 technologies_used: |
-  - Drupal 7
-  - Stripe payment processor
-  - Drupal Domain Access
-  - Drupal Feeds
-  - jQuery
+  - [Drupal 7](/blog/tag/drupal)
+  - [Stripe payment processor](/blog/tag/payment-processing)
+  - [Drupal Domain Access](/blog/tag/drupal)
+  - [Drupal Feeds](/blog/tag/drupal)
+  - [Responsive design](/blog/tag/front-end-dev/)
+  - [jQuery](/blog/tag/javascript)
 client_logo: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_logo.jpg"
 client_hero_image: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_hero.jpg"
 project_objective_image: "/work/transaction-advisors-case-study/transaction_advisors_objective.jpg"
