@@ -30,42 +30,77 @@
     }
 
     .case-study__header__text {
+      @include display(flex);
+      @include flex-direction(column);
+
       padding: 1em;
 
-      @include media($medium-screen-up) {
-        width: 80%;
+      @include media($case-study-header-break) {
+        @include flex-direction(row);
+        width: 90%;
       }
 
       @include media($large-screen-up) {
-        width: 60%;
+        width: 80%;
       }
 
-      h1 {
+      h1,
+      h3,
+      p,
+      li {
         color: $base-background-color;
-        font-size: 2em;
-        margin-bottom: 1em;
-
-        @include media($medium-screen-up) {
-          font-size: 2.5em;
-        }
       }
 
       p,
       .case-study__header__link {
-        color: $base-background-color;
         font-size: 1.1em;
         font-weight: bold;
 
-        @include media($medium-screen-up) {
+        @include media($case-study-header-break) {
           font-size: 1.25em;
         }
       }
 
-      .case-study__header__link {
-        @extend %button-outline;
+      .case-study__header__text--left {
+        @include media($case-study-header-break) {
+          border-right: solid 2px $base-background-color;
+          padding-right: $base-spacing;
+        }
 
-        display: inline-block;
-        margin-top: $base-spacing;
+        h1 {
+          font-size: 2em;
+          margin-bottom: 1em;
+
+          @include media($case-study-header-break) {
+            font-size: 2.5em;
+          }
+        }
+
+        .case-study__header__link {
+          @extend %button-outline;
+
+          display: inline-block;
+          margin-top: $base-spacing;
+        }
+      }
+
+      .case-study__header__text--right {
+        display: none;
+
+        @include media($case-study-header-break) {
+          @include flex-basis(280px);
+          @include flex-shrink(0);
+          @include display(flex);
+          @include flex-direction(column);
+          @include justify-content(center);
+
+          padding: 0 0 0 $base-spacing;
+
+          ul {
+            font-style: italic;
+            font-weight: bold;
+          }
+        }
       }
     }
   }

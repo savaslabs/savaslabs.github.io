@@ -12,6 +12,22 @@
     margin-bottom: 0;
   }
 
+  .case-study__highlights {
+    padding: $base-margin $base-spacing;
+
+    @include media($case-study-header-break) {
+      display: none;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
   .case-study__client {
     background-color: lighten($light-gray, 10);
     padding: $base-spacing $base-spacing $base-margin;

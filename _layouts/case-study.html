@@ -14,13 +14,33 @@
       <!-- Header with client logo and client/project descriptions. -->
       <div class="case-study__header" style="background-image: url({{ page.client_hero_image }});">
         <div class="case-study__header__text">
-          <h1>{{ page.project_title }}</h1>
-          {{ page.project_description | markdownify }}
-          <a class="case-study__header__link" href="{{ page.client_url }}">View site</a>
+          <div class="case-study__header__text--left">
+            <h1>{{ page.project_title }}</h1>
+            {{ page.project_description | markdownify }}
+            <a class="case-study__header__link" href="{{ page.client_url }}">View site</a>
+          </div>
+          <div class="case-study__header__text--right">
+            <h3>Project highlights:</h3>
+            <ul>
+              {% for item in page.project_highlights %}
+              <li><p>{{ item }}</p></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- Client introduction -->
+      <!-- Highlights, on small screens. -->
+      <div class="case-study__highlights">
+        <h2>Project highlights</h2>
+        <ul>
+          {% for item in page.project_highlights %}
+          <li class="case-study__highlights__highlight"><p>{{ item }}</p></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Client introduction. -->
       <div class="case-study__client">
         <div class="wrapper">
             <img class="case-study__client__logo" src="{{ page.client_logo }}" alt="{{ page.client_name }} logo" width="{{ page.client_logo_width }}" height="{{ page.client_logo_height }}">

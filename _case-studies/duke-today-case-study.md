@@ -12,6 +12,7 @@ client_quote_author: |
 client_description: |
   Duke Today is a hub for news produced around Duke University. Articles are produced by staff and faculty across the university and health system to comprise a one-stop-shop for news from around Duke.
 client_dates: 2016 - present
+project_highlights: [Content migration, Custom module development, User experience enhancement, Dockerized deployment]
 project_description: |
   After multiple organizational transitions left Duke's flagship news outlet's redesign incomplete and in need of a new development team nearly two years into the project, design and user experience agency Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration within a four-month turnaround.
 project_objective: |

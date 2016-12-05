@@ -13,6 +13,7 @@ client_quote: |
 client_quote_author: Laura Smith, Web & Data Manager, HPTN
 project_description: |
   When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, they started evaluating the capabilities of various content management systems that would meet their needs. They settled on Drupal 8.
+project_highlights: [Responsive web design, UX design, Drupal 8, Client server integration]
 project_objective: |
   For the redesign, HPTN prioritized providing their users with a clean, modern site that loads easily on mobile devices in areas of the world with less-than-optimal bandwidth, and to provide their content editors with a powerful, easy-to-use content management interface. They also needed to connect with their Microsoft SQL server to pull data on studies, study sites, publications, and network members.
 project_process: |
