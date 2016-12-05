@@ -98,6 +98,10 @@ To add a new tag, complete the following:
 2. Add a new markdown file for the tag in blog/tag. This creates a page for posts with that tag.
 3. Add the tag to the front matter of your post.
 
+### Comments
+
+Comments are handled by a Dockerized instance of [Squabble](https://github.com/savaslabs/squabble). Please refer to that repositories README for notes on usage, and to the [wiki page](https://pm.savaslabs.com/projects/savaslabs/wiki/Squabble) for production deployment information.
+
 ### Staging site
 
 We have a password protected [staging site](http://blabs.savasdev.com)!
