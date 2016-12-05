@@ -1,2 +1,2 @@
-comment_server_url: http://localhost:8000
+comment_server_url: "http://localhost:8000"
 comment_server_enabled: 1

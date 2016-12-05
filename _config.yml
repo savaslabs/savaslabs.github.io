@@ -8,7 +8,7 @@ description: >
 # not used at all.
 baseurl: ""
 url: "http://savaslabs.com"
-comment_server_url: http://comments.savaslabs.com
+comment_server_url: "http://comments.savaslabs.io:51062"
 comment_server_enabled: 1
 
 # Professional and social media links
