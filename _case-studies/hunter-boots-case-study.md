@@ -19,10 +19,10 @@ project_process: |
 project_results: |
   The Hunter Boots website won [Acquia's BlueDrop award](http://2014.bluedropawards.org/blog-entry/2014-blue-drop-award-winners-are-announced) for best Marketplace/eCommerce site in 2014!
 services_provided: |
-  - [Web design](/services#design)
+  - [Web design](/services#design-ux)
   - [Drupal theme development](/blog/tag/theming/)
   - [Drupal custom module development](/services#development)
-  - [Third party data integration](/services#integration)
+  - [Third party data integration](/services#integrations)
 technologies_used: |
   - [Drupal 7](/blog/tag/drupal)
   - [Drupal Commerce](/blog/tag/payment-processing)

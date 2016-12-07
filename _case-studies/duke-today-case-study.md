@@ -21,7 +21,7 @@ project_process: |
 project_results: |
  With a focus on swift execution, we delivered the quality the Duke brand demands efficiently while surfacing valuable investments in best practices for security, monitoring and performance. The results were celebrated across the University. In four months, we took sixteen years and 120,000 articles worth of rich inter-departmental content and, through Cuberis's thoughtful design, made it more engaging and accessible for the broad and distributed Duke community.
 services_provided: |
-  - [Standard Audit](/services#audit)
+  - [Standard Audit](/services#audits)
   - [Drupal 6 to 7 migration](/services#migration)
   - [Drupal theming and site-building](/blog/tag/theming)
   - [Drupal custom module development](/services#development)

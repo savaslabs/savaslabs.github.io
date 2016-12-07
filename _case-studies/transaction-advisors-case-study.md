@@ -19,10 +19,10 @@ project_process: |
 project_results: |
   Thanks to an agile approach in which we worked closely with our client, the new sites launched in time for an important conference, the administrative burden from running three separate websites was reduced, and both the customers and the business felt the benefit of easy to manage subscriptions.
 services_provided: |
-  - [Web design](/services#design)
+  - [Web design](/services#design-ux)
   - [Drupal theme development](/blog/tag/theming/)
   - [Drupal custom module development](/services#development)
-  - [Multisite](/services#drupal)
+  - [Drupal multisite](/services#development)
   - [Payment processing](/services#integrations)
   - [Migration](/services#migration)
 technologies_used: |

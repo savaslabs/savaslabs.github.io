@@ -20,7 +20,7 @@ project_process: |
 project_results: |
   The Durham Civil and Human Rights History Map now has a beautifully-designed, and responsive, online home, which visitors and native Durhamites alike can use to tour the city. Savas Labs has also written a [number](/2015/06/10/d8-theming-basics.html) [of](/2015/07/06/map-in-drupal-8.html) [highly-viewed](/2015/05/18/mapping-geojson.html) [blog](/2015/09/03/sassy-drupal-theming-part-3.html) [posts](/2015/11/05/drupal-web-mapping.html) documenting what we've learned about Drupal 8 theming and mapping from the project.
 services_provided: |
-  - [Web design](/services#design)
+  - [Web design](/services#design-ux)
   - [Drupal theming and site building](/blog/tag/theming/)
   - [Map integration](/services#integrations)
   - [Drupal contributed module development](/services#development)
