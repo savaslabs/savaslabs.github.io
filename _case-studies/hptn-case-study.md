@@ -20,7 +20,7 @@ project_process: |
 project_results: |
   Thanks to an integrated approach in which Savas Labs worked closely with the client, the new site launched in time for the HPTN Annual Conference, the ongoing maintenance and administration of the content decreased dramatically, and both the corporate site maintainers and the remote users reaped the benefits of the easily navigable, mobile-friendly delivery of data.
 services_provided: |
-  - [Web design](/services#design)
+  - [Web design](/services#design-ux)
   - [User Experience consulting](/blog/tag/user-experience/)
   - [Drupal 8 custom theme and site build](/blog/tag/theming)
   - [Drupal 8 custom module development](/services#development)
