@@ -20,23 +20,17 @@ excerpt: A selection of recent work done by Savas Labs
     </div>
     {% endfor %}
   </div>
+  <hr>
 
-  <h2>Other work</h2>
-  <div class="flex-container">
-    <div class="cards">
-      {% for portfolio in site.work %}
-      <div class="card work-card">
-        <a href="{{ portfolio.url }}">
-          <div class="card-image">
-            <img alt="{{ portfolio.title }}" src="{{ base.url }}{{ portfolio.image }}">
-          </div>
-          <div class="card-header">
-            {{ portfolio.title }}
-          </div>
-          <div class="card-copy">
-            <p>{{ portfolio.short_description }}</p>
-          </div>
+  <div class="past-clients">
+    <h2>Past clients</h2>
+    <div class="flex-container">
+      {% for client in site.work %}
+      <div class="past-clients__client">
+        <a href="{{ client.client_url }}">
+          <img alt="{{ client.title }}" src="{{ base.url }}{{ client.image }}">
         </a>
+        <p><a href="{{ client.client_url }}">{{ client.title }}</a></p>
       </div>
       {% endfor %}
     </div>

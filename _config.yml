@@ -46,7 +46,7 @@ collections:
   team-former:
     output: false
   work:
-    output: true
+    output: false
     permalink: /work/:path/
   case-studies:
     output: true

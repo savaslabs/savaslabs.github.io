@@ -8,4 +8,30 @@
   h2 {
     text-align: center;
   }
+
+  .past-clients {
+    margin-top: $base-margin;
+
+    .flex-container {
+      @include display(flex);
+      @include justify-content(center);
+      @include flex-wrap(wrap);
+
+      .past-clients__client {
+        @include flex-basis(21em);
+        @include flex-grow(0);
+
+        margin: 0 0 $base-spacing;
+
+        @include media($medium-screen-up) {
+          margin: 0 $card-margin $base-spacing;
+        }
+      }
+
+      p {
+        font-size: 1.2em;
+        text-align: center;
+      }
+    }
+  }
 }
