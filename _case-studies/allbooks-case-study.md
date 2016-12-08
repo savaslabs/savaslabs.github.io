@@ -2,6 +2,7 @@
 layout: case-study
 weight: -2
 project_title: MIT Press AllBooks Importer
+tags: drupal module-development php testing
 client_name: MIT Press
 client_url: "http://mitpress.mit.edu"
 client_description: |
