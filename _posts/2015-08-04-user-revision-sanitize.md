@@ -99,7 +99,7 @@ to ensure that the code I wrote would apply to most recent drush development.
 ### Getting breakpoints in PHPStorm to listen to drush
 Several have blogged about this before, so I'll just point theirs out. Generally,
 I followed
-[these instructions](https://webcache.googleusercontent.com/search?q=cache:qUjfZ093WwgJ:https://www.deeson.co.uk/labs/debugging-drupal-drush-real-time-phpstorm-and-xdebug+&cd=1&hl=en&ct=clnk&gl=us),
+[these instructions](https://web.archive.org/web/20150405094739/https://www.deeson.co.uk/labs/debugging-drupal-drush-real-time-phpstorm-and-xdebug),
 but I trust that my mentor and friend
 Randy Fay['s article](http://randyfay.com/content/remote-command-line-debugging-phpstorm-phpdrupal-including-drush)
 is excellent as well. They all seemed to use
