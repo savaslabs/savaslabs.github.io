@@ -43,6 +43,8 @@ collections:
   team:
     output: true
     permalink: /team/:path/
+  team-former:
+    output: false
   work:
     output: true
     permalink: /work/:path/

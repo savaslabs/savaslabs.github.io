@@ -9,7 +9,7 @@ excerpt: >
 
 <div class="flex-container">
     <div class="cards">
-        {% for person in site.team %}
+        {% for person in site.team %}   {% comment %} Display current team members only. {% endcomment %}
             <div class="card team-card">
                 <a href="{{ person.url }}">
                     <div class="card-image">
