@@ -13,7 +13,11 @@
       </div>
     </div>
 
-    {% include contact.html %}
+    {% comment %} If on "/contact" page, don't display the redundant "contact us" block {% endcomment %}
+    {% if page.permalink != "/contact/" %}
+      {% include contact.html %}
+    {% endif %}
+
     {% include footer.html %}
     {% include scripts.html %}
 
