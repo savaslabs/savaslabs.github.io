@@ -1,12 +1,21 @@
 <div class="post-bottom">
   <div class="post-meta">
     <h4>About the author</h4>
+
+    {% comment %} Description for current employees. {% endcomment %}
     {% for person in site.team %}{% if person.name == page.author %}
       <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">
         {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
       </a>
       <p class="post-author-desc">{{ person.job_description }}</p>
     {% endif %}{% endfor %}
+
+    {% comment %} Description for former employees. {% endcomment %}
+    {% for person in site.team-former %}{% if person.name == page.author %}
+      {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
+      <p class="post-author-desc">{{ person.name }} is a former Savas Labs employee.</p>
+    {% endif %}{% endfor %}
+
   </div>
     <!-- Once we have more content, change this to posts related by tag -->
   <div class="post-related flex-container">
