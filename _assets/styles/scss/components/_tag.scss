@@ -4,6 +4,51 @@
  * Styles for the tag pages.
  */
 
+.tag {
+  h2 {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  .view-more-link {
+    margin-top: $base-spacing;
+
+    .fa-arrow-right {
+      margin-left: .25em;
+    }
+  }
+}
+
+.tag__related-case-studies {
+  overflow: hidden;
+
+  .tag__related-case-studies__content {
+    @include display(flex);
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+
+    .case-studies__case-study {
+      @include flex-basis(20em);
+      @include flex-grow(0);
+
+      margin: 0 $base-spacing / 2 $base-spacing;
+      text-align: center;
+
+      h3 {
+        margin: 0 auto;
+        padding: $base-margin $base-spacing;
+      }
+
+      a,
+      a:hover,
+      a:focus {
+        color: $base-background-color;
+      }
+    }
+  }
+}
+
 .tag__related-posts {
-  margin: $base-margin 0;
+  margin-top: $base-margin;
+  overflow: hidden;
 }
