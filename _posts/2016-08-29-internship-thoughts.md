@@ -53,7 +53,7 @@ Likewise, I think this presented a teaching challenge for Savas Labs as well. Be
 As I started to get the basics down, my learning became more focused as I began to get involved with client projects. I found task-based learning more satisfying because I was contributing to projects and the team. While no project is without busywork, the team wasn’t just trying to offload mindless drudgery to the newest pair of hands -- I could tell my teammates were thinking about the value of each assignment and how that would help me build upon the previous lessons I’d just learned.
 
 ## Mentoring & Community
-My mentor, [Lisa](http://savaslabs.com/team/lisa-ridley/), was instrumental in the success of my internship. Given how much there was (and still is!) to learn, having an experienced person actively direct my focus was invaluable.
+My mentor, Lisa, was instrumental in the success of my internship. Given how much there was (and still is!) to learn, having an experienced person actively direct my focus was invaluable.
 
 When I became a bit adrift after the first month, Lisa guided me towards site building and eventually even created a [simulated D7 client project](https://github.com/savaslabs/autism-case-study) for me to work on. And mindful of the changing Web Development landscape, Lisa counseled me to emphasize Drupal 7/Drupal 8 learning instead of spending time on Drupal 6 projects. We started meeting twice a week (sometimes more!) to discuss my progress or deep dive into topics like the history of version control. All this took a significant amount of Lisa’s time (thank you Lisa!), and is proof of the Savas Labs team’s dedication to each other’s growth as developers.
 

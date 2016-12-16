@@ -39,7 +39,7 @@ Thanks to Kevin for my two wheels, this is what my commute looked like most days
 
  In between panels and presentations, the rest of us divvied up into smaller groups brainstorming around key issues and presented our collective expertise back to the larger group. Topics ranged from content strategy, to marketing tactics, to how to handle conflict with large personalities, and everything in between. The breadth of the coverage ensured that nearly everyone got something out of the summit. My reading list grew by an order of magnitude from the summit. Now if I could only find the time...
 
- After the summit, I joined my teammates [Lisa](/team/lisa-ridley/) and [Kosta](/team/kosta-harlan/) at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.
+ After the summit, I joined my teammates Lisa and [Kosta](/team/kosta-harlan/) at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.
 
  We then headed to the welcome pub crawl to meet up with some Drupal friends in person for the first time. It was a great evening of beautiful weather, good beer, and excited Drupalist(a)(o)s eagerly anticipating a fun week.
 
