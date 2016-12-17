@@ -12,6 +12,7 @@ client_quote_author: Jake Furbush, MIT Press Digital Publishing Manager (2009 - 
 client_dates: 2014 - present
 project_description: |
   When the MIT Press needed to bring new product information into their website from their back-end database, Savas Labs came through with an automated importer module that did the job in a flexible and extensible way.
+project_highlights: [Drupal 6, Custom module development, Drupal admin interface customization, Unit testing]
 project_objective: |
   As new books come to press, the MIT Press needs to keep information on titles and authors on their client-facing website synced with the data in their back-end data store. To replace their quarterly manual import process, the Press needed an automated import solution to seamlessly import new and updated data without interrupting the live site.
 project_process: |
@@ -19,11 +20,11 @@ project_process: |
 project_results: |
   Our importer processed MIT Press's next import of new titles smoothly with a minimum of manual input. We've continued to work with the Press to further customize field mappings and import processes as new fields come online in the AllBooks database, and to handle new kinds of imports, including eBooks.
 services_provided: |
-  - [Drupal custom module development](/blog/tag/drupal/)
-  - Unit testing
+  - [Drupal custom module development](/services#development)
+  - [Unit testing](/services#testing)
 technologies_used: |
-  - Drupal 6
-  - PHPUnit
+  - [Drupal 6](/blog/tag/drupal/)
+  - [PHPUnit](/blog/tag/testing/)
 client_logo: "/assets/img/work/allbooks-case-study/mitpress-logo.png"
 client_logo_width: "110px"
 client_logo_height: "107px"

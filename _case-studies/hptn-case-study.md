@@ -13,6 +13,7 @@ client_quote: |
 client_quote_author: Laura Smith, Web & Data Manager, HPTN
 project_description: |
   When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, they started evaluating the capabilities of various content management systems that would meet their needs. They settled on Drupal 8.
+project_highlights: [Responsive web design, UX design, Drupal 8, Client server integration]
 project_objective: |
   For the redesign, HPTN prioritized providing their users with a clean, modern site that loads easily on mobile devices in areas of the world with less-than-optimal bandwidth, and to provide their content editors with a powerful, easy-to-use content management interface. They also needed to connect with their Microsoft SQL server to pull data on studies, study sites, publications, and network members.
 project_process: |
@@ -20,18 +21,17 @@ project_process: |
 project_results: |
   Thanks to an integrated approach in which Savas Labs worked closely with the client, the new site launched in time for the HPTN Annual Conference, the ongoing maintenance and administration of the content decreased dramatically, and both the corporate site maintainers and the remote users reaped the benefits of the easily navigable, mobile-friendly delivery of data.
 services_provided: |
-  - [Responsive web design](/blog/tag/front-end-dev/)
+  - [Web design](/services#design-ux)
   - [User Experience consulting](/blog/tag/user-experience/)
-  - [Drupal theme development](/blog/tag/theming/)
-  - [Drupal 8 custom site build](/blog/tag/drupal8/)
-  - [Drupal 8 custom module development](/blog/tag/drupal/)
+  - [Drupal 8 custom theme and site build](/blog/tag/theming)
+  - [Drupal 8 custom module development](/services#development)
 technologies_used: |
-  - Drupal 8
-  - Memcached
-  - Varnish
+  - [Drupal 8](/blog/tag/drupal8/)
+  - [Responsive web design](/blog/tag/front-end-dev/)
+  - [Memcached](/blog/tag/performance)
+  - [Varnish](/blog/tag/performance)
   - Microsoft SQL Server data integration
   - Microsoft Azure Cloud Services
-
 client_logo: "/assets/img/work/hptn-case-study/hptn-logo.png"
 client_logo_width: "229"
 client_logo_height: "91"

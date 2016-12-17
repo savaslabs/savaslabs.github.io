@@ -12,6 +12,7 @@ client_quote_author: Steve Parise, VP of Operations and E-Commerce
 client_dates: 2011 - 2015
 project_description: |
   After a previous agency failed to complete the complicated eCommerce site build, Savas Labs rescued the project and delivered a BlueDrop award-winning eCommerce website alongside partner Isovera. In a secondary phase, we contributed to a mobile redesign.
+project_highlights: [Responsive web design, Drupal custom module development, Drupal theming, Drupal Commerce integration]
 project_objective: |
   Rescue a build from an absentee vendor and deliver a rich and engaging shopping experience fit for the quality the Hunter brand expects in a timely fashion.
 project_process: |
@@ -19,14 +20,15 @@ project_process: |
 project_results: |
   The Hunter Boots website won [Acquia's BlueDrop award](http://2014.bluedropawards.org/blog-entry/2014-blue-drop-award-winners-are-announced) for best Marketplace/eCommerce site in 2014!
 services_provided: |
-  - [Responsive design](/blog/tag/front-end-dev/)
+  - [Web design](/services#design-ux)
   - [Drupal theme development](/blog/tag/theming/)
-  - [Drupal custom module development](/blog/tag/drupal/)
-  - Third party data integration
+  - [Drupal custom module development](/services#development)
+  - [Third party data integration](/services#integrations)
 technologies_used: |
-  - Drupal 7
-  - Drupal Commerce
-  - jQuery
+  - [Drupal 7](/blog/tag/drupal)
+  - [Drupal Commerce](/blog/tag/payment-processing)
+  - [Responsive design](/blog/tag/front-end-dev/)
+  - [jQuery](/blog/tag/javascript)
 client_logo: "/assets/img/work/hunter-boots-case-study/hunter_logo.svg"
 client_logo_width: "120px"
 client_logo_height: "50px"

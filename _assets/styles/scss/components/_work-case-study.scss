@@ -12,6 +12,22 @@
     margin-bottom: 0;
   }
 
+  .case-study__highlights {
+    padding: $base-margin $base-spacing;
+
+    @include media($case-study-header-break) {
+      display: none;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
   .case-study__client {
     background-color: lighten($light-gray, 10);
     padding: $base-spacing $base-spacing $base-margin;
@@ -38,7 +54,7 @@
   .case-study__content {
     padding: $base-spacing 0;
 
-    @include media($medium-screen-up) {
+    @include media($large-screen-up) {
       @include display(flex);
       @include align-items(center);
 
@@ -47,7 +63,7 @@
 
     .case-study__content__text,
     .case-study__square-image {
-      @include media($medium-screen-up) {
+      @include media($large-screen-up) {
         width: 50%;
       }
     }
@@ -60,14 +76,15 @@
     }
 
     .case-study__content__text {
+
       h2 {
         font-size: 1.8em;
         margin-bottom: 0;
         text-align: center;
 
-        @include media($medium-screen-up) {
+        @include media($large-screen-up) {
           font-size: 2em;
-          padding: .75em 3em .75em 1em;
+          padding: .75em 3em 0 1em;
           text-align: left;
         }
       }
@@ -75,7 +92,7 @@
       p {
         padding: 1.667em;
 
-        @include media($medium-screen-up) {
+        @include media($large-screen-up) {
           padding-right: 3em;
         }
       }
@@ -95,7 +112,7 @@
         h2 {
           color: $dark-blue;
 
-          @include media($medium-screen-up) {
+          @include media($large-screen-up) {
             padding-left: 3em;
             padding-right: 1em;
             text-align: right;
@@ -103,7 +120,7 @@
         }
 
         p {
-          @include media($medium-screen-up) {
+          @include media($large-screen-up) {
             padding-left: 3em;
             padding-right: 1.667em;
           }
@@ -165,12 +182,14 @@
 
     .wrapper {
       @include media($medium-screen-up) {
-        @include span-columns(8);
-        @include shift(2);
-
         td {
           font-size: 1.2em;
         }
+      }
+
+      @include media($large-screen-up) {
+        @include span-columns(8);
+        @include shift(2);
       }
 
       ul {
