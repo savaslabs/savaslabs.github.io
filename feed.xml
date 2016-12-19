@@ -6,8 +6,8 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Dec 2016 16:09:25 +0000</pubDate>
-    <lastBuildDate>Mon, 19 Dec 2016 16:09:25 +0000</lastBuildDate>
+    <pubDate>Mon, 19 Dec 2016 22:14:05 +0000</pubDate>
+    <lastBuildDate>Mon, 19 Dec 2016 22:14:05 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -1632,7 +1632,7 @@ a must-read for gulp beginners!&lt;/li&gt;
 &lt;p&gt;As I started to get the basics down, my learning became more focused as I began to get involved with client projects. I found task-based learning more satisfying because I was contributing to projects and the team. While no project is without busywork, the team wasn’t just trying to offload mindless drudgery to the newest pair of hands – I could tell my teammates were thinking about the value of each assignment and how that would help me build upon the previous lessons I’d just learned.&lt;/p&gt;
 
 &lt;h2 id=&quot;mentoring--community&quot;&gt;Mentoring &amp;amp; Community&lt;/h2&gt;
-&lt;p&gt;My mentor, &lt;a href=&quot;http://savaslabs.com/team/lisa-ridley/&quot;&gt;Lisa&lt;/a&gt;, was instrumental in the success of my internship. Given how much there was (and still is!) to learn, having an experienced person actively direct my focus was invaluable.&lt;/p&gt;
+&lt;p&gt;My mentor, Lisa, was instrumental in the success of my internship. Given how much there was (and still is!) to learn, having an experienced person actively direct my focus was invaluable.&lt;/p&gt;
 
 &lt;p&gt;When I became a bit adrift after the first month, Lisa guided me towards site building and eventually even created a &lt;a href=&quot;https://github.com/savaslabs/autism-case-study&quot;&gt;simulated D7 client project&lt;/a&gt; for me to work on. And mindful of the changing Web Development landscape, Lisa counseled me to emphasize Drupal 7/Drupal 8 learning instead of spending time on Drupal 6 projects. We started meeting twice a week (sometimes more!) to discuss my progress or deep dive into topics like the history of version control. All this took a significant amount of Lisa’s time (thank you Lisa!), and is proof of the Savas Labs team’s dedication to each other’s growth as developers.&lt;/p&gt;
 
@@ -2259,7 +2259,7 @@ sudo apt-get install php5-dev
 
 &lt;p&gt;In between panels and presentations, the rest of us divvied up into smaller groups brainstorming around key issues and presented our collective expertise back to the larger group. Topics ranged from content strategy, to marketing tactics, to how to handle conflict with large personalities, and everything in between. The breadth of the coverage ensured that nearly everyone got something out of the summit. My reading list grew by an order of magnitude from the summit. Now if I could only find the time…&lt;/p&gt;
 
-&lt;p&gt;After the summit, I joined my teammates &lt;a href=&quot;/team/lisa-ridley/&quot;&gt;Lisa&lt;/a&gt; and &lt;a href=&quot;/team/kosta-harlan/&quot;&gt;Kosta&lt;/a&gt; at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.&lt;/p&gt;
+&lt;p&gt;After the summit, I joined my teammates Lisa and &lt;a href=&quot;/team/kosta-harlan/&quot;&gt;Kosta&lt;/a&gt; at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.&lt;/p&gt;
 
 &lt;p&gt;We then headed to the welcome pub crawl to meet up with some Drupal friends in person for the first time. It was a great evening of beautiful weather, good beer, and excited Drupalist(a)(o)s eagerly anticipating a fun week.&lt;/p&gt;
 
