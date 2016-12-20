@@ -19,11 +19,13 @@
     $link-background: lighten($gainsboro, 10%);
     text-align: center;
 
-    @include media($medium-screen-up) {
-      @include span-columns(8);
-      @include shift(2);
+    .job-posting-block__content {
+      @include media($medium-screen-up) {
+        @include span-columns(8);
+        @include shift(2);
 
-      float: none;
+        float: none;
+      }
     }
 
     p {

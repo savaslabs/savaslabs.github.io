@@ -83,5 +83,5 @@
   name: Marketing
 - slug: javascript
   name: Javascript
-- slug: travis
-  name: Travis CI
+- slug: continuous-integration
+  name: Continuous Integration

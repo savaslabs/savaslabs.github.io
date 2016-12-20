@@ -2,6 +2,7 @@
 layout: case-study
 weight: -3
 project_title: Hunter Boots E-Commerce / Redesign
+tags: drupal front-end-dev javascript payment-processing theming
 client_name: Hunter Boots
 client_url: "http://us.hunterboots.com/"
 client_description: |

@@ -10,7 +10,7 @@
   padding: $base-margin 1em;
   vertical-align: baseline;
 
-  @include media($large-screen-up) {
+  @include media($extra-large-screen-up) {
     padding: $base-margin 0;
   }
 }

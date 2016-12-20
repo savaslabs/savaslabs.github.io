@@ -2,6 +2,7 @@
 layout: case-study
 weight: -1
 project_title: Transaction Advisors Multisite Development
+tags: drupal front-end-dev multisite payment-processing theming
 client_name: Transaction Advisors
 client_url: "https://www.transactionadvisors.com"
 client_description: |

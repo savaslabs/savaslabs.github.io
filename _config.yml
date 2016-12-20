@@ -26,8 +26,8 @@ kramdown:
 include: ["_pages"]
 
 # Blog
-paginate: 6
-paginate_path: "/blog/:num/"
+paginate: 9
+paginate_path: "/blog/page:num/"
 
 # For Travis CI and gulp
 exclude: ["vendor",

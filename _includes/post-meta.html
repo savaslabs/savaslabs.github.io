@@ -23,8 +23,8 @@
     <div class="cards">
       {% assign counter = 0 %}
       {% for post in site.posts %}
-        {% if post.title != page.title and counter < 3%}
-        {% assign counter = counter |plus: 1 %}
+        {% if post.title != page.title and counter < 3 %}
+        {% assign counter = counter | plus: 1 %}
           <div class="card">
             <a href="{{ post.url }}">
               <div class="card-header">

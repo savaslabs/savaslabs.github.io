@@ -3,6 +3,7 @@ layout: case-study
 featured: 1
 weight: -5
 project_title: Duke Today Redesign
+tags: docker drupal durham front-end-dev migration module-development performance user-experience
 client_name: Duke Today
 client_url: "https://today.duke.edu"
 client_quote: |
