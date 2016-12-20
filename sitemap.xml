@@ -184,9 +184,6 @@
 <loc>http://savaslabs.com/blog/tag/best-practices/</loc>
 </url>
 <url>
-<loc>http://savaslabs.com/blog/</loc>
-</url>
-<url>
 <loc>http://savaslabs.com/blog/tag/bourbon/</loc>
 </url>
 <url>
@@ -206,6 +203,9 @@
 </url>
 <url>
 <loc>http://savaslabs.com/contact/</loc>
+</url>
+<url>
+<loc>http://savaslabs.com/blog/tag/continuous-integration/</loc>
 </url>
 <url>
 <loc>http://savaslabs.com/blog/tag/css/</loc>
@@ -251,6 +251,9 @@
 </url>
 <url>
 <loc>http://savaslabs.com/blog/tag/identity/</loc>
+</url>
+<url>
+<loc>http://savaslabs.com/blog/</loc>
 </url>
 <url>
 <loc>http://savaslabs.com/</loc>
@@ -320,9 +323,6 @@
 </url>
 <url>
 <loc>http://savaslabs.com/blog/tag/theming/</loc>
-</url>
-<url>
-<loc>http://savaslabs.com/blog/tag/travis/</loc>
 </url>
 <url>
 <loc>http://savaslabs.com/blog/tag/tridug/</loc>
