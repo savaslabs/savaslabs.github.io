@@ -61,3 +61,22 @@
     }
   }
 }
+
+// Contact page table.
+.table-minimal--contact {
+  p {
+    display: none;
+
+    @include media(em(450)) {
+      display: inline;
+    }
+  }
+
+  .table-minimal--contact__label {
+    width: 30%;
+
+    @include media(em(450)) {
+      width: 50%;
+    }
+  }
+}
