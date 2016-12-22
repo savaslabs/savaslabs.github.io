@@ -13,28 +13,24 @@
     clear: both;
   }
 
-  .past-clients {
+  .client-logos {
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+
     margin-top: $base-margin;
 
-    .flex-container {
-      @include display(flex);
-      @include justify-content(center);
-      @include flex-wrap(wrap);
+    .client-logos__logo {
+      @include flex-basis(15em);
+      @include flex-grow(0);
 
-      .past-clients__client {
-        @include flex-basis(21em);
-        @include flex-grow(0);
+      margin: 0 0 $card-margin * 2;
+      padding: .5em;
+      text-align: center;
 
-        margin: 0 0 $base-spacing;
-
-        @include media($medium-screen-up) {
-          margin: 0 $card-margin $base-spacing;
-        }
-      }
-
-      p {
-        font-size: 1.2em;
-        text-align: center;
+      @include media(em(480)) {
+        margin: 0 $card-margin $card-margin * 2;
       }
     }
   }

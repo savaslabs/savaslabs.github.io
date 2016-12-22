@@ -1,0 +1,54 @@
+- name: Duke University
+  image: duke-logo.png
+  weight: 1
+- name: University of North Carolina at Chapel Hill
+  image: unc-logo.jpg
+  weight: 2
+- name: The MIT Press
+  image: mitpress-logo.png
+  weight: 3
+- name: Harvard Medical School
+  image: hms-logo.png
+  weight: 4
+- name: Acquia
+  image: acquia-logo.png
+  weight: 5
+- name: Hunter Boots
+  image: hunter-logo.svg
+  weight: 6
+- name: HIV Prevention Trials Network
+  image: hptn-logo.png
+  weight: 7
+- name: Pauli Murray Project
+  image: pauli-murray-logo.png
+  weight: 8
+- name: Omega Institute
+  image: omega-logo.jpg
+  weight: 9
+- name: Perinatal Quality Collaborative of North Carolina
+  image: pqcnc-logo.png
+  weight: 10
+- name: BioRAFT
+  image: bioraft-logo.png
+  weight: 11
+- name: Building Green
+  image: building-green-logo.png
+  weight: 12
+- name: Devcollaborative
+  image: devcollaborative-logo.png
+  weight: 13
+- name: Sandstorm Design
+  image: sandstorm-logo.png
+  weight: 14
+- name: Transaction Advisors
+  image: transaction-advisors-logo.jpg
+  weight: 15
+- name: Tilthy Rich Compost
+  image: trc-logo.png
+  weight: 16
+- name: Compost Pedallers
+  image: compost-pedallers-logo.png
+  weight: 17
+- name: WiseBread
+  image: wisebread-logo.png
+  weight: 18

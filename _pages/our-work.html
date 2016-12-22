@@ -7,10 +7,7 @@ excerpt: A selection of recent work done by Savas Labs
 <div class="page-work">
   <div class="page-description column-8">
     <p>
-      Below is a selection of our recent work. Our experience spans a wide range
-      of <a href="/services">services</a> and we'd love to
-      <a href="/contact">talk to you</a> about what Savas Labs can do for your
-      online presence.
+      At Savas Labs we help our clients better achieve their missions through purposeful, beautiful design and technical precision. We focus our clients' myriad systems and needs into a strategy that optimizes value to the organization.
     </p>
   </div>
 
@@ -31,17 +28,14 @@ excerpt: A selection of recent work done by Savas Labs
   </div>
   <hr>
 
-  <!--<div class="past-clients">-->
-    <!--<h2>Past clients</h2>-->
-    <!--<div class="flex-container">-->
-      <!--{% for client in site.work %}-->
-      <!--<div class="past-clients__client">-->
-        <!--<a href="{{ client.client_url }}">-->
-          <!--<img alt="{{ client.title }}" src="{{ base.url }}{{ client.image }}">-->
-        <!--</a>-->
-        <!--<p><a href="{{ client.client_url }}">{{ client.title }}</a></p>-->
-      <!--</div>-->
-      <!--{% endfor %}-->
-    <!--</div>-->
-  <!--</div>-->
+  <div class="flex-container">
+    <div class="client-logos">
+      {% assign logos = site.data.logos | sort: 'weight' %}
+      {% for logo in logos %}
+        <div class="client-logos__logo">
+          <img alt="{{ logo.name }}" src="{{ base.url }}/assets/img/work/logos/{{ logo.image }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
