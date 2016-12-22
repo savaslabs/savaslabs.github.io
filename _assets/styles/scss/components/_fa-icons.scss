@@ -3,6 +3,12 @@
  *
  * These are Font Awesome icons we're using above the fold. By including them
  * here, we can include only those needed in critical.css.
+ *
+ * To add an icon:
+ * 1. Search for the variable in ../lib/font-awesome/variables and paste it
+ *    in the list of variables below.
+ * 2. Search for the line in ../lib/font-awesome/icons that matches the icon and
+ *    paste it in the list at the bottom of this file (below the import tags).
  */
 
 $fa-font-path:        '../fonts' !default;
