@@ -31,7 +31,7 @@ technologies_used: |
   - [Leaflet](/blog/tag/cartography)
   - [Pantheon](/blog/tag/drupal)
   - [Responsive design](/blog/tag/front-end-dev)
-client_logo: "/assets/img/work/civil-rights-map-case-study/pauli-murray-logo.png"
+client_logo: "/assets/img/work/logos/pauli-murray-logo.png"
 client_logo_width: "300px"
 client_logo_height: "72px"
 client_hero_image: "/assets/img/work/civil-rights-map-case-study/pmp-hero.jpg"
