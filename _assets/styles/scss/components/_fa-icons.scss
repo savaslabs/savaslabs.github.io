@@ -1,0 +1,53 @@
+/**
+ * @file
+ *
+ * These are Font Awesome icons we're using above the fold. By including them
+ * here, we can include only those needed in critical.css.
+ */
+
+$fa-font-path:        '../fonts' !default;
+$fa-font-size-base:   14px !default;
+$fa-line-height-base: 1 !default;
+$fa-css-prefix:       fa !default;
+$fa-version:          '4.6.3' !default;
+$fa-border-color:     #eee !default;
+$fa-inverse:          #fff !default;
+$fa-li-width:         (30em / 14) !default;
+
+$fa-var-angle-double-down: '\f103';
+$fa-var-building-o: '\f0f7';
+$fa-var-circle: '\f111';
+$fa-var-comment: '\f075';
+$fa-var-comment-o: '\f0e5';
+$fa-var-drupal: '\f1a9';
+$fa-var-envelope-o: '\f003';
+$fa-var-file-text: '\f15c';
+$fa-var-github: '\f09b';
+$fa-var-globe: '\f0ac';
+$fa-var-linkedin: '\f0e1';
+$fa-var-long-arrow-right: '\f178';
+$fa-var-phone: '\f095';
+$fa-var-stack-exchange: '\f18d';
+$fa-var-tags: '\f02c';
+$fa-var-twitter: '\f099';
+
+@import '../lib/font-awesome/core';
+@import '../lib/font-awesome/larger';
+@import '../lib/font-awesome/stacked';
+
+.#{$fa-css-prefix}-angle-double-down:before { content: $fa-var-angle-double-down; }
+.#{$fa-css-prefix}-building-o:before { content: $fa-var-building-o; }
+.#{$fa-css-prefix}-circle:before { content: $fa-var-circle; }
+.#{$fa-css-prefix}-comment:before { content: $fa-var-comment; }
+.#{$fa-css-prefix}-comment-o:before { content: $fa-var-comment-o; }
+.#{$fa-css-prefix}-drupal:before { content: $fa-var-drupal; }
+.#{$fa-css-prefix}-envelope-o:before { content: $fa-var-envelope-o; }
+.#{$fa-css-prefix}-file-text:before { content: $fa-var-file-text; }
+.#{$fa-css-prefix}-github:before { content: $fa-var-github; }
+.#{$fa-css-prefix}-globe:before { content: $fa-var-globe; }
+.#{$fa-css-prefix}-linkedin:before { content: $fa-var-linkedin; }
+.#{$fa-css-prefix}-long-arrow-right:before { content: $fa-var-long-arrow-right; }
+.#{$fa-css-prefix}-phone:before { content: $fa-var-phone; }
+.#{$fa-css-prefix}-stack-exchange:before { content: $fa-var-stack-exchange; }
+.#{$fa-css-prefix}-tags:before { content: $fa-var-tags; }
+.#{$fa-css-prefix}-twitter:before { content: $fa-var-twitter; }
