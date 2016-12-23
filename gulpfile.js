@@ -1,21 +1,22 @@
 // Define variables.
-var autoprefixer = require('autoprefixer');
-var browserSync  = require('browser-sync').create();
-var cleancss     = require('gulp-clean-css');
-var concat       = require('gulp-concat');
-var del          = require('del');
-var gulp         = require('gulp');
-var gutil        = require('gulp-util');
-var imagemin     = require('gulp-imagemin');
-var notify       = require('gulp-notify');
-var postcss      = require('gulp-postcss');
-var rename       = require('gulp-rename');
-var run          = require('gulp-run');
-var runSequence  = require('run-sequence');
-var sass         = require('gulp-ruby-sass');
-var uglify       = require('gulp-uglify');
+var autoprefixer   = require('autoprefixer');
+var browserSync    = require('browser-sync').create();
+var cleancss       = require('gulp-clean-css');
+var concat         = require('gulp-concat');
+var del            = require('del');
+var gulp           = require('gulp');
+var gutil          = require('gulp-util');
+var imagemin       = require('gulp-imagemin');
+var jpegRecompress = require('imagemin-jpeg-recompress');
+var notify         = require('gulp-notify');
+var postcss        = require('gulp-postcss');
+var rename         = require('gulp-rename');
+var run            = require('gulp-run');
+var runSequence    = require('run-sequence');
+var sass           = require('gulp-ruby-sass');
+var uglify         = require('gulp-uglify');
 
-var paths        = require('./_assets/gulp_config/paths');
+var paths          = require('./_assets/gulp_config/paths');
 
 // Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
 // outputs file to the appropriate location.
@@ -97,9 +98,16 @@ gulp.task('clean:scripts:leaflet', function(callback) {
 gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
 
 // Optimizes and copies image files.
+// We're including imagemin options because we're overriding the default
+// JPEG optimization plugin.
 gulp.task('build:images', function() {
     return gulp.src(paths.imageFilesGlob)
-        .pipe(imagemin())
+        .pipe(imagemin([
+            imagemin.gifsicle(),
+            jpegRecompress(),
+            imagemin.optipng(),
+            imagemin.svgo()
+        ]))
         .pipe(gulp.dest(paths.jekyllImageFiles))
         .pipe(gulp.dest(paths.siteImageFiles))
         .pipe(browserSync.stream());
