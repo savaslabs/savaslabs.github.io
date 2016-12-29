@@ -30,7 +30,7 @@ technologies_used: |
   - [Drupal Commerce](/blog/tag/payment-processing)
   - [Responsive design](/blog/tag/front-end-dev/)
   - [jQuery](/blog/tag/javascript)
-client_logo: "/assets/img/work/hunter-boots-case-study/hunter_logo.svg"
+client_logo: "/assets/img/work/logos/hunter-logo.svg"
 client_logo_width: "120px"
 client_logo_height: "50px"
 client_hero_image: "/assets/img/work/hunter-boots-case-study/hunter_hero.jpg"

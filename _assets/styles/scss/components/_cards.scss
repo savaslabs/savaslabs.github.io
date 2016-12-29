@@ -124,13 +124,6 @@
   }
 }
 
-// Work card overrides ---------------------------------------------------------
-.work-card {
-  @include flex-basis(21em);
-  @include flex-grow(0);
-  @include flex-shrink(1);
-}
-
 // Blog card overrides ---------------------------------------------------------
 .blog-card {
   @include flex-basis(20em);

@@ -8,4 +8,30 @@
   h2 {
     text-align: center;
   }
+
+  .case-studies {
+    clear: both;
+  }
+
+  .client-logos {
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+
+    margin-top: $base-margin;
+
+    .client-logos__logo {
+      @include flex-basis(15em);
+      @include flex-grow(0);
+
+      margin: 0 0 $card-margin * 2;
+      padding: .5em;
+      text-align: center;
+
+      @include media(em(480)) {
+        margin: 0 $card-margin $card-margin * 2;
+      }
+    }
+  }
 }

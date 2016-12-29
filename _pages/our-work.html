@@ -5,6 +5,12 @@ permalink: "/work/"
 excerpt: A selection of recent work done by Savas Labs
 ---
 <div class="page-work">
+  <div class="page-description column-8">
+    <p>
+      At Savas Labs we help our clients better achieve their missions through purposeful, beautiful design and technical precision. We focus our clients' myriad systems and needs into a strategy that optimizes value to the organization.
+    </p>
+  </div>
+
   <div class="case-studies">
     <h2>Recent case studies</h2>
     {% assign items = site.case-studies | sort: 'weight' %}
@@ -20,24 +26,15 @@ excerpt: A selection of recent work done by Savas Labs
     </div>
     {% endfor %}
   </div>
+  <hr>
 
-  <h2>Other work</h2>
   <div class="flex-container">
-    <div class="cards">
-      {% for portfolio in site.work %}
-      <div class="card work-card">
-        <a href="{{ portfolio.url }}">
-          <div class="card-image">
-            <img alt="{{ portfolio.title }}" src="{{ base.url }}{{ portfolio.image }}">
-          </div>
-          <div class="card-header">
-            {{ portfolio.title }}
-          </div>
-          <div class="card-copy">
-            <p>{{ portfolio.short_description }}</p>
-          </div>
-        </a>
-      </div>
+    <div class="client-logos">
+      {% assign logos = site.data.logos | sort: 'weight' %}
+      {% for logo in logos %}
+        <div class="client-logos__logo">
+          <img alt="{{ logo.name }}" src="{{ base.url }}/assets/img/work/logos/{{ logo.image }}">
+        </div>
       {% endfor %}
     </div>
   </div>
