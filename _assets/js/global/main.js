@@ -118,15 +118,12 @@ function enableCommentForm($id) {
     // Remove leading forward slash.
     var truncatedSlug = postSlug.substring(1, postSlug.length);
     var encodedSlug = encodeURIComponent(truncatedSlug);
-    var requri = commentServer + '/api/comments/post';
-    var payload = {};
-    payload.slug = encodedSlug;
+    var requri = commentServer + '/api/comments/post?slug=' + encodedSlug;
     $.ajax(
         {
             url: requri,
-            type: 'POST',
+            type: 'GET',
             dataType: 'json',
-            data: payload,
             success: function (json) {
                 var outhtml = '';
 
