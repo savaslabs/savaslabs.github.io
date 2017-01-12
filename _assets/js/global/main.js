@@ -215,10 +215,10 @@ function enableCommentForm($id) {
                     },
                     error: function (e) {
                         submit.val('Submit').removeAttr('disabled');
-                        $('#post-comments').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
+                        $('#comment-form').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
                         var errorField = e.responseJSON.error_field;
                         if (errorField) {
-                          $('.' + errorField).addClass('error');
+                          $('.' + errorField).addClass('error-field');
                         }
                     }
                 });
