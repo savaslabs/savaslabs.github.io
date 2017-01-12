@@ -215,7 +215,11 @@ function enableCommentForm($id) {
                     },
                     error: function (e) {
                         submit.val('Submit').removeAttr('disabled');
-                        $('#post-comments').prepend('<div class="flash-error">' + 'We couldn\'t post your comment, sorry!' + '<br>' + 'Please make sure all fields are filled out or try again later.' + '</div>');
+                        $('#post-comments').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
+                        var errorField = e.responseJSON.error_field;
+                        if (errorField) {
+                          $('.' + errorField).addClass('error');
+                        }
                     }
                 });
         });
