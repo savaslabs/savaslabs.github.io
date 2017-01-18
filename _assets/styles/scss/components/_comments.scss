@@ -111,6 +111,11 @@
     margin-top: 0;
   }
 
+  // Style the success message above the new comment.
+  .flash-success {
+    margin-top: 1.5em;
+  }
+
   // Style the error message at the top of the comment form.
   .flash-error {
     margin-top: $base-spacing;

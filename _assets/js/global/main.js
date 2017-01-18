@@ -129,7 +129,7 @@ function enableCommentForm($id) {
 
                 // If there are comments, include a link to the comment form.
                 if (json.data.length > 0) {
-                    outhtml = '<p class="comment-form-link"><a href="#comment-form">Leave a comment</a></p>'
+                    outhtml = '<p class="comment-form-link" id="comment-form-link"><a href="#comment-form">Leave a comment</a></p>'
                 }
 
                 // Loop through comments.
@@ -180,7 +180,7 @@ function enableCommentForm($id) {
                     beforeSend: function () {
 
                         // Change submit button value text and disable it.
-                        // submit.val('Submitting...').attr('disabled', 'disabled');
+                        submit.val('Submitting...').attr('disabled', 'disabled');
                         $('.flash-error').remove();
                         $('.flash-success').remove();
                     },
@@ -199,9 +199,11 @@ function enableCommentForm($id) {
 
                         // Create HTML output.
                         var thanks = '<div class="flash-success">Thanks for submitting your comment!</div>';
-                        $('#post-comments').prepend(thanks);
+                        $('#post-comments').append(thanks);
+                        $('.flash-success').delay(10000).fadeOut();
                         form.trigger('reset');
                         form.hide();
+                        submit.val('Post comment').removeAttr('disabled');
 
                         // Append new comment.
                         var outhtml = '';
@@ -212,6 +214,12 @@ function enableCommentForm($id) {
                         // Append with fadeIn, see http://stackoverflow.com/a/978731
                         var item = $(outhtml).hide().fadeIn(800);
                         $('#post-comments').append(item);
+
+                        // Comment form is hidden but should show if user clicks
+                        // the link.
+                        $('#comment-form-link').click(function () {
+                            form.show();
+                        });
                     },
                     error: function (e) {
 
