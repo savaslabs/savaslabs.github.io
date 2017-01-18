@@ -40,69 +40,40 @@
 // Comments.
 .post-comments {
 
-  // Comment form.
-  // Make name and email inline on larger screens.
-  @include media($medium-screen-up) {
-    .comment-name,
-    .comment-email {
-      display: inline-block;
-      width: 48%;
+  // General form field styles.
+  .comment-form__field {
+    margin-bottom: 1.5em;
+
+    &__label {
+      font-weight: bold;
+      margin: 0;
     }
 
-    .comment-name { float: left; }
-    .comment-email { float: right; }
-  }
-
-  p {
-    margin: 0;
-  }
-
-  textarea {
-    margin-bottom: 0;
-  }
-
-  .email-disclaimer {
-    font-size: .8em;
-    margin-top: -1em;
-  }
-
-  .hint {
-    font-size: .8em;
-  }
-
-  .below-textarea {
-    margin-top: -.5em;
-  }
-
-  .nocaptcha {
-    margin-bottom: 0;
-  }
-
-  .are-you-human {
-    @include span-columns(12);
-    margin-top: 2em;
-  }
-
-  .are-you-human-field {
-    @include span-columns(9);
-  }
-
-  .are-you-human-owl {
-    @include span-columns(3);
-    text-align: center;
-
-    img {
-      width: 4em;
+    p,
+    input,
+    textarea {
+      margin-bottom: 0;
     }
   }
 
-  .error-field {
-    border-color: $fuschia;
-    border-width: 3px;
+  // Text inputs.
+  .comment-form__field--name,
+  .comment-form__field--email {
+    max-width: 375px;
   }
 
-  .flash-error {
-    margin-top: $base-spacing;
+  .comment-form__field--comment {
+    max-width: 600px;
+
+    // This removes extra space under textarea in some browsers.
+    textarea {
+      vertical-align: top;
+    }
+  }
+
+  // Helptext below fields.
+  .comment-form__field__helptext {
+    font-size: .8em;
   }
 
   // Hide honeypot field.
@@ -112,8 +83,43 @@
   }
   // scss-lint:enable IdSelector
 
-  .submit-comment {
+  // Nocaptcha field.
+  .comment-form__field--nocaptcha {
+    @include span-columns(12);
+
+    &__image {
+      @include span-columns(3);
+      text-align: center;
+
+      img {
+        width: 4em;
+      }
+    }
+
+    &__input {
+      @include span-columns(9);
+
+      input {
+        width: 100px;
+      }
+    }
+  }
+
+  // Submit button.
+  .comment-form__submit {
     @extend %button;
+    margin-top: 0;
+  }
+
+  // Style the error message at the top of the comment form.
+  .flash-error {
+    margin-top: $base-spacing;
+  }
+
+  // Highlight field indicated in an error response.
+  .error-field {
+    border-color: $fuschia;
+    border-width: 3px;
   }
 
   // Existing comments.
