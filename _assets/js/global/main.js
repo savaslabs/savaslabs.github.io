@@ -216,15 +216,16 @@ function enableCommentForm($id) {
                     error: function (e) {
 
                         // Re-enable the submit button.
-                        submit.val('Submit').removeAttr('disabled');
+                        submit.val('Post comment').removeAttr('disabled');
 
-                        // Display the error.
-                        $('#comment-form').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
-
-                        // Highlight the erroneous field.
-                        var errorField = e.responseJSON.data.error_field;
+                        // Highlight the erroneous field. and display the error.
+                        var errorField = '.' + e.responseJSON.data.error_field;
                         if (errorField) {
-                          $('.' + errorField).addClass('error-field');
+                          $(errorField).addClass('error-field');
+                          $(errorField).parent().prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
+                        }
+                        else {
+                          $('#comment-form').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
                         }
                     }
                 });
