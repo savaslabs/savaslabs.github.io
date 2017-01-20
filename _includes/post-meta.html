@@ -1,23 +1,44 @@
 <div class="post-bottom">
   <div class="post-meta">
-    <h4>About the author</h4>
 
-    {% comment %} Description for current employees. {% endcomment %}
-    {% for person in site.team %}{% if person.name == page.author %}
-      <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">
+    {% comment %} Get # of authors and array of author names. {% endcomment %}
+    {% assign author_count = 0 %}
+    {% assign author_list = "" | split: "|" %}
+    {% for person in site.team %}{% if page.author contains person.name %}
+      {% assign author_count = author_count | plus: 1 %}
+      {% assign author_list = author_list | push: person.name %}
+    {% endif %}{% endfor %}
+    {% for person in site.team-former %}{% if page.author contains person.name %}
+      {% assign author_count = author_count | plus: 1 %}
+      {% assign author_list = author_list | push: person.name %}
+    {% endif %}{% endfor %}
+
+    {% if author_count == 1 %}
+      <h4>About the author</h4>
+    {% else %}
+      <h4>About the authors</h4>
+    {% endif %}
+
+    {% for author in author_list %}
+
+      {% comment %} Description for current employees. {% endcomment %}
+      {% for person in site.team %}{% if person.name == author %}
+        <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">
+          {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
+        </a>
+        <p class="post-author-desc">{{ person.job_description }}</p>
+      {% endif %}{% endfor %}
+
+      {% comment %} Description for former employees. {% endcomment %}
+      {% for person in site.team-former %}{% if person.name == author %}
         {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
-      </a>
-      <p class="post-author-desc">{{ person.job_description }}</p>
-    {% endif %}{% endfor %}
+        <p class="post-author-desc">{{ person.job_description }}</p>
+      {% endif %}{% endfor %}
 
-    {% comment %} Description for former employees. {% endcomment %}
-    {% for person in site.team-former %}{% if person.name == page.author %}
-      {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
-      <p class="post-author-desc">{{ person.name }} is a former Savas Labs employee.</p>
-    {% endif %}{% endfor %}
-
+    {% endfor %}
   </div>
-    <!-- Once we have more content, change this to posts related by tag -->
+
+  {% comment %} Once we have more content, change this to posts related by tag. {% endcomment %}
   <div class="post-related flex-container">
     <h4>Recent posts by Savas Labs</h4>
     <div class="cards">
@@ -28,7 +49,7 @@
           <div class="card">
             <a href="{{ post.url }}">
               <div class="card-header">
-                  {{ post.title }}
+                {{ post.title }}
               </div>
               <div class="card-copy">
                 <p>{{ post.date | date: "%b %-d, %Y" }}</p>

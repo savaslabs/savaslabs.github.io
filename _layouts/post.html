@@ -5,55 +5,45 @@ layout: default
 {% include tag-logic.html %}
 
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post__body">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
 
-    {% comment %} Linked name for current employees. {% endcomment %}
-    {% for person in site.team %}
-      {% if person.name == page.author %}
-          <p>By <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">{{ page.author }}</a></p>
+      {% include post-authors.html author = page.author %}
+
+      <p class="centerdot">&centerdot; </p>
+      <p>{{ page.date | date: "%b %-d, %Y" }} </p><br>
+      <i class="fa fa-tags"></i><p>{{ tags_content }}</p>
+      {% if site.comment_server_enabled == 1 %}
+      <div><p><span id="comment-count"></span></p></div>
       {% endif %}
-    {% endfor %}
-
-    {% comment %} Static name for former employees. {% endcomment %}
-    {% for person in site.team-former %}
-      {% if person.name == page.author %}
-        <p>By {{ page.author }}</p>
+      {% if page.featured_image %}
+        <div class="post-featured-image">
+          {% picture post_featured_image {{ page.featured_image }} alt="{{ page.featured_image_alt }}" %}
+        </div>
       {% endif %}
-    {% endfor %}
+    </header>
 
-    <p class="centerdot">&centerdot; </p>
-    <p>{{ page.date | date: "%b %-d, %Y" }} </p><br>
-    <i class="fa fa-tags"></i><p>{{ tags_content }}</p>
-    {% if site.comment_server_enabled == 1 %}
-    <div><p><span id="comment-count"></span></p></div>
-    {% endif %}
-    {% if page.featured_image %}
-      <div class="post-featured-image">
-        {% picture post_featured_image {{ page.featured_image }} alt="{{ page.featured_image_alt }}" %}
+    {% if page.disclaimer %}
+      <div class="disclaimer">
+        <h5>Proceed with caution</h5>
+        {{ page.disclaimer | markdownify }}
       </div>
     {% endif %}
-  </header>
 
-  {% if page.disclaimer %}
-    <div class="disclaimer">
-      <h5>Proceed with caution</h5>
-      {{ page.disclaimer | markdownify }}
-    </div>
+    <article class="post-content">
+      {{ content }}
+      <hr>
+
+      {% if site.comment_server_enabled == 1 %}
+        {% include comment-form.html %}
+      {% endif %}
+    </article>
+  </div><!-- post__body -->
+
+  {% if page %}
+    {% include post-meta.html %}
   {% endif %}
 
-  <article class="post-content">
-    {{ content }}
-    <hr>
-
-    {% if site.comment_server_enabled == 1 %}
-      {% include comment-form.html %}
-    {% endif %}
-    {% if page %}
-      {% include post-meta.html %}
-    {% endif %}
-    {% include previous-next-links.html %}
-
-  </article>
-
-</div>
+  {% include previous-next-links.html %}
+</div><!-- post -->
