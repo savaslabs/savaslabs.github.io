@@ -6,43 +6,43 @@ layout: default
 {% include tag-logic.html %}
 
 <div class="post event">
+  <div class="post__body">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% include post-authors.html author = page.author %}
+      <p class="centerdot">&centerdot; </p>
+      <p>{{ page.date | date: "%b %-d, %Y" }} </p><br>
+      <i class="fa fa-tags"></i><p>{{ tags_content }}</p>
+      {% if site.comment_server_enabled == 1 %}
+        <div><p><span id="comment-count"></span></p></div>
+      {% endif %}
+    </header>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p>By <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">{{ page.author }}</a></p>
-    <p class="centerdot">&centerdot; </p>
-    <p>{{ page.date | date: "%b %-d, %Y" }} </p><br>
-    <i class="fa fa-tags"></i><p>{{ tags_content }}</p>
-    {% if site.comment_server_enabled == 1 %}
-    <div><p><span id="comment-count"></span></p></div>
-    {% endif %}
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-    <table class="table-minimal">
-    <tbody>
-      <tr>
-        <td><span class="fa-stack fa-lg">
+    <article class="post-content">
+      {{ content }}
+      <table class="table-minimal">
+        <tbody>
+        <tr>
+          <td><span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
             </span>&nbsp;&nbsp;Date</td>
-            {% if page.start-date == page.end-date or page.end-date == '' %}
-              <td>{{ page.start-date }}</td>
-            {% else %}
-              <td>{{ page.start-date }} - {{ page.end-date }}</td>
-            {% endif %}
+          {% if page.start-date == page.end-date or page.end-date == '' %}
+          <td>{{ page.start-date }}</td>
+          {% else %}
+          <td>{{ page.start-date }} - {{ page.end-date }}</td>
+          {% endif %}
         </tr>
         <tr>
           <td><span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
             </span>&nbsp;&nbsp;Time</td>
-            {% if page.end-time == '' %}
-              <td>{{ page.start-time }}</td>
-            {% else %}
-              <td>{{ page.start-time }} - {{ page.end-time }}</td>
-            {% endif %}
+          {% if page.end-time == '' %}
+          <td>{{ page.start-time }}</td>
+          {% else %}
+          <td>{{ page.start-time }} - {{ page.end-time }}</td>
+          {% endif %}
         </tr>
         <tr>
           <td><span class="fa-stack fa-lg">
@@ -50,20 +50,24 @@ layout: default
             <i class="fa fa-building-o fa-stack-1x fa-inverse"></i>
           </span>&nbsp;&nbsp;Location</td>
           {% if page.location-url %}
-            <td><a href="{{ page.location-url }}">{{ page.location }}</a></td>
+          <td><a href="{{ page.location-url }}">{{ page.location }}</a></td>
           {% else %}
-            <td>{{ page.location }}</td>
+          <td>{{ page.location }}</td>
           {% endif %}
         </tr>
-      </tbody>
-    </table>
-    <hr />
-    {% if site.comment_server_enabled == 1 %}
-      {% include comment-form.html %}
-    {% endif %}
-  {% include post-meta.html %}
+        </tbody>
+      </table>
+      <hr>
+
+      {% if site.comment_server_enabled == 1 %}
+        {% include comment-form.html %}
+      {% endif %}
+    </article>
+  </div><!-- post__body -->
+
+  {% if page %}
+    {% include post-bottom.html %}
+  {% endif %}
+
   {% include previous-next-links.html %}
-
-  </article>
-
-</div>
+</div><!-- post -->
