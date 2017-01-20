@@ -23,7 +23,7 @@
 
       {% comment %} Description for current employees. {% endcomment %}
       {% for person in site.team %}{% if person.name == author %}
-        <a href="{{ page.author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">
+        <a href="{{ author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">
           {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
         </a>
         <p class="post-author-desc">{{ person.job_description }}</p>
