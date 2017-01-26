@@ -227,10 +227,15 @@ function enableCommentForm($id) {
                         submit.val('Post comment').removeAttr('disabled');
 
                         // Highlight the erroneous field. and display the error.
-                        var errorField = '.' + e.responseJSON.data.error_field;
+                        var errorField = '#' + e.responseJSON.data.error_field;
                         if (errorField) {
                           $(errorField).addClass('error-field');
                           $(errorField).parent().prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
+
+                          // If the user clicks submit again, remove the error highlighting.
+                          submit.click(function () {
+                            $(errorField).removeClass('error-field');
+                          });
                         }
                         else {
                           $('#comment-form').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
