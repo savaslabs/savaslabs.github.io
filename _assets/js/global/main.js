@@ -226,7 +226,7 @@ function enableCommentForm($id) {
                         // Re-enable the submit button.
                         submit.val('Post comment').removeAttr('disabled');
 
-                        // Highlight the erroneous field. and display the error.
+                        // Highlight the erroneous field and display the error.
                         var errorField = '#' + e.responseJSON.data.error_field;
                         if (errorField) {
                           $(errorField).addClass('error-field');
