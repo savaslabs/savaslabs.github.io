@@ -96,6 +96,15 @@
     }
   }
 
+  .error-field {
+    border-color: $fuschia;
+    border-width: 3px;
+  }
+
+  .flash-error {
+    margin-top: $base-spacing;
+  }
+
   // Hide honeypot field.
   // scss-lint:disable IdSelector
   #url {

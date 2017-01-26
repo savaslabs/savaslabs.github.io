@@ -214,8 +214,18 @@ function enableCommentForm($id) {
                         $('#post-comments').append(item);
                     },
                     error: function (e) {
+
+                        // Re-enable the submit button.
                         submit.val('Submit').removeAttr('disabled');
-                        $('#post-comments').prepend('<div class="flash-error">' + 'We couldn\'t post your comment, sorry!' + '<br>' + 'Please make sure all fields are filled out or try again later.' + '</div>');
+
+                        // Display the error.
+                        $('#comment-form').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
+
+                        // Highlight the erroneous field.
+                        var errorField = e.responseJSON.data.error_field;
+                        if (errorField) {
+                          $('.' + errorField).addClass('error-field');
+                        }
                     }
                 });
         });
