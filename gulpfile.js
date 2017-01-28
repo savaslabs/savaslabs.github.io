@@ -1,4 +1,5 @@
 // Define variables.
+var appendPrepend  = require('gulp-append-prepend');
 var autoprefixer   = require('autoprefixer');
 var browserSync    = require('browser-sync').create();
 var cleancss       = require('gulp-clean-css');
@@ -49,10 +50,7 @@ gulp.task('build:styles:critical', function() {
 gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
 
 gulp.task('clean:styles', function(callback) {
-    del([paths.jekyllCssFiles + 'main.css',
-        paths.siteCssFiles + 'main.css',
-        '_includes/critical.css'
-    ]);
+    del([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
     callback();
 });
 
@@ -65,14 +63,13 @@ gulp.task('build:scripts:global', function() {
     ])
         .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(paths.jekyllJsFiles))
-        .pipe(gulp.dest(paths.siteJsFiles))
-        .on('error', gutil.log);
-});
 
-gulp.task('clean:scripts', function(callback) {
-    del([paths.jekyllJsFiles + 'main.js', paths.siteJsFiles + 'main.js']);
-    callback();
+        // We need to add front matter so Jekyll will process variables.
+        .pipe(appendPrepend.prependFile('./_assets/gulp_config/front-matter.txt'))
+
+        // Only place in `assets` because Jekyll needs to process the file.
+        .pipe(gulp.dest(paths.jekyllJsFiles))
+        .on('error', gutil.log);
 });
 
 // Concatenates and uglifies leaflet JS files and outputs result to the
@@ -89,13 +86,13 @@ gulp.task('build:scripts:leaflet', function() {
         .on('error', gutil.log);
 });
 
-gulp.task('clean:scripts:leaflet', function(callback) {
-    del([paths.jekyllJsFiles + 'leaflet.js', paths.siteJsFiles + 'leaflet.js']);
-    callback();
-});
-
 // Builds all scripts.
 gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
+
+gulp.task('clean:scripts', function(callback) {
+    del([paths.jekyllJsFiles, paths.siteJsFiles]);
+    callback();
+});
 
 // Optimizes and copies image files.
 // We're including imagemin options because we're overriding the default
@@ -209,6 +206,7 @@ gulp.task('build:jekyll:watch', ['build:jekyll:local'], function(callback) {
 });
 
 gulp.task('build:scripts:watch', ['build:scripts'], function(callback) {
+    runSequence('build:jekyll:local');
     browserSync.reload();
     callback();
 });
