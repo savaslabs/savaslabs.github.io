@@ -25,7 +25,7 @@ If there's only one thing you take away from this blog post, let it be: read and
 
 ### Install XHProf in a VM
 
-If you're not running DrupalVM, you'll need to install XHProf manually via [PECL](https://pecl.php.net/). On [DrupalVM](http://docs.drupalvm.com/en/latest/), [XHProf is already installed](http://docs.drupalvm.com/en/latest/extras/profile-code/#xhprof) and you can skip to the next step.
+If you're not running DrupalVM, you'll need to install XHProf manually via [PECL](https://pecl.php.net/). On [DrupalVM](http://docs.drupalvm.com/en/latest/), XHProf is already installed and you can skip to the next step.
 
 `sudo pecl install xhprof-beta`
 
