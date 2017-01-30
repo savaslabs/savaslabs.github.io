@@ -17,6 +17,7 @@
     "browser-sync": "^2.14.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-append-prepend": "^1.0.3",
     "gulp-clean-css": "^2.0.12",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^3.0.3",

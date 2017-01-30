@@ -61,7 +61,7 @@ $(document).ready(
     function () {
 
         // Create variable for request URI.
-        var commentServer = "http://comments.savaslabs.com";
+        var commentServer = '{{ site.comment_server_url }}';
         var postSlug = window.location.pathname;
 
         // Remove leading forward slash.
@@ -82,7 +82,7 @@ $(document).ready(
 // COMMENT COUNT ON CARDS.
 $(document).ready(
     function () {
-        var commentServer = "http://comments.savaslabs.com";
+        var commentServer = '{{ site.comment_server_url }}';
         var requri = commentServer + '/api/comments/count';
         $.getJSON(
             requri, function (json) {
@@ -112,7 +112,7 @@ function enableCommentForm($id) {
     }
 
     // Create variable for request URI.
-    var commentServer = "http://comments.savaslabs.com";
+    var commentServer = '{{ site.comment_server_url }}';
     var postSlug = window.location.pathname;
 
     // Remove leading forward slash.
