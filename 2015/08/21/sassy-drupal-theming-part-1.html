@@ -28,48 +28,27 @@
 
 
 &lt;div class=&quot;post&quot;&gt;
-  &lt;header class=&quot;post-header&quot;&gt;
-    &lt;h1 class=&quot;post-title&quot;&gt;Sassy Drupal theming: Setting up Bourbon and Neat&lt;/h1&gt;
+  &lt;div class=&quot;post__body&quot;&gt;
+    &lt;header class=&quot;post-header&quot;&gt;
+      &lt;h1 class=&quot;post-title&quot;&gt;Sassy Drupal theming: Setting up Bourbon and Neat&lt;/h1&gt;
+
+      
+
+&lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
+
+      &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
+      &lt;p&gt;Aug 21, 2015 &lt;/p&gt;&lt;br&gt;
+      &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/theming/&quot;&gt;Theming&lt;/a&gt;, &lt;a href=&quot;/blog/tag/sass/&quot;&gt;Sass&lt;/a&gt;, &lt;a href=&quot;/blog/tag/bourbon/&quot;&gt;Bourbon&lt;/a&gt;, &lt;a href=&quot;/blog/tag/front-end-dev/&quot;&gt;Front End Development&lt;/a&gt;&lt;/p&gt;
+      
+      &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
+      
+      
+    &lt;/header&gt;
 
     
-    
-      
-          &lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
 
-    
-    
-      
-    
-
-    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
-    &lt;p&gt;Aug 21, 2015 &lt;/p&gt;&lt;br&gt;
-    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/theming/&quot;&gt;Theming&lt;/a&gt;, &lt;a href=&quot;/blog/tag/sass/&quot;&gt;Sass&lt;/a&gt;, &lt;a href=&quot;/blog/tag/bourbon/&quot;&gt;Bourbon&lt;/a&gt;, &lt;a href=&quot;/blog/tag/front-end-dev/&quot;&gt;Front End Development&lt;/a&gt;&lt;/p&gt;
-    
-    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
-    
-    
-  &lt;/header&gt;
-
-  
-
-  &lt;article class=&quot;post-content&quot;&gt;
-    &lt;p&gt;Recently Savas Labs &lt;a href=&quot;/2015/06/10/d8-theming-basics.html&quot;&gt;built a custom Drupal 8 theme&lt;/a&gt; using Bourbon for mixins and Neat as our grid framework, applying our favorite parts of SMACSS principles and focusing on creating organized, maintainable code. The result? Fast, easy coding and a relatively lightweight theme.&lt;/p&gt;
+    &lt;article class=&quot;post-content&quot;&gt;
+      &lt;p&gt;Recently Savas Labs &lt;a href=&quot;/2015/06/10/d8-theming-basics.html&quot;&gt;built a custom Drupal 8 theme&lt;/a&gt; using Bourbon for mixins and Neat as our grid framework, applying our favorite parts of SMACSS principles and focusing on creating organized, maintainable code. The result? Fast, easy coding and a relatively lightweight theme.&lt;/p&gt;
 
 &lt;p&gt;In this three-part series I’ll detail:&lt;/p&gt;
 
@@ -365,78 +344,104 @@ sass
 
 &lt;p&gt;Where do we go from here? In &lt;a href=&quot;/2015/08/28/sassy-drupal-theming-part-2.html&quot;&gt;my next post&lt;/a&gt;, I tackle the &lt;code class=&quot;highlighter-rouge&quot;&gt;base&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;components&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts&lt;/code&gt; SMACSS-based directories and the custom &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files they will hold. In a future post I’ll go through some of Savas Labs best practices for writing Sass that can be easily shared amongst team members and maintained in the long run.&lt;/p&gt;
 
-    &lt;hr&gt;
+      &lt;hr&gt;
 
-    
-      &lt;div class=&quot;post-comments&quot;&gt;
+      
+        &lt;div class=&quot;post-comments&quot;&gt;
+
   
     &lt;div class=&quot;expander&quot;&gt;
       &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
+
       &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
+
         &lt;!-- If there are existing comments, output them here. --&gt;
         &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
+
         &lt;!-- New comment form --&gt;
-        &lt;form id=&quot;comment-form&quot;&gt;
+        &lt;form id=&quot;comment-form&quot; class=&quot;comment-form&quot;&gt;
           &lt;h4&gt;Leave a comment&lt;/h4&gt;
-          &lt;div class=&quot;comment-name&quot;&gt;
-            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
+
+          &lt;div class=&quot;comment-form__field comment-form__field--name&quot;&gt;
+            &lt;label class=&quot;comment-form__field__label&quot; for=&quot;name&quot;&gt;Name&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; required&gt;
           &lt;/div&gt;
 
-          &lt;div class=&quot;comment-email&quot;&gt;
-            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
-            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
+          &lt;div class=&quot;comment-form__field comment-form__field--email&quot;&gt;
+            &lt;label class=&quot;comment-form__field__label&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
+            &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; required&gt;
+            &lt;p class=&quot;comment-form__field__helptext&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;
           &lt;/div&gt;
 
-          &lt;p&gt;Comment&lt;/p&gt;
-          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
-          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
+          &lt;div class=&quot;comment-form__field comment-form__field--comment&quot;&gt;
+            &lt;label class=&quot;comment-form__field__label&quot; for=&quot;comment&quot;&gt;Comment&lt;/label&gt;
+            &lt;textarea name=&quot;comment&quot; id=&quot;comment&quot; required&gt;&lt;/textarea&gt;
+            &lt;p class=&quot;comment-form__field__helptext&quot;&gt;Plain text format only please.&lt;/p&gt;
+          &lt;/div&gt;
 
-          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2015/08/21/sassy-drupal-theming-part-1.html&#39; /&gt;
-          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;slug&quot; id=&quot;slug&quot; value=&quot;/2015/08/21/sassy-drupal-theming-part-1.html&quot;&gt;
+          &lt;input type=&quot;text&quot; name=&quot;url&quot; id=&quot;url&quot;&gt;
 
-          &lt;div class=&#39;are-you-human&#39;&gt;
-            &lt;div class=&#39;are-you-human-owl&#39;&gt;
+          &lt;div class=&quot;comment-form__field comment-form__field--nocaptcha&quot;&gt;
+            &lt;div class=&quot;comment-form__field--nocaptcha__image&quot;&gt;
               &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
             &lt;/div&gt;
-            &lt;div class=&#39;are-you-human-field&#39;&gt;
-              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
-              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
-              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
+            &lt;div class=&quot;comment-form__field--nocaptcha__input&quot;&gt;
+              &lt;label class=&quot;comment-form__field__label&quot; for=&quot;nocaptcha&quot;&gt;What type of animal is the Savas Labs logo?&lt;/label&gt;
+              &lt;p class=&quot;comment-form__field__helptext&quot;&gt;Hint: 3 letters long, starts with an &quot;o&quot; and ends with an &quot;l&quot;.&lt;/p&gt;
+              &lt;input type=&quot;text&quot; name=&quot;nocaptcha&quot; id=&quot;nocaptcha&quot; required&gt;
             &lt;/div&gt;
           &lt;/div&gt;
 
-          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Post comment&quot; id=&quot;submit&quot; class=&quot;comment-form__submit&quot;&gt;
         &lt;/form&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+
+      &lt;/div&gt;&lt;!-- comments and comment form --&gt;
+    &lt;/div&gt;&lt;!-- expander --&gt;
   
   &lt;hr&gt;
 &lt;/div&gt;
 
-    
-    
-      &lt;div class=&quot;post-bottom&quot;&gt;
+      
+    &lt;/article&gt;
+  &lt;/div&gt;&lt;!-- post__body --&gt;
+
+  
+    &lt;div class=&quot;post-bottom&quot;&gt;
   &lt;div class=&quot;post-meta&quot;&gt;
-    &lt;h4&gt;About the author&lt;/h4&gt;
 
     
     
-      &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
-        &lt;picture&gt;
+    
+    
+    
+
+    
+      &lt;h4&gt;About the author&lt;/h4&gt;
+    
+
+    
+
+      
+      
+        &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
+          &lt;picture&gt;
     &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-bebfe8.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
     &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-bebfe8.jpg&quot;&gt;
     &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-bebfe8.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Anne Tomasevich&quot; &gt;
   &lt;/picture&gt;
 
-      &lt;/a&gt;
-      &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
-    
+        &lt;/a&gt;
+        &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
+      
+
+      
+      
 
     
-    
-
   &lt;/div&gt;
-    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
+
+  
   &lt;div class=&quot;post-related flex-container&quot;&gt;
     &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
     &lt;div class=&quot;cards&quot;&gt;
@@ -447,7 +452,7 @@ sass
           &lt;div class=&quot;card&quot;&gt;
             &lt;a href=&quot;/2016/11/15/composer-mailchimp-subscriptions-v3-api.html&quot;&gt;
               &lt;div class=&quot;card-header&quot;&gt;
-                  Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules
+                Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Nov 15, 2016&lt;/p&gt;
@@ -463,7 +468,7 @@ sass
           &lt;div class=&quot;card&quot;&gt;
             &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;
               &lt;div class=&quot;card-header&quot;&gt;
-                  Deploying Jekyll to Github Pages with Travis and Gulp
+                Deploying Jekyll to Github Pages with Travis and Gulp
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Oct 25, 2016&lt;/p&gt;
@@ -479,7 +484,7 @@ sass
           &lt;div class=&quot;card&quot;&gt;
             &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;
               &lt;div class=&quot;card-header&quot;&gt;
-                  Optimizing Jekyll Performance with Gulp
+                Optimizing Jekyll Performance with Gulp
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Oct 19, 2016&lt;/p&gt;
@@ -579,8 +584,9 @@ sass
   &lt;/div&gt;
 &lt;/div&gt;
 
-    
-    &lt;div class=&quot;previous-next-links&quot;&gt;
+  
+
+  &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
     
       &lt;a href=&quot;/2015/08/24/drupalcamp-asheville-recap.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; We ate, we hiked, we Drupaled - Drupalcamp Asheville&lt;/a&gt;
@@ -593,10 +599,7 @@ sass
   &lt;/div&gt;
 &lt;/div&gt;
 
-
-  &lt;/article&gt;
-
-&lt;/div&gt;
+&lt;/div&gt;&lt;!-- post --&gt;
 ",
       "author": {
         "@context": "http://schema.org",
@@ -630,48 +633,27 @@ sass
 
 
 &lt;div class=&quot;post&quot;&gt;
-  &lt;header class=&quot;post-header&quot;&gt;
-    &lt;h1 class=&quot;post-title&quot;&gt;Sassy Drupal theming: Setting up Bourbon and Neat&lt;/h1&gt;
+  &lt;div class=&quot;post__body&quot;&gt;
+    &lt;header class=&quot;post-header&quot;&gt;
+      &lt;h1 class=&quot;post-title&quot;&gt;Sassy Drupal theming: Setting up Bourbon and Neat&lt;/h1&gt;
+
+      
+
+&lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
+
+      &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
+      &lt;p&gt;Aug 21, 2015 &lt;/p&gt;&lt;br&gt;
+      &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/theming/&quot;&gt;Theming&lt;/a&gt;, &lt;a href=&quot;/blog/tag/sass/&quot;&gt;Sass&lt;/a&gt;, &lt;a href=&quot;/blog/tag/bourbon/&quot;&gt;Bourbon&lt;/a&gt;, &lt;a href=&quot;/blog/tag/front-end-dev/&quot;&gt;Front End Development&lt;/a&gt;&lt;/p&gt;
+      
+      &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
+      
+      
+    &lt;/header&gt;
 
     
-    
-      
-          &lt;p&gt;By &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;Anne Tomasevich&lt;/a&gt;&lt;/p&gt;
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
 
-    
-    
-      
-    
-
-    &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
-    &lt;p&gt;Aug 21, 2015 &lt;/p&gt;&lt;br&gt;
-    &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/theming/&quot;&gt;Theming&lt;/a&gt;, &lt;a href=&quot;/blog/tag/sass/&quot;&gt;Sass&lt;/a&gt;, &lt;a href=&quot;/blog/tag/bourbon/&quot;&gt;Bourbon&lt;/a&gt;, &lt;a href=&quot;/blog/tag/front-end-dev/&quot;&gt;Front End Development&lt;/a&gt;&lt;/p&gt;
-    
-    &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
-    
-    
-  &lt;/header&gt;
-
-  
-
-  &lt;article class=&quot;post-content&quot;&gt;
-    &lt;p&gt;Recently Savas Labs &lt;a href=&quot;/2015/06/10/d8-theming-basics.html&quot;&gt;built a custom Drupal 8 theme&lt;/a&gt; using Bourbon for mixins and Neat as our grid framework, applying our favorite parts of SMACSS principles and focusing on creating organized, maintainable code. The result? Fast, easy coding and a relatively lightweight theme.&lt;/p&gt;
+    &lt;article class=&quot;post-content&quot;&gt;
+      &lt;p&gt;Recently Savas Labs &lt;a href=&quot;/2015/06/10/d8-theming-basics.html&quot;&gt;built a custom Drupal 8 theme&lt;/a&gt; using Bourbon for mixins and Neat as our grid framework, applying our favorite parts of SMACSS principles and focusing on creating organized, maintainable code. The result? Fast, easy coding and a relatively lightweight theme.&lt;/p&gt;
 
 &lt;p&gt;In this three-part series I’ll detail:&lt;/p&gt;
 
@@ -967,78 +949,104 @@ sass
 
 &lt;p&gt;Where do we go from here? In &lt;a href=&quot;/2015/08/28/sassy-drupal-theming-part-2.html&quot;&gt;my next post&lt;/a&gt;, I tackle the &lt;code class=&quot;highlighter-rouge&quot;&gt;base&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;components&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;layouts&lt;/code&gt; SMACSS-based directories and the custom &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; files they will hold. In a future post I’ll go through some of Savas Labs best practices for writing Sass that can be easily shared amongst team members and maintained in the long run.&lt;/p&gt;
 
-    &lt;hr&gt;
+      &lt;hr&gt;
 
-    
-      &lt;div class=&quot;post-comments&quot;&gt;
+      
+        &lt;div class=&quot;post-comments&quot;&gt;
+
   
     &lt;div class=&quot;expander&quot;&gt;
       &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander-hidden&quot;&gt;Comments!&lt;/a&gt;
+
       &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content&quot;&gt;
+
         &lt;!-- If there are existing comments, output them here. --&gt;
         &lt;div id=&quot;post-comments&quot; class=&quot;post-comments&quot;&gt;&lt;/div&gt;
+
         &lt;!-- New comment form --&gt;
-        &lt;form id=&quot;comment-form&quot;&gt;
+        &lt;form id=&quot;comment-form&quot; class=&quot;comment-form&quot;&gt;
           &lt;h4&gt;Leave a comment&lt;/h4&gt;
-          &lt;div class=&quot;comment-name&quot;&gt;
-            &lt;p&gt;Name&lt;/p&gt; &lt;input type=&#39;text&#39; name=&#39;name&#39; id=&#39;name&#39; required /&gt;&lt;br&gt;
+
+          &lt;div class=&quot;comment-form__field comment-form__field--name&quot;&gt;
+            &lt;label class=&quot;comment-form__field__label&quot; for=&quot;name&quot;&gt;Name&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; required&gt;
           &lt;/div&gt;
 
-          &lt;div class=&quot;comment-email&quot;&gt;
-            &lt;p&gt;Email&lt;/p&gt; &lt;input type=&#39;email&#39; name=&#39;email&#39; id=&#39;email&#39; required /&gt;
-            &lt;p class=&quot;email-disclaimer&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;&lt;br&gt;
+          &lt;div class=&quot;comment-form__field comment-form__field--email&quot;&gt;
+            &lt;label class=&quot;comment-form__field__label&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
+            &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; required&gt;
+            &lt;p class=&quot;comment-form__field__helptext&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;
           &lt;/div&gt;
 
-          &lt;p&gt;Comment&lt;/p&gt;
-          &lt;textarea name=&#39;comment&#39; id=&#39;comment&#39; required&gt;&lt;/textarea&gt;
-          &lt;p class=&quot;hint below-textarea&quot;&gt;Plain text format only please.&lt;/p&gt;
+          &lt;div class=&quot;comment-form__field comment-form__field--comment&quot;&gt;
+            &lt;label class=&quot;comment-form__field__label&quot; for=&quot;comment&quot;&gt;Comment&lt;/label&gt;
+            &lt;textarea name=&quot;comment&quot; id=&quot;comment&quot; required&gt;&lt;/textarea&gt;
+            &lt;p class=&quot;comment-form__field__helptext&quot;&gt;Plain text format only please.&lt;/p&gt;
+          &lt;/div&gt;
 
-          &lt;input type=&#39;hidden&#39; name=&#39;slug&#39; id=&#39;slug&#39; value=&#39;/2015/08/21/sassy-drupal-theming-part-1.html&#39; /&gt;
-          &lt;input type=&#39;text&#39; name=&#39;url&#39; id=&#39;url&#39; /&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;slug&quot; id=&quot;slug&quot; value=&quot;/2015/08/21/sassy-drupal-theming-part-1.html&quot;&gt;
+          &lt;input type=&quot;text&quot; name=&quot;url&quot; id=&quot;url&quot;&gt;
 
-          &lt;div class=&#39;are-you-human&#39;&gt;
-            &lt;div class=&#39;are-you-human-owl&#39;&gt;
+          &lt;div class=&quot;comment-form__field comment-form__field--nocaptcha&quot;&gt;
+            &lt;div class=&quot;comment-form__field--nocaptcha__image&quot;&gt;
               &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
             &lt;/div&gt;
-            &lt;div class=&#39;are-you-human-field&#39;&gt;
-              &lt;p&gt;What type of animal is the Savas Labs logo?&lt;/p&gt;
-              &lt;input type=&#39;text&#39; name=&#39;nocaptcha&#39; id=&#39;nocaptcha&#39; class=&#39;nocaptcha&#39;&gt;
-              &lt;p class=&quot;hint&quot;&gt;Hint: 3 letters long, starts with an &#39;o&#39; and ends with an &#39;l&#39;.&lt;/p&gt;
+            &lt;div class=&quot;comment-form__field--nocaptcha__input&quot;&gt;
+              &lt;label class=&quot;comment-form__field__label&quot; for=&quot;nocaptcha&quot;&gt;What type of animal is the Savas Labs logo?&lt;/label&gt;
+              &lt;p class=&quot;comment-form__field__helptext&quot;&gt;Hint: 3 letters long, starts with an &quot;o&quot; and ends with an &quot;l&quot;.&lt;/p&gt;
+              &lt;input type=&quot;text&quot; name=&quot;nocaptcha&quot; id=&quot;nocaptcha&quot; required&gt;
             &lt;/div&gt;
           &lt;/div&gt;
 
-          &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; id=&#39;submit&#39; class=&quot;submit-comment&quot;/&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Post comment&quot; id=&quot;submit&quot; class=&quot;comment-form__submit&quot;&gt;
         &lt;/form&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+
+      &lt;/div&gt;&lt;!-- comments and comment form --&gt;
+    &lt;/div&gt;&lt;!-- expander --&gt;
   
   &lt;hr&gt;
 &lt;/div&gt;
 
-    
-    
-      &lt;div class=&quot;post-bottom&quot;&gt;
+      
+    &lt;/article&gt;
+  &lt;/div&gt;&lt;!-- post__body --&gt;
+
+  
+    &lt;div class=&quot;post-bottom&quot;&gt;
   &lt;div class=&quot;post-meta&quot;&gt;
-    &lt;h4&gt;About the author&lt;/h4&gt;
 
     
     
-      &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
-        &lt;picture&gt;
+    
+    
+    
+
+    
+      &lt;h4&gt;About the author&lt;/h4&gt;
+    
+
+    
+
+      
+      
+        &lt;a href=&quot;/team/anne-tomasevich&quot;&gt;
+          &lt;picture&gt;
     &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-bebfe8.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
     &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-bebfe8.jpg&quot;&gt;
     &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-bebfe8.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Anne Tomasevich&quot; &gt;
   &lt;/picture&gt;
 
-      &lt;/a&gt;
-      &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
-    
+        &lt;/a&gt;
+        &lt;p class=&quot;post-author-desc&quot;&gt;Anne is a developer at Savas Labs, focused on front-end technologies and user experience.&lt;/p&gt;
+      
+
+      
+      
 
     
-    
-
   &lt;/div&gt;
-    &lt;!-- Once we have more content, change this to posts related by tag --&gt;
+
+  
   &lt;div class=&quot;post-related flex-container&quot;&gt;
     &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
     &lt;div class=&quot;cards&quot;&gt;
@@ -1049,7 +1057,7 @@ sass
           &lt;div class=&quot;card&quot;&gt;
             &lt;a href=&quot;/2016/11/15/composer-mailchimp-subscriptions-v3-api.html&quot;&gt;
               &lt;div class=&quot;card-header&quot;&gt;
-                  Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules
+                Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Nov 15, 2016&lt;/p&gt;
@@ -1065,7 +1073,7 @@ sass
           &lt;div class=&quot;card&quot;&gt;
             &lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;
               &lt;div class=&quot;card-header&quot;&gt;
-                  Deploying Jekyll to Github Pages with Travis and Gulp
+                Deploying Jekyll to Github Pages with Travis and Gulp
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Oct 25, 2016&lt;/p&gt;
@@ -1081,7 +1089,7 @@ sass
           &lt;div class=&quot;card&quot;&gt;
             &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;
               &lt;div class=&quot;card-header&quot;&gt;
-                  Optimizing Jekyll Performance with Gulp
+                Optimizing Jekyll Performance with Gulp
               &lt;/div&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p&gt;Oct 19, 2016&lt;/p&gt;
@@ -1181,8 +1189,9 @@ sass
   &lt;/div&gt;
 &lt;/div&gt;
 
-    
-    &lt;div class=&quot;previous-next-links&quot;&gt;
+  
+
+  &lt;div class=&quot;previous-next-links&quot;&gt;
   &lt;div class=&quot;next&quot;&gt;
     
       &lt;a href=&quot;/2015/08/24/drupalcamp-asheville-recap.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; We ate, we hiked, we Drupaled - Drupalcamp Asheville&lt;/a&gt;
@@ -1195,10 +1204,7 @@ sass
   &lt;/div&gt;
 &lt;/div&gt;
 
-
-  &lt;/article&gt;
-
-&lt;/div&gt;
+&lt;/div&gt;&lt;!-- post --&gt;
 ",
       "url": "http://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html"
     }
@@ -1220,7 +1226,7 @@ sass
     loadCSS('/assets/styles/main.css');
     loadCSS('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro');
   </script>
-  <style>img,legend{border:0}pre,textarea{overflow:auto}.flash-alert a,.flash-error a,.flash-notice a,.flash-success a{text-decoration:underline}.table-minimal,table{border-spacing:0;width:100%}.card,.fa-stack,sub,sup{position:relative}html{box-sizing:border-box;font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}*,::after,::before{box-sizing:inherit}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}legend{padding:0}textarea{resize:vertical}.case-studies__case-study .case-study__description a,.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link{border:2px solid #fff;border-radius:3px;color:#fff;font-family:"Roboto Condensed",Arial Narrow,Arial,sans-serif;padding:.5em 1em;transition:all .2s ease-in-out}.flash-alert,.flash-alert a,.flash-alert a:focus,.flash-alert a:hover,.flash-error,.flash-error a,.flash-error a:focus,.flash-error a:hover{color:rgba(0,0,0,.2)}.flash-alert,.flash-error,.flash-notice,.flash-success{padding:.75em;text-align:center;display:block;font-weight:600;margin-bottom:.75em}.case-studies__case-study .case-study__description a:focus,.case-studies__case-study .case-study__description a:hover,.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link:focus,.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link:hover{background-color:#0f7993}.flash-alert{background-color:rgba(242,163,36,.2)}.flash-error{background-color:rgba(158,2,59,.2)}.flash-notice{background-color:rgba(246,67,62,.2);color:rgba(2,0,0,.2)}.flash-notice a,.flash-notice a:focus,.flash-notice a:hover,.flash-success,.flash-success a,.flash-success a:focus,.flash-success a:hover{color:rgba(0,0,0,.2)}.flash-success{background-color:rgba(5,92,43,.2)}fieldset,p{margin:0 0 .75em}dl dd,ol,ul{margin:0}td,th{padding:.75em 0}.table-minimal th,th{text-align:left}.navigation a,a{text-decoration:none}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-webkit-font-smoothing:antialiased;background-color:#0a5365;border-radius:3px;border:none;color:#fff;cursor:pointer;display:inline-block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;font-weight:600;line-height:1;padding:.75em 1em;text-decoration:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;white-space:nowrap}button:focus,button:hover,input[type=button]:focus,input[type=button]:hover,input[type=reset]:focus,input[type=reset]:hover,input[type=submit]:focus,input[type=submit]:hover{background-color:#031a1f;color:#fff}button:disabled,input[type=button]:disabled,input[type=reset]:disabled,input[type=submit]:disabled{cursor:not-allowed;opacity:.5}fieldset{background-color:#f7f7f7;border:1px solid #ddd;padding:1.5em}input,label,select{display:block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em}label{font-weight:600;margin-bottom:.375em}label.required::after{content:"*"}label abbr{display:none}input[type=color],input[type=date],input[type=datetime],input[type=datetime-local],input[type=email],input[type=month],input[type=password],input[type=tel],input[type=text],input[type=time],input[type=url],input[type=week],input[type=number],input[type=search],select[multiple=multiple],textarea{background-color:#fff;border:1px solid #ddd;border-radius:3px;box-shadow:inset 0 1px 3px rgba(0,0,0,.06);box-sizing:border-box;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;margin-bottom:.75em;padding:.5em;transition:border-color;width:100%}input[type=color]:hover,input[type=date]:hover,input[type=datetime]:hover,input[type=datetime-local]:hover,input[type=email]:hover,input[type=month]:hover,input[type=password]:hover,input[type=tel]:hover,input[type=text]:hover,input[type=time]:hover,input[type=url]:hover,input[type=week]:hover,input[type=number]:hover,input[type=search]:hover,select[multiple=multiple]:hover,textarea:hover{border-color:#c4c4c4}input[type=color]:focus,input[type=date]:focus,input[type=datetime]:focus,input[type=datetime-local]:focus,input[type=email]:focus,input[type=month]:focus,input[type=password]:focus,input[type=tel]:focus,input[type=text]:focus,input[type=time]:focus,input[type=url]:focus,input[type=week]:focus,input[type=number]:focus,input[type=search]:focus,select[multiple=multiple]:focus,textarea:focus{border-color:#0a5365;box-shadow:inset 0 1px 3px rgba(0,0,0,.06),0 0 5px rgba(55,112,192,.7);outline:0}hr,td{border-bottom:1px solid #ddd}input[type=search]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}input[type=checkbox],input[type=radio]{display:inline;margin-right:.375em}input[type=file]{padding-bottom:.75em;width:100%}select{margin-bottom:1.5em;max-width:100%;width:auto}ol,ul{padding:0}dl{margin-bottom:.75em}dl dt{font-weight:700;margin-top:.75em}table{-ms-font-feature-settings:"kern","liga","tnum";font-feature-settings:"kern","liga","tnum";border-collapse:collapse;margin:.75em 0;table-layout:fixed}th{border-bottom:1px solid #b7b7b7;font-weight:600}td .label{font-weight:700}td,th,tr{vertical-align:middle}body{-ms-font-feature-settings:"kern","liga","pnum";font-feature-settings:"kern","liga","pnum";-webkit-font-smoothing:antialiased;font-size:1em;line-height:1.5;color:#14133b;font-family:"Roboto Condensed",Arial Narrow,Arial,sans-serif}h1,h2,h3,h4,h5,h6{line-height:1.2;margin:0 0 .75em;color:#9e023b;font-family:"PT Serif",Georgia,serif;font-weight:800}a{color:#0a5365;transition:all .1s linear}.card,.card .card-header,.card .card-image img,.team-card{transition:all .2s ease-in-out}a:active,a:focus,a:hover{color:#031a1f}a:active,a:focus{outline:0}hr{box-sizing:content-box;height:0;border-left:none;border-right:none;border-top:none}img,picture{margin:0;max-width:100%}.post,.wrapper{max-width:70em}.table-minimal{border-collapse:separate}.table-minimal td{line-height:1.5}.table-minimal thead th{background-color:#fff;border-bottom:0;padding:.75em 1em}.table-minimal tbody{background-color:#fff}.table-minimal tbody td{border-bottom:0;border-top:1px solid #ddd;padding:.75em 1em}.table-minimal tbody td button{display:inline-block;font-size:.7em;line-height:1.5;margin-bottom:.3em;margin-right:.5em;outline:0;padding:.3em 1em;width:100%}@media screen and (min-width:40em){.table-minimal tbody td button{margin-bottom:0;width:auto}}.table-minimal tbody tr:hover>td,.table-minimal tbody tr:hover>th{background-color:#fafafa}.table-minimal tbody tr:first-child td{border-top:2px solid #ddd}.table-minimal--contact p{display:none}.table-minimal--contact .table-minimal--contact__label{width:30%}@media screen and (min-width:28.125em){.table-minimal--contact p{display:inline}.table-minimal--contact .table-minimal--contact__label{width:50%}}.portfolio h2,.portfolio h3,.portfolio h4,.portfolio h5,.portfolio h6,.post h2,.post h3,.post h4,.post h5,.post h6{margin-top:1.5em}h1{font-size:250%}h2{font-size:200%}h3{font-size:160%}h4{font-size:140%}h5{font-size:120%}h6{font-size:100%}a:focus,a:hover{color:#0f7993}.post li a,p a{border-bottom:.1em solid rgba(10,83,101,.1)}.post li a:focus,.post li a:hover,p a:focus,p a:hover{border-bottom:.1em solid #0f7993}.name-description p,.page-description,.portfolio,.post,.services__service p,.team-member p{color:#14133b;font-size:1.2em}ul{list-style-type:square}ol{list-style-type:decimal}ol,ul{margin-bottom:1em;margin-left:2em}ol ol,ol ol li,ol ul,ol ul li,ul ol,ul ol li,ul ul,ul ul li{font-size:1em}hr{clear:both;margin:3em 0}blockquote{background-color:#f7f7f7;border-left:10px solid rgba(20,19,59,.4);border-radius:0 9px 9px 0;font-style:italic;margin:2em 0;padding:1em;quotes:'\201C' '\201D'}blockquote::before{color:rgba(20,19,59,.4);content:open-quote;font-family:'Source Sans Pro',sans-serif;font-size:4em;line-height:.1em;margin-right:.25em;vertical-align:-.4em}blockquote p{display:inline}.callout{background-color:#14133b;border-left:solid 1em #9e023b;border-radius:6px;margin:1.5em auto;padding:1em;width:100%}.callout p{color:#fff;font-size:1.5em;margin-bottom:0}.wrapper{margin-left:auto;margin-right:auto;padding:3em 1em;vertical-align:baseline}.wrapper::after{clear:both;content:"";display:table}@media screen and (min-width:70em){.wrapper{padding:3em 0}}.flex-container{float:left;display:block;margin-right:2.35765%;width:100%}.flex-container:last-child{margin-right:0}.page-description,.view-all-link,header{text-align:center}.page-description{margin-bottom:2em}@media screen and (min-width:53.75em){.column-8{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.column-8:last-child{margin-right:0}}.view-more-link{font-size:1.2em;text-align:center}.cards{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}.card{flex-basis:15em;-ms-flex-preferred-size:15em;-moz-flex-grow:1;flex-grow:1;-ms-flex-positive:1;background-color:#f7f7f7;border:1px solid #ddd;border-radius:3px;box-shadow:0 2px 4px #e6e6e6;cursor:auto;margin:0 1em 1.5em}.card .card-image{max-height:200px;overflow:hidden}.card .card-image img{background:#ddd;border-top-left-radius:3px;border-top-right-radius:3px;width:100%}.card .card-header{background-color:#f7f7f7;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;font-weight:700;line-height:1.5em;padding:.5em .75em}.card .fa-comment-o{margin-right:4px}.card .card-copy{color:#14133b;font-size:.9em;line-height:1.5em;padding:.75em}.card .card-copy p{margin:0 0 .75em}.card:focus,.card:hover{background-color:#fff}.card:focus .card-image img,.card:hover .card-image img{background:#eaeaea}.card:focus .card-header,.card:hover .card-header{background-color:#fff}.card:active,.card:active .card-header{background-color:#f7f7f7}.team-card{flex-basis:21em;-ms-flex-preferred-size:21em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.team-card .card-image{max-height:350px;overflow:hidden}.team-card .card-image img{position:relative;top:-50px}.team-card .card-header{display:inline-block;font-size:1.1em;padding:.5em .75em 0}.team-card .card-copy{border-top:1px solid #dcdcdc;font-size:1em}.team-card .card-title{display:inline-block;float:right;font-size:.8em;line-height:2em;padding:.75em .75em 0;text-transform:uppercase}.blog-card{flex-basis:20em;-ms-flex-preferred-size:20em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.case-studies{margin:3em 0}.case-studies__case-study{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;background-position:top center;background-repeat:no-repeat;background-size:cover;margin:1.5em 0}.fa,.fa-stack{display:inline-block}.case-studies__case-study a,.case-studies__case-study h3,.case-studies__case-study p{color:#fff;margin-bottom:0}.case-studies__case-study .case-study__description,.case-studies__case-study .case-study__title{padding:1.5em}@media screen and (min-width:40em){.case-studies__case-study{-webkit-box-lines:single;-moz-box-lines:single;box-lines:single;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.case-studies__case-study .case-study__description,.case-studies__case-study .case-study__title{padding:3em 1.5em}}.case-studies__case-study .case-study__title{padding-bottom:0;text-align:center}.case-studies__case-study .case-study__title h3{font-size:200%}@media screen and (min-width:40em){.case-studies__case-study .case-study__title{padding-bottom:6em;width:40%}.case-studies__case-study .case-study__description{width:60%}}.case-studies__case-study .case-study__description a,.case-studies__case-study .case-study__description p{font-size:1.25em;font-weight:700;margin-bottom:0}.case-studies__case-study .case-study__description a{display:inline-block;margin-top:1.5em}.case-studies__case-study .case-study__description a i{margin-left:.5em}.fa{font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-15%}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-stack{width:2em;height:2em;line-height:2em;vertical-align:middle}.fa-stack-1x,.fa-stack-2x{position:absolute;left:0;width:100%;text-align:center}.fa-stack-1x{line-height:inherit}.fa-stack-2x{font-size:2em}.fa-inverse{color:#fff}.fa-angle-double-down:before{content:""}.fa-building-o:before{content:""}.fa-circle:before{content:""}.fa-comment:before{content:""}.fa-comment-o:before{content:""}.fa-drupal:before{content:""}.fa-envelope-o:before{content:""}.fa-file-text:before{content:""}.fa-github:before{content:""}.fa-globe:before{content:""}.fa-linkedin:before{content:""}.fa-long-arrow-right:before{content:""}.fa-phone:before{content:""}.fa-stack-exchange:before{content:""}.fa-tags:before{content:""}.fa-twitter:before{content:""}.home__cover{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;background:url(/assets/img/home-cover-image/home-cover-code-400.png) center center no-repeat #14133b;background-size:cover;height:88vh;text-align:center}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-800.png)}}@media screen and (min-width:25em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-640.png)}}@media only screen and (min-width:25em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:25em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:25em) and (min-resolution:192dpi),only screen and (min-width:25em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1280.png)}}@media screen and (min-width:40em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-860.png);height:78vh}}@media only screen and (min-width:40em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:40em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:40em) and (min-resolution:192dpi),only screen and (min-width:40em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1720.png)}}@media screen and (min-width:53.75em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1120.png);height:88vh}}@media only screen and (min-width:53.75em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min-resolution:192dpi),only screen and (min-width:53.75em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-2240.png)}}@media screen and (min-width:70em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1200.png)}}@media only screen and (min-width:70em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:70em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:70em) and (min-resolution:192dpi),only screen and (min-width:70em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code.png)}}.home__cover .home__cover__heading,.home__cover .home__cover__site-description{margin:0}.home__cover .home__cover__heading{font-size:2em;margin-top:30px}.home__cover hr{border:2px solid #0a5365;border-radius:.5px;margin:10px auto 15px;width:170px}.home__cover .home__cover__site-description{color:#fff;font-size:1.5em;line-height:1.3em;width:230px}.home__cover i{color:#0a5365;font-size:2.8em;padding-top:20px}.navigation{background-color:#0a5365;min-height:70px;width:100%;z-index:999}.navigation .navigation-wrapper{max-width:70em;margin-left:auto;margin-right:auto;padding:25px 0;position:relative;z-index:9999}.navigation .navigation-wrapper::after{clear:both;content:"";display:table}.navigation .logo{background-color:#14133b;border-radius:6px;display:inline-block;float:left;margin:0 0 0 1em;max-height:70px;padding-left:1em;padding-right:1em}@media screen and (min-width:40em){.navigation .logo{float:none;margin:0 auto}}@media screen and (min-width:53.75em){.navigation .logo{float:left;margin:0 0 0 1em}}.navigation .logo img{max-height:70px;padding:.8em 0}.navigation .navigation-menu-button{color:rgba(255,255,255,.7);display:block;float:right;font-weight:700;line-height:70px;margin:0;padding-right:1em;text-transform:uppercase}.navigation .navigation-menu-button:focus,.navigation .navigation-menu-button:hover{color:#fff}.navigation nav{float:none;min-height:70px;z-index:9999999}@media screen and (min-width:40em){.navigation .navigation-menu-button{display:none}.navigation nav{clear:left;margin:0 auto}}@media screen and (min-width:53.75em){.navigation nav{clear:none;float:right}}.navigation .navigation-menu{clear:both;display:none;margin:0 auto;overflow:visible;padding:0;-webkit-transform-style:preserve-3d;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .navigation-menu{display:inline;margin:0;padding:0}}.navigation .navigation-menu.show{display:block}.navigation .nav-link{background:#0a5365;display:block;line-height:70px;overflow:hidden;padding-right:.8em;text-align:right;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .nav-link{background:0 0;display:inline;line-height:70px;text-decoration:none;width:auto}.navigation .nav-link a{padding-right:.5em}}.navigation .nav-link a{color:rgba(255,255,255,.7);display:inline-block;font-size:1.1em;font-weight:400;text-transform:uppercase}@media screen and (min-width:53.75em){.navigation .nav-link a{padding-right:1em}}.navigation .active-nav-item a,.navigation .nav-link a:focus,.navigation .nav-link a:hover{color:#fff}.navigation .more.nav-link{overflow:visible;padding-right:0}@media screen and (min-width:40em){.navigation .more.nav-link{padding-right:.8em;position:relative}.navigation .more.nav-link>ul>li:first-child a{padding-top:1em}.navigation .more.nav-link>a{margin-right:1em}}.navigation .more.nav-link a{padding-right:.8em}.navigation .more.nav-link>a{padding-right:.6em;position:relative}.navigation .more.nav-link>a::after{position:absolute;top:auto;right:-.4em;bottom:auto;left:auto;color:rgba(255,255,255,.7)}@media screen and (min-width:40em){.navigation .more.nav-link>a::after{content:'\25BE'}.navigation .submenu{left:-1em;position:absolute;top:1.5em}}.post::after,.team-member::after{content:"";clear:both}.navigation .more.nav-link:focus>.submenu,.navigation .more.nav-link:hover>.submenu{display:block}.navigation .submenu{display:none;padding-left:0}.navigation .submenu li{display:block;padding-right:0}.navigation .submenu li a{background-color:#094857;display:inline-block;text-align:right;width:100%}@media screen and (min-width:40em){.navigation .submenu li{line-height:53.85px}.navigation .submenu li:first-child>a{border-top-left-radius:3px;border-top-right-radius:3px}.navigation .submenu li:last-child>a{border-bottom-left-radius:3px;border-bottom-right-radius:3px;padding-bottom:.7em}.navigation .submenu li a{background-color:#0a5365;padding-left:1em;text-align:left;width:10em}}.post{margin-left:auto;margin-right:auto}.post::after{display:table}@media screen and (min-width:53.75em){.post{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.post:last-child{margin-right:0}}.post .post-header{margin-bottom:1.875em}.post .post-header p{display:inline}.post .post-header i{color:#14133b;margin-right:5px}.case-study .case-study__header .case-study__header__text h1,.case-study .case-study__header .case-study__header__text h3,.case-study .case-study__header .case-study__header__text li,.case-study .case-study__header .case-study__header__text p,.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study a,.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study a:focus,.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study a:hover{color:#fff}.post .post-header .centerdot{font-weight:700}.post .post-header .post-featured-image{margin:3em 0}.post .disclaimer{background-color:rgba(158,2,59,.1);border:1px solid rgba(158,2,59,.3);border-radius:5px;margin-bottom:1.875em;padding:1em}.post .disclaimer h5{margin-top:0}.post .twitter-tweet{margin:3em auto!important}.post .table-minimal{margin-bottom:3em;margin-top:3em}.post ul ul{margin-bottom:0}.blog-image,.blog-image-large,.blog-image-xl{background:#dcdcdc;box-shadow:0 2px 4px #c3c3c3;display:block;margin:1em auto;max-width:250px}@media screen and (min-width:40em){.blog-image.wrap-right,.wrap-right.blog-image-large,.wrap-right.blog-image-xl{float:left;margin-right:40px}.blog-image.wrap-left,.wrap-left.blog-image-large,.wrap-left.blog-image-xl{float:right;margin-left:40px}}.blog-image p,.blog-image-large p,.blog-image-xl p{font-size:smaller;font-weight:700;text-align:center}.blog-image-large{max-width:500px;width:100%}.blog-image-xl{height:auto;max-width:737px;width:100%}.caption{display:block;font-size:.9em;margin:0 auto 2em;text-align:center}.services{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap}.services .services__service{margin-bottom:3em}.services .services__service .services__service__icon{float:left}.services .services__service p{display:inline;margin:0}@media screen and (min-width:53.75em){.services--main .services__service{margin-bottom:0;padding:1.5em;width:50%}}.services--main .services__service:last-child{margin-bottom:0}.services--main .services__service .services__service__icon{margin-right:1em}.tag h2{margin-bottom:1em;text-align:center}.tag .view-more-link{margin-top:1.5em}.tag .view-more-link .fa-arrow-right{margin-left:.25em}.tag__related-case-studies{overflow:hidden}.tag__related-case-studies .tag__related-case-studies__content{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap}.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study{flex-basis:20em;-ms-flex-preferred-size:20em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0;margin:0 .75em 1.5em;text-align:center}.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study h3{margin:0 auto;padding:3em 1.5em}.tag__related-posts{margin-top:3em;overflow:hidden}.team-member{max-width:70em;margin-left:auto;margin-right:auto}.team-member::after{display:table}@media screen and (min-width:40em){.team-member{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.team-member:last-child{margin-right:0}}.team-member .team-header img{border-radius:3px;max-width:100%;width:350px}.team-member .team-links{margin:1em auto 3em;text-align:center}.team-member .team-links li{display:inline-block;list-style-type:none;min-width:45%;padding:0 .75em}.team-member .fa-file-text{font-size:13px}.associations{clear:both}.page-work h2{text-align:center}.page-work .case-studies{clear:both}.page-work .client-logos{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:3em}.page-work .client-logos .client-logos__logo{flex-basis:15em;-ms-flex-preferred-size:15em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0;margin:0 0 2em;padding:.5em;text-align:center}@media screen and (min-width:30em){.page-work .client-logos .client-logos__logo{margin:0 1em 2em}}.case-study{clear:both}.case-study .case-study__header{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:distribute;-moz-justify-content:space-around;-ms-justify-content:space-around;-o-justify-content:space-around;justify-content:space-around;-ms-flex-pack:distribute;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;background-position:top center;background-repeat:no-repeat;background-size:cover;height:88vh;min-height:320px}@media screen and (min-width:40em){.team-member .team-links{width:60%}.case-study .case-study__header{height:78vh}}@media screen and (min-width:53.75em){.team-member .team-links{width:100%}.team-member .team-links li{min-width:1%}.case-study .case-study__header{height:88vh}}.case-study .case-study__header .case-study__header__text{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;padding:1em}@media screen and (min-width:46.875em){.case-study .case-study__header .case-study__header__text{box-orient:horizontal;-moz-flex-direction:row;flex-direction:row;-ms-flex-direction:row;width:90%}}@media screen and (min-width:53.75em){.case-study .case-study__header .case-study__header__text{width:80%}}.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{font-size:1.1em;font-weight:700}@media screen and (min-width:46.875em){.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{font-size:1.25em}.case-study .case-study__header .case-study__header__text .case-study__header__text--left{border-right:solid 2px #fff;padding-right:1.5em}}.case-study .case-study__header .case-study__header__text .case-study__header__text--left h1{font-size:2em;margin-bottom:1em}.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link{display:inline-block;margin-top:1.5em}.case-study .case-study__header .case-study__header__text .case-study__header__text--right{display:none}@media screen and (min-width:46.875em){.case-study .case-study__header .case-study__header__text .case-study__header__text--left h1{font-size:2.5em}.case-study .case-study__header .case-study__header__text .case-study__header__text--right{flex-basis:280px;-ms-flex-preferred-size:280px;flex-shrink:0;-ms-flex-negative:0;display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;padding:0 0 0 1.5em}.case-study .case-study__header .case-study__header__text .case-study__header__text--right ul{font-style:italic;font-weight:700}}.case-study .wrapper{padding:0}</style>
+  <style>img,legend{border:0}pre,textarea{overflow:auto}.flash-alert a,.flash-error a,.flash-notice a,.flash-success a{text-decoration:underline}.table-minimal,table{border-spacing:0;width:100%}.card,.fa-stack,sub,sup{position:relative}html{box-sizing:border-box;font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}*,::after,::before{box-sizing:inherit}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}legend{padding:0}textarea{resize:vertical}.case-studies__case-study .case-study__description a,.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link{border:2px solid #fff;border-radius:3px;color:#fff;font-family:"Roboto Condensed",Arial Narrow,Arial,sans-serif;padding:.5em 1em;transition:all .2s ease-in-out}.flash-alert,.flash-alert a,.flash-alert a:focus,.flash-alert a:hover,.flash-error,.flash-error a,.flash-error a:focus,.flash-error a:hover{color:rgba(0,0,0,.2)}.flash-alert,.flash-error,.flash-notice,.flash-success{padding:.75em;text-align:center;display:block;font-weight:600;margin-bottom:.75em}.case-studies__case-study .case-study__description a:focus,.case-studies__case-study .case-study__description a:hover,.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link:focus,.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link:hover{background-color:#0f7993}.flash-alert{background-color:rgba(242,163,36,.2)}.flash-error{background-color:rgba(158,2,59,.2)}.flash-notice{background-color:rgba(246,67,62,.2);color:rgba(2,0,0,.2)}.flash-notice a,.flash-notice a:focus,.flash-notice a:hover,.flash-success,.flash-success a,.flash-success a:focus,.flash-success a:hover{color:rgba(0,0,0,.2)}.flash-success{background-color:rgba(5,92,43,.2)}fieldset,p{margin:0 0 .75em}dl dd,ol,ul{margin:0}td,th{padding:.75em 0}.table-minimal th,th{text-align:left}.navigation a,a{text-decoration:none}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-webkit-font-smoothing:antialiased;background-color:#0a5365;border-radius:3px;border:none;color:#fff;cursor:pointer;display:inline-block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;font-weight:600;line-height:1;padding:.75em 1em;text-decoration:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;white-space:nowrap}button:focus,button:hover,input[type=button]:focus,input[type=button]:hover,input[type=reset]:focus,input[type=reset]:hover,input[type=submit]:focus,input[type=submit]:hover{background-color:#031a1f;color:#fff}button:disabled,input[type=button]:disabled,input[type=reset]:disabled,input[type=submit]:disabled{cursor:not-allowed;opacity:.5}fieldset{background-color:#f7f7f7;border:1px solid #ddd;padding:1.5em}input,label,select{display:block;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em}label{font-weight:600;margin-bottom:.375em}label.required::after{content:"*"}label abbr{display:none}input[type=color],input[type=date],input[type=datetime],input[type=datetime-local],input[type=email],input[type=month],input[type=password],input[type=tel],input[type=text],input[type=time],input[type=url],input[type=week],input[type=number],input[type=search],select[multiple=multiple],textarea{background-color:#fff;border:1px solid #ddd;border-radius:3px;box-shadow:inset 0 1px 3px rgba(0,0,0,.06);box-sizing:border-box;font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:1em;margin-bottom:.75em;padding:.5em;transition:border-color;width:100%}input[type=color]:hover,input[type=date]:hover,input[type=datetime]:hover,input[type=datetime-local]:hover,input[type=email]:hover,input[type=month]:hover,input[type=password]:hover,input[type=tel]:hover,input[type=text]:hover,input[type=time]:hover,input[type=url]:hover,input[type=week]:hover,input[type=number]:hover,input[type=search]:hover,select[multiple=multiple]:hover,textarea:hover{border-color:#c4c4c4}input[type=color]:focus,input[type=date]:focus,input[type=datetime]:focus,input[type=datetime-local]:focus,input[type=email]:focus,input[type=month]:focus,input[type=password]:focus,input[type=tel]:focus,input[type=text]:focus,input[type=time]:focus,input[type=url]:focus,input[type=week]:focus,input[type=number]:focus,input[type=search]:focus,select[multiple=multiple]:focus,textarea:focus{border-color:#0a5365;box-shadow:inset 0 1px 3px rgba(0,0,0,.06),0 0 5px rgba(55,112,192,.7);outline:0}hr,td{border-bottom:1px solid #ddd}input[type=search]{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}input[type=checkbox],input[type=radio]{display:inline;margin-right:.375em}input[type=file]{padding-bottom:.75em;width:100%}select{margin-bottom:1.5em;max-width:100%;width:auto}ol,ul{padding:0}dl{margin-bottom:.75em}dl dt{font-weight:700;margin-top:.75em}table{-ms-font-feature-settings:"kern","liga","tnum";font-feature-settings:"kern","liga","tnum";border-collapse:collapse;margin:.75em 0;table-layout:fixed}th{border-bottom:1px solid #b7b7b7;font-weight:600}td .label{font-weight:700}td,th,tr{vertical-align:middle}body{-ms-font-feature-settings:"kern","liga","pnum";font-feature-settings:"kern","liga","pnum";-webkit-font-smoothing:antialiased;font-size:1em;line-height:1.5;color:#14133b;font-family:"Roboto Condensed",Arial Narrow,Arial,sans-serif}h1,h2,h3,h4,h5,h6{line-height:1.2;margin:0 0 .75em;color:#9e023b;font-family:"PT Serif",Georgia,serif;font-weight:800}a{color:#0a5365;transition:all .1s linear}.card,.card .card-header,.card .card-image img,.team-card{transition:all .2s ease-in-out}a:active,a:focus,a:hover{color:#031a1f}a:active,a:focus{outline:0}hr{box-sizing:content-box;height:0;border-left:none;border-right:none;border-top:none}img,picture{margin:0;max-width:100%}.table-minimal{border-collapse:separate}.table-minimal td{line-height:1.5}.table-minimal thead th{background-color:#fff;border-bottom:0;padding:.75em 1em}.table-minimal tbody{background-color:#fff}.table-minimal tbody td{border-bottom:0;border-top:1px solid #ddd;padding:.75em 1em}.table-minimal tbody td button{display:inline-block;font-size:.7em;line-height:1.5;margin-bottom:.3em;margin-right:.5em;outline:0;padding:.3em 1em;width:100%}@media screen and (min-width:40em){.table-minimal tbody td button{margin-bottom:0;width:auto}}.table-minimal tbody tr:hover>td,.table-minimal tbody tr:hover>th{background-color:#fafafa}.table-minimal tbody tr:first-child td{border-top:2px solid #ddd}.table-minimal--contact p{display:none}.table-minimal--contact .table-minimal--contact__label{width:30%}@media screen and (min-width:28.125em){.table-minimal--contact p{display:inline}.table-minimal--contact .table-minimal--contact__label{width:50%}}.portfolio h2,.portfolio h3,.portfolio h4,.portfolio h5,.portfolio h6,.post h2,.post h3,.post h4,.post h5,.post h6{margin-top:1.5em}h1{font-size:250%}h2{font-size:200%}h3{font-size:160%}h4{font-size:140%}h5{font-size:120%}h6{font-size:100%}a:focus,a:hover{color:#0f7993}.post li a,p a{border-bottom:.1em solid rgba(10,83,101,.1)}.post li a:focus,.post li a:hover,p a:focus,p a:hover{border-bottom:.1em solid #0f7993}.name-description p,.page-description,.portfolio,.post,.services__service p,.team-member p{color:#14133b;font-size:1.2em}ul{list-style-type:square}ol{list-style-type:decimal}ol,ul{margin-bottom:1em;margin-left:2em}ol ol,ol ol li,ol ul,ol ul li,ul ol,ul ol li,ul ul,ul ul li{font-size:1em}hr{clear:both;margin:3em 0}blockquote{background-color:#f7f7f7;border-left:10px solid rgba(20,19,59,.4);border-radius:0 9px 9px 0;font-style:italic;margin:2em 0;padding:1em;quotes:'\201C' '\201D'}blockquote::before{color:rgba(20,19,59,.4);content:open-quote;font-family:'Source Sans Pro',sans-serif;font-size:4em;line-height:.1em;margin-right:.25em;vertical-align:-.4em}blockquote p{display:inline}.callout{background-color:#14133b;border-left:solid 1em #9e023b;border-radius:6px;margin:1.5em auto;padding:1em;width:100%}.callout p{color:#fff;font-size:1.5em;margin-bottom:0}label{font-family:"Roboto Condensed",Arial Narrow,Arial,sans-serif}.wrapper{margin-left:auto;margin-right:auto;max-width:70em;padding:3em 1em;vertical-align:baseline}.wrapper::after{clear:both;content:"";display:table}@media screen and (min-width:70em){.wrapper{padding:3em 0}}.flex-container{float:left;display:block;margin-right:2.35765%;width:100%}.flex-container:last-child{margin-right:0}.page-description,.view-all-link,header{text-align:center}.page-description{margin-bottom:2em}@media screen and (min-width:53.75em){.column-8{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.column-8:last-child{margin-right:0}}.view-more-link{font-size:1.2em;text-align:center}.cards{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center}.card{flex-basis:15em;-ms-flex-preferred-size:15em;-moz-flex-grow:1;flex-grow:1;-ms-flex-positive:1;background-color:#f7f7f7;border:1px solid #ddd;border-radius:3px;box-shadow:0 2px 4px #e6e6e6;cursor:auto;margin:0 1em 1.5em}.card .card-image{max-height:200px;overflow:hidden}.card .card-image img{background:#ddd;border-top-left-radius:3px;border-top-right-radius:3px;width:100%}.card .card-header{background-color:#f7f7f7;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;font-weight:700;line-height:1.5em;padding:.5em .75em}.card .fa-comment-o{margin-right:4px}.card .card-copy{color:#14133b;font-size:.9em;line-height:1.5em;padding:.75em}.card .card-copy p{margin:0 0 .75em}.card:focus,.card:hover{background-color:#fff}.card:focus .card-image img,.card:hover .card-image img{background:#eaeaea}.card:focus .card-header,.card:hover .card-header{background-color:#fff}.card:active,.card:active .card-header{background-color:#f7f7f7}.team-card{flex-basis:21em;-ms-flex-preferred-size:21em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.team-card .card-image{max-height:350px;overflow:hidden}.team-card .card-image img{position:relative;top:-50px}.team-card .card-header{display:inline-block;font-size:1.1em;padding:.5em .75em 0}.team-card .card-copy{border-top:1px solid #dcdcdc;font-size:1em}.team-card .card-title{display:inline-block;float:right;font-size:.8em;line-height:2em;padding:.75em .75em 0;text-transform:uppercase}.blog-card{flex-basis:20em;-ms-flex-preferred-size:20em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0}.case-studies{margin:3em 0}.case-studies__case-study{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;background-position:top center;background-repeat:no-repeat;background-size:cover;margin:1.5em 0}.fa,.fa-stack{display:inline-block}.case-studies__case-study a,.case-studies__case-study h3,.case-studies__case-study p{color:#fff;margin-bottom:0}.case-studies__case-study .case-study__description,.case-studies__case-study .case-study__title{padding:1.5em}@media screen and (min-width:40em){.case-studies__case-study{-webkit-box-lines:single;-moz-box-lines:single;box-lines:single;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.case-studies__case-study .case-study__description,.case-studies__case-study .case-study__title{padding:3em 1.5em}}.case-studies__case-study .case-study__title{padding-bottom:0;text-align:center}.case-studies__case-study .case-study__title h3{font-size:200%}@media screen and (min-width:40em){.case-studies__case-study .case-study__title{padding-bottom:6em;width:40%}.case-studies__case-study .case-study__description{width:60%}}.case-studies__case-study .case-study__description a,.case-studies__case-study .case-study__description p{font-size:1.25em;font-weight:700;margin-bottom:0}.case-studies__case-study .case-study__description a{display:inline-block;margin-top:1.5em}.case-studies__case-study .case-study__description a i{margin-left:.5em}.fa{font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-15%}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-stack{width:2em;height:2em;line-height:2em;vertical-align:middle}.fa-stack-1x,.fa-stack-2x{position:absolute;left:0;width:100%;text-align:center}.fa-stack-1x{line-height:inherit}.fa-stack-2x{font-size:2em}.fa-inverse{color:#fff}.fa-angle-double-down:before{content:""}.fa-building-o:before{content:""}.fa-circle:before{content:""}.fa-comment:before{content:""}.fa-comment-o:before{content:""}.fa-drupal:before{content:""}.fa-envelope-o:before{content:""}.fa-file-text:before{content:""}.fa-github:before{content:""}.fa-globe:before{content:""}.fa-linkedin:before{content:""}.fa-long-arrow-right:before{content:""}.fa-phone:before{content:""}.fa-stack-exchange:before{content:""}.fa-tags:before{content:""}.fa-twitter:before{content:""}.home__cover{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;background:url(/assets/img/home-cover-image/home-cover-code-400.png) center center no-repeat #14133b;background-size:cover;height:88vh;text-align:center}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-800.png)}}@media screen and (min-width:25em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-640.png)}}@media only screen and (min-width:25em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:25em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:25em) and (min-resolution:192dpi),only screen and (min-width:25em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1280.png)}}@media screen and (min-width:40em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-860.png);height:78vh}}@media only screen and (min-width:40em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:40em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:40em) and (min-resolution:192dpi),only screen and (min-width:40em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1720.png)}}@media screen and (min-width:53.75em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1120.png);height:88vh}}@media only screen and (min-width:53.75em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:53.75em) and (min-resolution:192dpi),only screen and (min-width:53.75em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-2240.png)}}@media screen and (min-width:70em){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code-1200.png)}}@media only screen and (min-width:70em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:70em) and (min--moz-device-pixel-ratio:2),only screen and (min-width:70em) and (min-resolution:192dpi),only screen and (min-width:70em) and (min-resolution:2dppx){.home__cover{background-image:url(/assets/img/home-cover-image/home-cover-code.png)}}.home__cover .home__cover__heading,.home__cover .home__cover__site-description{margin:0}.home__cover .home__cover__heading{font-size:2em;margin-top:30px}.home__cover hr{border:2px solid #0a5365;border-radius:.5px;margin:10px auto 15px;width:170px}.home__cover .home__cover__site-description{color:#fff;font-size:1.5em;line-height:1.3em;width:230px}.home__cover i{color:#0a5365;font-size:2.8em;padding-top:20px}.navigation{background-color:#0a5365;min-height:70px;width:100%;z-index:999}.navigation .navigation-wrapper{max-width:70em;margin-left:auto;margin-right:auto;padding:25px 0;position:relative;z-index:9999}.navigation .navigation-wrapper::after{clear:both;content:"";display:table}.navigation .logo{background-color:#14133b;border-radius:6px;display:inline-block;float:left;margin:0 0 0 1em;max-height:70px;padding-left:1em;padding-right:1em}@media screen and (min-width:40em){.navigation .logo{float:none;margin:0 auto}}@media screen and (min-width:53.75em){.navigation .logo{float:left;margin:0 0 0 1em}}.navigation .logo img{max-height:70px;padding:.8em 0}.navigation .navigation-menu-button{color:rgba(255,255,255,.7);display:block;float:right;font-weight:700;line-height:70px;margin:0;padding-right:1em;text-transform:uppercase}.navigation .navigation-menu-button:focus,.navigation .navigation-menu-button:hover{color:#fff}.navigation nav{float:none;min-height:70px;z-index:9999999}@media screen and (min-width:40em){.navigation .navigation-menu-button{display:none}.navigation nav{clear:left;margin:0 auto}}@media screen and (min-width:53.75em){.navigation nav{clear:none;float:right}}.navigation .navigation-menu{clear:both;display:none;margin:0 auto;overflow:visible;padding:0;-webkit-transform-style:preserve-3d;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .navigation-menu{display:inline;margin:0;padding:0}}.navigation .navigation-menu.show{display:block}.navigation .nav-link{background:#0a5365;display:block;line-height:70px;overflow:hidden;padding-right:.8em;text-align:right;width:100%;z-index:9999}@media screen and (min-width:40em){.navigation .nav-link{background:0 0;display:inline;line-height:70px;text-decoration:none;width:auto}.navigation .nav-link a{padding-right:.5em}}.navigation .nav-link a{color:rgba(255,255,255,.7);display:inline-block;font-size:1.1em;font-weight:400;text-transform:uppercase}@media screen and (min-width:53.75em){.navigation .nav-link a{padding-right:1em}}.navigation .active-nav-item a,.navigation .nav-link a:focus,.navigation .nav-link a:hover{color:#fff}.navigation .more.nav-link{overflow:visible;padding-right:0}@media screen and (min-width:40em){.navigation .more.nav-link{padding-right:.8em;position:relative}.navigation .more.nav-link>ul>li:first-child a{padding-top:1em}.navigation .more.nav-link>a{margin-right:1em}}.navigation .more.nav-link a{padding-right:.8em}.navigation .more.nav-link>a{padding-right:.6em;position:relative}.navigation .more.nav-link>a::after{position:absolute;top:auto;right:-.4em;bottom:auto;left:auto;color:rgba(255,255,255,.7)}@media screen and (min-width:40em){.navigation .more.nav-link>a::after{content:'\25BE'}.navigation .submenu{left:-1em;position:absolute;top:1.5em}}.post .post__body::after,.team-member::after{content:"";clear:both}.navigation .more.nav-link:focus>.submenu,.navigation .more.nav-link:hover>.submenu{display:block}.navigation .submenu{display:none;padding-left:0}.navigation .submenu li{display:block;padding-right:0}.navigation .submenu li a{background-color:#094857;display:inline-block;text-align:right;width:100%}@media screen and (min-width:40em){.navigation .submenu li{line-height:53.85px}.navigation .submenu li:first-child>a{border-top-left-radius:3px;border-top-right-radius:3px}.navigation .submenu li:last-child>a{border-bottom-left-radius:3px;border-bottom-right-radius:3px;padding-bottom:.7em}.navigation .submenu li a{background-color:#0a5365;padding-left:1em;text-align:left;width:10em}}.post .post__body{max-width:70em;margin-left:auto;margin-right:auto}.post .post__body::after{display:table}@media screen and (min-width:53.75em){.post .post__body{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.post .post__body:last-child{margin-right:0}}.post .post__body .post-header{margin-bottom:1.875em}.post .post__body .post-header p{display:inline}.post .post__body .post-header i{color:#14133b;margin-right:5px}.case-study .case-study__header .case-study__header__text h1,.case-study .case-study__header .case-study__header__text h3,.case-study .case-study__header .case-study__header__text li,.case-study .case-study__header .case-study__header__text p,.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study a,.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study a:focus,.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study a:hover{color:#fff}.post .post__body .post-header .centerdot{font-weight:700}.post .post__body .post-header .post-featured-image{margin:3em 0}.post .post__body .disclaimer{background-color:rgba(158,2,59,.1);border:1px solid rgba(158,2,59,.3);border-radius:5px;margin-bottom:1.875em;padding:1em}.post .post__body .disclaimer h5{margin-top:0}@media screen and (min-width:53.75em){.post .post-bottom{float:left;display:block;margin-right:2.35765%;width:82.94039%;margin-left:8.5298%}.post .post-bottom:last-child{margin-right:0}}@media screen and (min-width:70em){.post .post-bottom{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.post .post-bottom:last-child{margin-right:0}}.previous-next-links .next{display:block;margin-right:2.35765%;width:48.82117%;float:left}.previous-next-links .next:last-child{margin-right:0}.previous-next-links .previous{display:block;margin-right:2.35765%;width:48.82117%;float:right;text-align:right}.previous-next-links .previous:last-child{margin-right:0}.services{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap}.services .services__service{margin-bottom:3em}.services .services__service .services__service__icon{float:left}.services .services__service p{display:inline;margin:0}@media screen and (min-width:53.75em){.services--main .services__service{margin-bottom:0;padding:1.5em;width:50%}}.services--main .services__service:last-child{margin-bottom:0}.services--main .services__service .services__service__icon{margin-right:1em}.tag h2{margin-bottom:1em;text-align:center}.tag .view-more-link{margin-top:1.5em}.tag .view-more-link .fa-arrow-right{margin-left:.25em}.tag__related-case-studies{overflow:hidden}.tag__related-case-studies .tag__related-case-studies__content{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap}.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study{flex-basis:20em;-ms-flex-preferred-size:20em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0;margin:0 .75em 1.5em;text-align:center}.tag__related-case-studies .tag__related-case-studies__content .case-studies__case-study h3{margin:0 auto;padding:3em 1.5em}.tag__related-posts{margin-top:3em;overflow:hidden}.team-member{max-width:70em;margin-left:auto;margin-right:auto}.team-member::after{display:table}@media screen and (min-width:40em){.team-member{float:left;display:block;margin-right:2.35765%;width:65.88078%;margin-left:17.05961%}.team-member:last-child{margin-right:0}}.team-member .team-header img{border-radius:3px;max-width:100%;width:350px}.team-member .team-links{margin:1em auto 3em;text-align:center}.team-member .team-links li{display:inline-block;list-style-type:none;min-width:45%;padding:0 .75em}.team-member .fa-file-text{font-size:13px}.associations{clear:both}.page-work h2{text-align:center}.page-work .case-studies{clear:both}.page-work .client-logos{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;-webkit-box-lines:multiple;-moz-box-lines:multiple;box-lines:multiple;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:3em}.page-work .client-logos .client-logos__logo{flex-basis:15em;-ms-flex-preferred-size:15em;-moz-flex-grow:0;flex-grow:0;-ms-flex-positive:0;margin:0 0 2em;padding:.5em;text-align:center}@media screen and (min-width:30em){.page-work .client-logos .client-logos__logo{margin:0 1em 2em}}.case-study{clear:both}.case-study .case-study__header{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-pack:distribute;-moz-justify-content:space-around;-ms-justify-content:space-around;-o-justify-content:space-around;justify-content:space-around;-ms-flex-pack:distribute;box-align:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;-ms-flex-align:center;background-position:top center;background-repeat:no-repeat;background-size:cover;height:88vh;min-height:320px}@media screen and (min-width:40em){.team-member .team-links{width:60%}.case-study .case-study__header{height:78vh}}@media screen and (min-width:53.75em){.team-member .team-links{width:100%}.team-member .team-links li{min-width:1%}.case-study .case-study__header{height:88vh}}.case-study .case-study__header .case-study__header__text{display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;padding:1em}@media screen and (min-width:46.875em){.case-study .case-study__header .case-study__header__text{box-orient:horizontal;-moz-flex-direction:row;flex-direction:row;-ms-flex-direction:row;width:90%}}@media screen and (min-width:53.75em){.case-study .case-study__header .case-study__header__text{width:80%}}.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{font-size:1.1em;font-weight:700}@media screen and (min-width:46.875em){.case-study .case-study__header .case-study__header__text .case-study__header__link,.case-study .case-study__header .case-study__header__text p{font-size:1.25em}.case-study .case-study__header .case-study__header__text .case-study__header__text--left{border-right:solid 2px #fff;padding-right:1.5em}}.case-study .case-study__header .case-study__header__text .case-study__header__text--left h1{font-size:2em;margin-bottom:1em}.case-study .case-study__header .case-study__header__text .case-study__header__text--left .case-study__header__link{display:inline-block;margin-top:1.5em}.case-study .case-study__header .case-study__header__text .case-study__header__text--right{display:none}@media screen and (min-width:46.875em){.case-study .case-study__header .case-study__header__text .case-study__header__text--left h1{font-size:2.5em}.case-study .case-study__header .case-study__header__text .case-study__header__text--right{flex-basis:280px;-ms-flex-preferred-size:280px;flex-shrink:0;-ms-flex-negative:0;display:-webkit-box;display:-moz-box;display:box;display:-moz-flex;display:-ms-flexbox;display:flex;box-orient:vertical;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;box-pack:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:center;padding:0 0 0 1.5em}.case-study .case-study__header .case-study__header__text .case-study__header__text--right ul{font-style:italic;font-weight:700}}.case-study .wrapper{padding:0}</style>
 </head>
 
 
@@ -1368,48 +1374,27 @@ sass
 
 
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">Sassy Drupal theming: Setting up Bourbon and Neat</h1>
+  <div class="post__body">
+    <header class="post-header">
+      <h1 class="post-title">Sassy Drupal theming: Setting up Bourbon and Neat</h1>
+
+      
+
+<p>By <a href="/team/anne-tomasevich">Anne Tomasevich</a></p>
+
+      <p class="centerdot">&centerdot; </p>
+      <p>Aug 21, 2015 </p><br>
+      <i class="fa fa-tags"></i><p><a href="/blog/tag/drupal/">Drupal</a>, <a href="/blog/tag/drupal-planet/">Drupal Planet</a>, <a href="/blog/tag/theming/">Theming</a>, <a href="/blog/tag/sass/">Sass</a>, <a href="/blog/tag/bourbon/">Bourbon</a>, <a href="/blog/tag/front-end-dev/">Front End Development</a></p>
+      
+      <div><p><span id="comment-count"></span></p></div>
+      
+      
+    </header>
 
     
-    
-      
-          <p>By <a href="/team/anne-tomasevich">Anne Tomasevich</a></p>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
 
-    
-    
-      
-    
-
-    <p class="centerdot">&centerdot; </p>
-    <p>Aug 21, 2015 </p><br>
-    <i class="fa fa-tags"></i><p><a href="/blog/tag/drupal/">Drupal</a>, <a href="/blog/tag/drupal-planet/">Drupal Planet</a>, <a href="/blog/tag/theming/">Theming</a>, <a href="/blog/tag/sass/">Sass</a>, <a href="/blog/tag/bourbon/">Bourbon</a>, <a href="/blog/tag/front-end-dev/">Front End Development</a></p>
-    
-    <div><p><span id="comment-count"></span></p></div>
-    
-    
-  </header>
-
-  
-
-  <article class="post-content">
-    <p>Recently Savas Labs <a href="/2015/06/10/d8-theming-basics.html">built a custom Drupal 8 theme</a> using Bourbon for mixins and Neat as our grid framework, applying our favorite parts of SMACSS principles and focusing on creating organized, maintainable code. The result? Fast, easy coding and a relatively lightweight theme.</p>
+    <article class="post-content">
+      <p>Recently Savas Labs <a href="/2015/06/10/d8-theming-basics.html">built a custom Drupal 8 theme</a> using Bourbon for mixins and Neat as our grid framework, applying our favorite parts of SMACSS principles and focusing on creating organized, maintainable code. The result? Fast, easy coding and a relatively lightweight theme.</p>
 
 <p>In this three-part series I’ll detail:</p>
 
@@ -1705,78 +1690,104 @@ sass
 
 <p>Where do we go from here? In <a href="/2015/08/28/sassy-drupal-theming-part-2.html">my next post</a>, I tackle the <code class="highlighter-rouge">base</code>, <code class="highlighter-rouge">components</code>, and <code class="highlighter-rouge">layouts</code> SMACSS-based directories and the custom <code class="highlighter-rouge">scss</code> files they will hold. In a future post I’ll go through some of Savas Labs best practices for writing Sass that can be easily shared amongst team members and maintained in the long run.</p>
 
-    <hr>
+      <hr>
 
-    
-      <div class="post-comments">
+      
+        <div class="post-comments">
+
   
     <div class="expander">
       <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Comments!</a>
+
       <div id="js-expander-content" class="expander-content">
+
         <!-- If there are existing comments, output them here. -->
         <div id="post-comments" class="post-comments"></div>
+
         <!-- New comment form -->
-        <form id="comment-form">
+        <form id="comment-form" class="comment-form">
           <h4>Leave a comment</h4>
-          <div class="comment-name">
-            <p>Name</p> <input type='text' name='name' id='name' required /><br>
+
+          <div class="comment-form__field comment-form__field--name">
+            <label class="comment-form__field__label" for="name">Name</label>
+            <input type="text" name="name" id="name" required>
           </div>
 
-          <div class="comment-email">
-            <p>Email</p> <input type='email' name='email' id='email' required />
-            <p class="email-disclaimer">Savas Labs will never sell your email address or spam you.</p><br>
+          <div class="comment-form__field comment-form__field--email">
+            <label class="comment-form__field__label" for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <p class="comment-form__field__helptext">Savas Labs will never sell your email address or spam you.</p>
           </div>
 
-          <p>Comment</p>
-          <textarea name='comment' id='comment' required></textarea>
-          <p class="hint below-textarea">Plain text format only please.</p>
+          <div class="comment-form__field comment-form__field--comment">
+            <label class="comment-form__field__label" for="comment">Comment</label>
+            <textarea name="comment" id="comment" required></textarea>
+            <p class="comment-form__field__helptext">Plain text format only please.</p>
+          </div>
 
-          <input type='hidden' name='slug' id='slug' value='/2015/08/21/sassy-drupal-theming-part-1.html' />
-          <input type='text' name='url' id='url' />
+          <input type="hidden" name="slug" id="slug" value="/2015/08/21/sassy-drupal-theming-part-1.html">
+          <input type="text" name="url" id="url">
 
-          <div class='are-you-human'>
-            <div class='are-you-human-owl'>
+          <div class="comment-form__field comment-form__field--nocaptcha">
+            <div class="comment-form__field--nocaptcha__image">
               <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
             </div>
-            <div class='are-you-human-field'>
-              <p>What type of animal is the Savas Labs logo?</p>
-              <input type='text' name='nocaptcha' id='nocaptcha' class='nocaptcha'>
-              <p class="hint">Hint: 3 letters long, starts with an 'o' and ends with an 'l'.</p>
+            <div class="comment-form__field--nocaptcha__input">
+              <label class="comment-form__field__label" for="nocaptcha">What type of animal is the Savas Labs logo?</label>
+              <p class="comment-form__field__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
+              <input type="text" name="nocaptcha" id="nocaptcha" required>
             </div>
           </div>
 
-          <input type='submit' value='Submit' id='submit' class="submit-comment"/>
+          <input type="submit" value="Post comment" id="submit" class="comment-form__submit">
         </form>
-      </div>
-    </div>
+
+      </div><!-- comments and comment form -->
+    </div><!-- expander -->
   
   <hr>
 </div>
 
-    
-    
-      <div class="post-bottom">
+      
+    </article>
+  </div><!-- post__body -->
+
+  
+    <div class="post-bottom">
   <div class="post-meta">
-    <h4>About the author</h4>
 
     
     
-      <a href="/team/anne-tomasevich">
-        <picture>
+    
+    
+    
+
+    
+      <h4>About the author</h4>
+    
+
+    
+
+      
+      
+        <a href="/team/anne-tomasevich">
+          <picture>
     <source srcset="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-576by584-bebfe8.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
     <source srcset="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-bebfe8.jpg">
     <img src="http://savaslabs.com/assets/processed-img/team/anne-tomasevich-288by292-bebfe8.jpg" class="image--team-post-meta" itemprop="image" alt="Anne Tomasevich" >
   </picture>
 
-      </a>
-      <p class="post-author-desc">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
-    
+        </a>
+        <p class="post-author-desc">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
+      
+
+      
+      
 
     
-    
-
   </div>
-    <!-- Once we have more content, change this to posts related by tag -->
+
+  
   <div class="post-related flex-container">
     <h4>Recent posts by Savas Labs</h4>
     <div class="cards">
@@ -1787,7 +1798,7 @@ sass
           <div class="card">
             <a href="/2016/11/15/composer-mailchimp-subscriptions-v3-api.html">
               <div class="card-header">
-                  Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules
+                Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules
               </div>
               <div class="card-copy">
                 <p>Nov 15, 2016</p>
@@ -1803,7 +1814,7 @@ sass
           <div class="card">
             <a href="/2016/10/25/deploy-jekyll-with-travis.html">
               <div class="card-header">
-                  Deploying Jekyll to Github Pages with Travis and Gulp
+                Deploying Jekyll to Github Pages with Travis and Gulp
               </div>
               <div class="card-copy">
                 <p>Oct 25, 2016</p>
@@ -1819,7 +1830,7 @@ sass
           <div class="card">
             <a href="/2016/10/19/optimizing-jekyll-with-gulp.html">
               <div class="card-header">
-                  Optimizing Jekyll Performance with Gulp
+                Optimizing Jekyll Performance with Gulp
               </div>
               <div class="card-copy">
                 <p>Oct 19, 2016</p>
@@ -1919,8 +1930,9 @@ sass
   </div>
 </div>
 
-    
-    <div class="previous-next-links">
+  
+
+  <div class="previous-next-links">
   <div class="next">
     
       <a href="/2015/08/24/drupalcamp-asheville-recap.html"><i class="fa fa-long-arrow-left "></i> We ate, we hiked, we Drupaled - Drupalcamp Asheville</a>
@@ -1933,10 +1945,7 @@ sass
   </div>
 </div>
 
-
-  </article>
-
-</div>
+</div><!-- post -->
 
       </div>
     </div>
