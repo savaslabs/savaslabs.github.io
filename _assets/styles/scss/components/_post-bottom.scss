@@ -1,7 +1,7 @@
 /**
  * @file
  *
- * Styles for meta information at the bottom of blog posts.
+ * Styles for meta info and related posts at the bottom of blog posts.
  */
 
 .post-bottom {
@@ -27,7 +27,8 @@
     p {
       font-size: 1em;
       line-height: 1.2em;
-      margin-top: 1em;
+      margin-bottom: 2em;
+      margin-top: .25em;
     }
 
     .post-author-desc {

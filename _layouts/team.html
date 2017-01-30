@@ -46,14 +46,15 @@ layout: default
     {% endif %}
 
     {% assign counter = 0 %}
-    {% for post in site.posts %}{% if page.name == post.author %}{% assign counter = counter |plus: 1 %}
+    {% for post in site.posts %}
+      {% if post.author contains page.name %}{% assign counter = counter |plus: 1 %}
     {% endif %}{% endfor %}
     {% if counter > 0 %}
     <div class="team-recent-blog flex-container wrapper">
       <h3>Latest posts</h3>
       <div class="cards">
       {% assign blog-counter = 0 %}
-      {% for post in site.posts %}{% if blog-counter < 7 %}{% if page.name == post.author %}{% assign blog-counter = blog-counter |plus: 1 %}
+      {% for post in site.posts %}{% if blog-counter < 7 %}{% if post.author contains page.name %}{% assign blog-counter = blog-counter |plus: 1 %}
         <div class="card">
           <a class="url" href="{{ post.url }}">
             <div class="card-image">
