@@ -15,7 +15,7 @@ drupal_planet_summary: |
 
 ## Overview
 
-We at Savas Labs have been using Docker for local development and CI environments for some time. Recently we wanted to test out [Phase 2's Pattern Lab Starter 8 theme](https://github.com/phase2/pattern-lab-starter). However, to use this theme locally we needed to build a new Docker image for running applications that the theme depends on. In this post, I'll share:
+We at Savas Labs have been using Docker for local development and CI environments for some time. Recently we wanted to test out [Phase 2's Pattern Lab Starter theme](https://github.com/phase2/pattern-lab-starter). However, to use this theme locally we needed to build a new Docker image for running applications that the theme depends on. In this post, I'll share:
 
 - A `Dockerfile` used to build an image with Node, npm, PHP, and Composer installed
 - A `docker-compose.yml` configuration and Docker commands for running theme commands such as `npm start` from within the container
@@ -27,9 +27,9 @@ Along the way, I'll also provide:
 
 ## Background
 
-We at Savas switched to using Docker for local development last year and we love it - so much so that we even proposed [a Drupalcon session on our approach and experience](https://events.drupal.org/node/17250). Using Docker makes it incredibly easy for developers to quickly spin up consistent local development environments that match production. In the past we used Vagrant and virtual machines for these purposes, but we've found Docker to be much faster when switching between multiple projects.
+We at Savas Labs switched to using Docker for local development last year and we love it - so much so that we even proposed [a Drupalcon session on our approach and experience](https://events.drupal.org/node/17250). Using Docker makes it easy for developers to quickly spin up consistent local development environments that match production. In the past we used Vagrant and virtual machines for these purposes, but we've found Docker to be much faster when switching between multiple projects.
 
-Usually we build our Docker images from scratch to perfectly match production environments. However, for agile development and rapid prototyping, we sometimes make use of public Docker images. In these cases we've relied on [Wodby's Docker4Drupal project](https://github.com/wodby/docker4drupal), which is "a set of docker containers optimized for Drupal."
+Usually we build our Docker images from scratch to closely match production environments. However, for agile development and rapid prototyping, we sometimes make use of public Docker images. In these cases we've relied on [Wodby's Docker4Drupal project](https://github.com/wodby/docker4drupal), which is "a set of docker containers optimized for Drupal."
 
 We plan to post a more in-depth series of posts covering Docker for local development and CI environments in the near future, so be on the look out for that!
 
@@ -39,9 +39,9 @@ We're also fans of using style guides and atomic design to drive front-end devel
 
 To try out the Pattern Lab Starter theme we started with a fresh local Drupal 8 installation, and then quickly spun up our local Docker development environment [using Docker4Drupal](http://docs.docker4drupal.org/en/latest/#usage). We then copied the [Pattern Lab Starter code](https://github.com/phase2/pattern-lab-starter) to a new `custom/theme/patter_lab_starter` directory in our Drupal project.
 
-However, running the Phase 2 Pattern Lab Starter theme requires Node, npm, PHP, and Composer - the former for the node dependencies (Gulp, Bower, etc.) and the latter for running Pattern Lab.
+However, running the Phase 2 Pattern Lab Starter theme requires Node, npm, PHP, and Composer. Node and npm are required for managing the theme's node dependencies (such as Gulp, Bower, etc.), while PHP and Composer are required by the theme to run and serve Pattern Lab.
 
-While we could install these dependencies locally, that defeats the purpose of using Docker. One of the great advantages of virtualization, be it Docker or a full VM, is that you don't have to rely on installing global dependencies on your local machine. One of the many benefits of this is that it ensures each team member is developing in the same environment.
+While we could install these dependencies on the host machine, outside of the Docker image, that defeats the purpose of using Docker. One of the great advantages of virtualization, be it Docker or a full VM, is that you don't have to rely on installing global dependencies on your local machine. One of the many benefits of this is that it ensures each team member is developing in the same environment.
 
 Unfortunately, while Docker4Drupal provides public images for many applications (such as Nginx, PHP, MariaDB, Mailhog, Redis, Apache Solr, and Varnish), it does not provide images for running the Pattern Lab Starter theme dependencies.
 
@@ -49,7 +49,7 @@ One of the nice features of Docker though is that it is relatively easy to creat
 
 To build an image with our theme's dependencies we created a `Dockerfile` with the following contents:
 
-```text
+```Dockerfile
 FROM node:7.1
 MAINTAINER Dan Murphy <dan@savaslabs.com>
 
@@ -86,11 +86,11 @@ From this `Dockerfile` we built the image `savaslabs/node-php-composer` and made
 
 One piece of advice I have for building images for local development is that while Alpine Linux based images may be much smaller in size, the bare-bones nature and lack of common packages makes it much more difficult to build upon. For that reason, we based our image on the standard `DebianJessie` Node image rather than the Alpine variant.
 
-Now a Docker purist might critique this image and recommend only “one process per container”. However, since this image is for local development, isn't being used to deploy a production app, and encapsulates all of the applications required by the Pattern Lab Starter theme, we felt comfortable with this approach.
+Now a Docker purist might critique this image and recommend only "one process per container". However, since this image is for local development, isn't being used to deploy a production app, and encapsulates all of the applications required by the Pattern Lab Starter theme, we felt comfortable with this approach.
 
 ### Using the image
 
-To use this image, we specified it in our project's `docker-compose.yml` file by adding the following lines to the services section:
+To use this image, we specified it in our project's `docker-compose.yml` file ([see full file here](https://gist.github.com/dmurphy1/ee62085eef2d40b279cc848f88213fc9)) by adding the following lines to the services section:
 
 ```yaml
 node-php-composer:
@@ -112,7 +112,7 @@ With this service defined in the `docker-compose.yml` we can start using the the
 
 First we spin up the Docker containers by running `docker-compose up -d`.
 
-Once the containers are running, we shell directly into the theme directory of the `node-php-composer` container by running the command:
+Once the containers are running, we can open a Bash shell in the theme directory of the `node-php-composer` container by running the command:
 
 ```bash
 docker-compose run --rm --service-ports -w /var/www/html/web/themes/custom/pattern_lab_starter node-php-composer /bin/bash
