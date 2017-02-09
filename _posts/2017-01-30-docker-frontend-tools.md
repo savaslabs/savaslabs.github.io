@@ -63,11 +63,11 @@ RUN apt-get update && \
     # Clean up.
     apt-get clean && \
     rm -rf \
-			/root/.composer \
-			/tmp/* \
-			/usr/include/php \
-			/usr/lib/php5/build \
-			/var/lib/apt/lists/*
+      /root/.composer \
+      /tmp/* \
+      /usr/include/php \
+      /usr/lib/php5/build \
+      /var/lib/apt/lists/*
 
 # Permissions required by Yeoman to run: https://github.com/keystonejs/keystone/issues/1566#issuecomment-217736880
 RUN chmod g+rwx /root /root/.config /root/.config/configstore
@@ -126,6 +126,7 @@ Once inside the container in the theme directory, we install the theme's depende
 npm install --unsafe-perm
 npm start
 ```
+
 Voila! Once `npm start` is running we can access the Pattern Lab style guide at the URL's that are outputted, for example `http://localhost:3050/pattern-lab/public/`.
 
 Note: Docker runs containers as root, so we use the `--unsafe-perm` flag to run `npm install` with root privileges. This is okay for local development, but would be a security risk if deploying the container to production. For information on running the container as an unprivileged user, [see this documentation](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user).
