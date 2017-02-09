@@ -39,15 +39,15 @@ We're also fans of using style guides and atomic design to drive front-end devel
 
 To try out the Pattern Lab Starter theme we started with a fresh local Drupal 8 installation, and then quickly spun up our local Docker development environment [using Docker4Drupal](http://docs.docker4drupal.org/en/latest/#usage). We then copied the [Pattern Lab Starter code](https://github.com/phase2/pattern-lab-starter) to a new `custom/theme/patter_lab_starter` directory in our Drupal project.
 
-However, running the Phase 2 Pattern Lab Starter theme requires Node, npm, PHP, and Composer. Node and npm are required for managing the theme's node dependencies (such as Gulp, Bower, etc.), while PHP and Composer are required by the theme to run and serve Pattern Lab.
+However, running the Phase 2 Pattern Lab Starter theme requires [Node.js](https://nodejs.org/en/), the node package manager [npm](https://www.npmjs.com/), PHP, and the PHP dependency manager [Composer](https://getcomposer.org/). Node and npm are required for managing the theme's node dependencies (such as Gulp, Bower, etc.), while PHP and Composer are required by the theme to run and serve Pattern Lab.
 
-While we could install these dependencies on the host machine, outside of the Docker image, that defeats the purpose of using Docker. One of the great advantages of virtualization, be it Docker or a full VM, is that you don't have to rely on installing global dependencies on your local machine. One of the many benefits of this is that it ensures each team member is developing in the same environment.
+While we could install these applications on the host machine, outside of the Docker image, that defeats the purpose of using Docker. One of the great advantages of virtualization, be it Docker or a full VM, is that you don't have to rely on installing global dependencies on your local machine. One of the many benefits of this is that it ensures each team member is developing in the same environment.
 
-Unfortunately, while Docker4Drupal provides public images for many applications (such as Nginx, PHP, MariaDB, Mailhog, Redis, Apache Solr, and Varnish), it does not provide images for running the Pattern Lab Starter theme dependencies.
+Unfortunately, while Docker4Drupal provides public images for many applications (such as Nginx, PHP, MariaDB, Mailhog, Redis, Apache Solr, and Varnish), it does not provide images for running the applications required by the Pattern Lab Starter theme.
 
 One of the nice features of Docker though is that it is relatively easy to create a new image that builds upon other images. This is done via a `Dockerfile` which specifies the commands for creating the image.
 
-To build an image with our theme's dependencies we created a `Dockerfile` with the following contents:
+To build an image with the applications required by our theme we created a `Dockerfile` with the following contents:
 
 ```Dockerfile
 FROM node:7.1
@@ -79,14 +79,20 @@ The commands in this `Dockerfile`:
 
 - Set [the official Node 7 image](https://hub.docker.com/_/node/) as the base image. This base image includes Node and npm.
 - Install PHP 5 and Composer
-- Make configuration changes necessary for running Yeoman
+- Make configuration changes necessary for running Yeoman, which is used to create new component folders in Pattern Lab
 - Expose ports 3001 and 3050 which are necessary for serving the Pattern Lab style guide.
 
 From this `Dockerfile` we built the image `savaslabs/node-php-composer` and made it [publicly available on DockerHub](https://hub.docker.com/r/savaslabs/node-php-composer/).
 
 One piece of advice I have for building images for local development is that while Alpine Linux based images may be much smaller in size, the bare-bones nature and lack of common packages makes it much more difficult to build upon. For that reason, we based our image on the standard `DebianJessie` Node image rather than the Alpine variant.
 
-Now a Docker purist might critique this image and recommend only "one process per container". However, since this image is for local development, isn't being used to deploy a production app, and encapsulates all of the applications required by the Pattern Lab Starter theme, we felt comfortable with this approach.
+This is also why we didn't just simply start from [the `wodby/drupal-php:7.0`](https://hub.docker.com/r/wodby/drupal-php/~/dockerfile/) image and install Node and npm on it. Unfortunately, the `wodby/drupal-php` image is built from `alpine:edge` which lacks many of the dependencies required to install Node and npm.
+
+Now a Docker purist might critique this image and recommend only "one process per container". This is a significant con of this approach, especially since Wodby already provides a PHP image with Composer installed. Ideally, we'd use that in conjunction with separate images that run Node and npm.
+
+However, the theme's setup makes that very difficult. Essentially PHP scripts and Composer commands are baked into the theme's npm scripts and gulp tasks, making it difficult to untangle them. For example, the `npm start` command runs Gulp tasks that depend on PHP to generate and serve the Pattern Lab style guide.
+
+Due to these constraints, and since this image is for local development, isn't being used to deploy a production app, and encapsulates all of the applications required by the Pattern Lab Starter theme, we felt comfortable with this approach.
 
 ### Using the image
 
