@@ -5,20 +5,31 @@ date: 2017-02-09
 author: Kosta Harlan
 tags: drupal drupal-planet docker
 summary: "How to dramatically improve MySQL database import time on Dockerized Drupal stacks"
-featured_image: "/blog/docker-mysql-volume.gif"
+featured_image: "/blog/sea-ocean-boats-port.jpg"
 featured_image_alt: "A GIF is worth a thousand words"
 featured_image_height: "983px"
 featured_image_width: "1474px"
 drupal_planet_summary: |
+  A tutorial to show how you can use data volume restore for MySQL on Dockerized Drupal stacks to dramatically speed up import times, and notes on how to integrate this with your development and continuous integration practices.
 ---
 
-If you're a Drupal developer, the process of (re)importing a database locally is probably you do multiple times per day. If you use Docker for your local development environment, here's a tip to dramatically speed up the import of databases, especially large ones.
+If you're a Drupal developer, the process of (re)importing a seed database locally or for automated testing builds is something you do many times per day. If you're using Docker for your local development or continuous integration environments, here's a tip to dramatically speed up the import of databases, especially large ones.
 
 ## The usual way
 
-The typical way to import a database would be with `mysql -u{some_user} -p{some_pass} {database_name} < /path/to/database.sql`. For bonus points, you could use a tool like [`pv`](https://www.ivarch.com/programs/pv.shtml) to see the progress of the import and an estimated time for completion: `pv /path/to/database.sql | mysql -u{some_user} -p {some_pass} {database_name}`.
+The typical way to import a database is with using the `mysql` command to process a SQL dump file: 
 
-On large databases, though, this can be a slow process. If you've ever looked at the contents of a database dump SQL file, you'll see why. The contents are sequential instructions passed to the `mysql` command to (1) create the structure for each table defined in the file and (2) populate the database with data from the SQL dump. For example, a 19 MB database dump file I am using in my test cases here contains instructions like this:
+``` bash
+mysql -u{some_user} -p{some_pass} {database_name} < /path/to/database.sql
+```
+
+For bonus points, you could use a tool like [`pv`](https://www.ivarch.com/programs/pv.shtml) to see the progress of the import and an estimated time for completion: 
+
+``` bash
+pv /path/to/database.sql | mysql -u{some_user} -p {some_pass} {database_name}
+```
+
+On large databases, though, this can be a slow process. If we look at a database dump SQL file, we can see why.  For example, a 19 MB database dump file I am using in one of my test cases further on in this post contains these instructions:
 
 ``` sql
 --
@@ -54,19 +65,32 @@ UNLOCK TABLES;
 commit;
 ```
 
-What happens when `mysql` finished processing the SQL dump? The database contents live in `/var/lib/mysql/{database}`, so for example for the `block_content` table mentione dabove there are two files called `block_content.frm` and `block_content.ibd` in `/var/lib/mysql/{database}. The `/var/lib/mysql` directory will also contain a number of other directories and files related to the configuration of the MySQL server.
+When I pipe the contents of the MySQL database dump to the `mysql` command, the `mysql` client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file and (2) populate the database with data from the SQL dump.
+
+What happens when `mysql` finished processing the SQL dump? The database contents live in `/var/lib/mysql/{database}`, so for example for the `block_content` table mentioned above there are two files called `block_content.frm` and `block_content.ibd` in `/var/lib/mysql/{database}/`. The `/var/lib/mysql` directory will also contain a number of other directories and files related to the configuration of the MySQL server.
 
 Now, suppose that, instead of sequentially processing the SQL instructions contained in a database dump file, we were able to provide developers with a snapshot of the `/var/lib/mysql` directory for a given Drupal site. Would this be faster than the traditional database import methods?
 
-The answer is, yes!
+The answer is, yes, very much so!
+
+### Two test cases 
+
+The table below shows the results of two test cases, one using a 19 MB database file and the other using a 4.7 GB database.
 
 | Method                | Database size | Time to drop tables and restore (seconds) |
+| :-------              | ------:       |                                  -------: |
 | Traditional `mysql`   | 19 MB         |                                       128 |
 | Docker volume restore | 19 MB         |                                        11 |
 | Traditional `mysql`   | 4.7 GB        |                                       606 |
 | Docker volume restore | 4.7 GB        |                                        85 |
 
-In other words, the average speed increase on MySQL database import in these two test cases is 837%! 
+In other words, the MySQL data volume import completes, on average, in about 11% of the time that a traditional MySQL dump import would take!
+
+Since, as the saying goes, a GIF is worth a thousand words, compare these:
+
+![Docker MySQL volume restore](/assets/img/blog/docker-mysql-volume.gif)
+
+![Docker MySQL traditional database import](/assets/img/blog/docker-mysql-traditional.gif)
 
 ## Use MySQL volume for database imports with Docker
 
