@@ -18,7 +18,7 @@ h5,
 h6 {
   color: $fuschia;
   font-family: $heading-font;
-  font-weight: 800;
+  font-weight: 300;
 }
 
 // Add margin top for posts.
@@ -67,8 +67,8 @@ p a,
 
 // Paragraphs and lists --------------------------------------------------------
 
-.post,
-.portfolio,
+.post p,
+.post li,
 .page-description,
 .name-description p,
 .team-member p,
@@ -87,6 +87,7 @@ ol {
 }
 
 // Keep ems from cascading in nested lists.
+// scss-lint:disable ImportantRule
 ul ul,
 ul ul li,
 ul ol,
@@ -95,8 +96,9 @@ ol ul,
 ol ul li,
 ol ol,
 ol ol li {
-  font-size: 1em;
+  font-size: 1em !important;
 }
+// scss-lint:enable ImportantRule
 
 // Misc ------------------------------------------------------------------------
 
