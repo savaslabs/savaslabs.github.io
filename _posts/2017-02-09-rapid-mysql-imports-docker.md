@@ -86,15 +86,15 @@ The table below shows the results of two test cases, one using a 19 MB database 
 
 In other words, the MySQL data volume import completes, on average, in about 11% of the time that a traditional MySQL dump import would take!
 
-Since, as the saying goes, a GIF is worth a thousand words, compare these:
+Since a GIF is worth a thousand words, compare these two processes side-by-side (both are using the same source 19 MB source database; the first is using a data volume restore process while the second is using the traditional MySQL import process):
 
 #### Data volume restore
 
-![Docker MySQL volume restore](/assets/img/blog/docker-mysql-volume.gif)
+<script type="text/javascript" src="https://asciinema.org/a/102770.js" id="asciicast-102770" async data-autoplay="true" data-loop="true" data-theme="solarized-dark"></script>
 
 #### Traditional MySQL database dump import
 
-![Docker MySQL traditional database import](/assets/img/blog/docker-mysql-traditional.gif)
+<script type="text/javascript" src="https://asciinema.org/a/102769.js" id="asciicast-102769" async data-autoplay="true" data-loop="true" data-theme="solarized-dark"></script>
 
 ## Use MySQL volume for database imports with Docker
 
