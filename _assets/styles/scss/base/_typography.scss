@@ -87,6 +87,7 @@ ol {
 }
 
 // Keep ems from cascading in nested lists.
+// scss-lint:disable ImportantRule
 ul ul,
 ul ul li,
 ul ol,
@@ -97,6 +98,7 @@ ol ol,
 ol ol li {
   font-size: 1em !important;
 }
+// scss-lint:enable ImportantRule
 
 // Misc ------------------------------------------------------------------------
 
