@@ -98,7 +98,7 @@ Since, as the saying goes, a GIF is worth a thousand words, compare these:
 
 ## Use MySQL volume for database imports with Docker
 
-Here's how the process works. Suppose you have a Docker stack with a web container and a database container, and that the database container has data in it already (your site is up and running locally). Assuming a database container name of `drupal_database`, to generate a volume for the MySQL `/var/lib/mysql` contents of the database container, you'd run these commands:
+Here's how the process works[^1]. Suppose you have a Docker stack with a web container and a database container, and that the database container has data in it already (your site is up and running locally). Assuming a database container name of `drupal_database`, to generate a volume for the MySQL `/var/lib/mysql` contents of the database container, you'd run these commands:
 
 ``` bash
 docker stop drupal_database
@@ -182,3 +182,5 @@ Now, whenever developers want to refresh their local environment by wiping the e
 ## Conclusion
 
 If you are using Docker for your development stack, then this is a compelling addition to your toolkit as it will impressively speed up MySQL imports and boost productivity. If you're not using Docker for development/testing, this alone isn't probably enough to sway you, but I hope it is a convincing demonstration of some of the exciting possibilities that are easily achieved with the Docker architecture.
+
+[^1]: Hat tip to [Tim Stallmann](/team/tim-stallmann/) for taking a proof of concept and incorporating it into a [real-world project](/work/hptn-case-study/), from which many of the code samples here are drawn.
