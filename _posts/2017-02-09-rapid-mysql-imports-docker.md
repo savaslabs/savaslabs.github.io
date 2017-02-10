@@ -17,13 +17,13 @@ If you're a Drupal developer, the process of (re)importing a seed database local
 
 ## The usual way
 
-The typical way to import a database is with using the `mysql` command to process a SQL dump file: 
+The typical way to import a database is with using the `mysql` command to process a SQL dump file:
 
 ``` bash
 mysql -u{some_user} -p{some_pass} {database_name} < /path/to/database.sql
 ```
 
-For bonus points, you could use a tool like [`pv`](https://www.ivarch.com/programs/pv.shtml) to see the progress of the import and an estimated time for completion: 
+For bonus points, you could use a tool like [`pv`](https://www.ivarch.com/programs/pv.shtml) to see the progress of the import and an estimated time for completion:
 
 ``` bash
 pv /path/to/database.sql | mysql -u{some_user} -p {some_pass} {database_name}
@@ -73,7 +73,7 @@ Now, suppose that, instead of sequentially processing the SQL instructions conta
 
 The answer is, yes, very much so!
 
-### Two test cases 
+### Two test cases
 
 The table below shows the results of two test cases, one using a 19 MB database file and the other using a 4.7 GB database.
 
