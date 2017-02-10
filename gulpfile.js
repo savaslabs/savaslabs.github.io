@@ -46,8 +46,23 @@ gulp.task('build:styles:critical', function() {
         .on('error', gutil.log);
 });
 
+// Copies any other CSS files to the assets directory, to be used by pages/posts
+// that specify custom CSS files.
+gulp.task('build:styles:css', function() {
+    return gulp.src([paths.sassFiles + '/*.css'])
+      .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+      .pipe(cleancss())
+      .pipe(gulp.dest(paths.jekyllCssFiles))
+      .pipe(gulp.dest(paths.siteCssFiles))
+      .on('error', gutil.log);
+});
+
 // Builds all styles.
-gulp.task('build:styles', ['build:styles:main', 'build:styles:critical']);
+gulp.task('build:styles', [
+    'build:styles:main',
+    'build:styles:critical',
+    'build:styles:css'
+]);
 
 gulp.task('clean:styles', function(callback) {
     del([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
