@@ -54,7 +54,6 @@
       p,
       .case-study__header__link {
         font-size: 1.1em;
-        font-weight: bold;
 
         @include media($case-study-header-break) {
           font-size: 1.25em;
@@ -98,7 +97,6 @@
 
           ul {
             font-style: italic;
-            font-weight: bold;
           }
         }
       }
