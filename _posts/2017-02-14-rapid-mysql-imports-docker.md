@@ -69,7 +69,7 @@ UNLOCK TABLES;
 commit;
 ```
 
-When I pipe the contents of the MySQL database dump to the `mysql` command, the `mysql` client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file and (2) populate the database with data from the SQL dump. The example I provided here is processed pretty quickly, but if your site has a few hundred thousand nodes, then you can imagine that the process of populating that data can take a while![^2] 
+When I pipe the contents of the MySQL database dump to the `mysql` command, the `mysql` client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file and (2) populate the database with data from the SQL dump. The example I provided here is processed pretty quickly, but if your site has a few hundred thousand nodes, then you can imagine that the process of populating that data can take a while![^2]
 
 What happens when `mysql` finishes processing the SQL dump? The database contents live in `/var/lib/mysql/{database}`, so for example for the `block_content` table mentioned above there are two files called `block_content.frm` and `block_content.ibd` in `/var/lib/mysql/{database}/`. The `/var/lib/mysql` directory will also contain a number of other directories and files related to the configuration of the MySQL server.
 
@@ -105,7 +105,7 @@ Here's how the process works[^1]. Suppose you have a Docker stack with a web con
 ``` bash
 # Stop the database container to prevent read/writes to it during the database
 # export process.
-docker stop drupal_database 
+docker stop drupal_database
 # Now use the carinamarinab/backup image with the `backup` command to generate a
 # tar.gz file based on the `/var/lib/mysql` directory in the `drupal_database`
 # container.
@@ -137,7 +137,7 @@ carinamarina/backup restore --destination /var/lib/mysql/ --stdin \
 docker start drupal_database
 ```
 
-So, not too complicated, but it will require a change in your processes for generating seed databases to distribute to your team for local development, or for CI builds. Instead of using `mysqldump` to create the seed database file, you'll need to use the `carinamarina/backup` image to create the `.tar.gz` file for distribution. And instead of `mysql {database} < database.sql` you'll use `carinamarina/backup` to restore the data volume. 
+So, not too complicated, but it will require a change in your processes for generating seed databases to distribute to your team for local development, or for CI builds. Instead of using `mysqldump` to create the seed database file, you'll need to use the `carinamarina/backup` image to create the `.tar.gz` file for distribution. And instead of `mysql {database} < database.sql` you'll use `carinamarina/backup` to restore the data volume.
 
 In our team's view this is a small cost for the enormous gains in database import time, which in turn boost productivity (faster CI builds and refreshes of local development environments).
 
