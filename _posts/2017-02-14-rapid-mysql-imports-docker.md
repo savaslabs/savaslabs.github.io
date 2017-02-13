@@ -1,29 +1,33 @@
 ---
 layout: post
-title: "Dramatically improve MySQL database import time on Docker stacks"
-date: 2017-02-09
+title: "Dramatically Improve MySQL Database Import Time on Docker Stacks"
+date: 2017-02-14
 author: Kosta Harlan
 tags: drupal drupal-planet docker
-summary: "How to dramatically improve MySQL database import time on Dockerized Drupal stacks"
+summary: "How to dramatically improve MySQL database import time on Drupal Docker stacks"
 featured_image: "/blog/sea-ocean-boats-port.jpg"
-featured_image_alt: "Docker, ships, the sea, etc"
+featured_image_alt: "Docker, ships, the sea "
 featured_image_height: "983px"
 featured_image_width: "1474px"
 drupal_planet_summary: |
-  A tutorial to show how you can use data volume restore for MySQL on Dockerized Drupal stacks to dramatically speed up import times, and notes on how to integrate this with your development and continuous integration practices.
+  A tutorial to show how you can use data volume restore for MySQL on Drupal Docker stacks to dramatically speed up import times, and notes on how to integrate this with your development and continuous integration workflow.
 ---
 
-If you're a Drupal developer, the process of (re)importing a seed database locally or for automated testing builds is something you do many times per day. If you're using Docker for your local development or continuous integration environments, here's a tip to dramatically speed up the import of databases, especially large ones.
+As a Drupal developer, you and your team might go through the process of importing a seed database locally or for automated testing builds many times per day. If you're using Docker for your local development or continuous integration environments, you can use a technique to restore the MySQL data volume that will dramatically speed up the import of databases, especially large ones. In this post we'll look at:
+
+- how much faster data volume imports are compared to traditional database dumps piped to `mysql`
+- how to set up a data volume import with your Drupal Docker stack
+- how to tie in this process with your local and continuous integration environments
 
 ## The usual way
 
-The typical way to import a database is with using the `mysql` command to process a SQL dump file:
+The typical way to import a database is to pipe a SQL database dump file into the `mysql` command-line client:
 
 ``` bash
 mysql -u{some_user} -p{some_pass} {database_name} < /path/to/database.sql
 ```
 
-For bonus points, you could use a tool like [`pv`](https://www.ivarch.com/programs/pv.shtml) to see the progress of the import and an estimated time for completion:
+For bonus points, you might even use a tool like [`pv`](https://www.ivarch.com/programs/pv.shtml) to see the progress of the import and an estimated time for completion:
 
 ``` bash
 pv /path/to/database.sql | mysql -u{some_user} -p {some_pass} {database_name}
@@ -65,30 +69,28 @@ UNLOCK TABLES;
 commit;
 ```
 
-When I pipe the contents of the MySQL database dump to the `mysql` command, the `mysql` client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file and (2) populate the database with data from the SQL dump.
+When I pipe the contents of the MySQL database dump to the `mysql` command, the `mysql` client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file and (2) populate the database with data from the SQL dump. The example I provided here is processed pretty quickly, but if your site has a few hundred thousand nodes, then you can imagine that the process of populating that data can take a while![^2] 
 
-What happens when `mysql` finished processing the SQL dump? The database contents live in `/var/lib/mysql/{database}`, so for example for the `block_content` table mentioned above there are two files called `block_content.frm` and `block_content.ibd` in `/var/lib/mysql/{database}/`. The `/var/lib/mysql` directory will also contain a number of other directories and files related to the configuration of the MySQL server.
+What happens when `mysql` finishes processing the SQL dump? The database contents live in `/var/lib/mysql/{database}`, so for example for the `block_content` table mentioned above there are two files called `block_content.frm` and `block_content.ibd` in `/var/lib/mysql/{database}/`. The `/var/lib/mysql` directory will also contain a number of other directories and files related to the configuration of the MySQL server.
 
-Now, suppose that, instead of sequentially processing the SQL instructions contained in a database dump file, we were able to provide developers with a snapshot of the `/var/lib/mysql` directory for a given Drupal site. Would this be faster than the traditional database import methods?
+Now, suppose that, instead of sequentially processing the SQL instructions contained in a database dump file, we were able to provide developers with a snapshot of the `/var/lib/mysql` directory for a given Drupal site. Would this be faster than the traditional database import methods? Let's have a look at two test cases to find out!
 
-The answer is, yes, very much so!
+### MySQL import test cases
 
-### Two test cases
+The table below shows the results of two test cases, one using a 19 MB database and the other using a 4.7 GB database.
 
-The table below shows the results of two test cases, one using a 19 MB database file and the other using a 4.7 GB database.
-
-| Method                | Database size | Time to drop tables and restore (seconds) |
-| :-------              | ------:       |                                  -------: |
-| Traditional `mysql`   | 19 MB         |                                       128 |
-| Docker volume restore | 19 MB         |                                        11 |
-| Traditional `mysql`   | 4.7 GB        |                                       606 |
-| Docker volume restore | 4.7 GB        |                                        85 |
+| Method                     | Database size | Time to drop tables and restore (seconds) |
+| :-------                   | ------:       |                                  -------: |
+| Traditional `mysql`        | 19 MB         |                                       128 |
+| Docker data volume restore | 19 MB         |                                        11 |
+| Traditional `mysql`        | 4.7 GB        |                                       606 |
+| Docker data volume restore | 4.7 GB        |                                        85 |
 
 In other words, the MySQL data volume import completes, on average, in about 11% of the time that a traditional MySQL dump import would take!
 
-Since a GIF is worth a thousand words, compare these two processes side-by-side (both are using the same source 19 MB source database; the first is using a data volume restore process while the second is using the traditional MySQL import process):
+Since a GIF is worth a thousand words, compare these two processes side-by-side (both are using the same 19 MB source database; the first is using a data volume restore process while the second is using the traditional MySQL import process). You can see that the second process takes considerably longer!
 
-#### Data volume restore
+#### Docker data volume restore
 
 <script type="text/javascript" src="https://asciinema.org/a/102770.js" id="asciicast-102770" async data-autoplay="true" data-loop="true" data-theme="solarized-dark"></script>
 
@@ -101,29 +103,43 @@ Since a GIF is worth a thousand words, compare these two processes side-by-side 
 Here's how the process works[^1]. Suppose you have a Docker stack with a web container and a database container, and that the database container has data in it already (your site is up and running locally). Assuming a database container name of `drupal_database`, to generate a volume for the MySQL `/var/lib/mysql` contents of the database container, you'd run these commands:
 
 ``` bash
-docker stop drupal_database
+# Stop the database container to prevent read/writes to it during the database
+# export process.
+docker stop drupal_database 
+# Now use the carinamarinab/backup image with the `backup` command to generate a
+# tar.gz file based on the `/var/lib/mysql` directory in the `drupal_database`
+# container.
 docker run --rm --volumes-from dupal_database carinamarina/backup backup \
 --source /var/lib/mysql/ --stdout --zip > db-data-volume.tar.gz
 ```
 
 With the 4.7 GB sample database above, this process takes 239 seconds and results in 702 MB compressed file.
 
-We're making use of the [`carinamarina/backup`](https://getcarina.com/docs/tutorials/backup-restore-data/) image produced by Rackspace to create an archive of the database files.
+We're making use of the [carinamarina/backup](https://getcarina.com/docs/tutorials/backup-restore-data/) image produced by Rackspace to create an archive of the database files.
 
-You can then distribute this file to your colleagues (we use Amazon S3), or make use of it in continuous integration builds (more on that below), using these commands:
+You can then distribute this file to your colleagues (at Savas Labs, we use [Amazon S3](https://aws.amazon.com/s3/)), or make use of it in continuous integration builds (more on that below), using these commands:
 
 ``` bash
+# Copy the data volume tar.gz file from your team's AWS S3 bucket.
 if [ ! -f db/db-data-volume.tar.gz ]; then aws s3 cp \
 s3://{your-bucket}/mysql-data-volume/db-data-volume.tar.gz db-data-volume.tar.gz; fi
+# Stop the database container to prevent read/writes during the database
+# restore process.
 docker stop drupal_database
+# Remove the /var/lib/mysql contents from the database container.
 docker run --rm --volumes-from drupal_database alpine:3.3 rm -rf /var/lib/mysql/*
+# Use the carinamarina/backup image with the `restore` command to extract
+# the tar.gz file contents into /var/lib/mysql in the database container.
 docker run --rm --interactive --volumes-from drupal_database \
 carinamarina/backup restore --destination /var/lib/mysql/ --stdin \
 --zip < db-data-volume.tar.gz
+# Start the database container again.
 docker start drupal_database
 ```
 
-So, not too complicated, but it will require a change in your processes for generating seed databases to distribute to your team for local development, or for CI builds - instead of using `mysqldump` to create the seed database file, you'll need to use the `carinamarina/backup` image to create the `.tar.gz` file for distribution; and instead of `mysql {database} < database.sql` you'll use `carinamarina/backup` to restore the data volume. In our team's view this is a small cost for the enormous gains in database import time, which in turn boost productivity (faster CI builds and refreshes of local development environments).
+So, not too complicated, but it will require a change in your processes for generating seed databases to distribute to your team for local development, or for CI builds. Instead of using `mysqldump` to create the seed database file, you'll need to use the `carinamarina/backup` image to create the `.tar.gz` file for distribution. And instead of `mysql {database} < database.sql` you'll use `carinamarina/backup` to restore the data volume. 
+
+In our team's view this is a small cost for the enormous gains in database import time, which in turn boost productivity (faster CI builds and refreshes of local development environments).
 
 ## Bonus points: integrate this process with your continuous integration workflow
 
@@ -133,7 +149,7 @@ But we can get further productivity gains by automating this process completely 
 
 ### 1. Generate a new seed database SQL dump after production deployments
 
-We use [Fabric](http://www.fabfile.org) for deploying to staging and production. When we deploy to production (production is not on a Docker stack), our post-deployment tasks include generating a traditional MySQL database dump and copying this to Amazon S3:
+At Savas Labs, we use [Fabric](http://www.fabfile.org) for deploying to staging and production. When we deploy to production (production is not on a Docker stack), our post-deployment tasks include generating a traditional MySQL database dump and copying this to Amazon S3:
 
 ``` python
 def update_seed_db():
@@ -173,7 +189,7 @@ aws s3 cp db-data-volume.tar.gz \
 s3://{bucket-name}/mysql-data-volume/db-data-volume.tar.gz --sse
 ```
 
-This script: (1) imports the traditional MySQL seed database file from production, and then (2) creates a MySQL data volume archive. (We use a [`Makefile`](https://github.com/savaslabs/docker-drupal-template/blob/master/Makefile) for simplifying some of the common site provisioning tasks for developers and our CI systems; more on that in another post!)
+This script: (1) imports the traditional MySQL seed database file from production, and then (2) creates a MySQL data volume archive. (We use a [Makefile](https://github.com/savaslabs/docker-drupal-template/blob/master/Makefile) for simplifying some of the common site provisioning tasks for developers and our CI systems; more on that in another post!)
 
 ### 3. Pull requests and local development make use of the MySQL data volume archive
 
@@ -184,3 +200,5 @@ Now, whenever developers want to refresh their local environment by wiping the e
 If you are using Docker for your development stack, then this is a compelling addition to your toolkit as it will impressively speed up MySQL imports and boost productivity. If you're not using Docker for development/testing, this alone isn't probably enough to sway you, but I hope it is a convincing demonstration of some of the exciting possibilities that are easily achieved with the Docker architecture.
 
 [^1]: Hat tip to [Tim Stallmann](/team/tim-stallmann/) for taking a proof of concept and incorporating it into a [real-world project](/work/hptn-case-study/), from which many of the code samples here are drawn.
+
+[^2]: It's worth noting that there are [cool projects out there](https://github.com/juampynr/syncdb) for doing parallel imports of a SQL dump file.
