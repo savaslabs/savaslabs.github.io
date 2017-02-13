@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "A Docker Image for the Drupal Pattern Lab Starter Theme and other Front-End Apps"
+title: "A Docker Image for the Drupal Pattern Lab Starter Theme and Other Front-End Apps"
 date: 2017-01-30
 author: Dan Murphy
 tags: drupal drupal-planet docker pattern-lab front-end-dev drupal8
 summary: This post demonstrates how to build a Docker image that can be used in local Drupal development with the Pattern Lab Starter theme and/or with other common front-end applications such as npm, Gulp, and Bower.
-featured_image: "/blog/docker.png"
-featured_image_alt: "Docker placeholder image"
-featured_image_height: "983px"
-featured_image_width: "1474px"
+featured_image: "/blog/docker-drupal-pattern-lab.jpg"
+featured_image_alt: "Docker front-end tools"
+featured_image_height: "627px"
+featured_image_width: "1280px"
 drupal_planet_summary: |
   This post demonstrates how to build a Docker image that can be used in local Drupal development with the Pattern Lab Starter theme and/or with other common front-end applications such as npm, Gulp, and Bower.
 ---
