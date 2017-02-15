@@ -35,7 +35,7 @@ An improvement upon the default method above which we've been using for some tim
 pv /path/to/database.sql | mysql -u{some_user} -p {some_pass} {database_name}
 ```
 
-On large databases, though, MYSQL imports can be slow. If we look at a database dump SQL file, we can see why. For example, a 19 MB database dump file we are using in one of my test cases further on in this post contains these instructions:
+On large databases, though, MYSQL imports can be slow. If we look at a database dump SQL file, we can see why. For example, a 19 MB database dump file we are using in one of our test cases further on in this post contains these instructions:
 
 ``` sql
 --
