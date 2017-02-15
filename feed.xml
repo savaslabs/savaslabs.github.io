@@ -6,9 +6,254 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Feb 2017 19:46:17 +0000</pubDate>
-    <lastBuildDate>Fri, 10 Feb 2017 19:46:17 +0000</lastBuildDate>
+    <pubDate>Wed, 15 Feb 2017 17:27:44 +0000</pubDate>
+    <lastBuildDate>Wed, 15 Feb 2017 17:27:44 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Dramatically Improve MySQL Import Performance with Docker</title>
+        <description>&lt;p&gt;We use &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; for our development environments because it helps us adhere to our &lt;a href=&quot;/mission-and-values/#quality&quot;&gt;quality commitment&lt;/a&gt;. It ensures an identical development platform across the team while also achieving parity with the production environment. These efficiency gains (among others we’ll share in an ongoing &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker series&lt;/a&gt;) over traditional development methods enable us to spend less time on setup and more time building amazing things.&lt;/p&gt;
+
+&lt;p&gt;Part of our workflow includes a mechanism to establish and update the &lt;a href=&quot;https://en.wikipedia.org/wiki/Database_seeding&quot;&gt;seed database&lt;/a&gt; which we use to load near-real-time production content to our development environments as well as our &lt;a href=&quot;/blog/tag/testing/&quot;&gt;automated testing&lt;/a&gt; infrastructure. We’ve found it’s best to have real data throughout the development process, rather than using stale or dummy data which runs the risk of encountering unexpected issues toward the end of a project. One efficiency boon we’ve recently implemented and are excited to share is a technique that dramatically speeds up database imports, especially large ones. This is a big win for us since we’re often importing large databases multiple times a day on a project. In this post we’ll look at:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;how much faster data volume imports are compared to traditional database dumps piped to &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;how to set up a data volume import with your Drupal Docker stack&lt;/li&gt;
+  &lt;li&gt;how to tie in this process with your local and continuous integration environments&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-old-way&quot;&gt;The &lt;em&gt;old&lt;/em&gt; way&lt;/h2&gt;
+
+&lt;p&gt;The way we historically imported a database was to pipe a SQL database dump file into the MySQL command-line client:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql -u&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_user&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; -p&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_pass&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;database_name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &amp;lt; /path/to/database.sql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;An improvement upon the default method above which we’ve been using for some time allows us to monitor import progress utilizing the &lt;a href=&quot;https://www.ivarch.com/programs/pv.shtml&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pv&lt;/code&gt;&lt;/a&gt; command. Large imports can take many minutes, so having insight into how much time remains is helpful to our workflow:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pv /path/to/database.sql | mysql -u&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_user&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; -p &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_pass&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;database_name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;On large databases, though, MYSQL imports can be slow. If we look at a database dump SQL file, we can see why. For example, a 19 MB database dump file we are using in one of our test cases further on in this post contains these instructions:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;--
+-- Table structure for table `block_content`
+--
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EXISTS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*!40101 SET @saved_cs_client     = @@character_set_client */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*!40101 SET character_set_client = utf8 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;`id`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;`revision_id`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;`type`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COMMENT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;The ID of the target entity.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;`uuid`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;`langcode`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;UNIQUE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content_field__uuid__value`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`uuid`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;UNIQUE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content__revision_id`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`revision_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content_field__type__target_id`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`type`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InnoDB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARSET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8mb4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COMMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;The base table for block_content entities.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*!40101 SET character_set_client = @saved_cs_client */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;--
+-- Dumping data for table `block_content`
+--
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;LOCK&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLES&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WRITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*!40000 ALTER TABLE `block_content` DISABLE KEYS */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autocommit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;a9167ea6-c6b7-48a1-ac06-6d04a67a5d54&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;2114eee9-1674-4873-8800-aaf06aaf9773&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;855c13ba-689e-40fd-9b00-d7e3dd7998ae&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;8c68671b-715e-457d-a497-2d38c1562f67&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;bc7701dd-b31c-45a6-9f96-48b0b91c7fa2&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;d8e23385-5bda-41da-8e1f-ba60fc25c1dc&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;ea6a93eb-b0c3-4d1c-8690-c16b3c52b3f1&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;3d314051-567f-4e74-aae4-a8b076603e44&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;2ef5ae05-6819-4571-8872-4d994ae793ef&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;3deaa1a9-4144-43cc-9a3d-aeb635dfc2ca&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;d57e81e8-c613-45be-b1d5-5844ba15413c&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*!40000 ALTER TABLE `block_content` ENABLE KEYS */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;UNLOCK&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When we pipe the contents of the MySQL database dump to the &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; command, the client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file, (2) populate the database with data from the SQL dump and (3) do post-processing work like create indices to ensure the database performs well. The example here processes pretty quickly, but if your site has a lot of historic content, as many of our clients do, then the import process can take enough time that it throws a wrench in our rapid workflow!&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;What happens when &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; finishes importing the SQL dump file? The database contents (&lt;em&gt;often&lt;/em&gt;) live in &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/lib/mysql/{database}&lt;/code&gt;, so for example for the &lt;code class=&quot;highlighter-rouge&quot;&gt;block_content&lt;/code&gt; table mentioned above, assuming you’re using the typically preferred InnoDB storage engine, there are two files called &lt;code class=&quot;highlighter-rouge&quot;&gt;block_content.frm&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;block_content.ibd&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/lib/mysql/{database}/&lt;/code&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/lib/mysql&lt;/code&gt; directory will also contain a number of other directories and files related to the configuration of the MySQL server.&lt;/p&gt;
+
+&lt;p&gt;Now, suppose that instead of sequentially processing the SQL instructions contained in a database dump file, we were able to provide developers with a snapshot of the &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/lib/mysql&lt;/code&gt; directory for a given Drupal site. Could this swap faster than the traditional database import methods? Let’s have a look at two test cases to find out!&lt;/p&gt;
+
+&lt;h3 id=&quot;mysql-import-test-cases&quot;&gt;MySQL import test cases&lt;/h3&gt;
+
+&lt;p&gt;The table below shows the results of two test cases, one using a 19 MB database and the other using a 4.7 GB database.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Database size&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Time to drop tables and restore (seconds)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Traditional &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;19 MB&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;128&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Docker data volume restore&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;19 MB&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;11&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Traditional &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4.7 GB&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;606&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Docker data volume restore&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4.7 GB&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;85&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In other words, the MySQL data volume import completes, on average, in about 11% of the time, or 9 times faster, than a traditional MySQL dump import would take!&lt;/p&gt;
+
+&lt;p&gt;Since a GIF is worth a thousand words, compare these two processes side-by-side (both are using the same 19 MB source database; the first is using a data volume restore process while the second is using the traditional MySQL import process). You can see that the second process takes considerably longer!&lt;/p&gt;
+
+&lt;h4 id=&quot;docker-data-volume-restore&quot;&gt;Docker data volume restore&lt;/h4&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/102770.js&quot; id=&quot;asciicast-102770&quot; async=&quot;&quot; data-autoplay=&quot;true&quot; data-loop=&quot;true&quot; data-theme=&quot;solarized-dark&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;traditional-mysql-database-dump-import&quot;&gt;Traditional MySQL database dump import&lt;/h4&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/102769.js&quot; id=&quot;asciicast-102769&quot; async=&quot;&quot; data-autoplay=&quot;true&quot; data-loop=&quot;true&quot; data-theme=&quot;solarized-dark&quot;&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;use-mysql-volume-for-database-imports-with-docker&quot;&gt;Use MySQL volume for database imports with Docker&lt;/h2&gt;
+
+&lt;p&gt;Here’s how the process works&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. Suppose you have a Docker stack with a web container and a database container, and that the database container has data in it already (your site is up and running locally). Assuming a database container name of &lt;code class=&quot;highlighter-rouge&quot;&gt;drupal_database&lt;/code&gt;, to generate a volume for the MySQL &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/lib/mysql&lt;/code&gt; contents of the database container, you’d run these commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Stop the database container to prevent read/writes to it during the database&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# export process.&lt;/span&gt;
+docker stop drupal_database
+&lt;span class=&quot;c&quot;&gt;# Now use the carinamarinab/backup image with the `backup` command to generate a&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# tar.gz file based on the `/var/lib/mysql` directory in the `drupal_database`&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# container.&lt;/span&gt;
+docker run --rm --volumes-from dupal_database carinamarina/backup backup &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--source /var/lib/mysql/ --stdout --zip &amp;gt; db-data-volume.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With the 4.7 GB sample database above, this process takes 239 seconds and results in 702 MB compressed file.&lt;/p&gt;
+
+&lt;p&gt;We’re making use of the &lt;a href=&quot;https://getcarina.com/docs/tutorials/backup-restore-data/&quot;&gt;carinamarina/backup&lt;/a&gt; image produced by Rackspace to create an archive of the database files.&lt;/p&gt;
+
+&lt;p&gt;You can then distribute this file to your colleagues (at Savas Labs, we use &lt;a href=&quot;https://aws.amazon.com/s3/&quot;&gt;Amazon S3&lt;/a&gt;), or make use of it in continuous integration builds (more on that below), using these commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Copy the data volume tar.gz file from your team&#39;s AWS S3 bucket.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; ! -f db/db-data-volume.tar.gz &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then &lt;/span&gt;aws s3 cp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;your-bucket&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/mysql-data-volume/db-data-volume.tar.gz db-data-volume.tar.gz; &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Stop the database container to prevent read/writes during the database&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# restore process.&lt;/span&gt;
+docker stop drupal_database
+&lt;span class=&quot;c&quot;&gt;# Remove the /var/lib/mysql contents from the database container.&lt;/span&gt;
+docker run --rm --volumes-from drupal_database alpine:3.3 rm -rf /var/lib/mysql/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Use the carinamarina/backup image with the `restore` command to extract&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# the tar.gz file contents into /var/lib/mysql in the database container.&lt;/span&gt;
+docker run --rm --interactive --volumes-from drupal_database &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+carinamarina/backup restore --destination /var/lib/mysql/ --stdin &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+--zip &amp;lt; db-data-volume.tar.gz
+&lt;span class=&quot;c&quot;&gt;# Start the database container again.&lt;/span&gt;
+docker start drupal_database
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So, not too complicated, but it will require a change in your processes for generating seed databases to distribute to your team for local development, or for CI builds. Instead of using &lt;code class=&quot;highlighter-rouge&quot;&gt;mysqldump&lt;/code&gt; to create the seed database file, you’ll need to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;carinamarina/backup&lt;/code&gt; image to create the &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar.gz&lt;/code&gt; file for distribution. And instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql {database} &amp;lt; database.sql&lt;/code&gt; you’ll use &lt;code class=&quot;highlighter-rouge&quot;&gt;carinamarina/backup&lt;/code&gt; to restore the data volume.&lt;/p&gt;
+
+&lt;p&gt;In our team’s view this is a small cost for the enormous gains in database import time, which in turn boosts productivity to the tune of faster CI builds and refreshes of local development environments.&lt;/p&gt;
+
+&lt;h2 id=&quot;further-efficiency-gains-integrate-this-process-with-your-continuous-integration-workflow&quot;&gt;Further efficiency gains: integrate this process with your continuous integration workflow&lt;/h2&gt;
+
+&lt;p&gt;The above steps can be manually performed by a technical lead responsible for generating and distributing the MySQL data volume to team members and your testing infrastructure. But we can get further productivity gains by automating this process completely with &lt;a href=&quot;https://www.travis-ci.com&quot;&gt;Travis CI&lt;/a&gt; and GitHub hooks. In outline, here’s what this process looks like:&lt;/p&gt;
+
+&lt;h3 id=&quot;generate-a-new-seed-database-sql-dump-after-production-deployments&quot;&gt;1. Generate a new seed database SQL dump after production deployments&lt;/h3&gt;
+
+&lt;p&gt;At Savas Labs, we use &lt;a href=&quot;http://www.fabfile.org&quot;&gt;Fabric&lt;/a&gt; to automate our deployment process. When we deploy to production (not on a Docker stack), our post-deployment tasks generate a traditional MySQL database dump and copy it to Amazon S3:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update_seed_db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;drush -r &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s/www/web sql-dump &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    --result-file=/tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql --gzip &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    --structure-tables-list=cache,cache_*,history,search_*,sessions,watchdog&#39;&lt;/span&gt; \
+    &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;/usr/local/bin/aws s3 cp /tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql.gz &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    s3://{bucket-name}/seed-database/database.sql.gz --sse&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;rm /tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql.gz&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;when-work-is-merged-into-develop-create-a-new-mysql-data-volume-archive&quot;&gt;2. When work is merged into develop, create a new MySQL data volume archive&lt;/h3&gt;
+
+&lt;p&gt;We use &lt;a href=&quot;http://developers.savaslabs.com/en/latest/git.html#basic-git-workflow-git-flow&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git flow&lt;/code&gt;&lt;/a&gt; as our collaboration and documentation standard for source code management on our Drupal projects. Whenever a developer merges a feature branch into &lt;code class=&quot;highlighter-rouge&quot;&gt;develop&lt;/code&gt;, we update the MySQL data volume archive dump for use in Travis CI tasks and local development. First, there is a specification in our &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file that calls a deployment script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;resources/scripts/travis-deploy.sh&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;develop&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And the &lt;code class=&quot;highlighter-rouge&quot;&gt;travis-deploy.sh&lt;/code&gt; script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -e
+
+make import-seed-db
+make &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt;-mysql-data
+aws s3 cp db-data-volume.tar.gz &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/mysql-data-volume/db-data-volume.tar.gz --sse
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This script: (1) imports the traditional MySQL seed database file from production, and then (2) creates a MySQL data volume archive. We use a &lt;a href=&quot;https://github.com/savaslabs/docker-drupal-template/blob/master/Makefile&quot;&gt;Makefile&lt;/a&gt; to standardize common site provisioning tasks for developers and our CI systems.&lt;/p&gt;
+
+&lt;h3 id=&quot;pull-requests-and-local-development-make-use-of-the-mysql-data-volume-archive&quot;&gt;3. Pull requests and local development make use of the MySQL data volume archive&lt;/h3&gt;
+
+&lt;p&gt;Now, whenever developers want to refresh their local environment by wiping the existing database and re-importing the seed database, or, when a Travis CI build is triggered by a GitHub pull request, these processes can make use of an up-to-date MySQL data volume archive file which is super fast to restore! This way, we ensure we’re always testing against the latest content and configuration, and avoid running into costly issues having to troubleshoot inconsistencies with production.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We’ve invested heavily in Docker for our development stack, and this workflow update is a compelling addition to that toolkit since it has substantially sped up MySQL imports and boosted productivity. Try it out in your Docker workflow and we invite comments to field any questions and hear about your successes. Stay tuned for further &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker&lt;/a&gt; updates!&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;It’s worth noting that there are &lt;a href=&quot;https://github.com/juampynr/syncdb&quot;&gt;cool projects out there&lt;/a&gt; for doing parallel imports of a SQL dump file which improve the import experience. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;Hat tip to &lt;a href=&quot;/team/tim-stallmann/&quot;&gt;Tim Stallmann&lt;/a&gt; for taking a proof of concept and incorporating it into a &lt;a href=&quot;/work/hptn-case-study/&quot;&gt;real-world project&lt;/a&gt;, from which many of the code samples here are drawn. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/02/15/docker-mysql-performance.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/02/15/docker-mysql-performance.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>docker</category>
+        
+        <category>continuous-integration</category>
+        
+        <category>performance</category>
+        
+        <category>productivity</category>
+        
+        
+      </item>
     
       <item>
         <title>Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules</title>
@@ -2221,135 +2466,6 @@ sudo apt-get install php5-dev
         <category>drupal-planet</category>
         
         <category>module-development</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Drupalcon New Orleans 2016: a Twitter recap</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog/drupalcon-nola.jpg&quot; alt=&quot;Drupalcon New Orleans logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A week full of summits, sessions, a presentation, some parties and a fair amount of tweeting &lt;img src=&quot;/assets/img/icons-and-logos/twitter-bird.svg&quot; height=&quot;24&quot; alt=&quot;Twitter bird&quot; /&gt; was one for the books at Drupalcon NOLA 2016. Come along for a Twitter-assisted chronological journey for Savas Labs in New Orleans.&lt;/p&gt;
-
-&lt;h3 id=&quot;saturday--sunday-arrive-play-soccer-get-acquainted&quot;&gt;Saturday / Sunday: Arrive, play soccer, get acquainted&lt;/h3&gt;
-
-&lt;p&gt;I arrived Saturday evening after a few short flights from Durham, NC. My gracious host and boots on the ground in NOLA Kevin Harrison lent me a bicycle, showed me around the city, and invited me to play in his soccer game. It was a comforting entry into a new city that closely resembled what my weekend would have been like if I were at home. Thanks a ton Kevin for the hospitality!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/kevin-harrison.jpg&quot; alt=&quot;Kevin at a rooftop bar&quot; /&gt;
- &lt;span class=&quot;caption&quot;&gt;See a palindrome anywhere?&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Kevin also took me to the convention center so I could get my bearings for the week ahead. He took my picture, and &lt;strong&gt;&lt;em&gt;ever so slightly&lt;/em&gt;&lt;/strong&gt; doctored up the version you see below for me to share with our community that we had made it to the big stage!&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We have arrived &lt;a href=&quot;https://twitter.com/hashtag/DrupalCon?src=hash&quot;&gt;#DrupalCon&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/NOLA?src=hash&quot;&gt;#NOLA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt;!!!! &lt;a href=&quot;https://twitter.com/hashtag/yesfilter?src=hash&quot;&gt;#yesfilter&lt;/a&gt; &lt;a href=&quot;https://t.co/RlkNAu99nB&quot;&gt;pic.twitter.com/RlkNAu99nB&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/729504649233899521&quot;&gt;May 9, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;monday---business-summit--opening-party&quot;&gt;Monday - Business Summit / Opening party&lt;/h3&gt;
-
-&lt;p&gt;Thanks to Kevin for my two wheels, this is what my commute looked like most days to and from the conference. Despite the condition of some roads, New Orleans has one of the highest (sixth according to the 2009 census) rates of citizens who commute by bicycle in the U.S. It’s clearly also fairly horse-friendly as well.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Nice commute alongside horse and buggy to the convention center en route to &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/NOLA?src=hash&quot;&gt;#NOLA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/DrupalCon2016?src=hash&quot;&gt;#DrupalCon2016&lt;/a&gt; &lt;a href=&quot;https://t.co/BvvIEJqoga&quot;&gt;pic.twitter.com/BvvIEJqoga&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/729739990524174336&quot;&gt;May 9, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Rolling through the French Quarter on the way in!&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;After arriving, I walked the .75 miles (no exaggeration… it’s 1 mile long) &lt;strong&gt;&lt;em&gt;inside&lt;/em&gt;&lt;/strong&gt; the convention center to get to the business summit. Although a little disorganized due to a last-minute personnel change of who would be running the summit, it proved to be a very open forum where leaders in in the Drupal community spoke very openly, honestly, and encouragingly about how they run their Drupal businesses. It was refreshing how genuinely the open source philosophy pervaded the consciousness of the leaders who were on panels and giving presentations.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Gaining insight from &lt;a href=&quot;https://twitter.com/hashtag/Drupal?src=hash&quot;&gt;#Drupal&lt;/a&gt; leaders &lt;a href=&quot;https://twitter.com/mediacurrent&quot;&gt;@mediacurrent&lt;/a&gt; &lt;a href=&quot;https://twitter.com/prometsource&quot;&gt;@prometsource&lt;/a&gt; &lt;a href=&quot;https://twitter.com/lullabot&quot;&gt;@lullabot&lt;/a&gt; &lt;a href=&quot;https://twitter.com/phase2&quot;&gt;@phase2&lt;/a&gt; &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/NOLA?src=hash&quot;&gt;#NOLA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Drupalcon?src=hash&quot;&gt;#Drupalcon&lt;/a&gt; &lt;a href=&quot;https://t.co/cqvytd7KG7&quot;&gt;pic.twitter.com/cqvytd7KG7&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/729739985109327873&quot;&gt;May 9, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;In between panels and presentations, the rest of us divvied up into smaller groups brainstorming around key issues and presented our collective expertise back to the larger group. Topics ranged from content strategy, to marketing tactics, to how to handle conflict with large personalities, and everything in between. The breadth of the coverage ensured that nearly everyone got something out of the summit. My reading list grew by an order of magnitude from the summit. Now if I could only find the time…&lt;/p&gt;
-
-&lt;p&gt;After the summit, I joined my teammates Lisa and &lt;a href=&quot;/team/kosta-harlan/&quot;&gt;Kosta&lt;/a&gt; at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.&lt;/p&gt;
-
-&lt;p&gt;We then headed to the welcome pub crawl to meet up with some Drupal friends in person for the first time. It was a great evening of beautiful weather, good beer, and excited Drupalist(a)(o)s eagerly anticipating a fun week.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Thanks to &lt;a href=&quot;https://twitter.com/kostajh&quot;&gt;@kostajh&lt;/a&gt; just cheers&amp;#39;ed with &lt;a href=&quot;https://twitter.com/BioRAFT&quot;&gt;@BioRAFT&lt;/a&gt; &amp;quot;to coding standards!&amp;quot; &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/DrupalCon?src=hash&quot;&gt;#DrupalCon&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/NOLA?src=hash&quot;&gt;#NOLA&lt;/a&gt; &lt;a href=&quot;https://t.co/6lWKBxNklN&quot;&gt;pic.twitter.com/6lWKBxNklN&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/729877906231451648&quot;&gt;May 10, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;…Only at Drupalcon…&lt;/span&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;tuesday---presentation--women-in-drupal&quot;&gt;Tuesday - Presentation / Women in Drupal&lt;/h3&gt;
-
-&lt;p&gt;Excited (and a bit nervous) to give &lt;a href=&quot;https://events.drupal.org/neworleans2016/sessions/total-value-ownership-drupal-8-and-beyond&quot;&gt;my first presentation at Drupalcon&lt;/a&gt; (e pluribus unum), I spent much of the day reviewing and updating slides that were impacted by &lt;a href=&quot;https://www.youtube.com/watch?v=Ksp5JVFryEg&quot;&gt;the Driesnote&lt;/a&gt; which had a lot of overlap with my presentation.&lt;/p&gt;
-
-&lt;p&gt;Since Drupalcon is primarily a developer’s conference, and I was speaking in the “Business” track, I decided to drum up some interest for the session with a little social media &lt;s&gt;mudslinging&lt;/s&gt; banter.&lt;/p&gt;
-
-&lt;p&gt;A couple favorites are:&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Is &lt;a href=&quot;https://twitter.com/acquia&quot;&gt;@acquia&lt;/a&gt;&amp;#39;s &lt;a href=&quot;https://twitter.com/HornCologne&quot;&gt;@horncologne&lt;/a&gt; secretly involved with &lt;a href=&quot;https://twitter.com/Jamroom&quot;&gt;@Jamroom&lt;/a&gt; CMS?&lt;br /&gt;&lt;br /&gt;Sifting through the rumors today &lt;a href=&quot;https://twitter.com/5&quot;&gt;@5&lt;/a&gt;:00 &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; &lt;a href=&quot;https://t.co/T4sQ5Pmbih&quot;&gt;https://t.co/T4sQ5Pmbih&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/730096335748206592&quot;&gt;May 10, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;I must admit, since we have a &lt;a href=&quot;/team/kosta-harlan&quot;&gt;Jam&lt;/a&gt; of our own (inquire within), Acquia’s Jam is a topic of frequent discussion at the Savas Labs water cooler. I &lt;s&gt;was&lt;/s&gt; still am hopeful for some social media reaction. Unfortunately there were no &lt;em&gt;real&lt;/em&gt; rumors to speak of.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;TBD today &lt;a href=&quot;https://twitter.com/5&quot;&gt;@5&lt;/a&gt;:00 &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; &lt;a href=&quot;https://t.co/VODC0fZ65P&quot;&gt;https://t.co/VODC0fZ65P&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;What&amp;#39;s the best/worst named CMS?&lt;br /&gt;Farcry&lt;br /&gt;Geeklog&lt;br /&gt;Thingamablog&lt;a href=&quot;https://twitter.com/TiddlyWiki&quot;&gt;@TiddlyWiki&lt;/a&gt; (my fave)&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/730087801790828545&quot;&gt;May 10, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Just a select few of the &lt;strong&gt;incredible&lt;/strong&gt; names &lt;em&gt;someone&lt;/em&gt; decided to name their CMS in the past. Most of which have little to no presence at this point. You live and learn.&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;The presentation was fun to give. I saw some familiar faces like former and current coworkers, which was comforting. The research that went into the presentation was perhaps as valuable as giving the talk. I timed the material I shared well, and there was a fairly lively Q&amp;amp;A session after, which was great. I received some positive and constructive feedback both right after the talk, and via the online evaluations that I’m eager to incorporate the next time I give the presentation.&lt;/p&gt;
-
-&lt;h4 id=&quot;women-in-drupal&quot;&gt;Women in Drupal&lt;/h4&gt;
-
-&lt;p&gt;Somewhat ironically, Kosta and myself and not Lisa (the only female Savasian at Drupalcon) attended the &lt;a href=&quot;https://events.drupal.org/neworleans2016/women-drupal&quot;&gt;Women in Drupal&lt;/a&gt; event. It was a great time to meet some &lt;a href=&quot;http://devcollaborative.com/about-us&quot;&gt;old friends&lt;/a&gt; in person for the first time and make some new friends. It was nice to see the women-owned &lt;a href=&quot;http://www.hook42.com/&quot;&gt;hook 42&lt;/a&gt; as sponsorship leaders who were presenting the day before at the business summit. It’s also great that this has been on the Drupalcon agenda for years. It was also nice to hear people talking of diversity beyond gender as a focus for Drupal agencies and technology companies more generally. However much like evaluations from my session were helpful in pointing out room for improvement, my two cents is that a better platform for meaningful discussion that can lead to action is interesting to me. On the flipside, as my teammates pointed out, there’s nothing wrong with having a party. Thank you to the sponsors and Drupal community for caring about this issue.&lt;/p&gt;
-
-&lt;h3 id=&quot;wednesday---sessions-and-lullabot-party&quot;&gt;Wednesday - Sessions and Lullabot Party&lt;/h3&gt;
-
-&lt;p&gt;After the presentation was behind me, I was happy to be more involved with the daily activities of Drupalcon, i.e. &lt;strong&gt;attending sessions!&lt;/strong&gt;. I went to a handful, but my favorite of the day was &lt;a href=&quot;https://events.drupal.org/neworleans2016/sessions/lessons-wordpress-core&quot;&gt;Lessons from Wordpress Core&lt;/a&gt;. It was a nice discussion juxtaposing Wordpress and Drupal powered websites given by two &lt;a href=&quot;https://pantheon.io/&quot;&gt;Pantheon&lt;/a&gt; employees who had respective expertise in one of the frameworks. One primary takeaway for me was the discrepancy in approach with Drupal vs. Wordpress in backward compatibility. It is a &lt;em&gt;very&lt;/em&gt; complex topic, but in some ways the backwards compatible approach has contributed to Wordpress’s high degree of user-loyalty as well as comparatively fast adoption to the newest version. The Drupal leadership is very conscious of this and is having very meaningful conversations around Backwards compatibility. Larry Garfield (&lt;a href=&quot;https://www.drupal.org/u/crell&quot;&gt;Crell&lt;/a&gt;) &lt;a href=&quot;https://www.youtube.com/watch?v=JeoCHqzvUFY&amp;amp;feature=youtu.be&amp;amp;t=3296&quot;&gt;provides great insight to this&lt;/a&gt; at the end of the session.&lt;/p&gt;
-
-&lt;p&gt;After sessions closed for the day, we had a nice dinner with friends from &lt;a href=&quot;http://devcollaborative.com/about-us&quot;&gt;DevCollaborative&lt;/a&gt;, &lt;a href=&quot;https://www.advomatic.com/our-team/sarah-german&quot;&gt;Advomatic&lt;/a&gt;
-and made our way on over to the &lt;a href=&quot;https://events.drupal.org/neworleans2016/lullabots-8th-annual-drupalcon-party&quot;&gt;Lullabot party&lt;/a&gt;. The theme of meeting those who we only digitally knew, while making new friends certainly continued at the Lullabot party. It was a great time!&lt;/p&gt;
-
-&lt;h3 id=&quot;thursday---the-last-day-of-sessions&quot;&gt;Thursday - the last day of sessions&lt;/h3&gt;
-
-&lt;p&gt;Thursday was the final day of sessions, and of course the &lt;a href=&quot;https://events.drupal.org/neworleans2016/kalamuna-four-kitchens-present-drupal-6-mourning-party&quot;&gt;Drupal 6 burial party&lt;/a&gt; - #SoCheeky. The sessions I attended were all quite pertinent to me. In my talk, I reference the lack of an official release for an e-commerce platform for Drupal 8 is one reason for slowed adoption compared to Drupal 7. The Commerce guys did elicit a lot of applause in &lt;a href=&quot;https://events.drupal.org/neworleans2016/sessions/creating-stores-drupal-commerce-drupal-8&quot;&gt;their session&lt;/a&gt; about what &lt;em&gt;is coming soon&lt;/em&gt; for Drupal Commerce’s official Drupal 8 release, but were only willing to commit to a “ready by the end of summer” time line which left &lt;a href=&quot;https://youtu.be/EQxA3VYal54?t=3161&quot;&gt;some people&lt;/a&gt; chomping at the bit for the official release that is still some time ahead.&lt;/p&gt;
-
-&lt;p&gt;Zivtech’s Co-founder/CTO &lt;a href=&quot;https://www.zivtech.com/about/team/jody-hamilton&quot;&gt;Jody Hamilton&lt;/a&gt;’s &lt;a href=&quot;https://events.drupal.org/neworleans2016/sessions/grow-your-own&quot;&gt;“Grow your own”&lt;/a&gt; presentation about how to create a culture of recruitment and training within was another near-and-dear topic as we had just hired our second intern (&lt;a href=&quot;http://savaslabs.com/team/ro-wang/&quot;&gt;the wonderful Ro&lt;/a&gt;)! The presentation had some good lessons learned and valuable takeaways if not only entertaining to the frequency of the reference to marijuana (see 3 seconds into the presentation). Thanks for the good info Jody!&lt;/p&gt;
-
-&lt;p&gt;My last session of Drupalcon was Dries’s &lt;a href=&quot;https://events.drupal.org/neworleans2016/sessions/state-drupal&quot;&gt;State of Drupal&lt;/a&gt;. Since I missed the &lt;a href=&quot;https://twitter.com/hashtag/DriesNote?src=hash&quot;&gt;#Driesnote&lt;/a&gt; in person (just finished watching it), and contributed to &lt;a href=&quot;http://buytaert.net/state-of-drupal-2016-survey&quot;&gt;the survey&lt;/a&gt; he put out, and &lt;a href=&quot;http://buytaert.net/how-is-drupal-8-doing#comment-125541&quot;&gt;commented on his blog post&lt;/a&gt; about the adoption of Drupal 8, I figured I still needed more. Sure enough, much of the material I was aware of at the time, but as I am wont to do, I was the &lt;a href=&quot;https://youtu.be/Ct0IYLgPYos?t=1923&quot;&gt;first to ask Dries a question&lt;/a&gt; (admittedly a bit circuitous and verbose) as to how to improve the experience of trying to contribute to Drupal. &lt;a href=&quot;https://www.drupal.org/u/xjm&quot;&gt;XJM&lt;/a&gt; rushed to the mic to give a great answer, which ended up driving my involvement with &lt;a href=&quot;https://www.drupal.org/u/jthorson&quot;&gt;Jeremy Thorson&lt;/a&gt; (who also spoke thereafter) at the sprint the following day.&lt;/p&gt;
-
-&lt;p&gt;The day concluded with the marching memorial putting Drupal 6 to rest. I observed the wonderful jazz band that accompanied it, but passed up the opportunity to head to the Rusty Nail for the 3rd time in as many days. Kosta and Lisa were in the air and on their way home at that point.&lt;/p&gt;
-
-&lt;h3 id=&quot;friday---code-sprinting--heading-home&quot;&gt;Friday - Code sprinting / Heading home&lt;/h3&gt;
-
-&lt;p&gt;The Friday sprints were surprisingly well attended. Sprint lounges were occupied all week, and some sprinters promised to continue throughout the weekend at the convention center. This dedication to the project is impressive and inspirational (and I’ve argued necessary) to the future of Drupal’s success.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Putting my 💰 where my 🤑 is and investing in &lt;a href=&quot;https://twitter.com/hashtag/Drupal?src=hash&quot;&gt;#Drupal&lt;/a&gt;:  &lt;a href=&quot;https://t.co/s1aUuoKxkv&quot;&gt;https://t.co/s1aUuoKxkv&lt;/a&gt; &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; code sprinting 🏃 ! &lt;a href=&quot;https://t.co/mlSXsZif4m&quot;&gt;pic.twitter.com/mlSXsZif4m&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/731148211218436097&quot;&gt;May 13, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;It is in the track world just as it is in the coding world: &lt;strong&gt;sprinting is hard!&lt;/strong&gt; It is difficult to get organized, get oriented (or help orient) and contribute effectively to a global project in a narrow window of time.&lt;/p&gt;
-
-&lt;p&gt;Given my newfound desire to ease the barriers and access to contributing to the project in general, I decided to sprint to make the drupal.org contributor experience better. In doing so, I got &lt;a href=&quot;https://drupal:drupal@chrisarusso-drupal.dev.devdrupal.org&quot;&gt;my very own installation of the drupal.org website&lt;/a&gt; of which I had complete control. &lt;strong&gt;Fun&lt;/strong&gt;!&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Just for one glorious day when contributing to &lt;a href=&quot;https://twitter.com/hashtag/Drupal?src=hash&quot;&gt;#Drupal&lt;/a&gt;, I AM &lt;a href=&quot;https://twitter.com/Dries&quot;&gt;@Dries&lt;/a&gt;! &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/DreamsRealized?src=hash&quot;&gt;#DreamsRealized&lt;/a&gt; &lt;a href=&quot;https://t.co/aWGlGaM67P&quot;&gt;pic.twitter.com/aWGlGaM67P&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/731184271218610177&quot;&gt;May 13, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Note: Dries liked this Tweet&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;As mentioned, &lt;strong&gt;sprinting is hard&lt;/strong&gt;, so I was actually unable to meaningfully contribute a patch during my stay before I had to head to the airport.&lt;/p&gt;
-
-&lt;p&gt;However, I was able to follow up shortly after returning home to &lt;a href=&quot;https://www.drupal.org/node/2035235#comment-11201809&quot;&gt;submit a patch&lt;/a&gt; to the issue I was working on which is currently in review. Exciting stuff.&lt;/p&gt;
-
-&lt;h3 id=&quot;wrap-up&quot;&gt;Wrap-up&lt;/h3&gt;
-
-&lt;p&gt;In conclusion, one of my biggest takeaways from the whole experience is that &lt;strong&gt;it’s all about the community!!&lt;/strong&gt; … that’s what makes Drupal great. Some of my favorite people on planet Earth I either work with, or met through Drupal. Conferences are a nice time to connect in the flesh with people who we know on the other side of a video call, or less yet, as a username on a website. New Orleans proved to be a good city to host Drupalcon, and we’re already looking forward to Baltimore next year.&lt;/p&gt;
-
-&lt;h5 id=&quot;honorable-mention-tweets-anxiously-awaiting-a-response&quot;&gt;Honorable mention Tweets anxiously awaiting a response&lt;/h5&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;. &lt;a href=&quot;https://twitter.com/sethviebrock&quot;&gt;@sethviebrock&lt;/a&gt; of &lt;a href=&quot;https://twitter.com/OriginEight&quot;&gt;@OriginEight&lt;/a&gt; - great to meet &lt;a href=&quot;https://twitter.com/DrupalConNA&quot;&gt;@DrupalConNA&lt;/a&gt; - HAVE to hear about your work on 🎤 &lt;a href=&quot;https://twitter.com/justinbieber&quot;&gt;@justinbieber&lt;/a&gt;&amp;#39;s 🎤 website 💻 &lt;a href=&quot;https://twitter.com/hashtag/Beliebers?src=hash&quot;&gt;#Beliebers&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/730456948731154433&quot;&gt;May 11, 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Fri, 20 May 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/05/20/drupalcon-nola-recap.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/05/20/drupalcon-nola-recap.html</guid>
-        
-        <category>drupal</category>
-        
-        <category>drupal8</category>
-        
-        <category>drupalcon</category>
-        
-        <category>event</category>
         
         
       </item>
