@@ -85,3 +85,5 @@
   name: Javascript
 - slug: continuous-integration
   name: Continuous Integration
+- slug: pattern-lab
+  name: Pattern Lab
