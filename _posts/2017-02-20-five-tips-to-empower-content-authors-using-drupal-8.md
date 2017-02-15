@@ -60,7 +60,7 @@ Unstructured content has only one field which contains text, images, etc. Altern
 ### The benefits of Drupal 8 structured content approach:
 
 - The content author clearly understands where each piece of information should reside. Content entry becomes remarkably efficient.
-- The content author does not have to factor in the markup, layout and design of the content while editing it  (see [tip #2](/#configure-wysiwyg-editor-responsibly) below). This enables the author to concentrate on the essence of their message instead of content format and presentation.
+- The content author does not have to factor in the markup, layout and design of the content while editing it  (see [tip #2](#configure-wysiwyg-editor-responsibly) below). This enables the author to concentrate on the essence of their message instead of content format and presentation.
 - Structured content makes the publishing platform easy to maintain while supporting system scalability.
 - Migration of the sites with granular structured content between CMS versions or to a completely different CMS is much more streamlined. _A huge plus for those long-term thinkers!_
 
