@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Dramatically Improve MySQL Import Performance with Docker"
-date: 2017-02-14
-author: Kosta Harlan
+date: 2017-02-15
+author: Kosta Harlan and Chris Russo
 tags: drupal drupal-planet docker continuous-integration performance productivity
 summary: "How to dramatically improve MySQL database import performance on Drupal with Docker stacks"
 featured_image: "/blog/sea-ocean-boats-port.jpg"
@@ -35,7 +35,7 @@ An improvement upon the default method above which we've been using for some tim
 pv /path/to/database.sql | mysql -u{some_user} -p {some_pass} {database_name}
 ```
 
-On large databases, though, MYSQL imports can be slow. If we look at a database dump SQL file, we can see why. For example, a 19 MB database dump file I am using in one of my test cases further on in this post contains these instructions:
+On large databases, though, MYSQL imports can be slow. If we look at a database dump SQL file, we can see why. For example, a 19 MB database dump file we are using in one of my test cases further on in this post contains these instructions:
 
 ``` sql
 --
@@ -71,7 +71,7 @@ UNLOCK TABLES;
 commit;
 ```
 
-When I pipe the contents of the MySQL database dump to the `mysql` command, the client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file, (2) populate the database with data from the SQL dump and (3) do post-processing work like create indices to ensure the database performs well. The example here processes pretty quickly, but if your site has a lot of historic content, as many of our clients do, then the import process can take enough time that it throws a wrench in our rapid workflow![^1]
+When we pipe the contents of the MySQL database dump to the `mysql` command, the client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file, (2) populate the database with data from the SQL dump and (3) do post-processing work like create indices to ensure the database performs well. The example here processes pretty quickly, but if your site has a lot of historic content, as many of our clients do, then the import process can take enough time that it throws a wrench in our rapid workflow![^1]
 
 What happens when `mysql` finishes importing the SQL dump file? The database contents (_often_) live in `/var/lib/mysql/{database}`, so for example for the `block_content` table mentioned above, assuming you're using the typically preferred InnoDB storage engine, there are two files called `block_content.frm` and `block_content.ibd` in `/var/lib/mysql/{database}/`. The `/var/lib/mysql` directory will also contain a number of other directories and files related to the configuration of the MySQL server.
 
@@ -197,7 +197,7 @@ Now, whenever developers want to refresh their local environment by wiping the e
 
 ## Conclusion
 
-We've invested heavily in Docker for our development stack, and this workflow update is a compelling addition to that toolkit since it has substantially sped up MySQL imports and boosted productivity. Try it out in your Docker workflow and I invite comments to field any questions and hear about your successes. Stay tuned for further [Docker](/blog/tag/docker/) updates!
+We've invested heavily in Docker for our development stack, and this workflow update is a compelling addition to that toolkit since it has substantially sped up MySQL imports and boosted productivity. Try it out in your Docker workflow and we invite comments to field any questions and hear about your successes. Stay tuned for further [Docker](/blog/tag/docker/) updates!
 
 [^1]: It's worth noting that there are [cool projects out there](https://github.com/juampynr/syncdb) for doing parallel imports of a SQL dump file which improve the import experience.
 
