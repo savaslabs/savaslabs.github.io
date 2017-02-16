@@ -6,8 +6,8 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Feb 2017 20:33:26 +0000</pubDate>
-    <lastBuildDate>Wed, 15 Feb 2017 20:33:26 +0000</lastBuildDate>
+    <pubDate>Thu, 16 Feb 2017 16:22:31 +0000</pubDate>
+    <lastBuildDate>Thu, 16 Feb 2017 16:22:31 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -136,7 +136,7 @@ docker stop drupal_database
 &lt;span class=&quot;c&quot;&gt;# Now use the carinamarinab/backup image with the `backup` command to generate a&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# tar.gz file based on the `/var/lib/mysql` directory in the `drupal_database`&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# container.&lt;/span&gt;
-docker run --rm --volumes-from dupal_database carinamarina/backup backup &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+docker run --rm --volumes-from drupal_database carinamarina/backup backup &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 --source /var/lib/mysql/ --stdout --zip &amp;gt; db-data-volume.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
