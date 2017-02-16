@@ -5,7 +5,7 @@ date: 2017-02-22
 author: Anne Tomasevich
 tags: design typography
 featured_image: "/blog/on-web-typography-featured.jpg"
-featured_image_alt: "Copies of the book On Web Typography"
+featured_image_alt: "A woman reading on a tablet"
 featured_image_height: "983px"
 featured_image_width: "1474px"
 summary: |
