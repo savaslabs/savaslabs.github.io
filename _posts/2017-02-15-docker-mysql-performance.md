@@ -111,7 +111,7 @@ docker stop drupal_database
 # Now use the carinamarinab/backup image with the `backup` command to generate a
 # tar.gz file based on the `/var/lib/mysql` directory in the `drupal_database`
 # container.
-docker run --rm --volumes-from dupal_database carinamarina/backup backup \
+docker run --rm --volumes-from drupal_database carinamarina/backup backup \
 --source /var/lib/mysql/ --stdout --zip > db-data-volume.tar.gz
 ```
 
