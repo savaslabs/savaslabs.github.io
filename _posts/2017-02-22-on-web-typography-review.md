@@ -1,13 +1,12 @@
 ---
 layout: post
 title: On Web Typography - a Book Review
-date: 2017-02-06
+date: 2017-02-22
 author: Anne Tomasevich
 tags: design typography
-featured_image: "/blog/on-web-typography.jpg"
+featured_image: "/blog/on-web-typography-featured.jpg"
 featured_image_alt: "Copies of the book On Web Typography"
-featured_image_caption: "*[Image source](https://abookapart.com/products/on-web-typography)*"
-featured_image_height: "917px"
+featured_image_height: "983px"
 featured_image_width: "1474px"
 summary: |
   A review of Jason Santa Maria's *On Web Typography*, and how we applied the
@@ -38,13 +37,17 @@ depth to the process that is so much more than picking and applying fonts.
 
 ## Base knowledge
 
+![A diagram of typeface terminology]({{ site.url }}/assets/img/blog/on-web-typography-typeface-anatomy.jpg)
+<span class="caption">A diagram of typeface anatomy<br>
+*From* [On Web Typography](https://abookapart.com/products/on-web-typography) *by Jason Santa Maria*</span>
+
 Most of us can tell a serif from a sans serif, but I found the base of knowledge
 Santa Maria provides in the book to be an incredibly useful foundation. Knowing
 some critical terminology and history has already improved my ability to design
 type, and this section is compact enough to be a quick overview with serious
 payoff.
 
-In this section, Santa Maria covers:
+In the book, Santa Maria covers:
 
 - An extremely brief yet useful history of type, focused on how typefaces were
 created through most of history before the web and how things changed as
@@ -56,6 +59,10 @@ evaluating and choosing typefaces
 offer (true bolds and italics, language sets, punctuation, etc.)
 
 ## Evaluating typefaces
+
+![Examples of alternatives to Helvetica based on Helvetica's physical characteristics]({{ site.url }}/assets/img/blog/on-web-typography-helvetica-alternatives.jpg)
+<span class="caption">Finding alternatives to Helvetica by examining its physical characteristics<br>
+*From* [On Web Typography](https://abookapart.com/products/on-web-typography) *by Jason Santa Maria*</span>
 
 After reviewing the building blocks that make up a typeface, Santa Maria applies
 this knowledge by walking the reader through the process of evaluating two
@@ -69,10 +76,11 @@ level and prepare you for the next part: actually selecting and applying them.
 ## Choosing and pairing typefaces
 
 All the previous sections culminate in the ultimate goal: how to design type for
-your site. Santa Maria introduces two separate contexts to consider:
+your site. Santa Maria introduces two separate contexts to consider: type for a
+moment (a menu link, a heading, etc.) and type to live with (long text).
 
-- Type for a moment (a menu link, a heading, etc.)
-- Type to live with (long text)
+![Examples of type in different contexts]({{ site.url }}/assets/img/blog/on-web-typography-contexts.jpg)
+<span class="caption">Some examples of the two contexts</span>
 
 These contexts demand different typeface choices based on what's important
 to the reader — quickly understanding a snippet of text, or reading
@@ -108,6 +116,9 @@ bookmarking the source in an "Inspiration" folder. [Entire books have been
 written about this process](http://austinkleon.com/steal/), so don't be afraid
 to be inspired by others' work!
 
+![Screenshots of websites with nice type design]({{ site.url }}/assets/img/blog/on-web-typography-inspiration.jpg)
+<span class="caption">Some samples from my Inspiration folder</span>
+
 After perusing my Inspiration folder, I follow these guidelines when designing
 type:
 
@@ -135,10 +146,10 @@ every time, and is a nice way to practice the skills suggested above.
 
 ## Closing thoughts
 
-I would highly recommend checking out *On Web Typography*, especially if you're
-a typography novice looking for some quick gains. In closing, I'll leave you
-with Santa Maria's thoughts on why typography matters, beyond putting pretty
-text on a page:
+I would highly recommend checking out [*On Web Typography*](https://abookapart.com/products/on-web-typography),
+especially if you're a typography novice looking for some quick gains. In
+closing, I'll leave you with Santa Maria's thoughts on why typography matters,
+beyond putting pretty text on a page:
 
 > Being good at typography makes you a more adept thinker, communicator, and
 designer. When you immerse yourself in the fine details of text, you not
