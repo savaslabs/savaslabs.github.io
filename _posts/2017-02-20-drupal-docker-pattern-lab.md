@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Docker Image for the Drupal Pattern Lab Starter Theme and Other Front-End Apps"
+title: "Docker and the Drupal Pattern Lab Starter Theme"
 date: 2017-02-20
 author: Dan Murphy
 tags: drupal drupal-planet docker pattern-lab front-end-dev drupal8
