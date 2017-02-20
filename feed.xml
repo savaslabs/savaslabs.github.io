@@ -6,9 +6,181 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Feb 2017 16:22:31 +0000</pubDate>
-    <lastBuildDate>Thu, 16 Feb 2017 16:22:31 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Feb 2017 05:21:32 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Feb 2017 05:21:32 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Docker and the Drupal Pattern Lab Starter Theme</title>
+        <description>&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;Savas Labs has been using Docker for our local development and &lt;a href=&quot;/blog/tag/continuous-integration/&quot;&gt;CI&lt;/a&gt; environments for some time to streamline our systems. On a recent project, we chose to integrate &lt;a href=&quot;https://github.com/phase2/pattern-lab-starter&quot;&gt;Phase 2’s Pattern Lab Starter theme&lt;/a&gt; to incorporate more front-end components into our standard build. This required building a new Docker image for running applications that the theme depends on. In this post, I’ll share:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; used to build an image with Node, npm, PHP, and Composer installed&lt;/li&gt;
+  &lt;li&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; configuration and Docker commands for running theme commands such as &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; from within the container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Along the way, I’ll also provide:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A quick overview of why we use Docker for local development
+    &lt;ul&gt;
+      &lt;li&gt;This is part of a &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker series&lt;/a&gt; we’re publishing, so be on the lookout for more!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tips for building custom images and running common front-end applications inside containers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;We switched to using Docker for local development last year and we love it - so much so that we even proposed &lt;a href=&quot;https://events.drupal.org/node/17250&quot;&gt;a Drupalcon session on our approach and experience&lt;/a&gt; we hope to deliver. Using Docker makes it easy for developers to quickly spin up consistent local development environments that match production. In the past we used Vagrant and virtual machines, even a Drupal-specific flavor &lt;a href=&quot;https://www.drupalvm.com/&quot;&gt;DrupalVM&lt;/a&gt;, for these purposes, but we’ve found Docker to be faster when switching between multiple projects, which we often do on any given &lt;s&gt;Sun&lt;/s&gt;workday.&lt;/p&gt;
+
+&lt;p&gt;Usually we build our Docker images from scratch to closely match production environments. However, for agile development and rapid prototyping, we often make use of public Docker images. In these cases we’ve relied on &lt;a href=&quot;https://github.com/wodby/docker4drupal&quot;&gt;Wodby’s Docker4Drupal project&lt;/a&gt;, which is “a set of docker containers optimized for Drupal.”&lt;/p&gt;
+
+&lt;p&gt;We’re also fans of the &lt;a href=&quot;http://atomicdesign.bradfrost.com/&quot;&gt;atomic design methodology&lt;/a&gt; and present our clients interactive style guides &lt;em&gt;early&lt;/em&gt; to facilitate better collaboration throughout. Real interaction with the design is necessary from the get-go; gone are the days of the static Photoshop file at the outset that “magically” translates to a living design at the end. So when we heard of the &lt;a href=&quot;https://github.com/phase2/pattern-lab-starter&quot;&gt;Pattern Lab Starter Drupal theme&lt;/a&gt; which leverages &lt;a href=&quot;http://patternlab.io/&quot;&gt;Pattern Lab&lt;/a&gt; (a tool for building pattern-driven user interfaces using atomic design), we were excited to bake the front-end components in to our Docker world. Oh, the beauty of open source!&lt;/p&gt;
+
+&lt;h2 id=&quot;building-the-docker-image&quot;&gt;Building the Docker image&lt;/h2&gt;
+
+&lt;p&gt;To experiment with the Pattern Lab Starter theme we began with a vanilla Drupal 8 installation, and then quickly spun up our local Docker development environment &lt;a href=&quot;http://docs.docker4drupal.org/en/latest/#usage&quot;&gt;using Docker4Drupal&lt;/a&gt;. We then copied the &lt;a href=&quot;https://github.com/phase2/pattern-lab-starter&quot;&gt;Pattern Lab Starter code&lt;/a&gt; to a new &lt;code class=&quot;highlighter-rouge&quot;&gt;custom/theme/patter_lab_starter&lt;/code&gt; directory in our Drupal project.&lt;/p&gt;
+
+&lt;p&gt;Running the Phase 2 Pattern Lab Starter theme requires &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js&lt;/a&gt;, the node package manager &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt;, PHP, and the PHP dependency manager &lt;a href=&quot;https://getcomposer.org/&quot;&gt;Composer&lt;/a&gt;. Node and npm are required for managing the theme’s node dependencies (such as Gulp, Bower, etc.), while PHP and Composer are required by the theme to run and serve Pattern Lab.&lt;/p&gt;
+
+&lt;p&gt;While we could install these applications on the host machine, outside of the Docker image, that defeats the purpose of using Docker. One of the great advantages of virtualization, be it Docker or a full VM, is that you don’t have to rely on installing global dependencies on your local machine. One of the many benefits of this is that it ensures each team member is developing in the same environment.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, while Docker4Drupal provides public images for many applications (such as Nginx, PHP, MariaDB, Mailhog, Redis, Apache Solr, and Varnish), it does not provide images for running the applications required by the Pattern Lab Starter theme.&lt;/p&gt;
+
+&lt;p&gt;One of the nice features of Docker though is that it is relatively easy to create a new image that builds upon other images. This is done via a &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; which specifies the commands for creating the image.&lt;/p&gt;
+
+&lt;p&gt;To build an image with the applications required by our theme we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; with the following contents:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM node:7.1
+MAINTAINER Dan Murphy &amp;lt;dan@savaslabs.com&amp;gt;
+
+RUN apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    apt-get install -y php5-dev  &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    curl -sS https://getcomposer.org/installer | php -- --install-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin --filename&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;composer &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# Directory required by Yeoman to run.&lt;/span&gt;
+    mkdir -p /root/.config/configstore &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# Clean up.&lt;/span&gt;
+    apt-get clean &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    rm -rf &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+      /root/.composer &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+      /tmp/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+      /usr/include/php &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+      /usr/lib/php5/build &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+      /var/lib/apt/lists/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Permissions required by Yeoman to run: https://github.com/keystonejs/keystone/issues/1566#issuecomment-217736880&lt;/span&gt;
+RUN chmod g+rwx /root /root/.config /root/.config/configstore
+
+EXPOSE 3001 3050
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The commands in this &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set &lt;a href=&quot;https://hub.docker.com/_/node/&quot;&gt;the official Node 7 image&lt;/a&gt; as the base image. This base image includes Node and npm.&lt;/li&gt;
+  &lt;li&gt;Install PHP 5 and Composer.&lt;/li&gt;
+  &lt;li&gt;Make configuration changes necessary for running &lt;a href=&quot;http://yeoman.io/&quot;&gt;Yeoman&lt;/a&gt;, a popular Node scaffolding system used to create new component folders in Pattern Lab.&lt;/li&gt;
+  &lt;li&gt;Expose ports 3001 and 3050 which are necessary for serving the Pattern Lab style guide.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From this &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; we built the image &lt;code class=&quot;highlighter-rouge&quot;&gt;savaslabs/node-php-composer&lt;/code&gt; and made it &lt;a href=&quot;https://hub.docker.com/r/savaslabs/node-php-composer/&quot;&gt;publicly available on DockerHub&lt;/a&gt;. Please check it out and use it to your delight!&lt;/p&gt;
+
+&lt;p&gt;One piece of advice I have for building images for local development is that while Alpine Linux based images may be much smaller in size, the bare-bones nature and lack of common packages brings with it some trade-offs that make it more difficult to build upon. For that reason, we based our image on the standard &lt;code class=&quot;highlighter-rouge&quot;&gt;DebianJessie&lt;/code&gt; Node image rather than the Alpine variant.&lt;/p&gt;
+
+&lt;p&gt;This is also why we didn’t just simply start from &lt;a href=&quot;https://hub.docker.com/r/wodby/drupal-php/~/dockerfile/&quot;&gt;the &lt;code class=&quot;highlighter-rouge&quot;&gt;wodby/drupal-php:7.0&lt;/code&gt;&lt;/a&gt; image and install Node and npm on it. Unfortunately, the &lt;code class=&quot;highlighter-rouge&quot;&gt;wodby/drupal-php&lt;/code&gt; image is built from &lt;code class=&quot;highlighter-rouge&quot;&gt;alpine:edge&lt;/code&gt; which lacks many of the dependencies required to install Node and npm.&lt;/p&gt;
+
+&lt;p&gt;Now a Docker purist might critique this image and recommend only “one process per container”. This is a drawback of this approach, especially since Wodby already provides a PHP image with Composer installed. Ideally, we’d use that in conjunction with separate images that run Node and npm.&lt;/p&gt;
+
+&lt;p&gt;However, the theme’s setup makes that difficult. Essentially PHP scripts and Composer commands are baked into the theme’s npm scripts and gulp tasks, making it difficult to untangle them. For example, the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; command runs Gulp tasks that depend on PHP to generate and serve the Pattern Lab style guide.&lt;/p&gt;
+
+&lt;p&gt;Due to these constraints, and since this image is for local development, isn’t being used to deploy a production app, and encapsulates all of the applications required by the Pattern Lab Starter theme, we felt comfortable with this approach.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-the-image&quot;&gt;Using the image&lt;/h3&gt;
+
+&lt;p&gt;To use this image, we specified it in our project’s &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file (&lt;a href=&quot;https://gist.github.com/dmurphy1/ee62085eef2d40b279cc848f88213fc9&quot;&gt;see full file here&lt;/a&gt;) by adding the following lines to the services section:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;node-php-composer&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;savaslabs/node-php-composer:1.2&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3050:3050&quot;&lt;/span&gt;
+   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3001:3001&quot;&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;volumes_from&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;php&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This defines the configuration that is applied to a &lt;code class=&quot;highlighter-rouge&quot;&gt;node-php-composer&lt;/code&gt; container when spun up. This configuration:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Specifies that the container should be created from the &lt;code class=&quot;highlighter-rouge&quot;&gt;savaslabs/node-php-composer&lt;/code&gt; image that we built and referenced previously&lt;/li&gt;
+  &lt;li&gt;Maps the container ports to our host ports so that we can access the Pattern Labs style guide locally&lt;/li&gt;
+  &lt;li&gt;Mounts the project files (that are mounted to the php container) so that they are accessible to the container.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this service defined in the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; we can start using the theme!&lt;/p&gt;
+
+&lt;p&gt;First we spin up the Docker containers by running &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once the containers are running, we can open a Bash shell in the theme directory of the &lt;code class=&quot;highlighter-rouge&quot;&gt;node-php-composer&lt;/code&gt; container by running the command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose run --rm --service-ports -w /var/www/html/web/themes/custom/pattern_lab_starter node-php-composer /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--service-ports&lt;/code&gt; option &lt;a href=&quot;https://github.com/docker/compose/issues/1259#issuecomment-90878095&quot;&gt;to ensure the ports used for serving the style guide are mapped to the host&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once inside the container in the theme directory, we install the theme’s dependencies and serve the style guide by running the following commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --unsafe-perm
+npm start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Voila! Once &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; is running we can access the Pattern Lab style guide at the URL’s that are outputted, for example &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:3050/pattern-lab/public/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note: Docker runs containers as root, so we use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--unsafe-perm&lt;/code&gt; flag to run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; with root privileges. This is okay for local development, but would be a security risk if deploying the container to production. For information on running the container as an unprivileged user, &lt;a href=&quot;https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user&quot;&gt;see this documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Gulp and Bower are installed as theme dependencies during &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt;, therefore we don’t need either installed globally in the container. However, to run these commands we must shell into the theme directory in the container (just as we did before), and then run Gulp and Bower commands as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To install Bower libraries run &lt;code class=&quot;highlighter-rouge&quot;&gt;$(npm bin)/bower install --allow-root {project-name} --save&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;To run arbitrary Gulp commands run &lt;code class=&quot;highlighter-rouge&quot;&gt;$(npm bin)/gulp {command}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other commands listed in the &lt;a href=&quot;https://github.com/phase2/pattern-lab-starter/blob/master/README.md&quot;&gt;Pattern Lab Starter theme README&lt;/a&gt; can be run in similar ways from within the &lt;code class=&quot;highlighter-rouge&quot;&gt;node-php-composer&lt;/code&gt; container.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Using Docker for local development has many benefits, one of which is that developers can run applications required by their project inside containers rather than having to install them globally on their local machines. While we typically think of this in terms of the web stack, it also extends to running applications required for front-end development. The Docker image described in this post allows several commonly used front-end applications to run within a container like the rest of the web stack.&lt;/p&gt;
+
+&lt;p&gt;While this blog post demonstrates how to build and use a Docker image specifically for use with the Pattern Lab Starter theme, the methodology can be adapted for other uses. A similar approach could be used with &lt;a href=&quot;https://www.drupal.org/project/bear_skin&quot;&gt;Zivtech’s Bear Skin theme&lt;/a&gt;, which is another Pattern Lab based theme, or with other contributed or custom themes that rely on npm, Gulp, Bower, or Composer.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions or comments, please post them below!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>docker</category>
+        
+        <category>pattern-lab</category>
+        
+        <category>front-end-dev</category>
+        
+        <category>drupal8</category>
+        
+        
+      </item>
     
       <item>
         <title>Dramatically Improve MySQL Import Performance with Docker</title>
@@ -2314,158 +2486,6 @@ a must-read for gulp beginners!&lt;/li&gt;
         <guid isPermaLink="true">http://savaslabs.com/2016/06/15/git-merge-conflict-strategies.html</guid>
         
         <category>git</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Installing XHProf to profile your Drupal module</title>
-        <description>&lt;p&gt;XHProf is a profiling tool for PHP code – it tracks the amount of time and memory your code spends in each function call, allowing you to spot bottlenecks in the code and identify where it’s worth spending resources on optimization. There are have been a &lt;a href=&quot;http://www.linuxjournal.com/article/7213&quot;&gt;number of PHP profilers over the years&lt;/a&gt;, and XDebug has &lt;a href=&quot;https://xdebug.org/docs/profiler&quot;&gt;a profiler as well&lt;/a&gt;, but XHProf is the first one I’ve successfully managed to configure correctly and interpret the output of.&lt;/p&gt;
-
-&lt;p&gt;I had run across a number of blog posts about using XHProf + Drupal, but never actually got it to work sucessfully for a project. Because so much of the documentation online is incomplete or out-of-date, I thought it would be useful to document my process using XHProf to profile a Drupal 8 custom module here. YMMV, but please post your thoughts/experiences in the comments!&lt;/p&gt;
-
-&lt;h3 id=&quot;how-to-find-documentation&quot;&gt;How to find documentation&lt;/h3&gt;
-
-&lt;p&gt;I find the &lt;a href=&quot;http://php.net/manual/en/book.xhprof.php&quot;&gt;php.net XHProf manual entry&lt;/a&gt; super-confusing and circular. Part of the problem is that Facebook’s original documentation for the library has since been removed from the internet and is only accessible via &lt;a href=&quot;http://web.archive.org&quot;&gt;the WayBack Machine&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If there’s only one thing you take away from this blog post, let it be: read and bookmark the WayBack machine view of the original XHProf documentation, which is at &lt;a href=&quot;http://web.archive.org/web/20110514095512/http://mirror.facebook.net/facebook/xhprof/doc.html&quot;&gt;http://web.archive.org/web/20110514095512/http://mirror.facebook.net/facebook/xhprof/doc.html&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;install-xhprof-in-a-vm&quot;&gt;Install XHProf in a VM&lt;/h3&gt;
-
-&lt;p&gt;If you’re not running DrupalVM, you’ll need to install XHProf manually via &lt;a href=&quot;https://pecl.php.net/&quot;&gt;PECL&lt;/a&gt;. On &lt;a href=&quot;http://docs.drupalvm.com/en/latest/&quot;&gt;DrupalVM&lt;/a&gt;, XHProf is already installed and you can skip to the next step.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pecl install xhprof-beta&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Note that all these commands are for Ubuntu flavors of linux. If you’re on Red Hat / CentOS you’ll want to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;yum&lt;/code&gt; equivalents. I had to first install the &lt;code class=&quot;highlighter-rouge&quot;&gt;php5-dev&lt;/code&gt; package to get PECL working properly:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get update
-sudo apt-get install php5-dev
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;And, if you want to view nice callgraph trees like the one below you’ll need to install the graphviz package &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install graphviz&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-callgraph.jpg&quot; alt=&quot;Image of a sample XHProf callgraph&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;configure-php-to-run-xhprof&quot;&gt;Configure PHP to run XHProf&lt;/h3&gt;
-
-&lt;p&gt;You need to tell PHP to enable the xhprof extension via your php.ini files. Usually these are in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/php5/apache2/php.ini&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/php5/cli/php.ini&lt;/code&gt;. Add the following lines to the bottom of each file if they’re not there already. You will also need to create the &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/tmp/xhprof&lt;/code&gt; directory if it doesn’t already exist.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;[xhprof]&lt;/span&gt;
-&lt;span class=&quot;py&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;xhprof.so&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;;
-; directory used by default implementation of the iXHProfRuns
-; interface (namely, the XHProfRuns_Default class) for storing
-; XHProf runs.
-;
-&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;xhprof.output_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/var/tmp/xhprof&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Lastly, restart Apache so that the PHP config changes take effect.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-up-a-path-to-view-the-xhprof-gui&quot;&gt;Set up a path to view the XHProf GUI&lt;/h3&gt;
-
-&lt;p&gt;The XHProf GUI runs off a set of HTML files in the &lt;code class=&quot;highlighter-rouge&quot;&gt;xhprof_html&lt;/code&gt; directory. If you’ve been following the install steps above, you should be able to find that directory at &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/share/php/xhprof_html&lt;/code&gt;. Now you need to set up your virtual host configuration to serve the files in the &lt;code class=&quot;highlighter-rouge&quot;&gt;xhprof_html&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;I find the easiest way to do this is just to symlink the &lt;code class=&quot;highlighter-rouge&quot;&gt;xhprof_html&lt;/code&gt; directory into the existing webroot of whatever site you’re working on locally, for example:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ln -s /usr/share/php/xhprof_html /var/www/my-website-dir/xhprof&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If you’re using DrupalVM, a separate vhost configuration will already be set up for XHProf, and the default URL is &lt;code class=&quot;highlighter-rouge&quot;&gt;http://xhprof.drupalvm.dev/&lt;/code&gt; although it can be changed in your &lt;code class=&quot;highlighter-rouge&quot;&gt;config.yml&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;h3 id=&quot;hooking-xhprof-into-your-module-code&quot;&gt;Hooking XHProf into your module code&lt;/h3&gt;
-
-&lt;p&gt;Generally, the process of profiling a chunk of code using XHProf goes as follows:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Call &lt;code class=&quot;highlighter-rouge&quot;&gt;xhprof_enable()&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Run the code you want profiled&lt;/li&gt;
-  &lt;li&gt;Once the code has finished running, call &lt;code class=&quot;highlighter-rouge&quot;&gt;xhprof_disable()&lt;/code&gt;. That function will return the profiler data, which you can either display to the screen (not recommended), or…&lt;/li&gt;
-  &lt;li&gt;Store the profiler data to a file by creating a new &lt;code class=&quot;highlighter-rouge&quot;&gt;XHProfRuns_Default();&lt;/code&gt; object and calling its &lt;code class=&quot;highlighter-rouge&quot;&gt;save_run&lt;/code&gt; method.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In the case below, I’m profiling a module that implements a few Drush commands from the command line which I’d like to optimize. So I created &lt;code class=&quot;highlighter-rouge&quot;&gt;_modulename_xhprof_enable()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;_modulename_xhprof_disable()&lt;/code&gt; functions – the names don’t matter here – and then added a &lt;code class=&quot;highlighter-rouge&quot;&gt;--profile&lt;/code&gt; flag to my Drush command options which, when it is set to true, calls my custom enable/disable functions before and after the Drush command runs.&lt;/p&gt;
-
-&lt;p&gt;Here’s what those look like in full:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;/**
- * Helper function to enable xhprof.
- */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_mymodule_enable_xhprof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;function_exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;xhprof_enable&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Tell XHProf to track both CPU time and memory usage
-&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;xhprof_enable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;XHPROF_FLAGS_CPU&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XHPROF_FLAGS_MEMORY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Don&#39;t treat these functions as separate function callss
-&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// in the results.
-&lt;/span&gt;        &lt;span class=&quot;s1&quot;&gt;&#39;ignored_functions&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;call_user_func&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s1&quot;&gt;&#39;call_user_func_array&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;sd&quot;&gt;/**
- * Helper function to disable xhprof and save logs.
- */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_mymodule_disable_xhprof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;function_exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;xhprof_enable&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$xhprof_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;xhprof_disable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Saving the XHProf run
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// using the default implementation of iXHProfRuns.
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;include_once&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/usr/share/php/xhprof_lib/utils/xhprof_lib.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;include_once&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/usr/share/php/xhprof_lib/utils/xhprof_runs.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;nv&quot;&gt;$xhprof_runs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XHProfRuns_Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Save the run under a namespace &quot;xhprof_foo&quot;.
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// **NOTE**:
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// By default save_run() will automatically generate a unique
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// run id for you. [You can override that behavior by passing
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// a run id (optional arg) to the save_run() method instead.]
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// .
-&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$run_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$xhprof_runs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save_run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xhprof_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;xhprof_mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;---------------&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Assuming you have set up the http based UI for &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;XHProf at some address, you can view run at &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http://mywebsiteurl.dev/xhprof/index.php?run=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$run_id&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;amp;source=xhprof_mymodule&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;---------------&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; command here works fine for a Drush command, but for other tasks you could log the run url using watchdog.&lt;/p&gt;
-
-&lt;p&gt;Note: Another way to run XHProf on a Drupal site is using the &lt;a href=&quot;https://www.drupal.org/project/xhprof&quot;&gt;XHProf&lt;/a&gt; module, but I haven’t had great luck with that.&lt;/p&gt;
-
-&lt;h3 id=&quot;viewing-profiler-results&quot;&gt;Viewing profiler results&lt;/h3&gt;
-
-&lt;p&gt;If everything is configured correctly, when you run your module you should get a run ID output either to the screen (via &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt;, as above, or however you’ve configured this logging). Visit the URL you configured above for xhprof, and you should see a list of all the stored runs. Clicking on a run will bring up the full profiler report.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-screenshot.jpg&quot; alt=&quot;Sample screenshot of an XHProf profiler report&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;now-what&quot;&gt;Now what?&lt;/h3&gt;
-
-&lt;p&gt;Now you’ve got all this data – how to make sense of it? What to do with it? Stay tuned for more discussion of how to interpret XHProf results and a real-world example of profiling a D8 module, next week!&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/05/26/installing-xhprof.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/05/26/installing-xhprof.html</guid>
-        
-        <category>php</category>
-        
-        <category>performance</category>
-        
-        <category>drupal</category>
-        
-        <category>drupal-planet</category>
-        
-        <category>module-development</category>
         
         
       </item>

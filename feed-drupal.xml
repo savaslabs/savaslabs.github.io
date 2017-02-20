@@ -6,9 +6,43 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Feb 2017 16:22:31 +0000</pubDate>
-    <lastBuildDate>Thu, 16 Feb 2017 16:22:31 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Feb 2017 05:21:32 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Feb 2017 05:21:32 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+    
+      <item>
+        <title>Docker and the Drupal Pattern Lab Starter Theme</title>
+        <description>
+          &lt;p&gt;
+            
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/docker-drupal-pattern-lab.jpg&quot; alt=&quot;Docker Drupal 8 Pattern Lab logos on a circuited background&quot; &gt;
+            
+            How to build a Docker Pattern Lab image for local Drupal development with the Pattern Lab Starter theme and/or with other common front-end applications such as npm, Gulp, and Bower.
+
+                &lt;a href=&quot;http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html&quot;&gt;Continue reading…&lt;/a&gt;
+          &lt;/p&gt;
+        </description>
+        <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>docker</category>
+        
+        <category>pattern-lab</category>
+        
+        <category>front-end-dev</category>
+        
+        <category>drupal8</category>
+        
+        
+      </item>
+      
     
     
       <item>
