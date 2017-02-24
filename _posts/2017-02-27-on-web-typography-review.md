@@ -1,7 +1,7 @@
 ---
 layout: post
 title: On Web Typography - a Book Review
-date: 2017-02-22
+date: 2017-02-27
 author: Anne Tomasevich
 tags: design typography
 featured_image: "/blog/on-web-typography-featured.jpg"
@@ -33,7 +33,10 @@ Rather than jumping into choosing and pairing typefaces, or even evaluating
 their characteristics, Santa Maria suggests we approach typography much further
 back and take the time to consider what users are actually doing when they read
 text on our sites. This is something I hadn't considered before and brings a
-depth to the process that is so much more than picking and applying fonts.
+depth to the process that is so much more than picking and applying fonts. In
+addition to aesthetics, type design can have a significant effect on user
+experience and, therefore, is doubly important to consider during the design
+process.
 
 ## Base knowledge
 
@@ -147,9 +150,10 @@ every time, and is a nice way to practice the skills suggested above.
 ## Closing thoughts
 
 I would highly recommend checking out [*On Web Typography*](https://abookapart.com/products/on-web-typography),
-especially if you're a typography novice looking for some quick gains. In
-closing, I'll leave you with Santa Maria's thoughts on why typography matters,
-beyond putting pretty text on a page:
+especially if you're a typography novice looking to step up your game. In
+closing, I'll leave you with Santa Maria's thoughts on another benefit of
+developing type design skills: a greater sense of empathy for your website's
+users.
 
 > Being good at typography makes you a more adept thinker, communicator, and
 designer. When you immerse yourself in the fine details of text, you not
