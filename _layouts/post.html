@@ -20,6 +20,9 @@ layout: default
       {% if page.featured_image %}
         <div class="post-featured-image">
           {% picture post_featured_image {{ page.featured_image }} alt="{{ page.featured_image_alt }}" %}
+          {% if page.featured_image_caption %}
+            {{ page.featured_image_caption | markdownify }}
+          {% endif %}
         </div>
       {% endif %}
     </header>
