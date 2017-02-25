@@ -152,7 +152,7 @@ every time, and is a nice way to practice the skills suggested above.
 I would highly recommend checking out [*On Web Typography*](https://abookapart.com/products/on-web-typography),
 especially if you're a typography novice looking to step up your game. In
 closing, I'll leave you with Santa Maria's thoughts on another benefit of
-developing type design skills: a greater sense of empathy for your website's
+developing type design skills: a greater sense of [empathy](/mission-and-values/#empathize) for your website's
 users.
 
 > Being good at typography makes you a more adept thinker, communicator, and
