@@ -6,255 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>How to subscribe users to MailChimp lists in a Drupal custom module | Savas Labs</title>
+  <title>Savas Labs</title>
   
-  <meta name="description" content="OverviewIn my last blog post, I wrote about the virtues of Composer Manager and how it allows modules to depend on PHP libraries managed via Composer. Basica...">
+  <meta name="description" content="A full-service web agency leveraging the power of Drupal.
+">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="canonical" href="http://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html">
+  <link rel="canonical" href="http://savaslabs.com/blog/tag/typography/">
   <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
   
   
   
   
-
-
-
-  
-  
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "BlogPosting",
-      "about": "Using Composer Manager and the MailChimp PHP library we can simply and easily subscribe users to mailing lists without using the MailChimp contributed module.",
-      "articleBody": "&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;In my &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;last blog post&lt;/a&gt;, I wrote about the virtues of &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; and how it allows modules to depend on PHP libraries managed via Composer. Basically, Composer Manager allows us to easily use PHP libraries that exist outside of the Drupal ecosystem within our own projects.&lt;/p&gt;
-
-&lt;p&gt;In this post, I’ll show you how we:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Used the &lt;a href=&quot;https://packagist.org/packages/mailchimp/mailchimp&quot;&gt;MailChimp PHP Library&lt;/a&gt; in a custom module to quickly and easily subscribe users to a MailChimp mailing list without the overhead of the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Drupal MailChimp contributed module&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Managed the MailChimp library dependency via Composer Manager.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;custom-vs-contrib&quot;&gt;Custom vs. Contrib?&lt;/h2&gt;
-&lt;p&gt;But first, why didn’t we just use the MailChimp contributed module? Contributed modules are often a great option and offer many benefits, such as security, maintenance, and flexibility.&lt;/p&gt;
-
-&lt;p&gt;But there is a cost to installing all those contributed modules. As &lt;a href=&quot;http://definitivedrupal.org/&quot;&gt;&lt;em&gt;The Definitive Guide to Drupal 7&lt;/em&gt;&lt;/a&gt; explains “The more modules you install, the worse your web site will perform.”&lt;/p&gt;
-
-&lt;p&gt;With each installed module comes more code to load and execute, and more memory consumption. And in some cases, contributed modules add complexity and features that just aren’t necessary for the required task.&lt;/p&gt;
-
-&lt;p&gt;In our case, the decision to go with a custom solution was easy:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The MailChimp contributed module had many features we didn’t need.&lt;/li&gt;
-  &lt;li&gt;We were already using Composer Manager on the project to manage other module dependencies.&lt;/li&gt;
-  &lt;li&gt;The custom module we were building already included logic to determine when to subscribe users to mailing lists (don’t worry, we made sure they opted in!)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;All we needed was a simple, lightweight method for subscribing a given user to a specific MailChimp mailing list.&lt;/p&gt;
-
-&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
-&lt;p&gt;We were able to achieve this by adding the &lt;a href=&quot;https://packagist.org/packages/mailchimp/mailchimp&quot;&gt;MailChimp PHP library&lt;/a&gt; as a dependency of our custom module. We were then able to make a simple call using the API to subscribe a user to the mailing list. We implemented this via the following code.&lt;/p&gt;
-
-&lt;p&gt;First, in our module’s root directory we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file that specified the MailChimp PHP library as a dependency:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;mailchimp/mailchimp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We then installed the Mailchimp API using the Composer Manager drush commands:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-manager install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As explained in my &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;last post&lt;/a&gt;, the first command builds  (or rebuilds) the consolidated project wide &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file and the second command installs the dependencies.&lt;/p&gt;
-
-&lt;p&gt;Next, we created a function in our custom module to subscribe a user to a MailChimp mailing list.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;/**
- * Add an email to a MailChimp list.
- *
- * @param string $api_key
- *   The MailChimp API key.
- * @param string $list_id
- *   The MailChimp list id that the user should be subscribed to.
- * @param string $email
- *   The email address for the user being subscribed to the mailing list.
- */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_module_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mailchimp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;my_module&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;User with email %email not subscribed to list %list_id&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;%email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;%list_id&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With that function defined, we could then subscribe any user to any mailing list by simply calling&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;my_module_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;That’s it! A nice, simple, and clean approach to subscribing users to a MailChimp mailing list that doesn’t require installation of the MailChimp contributed module.&lt;/p&gt;
-
-&lt;p&gt;We hope you’re as excited as we are at the opportunities Composer and Composer Manager afford us to take advantage of PHP libraries and projects that exist outside of the Drupal ecosystem.&lt;/p&gt;
-",
-      "author": {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Dan Murphy",
-        "affiliation": "Savas Labs",
-        "worksFor": "Savas Labs"
-      },
-      "dateCreated": "2016-01-22 00:00:00 +0000",
-      "dateModified": "2016-01-22 00:00:00 +0000",
-      "datePublished": "2016-01-22 00:00:00 +0000",
-      "headline": "How to subscribe users to MailChimp lists in a Drupal custom module",
-      "image": {
-        "@context": "http://schema.org",
-        "@type": "ImageObject",
-        "author": "Dan Murphy",
-        "datePublished": "2016-01-22 00:00:00 +0000",
-        "description": "composer",
-        "height": "447px",
-        "url": "http://savaslabs.com/assets/img/blog/composer.jpg",
-        "width": "670px"
-      },
-      "inLanguage": "en-US",
-      "keywords": "drupal, drupal-planet, composer, module-development, mailchimp",
-      "mainEntityOfPage": "http://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html",
-      "publisher": {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Durham, North Carolina",
-          "postalCode": "27701",
-          "streetAddress": "201 W Main St."
-        },
-        "description": "A full-service web agency leveraging the power of Drupal.
-",
-        "email": "info@savaslabs.com",
-        "logo": {
-          "@context": "http://schema.org",
-          "@type": "ImageObject",
-          "description": "Savas Labs logo",
-          "height": "50px",
-          "url": "http://savaslabs.com/assets/img/logo.png",
-          "width": "114px"
-        },
-        "name": "Savas Labs",
-        "telephone": "(919) 432-4660",
-        "url": "http://savaslabs.com"
-      },
-      "sourceOrganization": "Savas Labs",
-      "text": "&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;In my &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;last blog post&lt;/a&gt;, I wrote about the virtues of &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; and how it allows modules to depend on PHP libraries managed via Composer. Basically, Composer Manager allows us to easily use PHP libraries that exist outside of the Drupal ecosystem within our own projects.&lt;/p&gt;
-
-&lt;p&gt;In this post, I’ll show you how we:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Used the &lt;a href=&quot;https://packagist.org/packages/mailchimp/mailchimp&quot;&gt;MailChimp PHP Library&lt;/a&gt; in a custom module to quickly and easily subscribe users to a MailChimp mailing list without the overhead of the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Drupal MailChimp contributed module&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Managed the MailChimp library dependency via Composer Manager.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;custom-vs-contrib&quot;&gt;Custom vs. Contrib?&lt;/h2&gt;
-&lt;p&gt;But first, why didn’t we just use the MailChimp contributed module? Contributed modules are often a great option and offer many benefits, such as security, maintenance, and flexibility.&lt;/p&gt;
-
-&lt;p&gt;But there is a cost to installing all those contributed modules. As &lt;a href=&quot;http://definitivedrupal.org/&quot;&gt;&lt;em&gt;The Definitive Guide to Drupal 7&lt;/em&gt;&lt;/a&gt; explains “The more modules you install, the worse your web site will perform.”&lt;/p&gt;
-
-&lt;p&gt;With each installed module comes more code to load and execute, and more memory consumption. And in some cases, contributed modules add complexity and features that just aren’t necessary for the required task.&lt;/p&gt;
-
-&lt;p&gt;In our case, the decision to go with a custom solution was easy:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The MailChimp contributed module had many features we didn’t need.&lt;/li&gt;
-  &lt;li&gt;We were already using Composer Manager on the project to manage other module dependencies.&lt;/li&gt;
-  &lt;li&gt;The custom module we were building already included logic to determine when to subscribe users to mailing lists (don’t worry, we made sure they opted in!)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;All we needed was a simple, lightweight method for subscribing a given user to a specific MailChimp mailing list.&lt;/p&gt;
-
-&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
-&lt;p&gt;We were able to achieve this by adding the &lt;a href=&quot;https://packagist.org/packages/mailchimp/mailchimp&quot;&gt;MailChimp PHP library&lt;/a&gt; as a dependency of our custom module. We were then able to make a simple call using the API to subscribe a user to the mailing list. We implemented this via the following code.&lt;/p&gt;
-
-&lt;p&gt;First, in our module’s root directory we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file that specified the MailChimp PHP library as a dependency:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;mailchimp/mailchimp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We then installed the Mailchimp API using the Composer Manager drush commands:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-manager install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As explained in my &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;last post&lt;/a&gt;, the first command builds  (or rebuilds) the consolidated project wide &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file and the second command installs the dependencies.&lt;/p&gt;
-
-&lt;p&gt;Next, we created a function in our custom module to subscribe a user to a MailChimp mailing list.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;/**
- * Add an email to a MailChimp list.
- *
- * @param string $api_key
- *   The MailChimp API key.
- * @param string $list_id
- *   The MailChimp list id that the user should be subscribed to.
- * @param string $email
- *   The email address for the user being subscribed to the mailing list.
- */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_module_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mailchimp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;my_module&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;User with email %email not subscribed to list %list_id&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;%email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;%list_id&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With that function defined, we could then subscribe any user to any mailing list by simply calling&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;my_module_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;That’s it! A nice, simple, and clean approach to subscribing users to a MailChimp mailing list that doesn’t require installation of the MailChimp contributed module.&lt;/p&gt;
-
-&lt;p&gt;We hope you’re as excited as we are at the opportunities Composer and Composer Manager afford us to take advantage of PHP libraries and projects that exist outside of the Drupal ecosystem.&lt;/p&gt;
-",
-      "url": "http://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html"
-    }
-  </script>
-
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -383,7 +145,7 @@
           
 
           <!-- Build links. -->
-          <li class="nav-link  ">
+          <li class="nav-link active-nav-item ">
             <a href="/blog">Blog</a>
 
             <!-- If there are sub-links, create them. -->
@@ -416,396 +178,48 @@
 
     <div class="page-content">
       <div class="wrapper">
-        
+        <div class="page">
 
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+  </header>
 
-<div class="post">
-  <div class="post__body">
-    <header class="post-header">
-      <h1 class="post-title">How to subscribe users to MailChimp lists in a Drupal custom module</h1>
-
-      
-
-<p>By <a href="/team/dan-murphy">Dan Murphy</a></p>
-
-      <p class="centerdot">&centerdot; </p>
-      <p>Jan 22, 2016 </p><br>
-      <i class="fa fa-tags"></i><p><a href="/blog/tag/drupal/">Drupal</a>, <a href="/blog/tag/drupal-planet/">Drupal Planet</a>, <a href="/blog/tag/composer/">Composer</a>, <a href="/blog/tag/module-development/">Module Development</a>, <a href="/blog/tag/mailchimp/">MailChimp</a></p>
-      
-      <div><p><span id="comment-count"></span></p></div>
-      
-      
-        <div class="post-featured-image">
-          <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/composer-669by410-2dcfe6.jpg" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/composer-669by410-2dcfe6.jpg" media="(min-width: 400px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/composer-669by410-2dcfe6.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/composer-400by245-2dcfe6.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/blog/composer-400by245-2dcfe6.jpg" class="image--post-featured-image" itemprop="image" alt="composer" >
-  </picture>
-
-          
-        </div>
-      
-    </header>
-
-    
-      <div class="disclaimer">
-        <h5>Proceed with caution</h5>
-        <p>This post contains outdated information as it uses MailChimp API v2.0. Mailchimp has released MailChimp API v3.0 and prior versions will no longer be supported after 2016. To learn how to transition to v3.0 of the API, please see <a href="/2016/11/15/composer-mailchimp-subscriptions-v3-api.html">my more recent blog post on subscribing users to MailChimp lists using API v3.0</a></p>
-
-      </div>
+  <article class="post-content">
     
 
-    <article class="post-content">
-      <h2 id="overview">Overview</h2>
-<p>In my <a href="/2015/10/15/composing-with-composer-manager.html">last blog post</a>, I wrote about the virtues of <a href="https://www.drupal.org/project/composer_manager">Composer Manager</a> and how it allows modules to depend on PHP libraries managed via Composer. Basically, Composer Manager allows us to easily use PHP libraries that exist outside of the Drupal ecosystem within our own projects.</p>
 
-<p>In this post, I’ll show you how we:</p>
-
-<ul>
-  <li>Used the <a href="https://packagist.org/packages/mailchimp/mailchimp">MailChimp PHP Library</a> in a custom module to quickly and easily subscribe users to a MailChimp mailing list without the overhead of the <a href="https://www.drupal.org/project/mailchimp">Drupal MailChimp contributed module</a>.</li>
-  <li>Managed the MailChimp library dependency via Composer Manager.</li>
-</ul>
-
-<h2 id="custom-vs-contrib">Custom vs. Contrib?</h2>
-<p>But first, why didn’t we just use the MailChimp contributed module? Contributed modules are often a great option and offer many benefits, such as security, maintenance, and flexibility.</p>
-
-<p>But there is a cost to installing all those contributed modules. As <a href="http://definitivedrupal.org/"><em>The Definitive Guide to Drupal 7</em></a> explains “The more modules you install, the worse your web site will perform.”</p>
-
-<p>With each installed module comes more code to load and execute, and more memory consumption. And in some cases, contributed modules add complexity and features that just aren’t necessary for the required task.</p>
-
-<p>In our case, the decision to go with a custom solution was easy:</p>
-
-<ul>
-  <li>The MailChimp contributed module had many features we didn’t need.</li>
-  <li>We were already using Composer Manager on the project to manage other module dependencies.</li>
-  <li>The custom module we were building already included logic to determine when to subscribe users to mailing lists (don’t worry, we made sure they opted in!)</li>
-</ul>
-
-<p>All we needed was a simple, lightweight method for subscribing a given user to a specific MailChimp mailing list.</p>
-
-<h2 id="implementation">Implementation</h2>
-<p>We were able to achieve this by adding the <a href="https://packagist.org/packages/mailchimp/mailchimp">MailChimp PHP library</a> as a dependency of our custom module. We were then able to make a simple call using the API to subscribe a user to the mailing list. We implemented this via the following code.</p>
-
-<p>First, in our module’s root directory we created a <code class="highlighter-rouge">composer.json</code> file that specified the MailChimp PHP library as a dependency:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"mailchimp/mailchimp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>We then installed the Mailchimp API using the Composer Manager drush commands:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>drush composer-json-rebuild
-<span class="gp">$ </span>drush composer-manager install
-</code></pre>
-</div>
-
-<p>As explained in my <a href="/2015/10/15/composing-with-composer-manager.html">last post</a>, the first command builds  (or rebuilds) the consolidated project wide <code class="highlighter-rouge">composer.json</code> file and the second command installs the dependencies.</p>
-
-<p>Next, we created a function in our custom module to subscribe a user to a MailChimp mailing list.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="sd">/**
- * Add an email to a MailChimp list.
- *
- * @param string $api_key
- *   The MailChimp API key.
- * @param string $list_id
- *   The MailChimp list id that the user should be subscribed to.
- * @param string $email
- *   The email address for the user being subscribed to the mailing list.
- */</span>
-<span class="k">function</span> <span class="nf">my_module_subscribe_user</span><span class="p">(</span><span class="nv">$api_key</span><span class="p">,</span> <span class="nv">$list_id</span><span class="p">,</span> <span class="nv">$email</span><span class="p">)</span> <span class="p">{</span>
-
-  <span class="nv">$mailchimp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Mailchimp</span><span class="p">(</span><span class="nv">$api_key</span><span class="p">);</span>
-
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$mailchimp</span><span class="o">-&gt;</span><span class="na">lists</span><span class="o">-&gt;</span><span class="na">subscribe</span><span class="p">(</span><span class="nv">$list_id</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">));</span>
-  <span class="p">}</span>
-  <span class="k">catch</span><span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">watchdog</span><span class="p">(</span><span class="s1">'my_module'</span><span class="p">,</span> <span class="s1">'User with email %email not subscribed to list %list_id'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'%email'</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">'%list_id'</span> <span class="o">=&gt;</span> <span class="nv">$list_id</span><span class="p">),</span> <span class="nx">WATCHDOG_WARNING</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<p>With that function defined, we could then subscribe any user to any mailing list by simply calling</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="nx">my_module_subscribe_user</span><span class="p">(</span><span class="nv">$api_key</span><span class="p">,</span> <span class="nv">$list_id</span><span class="p">,</span> <span class="nv">$email</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>That’s it! A nice, simple, and clean approach to subscribing users to a MailChimp mailing list that doesn’t require installation of the MailChimp contributed module.</p>
-
-<p>We hope you’re as excited as we are at the opportunities Composer and Composer Manager afford us to take advantage of PHP libraries and projects that exist outside of the Drupal ecosystem.</p>
-
-      <hr>
-
-      
-        <div class="post-comments">
-
-  
-    <div class="expander">
-      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Comments!</a>
-
-      <div id="js-expander-content" class="expander-content">
-
-        <!-- If there are existing comments, output them here. -->
-        <div id="post-comments" class="post-comments"></div>
-
-        <!-- New comment form -->
-        <form id="comment-form" class="comment-form">
-          <h4>Leave a comment</h4>
-
-          <div class="comment-form__field comment-form__field--name">
-            <label class="comment-form__field__label" for="name">Name</label>
-            <input type="text" name="name" id="name" required>
-          </div>
-
-          <div class="comment-form__field comment-form__field--email">
-            <label class="comment-form__field__label" for="email">Email</label>
-            <input type="email" name="email" id="email" required>
-            <p class="comment-form__field__helptext">Savas Labs will never sell your email address or spam you.</p>
-          </div>
-
-          <div class="comment-form__field comment-form__field--comment">
-            <label class="comment-form__field__label" for="comment">Comment</label>
-            <textarea name="comment" id="comment" required></textarea>
-            <p class="comment-form__field__helptext">Plain text format only please.</p>
-          </div>
-
-          <input type="hidden" name="slug" id="slug" value="/2016/01/22/composer-mailchimp-subscriptions.html">
-          <input type="text" name="url" id="url">
-
-          <div class="comment-form__field comment-form__field--nocaptcha">
-            <div class="comment-form__field--nocaptcha__image">
-              <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
-            </div>
-            <div class="comment-form__field--nocaptcha__input">
-              <label class="comment-form__field__label" for="nocaptcha">What type of animal is the Savas Labs logo?</label>
-              <p class="comment-form__field__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
-              <input type="text" name="nocaptcha" id="nocaptcha" required>
-            </div>
-          </div>
-
-          <input type="submit" value="Post comment" id="submit" class="comment-form__submit">
-        </form>
-
-      </div><!-- comments and comment form -->
-    </div><!-- expander -->
-  
+<header>
+    
+        <h1>Typography</h1>
+    
   <hr>
-</div>
+</header>
 
-      
-    </article>
-  </div><!-- post__body -->
+<div class="tag">
+  
+  
+  
+  
 
   
-    <div class="post-bottom">
-  <div class="post-meta">
-
-    
-    
-    
-    
-    
-
-    
-      <h4>About the author</h4>
-    
-
-    
-
-      
-      
-        <a href="/team/dan-murphy">
-          <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/dan-murphy-576by524-bbf727.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/dan-murphy-288by262-bbf727.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/dan-murphy-288by262-bbf727.jpg" class="image--team-post-meta" itemprop="image" alt="Dan Murphy" >
-  </picture>
-
-        </a>
-        <p class="post-author-desc">Dan develops back-end solutions and front-end, responsive designs for Savas Labs clients.</p>
-      
-
-      
-      
-
-    
-  </div>
-
   
-  <div class="post-related flex-container">
-    <h4>Recent posts by Savas Labs</h4>
-    <div class="cards">
-      
-      
+
+  <div class="tag__related-posts">
+    <h2>Related blog posts</h2>
+    <div class="flex-container">
+      <div class="cards blog-cards">
         
-        
-          <div class="card">
-            <a href="/2017/02/20/drupal-docker-pattern-lab.html">
-              <div class="card-header">
-                Docker and the Drupal Pattern Lab Starter Theme
-              </div>
-              <div class="card-copy">
-                <p>Feb 20, 2017</p>
-                
-                <p><p>This post demonstrates how to build a Docker image that can be used in local Drupal development with the Pattern...</p>
-              </div>
-            </a>
-          </div>
-        
-      
-        
-        
-          <div class="card">
-            <a href="/2017/02/15/docker-mysql-performance.html">
-              <div class="card-header">
-                Dramatically Improve MySQL Import Performance with Docker
-              </div>
-              <div class="card-copy">
-                <p>Feb 15, 2017</p>
-                
-                <p><p>How to dramatically improve MySQL database import performance on Drupal with Docker stacks</p>
-</p>
-              </div>
-            </a>
-          </div>
-        
-      
-        
-        
-          <div class="card">
-            <a href="/2016/11/15/composer-mailchimp-subscriptions-v3-api.html">
-              <div class="card-header">
-                Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules
-              </div>
-              <div class="card-copy">
-                <p>Nov 15, 2016</p>
-                
-                <p><p>How to use Composer along with the ThinkShout PHP library for MailChimp API v3.0 to easily subscribe users to mailing...</p>
-              </div>
-            </a>
-          </div>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+      </div>
     </div>
   </div>
-</div>
 
-  
-
-  <div class="previous-next-links">
-  <div class="next">
-    
-      <a href="/2016/01/25/drupal-6-part-3.html"><i class="fa fa-long-arrow-left "></i> It actually is 2016, your site is running on Drupal 6, now what? Part 3: the options</a>
-    
-  </div>
-  <div class="previous">
-    
-      <a href="/2015/12/10/drupal-6-part-2.html"> It's nearly 2016, your site is running on Drupal 6, now what? Part 2: the risks. <i class="fa fa-long-arrow-right"></i></a>
-    
+  <div class="view-more-link">
+    <a href="/blog">View all blog posts and events <i class="fa fa-arrow-right"></i></a>
   </div>
 </div>
+  </article>
 
-</div><!-- post -->
+</div>
 
       </div>
     </div>
