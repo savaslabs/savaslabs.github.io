@@ -3,7 +3,7 @@ layout: post
 title: On Web Typography - a Book Review
 date: 2017-02-27
 author: Anne Tomasevich
-tags: design typography
+tags: design typography user-experience
 featured_image: "/blog/on-web-typography-featured.jpg"
 featured_image_alt: "A woman reading on a tablet"
 featured_image_height: "983px"
@@ -59,7 +59,7 @@ communication became increasingly digital
 - Methods for classifying typefaces that are descriptive and useful when
 evaluating and choosing typefaces
 - An overview of the characters and styles that a well-developed typeface will
-offer (true bolds and italics, language sets, punctuation, etc.)
+offer (true bolds and italics, language sets and punctuation among others)
 
 ## Evaluating typefaces
 
@@ -69,7 +69,7 @@ offer (true bolds and italics, language sets, punctuation, etc.)
 
 After reviewing the building blocks that make up a typeface, Santa Maria applies
 this knowledge by walking the reader through the process of evaluating two
-classic typefaces. This section is a clear presentation of how to pick apart a
+classic typefaces. This section is a clear presentation of how to dissect a
 typeface and understand its geometric structure, tone, history, and classification.
 Santa Maria also demonstrates how one can capitalize on the tried-and-tested
 nature of classic typefaces by looking to revivals and alternatives inspired by
