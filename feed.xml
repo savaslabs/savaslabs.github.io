@@ -6,9 +6,179 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Feb 2017 20:41:36 +0000</pubDate>
-    <lastBuildDate>Sat, 25 Feb 2017 20:41:36 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Feb 2017 13:24:54 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Feb 2017 13:24:54 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>On Web Typography - a Book Review</title>
+        <description>&lt;p&gt;As a developer who often interacts with and creates web designs, I’m always on
+the lookout for quality resources to level up my design skills, and the &lt;a href=&quot;https://abookapart.com/&quot;&gt;Book
+Apart series&lt;/a&gt; has proven to be an excellent source of
+knowledge presented in a relevant, concise manner. My latest read was &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;&lt;em&gt;On Web
+Typography&lt;/em&gt; by Jason Santa Maria&lt;/a&gt;,
+and I found the book to be a strong resource, especially for the non-designer.
+In this post, I’ll review the book and detail how we at Savas Labs implemented
+the lessons we learned.&lt;/p&gt;
+
+&lt;h2 id=&quot;thinking-about-reading&quot;&gt;Thinking about reading&lt;/h2&gt;
+
+&lt;p&gt;Have you ever stopped to think about the actual process of reading? I think
+Santa Maria puts it best:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Reading is something we do every day, but we can easily take it for granted. Slapping words on a page won’t ensure good communication, just as mashing your hands across a piano won’t make for a pleasant composition. The experience of reading and the effectiveness of our message are determined by both what we say and how we say it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Rather than jumping into choosing and pairing typefaces, or even evaluating
+their characteristics, Santa Maria suggests we approach typography much further
+back and take the time to consider what users are actually doing when they read
+text on our sites. This is something I hadn’t considered before and brings a
+depth to the process that is so much more than picking and applying fonts. In
+addition to aesthetics, type design can have a significant effect on user
+experience and, therefore, is doubly important to consider during the design
+process.&lt;/p&gt;
+
+&lt;h2 id=&quot;base-knowledge&quot;&gt;Base knowledge&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-typeface-anatomy.jpg&quot; alt=&quot;A diagram of typeface terminology&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;A diagram of typeface anatomy&lt;br /&gt;
+&lt;em&gt;From&lt;/em&gt; &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;On Web Typography&lt;/a&gt; &lt;em&gt;by Jason Santa Maria&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Most of us can tell a serif from a sans serif, but I found the base of knowledge
+Santa Maria provides in the book to be an incredibly useful foundation. Knowing
+some critical terminology and history has already improved my ability to design
+type, and this section is compact enough to be a quick overview with serious
+payoff.&lt;/p&gt;
+
+&lt;p&gt;In the book, Santa Maria covers:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An extremely brief yet useful history of type, focused on how typefaces were
+created through most of history before the web and how things changed as
+communication became increasingly digital&lt;/li&gt;
+  &lt;li&gt;Terminology used to describe typefaces and their elements&lt;/li&gt;
+  &lt;li&gt;Methods for classifying typefaces that are descriptive and useful when
+evaluating and choosing typefaces&lt;/li&gt;
+  &lt;li&gt;An overview of the characters and styles that a well-developed typeface will
+offer (true bolds and italics, language sets and punctuation among others)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;evaluating-typefaces&quot;&gt;Evaluating typefaces&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-helvetica-alternatives.jpg&quot; alt=&quot;Examples of alternatives to Helvetica based on Helvetica&#39;s physical characteristics&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Finding alternatives to Helvetica by examining its physical characteristics&lt;br /&gt;
+&lt;em&gt;From&lt;/em&gt; &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;On Web Typography&lt;/a&gt; &lt;em&gt;by Jason Santa Maria&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;After reviewing the building blocks that make up a typeface, Santa Maria applies
+this knowledge by walking the reader through the process of evaluating two
+classic typefaces. This section is a clear presentation of how to dissect a
+typeface and understand its geometric structure, tone, history, and classification.
+Santa Maria also demonstrates how one can capitalize on the tried-and-tested
+nature of classic typefaces by looking to revivals and alternatives inspired by
+those classics. These exercises will help you understand typefaces on a deeper
+level and prepare you for the next part: actually selecting and applying them.&lt;/p&gt;
+
+&lt;h2 id=&quot;choosing-and-pairing-typefaces&quot;&gt;Choosing and pairing typefaces&lt;/h2&gt;
+
+&lt;p&gt;All the previous sections culminate in the ultimate goal: how to design type for
+your site. Santa Maria introduces two separate contexts to consider: type for a
+moment (a menu link, a heading, etc.) and type to live with (long text).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-contexts.jpg&quot; alt=&quot;Examples of type in different contexts&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Some examples of the two contexts&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;These contexts demand different typeface choices based on what’s important
+to the reader — quickly understanding a snippet of text, or reading
+paragraphs of text without becoming fatigued or distracted.&lt;/p&gt;
+
+&lt;p&gt;Santa Maria provides some helpful step-by-step methods for choosing typefaces.
+My favorite was word association, something we may all be familiar with, but he
+builds this process out in a way that seems easy and effective.&lt;/p&gt;
+
+&lt;p&gt;Another important skill covered is pairing typefaces, something that poses a
+challenge to many of us. Santa Maria suggests a balance between two typefaces’
+distinction from each other and cohesion with each other, demonstrated with
+numerous examples, and explained with reference to the type terminology and
+classification methods reviewed in previous chapters.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h2&gt;
+
+&lt;p&gt;After finishing the book, I had a couple of questions:&lt;/p&gt;
+
+&lt;h3 id=&quot;how-can-i-actively-improve-my-type-design-skills&quot;&gt;How can I actively improve my type design skills?&lt;/h3&gt;
+
+&lt;p&gt;After reading design resources, I usually feel armed with new information but
+unsure of how to actually apply it. I’ve found that improving design skills
+isn’t something that happens instantly after you’ve learned something new
+— it takes practice!&lt;/p&gt;
+
+&lt;p&gt;One of the methods I’ve found most helpful is to keep an eye out for
+design elements I like, and when I see them, break them down and figure out
+why they work. For typography, this would mean identifying the context,
+classifying the typeface, evaluating the letterforms to identify their physical
+characteristics and the feelings they invoke, and (this is key)
+bookmarking the source in an “Inspiration” folder. &lt;a href=&quot;http://austinkleon.com/steal/&quot;&gt;Entire books have been
+written about this process&lt;/a&gt;, so don’t be afraid
+to be inspired by others’ work!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-inspiration.jpg&quot; alt=&quot;Screenshots of websites with nice type design&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Some samples from my Inspiration folder&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;After perusing my Inspiration folder, I follow these guidelines when designing
+type:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Keep it simple. It’s conventional to use a maximum of two typefaces, and often
+using typefaces within the same family or a single typeface in multiple styles
+gives you all the variety you need.&lt;/li&gt;
+  &lt;li&gt;Try things out in context. This is recommended by Santa Maria in the book, and
+giving typefaces and pairings a shot on your actual site (or a local version) is
+crucial. Most paid fonts are available via free trials, so no excuses!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;how-can-our-team-apply-this-knowledge&quot;&gt;How can our team apply this knowledge?&lt;/h3&gt;
+
+&lt;p&gt;Much of the team at Savas Labs focuses on back-end development, but we all have
+a desire to be holistic teammates with some proficiency at every stage of the
+process. We don’t all have the time to invest in becoming typography experts
+— one can spend an entire career doing so — so we wanted to find ways to
+enable our team to be able to consult on typography and make informed decisions
+on type design when needed.&lt;/p&gt;
+
+&lt;p&gt;To this end, we created a repository where we can continue to house a list of
+go-to typefaces, tried-and-tested pairings, favorite foundries, and excellent
+type resources. Curating this list and adding to it whenever we find something
+we like will provides with an easy reference so we’re not starting from scratch
+every time, and is a nice way to practice the skills suggested above.&lt;/p&gt;
+
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+
+&lt;p&gt;I would highly recommend checking out &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;&lt;em&gt;On Web Typography&lt;/em&gt;&lt;/a&gt;,
+especially if you’re a typography novice looking to step up your game. In
+closing, I’ll leave you with Santa Maria’s thoughts on another benefit of
+developing type design skills: a greater sense of &lt;a href=&quot;/mission-and-values/#empathize&quot;&gt;empathy&lt;/a&gt; for your website’s
+users.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Being good at typography makes you a more adept thinker, communicator, and
+designer. When you immerse yourself in the fine details of text, you not
+only make yourself aware of those details and how they affect communication,
+but you also put yourself in your readers’ shoes.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/02/27/on-web-typography-review.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/02/27/on-web-typography-review.html</guid>
+        
+        <category>design</category>
+        
+        <category>typography</category>
+        
+        <category>user-experience</category>
+        
+        
+      </item>
     
       <item>
         <title>Docker and the Drupal Pattern Lab Starter Theme</title>
@@ -2378,114 +2548,6 @@ a must-read for gulp beginners!&lt;/li&gt;
         <category>drupal-planet</category>
         
         <category>module-development</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Strategies and tools for resolving Git merge conflicts</title>
-        <description>&lt;p&gt;If you use Git for version control and you collaborate frequently, then you are bound to run into merge conflicts from time to time.&lt;/p&gt;
-
-&lt;p&gt;In an ideal world you merge changes to production (or other relevant upstream updates) into your parallel feature work frequently, and the conflicts are relatively minor and straightforward to resolve.&lt;/p&gt;
-
-&lt;p&gt;However, from time to time branches diverge significantly and merging them back together takes time and a solid understanding of why each branch may have modified the same hunks of code.&lt;/p&gt;
-
-&lt;p&gt;In this post I’m going to review the strategies and tools I like to use when resolving complicated merge conflicts.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-merging&quot;&gt;What is merging?&lt;/h2&gt;
-
-&lt;p&gt;There are many good online tutorials that cover Git merging, so I’ll just review the basics. If you’re already fluent in Git, feel free to skip to the &lt;a href=&quot;#strategies-and-tools&quot;&gt;strategies and tools&lt;/a&gt; section.&lt;/p&gt;
-
-&lt;p&gt;As &lt;a href=&quot;https://www.atlassian.com/git/tutorials/using-branches/git-branch&quot;&gt;Atlassian’s branching tutorial&lt;/a&gt; explains “Merging is Git’s way of putting a forked history back together again.”&lt;/p&gt;
-
-&lt;p&gt;A Git merge is run via the command &lt;code class=&quot;highlighter-rouge&quot;&gt;git merge &amp;lt;target_branch&amp;gt;&lt;/code&gt;. When merging, Git always merges into the current branch. The branch being merged (aka the target branch) will not be affected.&lt;/p&gt;
-
-&lt;p&gt;There are two types of merges: fast-forward merges and 3-way merges.&lt;/p&gt;
-
-&lt;p&gt;Fast forward merges occur when the tip of the current branch is a direct ancestor of the target branch. In this case, instead of actually merging the branches, Git simply moves (or fast forwards) the current branch tip up to the target branch tip.&lt;/p&gt;
-
-&lt;p&gt;However, a fast-forward merge is not possible if the branches have diverged. In those cases, a 3-way merge is required, which uses a dedicated commit to bring together the two histories.&lt;/p&gt;
-
-&lt;p&gt;In a three way merge, Git’s merge algorithm uses the current branch, the target branch, and their merge base in order to incorporate changes from the target branch into the current branch. The merge base is essentially the most recent common ancestor (often this is the commit before the two branches forked). Git uses the merge base to identify what changed since the branches diverged.&lt;/p&gt;
-
-&lt;p&gt;Git is smart, and non-overlapping changes (areas of code modified by one branch but not that other) are automatically incorporated into the final merged result. However, sometimes both branches change the same part of the same file, resulting in merge conflicts.&lt;/p&gt;
-
-&lt;h2 id=&quot;merge-conflicts&quot;&gt;Merge conflicts&lt;/h2&gt;
-
-&lt;p&gt;If your branch and the target branch both changed the same part of the same file, then Git won’t be able to merge them cleanly. Each of these discrepancies results in a merge conflict.&lt;/p&gt;
-
-&lt;p&gt;In these cases, Git leaves the changes made by both your branch and the target (separated by special conflict markers) and notifies you that there was a conflict.&lt;/p&gt;
-
-&lt;p&gt;To complete the merge you must then resolve each of these conflicts by explicitly telling Git what you’d like the post-merged file to include at these locations. To do so use the following commands:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt; shows you which files need to be resolved.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt; on a conflicted file(s) tells Git the conflicts are resolved.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt; generates the merge commit completing the merge.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;strategies-and-tools&quot;&gt;Strategies and tools&lt;/h2&gt;
-
-&lt;p&gt;First of all, you should always make sure your working directory is clean before merging. If you have work in progress, either commit it to a temporary branch or stash it. This allows you to easily abandon your merge at any point without losing any of your work. You can abort an in-progress merge using the &lt;code class=&quot;highlighter-rouge&quot;&gt;git merge --abort&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;If the merge results in conflicts, I start by finding the merge base using the &lt;code class=&quot;highlighter-rouge&quot;&gt;git merge-base &amp;lt;tareget_branch&amp;gt; &amp;lt;current_branch&amp;gt;&lt;/code&gt; command. As mentioned previously, the merge base is essentially the commit before the two branches forked.&lt;/p&gt;
-
-&lt;p&gt;I then inspect the development history (since the branches diverged) for each file with merge conflicts. This helps me better understand (or simply remember!) each branch’s intent when modifying the file.&lt;/p&gt;
-
-&lt;p&gt;I find that the most powerful command for this inspection is &lt;code class=&quot;highlighter-rouge&quot;&gt;git log --follow -p -- file&lt;/code&gt;, which &lt;a href=&quot;http://stackoverflow.com/a/5493663/2793226&quot;&gt;shows the history of the file (including the history beyond renames) with diffs for each commit&lt;/a&gt;. To inspect both the target branch and the current branch since they diverged (i.e. since the merge base), I use the following commands respectively:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git log &amp;lt;merge-base-sha&amp;gt; &amp;lt;target-branch&amp;gt; --follow -p -- path/to/file&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git log &amp;lt;merge-base-sha&amp;gt; HEAD --follow -p -- path/to/file&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this case &lt;code class=&quot;highlighter-rouge&quot;&gt;HEAD&lt;/code&gt; is just a shorthand for the pre-merge state of the current branch.&lt;/p&gt;
-
-&lt;p&gt;Sometimes, I find it easier to omit the &lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; option in the previous commands, and instead just review the entire diff for both the target branch and the current branch since they diverged:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git diff &amp;lt;merge-base-sha&amp;gt; &amp;lt;target-branch&amp;gt; -- path/to/file&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git diff &amp;lt;merge-base-sha&amp;gt; HEAD -- path/to/file&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ultimately, reviewing this history helps me better understand what each branch was trying to accomplish. With this information in hand, I can then manually resolve the merge conflicts by deciding what code each of these files should include post merge.&lt;/p&gt;
-
-&lt;h2 id=&quot;visual-merge-tools&quot;&gt;Visual merge tools&lt;/h2&gt;
-&lt;p&gt;In addition to these strategies, I find that it is also helpful to use a visual merge tool when resolving merge conflicts.&lt;/p&gt;
-
-&lt;p&gt;With these tools, you don’t need to sift through Git conflict markers. Rather, visual merge tools provide a GUI that allows you to compare the different versions of the files you are merging, and they provide point and click tools to help you find and resolve conflicts.&lt;/p&gt;
-
-&lt;p&gt;A good visual merge tool will display at least 3 panels for each file with conflicts. There will be a panel showing the version of that file:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;In your branch&lt;/li&gt;
-  &lt;li&gt;In the target branch&lt;/li&gt;
-  &lt;li&gt;As it will appear after merging&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I prefer merge tools (such as the P4Merge tool shown below) which also include a fourth display panel showing the version of that file in the merge base:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/P4Merge_screenshot.jpg&quot; alt=&quot;P4Merge tool screenshot&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are many visual merge tools to choose from, some of which may already be installed on your system.&lt;/p&gt;
-
-&lt;p&gt;To view the list of available merge tools along with other valid but uninstalled merge tools, type &lt;code class=&quot;highlighter-rouge&quot;&gt;git mergetool --tool-help&lt;/code&gt; in your terminal.&lt;/p&gt;
-
-&lt;p&gt;If your merge results in conflicts, you can type &lt;code class=&quot;highlighter-rouge&quot;&gt;git mergetool&lt;/code&gt; to use your default merge tool, or you can specify the merge tool to use via &lt;code class=&quot;highlighter-rouge&quot;&gt;git mergetool --tool=&amp;lt;tool&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Most merge tools will iterate through each file with conflicts, giving you the opportunity to resolve the conflicts and save (i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt; them), or dismiss and revisit later.&lt;/p&gt;
-
-&lt;p&gt;I prefer the P4Merge tool but that is just personal preference. I encourage you to invest the time trying a few different tools to decide which works best for you. Ultimately, it will be time well spent.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Encountering merge conflicts can often be intimidating since you don’t want to make inadvertent changes to the code base. But armed with the right tools, the process becomes much easier and more intentional. With knowledge of the merge base, use of the &lt;code class=&quot;highlighter-rouge&quot;&gt;git log --follow -p -- file&lt;/code&gt; command, and the help of a visual merge tool you can go forth confidently when resolving merge conflicts!&lt;/p&gt;
-</description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/06/15/git-merge-conflict-strategies.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/06/15/git-merge-conflict-strategies.html</guid>
-        
-        <category>git</category>
         
         
       </item>
