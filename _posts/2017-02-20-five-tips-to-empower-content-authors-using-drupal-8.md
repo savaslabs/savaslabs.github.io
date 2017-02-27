@@ -11,9 +11,9 @@ featured_image_width: "1474px"
 summary: 5 configuration tips in Drupal 8 that make the content authoring experience more enjoyable and productive, regardless of enhancements in core.
 drupal_planet_summary: |
   Creating and publishing quality web content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
-  
+
   Customizing the user experience for content authors is a critical component that site architects must implement in order to establish and maintain client satisfaction. Lucky for us, Drupal 8 makes it easier for digital agencies to empower content creators and editors with the right tools to get the job done efficiently.
-  
+
   Here are 5 configuration tips in Drupal 8 that make the content authoring experience more enjoyable and productive, regardless of enhancements in core.
 
 ---
@@ -124,7 +124,7 @@ With all this media goodness available to us, there is no reason why we shouldnâ
 
 ## 5. Simplify content linking with LinkIt
 
-Linking to content has always been a clumsy experience for content editors, especially when linking internally within the same site. 
+Linking to content has always been a clumsy experience for content editors, especially when linking internally within the same site.
 
 There was always the risk of accidentally navigating away from the page that you were actively editing (and losing any unsaved information) while searching for the page to link to. Also, the default CKEditor link button allowed editors to insert a link, assign it a target value, title, maybe an anchor name, but that was about it. If the link to the internal content changed, there was no way for the page to update and links throughout the website would end up broken.
 
