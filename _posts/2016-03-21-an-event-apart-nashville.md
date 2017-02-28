@@ -11,12 +11,7 @@ featured_image_height: "830px"
 featured_image_width: "1474px"
 ---
 
-Sitting in the Nashville airport after attending
-[An Event Apart](http://aneventapart.com/), a leading web design and development
-conference, I found myself feeling overwhelmed at the sheer volume of
-information I'd just taken in and the positively enormous possibilities lying
-ahead of the people who build the web (and the equally huge responsibility we
-have to move forward with thoughtfulness and compassion).
+Sitting in the Nashville airport after attending [An Event Apart](http://aneventapart.com/), a leading web design and development conference, I found myself feeling overwhelmed at the sheer volume of information I'd just taken in and the positively enormous possibilities lying ahead of the people who build the web (and the equally huge responsibility we have to move forward with thoughtfulness and compassion).
 
 I wasn't quite sure what to expect going in, so I'd like to summarize my biggest
 takeaways, share some of the things I found exciting, and reflect on what I

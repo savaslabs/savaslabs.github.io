@@ -7,8 +7,7 @@ tags: drupal drupal-planet cartography
 summary: Slides from Tim's talk on building web maps using Drupal at the 2015 NACIS conference.
 ---
 
-Two weeks ago, I gave a presentation on [Drupalized Web Mapping](http://timstallmann.github.io/nacis-drupal-mapping-talk/#/) for the [North American Cartographic Information Society 2015](http://www.nacis.org) conference in Minneapolis, MN.
-The full set of slides for the talk are [online via Github pages](http://timstallmann.github.io/nacis-drupal-mapping-talk/#/), but here I'm going to skip the "what is Drupal" side of the talk and focus on giving more detail on three different recommended workflows for building web maps in Drupal.
+Two weeks ago, I gave a presentation on [Drupalized Web Mapping](http://timstallmann.github.io/nacis-drupal-mapping-talk/#/) for the [North American Cartographic Information Society 2015](http://www.nacis.org) conference in Minneapolis, MN. The full set of slides for the talk are [online via Github pages](http://timstallmann.github.io/nacis-drupal-mapping-talk/#/), but here I'm going to skip the "what is Drupal" side of the talk and focus on giving more detail on three different recommended workflows for building web maps in Drupal.
 
 Note: At the time of writing this few of the modules mentioned had stable D8 ports. The shift to D8 is likely to change the landscape of mapping modules significantly, so the following advice is really focused on D7 sites (although we're using the third approach on a D8 site currently).
 

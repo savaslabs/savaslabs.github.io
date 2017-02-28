@@ -7,8 +7,7 @@ tags: drupal drupal8 drupal-planet
 summary: What to plan for as Drupal 6 EOL approaches.
 
 ---
-This is part 1 of a series investigating what to do with your Drupal 6 site as
-EOL approaches.
+This is part 1 of a series investigating what to do with your Drupal 6 site as EOL approaches.
 
 **Part 1 - overview** \|
 [Part 2 - the risks](/2015/12/10/drupal-6-part-2.html)
