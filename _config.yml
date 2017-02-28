@@ -59,6 +59,7 @@ gems:
   - jekyll-paginate
   - jekyll-picture-tag
   - jemoji
+  - jekyll-twitter-plugin
 
 # Picture element presets
 picture:

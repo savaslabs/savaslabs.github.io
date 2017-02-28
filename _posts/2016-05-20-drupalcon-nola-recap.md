@@ -19,9 +19,8 @@ I arrived Saturday evening after a few short flights from Durham, NC. My graciou
  <span class="caption">See a palindrome anywhere?</span>
 
  Kevin also took me to the convention center so I could get my bearings for the week ahead. He took my picture, and **_ever so slightly_** doctored up the version you see below for me to share with our community that we had made it to the big stage!
-
- <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We have arrived <a href="https://twitter.com/hashtag/DrupalCon?src=hash">#DrupalCon</a> <a href="https://twitter.com/hashtag/NOLA?src=hash">#NOLA</a> <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a>!!!! <a href="https://twitter.com/hashtag/yesfilter?src=hash">#yesfilter</a> <a href="https://t.co/RlkNAu99nB">pic.twitter.com/RlkNAu99nB</a></p>&mdash; Savas Labs (@Savas_Labs) <a href="https://twitter.com/Savas_Labs/status/729504649233899521">May 9, 2016</a></blockquote>
- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+ 
+ {% twitter https://twitter.com/Savas_Labs/status/729504649233899521 %}
 
 ### Monday - Business Summit / Opening party
 

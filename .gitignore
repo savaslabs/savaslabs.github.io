@@ -1,6 +1,7 @@
 # For Jekyll.
 _site
 .sass-cache
+.tweet-cache
 tmp
 node_modules
 assets
