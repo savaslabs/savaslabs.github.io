@@ -5,7 +5,7 @@ date: 2017-03-06
 author: Oksana Cyrwus
 tags: drupal drupal8 drupal-planet user-experience
 featured_image: "/blog/content-authoring-d8.jpg"
-featured_image_alt: "Two cartoon characters editing content on the web"
+featured_image_alt: "Five Drupal 8 Tips to Empower Content Authors"
 featured_image_height: "917px"
 featured_image_width: "1474px"
 summary: Five Drupal 8 tips to make the content authoring experience more enjoyable and productive!
@@ -20,7 +20,7 @@ drupal_planet_summary: |
 
 Creating and publishing quality content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
 
-During architecture, it's critical to craft the editorial experience to the specific needs of content authors to ensure the best content editing experience possible. Drupal 8 makes it even easier than previous versions for digital agencies to empower content creators and editors with the right tools to get the job done efficiently, and more enjoyably.
+During the architectural phase, it's critical to craft the editorial experience to the specific needs of content authors to ensure the best content editing experience possible. Drupal 8 makes it even easier than previous versions for digital agencies to empower content creators and editors with the right tools to get the job done efficiently, and more enjoyably.
 
 Our five tips to enhance the content editing experience with Drupal 8 are:
 
