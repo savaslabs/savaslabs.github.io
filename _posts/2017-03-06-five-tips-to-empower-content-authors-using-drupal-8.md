@@ -1,30 +1,28 @@
 ---
 layout: post
-title: 5 Tips to Empower Content Authors Using Drupal 8
-date: 2017-02-20
+title: Five Drupal 8 Tips to Empower Content Authors
+date: 2017-03-06
 author: Oksana Cyrwus
 tags: drupal drupal8 drupal-planet user-experience
 featured_image: "/blog/content-authoring-d8.jpg"
-featured_image_alt: "5 Tips to Empower Content Authors Using Drupal 8"
+featured_image_alt: "Two cartoon characters editing content on the web"
 featured_image_height: "917px"
 featured_image_width: "1474px"
-summary: 5 configuration tips in Drupal 8 that make the content authoring experience more enjoyable and productive, regardless of enhancements in core.
+summary: Five Drupal 8 tips to make the content authoring experience more enjoyable and productive!
 drupal_planet_summary: |
-  Creating and publishing quality web content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
+  Creating and publishing quality content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
 
-  Customizing the user experience for content authors is a critical component that site architects must implement in order to establish and maintain client satisfaction. Lucky for us, Drupal 8 makes it easier for digital agencies to empower content creators and editors with the right tools to get the job done efficiently.
+  Customizing the user experience for content authors is a critical component that site architects must implement in order to establish and maintain client satisfaction. Drupal 8 makes it easier for digital agencies to empower content creators and editors with the right tools to get the job done efficiently.
 
-  Here are 5 configuration tips in Drupal 8 that make the content authoring experience more enjoyable and productive, regardless of enhancements in core.
+  Here are five tips in Drupal 8 that make the content authoring experience more enjoyable and productive.
 
 ---
 
-Creating and publishing quality web content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
+Creating and publishing quality content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
 
-Customizing the user experience for content authors is a critical component that site architects must implement in order to establish and maintain client satisfaction. Lucky for us, Drupal 8 makes it easier for digital agencies to empower content creators and editors with the right tools to get the job done efficiently.
+During architecture, it's critical to craft the editorial experience to the specific needs of content authors to ensure the best content editing experience possible. Drupal 8 makes it even easier than previous versions for digital agencies to empower content creators and editors with the right tools to get the job done efficiently, and more enjoyably.
 
-We can make many improvements in Drupal 8 to make the content authoring experience more enjoyable and productive, regardless of enhancements in core.
-
-Here’s 5 of them:
+Our five tips to enhance the content editing experience with Drupal 8 are:
 
 [1. Don’t make authors guess - use structured content](#dont-make-authors-guess---use-structured-content)
 
@@ -46,11 +44,11 @@ In years past, it was very popular to give content editors an ability to create 
 
 Though those days are long behind us, and even though we all know about the importance of structured content, sometimes we _still fail_ to utilize the concept correctly.
 
-Drupal was one of the first Content Management Systems (CMS) to introduce the concept of structured content (node system - Drupal 3 in 2001). In fact, Drupal is no-doubt the best CMS for implementing the concept of structured content, but its ability to provide a good content authoring experience has been lacking.
+Drupal was one of the first Content Management Systems (CMS) to introduce the concept of structured content (node system - Drupal 3 in 2001). In fact, Drupal is no-doubt the best CMS for implementing the concept of structured content, but its ability to provide a good content authoring experience lagged behind this solid foundation.
 
 Today, in Drupal 8, editing structured content is a joy!
 
-With the Wysiwyg (What you see is what you get) editor and Quick Edit functionality already in Drupal core, we can equip our content editors with the best of class authoring experience and workflow!
+With the WYSIWYG (**W**hat **Y**ou **S**ee **I**s **W**hat **Y**ou **G**et) editor and Quick Edit functionality in Drupal core, we can equip our content editors with the best of class authoring experience and workflow!
 
 You can see the difference between unstructured and structured D8 content below. Instead of only one field containing all text, images, etc., the structured content stores each definitive piece of information in it's own field, making content entry fast and presentation flexible!
 
@@ -64,19 +62,19 @@ You can see the difference between unstructured and structured D8 content below.
 
 ## 2. Configure the WYSIWYG editor responsibly
 
-Drupal 8 ships with Wysiwyg text editor in core. The editor even works great on mobile! In a society that is so dependent on our mobile devices - who wouldn’t like to be able to quickly edit a missed typo right from your phone?
+Drupal 8 ships with WYSIWYG text editor in core. The editor even works great on mobile! In a society that is so dependent on our mobile devices - who wouldn’t like to be able to quickly edit a missed typo right from your phone?
 
-Drupal 8 provides superior enhancements to the UX (User Experience) for content authors and editors out of the box. However, things can always be improved and refined.
+Drupal 8 provides superior enhancements to the UX (User Experience) for content authors and editors out of the box. However, with a little configuration, things can be further improved.
 
-When establishing the UI (User Interface) for content authors, site builders should focus on refining rather than whole-sale adoption of the available features. Customizing the Wysiwyg editor is the perfect example of subtle improvements that can immediately make a big difference.
+When establishing the UI (User Interface) for content authors, site builders should focus on refining rather than whole-sale adoption of the available features. Customizing the WYSIWYG editor is the perfect example of subtle improvements that can immediately make a big difference.
 
-Wysiwyg text editor is an effective tool for simple content entry since it does not require the end user to be aware of HTML markup or CSS styles. Many great functions like text formatting options (font family, size, color, background color, etc.), source code viewing, and indentation are available at our fingertips, but as site builders we should think twice before adding all those options to the text editor toolbar!
+The WYSIWYG text editor is an effective tool for simple content entry since it does not require the end user to be aware of HTML markup or CSS styles. Many great functions like text formatting options (font family, size, color, and background color), source code viewing, and indentation are available at our fingertips, but as site builders we should think twice before adding all those options to the text editor toolbar!
 
 With great power comes great responsibility! Sometimes, when you give content editors control over the final appearance of the published content (e.g. text color, font family and size, image resizing, etc.), it can lead to an inconsistent color schemes, skewed image ratios, and unpredictable typography choices.
 
 How do we help our content authors in avoiding common design / formatting mistakes? Simple!
 
-**Use a minimalist approach when configuring the Wysiwyg text editor.** Give authors access to the most essential text formatting options that they will need for the type of content they create and nothing more. If the piece of content edited should not contain images or tables - do not include those buttons in the editor. Text editor should be used only for sections of text, not for the page layout.
+**Use a minimalist approach when configuring the WYSIWYG text editor.** Give authors access to the most essential text formatting options that they will need for the type of content they create and nothing more. If the piece of content edited should not contain images or tables - do not include those buttons in the editor. The text editor should be used only for sections of text, not for the page layout.
 
 A properly configured CMS should not allow content editors the ability to change the size of the text or play with image positioning within the text section or the ability to add H1 headers within auxiliary content.
 
@@ -84,7 +82,7 @@ Below is an example of a bad vs. good Wysiwyg configuration.
 
 <img src="/assets/img/blog/good-vs-bad-wysiwyg-editor.jpg" class="blog-image-large" alt="Wysiwyg editor configuration compared">
 
-### Benefits of the minimal (thoughtful) Wysiwyg configuration:
+### Benefits of the minimal (thoughtful) WYSIWYG configuration:
 
 - Easy to use
 - Less confusion (though there are edge cases, most editors don't use all the buttons)
@@ -113,7 +111,7 @@ A workaround for this issue is to use the custom View modes for Entities and cre
 
 ## 4. Enrich content with Media Embeds
 
-In the era of social media, content editors can’t imagine their daily routine without being able to embed their Tweets or videos into the stories they publish on their sites. In Drupal 6 and the early days of Drupal 7, it was pretty challenging to provide this functionality within the Wysiwyg editor. Many different plugins and modules had to be configured to play nice together.
+In the era of social media, content editors can’t imagine their daily routine without being able to embed their Tweets or videos into the stories they publish on their sites. In Drupal 6 and the early days of Drupal 7, it was pretty challenging to provide this functionality within the WYSIWYG editor. Developers had to configure many different plugins and modules and ask them politely to cooperate.
 
 The Drupal 8 Media initiative has placed the content author’s experience and needs at the forefront of community efforts. As a result, we have access to a great solution for handling external media - [CKEditor Media Embed Module](https://www.drupal.org/project/ckeditor_media_embed). It allows content editors to embed external resources such as videos, images, tweets, etc. via Wysiwyg editor. Here's an example of the Tweet embed -- the end result looks beautiful and requires minimal effort.
 
@@ -130,7 +128,7 @@ There was always the risk of accidentally navigating away from the page that you
 
 Let’s not put our content editors through that horrible experience again. [LinkIt module](https://www.drupal.org/project/linkit) for Drupal 8 to the rescue!
 
-With LinkIt module the user does not have to copy / paste the URL or remember it. LinkIt provides a search for internal content with autocomplete field. User can link not only to pages, but also to files that are stored within Drupal CMS.
+With the LinkIt module the user does not have to copy / paste the URL or remember it. LinkIt provides a search for internal content with autocomplete field. Users can link not only to pages, but also to files that are stored within Drupal CMS.
 
 The new and improved linking method is much more sustainable, as it recognizes when the URL of the linked content changes, and automatically produces the correct link within the page without the need to update that content manually.
 
@@ -138,7 +136,7 @@ The new and improved linking method is much more sustainable, as it recognizes w
 
 <span class="caption">Linking to files with LinkIt</span>
 
-My personal favorite feature of the LinkIt module is the flexible configuration options. The LinkIt module makes it possible to limit the type of entities (pages, posts, files) that are searchable via the link field. You can also create a custom configuration of the LinkIt autocomplete dialog for each Wysiwyg editor profile configured on your site. Plus, it is fully integrated with Drupal 8 configuration synchronization.
+My personal favorite feature of the LinkIt module is the flexible configuration options. The LinkIt module makes it possible to limit the type of entities (pages, posts, files) that are searchable via the link field. You can also create a custom configuration of the LinkIt autocomplete dialog for each WYSIWYG editor profile configured on your site. Plus, it is fully integrated with Drupal 8 configuration synchronization.
 
 ## Final Thoughts
 
