@@ -137,7 +137,7 @@ on type design when needed.
 To this end, we created a repository where we can continue to house a list of
 go-to typefaces, tried-and-tested pairings, favorite foundries, and excellent
 type resources. Curating this list and adding to it whenever we find something
-we like will provides with an easy reference so we're not starting from scratch
+we like provides us with an easy reference so we're not starting from scratch
 every time, and is a nice way to practice the skills suggested above.
 
 ## Closing thoughts
