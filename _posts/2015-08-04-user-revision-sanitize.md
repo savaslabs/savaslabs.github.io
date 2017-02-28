@@ -14,13 +14,7 @@ drupal_planet_summary: |
 ---
 
 ## The general problem
-One of the most embarrassing and potentially costly things we can do as developers
-is to send emails out to real people unintentionally from a development
-environment. It happens, and often times we aren't even aware of it until the damage
-is done and a background process sends out, say, 11,000 automated emails to
-existing customers (actually happened to a former employer recently). In the
-Drupal world, there are [myriad ways](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/commit/64a558e2)
-to [attempt to address](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/blob/master/scripts/sanitize.php) this problem.
+One of the most embarrassing and potentially costly things we can do as developers is to send emails out to real people unintentionally from a development environment. It happens, and often times we aren't even aware of it until the damage is done and a background process sends out, say, 11,000 automated emails to existing customers (actually happened to a former employer recently). In the Drupal world, there are [myriad ways](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/commit/64a558e2) to [attempt to address](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/blob/master/scripts/sanitize.php) this problem.
 
 ## General solutions to the general problem
 - [maillog](https://www.drupal.org/project/maillog) - A Drupal module that

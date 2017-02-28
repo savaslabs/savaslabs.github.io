@@ -13,14 +13,7 @@ summary: |
   lessons learned to our workflow.
 ---
 
-As a developer who often interacts with and creates web designs, I'm always on
-the lookout for quality resources to level up my design skills, and the [Book
-Apart series](https://abookapart.com/) has proven to be an excellent source of
-knowledge presented in a relevant, concise manner. My latest read was [*On Web
-Typography* by Jason Santa Maria](https://abookapart.com/products/on-web-typography),
-and I found the book to be a strong resource, especially for the non-designer.
-In this post, I'll review the book and detail how we at Savas Labs implemented
-the lessons we learned.
+As a developer who often interacts with and creates web designs, I'm always on the lookout for quality resources to level up my design skills, and the [Book Apart series](https://abookapart.com/) has proven to be an excellent source of knowledge presented in a relevant, concise manner. My latest read was [*On Web Typography* by Jason Santa Maria](https://abookapart.com/products/on-web-typography), and I found the book to be a strong resource, especially for the non-designer. In this post, I'll review the book and detail how we at Savas Labs implemented the lessons we learned.
 
 ## Thinking about reading
 

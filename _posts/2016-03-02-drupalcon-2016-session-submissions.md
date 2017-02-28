@@ -11,11 +11,7 @@ summary: Savas Labs is sending 3 people to Drupalcon and has proposed 4 sessions
 
 ## 4 Savas Labs sessions proposed for Drupalcon NA 2016
 
-Lisa, [Kosta](/team/kosta-harlan/) and [I](/team/chris-russo) will be heading over to [The Big Easy](https://en.wikipedia.org/wiki/New_Orleans) in early May for this
-year's [Drupalcon North America](https://events.drupal.org/neworleans2016). The week promises to be filled with some
-high-quality brain transfer (via HTTP 2 of course), meeting in-person with those who we only know digitally on IRC or
-in the issue queue, and general Drupal gallivanting ...where we plan to see
-people like this...
+Lisa, [Kosta](/team/kosta-harlan/) and [I](/team/chris-russo) will be heading over to [The Big Easy](https://en.wikipedia.org/wiki/New_Orleans) in early May for this year's [Drupalcon North America](https://events.drupal.org/neworleans2016). The week promises to be filled with some high-quality brain transfer (via HTTP 2 of course), meeting in-person with those who we only know digitally on IRC or in the issue queue, and general Drupal gallivanting ...where we plan to see people like this...
 
 <img src="/assets/img/blog/druplicon-in-durham.jpg" alt="Druplicon in Durham">
 

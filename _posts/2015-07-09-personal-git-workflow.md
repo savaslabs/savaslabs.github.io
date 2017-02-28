@@ -7,13 +7,7 @@ tags: git productivity
 summary: A git workflow that optimizes the preservation of (your) integrity, and frequent, distributed backups
 ---
 
-One huge benefit to using a source code management system (SCMS) like the
-de-facto industry-standard [git](https://git-scm.com/) is it eases, nay,
-down-right **facilitates** collaboration. One common attribute of
-a web developer is perfectionism. At times,
-this wonderful tool and (oft) wonderful trait can be at odds with one another.
-For those of us who appreciate beautiful code, we (not me) often fear sharing
-what isn't a polished thing of beauty.
+One huge benefit to using a source code management system (SCMS) like the de-facto industry-standard [git](https://git-scm.com/) is it eases, nay, down-right **facilitates** collaboration. One common attribute of a web developer is perfectionism. At times, this wonderful tool and (oft) wonderful trait can be at odds with one another. For those of us who appreciate beautiful code, we (not me) often fear sharing what isn't a polished thing of beauty.
 
 ```php
 <?php
