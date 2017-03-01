@@ -6,20 +6,13 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Feb 2017 13:24:54 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Feb 2017 13:24:54 +0000</lastBuildDate>
+    <pubDate>Wed, 01 Mar 2017 06:06:10 +0000</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2017 06:06:10 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
         <title>On Web Typography - a Book Review</title>
-        <description>&lt;p&gt;As a developer who often interacts with and creates web designs, I’m always on
-the lookout for quality resources to level up my design skills, and the &lt;a href=&quot;https://abookapart.com/&quot;&gt;Book
-Apart series&lt;/a&gt; has proven to be an excellent source of
-knowledge presented in a relevant, concise manner. My latest read was &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;&lt;em&gt;On Web
-Typography&lt;/em&gt; by Jason Santa Maria&lt;/a&gt;,
-and I found the book to be a strong resource, especially for the non-designer.
-In this post, I’ll review the book and detail how we at Savas Labs implemented
-the lessons we learned.&lt;/p&gt;
+        <description>&lt;p&gt;As a developer who often interacts with and creates web designs, I’m always on the lookout for quality resources to level up my design skills, and the &lt;a href=&quot;https://abookapart.com/&quot;&gt;Book Apart series&lt;/a&gt; has proven to be an excellent source of knowledge presented in a relevant, concise manner. My latest read was &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;&lt;em&gt;On Web Typography&lt;/em&gt; by Jason Santa Maria&lt;/a&gt;, and I found the book to be a strong resource, especially for the non-designer. In this post, I’ll review the book and detail how we at Savas Labs implemented the lessons we learned.&lt;/p&gt;
 
 &lt;h2 id=&quot;thinking-about-reading&quot;&gt;Thinking about reading&lt;/h2&gt;
 
@@ -149,7 +142,7 @@ on type design when needed.&lt;/p&gt;
 &lt;p&gt;To this end, we created a repository where we can continue to house a list of
 go-to typefaces, tried-and-tested pairings, favorite foundries, and excellent
 type resources. Curating this list and adding to it whenever we find something
-we like will provides with an easy reference so we’re not starting from scratch
+we like provides us with an easy reference so we’re not starting from scratch
 every time, and is a nice way to practice the skills suggested above.&lt;/p&gt;
 
 &lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
@@ -1034,16 +1027,7 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
     
       <item>
         <title>Optimizing Jekyll Performance with Gulp</title>
-        <description>&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s
-&lt;a href=&quot;http://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt;
-(written just two months after my career change into web development!) It’s been
-great fun building our site and adding content thanks to the power and simplicity
-of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to
-optimize our CSS, JS, and images, and in doing so finally moved away from using
-built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using
-&lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their
-website, a “streaming build system”. In this post I’ll go over our motivations
-for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
+        <description>&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s &lt;a href=&quot;http://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt; (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
 
 &lt;p&gt;We based a lot of our gulp workflow on
 &lt;a href=&quot;https://robwise.github.io/blog/jekyll-and-gulp&quot;&gt;this excellent post&lt;/a&gt; by Rob Wise.
