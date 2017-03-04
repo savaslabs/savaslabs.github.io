@@ -100,6 +100,16 @@ To add a new tag, complete the following:
 2. Add a new markdown file for the tag in blog/tag. This creates a page for posts with that tag.
 3. Add the tag to the front matter of your post.
 
+### Twitter widget
+
+We're using the jekyll-twitter-plugin to allow us to use a simple Liquid tag to
+add Twitter widgets to blog posts or other pages. Use the following format
+within HTML or markdown files:
+
+```
+{% twitter https://twitter.com/Savas_Labs/status/729504649233899521 %}
+```
+
 ### Comments
 
 Comments are handled by a Dockerized instance of [Squabble](https://github.com/savaslabs/squabble). Please refer to that repositories README for notes on usage, and to the [wiki page](https://pm.savaslabs.com/projects/savaslabs/wiki/Squabble) for production deployment information.
