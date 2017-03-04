@@ -103,7 +103,7 @@ To add a new tag, complete the following:
 ### Twitter widget
 
 We're using the jekyll-twitter-plugin to allow us to use a simple Liquid tag to
-add Twitter widgets to blog posts or other pages. Use the following format 
+add Twitter widgets to blog posts or other pages. Use the following format
 within HTML or markdown files:
 
 ```
