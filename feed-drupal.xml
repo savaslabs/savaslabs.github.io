@@ -6,9 +6,43 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 Mar 2017 13:14:54 +0000</pubDate>
-    <lastBuildDate>Sun, 05 Mar 2017 13:14:54 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 06:08:21 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 06:08:21 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+    
+      <item>
+        <title>Five Drupal 8 Tips to Empower Content Authors</title>
+        <description>
+          &lt;p&gt;
+            
+              
+              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/content-authoring-d8.jpg&quot; alt=&quot;Five Drupal 8 Tips to Empower Content Authors&quot; &gt;
+            
+            Creating and publishing quality content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
+
+Customizing the user experience for content authors is a critical component that site architects must implement in order to establish and maintain client satisfaction. Drupal 8 makes it easier for digital agencies to empower content creators and editors with the right tools to get the job done efficiently.
+
+Here are five tips in Drupal 8 that make the content authoring experience more enjoyable and productive.
+
+                &lt;a href=&quot;http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html&quot;&gt;Continue reading…&lt;/a&gt;
+          &lt;/p&gt;
+        </description>
+        <pubDate>Mon, 06 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal8</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>user-experience</category>
+        
+        
+      </item>
+      
     
     
     

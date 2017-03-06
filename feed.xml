@@ -6,9 +6,156 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 Mar 2017 13:14:54 +0000</pubDate>
-    <lastBuildDate>Sun, 05 Mar 2017 13:14:54 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 06:08:21 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 06:08:21 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Five Drupal 8 Tips to Empower Content Authors</title>
+        <description>&lt;p&gt;Creating and publishing quality content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.&lt;/p&gt;
+
+&lt;p&gt;During the architectural phase, it’s critical to craft the editorial experience to the specific needs of content authors to ensure the best content editing experience possible. Drupal 8 makes it even easier than previous versions for digital agencies to empower content creators and editors with the right tools to get the job done efficiently, and more enjoyably.&lt;/p&gt;
+
+&lt;p&gt;Our five tips to enhance the content editing experience with Drupal 8 are:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#dont-make-authors-guess---use-structured-content&quot;&gt;1. Don’t make authors guess - use structured content&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#configure-the-wysiwyg-editor-responsibly&quot;&gt;2. Configure the WYSIWYG editor responsibly&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#empower-your-editorial-team-with-quick-edit&quot;&gt;3. Empower your editorial team with Quick-Edit&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#enrich-content-with-media-embeds&quot;&gt;4. Enrich content with Media Embeds&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#simplify-content-linking-with-linkit&quot;&gt;5. Simplify content linking with LinkIt&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;dont-make-authors-guess---use-structured-content&quot;&gt;1. Don’t make authors guess - use structured content&lt;/h2&gt;
+
+&lt;p&gt;The abundance of different devices, screen sizes and form factors warrants the use of structured content. Structured content is content separated into distinct parts, each of which has a clearly defined purpose and can be edited and presented independently from one another according to context.&lt;/p&gt;
+
+&lt;p&gt;“How does that relate to a content editor’s experience?” - you may ask.&lt;/p&gt;
+
+&lt;p&gt;In years past, it was very popular to give content editors an ability to create “pages” using one big “MS Word-like” text box for writing their articles, news releases, product descriptions, etc. This approach produced content that was not reusable and was presented in one strict way. Who wants to navigate within one enormous text area to move images around?&lt;/p&gt;
+
+&lt;p&gt;Though those days are long behind us, and even though we all know about the importance of structured content, sometimes we &lt;em&gt;still fail&lt;/em&gt; to utilize the concept correctly.&lt;/p&gt;
+
+&lt;p&gt;Drupal was one of the first Content Management Systems (CMS) to introduce the concept of structured content (node system - Drupal 3 in 2001). In fact, Drupal is no-doubt the best CMS for implementing the concept of structured content, but its ability to provide a good content authoring experience lagged behind this solid foundation.&lt;/p&gt;
+
+&lt;p&gt;Today, in Drupal 8, editing structured content is a joy!&lt;/p&gt;
+
+&lt;p&gt;With the WYSIWYG (&lt;strong&gt;W&lt;/strong&gt;hat &lt;strong&gt;Y&lt;/strong&gt;ou &lt;strong&gt;S&lt;/strong&gt;ee &lt;strong&gt;I&lt;/strong&gt;s &lt;strong&gt;W&lt;/strong&gt;hat &lt;strong&gt;Y&lt;/strong&gt;ou &lt;strong&gt;G&lt;/strong&gt;et) editor and Quick Edit functionality in Drupal core, we can equip our content editors with the best of class authoring experience and workflow!&lt;/p&gt;
+
+&lt;p&gt;You can see the difference between unstructured and structured D8 content below. Instead of only one field containing all text, images, etc., the structured content stores each definitive piece of information in it’s own field, making content entry fast and presentation flexible!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/structured-vs-unstructured.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;Structured vs unstructured content&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-benefits-of-drupal-8-structured-content-approach&quot;&gt;The benefits of Drupal 8 structured content approach:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The author clearly understands where each piece of information should reside and does not have to factor in markup, layout, and design while editing (see &lt;a href=&quot;#configure-the-wysiwyg-editor-responsibly&quot;&gt;tip #2&lt;/a&gt;). Content entry becomes remarkably efficient and allows the author to concentrate on the essence of their message instead of format.&lt;/li&gt;
+  &lt;li&gt;The publishing platform is easier to maintain while supporting system scalability.&lt;/li&gt;
+  &lt;li&gt;The modular nature of structured content makes migrations between CMS versions or to a completely different CMS much more streamlined. &lt;em&gt;A huge plus for those long-term thinkers!&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;configure-the-wysiwyg-editor-responsibly&quot;&gt;2. Configure the WYSIWYG editor responsibly&lt;/h2&gt;
+
+&lt;p&gt;Drupal 8 ships with WYSIWYG text editor in core. The editor even works great on mobile! In a society that is so dependent on our mobile devices - who wouldn’t like to be able to quickly edit a missed typo right from your phone?&lt;/p&gt;
+
+&lt;p&gt;Drupal 8 provides superior enhancements to the UX (User Experience) for content authors and editors out of the box. However, with a little configuration, things can be further improved.&lt;/p&gt;
+
+&lt;p&gt;When establishing the UI (User Interface) for content authors, site builders should focus on refining rather than whole-sale adoption of the available features. Customizing the WYSIWYG editor is the perfect example of subtle improvements that can immediately make a big difference.&lt;/p&gt;
+
+&lt;p&gt;The WYSIWYG text editor is an effective tool for simple content entry since it does not require the end user to be aware of HTML markup or CSS styles. Many great functions like text formatting options (font family, size, color, and background color), source code viewing, and indentation are available at our fingertips, but as site builders we should think twice before adding all those options to the text editor toolbar!&lt;/p&gt;
+
+&lt;p&gt;With great power comes great responsibility! Sometimes, when you give content editors control over the final appearance of the published content (e.g. text color, font family and size, image resizing, etc.), it can lead to an inconsistent color schemes, skewed image ratios, and unpredictable typography choices.&lt;/p&gt;
+
+&lt;p&gt;How do we help our content authors in avoiding common design / formatting mistakes? Simple!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Use a minimalist approach when configuring the WYSIWYG text editor.&lt;/strong&gt; Give authors access to the most essential text formatting options that they will need for the type of content they create and nothing more. If the piece of content edited should not contain images or tables - do not include those buttons in the editor. The text editor should be used only for sections of text, not for the page layout.&lt;/p&gt;
+
+&lt;p&gt;A properly configured CMS should not allow content editors the ability to change the size of the text or play with image positioning within the text section or the ability to add H1 headers within auxiliary content.&lt;/p&gt;
+
+&lt;p&gt;Below is an example of a bad vs. good Wysiwyg configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/good-vs-bad-wysiwyg-editor.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;Wysiwyg editor configuration compared&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;benefits-of-the-minimal-thoughtful-wysiwyg-configuration&quot;&gt;Benefits of the minimal (thoughtful) WYSIWYG configuration:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Easy to use&lt;/li&gt;
+  &lt;li&gt;Less confusion (though there are edge cases, most editors don’t use all the buttons)&lt;/li&gt;
+  &lt;li&gt;Better usability on mobile devices&lt;/li&gt;
+  &lt;li&gt;Less risk of breaking established website design&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s keep our content editors happy and not overcrowd their interfaces when it’s absolutely not necessary. It is our duty as software engineers to deliver systems that are easy to use, intuitive, scalable and uphold design consistency.&lt;/p&gt;
+
+&lt;h2 id=&quot;empower-your-editorial-team-with-quick-edit&quot;&gt;3. Empower your editorial team with Quick-Edit&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.drupal.org/docs/8/core/modules/quick-edit/overview&quot;&gt;The Quick Edit module&lt;/a&gt; is one of the most exciting new features that is included in Drupal 8 core. It allows content authors and editors to make updates to their content without ever leaving the page.&lt;/p&gt;
+
+&lt;p&gt;The days of clicking “Edit” and waiting for a separate page to load just to fix a tiny typo are gone! The Quick Edit module eliminates that extra step and allows content editors to save a great deal of time on updating content. As an added bonus - content editors can instantly see how updated content will look within the page flow.&lt;/p&gt;
+
+&lt;p&gt;Here’s the Quick Edit functionality in action.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/quick-edit-demo.gif&quot; class=&quot;blog-image-large&quot; alt=&quot;Quick Edit module demo&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;quick-edit-configuration-tip-for-back-end-and-front-end-developers&quot;&gt;Quick Edit configuration tip for back-end and front-end developers&lt;/h3&gt;
+
+&lt;p&gt;To make use of the Quick Edit functionality within the website pages, entities have to be rendered on the page via &lt;a href=&quot;https://www.drupal.org/docs/8/api/entity-api/display-modes-view-modes-and-form-modes&quot;&gt;View Modes&lt;/a&gt; and not as separate fields.&lt;/p&gt;
+
+&lt;p&gt;This restriction presents a challenge when there’s a needs to provide Quick Edit functionality for a page constructed by the Views module. More often than not, Views are used to single out and output individual fields from the entities. The most used Views formats are “Table” and “Grid”. They currently &lt;a href=&quot;https://www.drupal.org/node/1962606&quot;&gt;do not support Quick Edit functionality for usability reasons&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A workaround for this issue is to use the custom View modes for Entities and create custom Twig templates for each View mode that should be outputted by Views in order to accommodate custom layout options.&lt;/p&gt;
+
+&lt;h2 id=&quot;enrich-content-with-media-embeds&quot;&gt;4. Enrich content with Media Embeds&lt;/h2&gt;
+
+&lt;p&gt;In the era of social media, content editors can’t imagine their daily routine without being able to embed their Tweets or videos into the stories they publish on their sites. In Drupal 6 and the early days of Drupal 7, it was pretty challenging to provide this functionality within the WYSIWYG editor. Developers had to configure many different plugins and modules and ask them politely to cooperate.&lt;/p&gt;
+
+&lt;p&gt;The Drupal 8 Media initiative has placed the content author’s experience and needs at the forefront of community efforts. As a result, we have access to a great solution for handling external media - &lt;a href=&quot;https://www.drupal.org/project/ckeditor_media_embed&quot;&gt;CKEditor Media Embed Module&lt;/a&gt;. It allows content editors to embed external resources such as videos, images, tweets, etc. via Wysiwyg editor. Here’s an example of the Tweet embed – the end result looks beautiful and requires minimal effort.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&amp;quot;If you&amp;#39;re going to build a new site, build it in D8.&amp;quot; - someone who knows what they&amp;#39;re talking about quotes &lt;a href=&quot;https://twitter.com/jrbeaton&quot;&gt;@jrbeaton&lt;/a&gt; &lt;a href=&quot;https://twitter.com/TriDUG&quot;&gt;@TriDUG&lt;/a&gt; &lt;a href=&quot;https://t.co/8w9GAuuARu&quot;&gt;pic.twitter.com/8w9GAuuARu&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/824770016507752448&quot;&gt;January 27, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;With all this media goodness available to us, there is no reason why we shouldn’t go the extra mile and configure the CKEditor Media Embed module for our content authors!&lt;/p&gt;
+
+&lt;h2 id=&quot;simplify-content-linking-with-linkit&quot;&gt;5. Simplify content linking with LinkIt&lt;/h2&gt;
+
+&lt;p&gt;Linking to content has always been a clumsy experience for content editors, especially when linking internally within the same site.&lt;/p&gt;
+
+&lt;p&gt;There was always the risk of accidentally navigating away from the page that you were actively editing (and losing any unsaved information) while searching for the page to link to. Also, the default CKEditor link button allowed editors to insert a link, assign it a target value, title, maybe an anchor name, but that was about it. If the link to the internal content changed, there was no way for the page to update and links throughout the website would end up broken.&lt;/p&gt;
+
+&lt;p&gt;Let’s not put our content editors through that horrible experience again. &lt;a href=&quot;https://www.drupal.org/project/linkit&quot;&gt;LinkIt module&lt;/a&gt; for Drupal 8 to the rescue!&lt;/p&gt;
+
+&lt;p&gt;With the LinkIt module the user does not have to copy / paste the URL or remember it. LinkIt provides a search for internal content with autocomplete field. Users can link not only to pages, but also to files that are stored within Drupal CMS.&lt;/p&gt;
+
+&lt;p&gt;The new and improved linking method is much more sustainable, as it recognizes when the URL of the linked content changes, and automatically produces the correct link within the page without the need to update that content manually.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/linkit-file-link-demo.gif&quot; class=&quot;blog-image-large&quot; alt=&quot;LinkIt File link demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Linking to files with LinkIt&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;My personal favorite feature of the LinkIt module is the flexible configuration options. The LinkIt module makes it possible to limit the type of entities (pages, posts, files) that are searchable via the link field. You can also create a custom configuration of the LinkIt autocomplete dialog for each WYSIWYG editor profile configured on your site. Plus, it is fully integrated with Drupal 8 configuration synchronization.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;As site builders, there are many improvements that we can make in order to &lt;strong&gt;streamline the process of content authoring&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;With the right mix of forethought and understanding, Drupal 8 allows web engineers to deliver content publishing platforms that are unique to the client’s specific needs, while making web authoring a productive and satisfying experience.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal8</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>user-experience</category>
+        
+        
+      </item>
     
       <item>
         <title>On Web Typography - a Book Review</title>
@@ -2442,96 +2589,6 @@ a must-read for gulp beginners!&lt;/li&gt;
         <category>user-experience</category>
         
         <category>best-practices</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Using XHProf to profile your Drupal module</title>
-        <description>&lt;p&gt;This is part 2 of a series on using XHProf for profiling Drupal modules.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/2016/05/26/installing-xhprof.html&quot;&gt;Part 1: Installing XHProf&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Part 2: Using XHProf&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;After you’ve &lt;a href=&quot;/2016/05/26/installing-xhprof.html&quot;&gt;installed XHProf&lt;/a&gt;, what’s next? How can you make use of its recommendations to tune a module or a website? Unfortunately there are no hard-and-fast rules for optimizing code to run more efficiently. What I can offer here is my own experience trying to optimize a D8 module using XHProf.&lt;/p&gt;
-
-&lt;h3 id=&quot;understanding-an-xhprof-run-report&quot;&gt;Understanding an XHProf run report&lt;/h3&gt;
-
-&lt;p&gt;The XHProf GUI displays the result of a given profiler run, or a group of runs. It can even compare 2 runs, but we’ll get to that in a minute. If you followed &lt;a href=&quot;/2016/05/26/installing-xhprof.html&quot;&gt;my previous post&lt;/a&gt;, you should have the &lt;code class=&quot;highlighter-rouge&quot;&gt;xhprof_html&lt;/code&gt; directory symlinked into the root web directory for your Drupal site; so visiting &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;my-local-site&amp;gt;/xhprof/&lt;/code&gt; should give you a list of all available stored run IDs, and you can click through one of those to view a specific run report.&lt;/p&gt;
-
-&lt;p&gt;You can also go directly to a specific run report via the URL &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;my-local-site&amp;gt;/xhprof/index.php?run=&amp;lt;run-id&amp;gt;&amp;amp;source=&amp;lt;source-id&amp;gt;&lt;/code&gt; (which you should have been logging already via an &lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt; statement or &lt;code class=&quot;highlighter-rouge&quot;&gt;dblog&lt;/code&gt; if you followed the last post).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-page-screenshot.jpg&quot; alt=&quot;Header of an XHProf run report&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The core of the run report is a table of each function or method which your code called while it was being profiled, along with a set of statistics about that function. This allows you to understand which parts of your code are most resource-intensive, and which are being called frequently in the use case that you’re profiling. Clicking on any one of the column headers will sort the list by that metric. To understand this report, it’s helpful to have some terminology:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Incl. Wall Time&lt;/strong&gt; - The total clock time elapsed between when a function call started and when the function exited. Note that this number is not a great basis for comparisons, since it can include other processes which were taking up CPU time on your machine while the PHP code was running, from streaming music in the background to PHPStorm’s code indexing, to random web browsing.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Incl. CPU Time&lt;/strong&gt; - In contrast to wall time, CPU time tracks only the time which the CPU actually spent executing your code (or related system calls). This is a more reliable metric for comparing different runs.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Excl. Wall/CPU Time&lt;/strong&gt; - Exclusive time measurements only count time actually spent within the given method itself. They exclude the time spent in any method/function called &lt;em&gt;from&lt;/em&gt; the given function (since that time will be tracked separately).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In general, the inclusive metrics (for CPU time and memory usage) will give you a sense of what your expensive methods/functions are – these are the methods or functions that you should avoid calling if possible. In contrast, the exclusive metrics will tell you where you can potentially improve the way a given method/function is implemented. For methods which belong to Drupal Core or other contrib modules, inclusive and exclusive metrics are basically equivalent, since you don’t usually have the option of impacting the implementation details of a function unless you’re working on its code directly. Note also that because your overall parent method and any other high-level methods in your code will &lt;em&gt;always&lt;/em&gt; show up at the top of the inclusive time chart, you may have better luck really understanding where your performance hits come from by sorting by exclusive CPU time.&lt;/p&gt;
-
-&lt;h3 id=&quot;take-a-step-back-and-plan-your-test-scenarios&quot;&gt;Take a step back and plan your test scenarios&lt;/h3&gt;
-
-&lt;p&gt;Before digging in to optimizing your module code, you need to take a step back and think about the big picture. First, what are you optimizing for? Many optimizations involve a tradeoff between time and memory usage. Are you trying to reduce overall run-time at the expense of more memory? Is keeping the memory footprint of a given function down more important? In order to answer these questions you need to think about the overall context in which your code is running. In my case, I was optimizing a background import module which was run via cron, so the top priority was that the memory usage and number of database optimizations were low enough not to impact the user-facing site performance.&lt;/p&gt;
-
-&lt;p&gt;Second, what use case for your code are you profiling? If this is a single method call, what arguments will be passed? If you’re profiling page loads on a website, which pages are you profiling? In order to successfully track whether the changes you’re making are having an impact on the metrics you’re concerned about, you need to be able to narrow down the possible use cases for your code into a handful of most-likely real world scenarios which you’ll actually choose to track via the profiler.&lt;/p&gt;
-
-&lt;h3 id=&quot;keep-things-organized&quot;&gt;Keep things organized&lt;/h3&gt;
-
-&lt;p&gt;Now it’s time to get organized. Write a simple test script so that you can easily run through all your use cases in an automated way – this is not strictly necessary, but it will save you a lot of work and potential error as you move through the process. In my case, I was testing a drush command hook, so I just wrote a bash shell script which executed the command three times in each of two different ways. For profiling page loads, I would recommend using &lt;a href=&quot;https://jmeter.apache.org/&quot;&gt;Apache JMeter&lt;/a&gt; - and you’ll need to consider whether you want to force an uncached page load by passing a random dummy query parameter. Ideally, you should be running each scenario a few times so that you can then average the results to account for any small variations in run-time.&lt;/p&gt;
-
-&lt;p&gt;Keeping your different runs organized is probably the most important part of successfully profiling module code using XHProf! Each run has a unique run ID, but &lt;strong&gt;you&lt;/strong&gt; are solely responsible for knowing which use case scenario and which version of the codebase that run ID corresponds to. I set up a basic spreadsheet in OpenOffice where I could paste in run numbers and basic run stats to compare (but there’s almost certainly a nicer automated way to do this than what I used).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-spreadsheet.jpg&quot; alt=&quot;Screenshot of an OpenOffice spreadsheet summarizing XHProf results for various runs&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you have a set of run IDs for a given use case + codebase version, you can generate a &lt;em&gt;composite&lt;/em&gt; xhprof report using the query string syntax &lt;code class=&quot;highlighter-rouge&quot;&gt;http://&amp;lt;your-local-site&amp;gt;/xhprof/index.php?run=&amp;lt;first-run-id&amp;gt;,&amp;lt;second-run-id&amp;gt;,&amp;lt;third-run-id&amp;gt;&amp;amp;source=&amp;lt;source-string&amp;gt;&lt;/code&gt; Averaging out across a few runs should give you more &lt;a href=&quot;https://en.wikipedia.org/wiki/Accuracy_and_precision&quot;&gt;precise&lt;/a&gt; measurements for CPU time and memory usage, but beware that if parts of your code involve caching you may want to either throw out the first run’s results in each version of the code base, since that’s where the cache will be generated, or clear the cache between runs.&lt;/p&gt;
-
-&lt;p&gt;Go ahead and test your run scripts to make sure that you can get a consistent baseline result at this point – if you’re seeing large differences in average total CPU times or average memory usage across different runs of the same codebase, you likely won’t be able to compare run times across &lt;em&gt;different&lt;/em&gt; versions of the code.&lt;/p&gt;
-
-&lt;h3 id=&quot;actually-getting-to-work&quot;&gt;Actually getting to work!&lt;/h3&gt;
-
-&lt;p&gt;After all this set-up, you should be ready to experiment and see what the impact of changes in your code base are on the metrics that you want to shift. In my case, the code I was working on used a &lt;a href=&quot;https://github.com/squix78/jsonstreamingparser&quot;&gt;streaming JSON parser class&lt;/a&gt;, and I noticed that one of the top function calls in the inital profiler report was the &lt;code class=&quot;highlighter-rouge&quot;&gt;consumeChar&lt;/code&gt; method of the parser.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-page.jpg&quot; alt=&quot;Image of XHProf profiler report with the method consumeChar highlighted in yellow&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It turns out that the JSON files I was importing were pretty-printed, thus containing more whitespace than they needed to. Sine the &lt;code class=&quot;highlighter-rouge&quot;&gt;consumeChar&lt;/code&gt; method gets called on each incoming character of the input stream, that added up to a lot of unnecessary method calls in the original code. By tweaking the JSON file export code to remove the pretty print flag, I cut down the number of times this method was called from 729,099 to 499,809, saving .2 seconds of run time right off the bat.&lt;/p&gt;
-
-&lt;p&gt;That was the major place where the XHProf profiler report gave me insights I would not have had otherwise. The rest of my optimizing experience was mostly testing out some of the common-sense optimizations I had already thought of while looking at the code – caching a table of known Entity IDs rather than querying the DB to check if an entity existed each time, using an associative array and &lt;code class=&quot;highlighter-rouge&quot;&gt;is_empty()&lt;/code&gt; &lt;a href=&quot;http://www.w3programmers.com/phps-in_array-function-is-really-slow/&quot;&gt;to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;in_array()&lt;/code&gt; calls&lt;/a&gt;, cutting down on unnecessary &lt;code class=&quot;highlighter-rouge&quot;&gt;$entity-&amp;gt;save()&lt;/code&gt; operations where possible.&lt;/p&gt;
-
-&lt;p&gt;It’s useful to mention that across the board the biggest performance hit in your Drupal code will probably be database calls, so cutting down on those wherever possible will save run-time (sometimes at the expense of memory, if you’re caching large amounts of data). Remember, also, that if DB log is enabled each logging call is a separate database operation, so use the log sparingly – or just log to &lt;code class=&quot;highlighter-rouge&quot;&gt;syslog&lt;/code&gt; and use service like &lt;a href=&quot;https://papertrailapp.com/&quot;&gt;Papertrail&lt;/a&gt; or &lt;a href=&quot;https://www.loggly.com/&quot;&gt;Loggly&lt;/a&gt; on production sites.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-final-results&quot;&gt;The final results&lt;/h3&gt;
-
-&lt;p&gt;As the results below show, using XHProf and some thoughtful optimizations I was able to cut total run time significantly in one use case (Case 2) and slightly in another use case (Case 1). Case 1 was already running in a reasonable amount of time, so here I was mostly interested in the Case 2 numbers (assuming I didn’t make anything too much worse).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/xhprof-results-graph.jpg&quot; alt=&quot;Bar chart comparing the run time of various runs&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;think-of-the-big-picture-part-2&quot;&gt;Think of the big picture, part 2&lt;/h3&gt;
-
-&lt;p&gt;Remember that controlled experimental metrics are just a means to understanding and improving real-world performance (which you can also measure directly using tools like &lt;a href=&quot;https://blackfire.io/&quot;&gt;blackfire&lt;/a&gt;, but that’s another blog post). In my case, at the end of the day we decided that the most important thing was to ensure that there wasn’t a performance impact on the production site while this background import code was running; so one of the optimizations we actually ended up implementing was to force this code to run &lt;strong&gt;slower&lt;/strong&gt; by throttling &lt;code class=&quot;highlighter-rouge&quot;&gt;$entity-&amp;gt;save()&lt;/code&gt; operations to maximally 1 every 1/2 second or so, as a way to minimize the number of requests MySQL was having to respond to from the importer. XHProf is a powerful tool, but don’t lose the forest for the trees when it comes to optimization.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 16 Jun 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/06/16/using-xhprof.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/06/16/using-xhprof.html</guid>
-        
-        <category>php</category>
-        
-        <category>performance</category>
-        
-        <category>drupal</category>
-        
-        <category>drupal-planet</category>
-        
-        <category>module-development</category>
         
         
       </item>
