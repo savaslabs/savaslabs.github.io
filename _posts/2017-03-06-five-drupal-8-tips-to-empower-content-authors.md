@@ -78,9 +78,9 @@ How do we help our content authors in avoiding common design / formatting mistak
 
 A properly configured CMS should not allow content editors the ability to change the size of the text or play with image positioning within the text section or the ability to add H1 headers within auxiliary content.
 
-Below is an example of a bad vs. good Wysiwyg configuration.
+Below is an example of a bad vs. good WYSIWYG configuration.
 
-<img src="/assets/img/blog/good-vs-bad-wysiwyg-editor.jpg" class="blog-image-large" alt="Wysiwyg editor configuration compared">
+<img src="/assets/img/blog/good-vs-bad-wysiwyg-editor.jpg" class="blog-image-large" alt="WYSIWYG editor configuration compared">
 
 ### Benefits of the minimal (thoughtful) WYSIWYG configuration:
 
@@ -113,7 +113,7 @@ A workaround for this issue is to use the custom View modes for Entities and cre
 
 In the era of social media, content editors can’t imagine their daily routine without being able to embed their Tweets or videos into the stories they publish on their sites. In Drupal 6 and the early days of Drupal 7, it was pretty challenging to provide this functionality within the WYSIWYG editor. Developers had to configure many different plugins and modules and ask them politely to cooperate.
 
-The Drupal 8 Media initiative has placed the content author’s experience and needs at the forefront of community efforts. As a result, we have access to a great solution for handling external media - [CKEditor Media Embed Module](https://www.drupal.org/project/ckeditor_media_embed). It allows content editors to embed external resources such as videos, images, tweets, etc. via Wysiwyg editor. Here's an example of the Tweet embed -- the end result looks beautiful and requires minimal effort.
+The Drupal 8 Media initiative has placed the content author’s experience and needs at the forefront of community efforts. As a result, we have access to a great solution for handling external media - [CKEditor Media Embed Module](https://www.drupal.org/project/ckeditor_media_embed). It allows content editors to embed external resources such as videos, images, tweets, etc. via WYSIWYG editor. Here's an example of the Tweet embed -- the end result looks beautiful and requires minimal effort.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;If you&#39;re going to build a new site, build it in D8.&quot; - someone who knows what they&#39;re talking about quotes <a href="https://twitter.com/jrbeaton">@jrbeaton</a> <a href="https://twitter.com/TriDUG">@TriDUG</a> <a href="https://t.co/8w9GAuuARu">pic.twitter.com/8w9GAuuARu</a></p>&mdash; Savas Labs (@Savas_Labs) <a href="https://twitter.com/Savas_Labs/status/824770016507752448">January 27, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
