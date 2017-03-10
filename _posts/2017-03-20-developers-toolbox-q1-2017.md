@@ -16,7 +16,7 @@ drupal_planet_summary: |
 
 ---
 
-_This post is part of a new series called "Quarterly Tips and Tricks."_ 
+_This post is part of a new series called "Quarterly Tips and Tricks."_
 
 The Web Development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.
 
@@ -32,10 +32,9 @@ What we've added to our toolboxes in Q1 2017:
 
 [3. Using Apowersoft's Free Screen Recorder to capture your screen](#Using Apowersoft's Free Screen Recorder to capture your screen)
 
-
 ## 1. Using Teleconsole for collaboration
 
-[Teleconsole](https://www.teleconsole.com/) let's you share your UNIX terminal session for easy collaboration! We've been using it for a couple months now and find it to be an excellent addition to our team toolbox. 
+[Teleconsole](https://www.teleconsole.com/) let's you share your UNIX terminal session for easy collaboration! We've been using it for a couple months now and find it to be an excellent addition to our team toolbox.
 
 It works by starting a SSH server on the host computer and generating a unique session ID that others can connect to via their terminal or a web browser. You can have multiple connected individuals in a session, though we typically use it more for 1-1 debugging and troubleshooting.
 
@@ -45,15 +44,15 @@ EXAMPLE PIC
 
 ## 2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm
 
-There are many useful tools available for interacting with a MySQL database. Since we've transitioned to Docker for our local development, we've discovered 2 techniques for integrating database tools to work with your local Docker stack. 
+There are many useful tools available for interacting with a MySQL database. Since we've transitioned to Docker for our local development, we've discovered 2 techniques for integrating database tools to work with your local Docker stack.
 
 ### Adding PhpMyAdmin to a Docker Stack
 
-[PhpMyAdmin](https://www.phpmyadmin.net/) is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. [Docker4drupal](https://github.com/wodby/docker4drupal) has created an easy [template](https://github.com/wodby/docker4drupal/blob/master/docker-compose.yml) for adding the PhpMyAdmin service to a project's Docker Stack. 
+[PhpMyAdmin](https://www.phpmyadmin.net/) is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. [Docker4drupal](https://github.com/wodby/docker4drupal) has created an easy [template](https://github.com/wodby/docker4drupal/blob/master/docker-compose.yml) for adding the PhpMyAdmin service to a project's Docker Stack.
 
 To build a container to run the PhpMyAdmin service:
 - Simply add this snippet from docker4drupal to your `docker-compose.yml` file.
-  - It uses the official `phpmyadmin` image and defines the host as the database container (`mariadb` in this example), so be sure to add it _after_ the section defining your database container. 
+  - It uses the official `phpmyadmin` image and defines the host as the database container (`mariadb` in this example), so be sure to add it _after_ the section defining your database container.
 - Set the correct database user and password (`PMA_USER` and `PMA_PASSWORD`).
 
 Once the containers are up you can visit the port specific url (`<example.site>:8001`) to access your project-specific PhpMyAdmin interface!
@@ -75,7 +74,6 @@ INSTRUCITON PICS HERE
 Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You'll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface!
 
 RESULT PIC HERE
-
 
 ## 3. Using Apowersoft's Free Screen Recorder to capture your screen
 
