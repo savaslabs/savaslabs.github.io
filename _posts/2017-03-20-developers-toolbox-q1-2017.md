@@ -9,11 +9,6 @@ featured_image_alt: "Q1 2017 Tips"
 featured_image_height: "917px"
 featured_image_width: "1474px"
 summary: What we've added to our developer toolboxes in Q1 2017!
-drupal_planet_summary: |
-  The Web Development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.
-
-  Here's what we've added to our developer toolboxes in Q1 2017.
-
 ---
 
 _This post is part of a new series called "Quarterly Tips and Tricks."_
@@ -26,11 +21,11 @@ Since we believe in the open source ethos and sharing with the Dev community, in
 
 What we've added to our toolboxes in Q1 2017:
 
-[1. Using Teleconsole for collaboration](#Using Teleconsole for collaboration)
+[1. Using Teleconsole for collaboration](#using-teleconsole-for-collaboration)
 
-[2. Accessing a Dockerized database via PhpStorm or PhpMyAdmin](#Accessing a Dockerized database via PhpMyAdmin or PhpStorm)
+[2. Accessing a Dockerized database via PhpStorm or PhpMyAdmin](#accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm)
 
-[3. Using Apowersoft's Free Screen Recorder to capture your screen](#Using Apowersoft's Free Screen Recorder to capture your screen)
+[3. Using Apowersoft's Free Screen Recorder to capture your screen](#using-apowersofts-free-screen-recorder-to-capture-your-screen)
 
 ## 1. Using Teleconsole for collaboration
 
@@ -51,20 +46,21 @@ There are many useful tools available for interacting with a MySQL database. Sin
 [PhpMyAdmin](https://www.phpmyadmin.net/) is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. [Docker4drupal](https://github.com/wodby/docker4drupal) has created an easy [template](https://github.com/wodby/docker4drupal/blob/master/docker-compose.yml) for adding the PhpMyAdmin service to a project's Docker Stack.
 
 To build a container to run the PhpMyAdmin service:
-- Simply add this snippet from docker4drupal to your `docker-compose.yml` file.
+
+1. Simply add this snippet from docker4drupal to your `docker-compose.yml` file
   - It uses the official `phpmyadmin` image and defines the host as the database container (`mariadb` in this example), so be sure to add it _after_ the section defining your database container.
-- Set the correct database user and password (`PMA_USER` and `PMA_PASSWORD`).
+
+2. Set the correct database user and password (`PMA_USER` and `PMA_PASSWORD`).
 
 Once the containers are up you can visit the port specific url (`<example.site>:8001`) to access your project-specific PhpMyAdmin interface!
-
-PIC HERE
 
 ### Using PhpStorm's to view a Dockerized Database
 Another method is to connect PhpStorm directly to the database container using PhpStorm's Database Browser. Instead of SSHing into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface!
 
 To connect PhpStorm to you DB container:
-- In PhpStorm, go to the "Database Browser", click the `+` dropdown and select "Data Source > MySQL"
-- In the popup window:
+
+1. In PhpStorm, go to the "Database Browser", click the `+` dropdown and select "Data Source > MySQL"
+2. In the popup window:
   - Map the project DB container's port specified in the `docker-compose.yml` file to `Port` (in the below example it's `32770`)
   - Add the `Database`, `User`, and `Password` fields from the `docker-compose.yml` file as well
   - You can select `Test Conneciton` or just `OK`
