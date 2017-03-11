@@ -33,9 +33,10 @@ What we've added to our toolboxes in Q1 2017:
 
 It works by starting a SSH server on the host computer and generating a unique session ID that others can connect to via their terminal or a web browser. You can have multiple connected individuals in a session, though we typically use it more for 1-1 debugging and troubleshooting.
 
-Be aware, collaborators will have _direct_ access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it's free and easy to set up -- check out the instruction's [here](https://www.teleconsole.com/).
+Be aware, collaborators will have _direct_ access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it's free and easy to set up -- check it out [here](https://www.teleconsole.com/).
 
-EXAMPLE PIC
+<script type="text/javascript" src="https://asciinema.org/a/7oargr7f911dm8qz4c5m0k2iw.js" id="asciicast-7oargr7f911dm8qz4c5m0k2iw" async></script>
+<span class="caption">Terminal sharing 2,700 miles away!</span>
 
 ## 2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm
 
@@ -50,9 +51,12 @@ To build a container to run the PhpMyAdmin service:
 1. Simply add this snippet from docker4drupal to your `docker-compose.yml` file
   - It uses the official `phpmyadmin` image and defines the host as the database container (`mariadb` in this example), so be sure to add it _after_ the section defining your database container.
 
+<img src="/assets/img/blog/dev-tools-07q1-phpmyadmin.png" class="blog-image-large" alt="phpmyadmin container">
+<span class="caption">Add to `docker-compose.yml`</span>
+
 2. Set the correct database user and password (`PMA_USER` and `PMA_PASSWORD`).
 
-Once the containers are up you can visit the port specific url (`<example.site>:8001`) to access your project-specific PhpMyAdmin interface!
+Once the containers are up you can visit the port specific url (for instance `<example.site>:8001`) to access your project-specific PhpMyAdmin interface! :tada:
 
 ### Using PhpStorm's to view a Dockerized Database
 Another method is to connect PhpStorm directly to the database container using PhpStorm's Database Browser. Instead of SSHing into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface!
@@ -60,16 +64,16 @@ Another method is to connect PhpStorm directly to the database container using P
 To connect PhpStorm to you DB container:
 
 1. In PhpStorm, go to the "Database Browser", click the `+` dropdown and select "Data Source > MySQL"
+<img src="/assets/img/blog/dev-tools-07q1-pstorm1.png" class="blog-image-large" alt="phpstorm connect1">
 2. In the popup window:
   - Map the project DB container's port specified in the `docker-compose.yml` file to `Port` (in the below example it's `32770`)
   - Add the `Database`, `User`, and `Password` fields from the `docker-compose.yml` file as well
   - You can select `Test Conneciton` or just `OK`
+<img src="/assets/img/blog/dev-tools-07q1-pstorm2.png" class="blog-image-xl" alt="phpstorm connect2">
 
-INSTRUCITON PICS HERE
+Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You'll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! :star2:
 
-Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You'll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface!
-
-RESULT PIC HERE
+<img src="/assets/img/blog/dev-tools-07q1-pstorm3.png" class="blog-image-xl" alt="phpstorm connect3">
 
 ## 3. Using Apowersoft's Free Screen Recorder to capture your screen
 
