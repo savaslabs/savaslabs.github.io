@@ -36,7 +36,8 @@ exclude: ["vendor",
           "Gemfile.lock",
           "gulpfile.js",
           "node_modules",
-          "package.json"]
+          "package.json",
+          "hologram_config.yml"]
 
 # Collections
 collections:
