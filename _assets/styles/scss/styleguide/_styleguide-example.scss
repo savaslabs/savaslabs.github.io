@@ -1,0 +1,27 @@
+/**
+ * @file
+ *
+ * Styles for examples and code blocks.
+ */
+
+.codeExample {
+  margin: $base-spacing 0;
+
+  .exampleOutput {
+    border-left: 1px solid $gainsboro;
+    border-right: 1px solid $gainsboro;
+    border-top: 1px solid $gainsboro;
+    padding: 3em 1.5em 1.5em;
+    position: relative;
+
+    &::before {
+      color: darken($gainsboro, 10%);
+      content: 'Example';
+      font-size: .8em;
+      left: .8em;
+      position: absolute;
+      text-transform: uppercase;
+      top: .8em;
+    }
+  }
+}
