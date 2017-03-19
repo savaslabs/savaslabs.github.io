@@ -10,10 +10,10 @@
   padding: 1em 0;
 
   .sg-outer-container {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
 
     @include media($medium-screen-up) {
       flex-direction: row;
