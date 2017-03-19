@@ -12,11 +12,11 @@
 
     <meta name="description" content="A style guide and component library for Savas Labs">
   </head>
-  <body class="sg-body">
+  <body class="sg-body <%= 'sg-home' if title.length == 0 %>">
     <header class="sg-header">
       <div class="sg-header__title">
         <div class="sg-outer-container">
-          <img class="sg-header__title__logo" src="images/logo.png" alt="">
+          <img class="sg-header__title__logo" src="images/logo.png" alt="Savas Labs">
           <p class="sg-header__title__text">Savas Labs Front End Style Guide</p>
         </div>
       </div>

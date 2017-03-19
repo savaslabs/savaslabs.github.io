@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the [Savas Labs](savaslabs.com) front end style guide!
+Welcome to the [Savas Labs](http://savaslabs.com) front end style guide!
 
 ## About this style guide
 
@@ -10,13 +10,55 @@ To see all the code for this style guide and our website, check out our [GitHub 
 
 ## Writing styles for savaslabs.com
 
-### SMACSS
+### Directory structure
 
-Our SCSS directory structure is based on [SMACSS](https://smacss.com/). For the most part, you should be adding styles to the `scss/components` directory.
+Our SCSS directory structure is based on [SMACSS](https://smacss.com/). For the most part, you should be adding styles to the `scss/components` directory. Each component should live in its own file, with the name of the file matching the name of the component in the styleguide. For child components, name the file `_parent--child.scss`, e.g. `_buttons--submit.scss`.
 
 ### Adding components to the style guide
 
-[See Hologram's documentation](https://github.com/trulia/hologram#documenting-your-styles-and-components) to learn how to add components to the style guide via SCSS comments. 
+To add a component to the style guide, create a new `.scss` file named after the component and add the file to `main.scss`. Add comments to the SCSS file to generate the component in the style guide:
+
+```css
+
+​/*doc
+​---
+​title: Links
+​name: links
+​category: Typography
+​---
+​```html_example
+​<a href="#">This is a link</a>
+​<p>This is an <a href="#">inline link</a></p>
+​```
+​*/
+```
+
+You can also generate a tabular format using `html_example_table`:
+
+```css
+
+​/*doc
+​---
+​title: Headings
+​name: headings
+​category: Typography
+​---
+​```html_example_table
+​<h1>This is a heading</h1>
+​
+​<h2>This is a heading</h2>
+​
+​<h3>This is a heading</h3>
+​
+​<h4>This is a heading</h4>
+​
+​<h5>This is a heading</h5>
+​```
+​*/
+
+```
+
+[See Hologram's documentation](https://github.com/trulia/hologram#documenting-your-styles-and-components) for more information.
 
 ### Critical CSS
 
@@ -27,3 +69,7 @@ See [this article from Go Make Things](https://gomakethings.com/inlining-critica
 ## Styling the style guide
 
 Styles specific to the style guide are housed in `_assets/styles/scss/styleguide` and imported into the `_assets/styles/styleguide.scss` file. The resulting CSS, compiled by gulp, will be included in the style guide.
+
+## Acknowledgements
+
+This documentation is generated using [Hologram](http://github.com/trulia/hologram) and contains markup and styles adapted from the [Acme boilerplate](https://github.com/mattrothenberg/styleguide-boilerplate).

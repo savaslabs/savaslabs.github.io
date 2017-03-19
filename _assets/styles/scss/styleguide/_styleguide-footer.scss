@@ -7,8 +7,20 @@
 .sg-footer {
   background-color: $gainsboro;
 
-  .sg-footer__text {
-    margin-bottom: 0;
-    padding: 1em;
+  .sg-outer-container {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: .5em 1em;
+
+    .sg-footer__logo {
+      display: block;
+      max-height: 50px;
+      padding: .5em  1em .5em 0;
+    }
+
+    i {
+      padding: .25em;
+    }
   }
 }
