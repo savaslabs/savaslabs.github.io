@@ -1,0 +1,41 @@
+/**
+ * @file
+ *
+ * Styles for the style guide header.
+ */
+
+.sg-header__title,
+.sg-header__menu {
+  text-align: left;
+}
+
+// Title section.
+.sg-header__title {
+  background-color: $gainsboro;
+
+  .sg-header__title__text {
+    font-family: $heading-font;
+    font-size: 150%;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding: .333em .666em;
+  }
+}
+
+// Main navigation.
+.sg-header__menu {
+  border-bottom: solid 1px $gainsboro;
+
+  .sg-header__menu__nav {
+    overflow: auto;
+    padding: .5em 1em;
+
+    ul {
+      li {
+        float: left;
+        padding-right: 1em;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
