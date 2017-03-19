@@ -356,10 +356,9 @@ gulp.task('build:test', function(callback) {
  *
  * Builds the site anew using test and local config.
  */
-//TODO: add images back in!
 gulp.task('build:local', function(callback) {
     runSequence('clean',
-        ['build:scripts', 'build:styles', 'build:fonts'],
+        ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
         'build:jekyll:local',
         'styleguide',
         callback);
