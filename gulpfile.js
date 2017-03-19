@@ -439,7 +439,7 @@ gulp.task('serve', ['build:local'], function() {
 
     // Watch HTML and markdown files.
     gulp.watch(
-      ['**/*.+(html|md|markdown|MD)', '!_site/**/*.*', '!_styleguide_assets/**/*.*'],
+      ['**/*.+(html|md|markdown|MD)', '!_site/**/*.*', '!_styleguide_assets/**/*.*', '!_assets/styles/*.md'],
       ['build:jekyll:watch']);
 
     // Watch RSS feed XML files.
@@ -453,7 +453,7 @@ gulp.task('serve', ['build:local'], function() {
 
     // Watch style guide SCSS.
     gulp.watch(
-      ['_assets/styles/styleguide.scss/', '_assets/styles/scss/styleguide/**/*.scss'],
+      ['_assets/styles/styleguide.scss', '_assets/styles/scss/styleguide/**/*.scss'],
       ['build:styles:styleguide']
     );
 

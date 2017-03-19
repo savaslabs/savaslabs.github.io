@@ -1,0 +1,63 @@
+/**
+ * @file
+ *
+ * Theme styles for the style guide.
+ */
+
+// TODO: Remove this and include relevant typography components.
+body {
+  color: $dark-blue;
+  font-family: $copytext-font;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $fuschia;
+  font-family: $heading-font;
+  font-weight: 300;
+}
+
+h1 { font-size: 250%; }
+h2 { font-size: 200%; }
+h3 { font-size: 160%; }
+h4 { font-size: 140%; }
+h5 { font-size: 120%; }
+h6 { font-size: 100%; }
+
+.sg-content {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5em;
+  }
+}
+
+a {
+  color: $action-color;
+  transition: all .1s linear;
+
+  &:hover,
+  &:focus {
+    color: $action-color-hover;
+  }
+}
+
+// Give inline links an underlined look.
+// scss-lint:disable ColorVariable
+p a,
+.post li a {
+  border-bottom: .1em solid rgba(10, 83, 101, .1);
+
+  &:hover,
+  &:focus {
+    border-bottom: .1em solid $action-color-hover;
+  }
+}
+// scss-lint:enable ColorVariable

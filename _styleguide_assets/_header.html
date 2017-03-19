@@ -1,24 +1,41 @@
 <!doctype html>
 <html>
   <head>
-    <title>My brand new styleguide: <%= title %></title>
+    <title>Savas Labs Front End Style Guide</title>
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="styleguide.css">
   </head>
-  <body>
-    <div>
-      <nav>
-        <ul>
-        <% @categories.each do |category, file_name| %>
-          <li><a href="<%= file_name %>"><%= category %></a></li>
-        <% end %>
-        </ul>
-      </nav>
+  <body class="sg-body">
+    <header class="sg-header">
+      <div class="sg-header__title">
+        <div class="sg-outer-container">
+          <p class="sg-header__title__text">Savas Labs Front End Style Guide</p>
+        </div>
+      </div>
+      <div class="sg-header__menu">
+        <div class="sg-outer-container">
+          <nav class="sg-header__menu__nav">
+            <ul>
+              <li><a href="/styleguide/index.html">Home</a></li>
+              <% @categories = @categories.sort { |a,b| a[0].downcase <=> b[0].downcase } %>
+              <% @categories.each do |category, file_name| %>
+                <li><a href="<%= file_name %>"><%= category %></a></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-      <h1>a brand new style guide, it's super effective</h1>
-      <section class="content">
-        <ul>
-        <% @blocks.each do |b| %>
-          <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
-        <% end %>
-        </ul>
+    <section class="sg-content">
+      <div class="sg-outer-container">
+        <div class="sg-content__content">
+          <div class="sg-content__content__menu">
+            <ul>
+              <% @blocks.each do |b| %>
+              <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="sg-content__content__body">
+

@@ -1,0 +1,14 @@
+/**
+ * @file
+ *
+ * Styles for the style guide footer.
+ */
+
+.sg-footer {
+  background-color: $gainsboro;
+
+  .sg-footer__text {
+    margin-bottom: 0;
+    padding: 1em;
+  }
+}

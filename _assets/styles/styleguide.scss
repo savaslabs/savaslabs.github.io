@@ -2,13 +2,16 @@
  * Style guide styles.
  */
 
-/* Import Sass mixins, variables, Compass modules, Bourbon and Neat, etc. */
+// Import Sass mixins, variables, Compass modules, Bourbon and Neat, etc.
 @import 'scss/init';
 
-/* HTML element (SMACSS base) rules */
+// HTML element (SMACSS base) rules.
 @import 'scss/base/normalize';
 @import 'scss/base/base';
 @import 'scss/base/_variables';
 
-/* Style guide specific rules */
+// Style guide specific rules.
+@import 'scss/styleguide/_styleguide-header.scss';
+@import 'scss/styleguide/_styleguide-footer.scss';
 @import 'scss/styleguide/_styleguide-layout.scss';
+@import 'scss/styleguide/_styleguide-theming.scss';
