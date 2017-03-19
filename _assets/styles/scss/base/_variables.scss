@@ -16,12 +16,44 @@
 
 // Colors ----------------------------------------------------------------------
 
+/*doc
+---
+title: Colors
+name: Colors
+category: colors
+---
+
+```html_example
+<div class="styleguide-color-chip bg-dark-blue">
+  $dark-blue
+</div>
+<div class="styleguide-color-chip bg-fuschia">
+  $fuschia
+</div>
+<div class="styleguide-color-chip bg-yellow">
+  $yellow
+</div>
+<div class="styleguide-color-chip bg-orange">
+  $orange
+</div>
+<div class="styleguide-color-chip bg-beige">
+  $beige
+</div>
+```
+*/
+
 // Primary colors.
 $dark-blue: #14133b;
 $fuschia: #9e023b;
 $yellow: #f2a324;
 $orange: #f6433e;
 $beige: #f4d1a6;
+
+.bg-dark-blue { background-color: $dark-blue; }
+.bg-fuschia { background-color: $fuschia; }
+.bg-yellow { background-color: $yellow; }
+.bg-orange { background-color: $orange; }
+.bg-beige { background-color: $beige; }
 
 // Secondary colors.
 $teal: #0a5365;
@@ -123,6 +155,63 @@ $expander-toggle-margin: 1em;
   &:hover,
   &:focus {
     background-color: $action-color-hover;
+  }
+}
+
+@mixin table-minimal {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    line-height: $base-line-height;
+  }
+
+  thead {
+    th {
+      background-color: $table-header-background;
+      border-bottom: 0;
+      padding: $table-padding;
+    }
+  }
+
+  tbody {
+    background-color: $table-background;
+
+    td {
+      border-bottom: 0;
+      border-top: 1px solid $table-border-color;
+      padding: $table-padding;
+
+      button {
+        display: inline-block;
+        font-size: .7em;
+        line-height: $base-line-height;
+        margin-bottom: .3em;
+        margin-right: .5em;
+        outline: none;
+        padding: .3em 1em;
+        width: 100%;
+
+        @include media($medium-screen-up) {
+          margin-bottom: 0;
+          width: auto;
+        }
+      }
+    }
+
+    tr:hover > td,
+    tr:hover > th {
+      background-color: $table-hover-background;
+    }
+
+    tr:first-child td {
+      border-top: 2px solid $table-border-color;
+    }
   }
 }
 

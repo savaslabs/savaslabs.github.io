@@ -4,7 +4,6 @@
  * Theme styles for the style guide.
  */
 
-// TODO: Remove this and include relevant typography components.
 body {
   color: $dark-blue;
   font-family: $copytext-font;
@@ -39,6 +38,34 @@ h6 { font-size: 100%; }
   }
 }
 
+.exampleOutput {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+
+h1.styleguide {
+  margin-top: $base-spacing;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &::after {
+    background: #eee;
+    content: '';
+    display: block;
+    height: 4px;
+    margin: 10px 0 .5em;
+    width: 50px;
+  }
+}
+
 a {
   color: $action-color;
   transition: all .1s linear;
@@ -61,3 +88,7 @@ p a,
   }
 }
 // scss-lint:enable ColorVariable
+
+table.styleguide {
+  @include table-minimal;
+}

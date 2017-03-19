@@ -1,0 +1,20 @@
+/**
+ * @file
+ *
+ * Styles for examples and code blocks using the table layout.
+ */
+
+.codeTable {
+  table {
+    th,
+    td {
+      border-bottom: solid 1px $gainsboro;
+      display: block;
+      padding: 1em .5em;
+
+      @include media($medium-screen-up) {
+        display: table-cell;
+      }
+    }
+  }
+}

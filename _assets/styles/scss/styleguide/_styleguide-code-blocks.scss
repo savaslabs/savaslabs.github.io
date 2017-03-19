@@ -1,0 +1,21 @@
+/**
+ * @file
+ *
+ * Styles for code blocks within the style guide.
+ */
+
+.codeBlock {
+
+  .highlight {
+    border-color: $gainsboro;
+    border-radius: 0;
+    margin: 0;
+
+    pre {
+      background-color: lighten($light-gray, 10);
+      padding: .8em;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+  }
+}
