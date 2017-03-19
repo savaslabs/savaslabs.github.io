@@ -1,8 +1,10 @@
 /**
  * @file
  *
- * Theme styles for the style guide.
+ * General theme styles for the style guide.
  */
+// scss-lint:disable QualifyingElement
+// scss-lint:disable MergeableSelector
 
 body {
   color: $dark-blue;
@@ -57,7 +59,7 @@ h1.styleguide {
   }
 
   &::after {
-    background: #eee;
+    background: $gainsboro;
     content: '';
     display: block;
     height: 4px;

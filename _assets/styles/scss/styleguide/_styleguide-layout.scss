@@ -30,8 +30,8 @@
       border-radius: $base-border-radius;
 
       li {
-        padding: .5em;
         border-bottom: solid 1px $gainsboro;
+        padding: .5em;
 
         &:last-child {
           border-bottom: 0;
