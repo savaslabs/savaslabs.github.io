@@ -25,14 +25,12 @@ var gulp           = require('gulp');
 var gutil          = require('gulp-util');
 var imagemin       = require('gulp-imagemin');
 var jpegRecompress = require('imagemin-jpeg-recompress');
-var map            = require('map-stream');
 var notify         = require('gulp-notify');
 var postcss        = require('gulp-postcss');
 var rename         = require('gulp-rename');
 var run            = require('gulp-run');
 var runSequence    = require('run-sequence');
 var sass           = require('gulp-ruby-sass');
-var spawn          = require('child_process').spawn;
 var uglify         = require('gulp-uglify');
 
 // Include paths.
@@ -458,7 +456,9 @@ gulp.task('serve', ['build:local'], function() {
     );
 
     // Watch style guide HTML.
-    gulp.watch('_styleguide_assets/*.html', ['styleguide']);
+    gulp.watch(
+      ['_styleguide_assets/*.html', '_assets/styles/*.md'],
+      ['styleguide']);
 });
 
 // -----------------------------------------------------------------------------

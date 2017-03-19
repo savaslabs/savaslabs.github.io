@@ -49,3 +49,12 @@
     @include span-columns(10);
   }
 }
+
+// Keep home page content from getting too wide.
+.sg-home {
+  .sg-content__content__body {
+    @include media($large-screen-up) {
+      @include span-columns(8);
+    }
+  }
+}
