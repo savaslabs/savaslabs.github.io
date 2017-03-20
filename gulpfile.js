@@ -2,6 +2,7 @@
 var appendPrepend  = require('gulp-append-prepend');
 var autoprefixer   = require('autoprefixer');
 var browserSync    = require('browser-sync').create();
+var cache         = require('gulp-cache');
 var cleancss       = require('gulp-clean-css');
 var concat         = require('gulp-concat');
 var del            = require('del');
@@ -114,12 +115,12 @@ gulp.task('clean:scripts', function(callback) {
 // JPEG optimization plugin.
 gulp.task('build:images', function() {
     return gulp.src(paths.imageFilesGlob)
-        .pipe(imagemin([
+        .pipe(cache(imagemin([
             imagemin.gifsicle(),
             jpegRecompress(),
             imagemin.optipng(),
             imagemin.svgo()
-        ]))
+        ])))
         .pipe(gulp.dest(paths.jekyllImageFiles))
         .pipe(gulp.dest(paths.siteImageFiles))
         .pipe(browserSync.stream());
@@ -279,4 +280,13 @@ gulp.task('update:bundle', function() {
         .pipe(run('bundle update'))
         .pipe(notify({ message: 'Bundle Update Complete' }))
         .on('error', gutil.log);
+});
+
+/**
+ * Task: cache-clear
+ *
+ * Clears the gulp cache. Currently this just holds processed images.
+ */
+gulp.task('cache-clear', function(done) {
+    return cache.clearAll(done);
 });
