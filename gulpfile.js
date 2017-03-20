@@ -393,6 +393,16 @@ gulp.task('build:scripts:watch', ['build:scripts'], function(callback) {
 });
 
 /**
+ * Task: build:styleguide:watch
+ *
+ * Special task for building the style guide then reloading via BrowserSync.
+ */
+gulp.task('build:styleguide:watch', ['build:styleguide'], function(callback) {
+    browserSync.reload();
+    callback();
+});
+
+/**
  * Task: serve
  *
  * Static Server + watching files.
@@ -415,9 +425,10 @@ gulp.task('serve', ['build:local'], function() {
 
     // Watch .scss files; changes are piped to browserSync.
     // Ignore style guide SCSS.
+    // Rebuild the style guide to catch updates to component markup.
     gulp.watch(
       ['_assets/styles/**/*.scss', '!_assets/styles/scss/styleguide/**/*', '!_assets/styles/styleguide.scss'],
-      ['build:styles', 'styleguide']
+      ['build:styles', 'build:styleguide:watch']
     );
 
     // Watch .js files.
@@ -457,7 +468,7 @@ gulp.task('serve', ['build:local'], function() {
     // Watch style guide HTML.
     gulp.watch(
       ['_styleguide_assets/*.html', '_assets/styles/*.md'],
-      ['styleguide']);
+      ['build:styleguide:watch']);
 });
 
 // -----------------------------------------------------------------------------
