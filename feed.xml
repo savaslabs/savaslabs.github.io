@@ -6,9 +6,123 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Mar 2017 06:33:00 +0000</pubDate>
-    <lastBuildDate>Mon, 20 Mar 2017 06:33:00 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Mar 2017 15:51:49 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Mar 2017 15:51:49 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017</title>
+        <description>&lt;p&gt;&lt;em&gt;This post is part of a new series called “Lightning Talks.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The web development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.&lt;/p&gt;
+
+&lt;p&gt;One of our core &lt;a href=&quot;/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; “Lightning Skillshares!” &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since we believe in the open source ethos and sharing with the community, in this series, we’ll highlight some tips we use to improve our day-to-day efficiency (and hopefully yours too!).&lt;/p&gt;
+
+&lt;p&gt;What we’ve added to our toolboxes in Q1 2017:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpStorm or PhpMyAdmin&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Online Screen Recorder to capture your screen&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; let’s you share your UNIX terminal session for easy collaboration! We’ve been using it for a couple months now and find it to be an excellent addition to our team toolbox.&lt;/p&gt;
+
+&lt;p&gt;It works by starting an SSH server on the host computer and generating a unique session ID that others can connect to via their terminal or a web browser. You can have multiple connected individuals in a session, though we typically use it more for 1-1 debugging and troubleshooting.&lt;/p&gt;
+
+&lt;p&gt;Be aware, collaborators will have &lt;em&gt;direct&lt;/em&gt; access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it’s free and easy to set up – check it out &lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/7oargr7f911dm8qz4c5m0k2iw.js&quot; id=&quot;asciicast-7oargr7f911dm8qz4c5m0k2iw&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Terminal sharing 2,700 miles away!&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm&lt;/h2&gt;
+
+&lt;p&gt;There are many useful tools available for interacting with a MySQL database. Since we’ve transitioned to &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker for our local development&lt;/a&gt;, we prefer one of the following techniques for manipulating databases abstracted into the Docker container.&lt;/p&gt;
+
+&lt;h3 id=&quot;adding-phpmyadmin-to-a-docker-stack&quot;&gt;Adding PhpMyAdmin to a Docker Stack&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.phpmyadmin.net/&quot;&gt;PhpMyAdmin&lt;/a&gt; is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. Here’s a simple method for adding the PhpMyAdmin service to a project’s existing Docker Stack.&lt;/p&gt;
+
+&lt;p&gt;To build a container to run the PhpMyAdmin service:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Simply add this snippet to your &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;It uses the official &lt;code class=&quot;highlighter-rouge&quot;&gt;phpmyadmin&lt;/code&gt; image and defines the host as the database container (&lt;code class=&quot;highlighter-rouge&quot;&gt;mariadb&lt;/code&gt; in this example), so be sure to add it &lt;em&gt;after&lt;/em&gt; the section defining your database container.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-phpmyadmin.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpmyadmin container&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Add to &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ol start=&quot;2&quot;&gt;
+  &lt;li&gt;Set the correct database user and password (&lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_USER&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_PASSWORD&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Once the containers are up you can visit the port specific url (for instance &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;example.site&amp;gt;:8001&lt;/code&gt;) to access your project-specific PhpMyAdmin interface! &lt;img class=&quot;emoji&quot; title=&quot;:tada:&quot; alt=&quot;:tada:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f389.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;using-phpstorm-to-interact-with-a-dockerized-database&quot;&gt;Using PhpStorm to interact with a Dockerized Database&lt;/h3&gt;
+&lt;p&gt;Another method is to connect PhpStorm directly to the database container using PhpStorm’s Database Browser. Instead of opening a shell into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface! PhpStorm even provides useful code completions when writing database queries!&lt;/p&gt;
+
+&lt;p&gt;To connect PhpStorm to your DB container:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In PhpStorm, go to the “Database Browser”, click the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; dropdown and select “Data Source &amp;gt; MySQL”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm1.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpstorm connect1&quot; /&gt;&lt;/p&gt;
+
+&lt;ol start=&quot;2&quot;&gt;
+  &lt;li&gt;In the popup window:
+    &lt;ul&gt;
+      &lt;li&gt;Map the project DB container’s port specified in the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;Port&lt;/code&gt; (in the below example it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;32770&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;Add the &lt;code class=&quot;highlighter-rouge&quot;&gt;Database&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;User&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Password&lt;/code&gt; fields from the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file as well&lt;/li&gt;
+      &lt;li&gt;You can select &lt;code class=&quot;highlighter-rouge&quot;&gt;Test Conneciton&lt;/code&gt; or just &lt;code class=&quot;highlighter-rouge&quot;&gt;OK&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm2.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! &lt;img class=&quot;emoji&quot; title=&quot;:star2:&quot; alt=&quot;:star2:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f31f.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm3.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect3&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Write and save custom queries!&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Screen Recorder to capture your screen&lt;/h2&gt;
+
+&lt;p&gt;If a picture’s worth a thousand words, than a video is worth…a million? There are times when it’s useful to send a short video (for example, a quick tutorial to a client) and Apowersoft’s &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;Free Online Screen Recorder&lt;/a&gt; is a great tool for capturing your screen. It’s easy to use and there’s &lt;em&gt;no recording time limit&lt;/em&gt;!  Other things we like are the ability to customize the cursor appearance, limit the capture to a specific region of your screen, and specify the resulting video format.&lt;/p&gt;
+
+&lt;p&gt;Setup is incredibly easy:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Go to the &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;site&lt;/a&gt; and download the Launcher (you only have to do this once)&lt;/li&gt;
+  &lt;li&gt;Now anytime you want to record, just go back to the page and hit “Start Recording”!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;*There is a Desktop version for those who prefer using the full application. However, the free desktop version limits recordings to 3 minutes.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap Up&lt;/h2&gt;
+&lt;p&gt;We hope you find this quarter’s top picks helpful! Leave a comment if you have additions to share with us!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/03/20/lightning-q1-2017.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/03/20/lightning-q1-2017.html</guid>
+        
+        <category>skillshare</category>
+        
+        <category>efficiency</category>
+        
+        <category>docker</category>
+        
+        
+      </item>
     
       <item>
         <title>Five Drupal 8 Tips to Empower Content Authors</title>
@@ -2380,215 +2494,6 @@ a must-read for gulp beginners!&lt;/li&gt;
         <category>internship</category>
         
         <category>identity</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Usability Testing - Our Process and Favorite Practices</title>
-        <description>&lt;p&gt;One of my favorite lines about usability testing comes from Jakob Nielson of the Nielson Norman Group in his article &lt;a href=&quot;https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/&quot;&gt;Why You Only Need to Test with 5 Users&lt;/a&gt;, regarding a graph of number of user test participants versus percentage of usability problems found:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The most striking truth of the curve is that zero users give zero insights.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This, along with &lt;a href=&quot;https://articles.uie.com/three_hund_million_button/&quot;&gt;other persuasive evidence&lt;/a&gt;, is a fantastic reminder that we can learn so much about what’s right and what’s wrong with our websites simply by watching people use them.&lt;/p&gt;
-
-&lt;p&gt;At Savas Labs we’ve honed our approach to usability testing to balance efficiency, budget, and effectiveness. I’d like to share our process, some of my favorite resources, and some lessons we’ve learned along the way.&lt;/p&gt;
-
-&lt;h2 id=&quot;our-process&quot;&gt;Our Process&lt;/h2&gt;
-
-&lt;p&gt;Our process comprises six phases:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#determine-goals-and-user-personas&quot;&gt;Determine goals and user personas&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#google-analytics&quot;&gt;Review Google Analytics&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#competitive-analysis&quot;&gt;Complete competitive analysis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#user-testing&quot;&gt;Conduct user testing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#user-survey&quot;&gt;Conduct user survey&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#compile-findings&quot;&gt;Compile findings&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;determine-goals-and-user-personas&quot;&gt;Determine goals and user personas&lt;/h3&gt;
-
-&lt;p&gt;Focusing a usability study on a product’s most critical users and functionality can help uncover the highest-impact problems without spending time and budget on lower-priority issues. To start the process, we meet with our clients and listen to them explain their purpose, describe their users, and identify potential or known issues with their website.&lt;/p&gt;
-
-&lt;p&gt;From here, we create two very important lists:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The client’s goals for the usability study&lt;/li&gt;
-  &lt;li&gt;The client’s users, in order of priority&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Let’s break these down.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Goals:&lt;/strong&gt; These can be measurable metrics (e.g. “Increase newsletter signups” or “Increase time spent on site”) or general value statements (“Provide a great experience on small screen sizes” or “Maintain a clean, modern design”).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Users:&lt;/strong&gt; This is a list of user personas in order of priority for the particular project. A persona is more in-depth and specific than a demographic, which may represent an age group, a gender, or an occupation. A persona is defined by patterns of behavior and needs, so it may encompass multiple demographics, and one demographic may be split across several personas. The user list is prioritized using the goals of the project (unless the client is lucky enough to be able to put forward the time and money to fix all of their users’ problems at once!) One of our roles in this process is helping the client brainstorm and account for all of their user groups, including ones they might not have considered.&lt;/p&gt;
-
-&lt;p&gt;Once these lists are created, we review them at the beginning of every meeting (yes, every meeting!). Why? Ensuring that the entire team is completely focused on meeting the project goals at all times causes a few awesome things happen:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Perhaps most importantly, at the end of the project everyone will be satisfied with the results, since they’re founded upon pre-determined goals that were agreed upon by everyone involved.&lt;/li&gt;
-  &lt;li&gt;Disagreements or uncertainty can be weighed against the goals – asking if something helps meet or doesn’t help meet the goals starts a focused, productive conversation.&lt;/li&gt;
-  &lt;li&gt;Team members are less likely to bring up or spend time on issues that don’t actually improve the end product.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I should note that using user personas over demographics and repeating goals at each meeting are tips I picked up from Adam Connor’s workshop (&lt;a href=&quot;http://shop.oreilly.com/product/0636920033561.do&quot;&gt;and associated book&lt;/a&gt;) Discussing Design. I’d highly recommend both! These practices are  an abbreviated version of what he calls a &lt;a href=&quot;http://www.slideshare.net/adamconnor/discussing-design-the-art-of-critique/17-The_MiniBriefA_MiniCreative_Brief_is&quot;&gt;“mini-brief”&lt;/a&gt;, a one-page document detailing project goals, users, and more that is reviewed at each meeting.&lt;/p&gt;
-
-&lt;p&gt;So how does this apply to usability testing? Nailing down project goals and the most critical user groups will focus the scope of usability testing and increase the impact of the findings. We can review analytics and competitors’ sites with the client’s goals in mind, target the most critical users with user testing, cover a broader user base with user survey, and compile opportunities for improvement relevant to the client’s goals and real users of the product.&lt;/p&gt;
-
-&lt;p&gt;Once the goals and users are compiled and agreed upon, we can start digging into the usability testing.&lt;/p&gt;
-
-&lt;h3 id=&quot;google-analytics&quot;&gt;Google Analytics&lt;/h3&gt;
-
-&lt;p&gt;Reviewing Google Analytics is a great first step towards focusing user testing on the aspects of the site that are causing the most issues. If a client doesn’t already have Google Analytics installed, we can help set this up.&lt;/p&gt;
-
-&lt;p&gt;Viewing the analytics interface for the first time can be a bit overwhelming, so I’ll review some terminology and some of the points on which I like to focus for the purposes of usability testing.&lt;/p&gt;
-
-&lt;h5 id=&quot;terminology&quot;&gt;Terminology&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Bounce rate:&lt;/strong&gt; The percentage of users who leave the site after viewing a single page&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Exit page:&lt;/strong&gt; The last page a user views before leaving the site&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Organic search:&lt;/strong&gt; search results not provided by paid advertisements&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Engagement:&lt;/strong&gt; A combination of bounce rate, session duration, and pages viewed per session&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;useful-information&quot;&gt;Useful information&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Where are the users located?
-    &lt;ul&gt;
-      &lt;li&gt;Audience &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Geo &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Location&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;What’s the ratio of new vs. returning users?
-    &lt;ul&gt;
-      &lt;li&gt;Audience &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Behavior &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; New vs. Returning&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;How engaged are users?
-    &lt;ul&gt;
-      &lt;li&gt;Audience &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Behavior &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Engagement&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;How many users access the site on desktop, tablet, and mobile?
-    &lt;ul&gt;
-      &lt;li&gt;Audience &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Mobile &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Overview&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;How do users get to the site?
-    &lt;ul&gt;
-      &lt;li&gt;Acquisition &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; All Traffic &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Channels&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Which pages are most viewed?
-    &lt;ul&gt;
-      &lt;li&gt;Behavior &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Site Content &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; All Pages&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;What are the top exit pages, and which of them are highly viewed pages?
-    &lt;ul&gt;
-      &lt;li&gt;Behavior &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Site Content &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt; Exit Pages&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Reviewing these item with our goals and users in mind informs the design of the user testing to follow. We can focus on the parts of the site causing the most users to leave and the behaviors we want to change, and we can test on the devices important to the users.&lt;/p&gt;
-
-&lt;h3 id=&quot;competitive-analysis&quot;&gt;Competitive analysis&lt;/h3&gt;
-
-&lt;p&gt;In tandem with reviewing analytics, we examine our client’s competitors’ websites (typically with a list of competitors/peers provided by the client). By reviewing the navigation, layout, functionality, and user experience of websites with goals similar to our client’s, we can ascertain critical feedback:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;What are other sites doing well? What improvements could be applied to our client’s site?&lt;/li&gt;
-  &lt;li&gt;Where are other sites falling short? How can we ensure these bases are covered on our client’s site?&lt;/li&gt;
-  &lt;li&gt;What user experience problems exist on other sites? Can we test for these same issues on our client’s site during the user testing phase?&lt;/li&gt;
-  &lt;li&gt;How does our client’s site compare overall in terms of quality? How can we elevate our client’s site among its peers?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;user-testing&quot;&gt;User testing&lt;/h3&gt;
-
-&lt;p&gt;After gathering information from analytics and competitive analysis, we design our user tests. These are in-person meetings with a single participant at a time who is asked to complete tasks on the website, acting as one of the user personas. After reading the persona description and the task to the user, we observe their experience and record how they interact with the site.&lt;/p&gt;
-
-&lt;h5 id=&quot;designing-the-tests&quot;&gt;Designing the tests&lt;/h5&gt;
-
-&lt;p&gt;Designing the user tests is a multi-step process:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Decide which personas will be tested and how many participants are needed. User personas to be tested are chosen based on the client’s priority and potential/known issues found in the review of analytics and competitors. Number of participants can be surprisingly small and still quite effective, as per the Nielson Group’s &lt;a href=&quot;https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/&quot;&gt;detailed analysis&lt;/a&gt;. Ideally user testing would be iterative – a few users would be tested, followed by improvements to the site targeting the results of those tests, followed by more testing, etc. If this isn’t possible, five participants with one round of testing is typically effective. A/B testing can be implemented to test different versions of the site (or features within the site) within the same round of testing.&lt;/li&gt;
-  &lt;li&gt;Determine what needs to be tested. These items come from the critical tasks for our user persona(s), the potential points of frustration or difficulty for users (found by Google Analytics, competitive analysis, or simply review of the current site), and anything else desired by the client. I frame these items as goals.&lt;/li&gt;
-  &lt;li&gt;Translate goals to tasks. At this stage, each goal is translated into an actionable task or endpoint for the user.&lt;/li&gt;
-  &lt;li&gt;Translate tasks to scenarios. Rarely is a user told exactly what to do on a website in real life. To make the tests more realistic, we translate tasks into scenarios. We’ll read the scenario to each user to see if she can complete the desired task, how she approaches the task, and what points of frustration she encounters along the way.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;For example:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; The newsletter signup should be well-placed and easy to use.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Task:&lt;/strong&gt; Sign up for the newsletter.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Scenario:&lt;/strong&gt; You want to keep up to date with news and job opportunities at XYZ Company. Using the website, find a way to receive monthly email updates from XYZ Company.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.nngroup.com/articles/task-scenarios-usability-testing/&quot;&gt;This article&lt;/a&gt; provides detailed recommendations for creating effective scenarios.&lt;/p&gt;
-
-&lt;p&gt;Some other tips for designing user tests:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We aim for the test to take about 45 minutes, then ask some general or follow-up questions afterwards. Each participant will be there for about an hour.&lt;/li&gt;
-  &lt;li&gt;Scenarios shouldn’t give away how the website is supposed to work.&lt;/li&gt;
-  &lt;li&gt;Whenever possible, recruit participants who have never seen the site.&lt;/li&gt;
-  &lt;li&gt;Before conducting any real tests, do a pilot study on a willing participant (a coworker with a free hour works!) This will uncover any phrasing that doesn’t work and allow you to check the timing of the test, and it may even start revealing UX issues with the site.&lt;/li&gt;
-  &lt;li&gt;Offering compensation for a participant’s time is not only good practice, it helps immensely with recruitment!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;conducting-the-tests&quot;&gt;Conducting the tests&lt;/h5&gt;
-
-&lt;p&gt;Once participants are recruited, we bring them in one at a time and include as many observers/note takers as possible to capture the user’s actions, reactions, emotions, and words during the test scenarios. We ask the user to think out loud so we can understand their thought process and expectations. We’ll first read them the user persona they’re portraying, followed by each scenario they’ll need to act out. If relevant (and it almost always is), we’ll have participants complete some scenarios on their mobile phone or a tablet.&lt;/p&gt;
-
-&lt;p&gt;Some lessons we’ve learned along the way:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Most people need to be reminded a few times to voice their thoughts aloud.&lt;/li&gt;
-  &lt;li&gt;One person should read the scenarios and talk to the participant, others should take notes and time each task.&lt;/li&gt;
-  &lt;li&gt;It helps to remind the participant that they are not being tested, rather, the site is being reviewed. There is no right or wrong action, and everyone is there to see how users actually use the website in its current state.&lt;/li&gt;
-  &lt;li&gt;The word “test” might make participants nervous. “Scenario” is a more neutral term.&lt;/li&gt;
-  &lt;li&gt;Some users will ask what they’re supposed to do or if a certain choice is right. They can be encouraged to try something new and even allowed to give up, but they shouldn’t be fed the “correct” path.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;user-survey&quot;&gt;User survey&lt;/h3&gt;
-
-&lt;p&gt;To reach more than just the most critical users who were covered by the user testing phase, we create survey questions to elicit feedback from a broad range of users. These questions can be delivered in a variety of ways:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;An email survey sent to all registered users&lt;/li&gt;
-  &lt;li&gt;A contact form on the website soliciting feedback&lt;/li&gt;
-  &lt;li&gt;Targeted survey questions provided by a service like &lt;a href=&quot;https://qualaroo.com/&quot;&gt;Qualaroo&lt;/a&gt;, which can be triggered by certain behaviors (e.g. spending time on a specific page or coming to the site via a certain search term)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Cost and potential effectiveness with the targeted user groups must be weighed here.&lt;/p&gt;
-
-&lt;p&gt;For traditional surveys, we recommend pairing a &lt;a href=&quot;https://www.surveymonkey.com/mp/likert-scale/&quot;&gt;Likert scale&lt;/a&gt; with an open-ended response so users can explain their numeric ratings. This creates both quantitative data and expository feedback.&lt;/p&gt;
-
-&lt;h3 id=&quot;compile-findings&quot;&gt;Compile findings&lt;/h3&gt;
-
-&lt;p&gt;Our actual deliverable to clients takes the form of a report detailing the findings from each phase of the study and a summary of recommendations for future work. In addition to proposing solutions to issues found during the study, we make recommendations based on best practices and measurable metrics like Google’s &lt;a href=&quot;https://www.google.com/webmasters/tools/mobile-friendly/&quot;&gt;Mobile-Friendly test&lt;/a&gt; and the Web Accessibility Evaluation Tool &lt;a href=&quot;http://wave.webaim.org/&quot;&gt;(WAVE)&lt;/a&gt;. In the end, the client will have a list of tasks we believe will improve their website and – let’s not forget! – meet their goals.&lt;/p&gt;
-
-&lt;h2 id=&quot;further-reading&quot;&gt;Further reading&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.nngroup.com/articles/usability-101-introduction-to-usability/&quot;&gt;Usability 101&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://alistapart.com/article/usability-testing-demystified&quot;&gt;Usability Testing Demystified&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 22 Jun 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/06/22/user-testing.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/06/22/user-testing.html</guid>
-        
-        <category>user-experience</category>
-        
-        <category>best-practices</category>
         
         
       </item>

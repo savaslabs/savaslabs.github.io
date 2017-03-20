@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>TriDUG: Drupal 8 case studies, presentation, and discussion | Savas Labs</title>
+  <title>Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017 | Savas Labs</title>
   
-  <meta name="description" content="After a long lull in activity, Savas Labs would like to reinvigorate the TriDUG evening meetups. We recognize there is a lot of Drupal need and experience he...">
+  <meta name="description" content="This post is part of a new series called “Lightning Talks.”">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="canonical" href="http://savaslabs.com/2016/03/16/tridug-drupal-8-durham-atletico-case-study.html">
+  <link rel="canonical" href="http://savaslabs.com/2017/03/20/lightning-q1-2017.html">
   <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
   
   
@@ -19,343 +19,148 @@
 
 
 
-<script type="application/ld+json">
+  
+  
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
-      "about": "After a long lull in activity, Savas Labs would like to reinvigorate the TriDUG evening meetups.
-",
-      "articleBody": "
+      "about": "What we've added to our developer toolboxes in Q1 2017!",
+      "articleBody": "&lt;p&gt;&lt;em&gt;This post is part of a new series called “Lightning Talks.”&lt;/em&gt;&lt;/p&gt;
 
+&lt;p&gt;The web development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.&lt;/p&gt;
 
-&lt;script type=&quot;application/ld+json&quot;&gt;
-    {
-      &quot;@context&quot;: &quot;http://schema.org&quot;,
-      &quot;@type&quot;: &quot;Event&quot;,
-      &quot;location&quot;: {
-        &quot;@type&quot;: &quot;Place&quot;,
-        &quot;name&quot;: &quot;American Underground @ Main&quot;,
-        &quot;address&quot;: {
-          &quot;@type&quot;: &quot;PostalAddress&quot;,
-          &quot;addressLocality&quot;: &quot;Durham, North Carolina&quot;,
-          &quot;postalCode&quot;: &quot;27701&quot;,
-          &quot;streetAddress&quot;: &quot;201 W Main St.&quot;
-        }
-      },
-      &quot;startDate&quot;: &quot;2016-03-16T18:30:00+00:00&quot;,
-      &quot;endDate&quot;: &quot;2016-03-16T20:30:00+00:00&quot;,
-      &quot;duration&quot;: &quot;2&quot;,
-      &quot;organizer&quot;: &quot;Savas Labs&quot;,
-      &quot;description&quot;: &quot;After a long lull in activity, Savas Labs would like to reinvigorate the TriDUG evening meetups.
-&quot;,
-      &quot;name&quot;: &quot;TriDUG: Drupal 8 case studies, presentation, and discussion&quot;
-    }
-&lt;/script&gt;
+&lt;p&gt;One of our core &lt;a href=&quot;/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; “Lightning Skillshares!” &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;Since we believe in the open source ethos and sharing with the community, in this series, we’ll highlight some tips we use to improve our day-to-day efficiency (and hopefully yours too!).&lt;/p&gt;
 
+&lt;p&gt;What we’ve added to our toolboxes in Q1 2017:&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&quot;#using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;post event&quot;&gt;
-  &lt;div class=&quot;post__body&quot;&gt;
-    &lt;header class=&quot;post-header&quot;&gt;
-      &lt;h1 class=&quot;post-title&quot;&gt;TriDUG: Drupal 8 case studies, presentation, and discussion&lt;/h1&gt;
-      
+&lt;p&gt;&lt;a href=&quot;#accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpStorm or PhpMyAdmin&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;By &lt;a href=&quot;/team/chris-russo&quot;&gt;Chris Russo&lt;/a&gt;&lt;/p&gt;
-      &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
-      &lt;p&gt;Mar 16, 2016 &lt;/p&gt;&lt;br&gt;
-      &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/event/&quot;&gt;Event&lt;/a&gt;&lt;/p&gt;
-      
-        &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
-      
-    &lt;/header&gt;
+&lt;p&gt;&lt;a href=&quot;#using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Online Screen Recorder to capture your screen&lt;/a&gt;&lt;/p&gt;
 
-    &lt;article class=&quot;post-content&quot;&gt;
-      &lt;p&gt;After a long lull in activity, Savas Labs would like to reinvigorate the &lt;a href=&quot;https://groups.drupal.org/&quot;&gt;TriDUG&lt;/a&gt; evening meetups. We recognize there is a lot of Drupal need and experience here in the Triangle, and we want to collaborate more with our local community. With the help of Barb Baranski, we have sent out a questionnaire to the group to better understand interests, days and locations that will work for the group, and you have responded!&lt;/p&gt;
+&lt;h2 id=&quot;using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.meetup.com/triDUG/events/229414499/&quot;&gt;We’ll host the first session at our home base&lt;/a&gt;, the American Underground @ Main in downtown Durham.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; let’s you share your UNIX terminal session for easy collaboration! We’ve been using it for a couple months now and find it to be an excellent addition to our team toolbox.&lt;/p&gt;
 
-&lt;p&gt;We’ll have pizza here at 6:30, and do some mingling until about 7:00. At 7:00 we’ll do introductions, and share any pertinent information about projects we’re working on, job opportunities, and the like.&lt;/p&gt;
+&lt;p&gt;It works by starting an SSH server on the host computer and generating a unique session ID that others can connect to via their terminal or a web browser. You can have multiple connected individuals in a session, though we typically use it more for 1-1 debugging and troubleshooting.&lt;/p&gt;
 
-&lt;p&gt;At 7:15 or so, Kosta Harlan will present on all things Drupal 8. He has a couple of &lt;a href=&quot;https://www.durhamatletico.com&quot;&gt;real-world projects he’s built&lt;/a&gt; or &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;helped build&lt;/a&gt; in Drupal 8, and will spend some time presenting on the specifics of those site builds. Plenty of time will be factored in for Q&amp;amp;A throughout the presentation with some additional time at the end.&lt;/p&gt;
+&lt;p&gt;Be aware, collaborators will have &lt;em&gt;direct&lt;/em&gt; access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it’s free and easy to set up – check it out &lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;We’ll also discuss future locations, topics and times that work for other members of the group, so we strongly encourage you to come out to this session even if it’s not ideal for you on an ongoing basis to help shape the future of the meetup that this community deserves.&lt;/p&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/7oargr7f911dm8qz4c5m0k2iw.js&quot; id=&quot;asciicast-7oargr7f911dm8qz4c5m0k2iw&quot; async=&quot;&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;We look forward to seeing you in Durham on St. Patrick’s Day!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Terminal sharing 2,700 miles away!&lt;/span&gt;&lt;/p&gt;
 
-      &lt;table class=&quot;table-minimal&quot;&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;span class=&quot;fa-stack fa-lg&quot;&gt;
-            &lt;i class=&quot;fa fa-circle fa-stack-2x&quot;&gt;&lt;/i&gt;
-            &lt;i class=&quot;fa fa-calendar fa-stack-1x fa-inverse&quot;&gt;&lt;/i&gt;
-            &lt;/span&gt;&amp;nbsp;&amp;nbsp;Date&lt;/td&gt;
-          
-          &lt;td&gt;March 16, 2016&lt;/td&gt;
-          
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;span class=&quot;fa-stack fa-lg&quot;&gt;
-            &lt;i class=&quot;fa fa-circle fa-stack-2x&quot;&gt;&lt;/i&gt;
-            &lt;i class=&quot;fa fa-clock-o fa-stack-1x fa-inverse&quot;&gt;&lt;/i&gt;
-            &lt;/span&gt;&amp;nbsp;&amp;nbsp;Time&lt;/td&gt;
-          
-          &lt;td&gt;6:30 PM - 8:30 PM&lt;/td&gt;
-          
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;span class=&quot;fa-stack fa-lg&quot;&gt;
-            &lt;i class=&quot;fa fa-circle fa-stack-2x&quot;&gt;&lt;/i&gt;
-            &lt;i class=&quot;fa fa-building-o fa-stack-1x fa-inverse&quot;&gt;&lt;/i&gt;
-          &lt;/span&gt;&amp;nbsp;&amp;nbsp;Location&lt;/td&gt;
-          
-          &lt;td&gt;&lt;a href=&quot;http://americanunderground.com/&quot;&gt;American Underground @ Main&lt;/a&gt;&lt;/td&gt;
-          
-        &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-      &lt;hr&gt;
+&lt;h2 id=&quot;accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm&lt;/h2&gt;
 
-      
-        &lt;div class=&quot;post-comments&quot;&gt;
+&lt;p&gt;There are many useful tools available for interacting with a MySQL database. Since we’ve transitioned to &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker for our local development&lt;/a&gt;, we prefer one of the following techniques for manipulating databases abstracted into the Docker container.&lt;/p&gt;
 
-  
-    &lt;p&gt;Comments are disabled for this post.&lt;/p&gt;
+&lt;h3 id=&quot;adding-phpmyadmin-to-a-docker-stack&quot;&gt;Adding PhpMyAdmin to a Docker Stack&lt;/h3&gt;
 
-  
-  &lt;hr&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.phpmyadmin.net/&quot;&gt;PhpMyAdmin&lt;/a&gt; is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. Here’s a simple method for adding the PhpMyAdmin service to a project’s existing Docker Stack.&lt;/p&gt;
 
-      
-    &lt;/article&gt;
-  &lt;/div&gt;&lt;!-- post__body --&gt;
+&lt;p&gt;To build a container to run the PhpMyAdmin service:&lt;/p&gt;
 
-  
-    &lt;div class=&quot;post-bottom&quot;&gt;
-  &lt;div class=&quot;post-meta&quot;&gt;
+&lt;ol&gt;
+  &lt;li&gt;Simply add this snippet to your &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;It uses the official &lt;code class=&quot;highlighter-rouge&quot;&gt;phpmyadmin&lt;/code&gt; image and defines the host as the database container (&lt;code class=&quot;highlighter-rouge&quot;&gt;mariadb&lt;/code&gt; in this example), so be sure to add it &lt;em&gt;after&lt;/em&gt; the section defining your database container.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-    
-    
-    
-    
-    
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-phpmyadmin.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpmyadmin container&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Add to &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
 
-    
-      &lt;h4&gt;About the author&lt;/h4&gt;
-    
+&lt;ol start=&quot;2&quot;&gt;
+  &lt;li&gt;Set the correct database user and password (&lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_USER&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_PASSWORD&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
 
-    
+&lt;p&gt;Once the containers are up you can visit the port specific url (for instance &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;example.site&amp;gt;:8001&lt;/code&gt;) to access your project-specific PhpMyAdmin interface! &lt;img class=&quot;emoji&quot; title=&quot;:tada:&quot; alt=&quot;:tada:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f389.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
-      
-      
-        &lt;a href=&quot;/team/chris-russo&quot;&gt;
-          &lt;picture&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/chris-russo-576by516-704170.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/chris-russo-288by258-704170.jpg&quot;&gt;
-    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/chris-russo-288by258-704170.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Chris Russo&quot; &gt;
-  &lt;/picture&gt;
+&lt;h3 id=&quot;using-phpstorm-to-interact-with-a-dockerized-database&quot;&gt;Using PhpStorm to interact with a Dockerized Database&lt;/h3&gt;
+&lt;p&gt;Another method is to connect PhpStorm directly to the database container using PhpStorm’s Database Browser. Instead of opening a shell into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface! PhpStorm even provides useful code completions when writing database queries!&lt;/p&gt;
 
-        &lt;/a&gt;
-        &lt;p class=&quot;post-author-desc&quot;&gt;Chris does his best to ensure that his team is learning and growing and that our clients feel like partners.&lt;/p&gt;
-      
+&lt;p&gt;To connect PhpStorm to your DB container:&lt;/p&gt;
 
-      
-      
+&lt;ol&gt;
+  &lt;li&gt;In PhpStorm, go to the “Database Browser”, click the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; dropdown and select “Data Source &amp;gt; MySQL”&lt;/li&gt;
+&lt;/ol&gt;
 
-    
-  &lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm1.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpstorm connect1&quot; /&gt;&lt;/p&gt;
 
-  
-  &lt;div class=&quot;post-related flex-container&quot;&gt;
-    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
-    &lt;div class=&quot;cards&quot;&gt;
-      
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2017/03/20/lightning-q1-2017.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Mar 20, 2017&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;What we’ve added to our developer toolboxes in Q1 2017!&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                Five Drupal 8 Tips to Empower Content Authors
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Mar 6, 2017&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;Five Drupal 8 tips to make the content authoring experience more enjoyable and productive!&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2017/02/27/on-web-typography-review.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                On Web Typography - a Book Review
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Feb 27, 2017&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;A review of Jason Santa Maria’s &lt;em&gt;On Web Typography&lt;/em&gt;, and how we applied the
-lessons learned to our workflow.&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+  &lt;li&gt;In the popup window:
+    &lt;ul&gt;
+      &lt;li&gt;Map the project DB container’s port specified in the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;Port&lt;/code&gt; (in the below example it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;32770&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;Add the &lt;code class=&quot;highlighter-rouge&quot;&gt;Database&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;User&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Password&lt;/code&gt; fields from the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file as well&lt;/li&gt;
+      &lt;li&gt;You can select &lt;code class=&quot;highlighter-rouge&quot;&gt;Test Conneciton&lt;/code&gt; or just &lt;code class=&quot;highlighter-rouge&quot;&gt;OK&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-  
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm2.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect2&quot; /&gt;&lt;/p&gt;
 
-  &lt;div class=&quot;previous-next-links&quot;&gt;
-  &lt;div class=&quot;next&quot;&gt;
-    
-      &lt;a href=&quot;/2016/03/18/tridug-recap.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; TriDUG recap: Drupal 8 case studies&lt;/a&gt;
-    
-  &lt;/div&gt;
-  &lt;div class=&quot;previous&quot;&gt;
-    
-      &lt;a href=&quot;/2016/03/10/drupal-camp-florida-2016-recap.html&quot;&gt; DrupalCamp Florida 2016 Recap &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;p&gt;Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! &lt;img class=&quot;emoji&quot; title=&quot;:star2:&quot; alt=&quot;:star2:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f31f.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
-&lt;/div&gt;&lt;!-- post --&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm3.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect3&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Write and save custom queries!&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Screen Recorder to capture your screen&lt;/h2&gt;
+
+&lt;p&gt;If a picture’s worth a thousand words, than a video is worth…a million? There are times when it’s useful to send a short video (for example, a quick tutorial to a client) and Apowersoft’s &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;Free Online Screen Recorder&lt;/a&gt; is a great tool for capturing your screen. It’s easy to use and there’s &lt;em&gt;no recording time limit&lt;/em&gt;!  Other things we like are the ability to customize the cursor appearance, limit the capture to a specific region of your screen, and specify the resulting video format.&lt;/p&gt;
+
+&lt;p&gt;Setup is incredibly easy:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Go to the &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;site&lt;/a&gt; and download the Launcher (you only have to do this once)&lt;/li&gt;
+  &lt;li&gt;Now anytime you want to record, just go back to the page and hit “Start Recording”!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;*There is a Desktop version for those who prefer using the full application. However, the free desktop version limits recordings to 3 minutes.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap Up&lt;/h2&gt;
+&lt;p&gt;We hope you find this quarter’s top picks helpful! Leave a comment if you have additions to share with us!&lt;/p&gt;
 ",
       "author": {
         "@context": "http://schema.org",
         "@type": "Person",
-        "name": "Chris Russo",
+        "name": "Ro Wang",
         "affiliation": "Savas Labs",
         "worksFor": "Savas Labs"
       },
-      "dateCreated": "2016-03-16 00:00:00 +0000",
-      "dateModified": "2016-03-16 00:00:00 +0000",
-      "datePublished": "2016-03-16 00:00:00 +0000",
-      "headline": "TriDUG: Drupal 8 case studies, presentation, and discussion",
+      "dateCreated": "2017-03-20 00:00:00 +0000",
+      "dateModified": "2017-03-20 00:00:00 +0000",
+      "datePublished": "2017-03-20 00:00:00 +0000",
+      "headline": "Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017",
+      "image": {
+        "@context": "http://schema.org",
+        "@type": "ImageObject",
+        "author": "Ro Wang",
+        "datePublished": "2017-03-20 00:00:00 +0000",
+        "description": "Q1 2017 Lightning Talks",
+        "height": "917px",
+        "url": "http://savaslabs.com/assets/img/blog/lightning-17q1-hero.jpg",
+        "width": "1474px"
+      },
       "inLanguage": "en-US",
-      "keywords": "drupal, event",
-      "mainEntityOfPage": "http://savaslabs.com/2016/03/16/tridug-drupal-8-durham-atletico-case-study.html",
+      "keywords": "skillshare, efficiency, docker",
+      "mainEntityOfPage": "http://savaslabs.com/2017/03/20/lightning-q1-2017.html",
       "publisher": {
         "@context": "http://schema.org",
         "@type": "Organization",
-        "name": "Savas Labs",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durham, North Carolina",
+          "postalCode": "27701",
+          "streetAddress": "201 W Main St."
+        },
+        "description": "A full-service web agency leveraging the power of Drupal.
+",
+        "email": "info@savaslabs.com",
         "logo": {
           "@context": "http://schema.org",
           "@type": "ImageObject",
@@ -363,323 +168,112 @@ lessons learned to our workflow.&lt;/p&gt;
           "height": "50px",
           "url": "http://savaslabs.com/assets/img/logo.png",
           "width": "114px"
-        }
+        },
+        "name": "Savas Labs",
+        "telephone": "(919) 432-4660",
+        "url": "http://savaslabs.com"
       },
       "sourceOrganization": "Savas Labs",
-      "text": "
+      "text": "&lt;p&gt;&lt;em&gt;This post is part of a new series called “Lightning Talks.”&lt;/em&gt;&lt;/p&gt;
 
+&lt;p&gt;The web development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.&lt;/p&gt;
 
-&lt;script type=&quot;application/ld+json&quot;&gt;
-    {
-      &quot;@context&quot;: &quot;http://schema.org&quot;,
-      &quot;@type&quot;: &quot;Event&quot;,
-      &quot;location&quot;: {
-        &quot;@type&quot;: &quot;Place&quot;,
-        &quot;name&quot;: &quot;American Underground @ Main&quot;,
-        &quot;address&quot;: {
-          &quot;@type&quot;: &quot;PostalAddress&quot;,
-          &quot;addressLocality&quot;: &quot;Durham, North Carolina&quot;,
-          &quot;postalCode&quot;: &quot;27701&quot;,
-          &quot;streetAddress&quot;: &quot;201 W Main St.&quot;
-        }
-      },
-      &quot;startDate&quot;: &quot;2016-03-16T18:30:00+00:00&quot;,
-      &quot;endDate&quot;: &quot;2016-03-16T20:30:00+00:00&quot;,
-      &quot;duration&quot;: &quot;2&quot;,
-      &quot;organizer&quot;: &quot;Savas Labs&quot;,
-      &quot;description&quot;: &quot;After a long lull in activity, Savas Labs would like to reinvigorate the TriDUG evening meetups.
-&quot;,
-      &quot;name&quot;: &quot;TriDUG: Drupal 8 case studies, presentation, and discussion&quot;
-    }
-&lt;/script&gt;
+&lt;p&gt;One of our core &lt;a href=&quot;/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; “Lightning Skillshares!” &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;Since we believe in the open source ethos and sharing with the community, in this series, we’ll highlight some tips we use to improve our day-to-day efficiency (and hopefully yours too!).&lt;/p&gt;
 
+&lt;p&gt;What we’ve added to our toolboxes in Q1 2017:&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&quot;#using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;post event&quot;&gt;
-  &lt;div class=&quot;post__body&quot;&gt;
-    &lt;header class=&quot;post-header&quot;&gt;
-      &lt;h1 class=&quot;post-title&quot;&gt;TriDUG: Drupal 8 case studies, presentation, and discussion&lt;/h1&gt;
-      
+&lt;p&gt;&lt;a href=&quot;#accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpStorm or PhpMyAdmin&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;By &lt;a href=&quot;/team/chris-russo&quot;&gt;Chris Russo&lt;/a&gt;&lt;/p&gt;
-      &lt;p class=&quot;centerdot&quot;&gt;&amp;centerdot; &lt;/p&gt;
-      &lt;p&gt;Mar 16, 2016 &lt;/p&gt;&lt;br&gt;
-      &lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;p&gt;&lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/event/&quot;&gt;Event&lt;/a&gt;&lt;/p&gt;
-      
-        &lt;div&gt;&lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;
-      
-    &lt;/header&gt;
+&lt;p&gt;&lt;a href=&quot;#using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Online Screen Recorder to capture your screen&lt;/a&gt;&lt;/p&gt;
 
-    &lt;article class=&quot;post-content&quot;&gt;
-      &lt;p&gt;After a long lull in activity, Savas Labs would like to reinvigorate the &lt;a href=&quot;https://groups.drupal.org/&quot;&gt;TriDUG&lt;/a&gt; evening meetups. We recognize there is a lot of Drupal need and experience here in the Triangle, and we want to collaborate more with our local community. With the help of Barb Baranski, we have sent out a questionnaire to the group to better understand interests, days and locations that will work for the group, and you have responded!&lt;/p&gt;
+&lt;h2 id=&quot;using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.meetup.com/triDUG/events/229414499/&quot;&gt;We’ll host the first session at our home base&lt;/a&gt;, the American Underground @ Main in downtown Durham.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; let’s you share your UNIX terminal session for easy collaboration! We’ve been using it for a couple months now and find it to be an excellent addition to our team toolbox.&lt;/p&gt;
 
-&lt;p&gt;We’ll have pizza here at 6:30, and do some mingling until about 7:00. At 7:00 we’ll do introductions, and share any pertinent information about projects we’re working on, job opportunities, and the like.&lt;/p&gt;
+&lt;p&gt;It works by starting an SSH server on the host computer and generating a unique session ID that others can connect to via their terminal or a web browser. You can have multiple connected individuals in a session, though we typically use it more for 1-1 debugging and troubleshooting.&lt;/p&gt;
 
-&lt;p&gt;At 7:15 or so, Kosta Harlan will present on all things Drupal 8. He has a couple of &lt;a href=&quot;https://www.durhamatletico.com&quot;&gt;real-world projects he’s built&lt;/a&gt; or &lt;a href=&quot;https://github.com/savaslabs/durham-civil-rights-map&quot;&gt;helped build&lt;/a&gt; in Drupal 8, and will spend some time presenting on the specifics of those site builds. Plenty of time will be factored in for Q&amp;amp;A throughout the presentation with some additional time at the end.&lt;/p&gt;
+&lt;p&gt;Be aware, collaborators will have &lt;em&gt;direct&lt;/em&gt; access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it’s free and easy to set up – check it out &lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;We’ll also discuss future locations, topics and times that work for other members of the group, so we strongly encourage you to come out to this session even if it’s not ideal for you on an ongoing basis to help shape the future of the meetup that this community deserves.&lt;/p&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/7oargr7f911dm8qz4c5m0k2iw.js&quot; id=&quot;asciicast-7oargr7f911dm8qz4c5m0k2iw&quot; async=&quot;&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;We look forward to seeing you in Durham on St. Patrick’s Day!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Terminal sharing 2,700 miles away!&lt;/span&gt;&lt;/p&gt;
 
-      &lt;table class=&quot;table-minimal&quot;&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;span class=&quot;fa-stack fa-lg&quot;&gt;
-            &lt;i class=&quot;fa fa-circle fa-stack-2x&quot;&gt;&lt;/i&gt;
-            &lt;i class=&quot;fa fa-calendar fa-stack-1x fa-inverse&quot;&gt;&lt;/i&gt;
-            &lt;/span&gt;&amp;nbsp;&amp;nbsp;Date&lt;/td&gt;
-          
-          &lt;td&gt;March 16, 2016&lt;/td&gt;
-          
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;span class=&quot;fa-stack fa-lg&quot;&gt;
-            &lt;i class=&quot;fa fa-circle fa-stack-2x&quot;&gt;&lt;/i&gt;
-            &lt;i class=&quot;fa fa-clock-o fa-stack-1x fa-inverse&quot;&gt;&lt;/i&gt;
-            &lt;/span&gt;&amp;nbsp;&amp;nbsp;Time&lt;/td&gt;
-          
-          &lt;td&gt;6:30 PM - 8:30 PM&lt;/td&gt;
-          
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;span class=&quot;fa-stack fa-lg&quot;&gt;
-            &lt;i class=&quot;fa fa-circle fa-stack-2x&quot;&gt;&lt;/i&gt;
-            &lt;i class=&quot;fa fa-building-o fa-stack-1x fa-inverse&quot;&gt;&lt;/i&gt;
-          &lt;/span&gt;&amp;nbsp;&amp;nbsp;Location&lt;/td&gt;
-          
-          &lt;td&gt;&lt;a href=&quot;http://americanunderground.com/&quot;&gt;American Underground @ Main&lt;/a&gt;&lt;/td&gt;
-          
-        &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-      &lt;hr&gt;
+&lt;h2 id=&quot;accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm&lt;/h2&gt;
 
-      
-        &lt;div class=&quot;post-comments&quot;&gt;
+&lt;p&gt;There are many useful tools available for interacting with a MySQL database. Since we’ve transitioned to &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker for our local development&lt;/a&gt;, we prefer one of the following techniques for manipulating databases abstracted into the Docker container.&lt;/p&gt;
 
-  
-    &lt;p&gt;Comments are disabled for this post.&lt;/p&gt;
+&lt;h3 id=&quot;adding-phpmyadmin-to-a-docker-stack&quot;&gt;Adding PhpMyAdmin to a Docker Stack&lt;/h3&gt;
 
-  
-  &lt;hr&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.phpmyadmin.net/&quot;&gt;PhpMyAdmin&lt;/a&gt; is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. Here’s a simple method for adding the PhpMyAdmin service to a project’s existing Docker Stack.&lt;/p&gt;
 
-      
-    &lt;/article&gt;
-  &lt;/div&gt;&lt;!-- post__body --&gt;
+&lt;p&gt;To build a container to run the PhpMyAdmin service:&lt;/p&gt;
 
-  
-    &lt;div class=&quot;post-bottom&quot;&gt;
-  &lt;div class=&quot;post-meta&quot;&gt;
+&lt;ol&gt;
+  &lt;li&gt;Simply add this snippet to your &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file
+    &lt;ul&gt;
+      &lt;li&gt;It uses the official &lt;code class=&quot;highlighter-rouge&quot;&gt;phpmyadmin&lt;/code&gt; image and defines the host as the database container (&lt;code class=&quot;highlighter-rouge&quot;&gt;mariadb&lt;/code&gt; in this example), so be sure to add it &lt;em&gt;after&lt;/em&gt; the section defining your database container.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-    
-    
-    
-    
-    
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-phpmyadmin.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpmyadmin container&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Add to &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
 
-    
-      &lt;h4&gt;About the author&lt;/h4&gt;
-    
+&lt;ol start=&quot;2&quot;&gt;
+  &lt;li&gt;Set the correct database user and password (&lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_USER&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_PASSWORD&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
 
-    
+&lt;p&gt;Once the containers are up you can visit the port specific url (for instance &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;example.site&amp;gt;:8001&lt;/code&gt;) to access your project-specific PhpMyAdmin interface! &lt;img class=&quot;emoji&quot; title=&quot;:tada:&quot; alt=&quot;:tada:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f389.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
-      
-      
-        &lt;a href=&quot;/team/chris-russo&quot;&gt;
-          &lt;picture&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/chris-russo-576by516-704170.jpg&quot; media=&quot;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&quot;&gt;
-    &lt;source srcset=&quot;http://savaslabs.com/assets/processed-img/team/chris-russo-288by258-704170.jpg&quot;&gt;
-    &lt;img src=&quot;http://savaslabs.com/assets/processed-img/team/chris-russo-288by258-704170.jpg&quot; class=&quot;image--team-post-meta&quot; itemprop=&quot;image&quot; alt=&quot;Chris Russo&quot; &gt;
-  &lt;/picture&gt;
+&lt;h3 id=&quot;using-phpstorm-to-interact-with-a-dockerized-database&quot;&gt;Using PhpStorm to interact with a Dockerized Database&lt;/h3&gt;
+&lt;p&gt;Another method is to connect PhpStorm directly to the database container using PhpStorm’s Database Browser. Instead of opening a shell into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface! PhpStorm even provides useful code completions when writing database queries!&lt;/p&gt;
 
-        &lt;/a&gt;
-        &lt;p class=&quot;post-author-desc&quot;&gt;Chris does his best to ensure that his team is learning and growing and that our clients feel like partners.&lt;/p&gt;
-      
+&lt;p&gt;To connect PhpStorm to your DB container:&lt;/p&gt;
 
-      
-      
+&lt;ol&gt;
+  &lt;li&gt;In PhpStorm, go to the “Database Browser”, click the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; dropdown and select “Data Source &amp;gt; MySQL”&lt;/li&gt;
+&lt;/ol&gt;
 
-    
-  &lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm1.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpstorm connect1&quot; /&gt;&lt;/p&gt;
 
-  
-  &lt;div class=&quot;post-related flex-container&quot;&gt;
-    &lt;h4&gt;Recent posts by Savas Labs&lt;/h4&gt;
-    &lt;div class=&quot;cards&quot;&gt;
-      
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2017/03/20/lightning-q1-2017.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Mar 20, 2017&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;What we’ve added to our developer toolboxes in Q1 2017!&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                Five Drupal 8 Tips to Empower Content Authors
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Mar 6, 2017&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;Five Drupal 8 tips to make the content authoring experience more enjoyable and productive!&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-        
-          &lt;div class=&quot;card&quot;&gt;
-            &lt;a href=&quot;/2017/02/27/on-web-typography-review.html&quot;&gt;
-              &lt;div class=&quot;card-header&quot;&gt;
-                On Web Typography - a Book Review
-              &lt;/div&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p&gt;Feb 27, 2017&lt;/p&gt;
-                
-                &lt;p&gt;&lt;p&gt;A review of Jason Santa Maria’s &lt;em&gt;On Web Typography&lt;/em&gt;, and how we applied the
-lessons learned to our workflow.&lt;/p&gt;
-&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/a&gt;
-          &lt;/div&gt;
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+  &lt;li&gt;In the popup window:
+    &lt;ul&gt;
+      &lt;li&gt;Map the project DB container’s port specified in the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;Port&lt;/code&gt; (in the below example it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;32770&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;Add the &lt;code class=&quot;highlighter-rouge&quot;&gt;Database&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;User&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Password&lt;/code&gt; fields from the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file as well&lt;/li&gt;
+      &lt;li&gt;You can select &lt;code class=&quot;highlighter-rouge&quot;&gt;Test Conneciton&lt;/code&gt; or just &lt;code class=&quot;highlighter-rouge&quot;&gt;OK&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-  
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm2.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect2&quot; /&gt;&lt;/p&gt;
 
-  &lt;div class=&quot;previous-next-links&quot;&gt;
-  &lt;div class=&quot;next&quot;&gt;
-    
-      &lt;a href=&quot;/2016/03/18/tridug-recap.html&quot;&gt;&lt;i class=&quot;fa fa-long-arrow-left &quot;&gt;&lt;/i&gt; TriDUG recap: Drupal 8 case studies&lt;/a&gt;
-    
-  &lt;/div&gt;
-  &lt;div class=&quot;previous&quot;&gt;
-    
-      &lt;a href=&quot;/2016/03/10/drupal-camp-florida-2016-recap.html&quot;&gt; DrupalCamp Florida 2016 Recap &lt;i class=&quot;fa fa-long-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;p&gt;Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! &lt;img class=&quot;emoji&quot; title=&quot;:star2:&quot; alt=&quot;:star2:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f31f.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
-&lt;/div&gt;&lt;!-- post --&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm3.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect3&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Write and save custom queries!&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Screen Recorder to capture your screen&lt;/h2&gt;
+
+&lt;p&gt;If a picture’s worth a thousand words, than a video is worth…a million? There are times when it’s useful to send a short video (for example, a quick tutorial to a client) and Apowersoft’s &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;Free Online Screen Recorder&lt;/a&gt; is a great tool for capturing your screen. It’s easy to use and there’s &lt;em&gt;no recording time limit&lt;/em&gt;!  Other things we like are the ability to customize the cursor appearance, limit the capture to a specific region of your screen, and specify the resulting video format.&lt;/p&gt;
+
+&lt;p&gt;Setup is incredibly easy:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Go to the &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;site&lt;/a&gt; and download the Launcher (you only have to do this once)&lt;/li&gt;
+  &lt;li&gt;Now anytime you want to record, just go back to the page and hit “Start Recording”!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;*There is a Desktop version for those who prefer using the full application. However, the free desktop version limits recordings to 3 minutes.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap Up&lt;/h2&gt;
+&lt;p&gt;We hope you find this quarter’s top picks helpful! Leave a comment if you have additions to share with us!&lt;/p&gt;
 ",
-      "url": "http://savaslabs.com/2016/03/16/tridug-drupal-8-durham-atletico-case-study.html"
+      "url": "http://savaslabs.com/2017/03/20/lightning-q1-2017.html"
     }
   </script>
 
@@ -847,100 +441,192 @@ lessons learned to our workflow.&lt;/p&gt;
         
 
 
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Event",
-      "location": {
-        "@type": "Place",
-        "name": "American Underground @ Main",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Durham, North Carolina",
-          "postalCode": "27701",
-          "streetAddress": "201 W Main St."
-        }
-      },
-      "startDate": "2016-03-16T18:30:00+00:00",
-      "endDate": "2016-03-16T20:30:00+00:00",
-      "duration": "2",
-      "organizer": "Savas Labs",
-      "description": "After a long lull in activity, Savas Labs would like to reinvigorate the TriDUG evening meetups.
-",
-      "name": "TriDUG: Drupal 8 case studies, presentation, and discussion"
-    }
-</script>
-
-
-
-
-<div class="post event">
+<div class="post">
   <div class="post__body">
     <header class="post-header">
-      <h1 class="post-title">TriDUG: Drupal 8 case studies, presentation, and discussion</h1>
+      <h1 class="post-title">Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017</h1>
+
       
 
-<p>By <a href="/team/chris-russo">Chris Russo</a></p>
+<p>By <a href="/team/ro-wang">Ro Wang</a></p>
+
       <p class="centerdot">&centerdot; </p>
-      <p>Mar 16, 2016 </p><br>
-      <i class="fa fa-tags"></i><p><a href="/blog/tag/drupal/">Drupal</a>, <a href="/blog/tag/event/">Event</a></p>
+      <p>Mar 20, 2017 </p><br>
+      <i class="fa fa-tags"></i><p><a href="/blog/tag/skillshare/">Skillshare</a>, <a href="/blog/tag/efficiency/">Efficiency</a>, <a href="/blog/tag/docker/">Docker</a></p>
       
-        <div><p><span id="comment-count"></span></p></div>
+      <div><p><span id="comment-count"></span></p></div>
+      
+      
+        <div class="post-featured-image">
+          <picture>
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/lightning-17q1-hero-1474by917-689340.jpg" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/lightning-17q1-hero-737by459-689340.jpg" media="(min-width: 400px)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/lightning-17q1-hero-800by498-689340.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/blog/lightning-17q1-hero-400by249-689340.jpg">
+    <img src="http://savaslabs.com/assets/processed-img/blog/lightning-17q1-hero-400by249-689340.jpg" class="image--post-featured-image" itemprop="image" alt="Q1 2017 Lightning Talks" >
+  </picture>
+
+          
+        </div>
       
     </header>
 
+    
+
     <article class="post-content">
-      <p>After a long lull in activity, Savas Labs would like to reinvigorate the <a href="https://groups.drupal.org/">TriDUG</a> evening meetups. We recognize there is a lot of Drupal need and experience here in the Triangle, and we want to collaborate more with our local community. With the help of Barb Baranski, we have sent out a questionnaire to the group to better understand interests, days and locations that will work for the group, and you have responded!</p>
+      <p><em>This post is part of a new series called “Lightning Talks.”</em></p>
 
-<p><a href="http://www.meetup.com/triDUG/events/229414499/">We’ll host the first session at our home base</a>, the American Underground @ Main in downtown Durham.</p>
+<p>The web development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.</p>
 
-<p>We’ll have pizza here at 6:30, and do some mingling until about 7:00. At 7:00 we’ll do introductions, and share any pertinent information about projects we’re working on, job opportunities, and the like.</p>
+<p>One of our core <a href="/mission-and-values/#excel">philosophies</a> at Savas Labs is to “<em>hold ourselves to a high and constantly improving standard</em>.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our <img class="emoji" title=":zap:" alt=":zap:" src="https://assets.github.com/images/icons/emoji/unicode/26a1.png" height="20" width="20" align="absmiddle" /> “Lightning Skillshares!” <img class="emoji" title=":zap:" alt=":zap:" src="https://assets.github.com/images/icons/emoji/unicode/26a1.png" height="20" width="20" align="absmiddle" /></p>
 
-<p>At 7:15 or so, Kosta Harlan will present on all things Drupal 8. He has a couple of <a href="https://www.durhamatletico.com">real-world projects he’s built</a> or <a href="https://github.com/savaslabs/durham-civil-rights-map">helped build</a> in Drupal 8, and will spend some time presenting on the specifics of those site builds. Plenty of time will be factored in for Q&amp;A throughout the presentation with some additional time at the end.</p>
+<p>Since we believe in the open source ethos and sharing with the community, in this series, we’ll highlight some tips we use to improve our day-to-day efficiency (and hopefully yours too!).</p>
 
-<p>We’ll also discuss future locations, topics and times that work for other members of the group, so we strongly encourage you to come out to this session even if it’s not ideal for you on an ongoing basis to help shape the future of the meetup that this community deserves.</p>
+<p>What we’ve added to our toolboxes in Q1 2017:</p>
 
-<p>We look forward to seeing you in Durham on St. Patrick’s Day!</p>
+<p><a href="#using-teleconsole-for-collaboration">1. Using Teleconsole for collaboration</a></p>
 
-      <table class="table-minimal">
-        <tbody>
-        <tr>
-          <td><span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
-            </span>&nbsp;&nbsp;Date</td>
-          
-          <td>March 16, 2016</td>
-          
-        </tr>
-        <tr>
-          <td><span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
-            </span>&nbsp;&nbsp;Time</td>
-          
-          <td>6:30 PM - 8:30 PM</td>
-          
-        </tr>
-        <tr>
-          <td><span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-building-o fa-stack-1x fa-inverse"></i>
-          </span>&nbsp;&nbsp;Location</td>
-          
-          <td><a href="http://americanunderground.com/">American Underground @ Main</a></td>
-          
-        </tr>
-        </tbody>
-      </table>
+<p><a href="#accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm">2. Accessing a Dockerized database via PhpStorm or PhpMyAdmin</a></p>
+
+<p><a href="#using-apowersofts-free-screen-recorder-to-capture-your-screen">3. Using Apowersoft’s Free Online Screen Recorder to capture your screen</a></p>
+
+<h2 id="using-teleconsole-for-collaboration">1. Using Teleconsole for collaboration</h2>
+
+<p><a href="https://www.teleconsole.com/">Teleconsole</a> let’s you share your UNIX terminal session for easy collaboration! We’ve been using it for a couple months now and find it to be an excellent addition to our team toolbox.</p>
+
+<p>It works by starting an SSH server on the host computer and generating a unique session ID that others can connect to via their terminal or a web browser. You can have multiple connected individuals in a session, though we typically use it more for 1-1 debugging and troubleshooting.</p>
+
+<p>Be aware, collaborators will have <em>direct</em> access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it’s free and easy to set up – check it out <a href="https://www.teleconsole.com/">here</a>.</p>
+
+<script type="text/javascript" src="https://asciinema.org/a/7oargr7f911dm8qz4c5m0k2iw.js" id="asciicast-7oargr7f911dm8qz4c5m0k2iw" async=""></script>
+
+<p><span class="caption">Terminal sharing 2,700 miles away!</span></p>
+
+<h2 id="accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm">2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm</h2>
+
+<p>There are many useful tools available for interacting with a MySQL database. Since we’ve transitioned to <a href="/blog/tag/docker/">Docker for our local development</a>, we prefer one of the following techniques for manipulating databases abstracted into the Docker container.</p>
+
+<h3 id="adding-phpmyadmin-to-a-docker-stack">Adding PhpMyAdmin to a Docker Stack</h3>
+
+<p><a href="https://www.phpmyadmin.net/">PhpMyAdmin</a> is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. Here’s a simple method for adding the PhpMyAdmin service to a project’s existing Docker Stack.</p>
+
+<p>To build a container to run the PhpMyAdmin service:</p>
+
+<ol>
+  <li>Simply add this snippet to your <code class="highlighter-rouge">docker-compose.yml</code> file
+    <ul>
+      <li>It uses the official <code class="highlighter-rouge">phpmyadmin</code> image and defines the host as the database container (<code class="highlighter-rouge">mariadb</code> in this example), so be sure to add it <em>after</em> the section defining your database container.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/blog/lightning-17q1-phpmyadmin.png" class="blog-image-large" alt="phpmyadmin container" />
+<span class="caption">Add to <code class="highlighter-rouge">docker-compose.yml</code></span></p>
+
+<ol start="2">
+  <li>Set the correct database user and password (<code class="highlighter-rouge">PMA_USER</code> and <code class="highlighter-rouge">PMA_PASSWORD</code>).</li>
+</ol>
+
+<p>Once the containers are up you can visit the port specific url (for instance <code class="highlighter-rouge">&lt;example.site&gt;:8001</code>) to access your project-specific PhpMyAdmin interface! <img class="emoji" title=":tada:" alt=":tada:" src="https://assets.github.com/images/icons/emoji/unicode/1f389.png" height="20" width="20" align="absmiddle" /></p>
+
+<h3 id="using-phpstorm-to-interact-with-a-dockerized-database">Using PhpStorm to interact with a Dockerized Database</h3>
+<p>Another method is to connect PhpStorm directly to the database container using PhpStorm’s Database Browser. Instead of opening a shell into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface! PhpStorm even provides useful code completions when writing database queries!</p>
+
+<p>To connect PhpStorm to your DB container:</p>
+
+<ol>
+  <li>In PhpStorm, go to the “Database Browser”, click the <code class="highlighter-rouge">+</code> dropdown and select “Data Source &gt; MySQL”</li>
+</ol>
+
+<p><img src="/assets/img/blog/lightning-17q1-pstorm1.png" class="blog-image-large" alt="phpstorm connect1" /></p>
+
+<ol start="2">
+  <li>In the popup window:
+    <ul>
+      <li>Map the project DB container’s port specified in the <code class="highlighter-rouge">docker-compose.yml</code> file to <code class="highlighter-rouge">Port</code> (in the below example it’s <code class="highlighter-rouge">32770</code>)</li>
+      <li>Add the <code class="highlighter-rouge">Database</code>, <code class="highlighter-rouge">User</code>, and <code class="highlighter-rouge">Password</code> fields from the <code class="highlighter-rouge">docker-compose.yml</code> file as well</li>
+      <li>You can select <code class="highlighter-rouge">Test Conneciton</code> or just <code class="highlighter-rouge">OK</code></li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/blog/lightning-17q1-pstorm2.png" class="blog-image-xl" alt="phpstorm connect2" /></p>
+
+<p>Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! <img class="emoji" title=":star2:" alt=":star2:" src="https://assets.github.com/images/icons/emoji/unicode/1f31f.png" height="20" width="20" align="absmiddle" /></p>
+
+<p><img src="/assets/img/blog/lightning-17q1-pstorm3.png" class="blog-image-xl" alt="phpstorm connect3" />
+<span class="caption">Write and save custom queries!</span></p>
+
+<h2 id="using-apowersofts-free-screen-recorder-to-capture-your-screen">3. Using Apowersoft’s Free Screen Recorder to capture your screen</h2>
+
+<p>If a picture’s worth a thousand words, than a video is worth…a million? There are times when it’s useful to send a short video (for example, a quick tutorial to a client) and Apowersoft’s <a href="https://www.apowersoft.com/free-online-screen-recorder">Free Online Screen Recorder</a> is a great tool for capturing your screen. It’s easy to use and there’s <em>no recording time limit</em>!  Other things we like are the ability to customize the cursor appearance, limit the capture to a specific region of your screen, and specify the resulting video format.</p>
+
+<p>Setup is incredibly easy:</p>
+
+<ul>
+  <li>Go to the <a href="https://www.apowersoft.com/free-online-screen-recorder">site</a> and download the Launcher (you only have to do this once)</li>
+  <li>Now anytime you want to record, just go back to the page and hit “Start Recording”!</li>
+</ul>
+
+<p>*There is a Desktop version for those who prefer using the full application. However, the free desktop version limits recordings to 3 minutes.</p>
+
+<h2 id="wrap-up">Wrap Up</h2>
+<p>We hope you find this quarter’s top picks helpful! Leave a comment if you have additions to share with us!</p>
+
       <hr>
 
       
         <div class="post-comments">
 
   
-    <p>Comments are disabled for this post.</p>
+    <div class="expander">
+      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Comments!</a>
 
+      <div id="js-expander-content" class="expander-content">
+
+        <!-- If there are existing comments, output them here. -->
+        <div id="post-comments" class="post-comments"></div>
+
+        <!-- New comment form -->
+        <form id="comment-form" class="comment-form">
+          <h4>Leave a comment</h4>
+
+          <div class="comment-form__field comment-form__field--name">
+            <label class="comment-form__field__label" for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+          </div>
+
+          <div class="comment-form__field comment-form__field--email">
+            <label class="comment-form__field__label" for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <p class="comment-form__field__helptext">Savas Labs will never sell your email address or spam you.</p>
+          </div>
+
+          <div class="comment-form__field comment-form__field--comment">
+            <label class="comment-form__field__label" for="comment">Comment</label>
+            <textarea name="comment" id="comment" required></textarea>
+            <p class="comment-form__field__helptext">Plain text format only please.</p>
+          </div>
+
+          <input type="hidden" name="slug" id="slug" value="/2017/03/20/lightning-q1-2017.html">
+          <input type="text" name="url" id="url">
+
+          <div class="comment-form__field comment-form__field--nocaptcha">
+            <div class="comment-form__field--nocaptcha__image">
+              <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
+            </div>
+            <div class="comment-form__field--nocaptcha__input">
+              <label class="comment-form__field__label" for="nocaptcha">What type of animal is the Savas Labs logo?</label>
+              <p class="comment-form__field__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
+              <input type="text" name="nocaptcha" id="nocaptcha" required>
+            </div>
+          </div>
+
+          <input type="submit" value="Post comment" id="submit" class="comment-form__submit">
+        </form>
+
+      </div><!-- comments and comment form -->
+    </div><!-- expander -->
   
   <hr>
 </div>
@@ -967,15 +653,15 @@ lessons learned to our workflow.&lt;/p&gt;
 
       
       
-        <a href="/team/chris-russo">
+        <a href="/team/ro-wang">
           <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/chris-russo-576by516-704170.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/chris-russo-288by258-704170.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/chris-russo-288by258-704170.jpg" class="image--team-post-meta" itemprop="image" alt="Chris Russo" >
+    <source srcset="http://savaslabs.com/assets/processed-img/team/ro-wang-576by576-8bd53c.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="http://savaslabs.com/assets/processed-img/team/ro-wang-288by288-8bd53c.jpg">
+    <img src="http://savaslabs.com/assets/processed-img/team/ro-wang-288by288-8bd53c.jpg" class="image--team-post-meta" itemprop="image" alt="Ro Wang" >
   </picture>
 
         </a>
-        <p class="post-author-desc">Chris does his best to ensure that his team is learning and growing and that our clients feel like partners.</p>
+        <p class="post-author-desc">Ro is a junior web developer at Savas Labs filling her brain daily with myriad things the team throws at her.</p>
       
 
       
@@ -990,21 +676,6 @@ lessons learned to our workflow.&lt;/p&gt;
     <div class="cards">
       
       
-        
-        
-          <div class="card">
-            <a href="/2017/03/20/lightning-q1-2017.html">
-              <div class="card-header">
-                Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017
-              </div>
-              <div class="card-copy">
-                <p>Mar 20, 2017</p>
-                
-                <p><p>What we’ve added to our developer toolboxes in Q1 2017!</p>
-</p>
-              </div>
-            </a>
-          </div>
         
       
         
@@ -1042,6 +713,20 @@ lessons learned to our workflow.</p>
           </div>
         
       
+        
+        
+          <div class="card">
+            <a href="/2017/02/20/drupal-docker-pattern-lab.html">
+              <div class="card-header">
+                Docker and the Drupal Pattern Lab Starter Theme
+              </div>
+              <div class="card-copy">
+                <p>Feb 20, 2017</p>
+                
+                <p><p>This post demonstrates how to build a Docker image that can be used in local Drupal development with the Pattern...</p>
+              </div>
+            </a>
+          </div>
         
       
         
@@ -1145,12 +830,10 @@ lessons learned to our workflow.</p>
   <div class="previous-next-links">
   <div class="next">
     
-      <a href="/2016/03/18/tridug-recap.html"><i class="fa fa-long-arrow-left "></i> TriDUG recap: Drupal 8 case studies</a>
-    
   </div>
   <div class="previous">
     
-      <a href="/2016/03/10/drupal-camp-florida-2016-recap.html"> DrupalCamp Florida 2016 Recap <i class="fa fa-long-arrow-right"></i></a>
+      <a href="/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html"> Five Drupal 8 Tips to Empower Content Authors <i class="fa fa-long-arrow-right"></i></a>
     
   </div>
 </div>
