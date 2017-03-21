@@ -6,7 +6,7 @@
 
 .team-member {
   @include outer-container;
-  @include media($medium-screen-up) {
+  @include grid-media($medium-screen-up) {
     @include span-columns(8);
     @include shift(2);
   }
@@ -21,11 +21,11 @@
     margin: 1em auto $base-margin;
     text-align: center;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       width: 60%;
     }
 
-    @include media($large-screen-up) {
+    @include grid-media($large-screen-up) {
       width: 100%;
     }
 
@@ -35,7 +35,7 @@
       min-width: 45%;
       padding: 0 .75em;
 
-      @include media($large-screen-up) {
+      @include grid-media($large-screen-up) {
         min-width: 1%;
       }
     }

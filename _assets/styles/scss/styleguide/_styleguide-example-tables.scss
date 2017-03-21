@@ -12,7 +12,7 @@
       display: block;
       padding: 1em .5em;
 
-      @include media($medium-screen-up) {
+      @include grid-media($medium-screen-up) {
         display: table-cell;
       }
     }

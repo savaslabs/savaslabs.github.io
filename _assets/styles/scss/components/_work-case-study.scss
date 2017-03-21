@@ -15,7 +15,7 @@
   .case-study__highlights {
     padding: $base-margin $base-spacing;
 
-    @include media($case-study-header-break) {
+    @include grid-media($case-study-header-break) {
       display: none;
     }
 
@@ -38,7 +38,7 @@
         height: auto;
         margin: $base-spacing auto 0;
 
-        @include media($medium-screen-up) {
+        @include grid-media($medium-screen-up) {
           float: left;
           margin: 0 $base-margin 0 0;
           min-height: 60px;
@@ -54,7 +54,7 @@
   .case-study__content {
     padding: $base-spacing 0;
 
-    @include media($large-screen-up) {
+    @include grid-media($large-screen-up) {
       @include display(flex);
       @include align-items(center);
 
@@ -63,7 +63,7 @@
 
     .case-study__content__text,
     .case-study__square-image {
-      @include media($large-screen-up) {
+      @include grid-media($large-screen-up) {
         width: 50%;
       }
     }
@@ -82,7 +82,7 @@
         margin-bottom: 0;
         text-align: center;
 
-        @include media($large-screen-up) {
+        @include grid-media($large-screen-up) {
           font-size: 2em;
           padding: .75em 3em 0 1em;
           text-align: left;
@@ -92,7 +92,7 @@
       p {
         padding: 1.667em;
 
-        @include media($large-screen-up) {
+        @include grid-media($large-screen-up) {
           padding-right: 3em;
         }
       }
@@ -112,7 +112,7 @@
         h2 {
           color: $dark-blue;
 
-          @include media($large-screen-up) {
+          @include grid-media($large-screen-up) {
             padding-left: 3em;
             padding-right: 1em;
             text-align: right;
@@ -120,7 +120,7 @@
         }
 
         p {
-          @include media($large-screen-up) {
+          @include grid-media($large-screen-up) {
             padding-left: 3em;
             padding-right: 1.667em;
           }
@@ -148,11 +148,11 @@
     background-color: lighten($light-gray, 10);
     padding: $base-spacing;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       padding: $base-spacing $base-margin;
     }
 
-    @include media($large-screen-up) {
+    @include grid-media($large-screen-up) {
       padding: $base-spacing $base-margin * 2;
     }
 
@@ -181,13 +181,13 @@
     margin-top: $base-spacing * 2;
 
     .wrapper {
-      @include media($medium-screen-up) {
+      @include grid-media($medium-screen-up) {
         td {
           font-size: 1.2em;
         }
       }
 
-      @include media($large-screen-up) {
+      @include grid-media($large-screen-up) {
         @include span-columns(8);
         @include shift(2);
       }
