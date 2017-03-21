@@ -6,7 +6,7 @@
 
 .wrapper {
   @include outer-container;
-  max-width: 70em;
+  max-width: $max-width - 40;
   padding: $base-margin 1em;
   vertical-align: baseline;
 
@@ -16,7 +16,7 @@
 }
 
 .flex-container {
-  @include span-columns(12);
+  @include grid-column(12);
 }
 
 header,
@@ -31,8 +31,8 @@ header,
 
 .column-8 {
   @include grid-media($large-screen-up) {
-    @include span-columns(8);
-    @include shift(2);
+    @include grid-column(8);
+    @include grid-shift(2);
   }
 }
 

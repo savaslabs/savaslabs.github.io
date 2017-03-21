@@ -21,7 +21,7 @@
   display: none;
 
   @include grid-media($large-screen-up) {
-    @include span-columns(2);
+    @include grid-column(2);
 
     display: block;
 
@@ -43,10 +43,10 @@
 
 // Main content.
 .sg-content__content__body {
-  @include span-columns(12);
+  @include grid-column(12);
 
   @include grid-media($large-screen-up) {
-    @include span-columns(10);
+    @include grid-column(10);
   }
 }
 
@@ -54,7 +54,7 @@
 .sg-home {
   .sg-content__content__body {
     @include grid-media($large-screen-up) {
-      @include span-columns(8);
+      @include grid-column(8);
     }
   }
 }

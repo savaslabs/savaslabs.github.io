@@ -8,15 +8,13 @@
   clear: both;
 
   .case-study__header {
-    @include display(flex);
-    @include justify-content(space-around);
-    @include align-items(center);
-
+    align-items: center;
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    display: flex;
     height: 88vh;
+    justify-content: space-around;
     min-height: 320px;
 
     // On medium screens, change height to account for menu height.
@@ -30,13 +28,12 @@
     }
 
     .case-study__header__text {
-      @include display(flex);
-      @include flex-direction(column);
-
+      display: flex;
+      flex-direction: column;
       padding: 1em;
 
       @include grid-media($case-study-header-break) {
-        @include flex-direction(row);
+        flex-direction: row;
         width: 90%;
       }
 
@@ -87,12 +84,11 @@
         display: none;
 
         @include grid-media($case-study-header-break) {
-          @include flex-basis(280px);
-          @include flex-shrink(0);
-          @include display(flex);
-          @include flex-direction(column);
-          @include justify-content(center);
-
+          display: flex;
+          flex-basis: 280px;
+          flex-direction: column;
+          flex-shrink: 0;
+          justify-content: center;
           padding: 0 0 0 $base-spacing;
 
           ul {

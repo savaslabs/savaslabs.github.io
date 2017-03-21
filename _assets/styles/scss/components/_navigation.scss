@@ -18,7 +18,6 @@
   }
 
   .navigation-wrapper {
-    @include clearfix;
     @include outer-container;
     padding: 25px 0;
     position: relative;
@@ -65,7 +64,7 @@
     padding-right: 1em;
     text-transform: uppercase;
 
-    @include media ($horizontal-bar-mode) {
+    @include grid-media($horizontal-bar-mode) {
       display: none;
     }
 
@@ -81,12 +80,12 @@
     min-height: $navigation-height;
     z-index: 9999999;
 
-    @include media ($horizontal-bar-mode) {
+    @include grid-media($horizontal-bar-mode) {
       clear: left;
       margin: 0 auto;
     }
 
-    @include media ($large-screen-up) {
+    @include grid-media($large-screen-up) {
       clear: none;
       float: right;
     }
@@ -103,7 +102,7 @@
     width: 100%;
     z-index: 9999;
 
-    @include media ($horizontal-bar-mode) {
+    @include grid-media($horizontal-bar-mode) {
       display: inline;
       margin: 0;
       padding: 0;
@@ -125,7 +124,7 @@
     width: 100%;
     z-index: 9999;
 
-    @include media ($horizontal-bar-mode) {
+    @include grid-media($horizontal-bar-mode) {
       background: transparent;
       display: inline;
       line-height: $navigation-height;
@@ -140,11 +139,11 @@
       font-weight: 400;
       text-transform: uppercase;
 
-      @include media ($horizontal-bar-mode) {
+      @include grid-media($horizontal-bar-mode) {
         padding-right: .5em;
       }
 
-      @include media ($large-screen-up) {
+      @include grid-media($large-screen-up) {
         padding-right: 1em;
       }
 

@@ -5,9 +5,9 @@
  */
 
 .team-member .team-badges {
-  @include display(flex);
-  @include justify-content(center);
-  @include flex-wrap(wrap);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
   .team-badges__badge img {
     max-width: 200px;

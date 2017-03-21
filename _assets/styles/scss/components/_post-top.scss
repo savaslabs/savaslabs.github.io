@@ -8,8 +8,8 @@
   .post__body {
     @include outer-container;
     @include grid-media($large-screen-up) {
-      @include span-columns(8);
-      @include shift(2);
+      @include grid-column(8);
+      @include grid-shift(2);
     }
 
     // Header area.
@@ -55,13 +55,13 @@
   // section flashing at the top of the screen on initial load or hard refresh.
   .post-bottom {
     @include grid-media($large-screen-up) {
-      @include span-columns(10);
-      @include shift(1);
+      @include grid-column(10);
+      @include grid-shift(1);
     }
 
     @include grid-media($extra-large-screen-up) {
-      @include span-columns(8);
-      @include shift(2);
+      @include grid-column(8);
+      @include grid-shift(2);
     }
   }
 }

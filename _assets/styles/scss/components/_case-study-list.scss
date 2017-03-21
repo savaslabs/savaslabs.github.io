@@ -10,17 +10,16 @@
 
 // Individual case studies.
 .case-studies__case-study {
-  @include display(flex);
-  @include align-items(center);
-  @include flex-wrap(wrap);
-
+  align-items: center;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
   margin: $base-spacing 0;
 
   @include grid-media($medium-screen-up) {
-    @include flex-wrap(nowrap);
+    flex-wrap: nowrap;
   }
 
   h3,
