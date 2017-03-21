@@ -10,9 +10,9 @@
 
 // The group of cards.
 .cards {
-  @include display(flex);
-  @include flex-wrap(wrap);
-  @include justify-content(center);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 // A single card.
@@ -48,39 +48,38 @@ More documentation about the card component.
 */
 
 .card {
-  @include flex-basis(15em);
-  @include flex-grow(1);
-  @include transition (all .2s ease-in-out);
-
   background-color: $card-background;
   border: $card-border;
   border-radius: $base-border-radius;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
   cursor: auto;
+  flex-basis: 15em;
+  flex-grow: 1;
   margin: 0 $card-margin $base-spacing;
   position: relative;
+  transition: all .2s ease-in-out;
 
   .card-image {
     max-height: 200px;
     overflow: hidden;
 
     img {
-      @include transition (all .2s ease-in-out);
       background: $card-image-background;
       border-top-left-radius: $base-border-radius;
       border-top-right-radius: $base-border-radius;
+      transition: all .2s ease-in-out;
       width: 100%;
     }
   }
 
   .card-header {
-    @include transition (all .2s ease-in-out);
     background-color: $card-header-background;
     border-bottom: $card-border;
     border-radius: $base-border-radius $base-border-radius 0 0;
     font-family: $heading-font;
     line-height: 1.5em;
     padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all .2s ease-in-out;
   }
 
   .fa-comment-o { margin-right: 4px; }
@@ -120,9 +119,9 @@ More documentation about the card component.
 
 // Team card overrides ---------------------------------------------------------
 .team-card {
-  @include flex-basis(21em);
-  @include flex-grow(0);
-  @include transition (all .2s ease-in-out);
+  flex-basis: 21em;
+  flex-grow: 0;
+  transition: all .2s ease-in-out;
 
   .card-image {
     max-height: 350px;
@@ -157,6 +156,6 @@ More documentation about the card component.
 
 // Blog card overrides ---------------------------------------------------------
 .blog-card {
-  @include flex-basis(20em);
-  @include flex-grow(0);
+  flex-basis: 20em;
+  flex-grow: 0;
 }

@@ -55,9 +55,8 @@
     padding: $base-spacing 0;
 
     @include grid-media($large-screen-up) {
-      @include display(flex);
-      @include align-items(center);
-
+      align-items: center;
+      display: flex;
       padding: 0;
     }
 
@@ -107,7 +106,7 @@
     &.case-study__content--process {
 
       .case-study__content__text--process {
-        @include order(2);
+        order: 2;
 
         h2 {
           color: $dark-blue;
@@ -188,8 +187,8 @@
       }
 
       @include grid-media($large-screen-up) {
-        @include span-columns(8);
-        @include shift(2);
+        @include grid-column(8);
+        @include grid-shift(2);
       }
 
       ul {

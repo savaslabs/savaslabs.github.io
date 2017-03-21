@@ -11,10 +11,10 @@
   text-align: center;
 
   .contact-block__items {
-    @include display(flex);
-    @include justify-content(center);
-    @include align-items(center);
-    @include flex-wrap(wrap);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     h3,
     a {

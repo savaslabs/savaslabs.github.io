@@ -5,8 +5,8 @@
  */
 
 .services {
-  @include display(flex);
-  @include flex-wrap(wrap);
+  display: flex;
+  flex-wrap: wrap;
 
   .services__service {
     margin-bottom: $base-margin;

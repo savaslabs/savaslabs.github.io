@@ -5,10 +5,10 @@
  */
 
 .home__cover {
-  @include display(flex);
-  @include justify-content(center);
-  @include align-items(center);
-  @include flex-direction(column);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   background: url('/assets/img/home-cover-image/home-cover-code-400.png') $dark-blue center center no-repeat;
   background-size: cover;
@@ -16,15 +16,15 @@
   text-align: center;
 
   // Use proper image depending on screen size and resolution.
-  @include hidpi(2) {
+  @media (min-resolution: 192dpi) {
     background-image: url('/assets/img/home-cover-image/home-cover-code-800.png');
   }
 
   // Adjust image height and image used based on screne size and resolution.
-  @include grid-media(400px) {
+  @include grid-media($small-screen-up) {
     background-image: url('/assets/img/home-cover-image/home-cover-code-640.png');
 
-    @include hidpi(2) {
+    @media (min-resolution: 192dpi) {
       background-image: url('/assets/img/home-cover-image/home-cover-code-1280.png');
     }
   }
@@ -33,7 +33,7 @@
     background-image: url('/assets/img/home-cover-image/home-cover-code-860.png');
     height: 78vh;
 
-    @include hidpi(2) {
+    @media (min-resolution: 192dpi) {
       background-image: url('/assets/img/home-cover-image/home-cover-code-1720.png');
     }
   }
@@ -42,7 +42,7 @@
     background-image: url('/assets/img/home-cover-image/home-cover-code-1120.png');
     height: 88vh;
 
-    @include hidpi(2) {
+    @media (min-resolution: 192dpi) {
       background-image: url('/assets/img/home-cover-image/home-cover-code-2240.png');
     }
   }
@@ -50,7 +50,7 @@
   @include grid-media($extra-large-screen-up) {
     background-image: url('/assets/img/home-cover-image/home-cover-code-1200.png');
 
-    @include hidpi(2) {
+    @media (min-resolution: 192dpi) {
       background-image: url('/assets/img/home-cover-image/home-cover-code.png');
     }
   }
@@ -75,7 +75,6 @@
 
   .home__cover__site-description {
     color: $base-background-color;
-    //font-family: $heading-font;
     font-size: 1.5em;
     line-height: 1.3em;
     width: 230px;
