@@ -7,7 +7,7 @@ tags: drupal drupal-planet theming sass bourbon front-end-dev
 summary: A step-by-step tutorial on setting up Bourbon and Neat and compiling it all with Compass.
 drupal_planet_summary: |
   When Savas Labs built a custom Drupal 8 theme, we needed to include a grid framework and chose Bourbon's Neat for its ease of use, its light weight, and the library of useful Sass mixins provided by Bourbon. In this post I detail how to set all of this up and use Compass to compile SCSS.
-
+disclaimer: This post details the use of the Bourbon mixin library version 4*, but Bourbon is in the process of updating to major version 5. The new version includes significant changes and some of the mixins in this post will no longer exist. [See this GitHub thread](https://github.com/thoughtbot/bourbon/issues/702) for more information.
 ---
 
 Recently Savas Labs [built a custom Drupal 8 theme](/2015/06/10/d8-theming-basics.html) using Bourbon for mixins and Neat as our grid framework, applying our favorite parts of SMACSS principles and focusing on creating organized, maintainable code. The result? Fast, easy coding and a relatively lightweight theme.
