@@ -20,12 +20,12 @@
     min-height: 320px;
 
     // On medium screens, change height to account for menu height.
-    @include media($horizontal-bar-mode) {
+    @include grid-media($horizontal-bar-mode) {
       height: 78vh;
     }
 
     // On large screens, adjust height to account for menu height.
-    @include media($large-screen-up) {
+    @include grid-media($large-screen-up) {
       height: 88vh;
     }
 
@@ -35,12 +35,12 @@
 
       padding: 1em;
 
-      @include media($case-study-header-break) {
+      @include grid-media($case-study-header-break) {
         @include flex-direction(row);
         width: 90%;
       }
 
-      @include media($large-screen-up) {
+      @include grid-media($large-screen-up) {
         width: 80%;
       }
 
@@ -55,13 +55,13 @@
       .case-study__header__link {
         font-size: 1.1em;
 
-        @include media($case-study-header-break) {
+        @include grid-media($case-study-header-break) {
           font-size: 1.25em;
         }
       }
 
       .case-study__header__text--left {
-        @include media($case-study-header-break) {
+        @include grid-media($case-study-header-break) {
           border-right: solid 2px $base-background-color;
           padding-right: $base-spacing;
         }
@@ -70,7 +70,7 @@
           font-size: 2em;
           margin-bottom: 1em;
 
-          @include media($case-study-header-break) {
+          @include grid-media($case-study-header-break) {
             font-size: 2.5em;
           }
         }
@@ -86,7 +86,7 @@
       .case-study__header__text--right {
         display: none;
 
-        @include media($case-study-header-break) {
+        @include grid-media($case-study-header-break) {
           @include flex-basis(280px);
           @include flex-shrink(0);
           @include display(flex);

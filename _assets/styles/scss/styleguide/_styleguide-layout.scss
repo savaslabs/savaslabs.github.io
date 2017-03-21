@@ -20,7 +20,7 @@
 .sg-content__content__menu {
   display: none;
 
-  @include media($large-screen-up) {
+  @include grid-media($large-screen-up) {
     @include span-columns(2);
 
     display: block;
@@ -45,7 +45,7 @@
 .sg-content__content__body {
   @include span-columns(12);
 
-  @include media($large-screen-up) {
+  @include grid-media($large-screen-up) {
     @include span-columns(10);
   }
 }
@@ -53,7 +53,7 @@
 // Keep home page content from getting too wide.
 .sg-home {
   .sg-content__content__body {
-    @include media($large-screen-up) {
+    @include grid-media($large-screen-up) {
       @include span-columns(8);
     }
   }

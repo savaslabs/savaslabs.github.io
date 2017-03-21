@@ -78,7 +78,7 @@ $monospace-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', 
 
 // Spacing and other utilities -------------------------------------------------
 $base-margin: $base-spacing * 2;
-$case-study-header-break: em(750px);
+$case-study-header-break: 750px;
 
 // Refills ---------------------------------------------------------------------
 
@@ -197,7 +197,7 @@ $expander-toggle-margin: 1em;
         padding: .3em 1em;
         width: 100%;
 
-        @include media($medium-screen-up) {
+        @include grid-media($medium-screen-up) {
           margin-bottom: 0;
           width: auto;
         }

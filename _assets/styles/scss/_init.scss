@@ -1,6 +1,5 @@
 // Import variables and mixins to be used (Bourbon).
 @import 'lib/bourbon/bourbon';
-@import 'lib/neat/neat-helpers';
 
 // Turn on Neat's visual grid for development.
 $visual-grid:       false;
@@ -15,21 +14,35 @@ $grid-columns:  12;
 // Set the max width of the page using the px to em function in Bourbon.
 // The first value is the pixel value of the width and the second is the base font size of your theme.
 $font-size:     18px;
-$max-width-px:  1260px;
-$max-width:     em($max-width-px, $font-size);
+$max-width:     1260px;
 
 // BREAKPOINTS -----------------------------------------------------------------
 // Last argument is the # of columns the grid will have for that screen size.
 // We've kept them all equal here.
 
 // Medium screen (e.g. tablet) and up.
-$medium-screen-up:      new-breakpoint(min-width em(640px) $grid-columns);
+$medium-screen-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: 640px
+);
+$medium-screen-up: $medium-screen-up-grid;
 
 // Large screen (e.g. desktop) and up.
-$large-screen-up:       new-breakpoint(min-width em(860px) $grid-columns);
+$large-screen-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: 860px
+);
+$large-screen-up: $large-screen-up-grid;
 
 // Extra large screen and up.
-$extra-large-screen-up: new-breakpoint(min-width em(1120px) $grid-columns);
+$extra-large-screen-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: 1120px
+);
+$extra-large-screen-up: $extra-large-screen-up-grid;
 
 // Import grid to be used (Bourbon's Neat) now that we've set our overrides.
 @import 'lib/neat/neat';

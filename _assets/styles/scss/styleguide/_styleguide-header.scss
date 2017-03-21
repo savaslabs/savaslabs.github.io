@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: space-around;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       flex-direction: row;
       justify-content: flex-start;
     }
@@ -33,7 +33,7 @@
     margin-bottom: 0;
     padding: .333em .666em;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       text-align: left;
     }
   }

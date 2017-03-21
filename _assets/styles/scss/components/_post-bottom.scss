@@ -14,7 +14,7 @@
     margin-bottom: 3em;
     text-align: center;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       @include span-columns(4);
       text-align: left;
     }
@@ -40,7 +40,7 @@
     margin-bottom: 3em;
     text-align: center;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       @include span-columns(8);
 
       h4 {

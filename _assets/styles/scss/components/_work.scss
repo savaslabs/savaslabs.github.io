@@ -29,7 +29,7 @@
       padding: .5em;
       text-align: center;
 
-      @include media(em(480)) {
+      @include grid-media(480) {
         margin: 0 $card-margin $card-margin * 2;
       }
     }

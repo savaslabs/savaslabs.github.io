@@ -26,7 +26,7 @@ h6 {
 h1 {
   font-size: 200%;
 
-  @include media($medium-screen-up) {
+  @include grid-media($medium-screen-up) {
     font-size: 250%;
   }
 }
@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-size: 160%;
 
-  @include media($medium-screen-up) {
+  @include grid-media($medium-screen-up) {
     font-size: 200%;
   }
 }
@@ -42,7 +42,7 @@ h2 {
 h3 {
   font-size: 140%;
 
-  @include media($medium-screen-up) {
+  @include grid-media($medium-screen-up) {
     font-size: 160%;
   }
 }
@@ -50,7 +50,7 @@ h3 {
 h4 {
   font-size: 120%;
 
-  @include media($medium-screen-up) {
+  @include grid-media($medium-screen-up) {
     font-size: 140%;
   }
 }
@@ -58,7 +58,7 @@ h4 {
 h5 {
   font-size: 110%;
 
-  @include media($medium-screen-up) {
+  @include grid-media($medium-screen-up) {
     font-size: 120%;
   }
 }
@@ -66,7 +66,7 @@ h5 {
 h6 {
   font-size: 100%;
 
-  @include media($medium-screen-up) {
+  @include grid-media($medium-screen-up) {
     font-size: 250%;
   }
 }

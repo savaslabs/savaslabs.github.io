@@ -21,7 +21,7 @@
   }
 
   // Adjust image height and image used based on screne size and resolution.
-  @include media(em(400px)) {
+  @include grid-media(400px) {
     background-image: url('/assets/img/home-cover-image/home-cover-code-640.png');
 
     @include hidpi(2) {
@@ -29,7 +29,7 @@
     }
   }
 
-  @include media($horizontal-bar-mode) {
+  @include grid-media($horizontal-bar-mode) {
     background-image: url('/assets/img/home-cover-image/home-cover-code-860.png');
     height: 78vh;
 
@@ -38,7 +38,7 @@
     }
   }
 
-  @include media($large-screen-up) {
+  @include grid-media($large-screen-up) {
     background-image: url('/assets/img/home-cover-image/home-cover-code-1120.png');
     height: 88vh;
 
@@ -47,7 +47,7 @@
     }
   }
 
-  @include media($extra-large-screen-up) {
+  @include grid-media($extra-large-screen-up) {
     background-image: url('/assets/img/home-cover-image/home-cover-code-1200.png');
 
     @include hidpi(2) {
