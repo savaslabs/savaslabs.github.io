@@ -37,9 +37,9 @@ $fa-var-stack-exchange: '\f18d';
 $fa-var-tags: '\f02c';
 $fa-var-twitter: '\f099';
 
-@import '../lib/font-awesome/core';
-@import '../lib/font-awesome/larger';
-@import '../lib/font-awesome/stacked';
+@import '../00-lib/font-awesome/core';
+@import '../00-lib/font-awesome/larger';
+@import '../00-lib/font-awesome/stacked';
 
 .#{$fa-css-prefix}-angle-double-down:before { content: $fa-var-angle-double-down; }
 .#{$fa-css-prefix}-building-o:before { content: $fa-var-building-o; }

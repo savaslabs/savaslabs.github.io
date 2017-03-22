@@ -1,0 +1,66 @@
+/**
+ * @file
+ *
+ * Color variables.
+ *
+ * Note: this file is imported by _variables.scss.
+ */
+
+/*doc
+---
+title: Colors
+name: Colors
+category: colors
+---
+
+```html_example
+<div class="styleguide-color-chip bg-dark-blue">
+  $dark-blue
+</div>
+<div class="styleguide-color-chip bg-fuschia">
+  $fuschia
+</div>
+<div class="styleguide-color-chip bg-yellow">
+  $yellow
+</div>
+<div class="styleguide-color-chip bg-orange">
+  $orange
+</div>
+<div class="styleguide-color-chip bg-beige">
+  $beige
+</div>
+```
+*/
+
+// TODO: may need primary and secondary colors, or utility colors (like grays).
+
+// Primary colors.
+$dark-blue: #14133b;
+
+// TODO: spell this correctly...
+$fuschia: #9e023b;
+$yellow: #f2a324;
+$orange: #f6433e;
+$beige: #f4d1a6;
+
+.bg-dark-blue { background-color: $dark-blue; }
+.bg-fuschia { background-color: $fuschia; }
+.bg-yellow { background-color: $yellow; }
+.bg-orange { background-color: $orange; }
+.bg-beige { background-color: $beige; }
+
+// Secondary colors.
+$teal: #0a5365;
+$green: #055c2b;
+$purple: #501888;
+$gainsboro: #dcdcdc;
+
+// Alert colors.
+$alert-color: transparentize($yellow, .8);
+$error-color: transparentize($fuschia, .8);
+$notice-color: transparentize($orange, .8);
+$success-color: transparentize($green, .8);
+
+// Action colors.
+$action-color: $teal;
+$action-color-hover: lighten($teal, 10%);
