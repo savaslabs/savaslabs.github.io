@@ -12,7 +12,21 @@ To see all the code for this style guide and our website, check out our [GitHub 
 
 ### Directory structure
 
-Our SCSS directory structure is based on [SMACSS](https://smacss.com/). For the most part, you should be adding styles to the `scss/components` directory. Each component should live in its own file, with the name of the file matching the name of the component in the styleguide. For child components, name the file `_parent--child.scss`, e.g. `_buttons--submit.scss`.
+Our SCSS directory is based on the following hierarchy:
+
+- 00: Libraries
+- 01: Base styles (importing libraries, setting variables, CSS reset)
+- 02: Colors
+- 03: Typography
+- 04: Components
+- 05: Regions
+- 06: Pages
+
+Components are discrete site elements that can be dropped into any region or page. Each component should live in its own file, with the name of the file matching the name of the component in the style guide. For child components, name the file `_parent--child.scss`, e.g. `_buttons--submit.scss`.
+
+Regions are repeated areas that use several components, like the header and footer.
+
+The pages directory will hold layout styles on the page level.
 
 ### Adding components to the style guide
 
@@ -72,4 +86,4 @@ Styles specific to the style guide are housed in `_assets/styles/scss/styleguide
 
 ## Acknowledgements
 
-This documentation is generated using [Hologram](http://github.com/trulia/hologram) and contains markup and styles adapted from the [Acme boilerplate](https://github.com/mattrothenberg/styleguide-boilerplate).
+This documentation is generated using [Hologram](http://github.com/trulia/hologram) and contains some markup and styles adapted from the [Acme boilerplate](https://github.com/mattrothenberg/styleguide-boilerplate).
