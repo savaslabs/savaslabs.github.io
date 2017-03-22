@@ -9,9 +9,20 @@
 @import 'scss/01-base/base';
 
 // Typography rules.
+@import 'scss/03-typography/blockquote';
+@import 'scss/03-typography/headings';
+@import 'scss/03-typography/hr';
+@import 'scss/03-typography/links';
+@import 'scss/03-typography/lists';
+@import 'scss/03-typography/paragraphs';
+
+// TODO: Remove.
 @import 'scss/03-typography/typography';
 
 // Component rules.
+
+
+// TODO: Refactor and remove.
 @import 'scss/04-components/blog';
 @import 'scss/04-components/cards';
 @import 'scss/04-components/case-study-list';
