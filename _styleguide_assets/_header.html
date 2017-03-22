@@ -40,8 +40,11 @@
           <% if @blocks.length > 0 %>
             <div class="sg-content__content__menu">
               <ul>
+                <%# Print top-level components. %>
                 <% @blocks.each do |b| %>
-                <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+                  <% if b[:parent] == nil %>
+                    <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+                  <% end %>
                 <% end %>
               </ul>
             </div>
