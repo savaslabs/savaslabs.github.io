@@ -5,14 +5,13 @@
  */
 
 .home__cover {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-
   background: url('/assets/img/home-cover-image/home-cover-code-400.png') $dark-blue center center no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
   height: 88vh;
+  justify-content: center;
   text-align: center;
 
   // Use proper image depending on screen size and resolution.
