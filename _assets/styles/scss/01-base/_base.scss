@@ -5,16 +5,16 @@
  */
 
 // Import variables and mixins to be used (Bourbon).
-@import '../lib/bourbon/bourbon';
+@import '../00-lib/bourbon/bourbon';
 
 // Import grid to be used (Bourbon's Neat).
-@import '../lib/neat/neat';
+@import '../00-lib/neat/neat';
 
 // Import breakpoints.
 @import 'breakpoints';
 
 // Import Bitters resets.
-@import '../lib/base/base';
+@import '../00-lib/base/base';
 
 // Uncomment to turn on Neat's visual grid for development.
 //body {
