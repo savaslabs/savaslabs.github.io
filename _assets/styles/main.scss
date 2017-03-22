@@ -79,7 +79,12 @@
 @import 'scss/04-components/work-table';
 
 // Region rules.
-
+@import 'scss/05-regions/call-to-action';
+@import 'scss/05-regions/footer';
+@import 'scss/05-regions/header';
+@import 'scss/05-regions/hero-image';
+@import 'scss/05-regions/services-icons';
+@import 'scss/05-regions/work-tiles';
 
 // Page rules (layout).
 @import 'scss/06-pages/base-layout';
