@@ -427,7 +427,7 @@ gulp.task('serve', ['build:local'], function() {
     // Ignore style guide SCSS.
     // Rebuild the style guide to catch updates to component markup.
     gulp.watch(
-      ['_assets/styles/**/*.scss', '!_assets/styles/scss/styleguide/**/*', '!_assets/styles/styleguide.scss'],
+      ['_assets/styles/**/*.scss', '!_assets/styles/scss/07-styleguide/**/*', '!_assets/styles/styleguide.scss'],
       ['build:styles', 'build:styleguide:watch']
     );
 
@@ -461,7 +461,7 @@ gulp.task('serve', ['build:local'], function() {
 
     // Watch style guide SCSS.
     gulp.watch(
-      ['_assets/styles/styleguide.scss', '_assets/styles/scss/styleguide/**/*.scss'],
+      ['_assets/styles/styleguide.scss', '_assets/styles/scss/07-styleguide/**/*.scss'],
       ['build:styles:styleguide']
     );
 
