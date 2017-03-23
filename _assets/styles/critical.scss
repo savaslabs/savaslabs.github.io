@@ -3,10 +3,7 @@
  * Styles needed above the fold.
  */
 
-/* Import Sass mixins, variables, Compass modules, Bourbon and Neat, etc. */
-@import 'scss/init';
-
-/* HTML element (SMACSS base) rules */
+/* Libraries and HTML element (SMACSS base) rules */
 @import 'scss/base/normalize';
 @import 'scss/base/base';
 @import 'scss/base/tables';
