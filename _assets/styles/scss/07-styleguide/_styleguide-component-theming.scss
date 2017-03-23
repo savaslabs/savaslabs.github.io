@@ -1,0 +1,26 @@
+/**
+ * @file
+ *
+ * Styles for component examples only for the style guide (e.g. color swatches).
+ */
+
+// Color chips.
+.styleguide-color-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .styleguide-color-chip__wrapper {
+    padding-bottom: 1em;
+    text-align: center;
+
+    .styleguide-color-chip__bg {
+      height: 9em;
+      width: 9em;
+    }
+
+    code {
+      display: block;
+    }
+  }
+}

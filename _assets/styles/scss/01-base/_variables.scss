@@ -44,7 +44,7 @@ $navigation-submenu-width: 10em;
 $horizontal-bar-mode: $medium-screen-up;
 
 // Footer refill variables.
-$footer-background: $dark-blue;
+$footer-background: $dark-teal;
 $footer-color: $base-background-color;
 $footer-link-color: $footer-color;
 $footer-disclaimer-color: $footer-color;
@@ -86,7 +86,7 @@ $expander-toggle-margin: 1em;
 }
 
 %button {
-  background-color: $action-color;
+  background-color: $teal;
   border-radius: 3px;
   color: $base-background-color;
   font-family: $copytext-font;
@@ -96,7 +96,7 @@ $expander-toggle-margin: 1em;
 
   &:hover,
   &:focus {
-    background-color: $action-color-hover;
+    background-color: lighten($teal, 10%);;
   }
 }
 
@@ -111,7 +111,7 @@ $expander-toggle-margin: 1em;
 
   &:hover,
   &:focus {
-    background-color: $action-color-hover;
+    background-color: lighten($teal, 10%);;
   }
 }
 
@@ -218,10 +218,10 @@ $base2:           #eee8d5; // cream
 $base3:           #fdf6e3; // white
 $solar-yellow:    $yellow;
 $solar-orange:    $orange;
-$solar-red:       $fuschia;
+$solar-red:       $magenta;
 $solar-magenta:   #d33682;
 $solar-violet:    $purple;
-$solar-blue:      $dark-blue;
+$solar-blue:      $dark-teal;
 $solar-cyan:      $teal;
 $solar-green:     #055c2b;
 

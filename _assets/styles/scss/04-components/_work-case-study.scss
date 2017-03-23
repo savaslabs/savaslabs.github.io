@@ -99,7 +99,7 @@
 
     &.case-study__content--objective {
       h2 {
-        color: $fuschia;
+        color: $magenta;
       }
     }
 
@@ -109,7 +109,7 @@
         order: 2;
 
         h2 {
-          color: $dark-blue;
+          color: $dark-teal;
 
           @include grid-media($large-screen-up) {
             padding-left: 3em;
