@@ -7,7 +7,7 @@
 // scss-lint:disable MergeableSelector
 
 body {
-  color: $dark-blue;
+  color: $dark-teal;
   font-family: $copytext-font;
   font-size: 18px;
 }
@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $fuschia;
+  color: $magenta;
   font-family: $heading-font;
   font-weight: 300;
 }
@@ -110,12 +110,12 @@ h1.styleguide {
 }
 
 a {
-  color: $action-color;
+  color: $teal;
   transition: all .1s linear;
 
   &:hover,
   &:focus {
-    color: $action-color-hover;
+    color: lighten($teal, 10%);;
   }
 }
 
@@ -127,7 +127,7 @@ p a,
 
   &:hover,
   &:focus {
-    border-bottom: .1em solid $action-color-hover;
+    border-bottom: .1em solid lighten($teal, 10%);;
   }
 }
 // scss-lint:enable ColorVariable

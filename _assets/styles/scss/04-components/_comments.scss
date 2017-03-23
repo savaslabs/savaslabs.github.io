@@ -8,7 +8,7 @@
 .expander {
 
   .expander-trigger {
-    color: $fuschia;
+    color: $magenta;
     cursor: pointer;
     display: block;
     font-size: 1.2em;
@@ -123,7 +123,7 @@
 
   // Highlight field indicated in an error response.
   .error-field {
-    border-color: $fuschia;
+    border-color: $magenta;
     border-width: 3px;
   }
 

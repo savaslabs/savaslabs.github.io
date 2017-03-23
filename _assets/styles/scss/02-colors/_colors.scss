@@ -8,59 +8,65 @@
 
 /*doc
 ---
-title: Colors
-name: Colors
+title: Primary colors
+name: colors--primary
 category: colors
 ---
 
-```html_example
-<div class="styleguide-color-chip bg-dark-blue">
-  $dark-blue
+<div class="styleguide-color-chips">
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-magenta"></div>
+    <code>$magenta</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-orange"></div>
+    <code>$orange</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-eggshell"></div>
+    <code>$eggshell</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-teal"></div>
+    <code>$teal</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-dark-teal"></div>
+    <code>$dark-teal</code>
+  </div>
 </div>
-<div class="styleguide-color-chip bg-fuschia">
-  $fuschia
-</div>
-<div class="styleguide-color-chip bg-yellow">
-  $yellow
-</div>
-<div class="styleguide-color-chip bg-orange">
-  $orange
-</div>
-<div class="styleguide-color-chip bg-beige">
-  $beige
-</div>
-```
+
+| Variable     | Hex       | rgb           |
+| ------------ | --------- | ------------- |
+| `$magenta`   | `#9e023b` | `158,2,59`    |
+| `$orange`    | `#d3281b` | `222,40,27`   |
+| `$eggshell`  | `#fff8f3` | `225,248,243` |
+| `$teal`      | `#0a5365` | `10,83,101`   |
+| `$dark-teal` | `#06282d` | `6,40,45`     |
+
 */
 
-// TODO: may need primary and secondary colors, or utility colors (like grays).
-
 // Primary colors.
-$dark-blue: #14133b;
+$magenta: #9e023b;
+$orange: #d3281b;
+$eggshell: #fff8f3;
+$teal: #0a5365;
+$dark-teal: #06282d;
 
-// TODO: spell this correctly...
-$fuschia: #9e023b;
-$yellow: #f2a324;
-$orange: #f6433e;
-$beige: #f4d1a6;
-
-.bg-dark-blue { background-color: $dark-blue; }
-.bg-fuschia { background-color: $fuschia; }
-.bg-yellow { background-color: $yellow; }
+.bg-magenta { background-color: $magenta; }
 .bg-orange { background-color: $orange; }
-.bg-beige { background-color: $beige; }
+.bg-eggshell { background-color: $eggshell; }
+.bg-teal { background-color: $teal; }
+.bg-dark-teal { background-color: $dark-teal; }
 
 // Secondary colors.
-$teal: #0a5365;
+$yellow: #f2a324;
 $green: #055c2b;
 $purple: #501888;
 $gainsboro: #dcdcdc;
 
 // Alert colors.
 $alert-color: transparentize($yellow, .8);
-$error-color: transparentize($fuschia, .8);
+$error-color: transparentize($magenta, .8);
 $notice-color: transparentize($orange, .8);
 $success-color: transparentize($green, .8);
-
-// Action colors.
-$action-color: $teal;
-$action-color-hover: lighten($teal, 10%);
