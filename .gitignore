@@ -10,3 +10,6 @@ _includes/critical.css
 # For Travis.
 .bundle
 vendor
+
+# For the Hologram style guide.
+_styleguide_assets/styleguide.css

@@ -1,0 +1,63 @@
+/**
+ * @file
+ *
+ * Styles for the style guide header.
+ */
+
+// Title section.
+.sg-header__title {
+  background-color: $gainsboro;
+  padding: 1em 0;
+
+  .sg-outer-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @include media($medium-screen-up) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+
+  .sg-header__title__logo {
+    max-height: 70px;
+    padding: .5em 1em;
+  }
+
+  .sg-header__title__text {
+    font-family: $heading-font;
+    font-size: 150%;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding: .333em .666em;
+
+    @include media($medium-screen-up) {
+      text-align: left;
+    }
+  }
+}
+
+// Main navigation.
+.sg-header__menu {
+  border-bottom: solid 1px $gainsboro;
+  text-align: left;
+
+  .sg-header__menu__nav {
+    overflow: auto;
+    padding: .5em 1em;
+
+    ul {
+      li {
+        float: left;
+        padding-right: 1em;
+        text-transform: uppercase;
+
+        .active {
+          color: $dark-blue;
+        }
+      }
+    }
+  }
+}

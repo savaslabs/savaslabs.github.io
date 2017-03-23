@@ -1,0 +1,60 @@
+/**
+ * @file
+ *
+ * Layout styles for the style guide.
+ */
+
+.sg-outer-container {
+  @include outer-container();
+}
+
+.sg-content {
+  padding: $base-margin 0;
+
+  .sg-content__content {
+    padding: 0 1em;
+  }
+}
+
+// Sidebar menu.
+.sg-content__content__menu {
+  display: none;
+
+  @include media($large-screen-up) {
+    @include span-columns(2);
+
+    display: block;
+
+    ul {
+      border: solid 1px $gainsboro;
+      border-radius: $base-border-radius;
+
+      li {
+        border-bottom: solid 1px $gainsboro;
+        padding: .5em;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// Main content.
+.sg-content__content__body {
+  @include span-columns(12);
+
+  @include media($large-screen-up) {
+    @include span-columns(10);
+  }
+}
+
+// Keep home page content from getting too wide.
+.sg-home {
+  .sg-content__content__body {
+    @include media($large-screen-up) {
+      @include span-columns(8);
+    }
+  }
+}

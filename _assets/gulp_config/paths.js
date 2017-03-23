@@ -8,11 +8,13 @@
 var paths = {};
 
 // Directory locations.
-paths.assetsDir       = '_assets/';      // The files Gulp will handle.
-paths.jekyllDir       = '';              // The files Jekyll will handle.
-paths.jekyllAssetsDir = 'assets/';       // The asset files Jekyll will handle.
-paths.siteDir         = '_site/';        // The resulting static site.
-paths.siteAssetsDir   = '_site/assets/'; // The resulting static site's assets.
+paths.assetsDir        = '_assets/';      // The files Gulp will handle.
+paths.jekyllDir        = '';              // The files Jekyll will handle.
+paths.jekyllAssetsDir  = 'assets/';       // The asset files Jekyll will handle.
+paths.siteDir          = '_site/';        // The resulting static site.
+paths.siteAssetsDir    = '_site/assets/'; // The resulting static site's assets.
+paths.styleGuideAssets = '_styleguide_assets';
+paths.styleGuideDir    = 'styleguide';
 
 // Folder naming conventions.
 paths.postFolderName   = '_posts';
@@ -41,6 +43,7 @@ paths.siteCssFiles   = paths.siteAssetsDir + paths.stylesFolderName;
 paths.siteJsFiles    = paths.siteAssetsDir + paths.scriptFolderName;
 paths.siteImageFiles = paths.siteAssetsDir + paths.imageFolderName;
 paths.siteFontFiles  = paths.siteAssetsDir + paths.fontFolderName;
+paths.siteStyleGuide = paths.siteDir       + paths.styleGuideDir;
 
 // Glob patterns by file type.
 paths.sassPattern     = '/**/*.scss';

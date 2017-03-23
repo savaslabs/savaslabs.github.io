@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Savas Labs Front End Style Guide</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|Roboto+Slab:300,400|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="styleguide.css">
+
+    <meta name="description" content="A style guide and component library for Savas Labs">
+  </head>
+  <body class="sg-body <%= 'sg-home' if title.length == 0 %>">
+    <header class="sg-header">
+      <div class="sg-header__title">
+        <div class="sg-outer-container">
+          <img class="sg-header__title__logo" src="images/logo.png" alt="Savas Labs">
+          <p class="sg-header__title__text">Savas Labs Front End Style Guide</p>
+        </div>
+      </div>
+      <div class="sg-header__menu">
+        <div class="sg-outer-container">
+          <nav class="sg-header__menu__nav">
+            <ul>
+              <li><a class="<%= 'active' if title.length == 0 %>" href="index.html">Intro</a></li>
+              <li><a class="<%= 'active' if title == 'colors' %>" href="colors.html">Colors</a></li>
+              <li><a class="<%= 'active' if title == 'Typography' %>" href="typography.html">Typography</a></li>
+              <li><a class="<%= 'active' if title == 'Components' %>" href="components.html">Components</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="sg-content">
+      <div class="sg-outer-container">
+        <div class="sg-content__content">
+          <% if @blocks.length > 0 %>
+            <div class="sg-content__content__menu">
+              <ul>
+                <% @blocks.each do |b| %>
+                <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="sg-content__content__body">
+

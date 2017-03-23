@@ -1,3 +1,18 @@
+/**
+ * @file
+ *
+ * Gulp tasks for the Savas Labs website.
+ *
+ * Table of contents:
+ *   1. Styles
+ *   2. Scripts
+ *   3. Images
+ *   4. Fonts
+ *   5. Jekyll
+ *   6. Style Guide
+ *   7. Misc.
+ */
+
 // Define variables.
 var appendPrepend  = require('gulp-append-prepend');
 var autoprefixer   = require('autoprefixer');
@@ -18,10 +33,19 @@ var runSequence    = require('run-sequence');
 var sass           = require('gulp-ruby-sass');
 var uglify         = require('gulp-uglify');
 
+// Include paths.
 var paths          = require('./_assets/gulp_config/paths');
 
-// Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
-// outputs file to the appropriate location.
+// -----------------------------------------------------------------------------
+//   1: Styles
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: build:styles:main
+ *
+ * Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
+ * outputs file to the appropriate location.
+ */
 gulp.task('build:styles:main', function() {
     return sass(paths.sassFiles + '/main.scss', {
         style: 'compressed',
@@ -31,11 +55,16 @@ gulp.task('build:styles:main', function() {
         .pipe(cleancss())
         .pipe(gulp.dest(paths.jekyllCssFiles))
         .pipe(gulp.dest(paths.siteCssFiles))
+        .pipe(gulp.dest(paths.siteStyleGuide))
         .pipe(browserSync.stream())
         .on('error', gutil.log);
 });
 
-// Processes critical CSS, to be included in head.html.
+/**
+ * Task: build:styles:critical
+ *
+ * Processes critical CSS, to be included in head.html.
+ */
 gulp.task('build:styles:critical', function() {
     return sass(paths.sassFiles + '/critical.scss', {
         style: 'compressed',
@@ -47,8 +76,12 @@ gulp.task('build:styles:critical', function() {
         .on('error', gutil.log);
 });
 
-// Copies any other CSS files to the assets directory, to be used by pages/posts
-// that specify custom CSS files.
+/**
+ * Task: build:styles:css
+ *
+ * Copies any other CSS files to the assets directory, to be used by pages/posts
+ * that specify custom CSS files.
+ */
 gulp.task('build:styles:css', function() {
     return gulp.src([paths.sassFiles + '/*.css'])
       .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
@@ -58,20 +91,55 @@ gulp.task('build:styles:css', function() {
       .on('error', gutil.log);
 });
 
-// Builds all styles.
+/**
+ * Task: build:styles
+ *
+ * Builds all site styles.
+ */
 gulp.task('build:styles', [
     'build:styles:main',
     'build:styles:critical',
     'build:styles:css'
 ]);
 
+/**
+ * Task: clean:styles
+ *
+ * Deletes all processed site styles.
+ */
 gulp.task('clean:styles', function(callback) {
     del([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
     callback();
 });
 
-// Concatenates and uglifies global JS files and outputs result to the
-// appropriate location.
+/**
+ * Task: build:styles:styleguide
+ *
+ * Generates CSS for the style guide.
+ */
+gulp.task('build:styles:styleguide', function() {
+    return sass(paths.sassFiles + '/styleguide.scss', {
+        style: 'compressed',
+        trace: true,
+        loadPath: [paths.sassFiles]
+    }).pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+      .pipe(cleancss())
+      .pipe(gulp.dest(paths.styleGuideAssets))
+      .pipe(gulp.dest(paths.siteStyleGuide))
+      .pipe(browserSync.stream())
+      .on('error', gutil.log);
+});
+
+// -----------------------------------------------------------------------------
+//   2: Scripts
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: build:scripts:global
+ *
+ * Concatenates and uglifies global JS files and outputs result to the
+ * appropriate location.
+ */
 gulp.task('build:scripts:global', function() {
     return gulp.src([
         paths.jsFiles + '/global/lib' + paths.jsPattern,
@@ -88,8 +156,12 @@ gulp.task('build:scripts:global', function() {
         .on('error', gutil.log);
 });
 
-// Concatenates and uglifies leaflet JS files and outputs result to the
-// appropriate location.
+/**
+ * Task: build:scripts:leaflet
+ *
+ * Concatenates and uglifies leaflet JS files and outputs result to the
+ * appropriate location.
+ */
 gulp.task('build:scripts:leaflet', function() {
     return gulp.src([
         paths.jsFiles + '/leaflet/leaflet.js',
@@ -102,17 +174,35 @@ gulp.task('build:scripts:leaflet', function() {
         .on('error', gutil.log);
 });
 
-// Builds all scripts.
+/**
+ * Task: build:scripts
+ *
+ * Builds all scripts.
+ */
 gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
 
+/**
+ * Task: clean:scripts
+ *
+ * Deletes all processed scripts.
+ */
 gulp.task('clean:scripts', function(callback) {
     del([paths.jekyllJsFiles, paths.siteJsFiles]);
     callback();
 });
 
-// Optimizes and copies image files.
-// We're including imagemin options because we're overriding the default
-// JPEG optimization plugin.
+// -----------------------------------------------------------------------------
+//   3: Images
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: build:images
+ *
+ * Optimizes and copies image files.
+ *
+ * We're including imagemin options because we're overriding the default JPEG
+ * optimization plugin.
+ */
 gulp.task('build:images', function() {
     return gulp.src(paths.imageFilesGlob)
         .pipe(cache(imagemin([
@@ -126,15 +216,32 @@ gulp.task('build:images', function() {
         .pipe(browserSync.stream());
 });
 
+/**
+ * Task: clean:images
+ *
+ * Deletes all processed images.
+ */
 gulp.task('clean:images', function(callback) {
     del([paths.jekyllImageFiles, paths.siteImageFiles]);
     callback();
 });
 
-// Copies fonts.
+// -----------------------------------------------------------------------------
+//   4: Fonts
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: build:fonts
+ *
+ * Copies fonts.
+ */
 gulp.task('build:fonts', ['fontawesome']);
 
-// Places Font Awesome fonts in proper location.
+/**
+ * Task: fontawesome
+ *
+ * Places Font Awesome fonts in the proper location.
+ */
 gulp.task('fontawesome', function() {
     return gulp.src(paths.fontFiles + '/font-awesome/**.*')
         .pipe(rename(function(path) {path.dirname = '';}))
@@ -144,12 +251,25 @@ gulp.task('fontawesome', function() {
         .on('error', gutil.log);
 });
 
+/**
+ * Task: clean:fonts
+ *
+ * Deletes all processed fonts.
+ */
 gulp.task('clean:fonts', function(callback) {
     del([paths.jekyllFontFiles, paths.siteFontFiles]);
     callback();
 });
 
-// Runs jekyll build command.
+// -----------------------------------------------------------------------------
+//   5: Jekyll
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: build:jekyll
+ *
+ * Runs the jekyll build command.
+ */
 gulp.task('build:jekyll', function() {
     var shellCommand = 'bundle exec jekyll build --config _config.yml';
 
@@ -158,7 +278,11 @@ gulp.task('build:jekyll', function() {
         .on('error', gutil.log);
 });
 
-// Runs jekyll build command using test config.
+/**
+ * Task: build:jekyll:test
+ *
+ * Runs the jekyll build command using the test config file.
+ */
 gulp.task('build:jekyll:test', function() {
     var shellCommand = 'bundle exec jekyll build --future --config _config.yml,_config.test.yml';
 
@@ -167,7 +291,11 @@ gulp.task('build:jekyll:test', function() {
         .on('error', gutil.log);
 });
 
-// Runs jekyll build command using local config.
+/**
+ * Task: build:jekyll:local
+ *
+ * Runs the jekyll build command using the test and local config files.
+ */
 gulp.task('build:jekyll:local', function() {
     var shellCommand = 'bundle exec jekyll build --future --config _config.yml,_config.test.yml,_config.dev.yml';
 
@@ -176,60 +304,112 @@ gulp.task('build:jekyll:local', function() {
         .on('error', gutil.log);
 });
 
-// Deletes the entire _site directory.
+/**
+ * Task: clean:jekyll
+ *
+ * Deletes the entire _site directory.
+ */
 gulp.task('clean:jekyll', function(callback) {
     del(['_site']);
     callback();
 });
 
+/**
+ * Task: clean
+ *
+ * Runs all the clean commands.
+ */
 gulp.task('clean', ['clean:jekyll',
     'clean:fonts',
     'clean:images',
     'clean:scripts',
     'clean:styles']);
 
-// Builds site anew.
+/**
+ * Task: build
+ *
+ * Build the site anew.
+ */
 gulp.task('build', function(callback) {
     runSequence('clean',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
         'build:jekyll',
+        'styleguide',
         callback);
 });
 
-// Builds site anew using test config.
+/**
+ * Task: build:test
+ *
+ * Builds the site anew using test config.
+ */
 gulp.task('build:test', function(callback) {
     runSequence('clean',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
         'build:jekyll:test',
+        'styleguide',
         callback);
 });
 
-// Builds site anew using local config.
+/**
+ * Task: build:test
+ *
+ * Builds the site anew using test and local config.
+ */
 gulp.task('build:local', function(callback) {
     runSequence('clean',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
         'build:jekyll:local',
+        'styleguide',
         callback);
 });
 
-// Default Task: builds site.
+/**
+ * Task: default
+ *
+ * Builds the site anew.
+ */
 gulp.task('default', ['build']);
 
-// Special tasks for building and then reloading BrowserSync.
+/**
+ * Task: build:jekyll:watch
+ *
+ * Special task for building the site then reloading via BrowserSync.
+ */
 gulp.task('build:jekyll:watch', ['build:jekyll:local'], function(callback) {
     browserSync.reload();
     callback();
 });
 
+/**
+ * Task: build:scripts:watch
+ *
+ * Special task for building scripts then reloading via BrowserSync.
+ */
 gulp.task('build:scripts:watch', ['build:scripts'], function(callback) {
     runSequence('build:jekyll:local');
     browserSync.reload();
     callback();
 });
 
-// Static Server + watching files.
-// Note: passing anything besides hard-coded literal paths with globs doesn't
-// seem to work with gulp.watch().
+/**
+ * Task: build:styleguide:watch
+ *
+ * Special task for building the style guide then reloading via BrowserSync.
+ */
+gulp.task('build:styleguide:watch', ['build:styleguide'], function(callback) {
+    browserSync.reload();
+    callback();
+});
+
+/**
+ * Task: serve
+ *
+ * Static Server + watching files.
+ *
+ * Note: passing anything besides hard-coded literal paths with globs doesn't
+ * seem to work with gulp.watch().
+ */
 gulp.task('serve', ['build:local'], function() {
 
     browserSync.init({
@@ -244,7 +424,12 @@ gulp.task('serve', ['build:local'], function() {
     gulp.watch(['_config*.yml'], ['build:jekyll:watch']);
 
     // Watch .scss files; changes are piped to browserSync.
-    gulp.watch('_assets/styles/**/*.scss', ['build:styles']);
+    // Ignore style guide SCSS.
+    // Rebuild the style guide to catch updates to component markup.
+    gulp.watch(
+      ['_assets/styles/**/*.scss', '!_assets/styles/scss/styleguide/**/*', '!_assets/styles/styleguide.scss'],
+      ['build:styles', 'build:styleguide:watch']
+    );
 
     // Watch .js files.
     gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
@@ -260,8 +445,10 @@ gulp.task('serve', ['build:local'], function() {
         gulp.watch('_drafts/*.+(md|markdown|MD)', ['build:jekyll:watch']);
     }
 
-    // Watch html and markdown files.
-    gulp.watch(['**/*.+(html|md|markdown|MD)', '!_site/**/*.*'], ['build:jekyll:watch']);
+    // Watch HTML and markdown files.
+    gulp.watch(
+      ['**/*.+(html|md|markdown|MD)', '!_site/**/*.*', '!_styleguide_assets/**/*.*', '!_assets/styles/*.md'],
+      ['build:jekyll:watch']);
 
     // Watch RSS feed XML files.
     gulp.watch('**.xml', ['build:jekyll:watch']);
@@ -271,10 +458,68 @@ gulp.task('serve', ['build:local'], function() {
 
     // Watch favicon.png.
     gulp.watch('favicon.png', ['build:jekyll:watch']);
+
+    // Watch style guide SCSS.
+    gulp.watch(
+      ['_assets/styles/styleguide.scss', '_assets/styles/scss/styleguide/**/*.scss'],
+      ['build:styles:styleguide']
+    );
+
+    // Watch style guide HTML.
+    gulp.watch(
+      ['_styleguide_assets/*.html', '_assets/styles/*.md'],
+      ['build:styleguide:watch']);
 });
 
-// Updates Ruby gems
-gulp.task('update:bundle', function() {
+// -----------------------------------------------------------------------------
+//   6: Style Guide
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: styleguide
+ *
+ * Creates the style guide within the _site directory.
+ */
+gulp.task('styleguide', function(callback) {
+    runSequence('clean:styleguide',
+      'build:styles:styleguide',
+      'build:styleguide',
+      callback);
+});
+
+/**
+ * Task: build:styleguide
+ *
+ * Builds the style guide via the hologram gem.
+ */
+gulp.task('build:styleguide', function(callback) {
+    var shellCommand = 'hologram -c hologram_config.yml';
+
+    return gulp.src('')
+      .pipe(run(shellCommand))
+      .on('error', gutil.log);
+});
+
+/**
+ * Task: clean:styleguide
+ *
+ * Deletes the entire _site/styleguide directory.
+ */
+gulp.task('clean:styleguide', function(callback) {
+    del(['_site/styleguide']);
+    callback();
+});
+
+// -----------------------------------------------------------------------------
+//   7: Misc.
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: update:gems
+ *
+ * Updates Ruby gems.
+ */
+gulp.task('update:gems', function() {
     return gulp.src('')
         .pipe(run('bundle install'))
         .pipe(run('bundle update'))
