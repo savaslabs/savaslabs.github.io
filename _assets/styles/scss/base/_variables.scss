@@ -77,6 +77,7 @@ $heading-font: 'Roboto Slab', Verdana, sans-serif;
 $monospace-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace !default;
 
 // Spacing and other utilities -------------------------------------------------
+$max-width: 1160px;
 $base-margin: $base-spacing * 2;
 $case-study-header-break: (
   columns: 12,

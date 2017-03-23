@@ -1,7 +1,22 @@
 /**
  * @file
  *
- * Import base styles and Bitters overrides.
+ * Import libraries.
  */
 
+// Import variables and mixins to be used (Bourbon).
+@import '../lib/bourbon/bourbon';
+
+// Import grid to be used (Bourbon's Neat).
+@import '../lib/neat/neat';
+
+// Import breakpoints.
+@import 'breakpoints';
+
+// Import Bitters resets.
 @import '../lib/base/base';
+
+// Uncomment to turn on Neat's visual grid for development.
+//body {
+//  @include grid-visual;
+//}
