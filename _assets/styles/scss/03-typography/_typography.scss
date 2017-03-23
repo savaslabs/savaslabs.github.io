@@ -41,31 +41,6 @@ h4 { font-size: 140%; }
 h5 { font-size: 120%; }
 h6 { font-size: 100%; }
 
-// Links -----------------------------------------------------------------------
-
-a {
-  color: $teal;
-  transition: all .1s linear;
-
-  &:hover,
-  &:focus {
-    color: lighten($teal, 10%);;
-  }
-}
-
-// Give inline links an underlined look.
-// scss-lint:disable ColorVariable
-p a,
-.post li a {
-  border-bottom: .1em solid rgba(10, 83, 101, .1);
-
-  &:hover,
-  &:focus {
-    border-bottom: .1em solid lighten($teal, 10%);;
-  }
-}
-// scss-lint:enable ColorVariable
-
 // Paragraphs and lists --------------------------------------------------------
 
 .post p,
