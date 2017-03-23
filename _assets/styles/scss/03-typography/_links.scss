@@ -10,9 +10,75 @@ title: Links
 name: links
 category: Typography
 ---
-```html_example
-<a href="#">This is a link</a>
-<p>This is an <a href="#">inline link</a></p>
-
+```html_example_table
+<a href="#">Normal link</a>
 ```
 */
+
+a {
+  color: $teal;
+  transition: all .1s linear;
+
+  &:hover,
+  &:focus {
+    color: lighten($teal, 10%);
+  }
+}
+
+/*doc
+---
+title: Inline links
+name: link--inline
+category: Typography
+parent: links
+---
+```html_example_table
+<p>This is an <a href="#">inline link</a></p>
+```
+*/
+
+// Inline links.
+// scss-lint:disable ColorVariable
+p a {
+  border-bottom: .1em solid rgba(10, 83, 101, .1);
+
+  &:hover,
+  &:focus {
+    border-bottom: .1em solid lighten($teal, 10%);
+  }
+}
+// scss-lint:enable ColorVariable
+
+
+/*doc
+---
+title: CTA links
+name: link--cta
+category: Typography
+parent: links
+---
+```html_example_table
+<div class="styleguide-cta-link">
+  <a href="#" class="link--cta">CTA link</a>
+<div>
+<div class="styleguide-cta-link styleguide-cta-link--inverse">
+  <a href="#" class="link--cta link--cta--inverse">Inverse CTA link</a>
+</div>
+```
+*/
+
+// CTA links.
+.link--cta {
+  text-transform: uppercase;
+}
+
+// White CTA links.
+.link--cta--inverse {
+  color: $white;
+
+  &:hover,
+  &:focus {
+    color: lighten($orange, 10%);
+  }
+}
+

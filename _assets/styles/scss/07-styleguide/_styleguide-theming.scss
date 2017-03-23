@@ -115,7 +115,7 @@ a {
 
   &:hover,
   &:focus {
-    color: lighten($teal, 10%);;
+    color: lighten($teal, 10%);
   }
 }
 
@@ -127,7 +127,7 @@ p a,
 
   &:hover,
   &:focus {
-    border-bottom: .1em solid lighten($teal, 10%);;
+    border-bottom: .1em solid lighten($teal, 10%);
   }
 }
 // scss-lint:enable ColorVariable
