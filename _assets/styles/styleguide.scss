@@ -2,8 +2,7 @@
  * Style guide styles.
  */
 
-// Import Sass mixins, variables, Compass modules, Bourbon and Neat, etc.
-@import 'scss/init';
+/* Libraries and HTML element (SMACSS base) rules */
 
 // HTML element (SMACSS base) rules.
 @import 'scss/base/normalize';
