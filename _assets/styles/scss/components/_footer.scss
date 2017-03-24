@@ -8,7 +8,7 @@
 
 .footer {
   background: $footer-background;
-  padding: ($base-spacing * 2) $gutter;
+  padding: ($base-spacing * 2) 0;
   width: 100%;
 
   ul {
@@ -22,7 +22,7 @@
     list-style: none;
     text-align: center;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       text-align: left;
     }
 
@@ -60,15 +60,14 @@
     @include clearfix;
     margin-bottom: $base-spacing;
 
-    @include media($medium-screen-up) {
-      @include shift(3);
+    @include grid-media($medium-screen-up) {
+      @include grid-shift(1.5);
     }
   }
 
   div ul {
-    @include media($medium-screen-up) {
-      @include span-columns(3);
-      @include omega(3n);
+    @include grid-media($medium-screen-up) {
+      @include grid-column(3);
       @include clearfix;
     }
 
@@ -76,7 +75,7 @@
       text-align: center;
       width: 100%;
 
-      @include media($medium-screen-up) {
+      @include grid-media($medium-screen-up) {
         text-align: left;
       }
 
@@ -106,9 +105,8 @@
 
 // Area below footer.
 .footer-copyright {
-  @include display(flex);
-
   background-color: $fuschia;
+  display: flex;
   height: 5em;
   width: 100%;
 

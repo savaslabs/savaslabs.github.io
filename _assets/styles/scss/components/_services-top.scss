@@ -5,8 +5,8 @@
  */
 
 .services {
-  @include display(flex);
-  @include flex-wrap(wrap);
+  display: flex;
+  flex-wrap: wrap;
 
   .services__service {
     margin-bottom: $base-margin;
@@ -27,7 +27,7 @@
 
   .services__service {
 
-    @include media($large-screen-up) {
+    @include grid-media($large-screen-up) {
       margin-bottom: 0;
       padding: $base-spacing;
       width: 50%;

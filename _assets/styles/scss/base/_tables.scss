@@ -14,7 +14,7 @@
   p {
     display: none;
 
-    @include media(em(450)) {
+    @include grid-media($small-screen-up) {
       display: inline;
     }
   }
@@ -22,7 +22,7 @@
   .table-minimal--contact__label {
     width: 30%;
 
-    @include media(em(450)) {
+    @include grid-media($small-screen-up) {
       width: 50%;
     }
   }

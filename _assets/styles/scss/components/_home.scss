@@ -20,9 +20,9 @@
     text-align: center;
 
     .job-posting-block__content {
-      @include media($medium-screen-up) {
-        @include span-columns(8);
-        @include shift(2);
+      @include grid-media($medium-screen-up) {
+        @include grid-column(8);
+        @include grid-shift(2);
 
         float: none;
       }

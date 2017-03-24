@@ -15,7 +15,7 @@
 
     .services__service {
 
-      @include media($medium-screen-up) {
+      @include grid-media($medium-screen-up) {
         margin-bottom: $base-spacing;
         padding: $base-spacing;
         width: 50%;

@@ -14,22 +14,20 @@
   }
 
   .client-logos {
-    @include display(flex);
-    @include justify-content(center);
-    @include align-items(center);
-    @include flex-wrap(wrap);
-
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: $base-margin;
 
     .client-logos__logo {
-      @include flex-basis(15em);
-      @include flex-grow(0);
-
+      flex-basis: 15em;
+      flex-grow: 0;
       margin: 0 0 $card-margin * 2;
       padding: .5em;
       text-align: center;
 
-      @include media(em(480)) {
+      @include grid-media($small-screen-up) {
         margin: 0 $card-margin $card-margin * 2;
       }
     }

@@ -77,8 +77,13 @@ $heading-font: 'Roboto Slab', Verdana, sans-serif;
 $monospace-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace !default;
 
 // Spacing and other utilities -------------------------------------------------
+$max-width: 1160px;
 $base-margin: $base-spacing * 2;
-$case-study-header-break: em(750px);
+$case-study-header-break: (
+  columns: 12,
+  gutter: 20px,
+  media: 750px
+);
 
 // Refills ---------------------------------------------------------------------
 
@@ -128,6 +133,13 @@ $expander-toggle-arrow-size: $expander-toggle-size;
 $expander-toggle-margin: 1em;
 
 // Mixins and abstract classes -------------------------------------------------
+@mixin outer-container() {
+  @include grid-container();
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 %button {
   background-color: $action-color;
   border-radius: 3px;
@@ -197,7 +209,7 @@ $expander-toggle-margin: 1em;
         padding: .3em 1em;
         width: 100%;
 
-        @include media($medium-screen-up) {
+        @include grid-media($medium-screen-up) {
           margin-bottom: 0;
           width: auto;
         }
@@ -244,7 +256,7 @@ $expander-toggle-margin: 1em;
 .flash-success { @include flash($success-color); }
 
 // Syntax highlighting ---------------------------------------------------------
-$noise-bg: image-url('noise.png') top left !default;
+$noise-bg: url('assets/img/noise.png') top left !default;
 
 // Syntax highlighting is based off a Sass port of the Solarized theme,
 // created by Brandon Mathis at Octopress.

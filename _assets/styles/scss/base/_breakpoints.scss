@@ -1,0 +1,42 @@
+/**
+ * @file
+ *
+ * Set breakpoints.
+ * These breakpoints can be used in the grid-media() function.
+ */
+
+// Small screen (e.g. mobile) and up.
+$small-screen-up-width: 450px;
+$small-screen-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: $small-screen-up-width
+);
+$small-screen-up: $small-screen-up-grid;
+
+// Medium screen (e.g. tablet) and up.
+$medium-screen-up-width: 640px;
+$medium-screen-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: $medium-screen-up-width
+);
+$medium-screen-up: $medium-screen-up-grid;
+
+// Large screen (e.g. desktop) and up.
+$large-screen-up-width: 860px;
+$large-screen-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: $large-screen-up-width
+);
+$large-screen-up: $large-screen-up-grid;
+
+// Extra large screen and up.
+$extra-large-screen-up-width: 1120px;
+$extra-large-screen-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: $extra-large-screen-up-width
+);
+$extra-large-screen-up: $extra-large-screen-up-grid;

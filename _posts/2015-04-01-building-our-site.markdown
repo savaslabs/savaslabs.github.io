@@ -5,6 +5,8 @@ date: 2015-04-01
 author: Anne Tomasevich
 tags: jekyll bourbon sass
 summary: What do web developers do when they have a few days between projects? Build an entire company website from scratch. Thanks to Jekyll and Bourbon, we were able to completely redo our website efficiently.
+disclaimer: |
+  This post includes some outdated Bourbon and Neat mixins, such as `span-columns` and `display(flex)`.
 ---
 
 As a newly branded company, Savas Labs needed a company website to showcase our work and abilities, and to provide a platform for connecting with other developers and to the Drupal community in particular via blogging and hosted events.

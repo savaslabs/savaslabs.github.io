@@ -10,17 +10,16 @@
 
 // Individual case studies.
 .case-studies__case-study {
-  @include display(flex);
-  @include align-items(center);
-  @include flex-wrap(wrap);
-
+  align-items: center;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
   margin: $base-spacing 0;
 
-  @include media($medium-screen-up) {
-    @include flex-wrap(nowrap);
+  @include grid-media($medium-screen-up) {
+    flex-wrap: nowrap;
   }
 
   h3,
@@ -34,7 +33,7 @@
   .case-study__description {
     padding: $base-spacing;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       padding: $base-margin $base-spacing;
     }
   }
@@ -43,7 +42,7 @@
     padding-bottom: 0;
     text-align: center;
 
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       padding-bottom: $base-margin * 2;
       width: 40%;
     }
@@ -54,7 +53,7 @@
   }
 
   .case-study__description {
-    @include media($medium-screen-up) {
+    @include grid-media($medium-screen-up) {
       width: 60%;
     }
 
