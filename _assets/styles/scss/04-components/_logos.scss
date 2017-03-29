@@ -1,0 +1,30 @@
+/**
+ * @file
+ *
+ * Logo styles.
+ */
+
+/*doc
+---
+title: Logos
+name: logos
+category: Components
+---
+Main logo and light logo.
+
+```html_example
+<div class="styleguide-logo">
+  <img src="/assets/img/logo.svg" alt="Savas Labs" class="savas-logo savas-logo--main">
+</div>
+<div class="styleguide-logo bg-teal">
+  <img src="/assets/img/logo-light.svg" alt="Savas Labs" class="savas-logo savas-logo--light">
+</div>
+```
+
+*/
+
+.savas-logo {
+  display: block;
+  height: $navigation-height;
+  padding: $navigation-padding-vertical 0;
+}

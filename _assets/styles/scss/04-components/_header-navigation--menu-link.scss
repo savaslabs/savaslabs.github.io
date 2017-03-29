@@ -7,12 +7,81 @@
 /*doc
 ---
 title: Header menu link
-name: header-navigation--menu-link
+name: 1header-navigation--menu-link
 category: Components
 parent: header-navigation
 ---
+A normal menu link plus the bold, magenta Contact link.
 
 ```html_example
+<li class="header-navigation__menu-link ">
+  <a href="/services">Services</a>
+</li>
+<li class="header-navigation__menu-link ">
+  <a href="/services">Contact</a>
+</li>
 ```
 
 */
+
+.header-navigation__menu-link {
+  display: block;
+  line-height: $navigation-height / 2;
+  overflow: hidden;
+  padding-right: .8em;
+  text-align: right;
+  width: 100%;
+  z-index: 9999;
+
+  @include grid-media($medium-screen-up) {
+    display: inline;
+    line-height: $navigation-height;
+    margin-right: -5px; // Fix space between inline elements.
+    padding-right: 0;
+    width: auto;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Styles for final menu item.
+  &:last-child {
+    a {
+      color: $magenta;
+      font-weight: bold;
+    }
+  }
+
+  a {
+    color: $navigation-color;
+    display: inline-block;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: background-color ease .2s;
+
+    // scss-lint:disable DeclarationOrder
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover-small;
+    }
+
+    @include grid-media($horizontal-bar-mode) {
+      padding-left: .75em;
+      padding-right: .75em;
+
+      &:focus,
+      &:hover {
+        background-color: $navigation-background-hover;
+        color: $navigation-color-hover-large;
+      }
+    }
+    // scss-lint:enable DeclarationOrder
+  }
+}
+
+.active-nav-item {
+  a {
+    color: $navigation-active-link-color;
+  }
+}
