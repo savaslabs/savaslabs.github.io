@@ -33,14 +33,16 @@ $case-study-header-break: (
 // Refills ---------------------------------------------------------------------
 
 // Navigation refill variables.
-$navigation-padding: 1em;
-$navigation-background: $teal;
-$navigation-color: transparentize($base-background-color, .3);
-$navigation-color-hover: $base-background-color;
-$navigation-height: 70px;
-$navigation-active-link-color: $base-background-color;
-$navigation-submenu-padding: $navigation-padding;
-$navigation-submenu-width: 10em;
+$navigation-height: 5.25em;
+$navigation-padding-vertical: 1.5em;
+$navigation-padding-horizontal-small: 1em;
+$navigation-padding-horizontal-large: 1.5em;
+$navigation-background: transparentize($white, .1);
+$navigation-background-hover: $magenta;
+$navigation-color: $dark-teal;
+$navigation-color-hover-small: $magenta;
+$navigation-color-hover-large: $white;
+$navigation-active-link-color: $teal;
 $horizontal-bar-mode: $medium-screen-up;
 
 // Footer refill variables.

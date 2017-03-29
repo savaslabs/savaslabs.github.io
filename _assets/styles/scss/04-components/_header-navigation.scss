@@ -10,8 +10,96 @@ title: Header Navigation
 name: header-navigation
 category: Components
 ---
+*/
+
+/*doc
+---
+title: Header menu
+name: 2header-navigation--menu
+category: Components
+parent: header-navigation
+---
 
 ```html_example
+  <a href="#" id="js-mobile-menu" class="header-navigation__mobile-menu-link">MENU</a>
+
+  <nav role="navigation" class="header-navigation">
+    <ul id="js-navigation-menu" class="header-navigation__menu">
+      <li class="header-navigation__menu-link ">
+        <a href="/company">Company</a>
+      </li>
+      <li class="header-navigation__menu-link ">
+        <a href="/results">Results</a>
+      </li>
+      <li class="header-navigation__menu-link ">
+        <a href="/services">Services</a>
+      </li>
+      <li class="header-navigation__menu-link ">
+        <a href="/blog">Blog</a>
+      </li>
+      <li class="header-navigation__menu-link ">
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
 ```
 
 */
+
+// Nav element.
+.header-navigation {
+  float: none;
+  z-index: 9999999;
+
+  @include grid-media($horizontal-bar-mode) {
+    clear: none;
+    float: right;
+    padding-bottom: 0;
+    padding-right: $navigation-padding-horizontal-large - .75em;
+  }
+}
+
+// The actual ul menu element.
+.header-navigation__menu {
+  clear: both;
+  display: none;
+  margin: 0 auto;
+  overflow: visible;
+  padding: 0;
+  -webkit-transform-style: preserve-3d; // Stop webkit flicker.
+  width: 100%;
+  z-index: 9999;
+
+  // Display inline on medium screens and up.
+  @include grid-media($horizontal-bar-mode) {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.show {
+    display: block;
+  }
+}
+
+// Mobile menu link.
+.header-navigation__mobile-menu-link {
+  color: $navigation-color;
+  display: block;
+  float: right;
+  font-weight: 700;
+  line-height: $navigation-height;
+  margin: 0;
+  padding-right: $navigation-padding-horizontal-small;
+  text-transform: uppercase;
+
+  // Don't show on medium screens and up.
+  @include grid-media($horizontal-bar-mode) {
+    display: none;
+  }
+
+  &:focus,
+  &:hover {
+    color: $navigation-color-hover-small;
+  }
+}

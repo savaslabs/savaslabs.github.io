@@ -1,10 +1,5 @@
 - title: Who we are
-  url: javascript:void(0)
-  sub-menu:
-    - title: Team
-      url: /team
-    - title: Mission & values
-      url: /mission-and-values
+  url: /team
 - title: Services
   url: /services
 - title: Our work

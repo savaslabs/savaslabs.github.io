@@ -1,0 +1,18 @@
+<!-- Mobile menu button. -->
+<a href="/" id="js-mobile-menu" class="header-navigation__mobile-menu-link">MENU</a>
+
+<!-- Main menu. -->
+<nav role="navigation" class="header-navigation">
+  <ul id="js-navigation-menu" class="header-navigation__menu show">
+    {% for link in site.data.navigation %}
+      {% comment %} Assign active nav item class. {% endcomment %}
+      {% assign active-nav-item = nil %}
+      {% if page.url contains link.url %}
+        {% assign active-nav-item = 'active-nav-item' %}
+      {% endif %}
+      <li class="header-navigation__menu-link {{ active-nav-item }}">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
