@@ -1,44 +1,90 @@
 /**
  * @file
- * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * Import libraries and styles.
  */
 
-/* Libraries and HTML element (SMACSS base) rules */
-@import 'scss/base/normalize';
-@import 'scss/base/base';
-@import 'scss/base/tables';
-@import 'scss/base/typography';
+// Libraries and base rules.
+@import 'scss/01-base/normalize';
+@import 'scss/01-base/base';
 
-/* Layout rules */
-@import 'scss/layout/base-layout';
+// Typography rules.
+@import 'scss/03-typography/blockquote';
+@import 'scss/03-typography/headings';
+@import 'scss/03-typography/hr';
+@import 'scss/03-typography/links';
+@import 'scss/03-typography/lists';
+@import 'scss/03-typography/paragraphs';
 
-/* Component rules (called 'modules' in SMACSS) */
-@import 'scss/components/blog';
-@import 'scss/components/cards';
-@import 'scss/components/case-study-list';
-@import 'scss/components/comments';
-@import 'scss/components/contact-block';
-@import 'scss/lib/font-awesome/font-awesome';
-@import 'scss/components/footer';
-@import 'scss/components/header-links';
-@import 'scss/components/home';
-@import 'scss/components/home-cover-image';
-@import 'scss/components/navigation';
-@import 'scss/components/post';
-@import 'scss/components/post-bottom';
-@import 'scss/components/post-footnotes';
-@import 'scss/components/post-top';
-@import 'scss/components/previous-next-links';
-@import 'scss/components/services-top';
-@import 'scss/components/sub-services';
-@import 'scss/components/syntax-highlighting';
-@import 'scss/components/tag';
-@import 'scss/components/team-bottom';
-@import 'scss/components/team-member-badges';
-@import 'scss/components/team-member-posts';
-@import 'scss/components/team-member-top';
-@import 'scss/components/team-top';
-@import 'scss/components/work';
-@import 'scss/components/work-case-study';
-@import 'scss/components/work-case-study-cover-image';
-@import 'scss/components/work-table';
+// TODO: Remove.
+@import 'scss/03-typography/typography';
+
+// Component rules.
+@import 'scss/04-components/branding';
+@import 'scss/04-components/buttons';
+@import 'scss/04-components/buttons--cta';
+@import 'scss/04-components/buttons--submit';
+@import 'scss/04-components/code';
+@import 'scss/04-components/code--block';
+@import 'scss/04-components/code--inline';
+@import 'scss/04-components/expander';
+@import 'scss/04-components/footer-navigation';
+@import 'scss/04-components/footer-navigation--menu-link';
+@import 'scss/04-components/form-elements';
+@import 'scss/04-components/form-elements--text';
+@import 'scss/04-components/form-elements--textarea';
+@import 'scss/04-components/forms';
+@import 'scss/04-components/forms--comment';
+@import 'scss/04-components/forms--contact';
+@import 'scss/04-components/header-navigation';
+@import 'scss/04-components/header-navigation--menu-link';
+@import 'scss/04-components/icons';
+@import 'scss/04-components/images';
+@import 'scss/04-components/images--hero';
+@import 'scss/04-components/tables';
+@import 'scss/04-components/tiles';
+@import 'scss/04-components/tiles--blog';
+@import 'scss/04-components/tiles--title';
+@import 'scss/04-components/tiles--work';
+
+// TODO: Refactor and remove.
+@import 'scss/04-components/blog';
+@import 'scss/04-components/cards';
+@import 'scss/04-components/case-study-list';
+@import 'scss/04-components/comments';
+@import 'scss/04-components/contact-block';
+@import 'scss/00-lib/font-awesome/font-awesome';
+@import 'scss/04-components/footer';
+@import 'scss/04-components/header-links';
+@import 'scss/04-components/home';
+@import 'scss/04-components/home-cover-image';
+@import 'scss/04-components/navigation';
+@import 'scss/04-components/post';
+@import 'scss/04-components/post-bottom';
+@import 'scss/04-components/post-footnotes';
+@import 'scss/04-components/post-top';
+@import 'scss/04-components/previous-next-links';
+@import 'scss/04-components/services-top';
+@import 'scss/04-components/sub-services';
+@import 'scss/04-components/syntax-highlighting';
+@import 'scss/04-components/tag';
+@import 'scss/04-components/team-bottom';
+@import 'scss/04-components/team-member-badges';
+@import 'scss/04-components/team-member-posts';
+@import 'scss/04-components/team-member-top';
+@import 'scss/04-components/team-top';
+@import 'scss/04-components/work';
+@import 'scss/04-components/work-case-study';
+@import 'scss/04-components/work-case-study-cover-image';
+@import 'scss/04-components/work-table';
+
+// Region rules.
+@import 'scss/05-regions/call-to-action';
+@import 'scss/05-regions/footer';
+@import 'scss/05-regions/header';
+@import 'scss/05-regions/hero-image';
+@import 'scss/05-regions/services-icons';
+@import 'scss/05-regions/work-tiles';
+
+// Page rules (layout).
+@import 'scss/06-pages/base-layout';

@@ -28,6 +28,7 @@
               <li><a class="<%= 'active' if title == 'colors' %>" href="colors.html">Colors</a></li>
               <li><a class="<%= 'active' if title == 'Typography' %>" href="typography.html">Typography</a></li>
               <li><a class="<%= 'active' if title == 'Components' %>" href="components.html">Components</a></li>
+              <li><a class="<%= 'active' if title == 'Regions' %>" href="regions.html">Regions</a></li>
             </ul>
           </nav>
         </div>
@@ -40,8 +41,11 @@
           <% if @blocks.length > 0 %>
             <div class="sg-content__content__menu">
               <ul>
+                <%# Print top-level components. %>
                 <% @blocks.each do |b| %>
-                <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+                  <% if b[:parent] == nil %>
+                    <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+                  <% end %>
                 <% end %>
               </ul>
             </div>
