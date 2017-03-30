@@ -188,7 +188,7 @@ category: Regions
   padding: $footer-padding / 2 $navigation-padding-horizontal-small;
 
   @include grid-media($medium-screen-up) {
-    padding: $footer-padding $navigation-padding-horizontal-large;
+    padding: $footer-padding / 2 $navigation-padding-horizontal-large;
   }
 
   .region--footer__bottom__wrapper {
