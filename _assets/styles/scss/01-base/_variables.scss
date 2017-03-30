@@ -38,11 +38,10 @@ $navigation-padding-vertical: 1.5em;
 $navigation-padding-horizontal-small: 1em;
 $navigation-padding-horizontal-large: 1.5em;
 $navigation-background: transparentize($white, .1);
-$navigation-background-hover: $magenta;
+$navigation-background-hover: transparentize($magenta, .1);
 $navigation-color: $dark-teal;
 $navigation-color-hover-small: $magenta;
 $navigation-color-hover-large: $white;
-$navigation-active-link-color: $dark-teal;
 $horizontal-bar-mode: $medium-screen-up;
 
 // Footer refill variables.

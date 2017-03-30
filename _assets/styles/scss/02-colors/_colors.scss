@@ -71,3 +71,6 @@ $alert-color: transparentize($yellow, .8);
 $error-color: transparentize($magenta, .8);
 $notice-color: transparentize($orange, .8);
 $success-color: transparentize($green, .8);
+
+// Utility colors.
+$action-color: $teal;
