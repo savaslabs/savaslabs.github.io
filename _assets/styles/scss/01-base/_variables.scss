@@ -42,14 +42,16 @@ $navigation-background-hover: $magenta;
 $navigation-color: $dark-teal;
 $navigation-color-hover-small: $magenta;
 $navigation-color-hover-large: $white;
-$navigation-active-link-color: $teal;
+$navigation-active-link-color: $dark-teal;
 $horizontal-bar-mode: $medium-screen-up;
 
 // Footer refill variables.
-$footer-background: $dark-teal;
-$footer-color: $base-background-color;
+$footer-background: $teal;
+$footer-background-dark: $dark-teal;
+$footer-color: $eggshell;
 $footer-link-color: $footer-color;
-$footer-disclaimer-color: $footer-color;
+$footer-link-color-hover: $orange;
+$footer-padding: $navigation-padding-vertical * 2;
 
 // Card refill variables.
 $base-font-color: $dark-gray !default;

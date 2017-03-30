@@ -4,6 +4,11 @@
  * Styles for component examples only for the style guide (e.g. color swatches).
  */
 
+// Provide some padding for elements in divs.
+.styleguide-wrapper {
+  padding: 1em;
+}
+
 // Color chips.
 .styleguide-color-chips {
   display: flex;
