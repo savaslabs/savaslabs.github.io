@@ -79,16 +79,6 @@ category: Regions
   color: $footer-color;
   overflow: hidden;
   position: relative;
-
-  a {
-    color: $footer-link-color;
-    text-decoration: none;
-
-    &:focus,
-    &:hover {
-      color: $footer-link-color-hover;
-    }
-  }
 }
 
 // Main footer section.
@@ -177,6 +167,19 @@ category: Regions
         &:last-child {
           padding-right: 0;
         }
+      }
+    }
+  }
+
+  .region--footer__main__contact,
+  .region--footer__main__social {
+    a {
+      color: $footer-link-color;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        color: $footer-link-color-hover;
       }
     }
   }

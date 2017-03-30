@@ -8,7 +8,7 @@
       {% comment %} Assign active nav item class. {% endcomment %}
       {% assign active-nav-item = nil %}
       {% if page.url contains link.url %}
-        {% assign active-nav-item = 'active-nav-item' %}
+        {% assign active-nav-item = 'header-navigation__active-nav-item' %}
       {% endif %}
       <li class="header-navigation__menu-link {{ active-nav-item }}">
         <a href="{{ link.url }}">{{ link.title }}</a>

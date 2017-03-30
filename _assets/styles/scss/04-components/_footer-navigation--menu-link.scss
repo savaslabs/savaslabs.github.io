@@ -44,3 +44,9 @@ parent: footer-navigation
     }
   }
 }
+
+.footer-navigation__active-nav-item {
+  a {
+    color: $footer-link-color-hover;
+  }
+}
