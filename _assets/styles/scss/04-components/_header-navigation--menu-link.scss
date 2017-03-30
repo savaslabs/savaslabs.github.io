@@ -89,7 +89,7 @@ A normal menu link plus the bold, magenta Contact link.
 
 // Active nav item: li element styled on small screens in mobile menu, a element
 // styled on large screens.
-.active-nav-item {
+.header-navigation__active-nav-item {
   background-color: $navigation-background-hover;
 
   @include grid-media($horizontal-bar-mode) {
