@@ -73,7 +73,7 @@
         }
 
         .case-study__header__link {
-          @extend %button-outline;
+          @include button-outline;
 
           display: inline-block;
           margin-top: $base-spacing;

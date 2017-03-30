@@ -1,0 +1,25 @@
+/**
+ * @file
+ *
+ * Styles for alerts.
+ */
+
+/*doc
+---
+title: Alerts
+name: alerts
+category: Components
+---
+
+```html_example
+```
+
+*/
+
+.flash-alert { @include flash($alert-color); }
+
+.flash-error { @include flash($error-color); }
+
+.flash-notice { @include flash($notice-color); }
+
+.flash-success { @include flash($success-color); }

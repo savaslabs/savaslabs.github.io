@@ -107,7 +107,7 @@
 
   // Submit button.
   .comment-form__submit {
-    @extend %button;
+    @include button;
     margin-top: 0;
   }
 

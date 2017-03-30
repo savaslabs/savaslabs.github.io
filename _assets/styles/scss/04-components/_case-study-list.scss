@@ -64,7 +64,7 @@
     }
 
     a {
-      @extend %button-outline;
+      @include button;
 
       display: inline-block;
       margin-top: $base-spacing;
