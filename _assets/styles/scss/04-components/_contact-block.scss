@@ -22,7 +22,7 @@
     }
 
     a {
-      @extend %button;
+      @include button;
     }
   }
 }
