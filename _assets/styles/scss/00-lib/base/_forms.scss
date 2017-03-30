@@ -42,7 +42,7 @@ textarea {
   }
 
   &:focus {
-    border-color: $teal;
+    border-color: $action-color;
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }
