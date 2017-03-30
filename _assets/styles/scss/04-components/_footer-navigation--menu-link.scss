@@ -7,12 +7,40 @@
 /*doc
 ---
 title: Footer menu link
-name: footer-navigation--menu-link
+name: 1footer-navigation--menu-link
 category: Components
 parent: footer-navigation
 ---
 
 ```html_example
+<div class="styleguide-wrapper bg-teal">
+  <li class="footer-navigation__menu-link">
+    <a href="/company">Company</a>
+  </li>
+</div>
 ```
 
 */
+
+.footer-navigation__menu-link {
+  color: $footer-link-color;
+  font-size: 1.3em;
+  line-height: 1.8em;
+  list-style: none;
+  text-align: center;
+
+  @include grid-media($medium-screen-up) {
+    text-align: left;
+  }
+
+  a {
+    color: $footer-link-color;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:focus,
+    &:hover {
+      color: $footer-link-color-hover;
+    }
+  }
+}
