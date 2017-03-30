@@ -46,9 +46,16 @@ A normal menu link plus the bold, magenta Contact link.
   }
 
   // Styles for final menu item.
-  &:last-child {
+  // When not active or in hover/focus state, color should be magenta.
+  &:last-child:not(.active-nav-item):not(:hover):not(:focus) {
     a {
       color: $magenta;
+    }
+  }
+
+  // Final menu item should always be bold.
+  &:last-child {
+    a {
       font-weight: bold;
     }
   }
@@ -80,8 +87,21 @@ A normal menu link plus the bold, magenta Contact link.
   }
 }
 
+// Active nav item: li element styled on small screens in mobile menu, a element
+// styled on large screens.
 .active-nav-item {
+  background-color: $navigation-background-hover;
+
+  @include grid-media($horizontal-bar-mode) {
+    background-color: $navigation-background;
+    color: $navigation-color;
+  }
+
   a {
-    color: $navigation-active-link-color;
+    color: $navigation-color-hover-large;
+
+    @include grid-media($horizontal-bar-mode) {
+      background-color: $navigation-background-hover;
+    }
   }
 }
