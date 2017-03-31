@@ -12,6 +12,12 @@ category: Typography
 ---
 
 ```html_example
+<p>This is an example paragraph, written just for this style guide! There is
+<strong>bold text</strong> and <em>italic text too.</em> This is a normal
+paragraph, with the font size set at 1em.</p>
+
+<p class="paragraph--loud">Paragraphs can also be loud, too! This is for short
+snippets of text meant to call the attention of the user.</p>
 ```
 
 */
@@ -21,12 +27,6 @@ body {
   font-family: $copytext-font;
 }
 
-.post p,
-.post li,
-.page-description,
-.name-description p,
-.team-member p,
-.services__service p {
-  color: $dark-teal;
-  font-size: $base-font-size * 1.2;
+.paragraph--loud {
+  font-size: 40px;
 }
