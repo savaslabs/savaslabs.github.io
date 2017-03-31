@@ -16,12 +16,12 @@ category: Typography
 */
 
 a {
-  color: $teal;
+  color: $action-color;
   transition: all .1s linear;
 
   &:hover,
   &:focus {
-    color: lighten($teal, 10%);
+    color: $action-color-hover;
   }
 }
 
@@ -40,11 +40,11 @@ parent: links
 // Inline links.
 // scss-lint:disable ColorVariable
 p a {
-  border-bottom: .1em solid rgba(10, 83, 101, .1);
+  border-bottom: .1em solid transparentize($action-color, .9);
 
   &:hover,
   &:focus {
-    border-bottom: .1em solid lighten($teal, 10%);
+    border-bottom: .1em solid $action-color-hover;
   }
 }
 // scss-lint:enable ColorVariable
