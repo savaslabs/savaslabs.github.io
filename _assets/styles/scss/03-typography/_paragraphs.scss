@@ -10,14 +10,27 @@ title: Paragraphs
 name: paragraphs
 category: Typography
 ---
+Use classes `.paragraph--loud` and `.paragraph--louder` for larger text.
 
 ```html_example
 <p>This is an example paragraph, written just for this style guide! There is
 <strong>bold text</strong> and <em>italic text too.</em> This is a normal
-paragraph, with the font size set at 1em.</p>
+paragraph, with the font size set at 1em. Veggies es bonus vobis, proinde vos
+postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon
+azuki bean garlic.</p>
 
-<p class="paragraph--loud">Paragraphs can also be loud, too! This is for short
-snippets of text meant to call the attention of the user.</p>
+<p>Here's another paragraph. Note the margin-bottom that separates each
+paragraph. Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame
+tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+
+<p class="paragraph--loud">This is a loud paragraph. Turnip greens yarrow
+ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach
+avocado daikon napa cabbage asparagus winter purslane kale.</p>
+
+<p class="paragraph--louder">This is a louder paragraph. Lotus root water
+spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin
+onion chickpea gram corn pea.</p>
 ```
 
 */
@@ -28,5 +41,9 @@ body {
 }
 
 .paragraph--loud {
-  font-size: 40px;
+  font-size: 1.25em;
+}
+
+.paragraph--louder {
+  font-size: 1.563em;
 }
