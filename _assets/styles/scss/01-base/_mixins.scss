@@ -41,6 +41,15 @@
   }
 }
 
+@mixin link--light() {
+  color: $eggshell;
+
+  &:hover,
+  &:focus {
+    color: $orange;
+  }
+}
+
 @mixin button {
   background-color: $teal;
   border-radius: 3px;

@@ -1,0 +1,33 @@
+/**
+ * @file
+ *
+ * Typography: Arrow link styles.
+ */
+
+/*doc
+---
+title: Arrow links
+name: link--arrow
+category: Typography
+parent: links
+---
+```html_example_table
+<div class="styleguide-wrapper">
+  <a href="#" class="link--arrow">View all blog</a>
+</div>
+
+<div class="styleguide-wrapper bg-teal">
+  <a href="#" class="link--arrow link--light">Our core values</a>
+</div>
+```
+*/
+
+.link--arrow {
+  text-transform: uppercase;
+
+  &::after {
+    content: '\f105';
+    font-family: FontAwesome;
+    margin-left: .25em;
+  }
+}
