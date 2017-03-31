@@ -5,7 +5,7 @@
 source: ./_assets
 
 # The directory that hologram will build to
-destination: ./_site/styleguide
+destination: ./styleguide
 
 # The assets needed to build the docs (includes header.html,
 # footer.html, etc)
@@ -26,9 +26,10 @@ code_example_renderers: ./_styleguide_example_renderers
 # Any other asset folders that need to be copied to the destination
 # folder. Typically this will include the css that you are trying to
 # document. May also include additional folders as needed.
+# Note: since we're not including main.css or main.js here, we can't use the
+# style guide outside of the Jekyll site. To do that, we'd need to separately
+# include these assets as dependencies.
 dependencies:
-  - ./_site/assets/styles
-  - ./_site/assets/js
 
 # Mark which category should be the index page
 # Alternatively, you may have an index.md in the documentation assets

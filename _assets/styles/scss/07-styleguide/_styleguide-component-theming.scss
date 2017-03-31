@@ -1,0 +1,45 @@
+/**
+ * @file
+ *
+ * Styles for component examples only for the style guide (e.g. color swatches).
+ */
+
+// Provide some padding for elements in divs.
+.styleguide-wrapper {
+  padding: 1em;
+}
+
+// Color chips.
+.styleguide-color-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .styleguide-color-chip__wrapper {
+    padding-bottom: 1em;
+    text-align: center;
+
+    .styleguide-color-chip__bg {
+      height: 9em;
+      width: 9em;
+    }
+
+    code {
+      display: block;
+    }
+  }
+}
+
+// CTA links.
+.styleguide-cta-link {
+  text-align: center;
+
+  a {
+    display: block;
+    padding: 1em;
+  }
+}
+
+.styleguide-cta-link--inverse {
+  background-color: $teal;
+}

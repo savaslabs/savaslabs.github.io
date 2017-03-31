@@ -33,21 +33,24 @@ $case-study-header-break: (
 // Refills ---------------------------------------------------------------------
 
 // Navigation refill variables.
-$navigation-padding: 1em;
-$navigation-background: $teal;
-$navigation-color: transparentize($base-background-color, .3);
-$navigation-color-hover: $base-background-color;
-$navigation-height: 70px;
-$navigation-active-link-color: $base-background-color;
-$navigation-submenu-padding: $navigation-padding;
-$navigation-submenu-width: 10em;
+$navigation-height: 5.25em;
+$navigation-padding-vertical: 1.5em;
+$navigation-padding-horizontal-small: 1em;
+$navigation-padding-horizontal-large: 1.5em;
+$navigation-background: transparentize($white, .1);
+$navigation-background-hover: transparentize($magenta, .1);
+$navigation-color: $dark-teal;
+$navigation-color-hover-small: $magenta;
+$navigation-color-hover-large: $white;
 $horizontal-bar-mode: $medium-screen-up;
 
 // Footer refill variables.
-$footer-background: $dark-blue;
-$footer-color: $base-background-color;
+$footer-background: $teal;
+$footer-background-dark: $dark-teal;
+$footer-color: $eggshell;
 $footer-link-color: $footer-color;
-$footer-disclaimer-color: $footer-color;
+$footer-link-color-hover: $orange;
+$footer-padding: $navigation-padding-vertical * 2;
 
 // Card refill variables.
 $base-font-color: $dark-gray !default;
@@ -86,7 +89,7 @@ $expander-toggle-margin: 1em;
 }
 
 %button {
-  background-color: $action-color;
+  background-color: $teal;
   border-radius: 3px;
   color: $base-background-color;
   font-family: $copytext-font;
@@ -96,7 +99,7 @@ $expander-toggle-margin: 1em;
 
   &:hover,
   &:focus {
-    background-color: $action-color-hover;
+    background-color: lighten($teal, 10%);
   }
 }
 
@@ -111,7 +114,7 @@ $expander-toggle-margin: 1em;
 
   &:hover,
   &:focus {
-    background-color: $action-color-hover;
+    background-color: lighten($teal, 10%);
   }
 }
 
@@ -218,12 +221,12 @@ $base2:           #eee8d5; // cream
 $base3:           #fdf6e3; // white
 $solar-yellow:    $yellow;
 $solar-orange:    $orange;
-$solar-red:       $fuschia;
-$solar-magenta:   #d33682;
+$solar-red:       $magenta;
+$solar-magenta:   $pink;
 $solar-violet:    $purple;
-$solar-blue:      $dark-blue;
+$solar-blue:      $dark-teal;
 $solar-cyan:      $teal;
-$solar-green:     #055c2b;
+$solar-green:     $green;
 
 
 @if $solarized == light {

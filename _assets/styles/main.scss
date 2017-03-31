@@ -7,6 +7,7 @@
 // Libraries and base rules.
 @import 'scss/01-base/normalize';
 @import 'scss/01-base/base';
+@import 'scss/00-lib/font-awesome/font-awesome';
 
 // Typography rules.
 @import 'scss/03-typography/blockquote';
@@ -41,6 +42,7 @@
 @import 'scss/04-components/icons';
 @import 'scss/04-components/images';
 @import 'scss/04-components/images--hero';
+@import 'scss/04-components/logos';
 @import 'scss/04-components/tables';
 @import 'scss/04-components/tiles';
 @import 'scss/04-components/tiles--blog';
@@ -54,11 +56,9 @@
 @import 'scss/04-components/comments';
 @import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
-@import 'scss/04-components/footer';
 @import 'scss/04-components/header-links';
 @import 'scss/04-components/home';
 @import 'scss/04-components/home-cover-image';
-@import 'scss/04-components/navigation';
 @import 'scss/04-components/post';
 @import 'scss/04-components/post-bottom';
 @import 'scss/04-components/post-footnotes';

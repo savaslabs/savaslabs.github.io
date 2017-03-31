@@ -11,12 +11,16 @@
 // Typography rules.
 @import 'scss/03-typography/typography';
 
-/* Component rules (called 'modules' in SMACSS) */
+// Component rules.
+@import 'scss/04-components/header-navigation';
+@import 'scss/04-components/header-navigation--menu-link';
+@import 'scss/04-components/logos';
+
+// TODO: refactor and remove.
 @import 'scss/04-components/cards';
 @import 'scss/04-components/case-study-list';
 @import 'scss/04-components/fa-icons';
 @import 'scss/04-components/home-cover-image';
-@import 'scss/04-components/navigation';
 @import 'scss/04-components/post-top';
 @import 'scss/04-components/previous-next-links';
 @import 'scss/04-components/services-top';
@@ -26,6 +30,9 @@
 @import 'scss/04-components/team-top';
 @import 'scss/04-components/work';
 @import 'scss/04-components/work-case-study-cover-image';
+
+// Region rules.
+@import 'scss/05-regions/_header.scss';
 
 // Layout and page-level rules.
 @import 'scss/06-pages/base-layout';

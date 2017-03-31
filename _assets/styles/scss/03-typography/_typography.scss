@@ -5,7 +5,7 @@
  */
 
 body {
-  color: $dark-blue;
+  color: $dark-teal;
   font-family: $copytext-font;
 }
 
@@ -17,7 +17,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $fuschia;
+  color: $magenta;
   font-family: $heading-font;
   font-weight: 300;
 }
@@ -41,31 +41,6 @@ h4 { font-size: 140%; }
 h5 { font-size: 120%; }
 h6 { font-size: 100%; }
 
-// Links -----------------------------------------------------------------------
-
-a {
-  color: $action-color;
-  transition: all .1s linear;
-
-  &:hover,
-  &:focus {
-    color: $action-color-hover;
-  }
-}
-
-// Give inline links an underlined look.
-// scss-lint:disable ColorVariable
-p a,
-.post li a {
-  border-bottom: .1em solid rgba(10, 83, 101, .1);
-
-  &:hover,
-  &:focus {
-    border-bottom: .1em solid $action-color-hover;
-  }
-}
-// scss-lint:enable ColorVariable
-
 // Paragraphs and lists --------------------------------------------------------
 
 .post p,
@@ -74,7 +49,7 @@ p a,
 .name-description p,
 .team-member p,
 .services__service p {
-  color: $dark-blue;
+  color: $dark-teal;
   font-size: $base-font-size * 1.2;
 }
 
@@ -112,7 +87,7 @@ hr {
 // https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 blockquote {
   background-color: lighten($light-gray, 10);
-  border-left: 10px solid transparentize($dark-blue, .6);
+  border-left: 10px solid transparentize($dark-teal, .6);
   border-radius: 0 $base-border-radius * 3 $base-border-radius * 3 0;
   font-style: italic;
   margin: 2em 0;
@@ -120,7 +95,7 @@ blockquote {
   quotes: '\201C' '\201D';
 
   &::before {
-    color: transparentize($dark-blue, .6);
+    color: transparentize($dark-teal, .6);
     content: open-quote;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 4em;
@@ -135,8 +110,8 @@ blockquote {
 }
 
 .callout {
-  background-color: $dark-blue;
-  border-left: solid 1em $fuschia;
+  background-color: $dark-teal;
+  border-left: solid 1em $magenta;
   border-radius: $base-border-radius * 2;
   margin: 1.5em auto;
   padding: 1em;

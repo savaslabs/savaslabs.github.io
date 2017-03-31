@@ -9,58 +9,178 @@
 /*doc
 ---
 title: Colors
-name: Colors
+name: colors
 category: colors
 ---
-
-```html_example
-<div class="styleguide-color-chip bg-dark-blue">
-  $dark-blue
-</div>
-<div class="styleguide-color-chip bg-fuschia">
-  $fuschia
-</div>
-<div class="styleguide-color-chip bg-yellow">
-  $yellow
-</div>
-<div class="styleguide-color-chip bg-orange">
-  $orange
-</div>
-<div class="styleguide-color-chip bg-beige">
-  $beige
-</div>
-```
 */
 
-// TODO: may need primary and secondary colors, or utility colors (like grays).
+/*doc
+---
+title: Primary colors
+name: 1colors--primary
+category: colors
+parent: colors
+---
+The main color palette.
+
+<div class="styleguide-color-chips">
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-magenta"></div>
+    <code>$magenta</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-orange"></div>
+    <code>$orange</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-eggshell"></div>
+    <code>$eggshell</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-teal"></div>
+    <code>$teal</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-dark-teal"></div>
+    <code>$dark-teal</code>
+  </div>
+</div>
+
+| Variable     | Hex       | rgb           |
+| ------------ | --------- | ------------- |
+| `$magenta`   | `#9e023b` | `158,2,59`    |
+| `$orange`    | `#d3281b` | `222,40,27`   |
+| `$eggshell`  | `#fff8f3` | `225,248,243` |
+| `$teal`      | `#0a5365` | `10,83,101`   |
+| `$dark-teal` | `#06282d` | `6,40,45`     |
+
+*/
 
 // Primary colors.
-$dark-blue: #14133b;
+$magenta: #9e023b;
+$orange: #d3281b;
+$eggshell: #fff8f3;
+$teal: #0a5365;
+$dark-teal: #06282d;
 
-// TODO: spell this correctly...
-$fuschia: #9e023b;
-$yellow: #f2a324;
-$orange: #f6433e;
-$beige: #f4d1a6;
+/*doc
+---
+title: Secondary colors
+name: 2colors--secondary
+category: colors
+parent: colors
+---
 
-.bg-dark-blue { background-color: $dark-blue; }
-.bg-fuschia { background-color: $fuschia; }
-.bg-yellow { background-color: $yellow; }
-.bg-orange { background-color: $orange; }
-.bg-beige { background-color: $beige; }
+<div class="styleguide-color-chips">
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-grey"></div>
+    <code>$grey</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-light-teal"></div>
+    <code>$light-teal</code>
+  </div>
+</div>
+
+| Variable     | Hex       | rgb             |
+| ------------ | --------- | --------------- |
+| `$grey`      | `#565d5e` | `86,93,94`      |
+| `$light-teal`| `#0a5365` | `10,83,101,.95` |
+
+*/
 
 // Secondary colors.
-$teal: #0a5365;
-$green: #055c2b;
+$grey: #565d5e;
+$light-teal: transparentize($teal, .95);
+
+/*doc
+---
+title: Code highlighting colors
+name: 3colors--code
+category: colors
+parent: colors
+---
+Based on the Solarized theme, created by Brandon Mathis at Octopress, and
+adapted for our color palette.
+
+<div class="styleguide-color-chips">
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-purple"></div>
+    <code>$purple</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-magenta"></div>
+    <code>$magenta</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-pink"></div>
+    <code>$pink</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-orange"></div>
+    <code>$orange</code>
+  </div>
+</div>
+<div class="styleguide-color-chips">
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-yellow"></div>
+    <code>$yellow</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-green"></div>
+    <code>$green</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-teal"></div>
+    <code>$teal</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-dark-teal"></div>
+    <code>$dark-teal</code>
+  </div>
+</div>
+
+*/
+
 $purple: #501888;
+$pink: #d33682;
+$yellow: #f2a324;
+$green: #055c2b;
+
+// Utility colors.
+$text-color: $grey;
+$heading-color: $teal;
+$action-color: $orange;
+$action-color-hover: $magenta;
 $gainsboro: #dcdcdc;
+$white: #fff;
 
 // Alert colors.
 $alert-color: transparentize($yellow, .8);
-$error-color: transparentize($fuschia, .8);
+$error-color: transparentize($magenta, .8);
 $notice-color: transparentize($orange, .8);
 $success-color: transparentize($green, .8);
 
-// Action colors.
-$action-color: $teal;
-$action-color-hover: lighten($teal, 10%);
+// Helper classes.
+.bg-magenta { background-color: $magenta; }
+.bg-orange { background-color: $orange; }
+.bg-eggshell { background-color: $eggshell; }
+.bg-teal { background-color: $teal; }
+.bg-dark-teal { background-color: $dark-teal; }
+.bg-grey { background-color: $grey; }
+.bg-light-teal { background-color: $light-teal; }
+.bg-purple { background-color: $purple; }
+.bg-pink { background-color: $pink; }
+.bg-yellow { background-color: $yellow; }
+.bg-green { background-color: $green; }
+.c-magenta { color: $magenta; }
+.c-orange { color: $orange; }
+.c-eggshell { color: $eggshell; }
+.c-teal { color: $teal; }
+.c-dark-teal { color: $dark-teal; }
+.c-grey { color: $grey; }
+.c-light-teal { color: $light-teal; }
+.c-purple { color: $purple; }
+.c-pink { color: $pink; }
+.c-yellow { color: $yellow; }
+.c-green { color: $green; }

@@ -16,5 +16,10 @@
         display: table-cell;
       }
     }
+
+    // Undo base table styles so component text isn't bold.
+    th {
+      font-weight: normal;
+    }
   }
 }

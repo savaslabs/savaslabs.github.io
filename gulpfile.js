@@ -125,6 +125,7 @@ gulp.task('build:styles:styleguide', function() {
     }).pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
       .pipe(cleancss())
       .pipe(gulp.dest(paths.styleGuideAssets))
+      .pipe(gulp.dest('styleguide'))
       .pipe(gulp.dest(paths.siteStyleGuide))
       .pipe(browserSync.stream())
       .on('error', gutil.log);
@@ -323,7 +324,8 @@ gulp.task('clean', ['clean:jekyll',
     'clean:fonts',
     'clean:images',
     'clean:scripts',
-    'clean:styles']);
+    'clean:styles',
+    'clean:styleguide']);
 
 /**
  * Task: build
@@ -333,8 +335,8 @@ gulp.task('clean', ['clean:jekyll',
 gulp.task('build', function(callback) {
     runSequence('clean',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
-        'build:jekyll',
         'styleguide',
+        'build:jekyll',
         callback);
 });
 
@@ -346,8 +348,8 @@ gulp.task('build', function(callback) {
 gulp.task('build:test', function(callback) {
     runSequence('clean',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
-        'build:jekyll:test',
         'styleguide',
+        'build:jekyll:test',
         callback);
 });
 
@@ -359,9 +361,9 @@ gulp.task('build:test', function(callback) {
 gulp.task('build:local', function(callback) {
     runSequence('clean',
         ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
-        'build:jekyll:local',
         'styleguide',
-        callback);
+        'build:jekyll:local',
+      callback);
 });
 
 /**
@@ -468,7 +470,7 @@ gulp.task('serve', ['build:local'], function() {
     // Watch style guide HTML.
     gulp.watch(
       ['_styleguide_assets/*.html', '_assets/styles/*.md'],
-      ['build:styleguide:watch']);
+      ['build:styleguide', 'build:jekyll:watch']);
 });
 
 // -----------------------------------------------------------------------------
@@ -506,7 +508,7 @@ gulp.task('build:styleguide', function(callback) {
  * Deletes the entire _site/styleguide directory.
  */
 gulp.task('clean:styleguide', function(callback) {
-    del(['_site/styleguide']);
+    del(['styleguide', '_site/styleguide']);
     callback();
 });
 

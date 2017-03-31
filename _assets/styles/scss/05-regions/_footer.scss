@@ -12,6 +12,202 @@ category: Regions
 ---
 
 ```html_example
+<footer class="region--footer" role="contentinfo">
+  <div class="region--footer__main">
+    <div class="region--footer__main__menu">
+      <a href="#" class="region--footer__logo">
+        <img src="/assets/img/logo-light.svg" alt="Savas Labs" class="savas-logo savas-logo--light">
+      </a>
+      <nav role="navigation" class="footer-navigation">
+        <ul class="footer-navigation__menu">
+          <li class="footer-navigation__menu-link">
+            <a href="#">Company</a>
+          </li>
+          <li class="footer-navigation__menu-link">
+            <a href="#">Results</a>
+          </li>
+          <li class="footer-navigation__menu-link">
+            <a href="#">Services</a>
+          </li>
+          <li class="footer-navigation__menu-link">
+            <a href="#">Blog</a>
+          </li>
+          <li class="footer-navigation__menu-link">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="region--footer__main__contact">
+      <h4 class="region--footer__main__contact__title">Connect with us</h4>
+      <a href="mailto:info@savaslabs.com">info@savaslabs.com</a>
+      <p>(919) 432-4660</p>
+      <address>
+        SAVAS LABS<br>
+        PMB 210<br>
+        201 W Main Street, Suite 100<br>
+        Durham, NC 27701
+      </address>
+    </div>
+    <div class="region--footer__main__social">
+      <div class="region--footer__main__social__icons">
+        <a href="https://github.com/savaslabs"><span class="fa fa-github fa-lg fa-2x"></span></a>
+        <a href="https://www.drupal.org/node/2466865"><i class="fa fa-drupal fa-lg fa-2x"></i></a>
+        <a href="https://twitter.com/savas_labs"><i class="fa fa-twitter fa-lg fa-2x"></i></a>
+        <a href="https://www.linkedin.com/company/savas-labs"><i class="fa fa-linkedin fa-lg fa-2x"></i></a>
+      </div>
+      <div class="region--footer__main__social__twitter">
+        <a class="twitter-timeline"  href="https://twitter.com/Savas_Labs" data-widget-id="720223236315815936">Tweets by @Savas_Labs</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+    </div>
+  </div>
+  <div class="region--footer__bottom">
+    <div class="region--footer__bottom__wrapper">
+      <p class="region--footer__bottom__copyright">
+        Copyright &copy; Savas Labs 2017
+      </p>
+    </div>  </div>
+</footer>
 ```
 
 */
+
+// Entire footer element.
+.region--footer {
+  background-color: $footer-background-dark;
+  color: $footer-color;
+  overflow: hidden;
+  position: relative;
+}
+
+// Main footer section.
+.region--footer__main {
+  @include outer-container;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  // Set 3 main divs to full width on small screens and 1/3 width on large.
+  > div {
+    padding: $footer-padding $navigation-padding-horizontal-small;
+    width: 100%;
+
+    @include grid-media($medium-screen-up) {
+      padding-left: $navigation-padding-horizontal-large;
+      padding-right: $navigation-padding-horizontal-large;
+      width: 33.3%;
+    }
+  }
+
+  // Footer menu, on left on large screens.
+  .region--footer__main__menu {
+    background-color: $footer-background;
+    padding-top: $footer-padding / 2;
+
+    .region--footer__logo {
+      display: block;
+
+      img {
+        margin: 0 auto;
+
+        @include grid-media($medium-screen-up) {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  // Contact info, in middle on large screens.
+  .region--footer__main__contact {
+    background-color: $dark-teal;
+    padding-bottom: $footer-padding / 4;
+    padding-top: $footer-padding;
+    text-align: center;
+
+    @include grid-media($medium-screen-up) {
+      padding-bottom: $footer-padding;
+      text-align: left;
+    }
+
+    h4 {
+      color: $eggshell;
+      font-size: 110%;
+      margin-bottom: $footer-padding / 2;
+      text-transform: uppercase;
+    }
+
+    address {
+      font-style: normal;
+    }
+  }
+
+  // Social icons and twitter feed, on right on large screens.
+  .region--footer__main__social {
+    background-color: $dark-teal;
+    padding-bottom: $footer-padding;
+    padding-top: $footer-padding / 4;
+
+    @include grid-media($medium-screen-up) {
+      padding-top: $footer-padding;
+    }
+
+    .region--footer__main__social__icons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: $footer-padding / 2;
+
+      @include grid-media($medium-screen-up) {
+        justify-content: flex-end;
+      }
+
+      a {
+        padding: 0 $footer-padding / 4;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .region--footer__main__contact,
+  .region--footer__main__social {
+    a {
+      color: $footer-link-color;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        color: $footer-link-color-hover;
+      }
+    }
+  }
+}
+
+// Footer bottom, including copyright.
+.region--footer__bottom {
+  background-color: $footer-background;
+  padding: $footer-padding / 2 $navigation-padding-horizontal-small;
+
+  @include grid-media($medium-screen-up) {
+    padding: $footer-padding / 2 $navigation-padding-horizontal-large;
+  }
+
+  .region--footer__bottom__wrapper {
+    @include outer-container;
+
+    display: flex;
+    justify-content: center;
+
+    @include grid-media($medium-screen-up) {
+      justify-content: flex-end;
+    }
+  }
+
+  .region--footer__bottom__copyright {
+    color: transparentize($footer-color, .3);
+    font-size: .9em;
+    margin: auto 0;
+  }
+}
