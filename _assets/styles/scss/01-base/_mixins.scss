@@ -15,6 +15,32 @@
   margin-right: auto;
 }
 
+@mixin heading-underline($color: $teal) {
+  &::after {
+    background: $color;
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 10px 0 .5em;
+    width: 30px;
+  }
+}
+
+@mixin heading-underline-right($color: $teal) {
+  position: relative;
+
+  &::after {
+    background: $color;
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 10px 0 .5em;
+    position: absolute;
+    right: 0;
+    width: 25px;
+  }
+}
+
 @mixin button {
   background-color: $teal;
   border-radius: 3px;
