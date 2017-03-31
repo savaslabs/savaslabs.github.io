@@ -28,19 +28,12 @@
 }
 
 h1.styleguide {
+  @include heading-underline($gainsboro);
+
   margin-top: $base-spacing;
 
   &:first-child {
     margin-top: 0;
-  }
-
-  &::after {
-    background: $gainsboro;
-    content: '';
-    display: block;
-    height: 4px;
-    margin: 10px 0 .5em;
-    width: 50px;
   }
 }
 
