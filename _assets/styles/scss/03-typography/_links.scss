@@ -40,11 +40,13 @@ parent: links
 // Inline links.
 // scss-lint:disable ColorVariable
 p a {
-  border-bottom: .1em solid transparentize($action-color, .9);
+  border-bottom: .1em solid transparentize($orange, .9);
+  color: $orange;
 
   &:hover,
   &:focus {
-    border-bottom: .1em solid $action-color-hover;
+    border-bottom: .1em solid $magenta;
+    color: $magenta;
   }
 }
 // scss-lint:enable ColorVariable

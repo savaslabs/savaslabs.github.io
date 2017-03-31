@@ -150,8 +150,8 @@ $green: #055c2b;
 // Utility colors.
 $text-color: $grey;
 $heading-color: $teal;
-$action-color: $orange;
-$action-color-hover: $magenta;
+$action-color: $teal;
+$action-color-hover: lighten($teal, 10%);
 $gainsboro: #dcdcdc;
 $white: #fff;
 
