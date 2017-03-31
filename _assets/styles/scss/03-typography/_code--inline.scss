@@ -8,11 +8,56 @@
 ---
 title: Inline code
 name: code--inline
-category: Components
+category: Typography
 parent: code
 ---
 
 ```html_example
+<p>What happens when <code class="highlighter-rouge">mysql</code> finishes
+importing the SQL dump file? The database contents (<em>often</em>) live in
+<code class="highlighter-rouge">/var/lib/mysql/{database}</code>, so for
+example for the <code class="highlighter-rouge">block_content</code> table
+mentioned above, assuming you’re using the typically preferred InnoDB
+storage engine, there are two files called
+<code class="highlighter-rouge">block_content.frm</code> and
+<code class="highlighter-rouge">block_content.ibd</code> in
+<code class="highlighter-rouge">/var/lib/mysql/{database}/</code>. The
+<code class="highlighter-rouge">/var/lib/mysql</code> directory will also
+contain a number of other directories and files related to the configuration of
+the MySQL server.</p>
 ```
 
 */
+
+// scss-lint:disable ImportantRule
+p,
+li {
+  code {
+    background: $base-background-color;
+    border: 1px solid $light-gray;
+    border-radius: .2em;
+    color: $magenta;
+    display: inline-block;
+    font-family: $monospace-font !important;
+    font-size: .8em;
+    line-height: 1.5em;
+    margin: -1px 0;
+    padding: 0 .3em;
+    white-space: nowrap;
+  }
+
+  pre code {
+    background: none;
+    border: 0;
+    font-size: 1em !important;
+  }
+
+  a code {
+    color: $orange;
+
+    &:hover,
+    &:focus {
+      color: $magenta;
+    }
+  }
+}
