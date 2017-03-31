@@ -11,23 +11,20 @@
 
 // Typography rules.
 @import 'scss/03-typography/blockquote';
+@import 'scss/03-typography/code';
+@import 'scss/03-typography/code--block';
+@import 'scss/03-typography/code--inline';
 @import 'scss/03-typography/headings';
 @import 'scss/03-typography/hr';
 @import 'scss/03-typography/links';
 @import 'scss/03-typography/lists';
 @import 'scss/03-typography/paragraphs';
 
-// TODO: Remove.
-@import 'scss/03-typography/typography';
-
 // Component rules.
-@import 'scss/04-components/branding';
+@import 'scss/04-components/article-heading-links';
 @import 'scss/04-components/buttons';
 @import 'scss/04-components/buttons--cta';
 @import 'scss/04-components/buttons--submit';
-@import 'scss/04-components/code';
-@import 'scss/04-components/code--block';
-@import 'scss/04-components/code--inline';
 @import 'scss/04-components/expander';
 @import 'scss/04-components/footer-navigation';
 @import 'scss/04-components/footer-navigation--menu-link';
@@ -56,7 +53,6 @@
 @import 'scss/04-components/comments';
 @import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
-@import 'scss/04-components/header-links';
 @import 'scss/04-components/home';
 @import 'scss/04-components/home-cover-image';
 @import 'scss/04-components/post';

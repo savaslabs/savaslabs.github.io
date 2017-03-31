@@ -15,3 +15,26 @@ category: Typography
 ```
 
 */
+
+ul { list-style-type: square; }
+ol { list-style-type: decimal; }
+
+ul,
+ol {
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+
+// Keep ems from cascading in nested lists.
+// scss-lint:disable ImportantRule
+ul ul,
+ul ul li,
+ul ol,
+ul ol li,
+ol ul,
+ol ul li,
+ol ol,
+ol ol li {
+  font-size: 1em !important;
+}
+// scss-lint:enable ImportantRule

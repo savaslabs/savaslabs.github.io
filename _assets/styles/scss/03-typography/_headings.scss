@@ -24,3 +24,74 @@ category: Typography
 ```
 
 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $magenta;
+  font-family: $heading-font;
+  font-weight: 300;
+}
+
+// Add margin top for posts.
+.portfolio,
+.post {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5em;
+  }
+}
+
+h1 {
+  font-size: 200%;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 250%;
+  }
+}
+
+h2 {
+  font-size: 160%;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 200%;
+  }
+}
+
+h3 {
+  font-size: 140%;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 160%;
+  }
+}
+
+h4 {
+  font-size: 120%;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 140%;
+  }
+}
+
+h5 {
+  font-size: 110%;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 120%;
+  }
+}
+
+h6 {
+  font-size: 100%;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 250%;
+  }
+}

@@ -15,3 +15,29 @@ category: Typography
 ```
 
 */
+
+// Thanks CSS-Tricks!
+// https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
+blockquote {
+  background-color: lighten($light-gray, 10);
+  border-left: 10px solid transparentize($dark-teal, .6);
+  border-radius: 0 $base-border-radius * 3 $base-border-radius * 3 0;
+  font-style: italic;
+  margin: 2em 0;
+  padding: 1em;
+  quotes: '\201C' '\201D';
+
+  &::before {
+    color: transparentize($dark-teal, .6);
+    content: open-quote;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 4em;
+    line-height: .1em;
+    margin-right: .25em;
+    vertical-align: -.4em;
+  }
+
+  p {
+    display: inline;
+  }
+}

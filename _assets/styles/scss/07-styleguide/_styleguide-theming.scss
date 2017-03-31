@@ -6,70 +6,6 @@
 // scss-lint:disable QualifyingElement
 // scss-lint:disable MergeableSelector
 
-body {
-  color: $dark-teal;
-  font-family: $copytext-font;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $magenta;
-  font-family: $heading-font;
-  font-weight: 300;
-}
-
-h1 {
-  font-size: 200%;
-
-  @include grid-media($medium-screen-up) {
-    font-size: 250%;
-  }
-}
-
-h2 {
-  font-size: 160%;
-
-  @include grid-media($medium-screen-up) {
-    font-size: 200%;
-  }
-}
-
-h3 {
-  font-size: 140%;
-
-  @include grid-media($medium-screen-up) {
-    font-size: 160%;
-  }
-}
-
-h4 {
-  font-size: 120%;
-
-  @include grid-media($medium-screen-up) {
-    font-size: 140%;
-  }
-}
-
-h5 {
-  font-size: 110%;
-
-  @include grid-media($medium-screen-up) {
-    font-size: 120%;
-  }
-}
-
-h6 {
-  font-size: 100%;
-
-  @include grid-media($medium-screen-up) {
-    font-size: 250%;
-  }
-}
-
 .sg-content {
   h2,
   h3,
@@ -108,28 +44,10 @@ h1.styleguide {
   }
 }
 
-a {
-  color: $teal;
-  transition: all .1s linear;
-
-  &:hover,
-  &:focus {
-    color: lighten($teal, 10%);
-  }
+.sg-header__menu__nav li,
+.sg-content__content__menu li {
+  list-style-type: none;
 }
-
-// Give inline links an underlined look.
-// scss-lint:disable ColorVariable
-p a,
-.post li a {
-  border-bottom: .1em solid rgba(10, 83, 101, .1);
-
-  &:hover,
-  &:focus {
-    border-bottom: .1em solid lighten($teal, 10%);
-  }
-}
-// scss-lint:enable ColorVariable
 
 table.styleguide {
   @include table-minimal;
