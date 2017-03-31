@@ -2,7 +2,7 @@ scss_files: '_assets/styles/scss/*/*.scss'
 
 exclude:
   - '_assets/styles/scss/*/*/*'
-  - '_assets/styles/scss/04-components/_syntax-highlighting.scss'
+  - '_assets/styles/scss/03-typography/_code.scss'
   - '_assets/styles/scss/01-base/_normalize.scss'
   - '_assets/styles/scss/07-styleguide/_styleguide-syntax-highlighting.scss'
 
