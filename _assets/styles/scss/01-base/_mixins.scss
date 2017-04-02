@@ -90,13 +90,10 @@
 
   &:hover,
   &:focus {
-    padding: 1em 0 1em 2.5em;
 
     &::after {
       background-color: lighten($color, 10%);
       color: lighten($background-color, 10%);
-      margin-left: 0;
-      padding-right: 1.625em;
     }
   }
 }
