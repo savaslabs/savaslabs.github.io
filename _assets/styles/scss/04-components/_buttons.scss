@@ -10,8 +10,56 @@ title: Buttons
 name: buttons
 category: Components
 ---
+A basic link styled as a button. Default is teal.
 
-```html_example
+```html_example_table
+<div class="styleguide-wrapper">
+  <a href="#" class="button">Get in touch</a>
+</div>
+
+<div class="styleguide-wrapper">
+  <a href="#" class="button--magenta">Get in touch</a>
+</div>
+
+<div class="styleguide-wrapper">
+  <a href="#" class="button--orange">Get in touch</a>
+</div>
+
+<div class="styleguide-wrapper bg-teal">
+  <a href="#" class="button--white-teal">Get in touch</a>
+</div>
+
+<div class="styleguide-wrapper bg-magenta">
+  <a href="#" class="button--white-magenta">Get in touch</a>
+</div>
+
+<div class="styleguide-wrapper bg-orange">
+  <a href="#" class="button--white-orange">Get in touch</a>
+</div>
 ```
 
 */
+
+.button {
+  @include button();
+}
+
+.button--magenta {
+  @include button($white, $magenta);
+}
+
+.button--orange {
+  @include button($white, $orange);
+}
+
+.button--white-teal {
+  @include button($teal, $white);
+}
+
+.button--white-magenta {
+  @include button($magenta, $white);
+}
+
+.button--white-orange {
+  @include button($orange, $white);
+}
