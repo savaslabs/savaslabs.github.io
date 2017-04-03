@@ -28,6 +28,7 @@
 
 @mixin heading-underline-right($color: $teal) {
   position: relative;
+  text-align: right;
 
   &::after {
     background: $color;

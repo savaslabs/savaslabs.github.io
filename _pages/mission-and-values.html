@@ -1,0 +1,17 @@
+---
+layout: default
+title: Mission and Core Values
+permalink: "/company/mission-and-values/"
+excerpt: Mission statement and core values of Savas Labs
+redirect_from:
+  - /mission-and-values/
+---
+
+<div class="region--key-value-list">
+  {% for core-value in site.data.core-values %}
+  {% assign name = core-value.name %}
+  {% assign description = core-value.description %}
+  {% include components/key-value-list-item.html key=name value=description %}
+  {% endfor %}
+</div>
+
