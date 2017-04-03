@@ -106,7 +106,8 @@
   .card-header {
     display: inline-block;
     font-size: 1.1em;
-    padding: ($base-spacing / 3) ($base-spacing / 2) 0;
+    padding: ($base-spacing / 3) ($base-spacing / 3) 0;
+    border: none;
   }
 
   .card-copy {
@@ -119,7 +120,7 @@
     float: right;
     font-size: .8em;
     line-height: 2em;
-    padding: ($base-spacing / 2) ($base-spacing / 2) 0;
+    padding: ($base-spacing / 3) ($base-spacing / 3) 0;
     text-transform: uppercase;
   }
 }
