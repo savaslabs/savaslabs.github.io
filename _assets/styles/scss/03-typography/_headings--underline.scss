@@ -46,24 +46,16 @@ the class to change the color.
 
 .heading--underline--right {
   @include heading-underline-right();
-
-  text-align: right;
 }
 
 .heading--underline--right--orange {
   @include heading-underline-right($orange);
-
-  text-align: right;
 }
 
 .heading--underline--right--magenta {
   @include heading-underline-right($magenta);
-
-  text-align: right;
 }
 
 .heading--underline--right--eggshell {
   @include heading-underline-right($eggshell);
-
-  text-align: right;
 }
