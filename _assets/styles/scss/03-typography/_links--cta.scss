@@ -27,15 +27,25 @@ parent: links
   border: solid 1px $teal;
   padding: .5em;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: $teal;
+    border: 0;
+    color: $eggshell;
+  }
 }
 
 // Inverse CTA links.
 .link--cta--inverse {
+  border: solid 1px $magenta;
   color: $eggshell;
 
   &:hover,
   &:focus {
-    color: $eggshell;
+    background-color: $eggshell;
+    border: 0;
+    color: $magenta;
   }
 }
 
