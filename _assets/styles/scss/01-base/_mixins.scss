@@ -50,33 +50,52 @@
   }
 }
 
-@mixin button {
-  background-color: $teal;
-  border-radius: 3px;
-  color: $base-background-color;
+@mixin button($background-color: $white, $color: $teal) {
+  background-color: transparent;
+  border: solid 2px $color;
+  border-radius: 0;
+  color: $color;
+  display: inline-block;
   font-family: $copytext-font;
-  margin-top: 2em;
-  padding: .75em 1em;
+  font-size: 1.25em;
+  padding: .75em 1.5em;
+  text-transform: uppercase;
   transition: (all .2s ease-in-out);
 
   &:hover,
   &:focus {
-    background-color: lighten($teal, 10%);
+    background-color: lighten($color, 10%);
+    border-color: lighten($color, 10%);
+    color: lighten($background-color, 10%);
   }
 }
 
-@mixin button-outline {
-  border: 2px solid $base-background-color;
-  border-radius: 3px;
-  color: $base-background-color;
-  font-family: $copytext-font;
-  margin-top: 2em;
-  padding: .5em 1em;
-  transition: (all .2s ease-in-out);
+@mixin button-arrow($background-color: $white, $color: $teal) {
+  @include button($background-color, $color);
+
+  background-color: transparent;
+  padding: .75em 0 .75em 1.5em;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out;
+
+  &::after {
+    background-color: $color;
+    color: $background-color;
+    content: '\f105';
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    margin-left: 1.2em;
+    padding: .9em 1.2em;
+    transition: (background-color .2s ease-in-out);
+
+  }
 
   &:hover,
   &:focus {
-    background-color: lighten($teal, 10%);
+
+    &::after {
+      background-color: lighten($color, 10%);
+      color: lighten($background-color, 10%);
+    }
   }
 }
 

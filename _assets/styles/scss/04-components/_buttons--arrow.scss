@@ -1,0 +1,66 @@
+/**
+ * @file
+ *
+ * Buttons: Arrow button styles.
+ */
+
+/*doc
+---
+title: Arrow button
+name: buttons--arrow
+category: Components
+parent: buttons
+---
+The default `button--arrow` is teal.
+
+```html_example_table
+<div class="styleguide-wrapper">
+  <a href="#" class="button--arrow">Work with us</a>
+</div>
+
+<div class="styleguide-wrapper">
+  <a href="#" class="button--arrow--magenta">Work with us</a>
+</div>
+
+<div class="styleguide-wrapper">
+  <a href="#" class="button--arrow--orange">Work with us</a>
+</div>
+
+<div class="styleguide-wrapper bg-teal">
+  <a href="#" class="button--arrow--white-teal">Work with us</a>
+</div>
+
+<div class="styleguide-wrapper bg-magenta">
+  <a href="#" class="button--arrow--white-magenta">Work with us</a>
+</div>
+
+<div class="styleguide-wrapper bg-orange">
+  <a href="#" class="button--arrow--white-orange">Work with us</a>
+</div>
+```
+
+*/
+
+.button--arrow {
+  @include button-arrow();
+}
+
+.button--arrow--magenta {
+  @include button-arrow($white, $magenta);
+}
+
+.button--arrow--orange {
+  @include button-arrow($white, $orange);
+}
+
+.button--arrow--white-teal {
+  @include button-arrow($teal, $white);
+}
+
+.button--arrow--white-magenta {
+  @include button-arrow($magenta, $white);
+}
+
+.button--arrow--white-orange {
+  @include button-arrow($orange, $white);
+}

@@ -12,7 +12,11 @@ category: Components
 parent: buttons
 ---
 
-```html_example
+```html_example_table
 ```
 
 */
+
+[type="submit"] {
+  @include button;
+}
