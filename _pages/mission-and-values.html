@@ -10,9 +10,9 @@ redirect_from:
 
 <div class="region--key-value-list wrapper">
   {% for core-value in site.data.core-values %}
-  {% assign name = core-value.name %}
-  {% assign description = core-value.description %}
-  {% include components/key-value-list-item.html key=name value=description %}
+    {% assign name = core-value.name %}
+    {% assign description = core-value.description %}
+    {% include components/key-value-list-item.html key=name value=description %}
   {% endfor %}
 </div>
 
