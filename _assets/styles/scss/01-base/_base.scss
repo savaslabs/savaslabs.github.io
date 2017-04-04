@@ -16,6 +16,9 @@
 // Import Bitters resets.
 @import '../00-lib/base/base';
 
+// Import custom mixins.
+@import 'mixins';
+
 // Uncomment to turn on Neat's visual grid for development.
 //body {
 //  @include grid-visual;

@@ -11,16 +11,120 @@ name: headings
 category: Typography
 ---
 
+*/
+
+/*doc
+---
+title: Heading sizes
+name: 1headings--sizes
+category: Typography
+parent: headings
+---
+Heading sizes are based on a major third scale on medium and large screens and a
+minor third scale on small screens.
+
 ```html_example_table
-<h1>This is a heading</h1>
+<h1>Heading Level 1</h1>
 
-<h2>This is a heading</h2>
+<h2>Heading Level 2</h2>
 
-<h3>This is a heading</h3>
+<h3>Heading Level 3</h3>
 
-<h4>This is a heading</h4>
-
-<h5>This is a heading</h5>
+<h4>Heading Level 4</h4>
 ```
 
 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+  font-family: $heading-font;
+  font-weight: 300;
+}
+
+h1,
+.h1 {
+  font-size: 2.074em;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 2.441em;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 1.728em;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 1.953em;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.44em;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 1.563em;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 1.2em;
+
+  @include grid-media($medium-screen-up) {
+    font-size: 1.25em;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1.1em;
+}
+
+h6,
+.h6 {
+  font-size: 1em;
+}
+
+/*doc
+---
+title: Other heading styles
+name: 2headings--other
+category: Typography
+parent: headings
+---
+
+```html_example_table
+<h1 class="heading--bold">Bold Heading</h1>
+
+<h1 class="heading--sans-serif">Sans Serif Heading</h2>
+
+```
+
+*/
+
+.heading--bold {
+  font-weight: 700;
+}
+
+.heading--sans-serif {
+  font-family: $copytext-font;
+  font-weight: 700;
+}
+
+// Add margin top for posts.
+.post {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5em;
+  }
+}

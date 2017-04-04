@@ -9,12 +9,41 @@
 @import 'scss/01-base/base';
 
 // Typography rules.
-@import 'scss/03-typography/typography';
+@import 'scss/03-typography/blockquote';
+@import 'scss/03-typography/code';
+@import 'scss/03-typography/code--inline';
+@import 'scss/03-typography/headings';
+@import 'scss/03-typography/headings--underline';
+@import 'scss/03-typography/hr';
+@import 'scss/03-typography/links';
+@import 'scss/03-typography/links--arrow';
+@import 'scss/03-typography/links--cta';
+@import 'scss/03-typography/links--inline';
+@import 'scss/03-typography/lists';
+@import 'scss/03-typography/paragraphs';
 
 // Component rules.
+// TODO: Once pages are built out, remove anything not shown above the fold.
+@import 'scss/04-components/article-heading-links';
+@import 'scss/04-components/buttons';
+@import 'scss/04-components/buttons--cta';
+@import 'scss/04-components/buttons--submit';
+@import 'scss/04-components/form-elements';
+@import 'scss/04-components/form-elements--text';
+@import 'scss/04-components/form-elements--textarea';
+@import 'scss/04-components/forms';
+@import 'scss/04-components/forms--contact';
 @import 'scss/04-components/header-navigation';
 @import 'scss/04-components/header-navigation--menu-link';
+@import 'scss/04-components/icons';
+@import 'scss/04-components/images';
+@import 'scss/04-components/images--hero';
 @import 'scss/04-components/logos';
+@import 'scss/04-components/tables';
+@import 'scss/04-components/tiles';
+@import 'scss/04-components/tiles--blog';
+@import 'scss/04-components/tiles--title';
+@import 'scss/04-components/tiles--work';
 
 // TODO: refactor and remove.
 @import 'scss/04-components/cards';
@@ -32,7 +61,9 @@
 @import 'scss/04-components/work-case-study-cover-image';
 
 // Region rules.
-@import 'scss/05-regions/_header.scss';
+// TODO: Add any more regions needed.
+@import 'scss/05-regions/header';
+@import 'scss/05-regions/hero-image';
 
 // Layout and page-level rules.
 @import 'scss/06-pages/base-layout';

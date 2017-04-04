@@ -1,0 +1,29 @@
+/**
+ * @file
+ *
+ * Typography: inline link styles.
+ */
+
+/*doc
+---
+title: Inline links
+name: link--inline
+category: Typography
+parent: links
+---
+```html_example_table
+<p>This is an <a href="#">inline link</a>. Its color makes it stand out, and we
+include an underline transition on hover.</p>
+```
+*/
+
+p a {
+  border-bottom: .1em solid transparentize($orange, .9);
+  color: $orange;
+
+  &:hover,
+  &:focus {
+    border-bottom: .1em solid $magenta;
+    color: $magenta;
+  }
+}

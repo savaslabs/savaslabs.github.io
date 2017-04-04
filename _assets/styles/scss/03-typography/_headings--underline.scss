@@ -1,0 +1,69 @@
+/**
+ * @file
+ *
+ * Typography: heading styles.
+ */
+
+/*doc
+---
+title: Underlined headings
+name: 3headings--underline
+category: Typography
+parent: headings
+---
+Use the `heading--underline` class for left-aligned headings and
+`heading--underline--right` for right-aligned headings. The default color is
+teal, but you can append `--orange`, `--magenta`, or `--eggshell` to the end of
+the class to change the color.
+
+```html_example_table
+<h2 class="heading--underline">Heading Level 2</h2>
+
+<h2 class="heading--underline--right">Heading Level 2</h2>
+
+<h2 class="heading--underline--magenta">Heading Level 2</h2>
+
+<h2 class="heading--underline--right--orange c-orange">Heading Level 2</h2>
+```
+
+*/
+
+.heading--underline {
+  @include heading-underline();
+}
+
+.heading--underline--orange {
+  @include heading-underline($orange);
+}
+
+.heading--underline--magenta {
+  @include heading-underline($magenta);
+}
+
+.heading--underline--eggshell {
+  @include heading-underline($eggshell);
+}
+
+.heading--underline--right {
+  @include heading-underline-right();
+
+  text-align: right;
+}
+
+.heading--underline--right--orange {
+  @include heading-underline-right($orange);
+
+  text-align: right;
+}
+
+.heading--underline--right--magenta {
+  @include heading-underline-right($magenta);
+
+  text-align: right;
+}
+
+.heading--underline--right--eggshell {
+  @include heading-underline-right($eggshell);
+
+  text-align: right;
+}

@@ -1,8 +1,51 @@
 /**
- * Syntax highlighting styles
+ * @file
+ *
+ * Syntax highlighting styles (adapted from Solarized theme).
+ * Note: This file is ignored by scss-lint.
  */
 
- .highlight {
+/*doc
+---
+title: Code
+name: code
+category: Typography
+---
+*/
+
+/*doc
+---
+title: Code block
+name: code--block
+category: Typography
+parent: code
+---
+We're using Rouge for syntax highlighting and our own color scheme based on a
+sass port of the Solarized theme. See
+<a href="/styleguide/colors.html">the Colors tab</a> for more info.
+
+```html_example
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="c1">// Uses Sass compiler to process styles, adds vendor prefixes, minifies, then</span>
+<span class="c1">// outputs file to the appropriate location.</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'build:styles:main'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">sass</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">sassFiles</span> <span class="o">+</span> <span class="s1">'/main.scss'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">style</span><span class="p">:</span> <span class="s1">'compressed'</span><span class="p">,</span>
+    <span class="na">trace</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">loadPath</span><span class="p">:</span> <span class="p">[</span><span class="nx">paths</span><span class="p">.</span><span class="nx">sassFiles</span><span class="p">]</span>
+  <span class="p">}).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">([</span> <span class="nx">autoprefixer</span><span class="p">({</span> <span class="na">browsers</span><span class="p">:</span> <span class="p">[</span><span class="s1">'last 2 versions'</span><span class="p">]</span> <span class="p">})</span> <span class="p">]))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">cleancss</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">jekyllCssFiles</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">paths</span><span class="p">.</span><span class="nx">siteCssFiles</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">browserSync</span><span class="p">.</span><span class="nx">stream</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">gutil</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+```
+
+*/
+
+.highlight {
   table td.code { width: 100%; }
   border: 1px solid $light-gray !important;
   border-radius: .4em;
@@ -43,24 +86,6 @@ pre {
   margin: 0;
   color: $pre-color;
   overflow: auto;
-}
-
-p, li {
-  code {
-    font-family: $monospace-font !important;
-    display: inline-block;
-    white-space: no-wrap;
-    background: $base-background-color;
-    font-size: .8em;
-    line-height: 1.5em;
-    color: $magenta;
-    border: 1px solid $light-gray;
-    border-radius: .2em;
-    padding: 0 .3em;
-    margin: -1px 0;
-  }
-  pre code { font-size: 1em !important; background: none; border: none; }
-  a code { color: $teal; }
 }
 
 .pre-code {

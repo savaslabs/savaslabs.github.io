@@ -4,9 +4,14 @@
  * Styles for component examples only for the style guide (e.g. color swatches).
  */
 
-// Provide some padding for elements in divs.
+// Style guide helpers.
+
 .styleguide-wrapper {
   padding: 1em;
+}
+
+.styleguide-center {
+  text-align: center;
 }
 
 // Color chips.
@@ -28,18 +33,4 @@
       display: block;
     }
   }
-}
-
-// CTA links.
-.styleguide-cta-link {
-  text-align: center;
-
-  a {
-    display: block;
-    padding: 1em;
-  }
-}
-
-.styleguide-cta-link--inverse {
-  background-color: $teal;
 }
