@@ -23,6 +23,7 @@ $monospace-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', 
 
 // Spacing and other utilities -------------------------------------------------
 $max-width: 1160px;
+$base-spacing: 1em;
 $base-margin: $base-spacing * 3;
 $case-study-header-break: (
   columns: 12,

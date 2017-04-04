@@ -78,7 +78,12 @@ category: Regions
   background-color: $footer-background-dark;
   color: $footer-color;
   overflow: hidden;
+  margin-top: $base-margin / 2;
   position: relative;
+
+  @include grid-media($medium-screen-up) {
+    margin-top: $base-margin;
+  }
 }
 
 // Main footer section.

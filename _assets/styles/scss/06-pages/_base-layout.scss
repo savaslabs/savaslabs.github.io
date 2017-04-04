@@ -7,13 +7,19 @@
 .wrapper {
   @include outer-container;
   max-width: $max-width - 40;
-  padding: $base-margin 1em;
+  padding: $base-margin / 2 1em;
   vertical-align: baseline;
+
+  @include grid-media($medium-screen-up) {
+    padding: $base-margin 1em;
+  }
 
   @include grid-media($extra-large-screen-up) {
     padding: $base-margin 0;
   }
 }
+
+// TODO: Remove styles below if not needed.
 
 .flex-container {
   @include grid-column(12);
