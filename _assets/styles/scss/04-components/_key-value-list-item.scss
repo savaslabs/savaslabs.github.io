@@ -47,14 +47,14 @@ category: Components
     // Add border-bottom to the entire list after the last item.
     @include grid-media($medium-screen-up) {
       border-bottom: solid 1px $orange;
-
-      .key-value-list__item__value {
-        padding-bottom: 3em;
-      }
     }
 
     .key-value-list__item__value {
       padding-bottom: 0;
+
+      @include grid-media($medium-screen-up) {
+        padding-bottom: $base-margin;
+      }
     }
   }
 
@@ -70,7 +70,7 @@ category: Components
 
   .key-value-list__item__key {
     @include grid-media($medium-screen-up) {
-      padding: 3em 3em 3em 1em;
+      padding: $base-margin $base-margin $base-margin $base-spacing;
     }
 
     h3 {
@@ -87,7 +87,7 @@ category: Components
 
     @include grid-media($medium-screen-up) {
       border-left: solid 1px $orange;
-      padding: 3em 1em 3em 3em;
+      padding: $base-margin $base-spacing $base-margin $base-margin;
     }
   }
 }

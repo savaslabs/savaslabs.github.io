@@ -3,14 +3,12 @@
 
   {% include head.html %}
 
-  <body>
+  <body{% if page.class %} class="{{ page.class }}"{% endif %}>
 
     {% include regions/header.html %}
 
     <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+      {{ content }}
     </div>
 
     {% include regions/footer.html %}
