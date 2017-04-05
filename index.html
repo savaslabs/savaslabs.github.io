@@ -1,89 +1,40 @@
 ---
+layout: default
 permalink: "/"
+class: page--home
 ---
-<!DOCTYPE html>
-<html>
 
-  {% include head.html %}
+<!-- Cover image and overlaid text. -->
+<div class="home__cover">
+  <h1 class="home__cover__heading">Savas Labs</h1><hr>
+  <p class="home__cover__site-description">{{ site.description }}</p>
+  <a href="#case-studies"><i class="fa fa-angle-double-down fa-lg" id="home-down-arrow"></i></a>
+</div>
 
-  <body class="home">
-
-    {% include regions/header.html %}
-
-    <!-- Cover image and overlaid text. -->
-    <div class="home__cover">
-      <h1 class="home__cover__heading">Savas Labs</h1><hr>
-      <p class="home__cover__site-description">{{ site.description }}</p>
-      <a href="#case-studies"><i class="fa fa-angle-double-down fa-lg" id="home-down-arrow"></i></a>
-    </div>
-
-    <div>
-
-      <!-- Most recent case studies. -->
-      <div id="case-studies" class="case-studies">
-        <h2>Recent work</h2>
-        {% assign items = site.case-studies | sort: 'weight' %}
-        {% for item in items %}
-          {% if item.featured == 1 %}
-          <div class="case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
-            <div class="case-study__title">
-              <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
-            </div>
-            <div class="case-study__description">
-              {% capture project_description %}{{ item.project_description }}{% endcapture %}
-              {{ project_description | markdownify }}
-              <a href="{{ item.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
-            </div>
-          </div>
-          {% endif %}
-        {% endfor %}
-
-        <div class="view-more-link">
-          <a href="/work">View all work <i class="fa fa-long-arrow-right"></i></a>
-        </div>
+<!-- Most recent case studies. -->
+<div id="case-studies" class="case-studies">
+  <h2>Recent work</h2>
+  {% assign items = site.case-studies | sort: 'weight' %}
+  {% for item in items %}
+    {% if item.featured == 1 %}
+    <div class="case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
+      <div class="case-study__title">
+        <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
       </div>
-      <hr>
-
-      <!-- Most recent blog posts. -->
-      <div class="home-blog-list" id="home-blog-list">
-        <h2>Latest Posts</h2>
-        <div class="flex-container">
-          <div class="cards">
-            {% for post in site.posts limit:3 %}
-            <div class="card">
-              <a class="url" href="{{ post.url }}">
-                <div class="card-image">
-                </div>
-                <div class="card-header">
-                  {{ post.title }}
-                </div>
-                <div class="card-copy">
-                  <p>By {{ post.author }}</p>
-                  <p>{{ post.date | date: "%b %-d, %Y" }}</p>
-                  {% if site.comment_server_enabled == 1 %}
-                  <span class="comment-count"></span>
-                  {% endif %}
-                  {% capture summary %}{{ post.summary }}{% endcapture %}
-                  <p>{{ summary | markdownify }}</p>
-                </div>
-              </a>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="view-more-link">
-          <a href="/blog">View all posts <i class="fa fa-long-arrow-right"></i></a>
-        </div>
+      <div class="case-study__description">
+        {% capture project_description %}{{ item.project_description }}{% endcapture %}
+        {{ project_description | markdownify }}
+        <a href="{{ item.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
       </div>
-
-      {% include regions/cta--move-work-forward.html %}
-
     </div>
+    {% endif %}
+  {% endfor %}
 
-    {% include regions/footer.html %}
-    {% include scripts.html %}
+  <div class="view-more-link">
+    <a href="/work">View all work <i class="fa fa-long-arrow-right"></i></a>
+  </div>
+</div>
+<hr>
 
-  </body>
-
-</html>
-
+{% include regions/cta--move-work-forward.html %}
+{% include regions/blog-tiles--sharing-our-expertise.html %}

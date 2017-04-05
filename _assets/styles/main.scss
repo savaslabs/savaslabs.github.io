@@ -45,9 +45,7 @@
 @import 'scss/04-components/key-value-list-item';
 @import 'scss/04-components/logos';
 @import 'scss/04-components/tables';
-@import 'scss/04-components/tiles';
 @import 'scss/04-components/tiles--blog';
-@import 'scss/04-components/tiles--title';
 @import 'scss/04-components/tiles--work';
 
 // TODO: Refactor and remove.
@@ -57,7 +55,6 @@
 @import 'scss/04-components/comments';
 @import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
-@import 'scss/04-components/home';
 @import 'scss/04-components/home-cover-image';
 @import 'scss/04-components/post';
 @import 'scss/04-components/post-bottom';
@@ -78,6 +75,7 @@
 @import 'scss/04-components/work-table';
 
 // Region rules.
+@import 'scss/05-regions/blog-tiles';
 @import 'scss/05-regions/call-to-action';
 @import 'scss/05-regions/footer';
 @import 'scss/05-regions/header';
@@ -88,3 +86,4 @@
 
 // Page rules (layout).
 @import 'scss/06-pages/base-layout';
+@import 'scss/06-pages/home';
