@@ -40,3 +40,12 @@ $extra-large-screen-up-grid: (
     media: $extra-large-screen-up-width
 );
 $extra-large-screen-up: $extra-large-screen-up-grid;
+
+// Max-width and up.
+$max-width-up-width: 1440px;
+$max-width-up-grid: (
+    columns: 12,
+    gutter: 20px,
+    media: $max-width-up-width
+);
+$max-width-up: $max-width-up-grid;

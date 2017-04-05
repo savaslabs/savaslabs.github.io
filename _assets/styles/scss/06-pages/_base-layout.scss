@@ -14,7 +14,7 @@
     padding: $base-margin 1em;
   }
 
-  @include grid-media($extra-large-screen-up) {
+  @include grid-media($max-width-up) {
     padding: $base-margin 0;
   }
 }
