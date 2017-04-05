@@ -2,17 +2,106 @@
  * @file
  *
  * Blog tile styles.
+ *
+ * Note: these aren't included as components in the style guide since their
+ * layout styles depend on each other and the region as a whole. See the
+ * blog tile region in the style guide for reference, or view
+ * 05-regions/_blog-tiles.scss
  */
 
-/*doc
----
-title: Blog tile
-name: tiles--blog
-category: Components
-parent: tiles
----
+// Layout styles for title and blog tiles.
+.tile--title--blog,
+.tile--blog {
+  flex-basis: 300px;
+  flex-shrink: 0;
 
-```html_example
-```
+  @include grid-media($large-screen-up) {
+    flex-basis: 25%;
+  }
+}
 
-*/
+// Styles for the title tile.
+.tile--title--blog {
+  padding: $base-spacing * 2;
+}
+
+// Styles for blog tiles.
+.tile--blog {
+
+  // Description and read more link should show on link hover.
+  .tile--blog__hover {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    .tile--blog__content {
+      display: none;
+    }
+
+    // Content shown on hover.
+    .tile--blog__hover {
+      align-items: center;
+      color: $eggshell;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      padding: $base-spacing;
+      text-align: center;
+
+      // The post summary.
+      p:first-child {
+        margin-bottom: $base-spacing * 1.5;
+        max-width: 15em;
+      }
+
+      // The "read more" link.
+      .link--cta {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  p {
+    @include grid-media($extra-large-screen-up) {
+      font-size: 1.1em;
+    }
+  }
+
+  // Content shown in non-hover state.
+  .tile--blog__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > div {
+      height: 150px;
+
+      @include grid-media($extra-large-screen-up) {
+        height: 175px;
+      }
+    }
+
+    // Set image as a cover to account for various image sizes.
+    .tile--blog__image {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+    }
+
+    .tile--blog__post-title {
+      align-items: center;
+      color: $dark-teal;
+      display: flex;
+      padding: $base-spacing;
+      width: 100%;
+
+      p::before {
+        @include accent-line($magenta);
+      }
+    }
+  }
+}

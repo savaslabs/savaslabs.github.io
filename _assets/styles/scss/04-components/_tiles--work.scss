@@ -2,17 +2,9 @@
  * @file
  *
  * Work tile styles.
+ *
+ * Note: these aren't included as components in the style guide since their
+ * layout styles depend on each other and the region as a whole. See the
+ * work tile region in the style guide for reference, or view
+ * 05-regions/_work-tiles.scss
  */
-
-/*doc
----
-title: Work tile
-name: tiles--work
-category: Components
-parent: tiles
----
-
-```html_example
-```
-
-*/
