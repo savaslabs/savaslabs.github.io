@@ -46,7 +46,8 @@
 @import 'scss/04-components/logos';
 @import 'scss/04-components/tables';
 @import 'scss/04-components/tiles--blog';
-@import 'scss/04-components/tiles--work';
+@import 'scss/04-components/tiles--case-study';
+@import 'scss/04-components/tiles';
 
 // TODO: Refactor and remove.
 @import 'scss/04-components/blog';
@@ -77,12 +78,12 @@
 // Region rules.
 @import 'scss/05-regions/blog-tiles';
 @import 'scss/05-regions/call-to-action';
+@import 'scss/05-regions/case-study-tiles';
 @import 'scss/05-regions/footer';
 @import 'scss/05-regions/header';
 @import 'scss/05-regions/hero-image';
 @import 'scss/05-regions/key-value-list';
 @import 'scss/05-regions/services-icons';
-@import 'scss/05-regions/work-tiles';
 
 // Page rules (layout).
 @import 'scss/06-pages/base-layout';

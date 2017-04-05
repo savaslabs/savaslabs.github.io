@@ -107,6 +107,12 @@
   }
 }
 
+@mixin cover-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @mixin table-minimal {
   border-collapse: separate;
   border-spacing: 0;
