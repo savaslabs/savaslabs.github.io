@@ -6,31 +6,20 @@
 // scss-lint:disable QualifyingElement
 // scss-lint:disable MergeableSelector
 
-.sg-content {
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.styleguide {
     margin-top: 1.5em;
-  }
-}
-
-.exampleOutput {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
   }
 }
 
 h1.styleguide {
   @include heading-underline($gainsboro);
 
-  margin-top: $base-spacing;
+  margin-top: $base-spacing * 2;
 
   &:first-child {
     margin-top: 0;

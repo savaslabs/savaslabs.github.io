@@ -11,30 +11,6 @@ class: page--home
   <a href="#case-studies"><i class="fa fa-angle-double-down fa-lg" id="home-down-arrow"></i></a>
 </div>
 
-<!-- Most recent case studies. -->
-<div id="case-studies" class="case-studies">
-  <h2>Recent work</h2>
-  {% assign items = site.case-studies | sort: 'weight' %}
-  {% for item in items %}
-    {% if item.featured == 1 %}
-    <div class="case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
-      <div class="case-study__title">
-        <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
-      </div>
-      <div class="case-study__description">
-        {% capture project_description %}{{ item.project_description }}{% endcapture %}
-        {{ project_description | markdownify }}
-        <a href="{{ item.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
-      </div>
-    </div>
-    {% endif %}
-  {% endfor %}
-
-  <div class="view-more-link">
-    <a href="/work">View all work <i class="fa fa-long-arrow-right"></i></a>
-  </div>
-</div>
-<hr>
-
+{% include regions/case-study-tiles.html %}
 {% include regions/cta--move-work-forward.html %}
 {% include regions/blog-tiles--sharing-our-expertise.html %}

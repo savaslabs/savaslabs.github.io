@@ -4,9 +4,9 @@
       <h2 class="c-eggshell">Sharing Our Expertise</h2>
     </div>
     {% for post in site.posts limit:3 %}
-    <div class="tile--blog">
+    <div class="tile--blog tile">
       <a href="{{ post.url }}" class="tile--blog__link">
-        <div class="tile--blog__content bg-eggshell">
+        <div class="tile--blog__content tile__content bg-eggshell">
           {% if post.featured_image %}
           <div class="tile--blog__image" style="background-image: url(/assets/img{{ post.featured_image }});">
             {% else %}
@@ -18,7 +18,7 @@
             {{ post.title | markdownify }}
           </div>
         </div>
-        <div class="tile--blog__hover bg-orange">
+        <div class="tile--blog__hover tile__hover bg-orange">
           {{ post.summary | markdownify }}
           <p class="link--cta link--cta--inverse">Read more</p>
         </div>
