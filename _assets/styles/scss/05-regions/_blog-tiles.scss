@@ -64,30 +64,19 @@ lessons learned to our workflow.</p>
       </a>
     </div>
   </div>
+  <div class="region--blog-tiles__view-all-link">
+    <a href="/blog" class="link--arrow">View all posts</a>
+  </div>
 </div>
 ```
 
 */
 
-// The region itself.
-.region--blog-tiles {
-  margin: $base-margin / 2 auto 0;
-  max-width: $max-width;
-
-  @include grid-media($medium-screen-up) {
-    margin-top: $base-margin;
-  }
-}
-
 // Wrapper div around the blog tiles.
 .region--blog-tiles__wrapper {
-  @include outer-container;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: $max-width - 40;
-  vertical-align: baseline;
 
   @include grid-media($large-screen-up) {
     flex-wrap: nowrap;
