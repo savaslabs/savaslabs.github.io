@@ -41,6 +41,14 @@
   }
 }
 
+@mixin paragraph-loud() {
+  font-size: 1.25em;
+}
+
+@mixin paragraph-louder() {
+  font-size: 1.563em;
+}
+
 @mixin link--light() {
   color: $eggshell;
 
