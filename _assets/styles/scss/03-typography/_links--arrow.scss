@@ -13,7 +13,7 @@ parent: links
 ---
 ```html_example_table
 <div class="styleguide-wrapper">
-  <a href="#" class="link--arrow">View all blog</a>
+  <a href="#" class="link--arrow">View all posts</a>
 </div>
 
 <div class="styleguide-wrapper bg-teal">
@@ -28,6 +28,7 @@ parent: links
   &::after {
     content: '\f105';
     font-family: FontAwesome;
-    margin-left: .25em;
+    font-size: 1.25em;
+    margin-left: .75em;
   }
 }

@@ -31,7 +31,7 @@ parent: links
   &:hover,
   &:focus {
     background-color: $teal;
-    border: 0;
+    border-color: $teal;
     color: $eggshell;
   }
 }
@@ -44,7 +44,7 @@ parent: links
   &:hover,
   &:focus {
     background-color: $eggshell;
-    border: 0;
+    border-color: $eggshell;
     color: $magenta;
   }
 }
