@@ -4,7 +4,8 @@
  * Site-wide layout styles.
  */
 
-.wrapper {
+// For regions that need max width and left and right padding.
+.region {
   @include outer-container;
   max-width: $max-width - 40;
   padding: $base-margin / 2 1em;
@@ -16,6 +17,24 @@
 
   @include grid-media($max-width-up) {
     padding: $base-margin 0;
+  }
+}
+
+// For regions that should appear full width, but whose content should have
+// a max-width.
+.region--full-width {
+  margin: $base-margin / 2 0;
+
+  @include grid-media($medium-screen-up) {
+    margin: $base-margin 0;
+  }
+
+  .region--full-width__wrapper {
+    @include outer-container;
+
+    margin: 0 auto;
+    max-width: $max-width - 40;
+    vertical-align: baseline;
   }
 }
 
