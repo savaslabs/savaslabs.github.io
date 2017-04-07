@@ -1,0 +1,90 @@
+/**
+ * @file
+ *
+ * Team member bio styles.
+ */
+
+/*doc
+---
+title: Team member bio
+name: team-member-bio
+category: Components
+---
+Note that the component template uses the Jekyll Picture Tag plugin to create a
+`<picture>` element for the team member photo.
+
+```html_example
+<div class="team-member-bio">
+  <a class="team-member-bio__link" href="/company/chris-russo/">
+    <div class="team-member-bio__image">
+      <img src="/assets/img/team/chris/chris-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Chris Russo">
+    </div>
+    <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Chris Russo</h3>
+    <p class="team-member-bio__title">Principal Director</p>
+    <p class="team-member-bio__description">Chris does his best to ensure that his team is learning and growing and that our clients feel like partners.</p>
+  </a>
+</div>
+```
+
+*/
+
+.team-member-bio {
+  max-width: 250px;
+
+  // Set up hover styles for entire block.
+  .team-member-bio__link {
+    &:hover,
+    &:focus {
+      .team-member-bio__image::after {
+        background-color: $orange;
+        width: 100%;
+      }
+
+      .team-member-bio__name {
+        color: $orange;
+      }
+
+      p {
+        color: $dark-teal;
+      }
+    }
+  }
+
+  .team-member-bio__image {
+    margin-bottom: $base-spacing;
+    position: relative;
+
+    // This sets up the orange bottom border on hover.
+    &::after {
+      background-color: transparent;
+      bottom: 0;
+      content: '';
+      height: 5px;
+      position: absolute;
+      transition: all .5s ease;
+      width: 0;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .team-member-bio__name,
+  .team-member-bio__description {
+    margin-bottom: 0;
+  }
+
+  .team-member-bio__title {
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $grey;
+  }
+
+  h3,
+  p {
+    transition: color .2s ease-in-out;
+  }
+}
