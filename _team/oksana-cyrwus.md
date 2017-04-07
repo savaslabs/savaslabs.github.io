@@ -1,5 +1,6 @@
 ---
 name: Oksana Cyrwus
+slug: oksana
 layout: team
 job_title: Designer / Drupal Developer
 job_description: Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user's needs.
@@ -11,7 +12,7 @@ linkedin: oksanacyrwus
 stack-exchange: 6655373/oksana-c
 website: http://oksanac.com
 badges:
-  - image: "assets/img/team/association_ind_member_badge.svg"
+  - image: "assets/img/team/badges/association_ind_member_badge.svg"
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
   - image: "assets/img/team/D7CD.png"
