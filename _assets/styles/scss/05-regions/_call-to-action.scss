@@ -29,10 +29,10 @@ category: Regions
   text-align: center;
 
   .region--cta__heading {
-    margin-bottom: $base-spacing;
+    margin-bottom: $base-spacing * 1.5;
   }
 
   .region--cta__text {
-    margin-bottom: $base-spacing * 2;
+    margin-bottom: $base-spacing * 3;
   }
 }

@@ -8,13 +8,5 @@ redirect_from:
   - /mission-and-values/
 ---
 
-<div class="region--key-value-list region">
-  {% for core-value in site.data.core-values %}
-    {% assign name = core-value.name %}
-    {% assign id = core-value.id %}
-    {% assign description = core-value.description %}
-    {% include components/key-value-list-item.html key=name id=id value=description %}
-  {% endfor %}
-</div>
-
+{% include regions/key-value-list--core-values.html %}
 {% include regions/cta--move-work-forward.html %}
