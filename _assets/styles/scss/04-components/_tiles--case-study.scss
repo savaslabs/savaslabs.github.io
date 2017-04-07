@@ -15,7 +15,7 @@
 
   background-image: url('/assets/img/au-staircase-tile.jpg');
   margin-bottom: $base-spacing / 2;
-  padding: $base-spacing;
+  padding: $base-spacing * 3 $base-spacing;
   width: 100%;
 
   @include grid-media($medium-screen-up) {
@@ -30,7 +30,7 @@
     justify-content: space-between;
     margin-bottom: 0;
     margin-right: $base-spacing / 4;
-    padding: $base-spacing * 4;
+    padding: $base-spacing * 6 $base-spacing * 4;
     text-align: right;
     width: 50%;
   }
@@ -93,6 +93,10 @@
     text-align: center;
     width: 100%;
 
+    @include grid-media($max-width-up) {
+      height: 350px;
+    }
+
     // First tile is larger so text should be wider.
     &:first-child {
       .tile__hover {
@@ -116,6 +120,10 @@
     .tile--case-study__content,
     .tile--case-study__hover {
       height: 310px;
+
+      @include grid-media($max-width-up) {
+        height: 350px;
+      }
     }
 
     // Set up tile background image and center the heading.

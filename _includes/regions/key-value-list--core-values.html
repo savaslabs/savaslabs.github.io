@@ -1,0 +1,10 @@
+<div class="region--key-value-list region--full-width">
+  <div class="region--key-value-list__wrapper region--full-width__wrapper">
+    {% for core-value in site.data.core-values %}
+    {% assign name = core-value.name %}
+    {% assign id = core-value.id %}
+    {% assign description = core-value.description %}
+    {% include components/key-value-list-item.html key=name id=id value=description %}
+    {% endfor %}
+  </div>
+</div>

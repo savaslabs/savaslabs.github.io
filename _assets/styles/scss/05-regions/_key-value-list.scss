@@ -12,45 +12,47 @@ category: Regions
 ---
 
 ```html_example
-<div class="region--key-value-list wrapper">
-  <div class="key-value-list__item">
-    <div class="key-value-list__item__key">
-      <h3 class="c-orange heading--bold">Be Inclusive</h3>
+<div class="region--key-value-list region--full-width">
+  <div class="region--key-value-list__wrapper region--full-width__wrapper">
+    <div class="key-value-list__item">
+      <div class="key-value-list__item__key">
+        <h3 class="c-orange heading--bold">Be Inclusive</h3>
+      </div>
+      <div class="key-value-list__item__value">
+        <p>We embrace diversity in every sense of the word, not only for the benefits it brings to the company by providing a more holistic perspective on problem solving, but as it pertains to the empowerment of traditionally and presently underrepresented groups. We strive to craft an intentionally inclusive work environment in which everyone feels comfortable in their own skin.</p>
+      </div>
     </div>
-    <div class="key-value-list__item__value">
-      <p>We embrace diversity in every sense of the word, not only for the benefits it brings to the company by providing a more holistic perspective on problem solving, but as it pertains to the empowerment of traditionally and presently underrepresented groups. We strive to craft an intentionally inclusive work environment in which everyone feels comfortable in their own skin.</p>
+    <div class="key-value-list__item">
+      <div class="key-value-list__item__key">
+        <h3 class="c-orange heading--bold">Collaborate</h3>
+      </div>
+      <div class="key-value-list__item__value">
+        <p>Collaboration by means of listening, learning, and teaching is core to our spirit and key to our success. We share our knowledge and experience in our daily teamwork and enrich the broader community by imparting our expertise through <a href="/blog/">blog posts</a>, <a href="https://www.drupal.org/savas">public code contributions</a>, <a href="http://www.meetup.com/triDUG/">hosting local meetups</a>, and presenting at conferences.</p>
+      </div>
     </div>
-  </div>
-  <div class="key-value-list__item">
-    <div class="key-value-list__item__key">
-      <h3 class="c-orange heading--bold">Collaborate</h3>
+    <div class="key-value-list__item">
+      <div class="key-value-list__item__key">
+        <h3 class="c-orange heading--bold">Be Respectful</h3>
+      </div>
+      <div class="key-value-list__item__value">
+        <p>Respect is paramount to fostering trust with each other and our partners. We recognize that we are all imperfect human humility and understanding. With egos checked at the door, our professional ethos, founded in honesty and integrity, makes us a delight to collaborate with.</p>
+      </div>
     </div>
-    <div class="key-value-list__item__value">
-      <p>Collaboration by means of listening, learning, and teaching is core to our spirit and key to our success. We share our knowledge and experience in our daily teamwork and enrich the broader community by imparting our expertise through <a href="/blog/">blog posts</a>, <a href="https://www.drupal.org/savas">public code contributions</a>, <a href="http://www.meetup.com/triDUG/">hosting local meetups</a>, and presenting at conferences.</p>
+    <div class="key-value-list__item">
+      <div class="key-value-list__item__key">
+        <h3 class="c-orange heading--bold">Empathize</h3>
+      </div>
+      <div class="key-value-list__item__value">
+        <p>Not only do we find empathy a nice quality to be around, but exercising it intentionally in our work allows us put ourselves in the shoes of our partners and teammates to better understand their successes and struggles which makes us better-informed partners.</p>
+      </div>
     </div>
-  </div>
-  <div class="key-value-list__item">
-    <div class="key-value-list__item__key">
-      <h3 class="c-orange heading--bold">Be Respectful</h3>
-    </div>
-    <div class="key-value-list__item__value">
-      <p>Respect is paramount to fostering trust with each other and our partners. We recognize that we are all imperfect human humility and understanding. With egos checked at the door, our professional ethos, founded in honesty and integrity, makes us a delight to collaborate with.</p>
-    </div>
-  </div>
-  <div class="key-value-list__item">
-    <div class="key-value-list__item__key">
-      <h3 class="c-orange heading--bold">Empathize</h3>
-    </div>
-    <div class="key-value-list__item__value">
-      <p>Not only do we find empathy a nice quality to be around, but exercising it intentionally in our work allows us put ourselves in the shoes of our partners and teammates to better understand their successes and struggles which makes us better-informed partners.</p>
-    </div>
-  </div>
-  <div class="key-value-list__item">
-    <div class="key-value-list__item__key">
-      <h3 class="c-orange heading--bold">Excel</h3>
-    </div>
-    <div class="key-value-list__item__value">
-      <p>We take great care of the people we work with and the quality of the work we produce. By taking a client-centric approach to solving problems and constantly adding value we ensure we’re truly understanding each client’s needs and providing thoughtful, right-fit solutions that adhere to best practices. We hold ourselves to a high and constantly improving standard.</p>
+    <div class="key-value-list__item">
+      <div class="key-value-list__item__key">
+        <h3 class="c-orange heading--bold">Excel</h3>
+      </div>
+      <div class="key-value-list__item__value">
+        <p>We take great care of the people we work with and the quality of the work we produce. By taking a client-centric approach to solving problems and constantly adding value we ensure we’re truly understanding each client’s needs and providing thoughtful, right-fit solutions that adhere to best practices. We hold ourselves to a high and constantly improving standard.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -59,5 +61,9 @@ category: Regions
 */
 
 .region--key-value-list {
-  padding-top: 0;
+  border-bottom: solid 1px $orange;
+
+  @include grid-media($medium-screen-up) {
+    padding-top: 0;
+  }
 }

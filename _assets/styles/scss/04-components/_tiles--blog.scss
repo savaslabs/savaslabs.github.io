@@ -28,7 +28,6 @@
 // Styles for blog tiles.
 .tile--blog {
 
-
   // Content shown in non-hover state.
   .tile--blog__content {
     align-items: center;
@@ -41,6 +40,10 @@
 
       @include grid-media($extra-large-screen-up) {
         height: 175px;
+      }
+
+      @include grid-media($max-width-up) {
+        height: 200px;
       }
     }
 
@@ -61,6 +64,18 @@
       p::before {
         @include accent-line($magenta);
       }
+    }
+  }
+
+  .tile--blog__hover {
+    height: 300px;
+
+    @include grid-media($extra-large-screen-up) {
+      height: 350px;
+    }
+
+    @include grid-media($max-width-up) {
+      height: 400px;
     }
   }
 }

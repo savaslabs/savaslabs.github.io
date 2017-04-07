@@ -42,22 +42,6 @@ category: Components
     padding-top: 0;
   }
 
-  &:last-child {
-
-    // Add border-bottom to the entire list after the last item.
-    @include grid-media($medium-screen-up) {
-      border-bottom: solid 1px $orange;
-    }
-
-    .key-value-list__item__value {
-      padding-bottom: 0;
-
-      @include grid-media($medium-screen-up) {
-        padding-bottom: $base-margin;
-      }
-    }
-  }
-
   // The key and value divs should be full width on small screens and half width
   // on larger screens.
   > div {
