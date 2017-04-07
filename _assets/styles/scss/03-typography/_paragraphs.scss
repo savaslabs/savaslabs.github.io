@@ -47,3 +47,7 @@ body {
 .paragraph--louder {
   @include paragraph-louder;
 }
+
+.paragraph--loud--responsive {
+  @include paragraph-loud-responsive;
+}

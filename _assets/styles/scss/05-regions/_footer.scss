@@ -76,6 +76,7 @@ category: Regions
 // Entire footer element.
 .region--footer {
   background-color: $footer-background-dark;
+  clear: both;
   color: $footer-color;
   margin-top: $base-margin / 2;
   overflow: hidden;
