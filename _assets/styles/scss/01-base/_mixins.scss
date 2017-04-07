@@ -49,6 +49,14 @@
   font-size: 1.563em;
 }
 
+@mixin paragraph-loud-responsive() {
+  font-size: 1.25em;
+
+  @include grid-media($large-screen-up) {
+    font-size: 1.563em;
+  }
+}
+
 @mixin link--light() {
   color: $eggshell;
 
