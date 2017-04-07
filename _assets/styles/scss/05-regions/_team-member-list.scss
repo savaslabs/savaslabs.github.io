@@ -1,0 +1,121 @@
+/**
+ * @file
+ *
+ * Team member list region styles.
+ */
+
+/*doc
+---
+title: Team member list
+name: team-member-list
+category: Regions
+---
+Note that the team member bio component template uses the Jekyll Picture Tag
+plugin to create a `<picture>` element for the team member photo.
+
+```html_example
+<div class="region--team-member-list region">
+  <div class="region--team-member-list__wrapper">
+    <h2 class="heading--underline--magenta">Team</h2>
+    <div class="region--team-member-list__list">
+      <div class="team-member-bio">
+        <a class="team-member-bio__link" href="/company/anne-tomasevich/">
+          <div class="team-member-bio__image">
+            <img src="/assets/img/team/anne/anne-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Anne Tomasevich">
+          </div>
+          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Anne Tomasevich</h3>
+          <p class="team-member-bio__title">Front End Developer</p>
+          <p class="team-member-bio__description">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
+        </a>
+      </div>
+      <div class="team-member-bio">
+        <a class="team-member-bio__link" href="/company/chris-russo/">
+          <div class="team-member-bio__image">
+            <img src="/assets/img/team/chris/chris-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Chris Russo">
+          </div>
+          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Chris Russo</h3>
+          <p class="team-member-bio__title">Principal Director</p>
+          <p class="team-member-bio__description">Chris does his best to ensure that his team is learning and growing and that our clients feel like partners.</p>
+        </a>
+      </div>
+      <div class="team-member-bio">
+        <a class="team-member-bio__link" href="/company/dan-murphy/">
+          <div class="team-member-bio__image">
+            <img src="/assets/img/team/dan/dan-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Dan Murphy">
+          </div>
+          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Dan Murphy</h3>
+          <p class="team-member-bio__title">Web Developer</p>
+          <p class="team-member-bio__description">Dan develops back-end solutions and front-end, responsive designs for Savas Labs clients.</p>
+        </a>
+      </div>
+      <div class="team-member-bio">
+        <a class="team-member-bio__link" href="/company/kosta-harlan/">
+          <div class="team-member-bio__image">
+            <img src="/assets/img/team/kosta/kosta-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Kosta Harlan">
+          </div>
+          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Kosta Harlan</h3>
+          <p class="team-member-bio__title">Director of Technology</p>
+          <p class="team-member-bio__description">Kosta is responsible for code quality at Savas Labs, keeping up to date with emerging technologies and ensuring our team follows best practices.</p>
+        </a>
+      </div>
+      <div class="team-member-bio">
+        <a class="team-member-bio__link" href="/company/oksana-cyrwus/">
+          <div class="team-member-bio__image">
+            <img src="/assets/img/team/oksana/oksana-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Oksana Cyrwus">
+          </div>
+          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Oksana Cyrwus</h3>
+          <p class="team-member-bio__title">Drupal Developer</p>
+          <p class="team-member-bio__description">Oksana is a Drupal Developer at Savas Labs. Her technical inputs include back-end, front-end development and site architecture.</p>
+        </a>
+      </div>
+      <div class="team-member-bio">
+        <a class="team-member-bio__link" href="/company/ro-wang/">
+          <div class="team-member-bio__image">
+            <img src="/assets/img/team/ro/ro-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Ro Wang">
+          </div>
+          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Ro Wang</h3>
+          <p class="team-member-bio__title">Drupal Developer</p>
+          <p class="team-member-bio__description">Ro is a junior web developer at Savas Labs filling her brain daily with myriad things the team throws at her.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+*/
+
+.region--team-member-list {
+
+  // On extra large screens, set region to 9 columns.
+  .region--team-member-list__wrapper {
+    @include grid-media($extra-large-screen-up) {
+      @include grid-column(9);
+      @include grid-shift(1.5);
+    }
+  }
+
+  // Justify bios center on small screens and left on extra large and up.
+  .region--team-member-list__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include grid-media($extra-large-screen-up) {
+      justify-content: flex-start;
+    }
+
+    // Layout styles for the bios in the list.
+    .team-member-bio {
+      flex-basis: 250px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 0 $base-spacing * .75 $base-spacing * 2;
+
+      @include grid-media($extra-large-screen-up) {
+        padding-left: 0;
+        padding-right: $base-spacing * 1.5;
+      }
+    }
+  }
+}
