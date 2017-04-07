@@ -1,10 +1,9 @@
 ---
 name: Anne Tomasevich
+slug: anne
 layout: team
 job_title: Front End Developer
 job_description: Anne is a developer at Savas Labs, focused on front-end technologies and user experience.
-photo: "/team/anne-tomasevich.jpg"
-card: "/team/cards/anne-card.jpg"
 drupal: AnneTee
 github: AnneTee
 linkedin: annetomasevich

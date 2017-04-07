@@ -4,7 +4,7 @@ layout: default
 <div class="team-member">
     <header class="team-header">
       <h1 class="team-member-name">{{ page.name }}</h1>
-      {% picture team_individual {{ page.photo }} alt="{{ page.name }}" %}
+      {% picture team_individual /team/{{ page.slug }}/{{ page.slug }}-square-outside.jpg alt="{{ page.name }}" %}
       <h4 class="team-member-job-title">{{ page.job_title }}</h4>
     </header>
     <div class="team-links">

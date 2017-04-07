@@ -1,10 +1,9 @@
 ---
 name: Ro Wang
+slug: ro
 layout: team
 job_title: Drupal Developer
 job_description: Ro is a junior web developer at Savas Labs filling her brain daily with myriad things the team throws at her.
-card: "/team/cards/ro-card.jpg"
-photo: "/team/ro-wang.jpg"
 drupal: rowang
 github: lrowang
 linkedin: laurenrowang
