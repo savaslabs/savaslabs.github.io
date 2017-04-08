@@ -13,7 +13,8 @@ badges:
   - image: "assets/img/team/badges/DC2016_Spread_The_Word_Sponsor-Speaker.png"
     alt: "Drupalcon NOLA speaking Badge"
     link: "https://events.drupal.org/news/sessions-training-opportunities-announced-drupalcon-new-orleans"
-
+redirect_from:
+  - /team/chris-russo/
 ---
 
 Chris has been a professional web developer since 2007 and made his first website

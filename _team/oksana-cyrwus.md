@@ -18,6 +18,8 @@ badges:
   - image: "assets/img/team/D7CD.png"
     alt: "Acquia Certified Developer D7"
     link: "https://www.acquia.com/customer-success/learning-services/acquia-certification-program-overview"
+redirect_from:
+  - /team/oksana-cyrwus/
 ---
 Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user's needs. As a Designer & Developer at Savas Labs, Oksana grounds her work in analytic research swiftly composing balanced solutions that fulfill high-level organizational goals.
 

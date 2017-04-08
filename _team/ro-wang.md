@@ -8,6 +8,8 @@ drupal: rowang
 github: lrowang
 linkedin: laurenrowang
 resume: http://stackoverflow.com/cv/rowang
+redirect_from:
+  - /team/ro-wang/
 ---
 
 Ro is a junior web developer! Though pivoting to the web world
