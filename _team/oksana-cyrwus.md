@@ -13,6 +13,8 @@ badges:
   - image: "assets/img/team/badges/association_ind_member_badge.svg"
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
+redirect_from:
+  - /team/oksana-cyrwus/
 ---
 Oksana is a PHP developer specializing in Drupal. She began building her digital marketing skill set in 2007 as she worked towards her Master’s Degree in Applied Mathematics and Informatics.
 
