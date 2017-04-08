@@ -13,6 +13,7 @@
 .tile--title--blog,
 .tile--blog {
   flex-basis: 300px;
+  flex-grow: 1;
   flex-shrink: 0;
 
   @include grid-media($large-screen-up) {
@@ -37,6 +38,16 @@
 
     > div {
       height: 150px;
+
+      // Image should be taller between small-medium screens since each tile
+      // will be full-width, e.g. 450 - 600 px wide.
+      @include grid-media($small-screen-up) {
+        height: 200px;
+      }
+
+      @include grid-media($medium-screen-up) {
+        height: 150px;
+      }
 
       @include grid-media($extra-large-screen-up) {
         height: 175px;
@@ -69,6 +80,15 @@
 
   .tile--blog__hover {
     height: 300px;
+
+    // Set height of tile hover content equal to height of image * 2.
+    @include grid-media($small-screen-up) {
+      height: 400px;
+    }
+
+    @include grid-media($medium-screen-up) {
+      height: 300px;
+    }
 
     @include grid-media($extra-large-screen-up) {
       height: 350px;
