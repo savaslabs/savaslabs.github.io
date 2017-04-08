@@ -43,7 +43,7 @@ exclude: ["vendor",
 collections:
   team:
     output: true
-    permalink: /company/team/:path/
+    permalink: /company/:path/
   team-former:
     output: false
   case-studies:
