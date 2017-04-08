@@ -1,0 +1,66 @@
+/**
+ * @file
+ *
+ * Styles for "We're hiring" banner region.
+ */
+
+.region--banner--were-hiring {
+
+  // On small screens we'll use a background cover image.
+  background: url('/assets/img/team-magenta-fade.jpg') top / cover no-repeat $magenta;
+
+  // scss-lint:disable ImportantRule
+  // Override region margin.
+  margin-bottom: 0 !important;
+  // scss-lint:enable ImportantRule
+
+  @include grid-media($large-screen-up) {
+    align-items: center;
+    background: $magenta;
+    display: flex;
+  }
+
+  // On large screens we'll use an actual image.
+  .region--banner--were-hiring__image {
+    display: none;
+
+    @include grid-media($large-screen-up) {
+      display: block;
+      width: 50%;
+    }
+
+    // Set max width on image so it doesn't become huge on super wide screens.
+    img {
+      @include grid-media($large-screen-up) {
+        display: block;
+        max-width: 730px;
+        width: 100%;
+      }
+    }
+  }
+
+  .region--banner--were-hiring__text {
+    padding: $base-spacing * 3 $base-spacing;
+
+    @include grid-media($medium-screen-up) {
+      padding-left: $base-spacing * 3;
+      padding-right: $base-spacing * 3;
+    }
+
+    @include grid-media($large-screen-up) {
+      padding: 0 $base-spacing * 3 0 0;
+      width: 50%;
+    }
+
+    p {
+      margin-bottom: $base-spacing * 1.5;
+
+      @include grid-media($large-screen-up) {
+        font-size: 1.1em;
+        max-width: 600px;
+      }
+    }
+
+
+  }
+}
