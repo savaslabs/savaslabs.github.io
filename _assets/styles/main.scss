@@ -7,6 +7,7 @@
 // Libraries and base rules.
 @import 'scss/01-base/normalize';
 @import 'scss/01-base/base';
+@import 'scss/01-base/base-layout';
 @import 'scss/00-lib/font-awesome/font-awesome';
 
 // Typography rules.
@@ -66,17 +67,17 @@
 @import 'scss/04-components/services-top';
 @import 'scss/04-components/sub-services';
 @import 'scss/04-components/tag';
-@import 'scss/04-components/team-bottom';
 @import 'scss/04-components/team-member-badges';
 @import 'scss/04-components/team-member-posts';
 @import 'scss/04-components/team-member-top';
-@import 'scss/04-components/team-top';
 @import 'scss/04-components/work';
 @import 'scss/04-components/work-case-study';
 @import 'scss/04-components/work-case-study-cover-image';
 @import 'scss/04-components/work-table';
 
 // Region rules.
+@import 'scss/05-regions/banner';
+@import 'scss/05-regions/banner--were-hiring';
 @import 'scss/05-regions/blog-tiles';
 @import 'scss/05-regions/call-to-action';
 @import 'scss/05-regions/case-study-tiles';
@@ -88,5 +89,4 @@
 @import 'scss/05-regions/team-member-list';
 
 // Page rules (layout).
-@import 'scss/06-pages/base-layout';
 @import 'scss/06-pages/home';
