@@ -1,0 +1,42 @@
+/**
+ * @file
+ *
+ * Styles for Open Source Contributions banner region.
+ */
+
+.region--banner--open-source {
+  .region--full-width__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .region--banner--open-source__image {
+    padding: $base-spacing;
+
+    img {
+      width: 240px;
+    }
+  }
+
+  .region--banner--open-source__text {
+    padding: $base-spacing;
+
+    h2 {
+      line-height: 1.75em;
+      margin-bottom: 0;
+      text-align: center;
+
+      @include grid-media($large-screen-up) {
+        line-height: 1.5em;
+      }
+
+      span {
+        @include grid-media($medium-screen-up) {
+          border-bottom: solid 1px $orange;
+          padding-bottom: .25em;
+        }
+      }
+    }
+  }
+}
