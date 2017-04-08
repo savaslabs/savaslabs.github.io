@@ -66,6 +66,15 @@
   }
 }
 
+@mixin link--light--no-hover() {
+  color: $eggshell;
+
+  &:hover,
+  &:focus {
+    color: $eggshell;
+  }
+}
+
 @mixin button($background-color: $white, $color: $teal) {
   background-color: transparent;
   border: solid 2px $color;
