@@ -35,3 +35,8 @@ a {
   @include link--light;
 }
 
+.link--light--no-hover {
+  @include link--light--no-hover;
+}
+
+
