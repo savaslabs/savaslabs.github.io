@@ -22,7 +22,8 @@ $heading-font: 'Roboto Slab', Verdana, sans-serif;
 $monospace-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace !default;
 
 // Spacing and other utilities -------------------------------------------------
-$max-width: 1160px;
+$max-width: 1440px;
+$base-spacing: 1em;
 $base-margin: $base-spacing * 3;
 $case-study-header-break: (
   columns: 12,

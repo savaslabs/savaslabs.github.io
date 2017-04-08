@@ -1,0 +1,35 @@
+<div class="region--case-study-tiles region--full-width">
+  <div class="region--case-study-tiles__wrapper">
+    <div class="tile--title--case-study bg-magenta">
+      <div class="tile--title--case-study__text">
+        <h2 class="c-eggshell h1">Results</h2>
+        <p class="c-eggshell">
+          Solving your digital dilemmas & integrating for growth
+        </p>
+      </div>
+      <!--TODO: Update link to /results.-->
+      <div class="tile--title--case-study__link">
+        <a href="/work" class="button--arrow--white-magenta">View all work</a>
+      </div>
+    </div>
+    <div class="region--case-study-tiles__tiles">
+      {% assign items = site.case-studies | sort: 'weight' %}
+      {% for item in items %}
+        {% if item.featured == 1 %}
+        <div class="tile--case-study tile">
+          <a href="{{ item.url }}" class="tile--case-study__link">
+            <div class="tile--case-study__content tile__content bg-dark-teal" style="background-image: url({{ item.tile_image }});">
+              <h3 class="heading--bold c-eggshell h4">{{ item.project_title }}</h3>
+            </div>
+            <div class="tile--case-study__hover tile__hover bg-orange">
+              {% capture tile_description %}{{ item.tile_description }}{% endcapture %}
+              {{ tile_description | markdownify }}
+              <p class="link--cta link--cta--inverse">Learn more</p>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

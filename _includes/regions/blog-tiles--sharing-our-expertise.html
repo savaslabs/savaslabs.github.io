@@ -1,0 +1,32 @@
+<div class="region--blog-tiles region--full-width">
+  <div class="region--blog-tiles__wrapper">
+    <div class="tile--title--blog bg-magenta">
+      <h2 class="c-eggshell">Sharing Our Expertise</h2>
+    </div>
+    {% for post in site.posts limit:3 %}
+    <div class="tile--blog tile">
+      <a href="{{ post.url }}" class="tile--blog__link">
+        <div class="tile--blog__content tile__content bg-light-teal">
+          {% if post.featured_image %}
+          <div class="tile--blog__image" style="background-image: url(/assets/img{{ post.featured_image }});">
+            {% else %}
+            <!--TODO: Default image-->
+            <!--<div class="tile--blog__image" style="background-image: url('/assets/img/blog/default.jpg');">-->
+            {% endif %}
+          </div>
+          <div class="tile--blog__post-title">
+            {{ post.title | markdownify }}
+          </div>
+        </div>
+        <div class="tile--blog__hover tile__hover bg-orange">
+          {{ post.summary | markdownify }}
+          <p class="link--cta link--cta--inverse">Read more</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="region--blog-tiles__view-all-link">
+    <a href="/blog" class="link--arrow">View all posts</a>
+  </div>
+</div>

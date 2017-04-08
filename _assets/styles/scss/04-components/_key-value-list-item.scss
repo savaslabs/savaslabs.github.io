@@ -1,0 +1,77 @@
+/**
+ * @file
+ *
+ * Key-value list item, as seen on core values page.
+ */
+
+/*doc
+---
+title: Key-value list item
+name: key-value-list-item
+category: Components
+---
+
+```html_example
+<div class="key-value-list__item">
+  <div class="key-value-list__item__key">
+    <h3 class="c-orange heading--bold">Be Inclusive</h3>
+  </div>
+  <div class="key-value-list__item__value">
+    <p>
+      We embrace diversity in every sense of the word, not only for the benefits it brings to the company by providing a more holistic perspective on problem solving, but as it pertains to the empowerment of traditionally and presently underrepresented groups. We strive to craft an intentionally inclusive work environment in which everyone feels comfortable in their own skin.
+    </p>
+  </div>
+</div>
+```
+
+*/
+
+.key-value-list__item {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include grid-media($medium-screen-up) {
+    flex-wrap: nowrap;
+  }
+
+  // Adjust padding for first and last child since region padding will be
+  // handled in the key-value-list region.
+  &:first-child {
+    padding-top: 0;
+  }
+
+  // The key and value divs should be full width on small screens and half width
+  // on larger screens.
+  > div {
+    width: 100%;
+
+    @include grid-media($medium-screen-up) {
+      width: 50%;
+    }
+  }
+
+  .key-value-list__item__key {
+    @include grid-media($medium-screen-up) {
+      padding: $base-margin $base-margin $base-margin $base-spacing;
+    }
+
+    h3 {
+      @include heading-underline($orange);
+
+      @include grid-media($medium-screen-up) {
+        @include heading-underline-right($orange);
+      }
+    }
+  }
+
+  .key-value-list__item__value {
+    padding-bottom: $base-spacing * 2;
+
+    @include grid-media($medium-screen-up) {
+      border-left: solid 1px $orange;
+      padding: $base-margin $base-spacing $base-margin $base-margin;
+    }
+  }
+}

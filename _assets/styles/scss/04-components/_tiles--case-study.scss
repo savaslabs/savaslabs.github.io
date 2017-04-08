@@ -1,0 +1,139 @@
+/**
+ * @file
+ *
+ * Case study tile styles.
+ *
+ * Note: these aren't included as components in the style guide since their
+ * layout styles depend on each other and the region as a whole. See the
+ * work tile region in the style guide for reference, or view
+ * 05-regions/_case-study-tiles.scss
+ */
+
+// The title tile.
+.tile--title--case-study {
+  @include cover-image;
+
+  background-image: url('/assets/img/au-staircase-tile.jpg');
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing * 3 $base-spacing;
+  width: 100%;
+
+  @include grid-media($medium-screen-up) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include grid-media($large-screen-up) {
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
+    margin-right: $base-spacing / 4;
+    padding: $base-spacing * 6 $base-spacing * 4;
+    text-align: right;
+    width: 50%;
+  }
+
+  .tile--title--case-study__text {
+
+    @include grid-media($medium-screen-up) {
+      padding-right: $base-spacing * 2;
+    }
+
+    @include grid-media($large-screen-up) {
+      max-width: 20em;
+      padding-right: 0;
+    }
+
+    h2 {
+      @include heading-underline($magenta);
+
+      @include grid-media($large-screen-up) {
+        @include heading-underline-right($magenta);
+      }
+    }
+
+    p {
+      @include paragraph-loud;
+
+      @include grid-media($large-screen-up) {
+        @include paragraph-louder;
+      }
+    }
+  }
+
+  .tile--title--case-study__link {
+    flex-shrink: 0;
+    margin-top: $base-spacing * 2;
+    text-align: center;
+
+    @include grid-media($medium-screen-up) {
+      margin: 0;
+    }
+  }
+
+}
+
+// The case study tiles.
+.region--case-study-tiles__tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  @include grid-media($large-screen-up) {
+    margin-left: $base-spacing / 4;
+    width: 50%;
+  }
+
+  .tile--case-study {
+    height: 310px;
+    margin-bottom: $base-spacing / 2;
+    text-align: center;
+    width: 100%;
+
+    @include grid-media($max-width-up) {
+      height: 350px;
+    }
+
+    // First tile is larger so text should be wider.
+    &:first-child {
+      .tile__hover {
+        p:first-child {
+          @include grid-media($medium-screen-up) {
+            max-width: 30em;
+          }
+        }
+      }
+    }
+
+    // Set 2nd and 3rd tile to 49% so they'll have some space between them.
+    &:not(:first-child) {
+      @include grid-media($medium-screen-up) {
+        margin-bottom: 0;
+        width: 49%;
+      }
+    }
+
+    // Set a height for the background image to fill.
+    .tile--case-study__content,
+    .tile--case-study__hover {
+      height: 310px;
+
+      @include grid-media($max-width-up) {
+        height: 350px;
+      }
+    }
+
+    // Set up tile background image and center the heading.
+    .tile--case-study__content {
+      @include cover-image;
+
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: $base-spacing / 2;
+    }
+  }
+}

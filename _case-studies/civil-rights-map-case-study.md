@@ -41,5 +41,8 @@ project_process_image: "/work/civil-rights-map-case-study/pmp-process.jpg"
 project_process_image_alt: "The same site, on the new Drupal 8 map"
 project_results_image: "/work/civil-rights-map-case-study/pmp-results.jpg"
 project_results_image_alt: "An educational page on desktop and tablet screens"
+tile_image: "/assets/img/work/civil-rights-map-case-study/pmp-tile.jpg"
+tile_description: |
+  Savas Labs worked with the Pauli Murray Project to create a fresh responsive design to showcase the rich stories of Durham's Civil and Human Rights history.
 
 ---

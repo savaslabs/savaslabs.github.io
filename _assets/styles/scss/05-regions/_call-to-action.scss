@@ -12,7 +12,7 @@ category: Regions
 ---
 
 ```html_example
-<div class="region--cta">
+<div class="region--cta wrapper">
   <h2 class="region--cta__heading c-orange">Move Work Forward</h2>
   <div class="region--cta__text">
     <p class="paragraph--loud c-dark-teal">Exploring how digital can help you achieve your business goals?<br>
@@ -26,14 +26,13 @@ category: Regions
 */
 
 .region--cta {
-  padding: $base-margin 0;
   text-align: center;
 
   .region--cta__heading {
-    margin-bottom: $base-spacing;
+    margin-bottom: $base-spacing * 1.5;
   }
 
   .region--cta__text {
-    margin-bottom: $base-spacing * 2;
+    margin-bottom: $base-spacing * 3;
   }
 }

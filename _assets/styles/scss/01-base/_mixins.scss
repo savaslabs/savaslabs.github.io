@@ -15,30 +15,38 @@
   margin-right: auto;
 }
 
+@mixin accent-line($color) {
+  background: $color;
+  content: '';
+  display: block;
+  height: 1px;
+  margin: 10px 0 .5em;
+  width: 30px;
+}
+
 @mixin heading-underline($color: $teal) {
   &::after {
-    background: $color;
-    content: '';
-    display: block;
-    height: 1px;
-    margin: 10px 0 .5em;
-    width: 30px;
+    @include accent-line($color);
   }
 }
 
 @mixin heading-underline-right($color: $teal) {
   position: relative;
+  text-align: right;
 
   &::after {
-    background: $color;
-    content: '';
-    display: block;
-    height: 1px;
-    margin: 10px 0 .5em;
+    @include accent-line($color);
     position: absolute;
     right: 0;
-    width: 25px;
   }
+}
+
+@mixin paragraph-loud() {
+  font-size: 1.25em;
+}
+
+@mixin paragraph-louder() {
+  font-size: 1.563em;
 }
 
 @mixin link--light() {
@@ -97,6 +105,12 @@
       color: lighten($background-color, 10%);
     }
   }
+}
+
+@mixin cover-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @mixin table-minimal {

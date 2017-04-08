@@ -41,9 +41,9 @@ body {
 }
 
 .paragraph--loud {
-  font-size: 1.25em;
+  @include paragraph-loud;
 }
 
 .paragraph--louder {
-  font-size: 1.563em;
+  @include paragraph-louder;
 }

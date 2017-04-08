@@ -43,6 +43,9 @@ project_process_image: "/work/hptn-case-study/hptn-process.jpg"
 project_process_image_alt: "HPTN studies page on desktop and mobile."
 project_results_image: "/work/hptn-case-study/hptn-results.jpg"
 project_results_image_alt: "The HPTN news page on multiple screen sizes."
+tile_image: "/assets/img/work/hptn-case-study/hptn-tile.jpg"
+tile_description: |
+  When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, Savas Labs helped them implement a new content management system that would meet their needs.
 
 ---
 

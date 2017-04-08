@@ -1,0 +1,76 @@
+/**
+ * @file
+ *
+ * Case study tiles region styles.
+ */
+
+/*doc
+---
+title: Case study tiles
+name: case-study-tiles
+category: Regions
+---
+
+```html_example
+<div class="region--case-study-tiles region--full-width">
+  <div class="region--case-study-tiles__wrapper region--full-width__wrapper">
+    <div class="tile--title--case-study bg-magenta">
+      <div class="tile--title--case-study__text">
+        <h2 class="c-eggshell h1">Results</h2>
+        <p class="c-eggshell">
+          Solving your digital dilemmas &amp; integrating for growth
+        </p>
+      </div>
+      <div class="tile--title--case-study__link">
+        <a href="/work" class="button--arrow--white-magenta">View all work</a>
+      </div>
+    </div>
+    <div class="region--case-study-tiles__tiles">
+      <div class="tile--case-study tile">
+        <a href="/work/duke-today-case-study/" class="tile--case-study__link">
+          <div class="tile--case-study__content tile__content bg-dark-teal" style="background-image: url(/assets/img/work/duke-today-case-study/duke-today-tile.jpg);">
+            <h3 class="heading--bold c-eggshell h4">Duke Today Redesign</h3>
+          </div>
+          <div class="tile--case-study__hover tile__hover bg-orange">
+            <p>After multiple organizational transitions left Duke’s flagship news outlet’s redesign incomplete, partner Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration in just 4 months.</p>
+            <p class="link--cta link--cta--inverse">Learn more</p>
+          </div>
+        </a>
+      </div>
+      <div class="tile--case-study tile">
+        <a href="/work/hptn-case-study/" class="tile--case-study__link">
+          <div class="tile--case-study__content tile__content bg-dark-teal" style="background-image: url(/assets/img/work/hptn-case-study/hptn-tile.jpg);">
+            <h3 class="heading--bold c-eggshell h4">HIV Prevention Trials Network (HPTN) Site Redesign</h3>
+          </div>
+          <div class="tile--case-study__hover tile__hover bg-orange">
+            <p>When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, Savas Labs helped them implement a new content management system that would meet their needs.</p>
+            <p class="link--cta link--cta--inverse">Learn more</p>
+          </div>
+        </a>
+      </div>
+      <div class="tile--case-study tile">
+        <a href="/work/civil-rights-map-case-study/" class="tile--case-study__link">
+          <div class="tile--case-study__content tile__content bg-dark-teal" style="background-image: url(/assets/img/work/civil-rights-map-case-study/pmp-tile.jpg);">
+            <h3 class="heading--bold c-eggshell h4">Durham Civil and Human Rights History Map</h3>
+          </div>
+          <div class="tile--case-study__hover tile__hover bg-orange">
+            <p>Savas Labs worked with the Pauli Murray Project to create a fresh responsive design to showcase the rich stories of Durham’s Civil and Human Rights history.</p>
+            <p class="link--cta link--cta--inverse">Learn more</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+*/
+
+.region--case-study-tiles__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include grid-media($large-screen-up) {
+    flex-wrap: nowrap;
+  }
+}

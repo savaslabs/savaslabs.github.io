@@ -1,0 +1,107 @@
+/**
+ * @file
+ *
+ * Blog tile region styles.
+ */
+
+/*doc
+---
+title: Blog tiles
+name: blog-tiles
+category: Regions
+---
+
+```html_example
+<div class="region--blog-tiles region--full-width">
+  <div class="region--blog-tiles__wrapper region--full-width__wrapper">
+    <div class="tile--title--blog bg-magenta">
+      <h2 class="c-eggshell">Sharing Our Expertise</h2>
+    </div>
+    <div class="tile--blog tile">
+      <a href="/2017/03/20/lightning-q1-2017.html" class="tile--blog__link">
+        <div class="tile--blog__content tile__content bg-light-teal">
+          <div class="tile--blog__image" style="background-image: url(/assets/img/blog/lightning-17q1-hero.jpg);">
+          </div>
+          <div class="tile--blog__post-title">
+            <p>Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017</p>
+          </div>
+        </div>
+        <div class="tile--blog__hover tile__hover bg-orange">
+          <p>What we’ve added to our developer toolboxes in Q1 2017!</p>
+          <p class="link--cta link--cta--inverse">Read more</p>
+        </div>
+      </a>
+    </div>
+    <div class="tile--blog tile">
+      <a href="/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html" class="tile--blog__link">
+        <div class="tile--blog__content tile__content bg-light-teal">
+          <div class="tile--blog__image" style="background-image: url(/assets/img/blog/content-authoring-d8.jpg);">
+          </div>
+          <div class="tile--blog__post-title">
+            <p>Five Drupal 8 Tips to Empower Content Authors</p>
+          </div>
+        </div>
+        <div class="tile--blog__hover tile__hover bg-orange">
+          <p>Five Drupal 8 tips to make the content authoring experience more enjoyable and productive!</p>
+          <p class="link--cta link--cta--inverse">Read more</p>
+        </div>
+      </a>
+    </div>
+    <div class="tile--blog tile">
+      <a href="/2017/02/27/on-web-typography-review.html" class="tile--blog__link">
+        <div class="tile--blog__content tile__content bg-light-teal">
+          <div class="tile--blog__image" style="background-image: url(/assets/img/blog/on-web-typography-featured.jpg);">
+          </div>
+          <div class="tile--blog__post-title">
+            <p>On Web Typography - a Book Review</p>
+          </div>
+        </div>
+        <div class="tile--blog__hover tile__hover bg-orange">
+          <p>A review of Jason Santa Maria’s <em>On Web Typography</em>, and how we applied the
+lessons learned to our workflow.</p>
+          <p class="link--cta link--cta--inverse">Read more</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="region--blog-tiles__view-all-link">
+    <a href="/blog" class="link--arrow">View all posts</a>
+  </div>
+</div>
+```
+
+*/
+
+// Wrapper div around the blog tiles.
+.region--blog-tiles__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include grid-media($large-screen-up) {
+    flex-wrap: nowrap;
+  }
+
+  // Set spacing between tiles.
+  > div {
+    margin: .125em;
+
+    @include grid-media($large-screen-up) {
+      margin: 0 .125em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// View all link.
+.region--blog-tiles__view-all-link {
+  padding: $base-spacing;
+  text-align: center;
+}

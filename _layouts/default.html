@@ -3,20 +3,13 @@
 
   {% include head.html %}
 
-  <body>
+  <body{% if page.class %} class="{{ page.class }}"{% endif %}>
 
     {% include regions/header.html %}
 
     <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+      {{ content }}
     </div>
-
-    {% comment %} If on "/contact" page, don't display the redundant "contact us" block {% endcomment %}
-    {% if page.permalink != "/contact/" %}
-      {% include contact.html %}
-    {% endif %}
 
     {% include regions/footer.html %}
     {% include scripts.html %}
