@@ -1,0 +1,14 @@
+<div class="region--client-logos region">
+  <div class="region--client-logos__text intro-paragraph">
+    <h2>Our Clients and Partners</h2>
+    <p class="paragraph--loud--responsive">Some of the amazing companies and organizations we've had the pleasure of working with.</p>
+  </div>
+  <div class="region--client-logos__logos">
+    {% assign logos = site.data.logos | sort: 'weight' %}
+    {% for logo in logos %}
+    <div class="region--client-logos__logo">
+      <img alt="{{ logo.name }}" src="{{ base.url }}/assets/img/work/logos/{{ logo.image }}" class="image--grayscale">
+    </div>
+    {% endfor %}
+  </div>
+</div>

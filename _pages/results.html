@@ -30,18 +30,8 @@ redirect_from:
     {% endfor %}
   </div>
   <hr>
-
-  <div class="flex-container">
-    <div class="client-logos">
-      {% assign logos = site.data.logos | sort: 'weight' %}
-      {% for logo in logos %}
-        <div class="client-logos__logo">
-          <img alt="{{ logo.name }}" src="{{ base.url }}/assets/img/work/logos/{{ logo.image }}">
-        </div>
-      {% endfor %}
-    </div>
-  </div>
 </div>
 
+{% include regions/client-logos.html %}
 {% include regions/banner--open-source.html %}
 {% include regions/cta--move-work-forward.html %}
