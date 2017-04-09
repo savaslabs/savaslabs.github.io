@@ -1,0 +1,31 @@
+/**
+ * @file
+ *
+ * Styles for grayscale images with color on hover.
+ */
+
+/*doc
+---
+title: Grayscale image
+name: images--grayscale
+category: Components
+parent: images
+---
+Images with class `image--grayscale` are filtered to grayscale in normal state
+and unfiltered to show full color on hover or focus.
+
+```html_example
+<img alt="Pauli Murray Project" src="/assets/img/work/logos/pauli-murray-logo.png" class="image--grayscale">
+```
+
+*/
+
+.image--grayscale {
+  filter: grayscale(100%);
+  transition: all .2s ease;
+
+  &:hover,
+  &:focus {
+    filter: none;
+  }
+}
