@@ -34,7 +34,7 @@ technologies_used: |
   - [Drupal Feeds](/blog/tag/drupal)
   - [Responsive design](/blog/tag/front-end-dev/)
   - [jQuery](/blog/tag/javascript)
-client_logo: "/assets/img/work/logos/transaction-advisors-logo.jpg"
+client_logo: "/assets/img/work/logos/transaction-advisors-logo.png"
 client_hero_image: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_hero.jpg"
 project_objective_image: "/work/transaction-advisors-case-study/transaction_advisors_objective.jpg"
 project_objective_image_alt: "The Transaction Advisors home page on desktop and mobile."
