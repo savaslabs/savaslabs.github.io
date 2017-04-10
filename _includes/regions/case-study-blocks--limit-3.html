@@ -1,10 +1,10 @@
 {% comment %} Prints large case study blocks, limited to the first 3 case studies, plus an arrow link. {% endcomment %}
 <div class="region--case-study-blocks region">
-  <h2 class="heading--underline--orange">Case Studies</h2>
+  <h2 class="region--case-study-blocks__title heading--underline--orange">Case Studies</h2>
   <div class="region--case-study-blocks__case-studies">
     {% assign items = site.case-studies | sort: 'weight' %}
     {% for item in items | limit:3 %}
-    {% include components/case-study-block.html item=item %}
+    {% include components/case-study-block.html item=item heading_level="h3" %}
     {% endfor%}
     <div class="region--case-study-blocks__cta flex-center">
       <a href="/results/case-studies" class="button--arrow--orange">View all case studies</a>

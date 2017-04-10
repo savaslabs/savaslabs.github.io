@@ -83,6 +83,7 @@
 @import 'scss/05-regions/blog-tiles';
 @import 'scss/05-regions/call-to-action';
 @import 'scss/05-regions/case-study-blocks';
+@import 'scss/05-regions/case-study-blocks--small';
 @import 'scss/05-regions/case-study-tiles';
 @import 'scss/05-regions/client-logos';
 @import 'scss/05-regions/client-quote';
@@ -94,6 +95,7 @@
 @import 'scss/05-regions/team-member-list';
 
 // Page rules (layout).
+@import 'scss/06-pages/case-studies';
 @import 'scss/06-pages/company';
 @import 'scss/06-pages/home';
 @import 'scss/06-pages/results';
