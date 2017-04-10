@@ -7,7 +7,7 @@ tags: business identity
 summary: The truth behind the palindrome.
 ---
 
-Previously, on our [who we are](/team) page, I gave you a taste of the [meaning](/team#what-does-savas-mean) of Savas. Now let's take a deeper dive.
+Previously, on our [who we are](/company) page, I gave you a taste of the [meaning](/company#what-does-savas-mean) of Savas. Now let's take a deeper dive.
 
 For those who know me, they _think_ I'm zany. For those who know me well, they **know** I'm zany. For the select few who know me really well, and/or have worked with me, they know I have an odd obsession with [palindromes](http://en.wikipedia.org/wiki/Palindrome).
 

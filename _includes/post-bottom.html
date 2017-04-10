@@ -23,15 +23,15 @@
 
       {% comment %} Description for current employees. {% endcomment %}
       {% for person in site.team %}{% if person.name == author %}
-        <a href="{{ author | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">
-          {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
+        <a href="{{ author | downcase | replace: ' ', '-'  | prepend: "/company/" | strip_newlines }}">
+        {% picture team_square_small /team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}" %}
         </a>
         <p class="post-author-desc">{{ person.job_description }}</p>
       {% endif %}{% endfor %}
 
       {% comment %} Description for former employees. {% endcomment %}
       {% for person in site.team-former %}{% if person.name == author %}
-        {% picture team_post_meta {{ person.photo }} alt="{{ person.name }}" %}
+        {% picture team_square_small /team/former/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}" %}
         <p class="post-author-desc">{{ person.job_description }}</p>
       {% endif %}{% endfor %}
 

@@ -43,7 +43,7 @@ exclude: ["vendor",
 collections:
   team:
     output: true
-    permalink: /team/:path/
+    permalink: /company/:path/
   team-former:
     output: false
   case-studies:
@@ -88,9 +88,9 @@ picture:
         width: "350"
       source_default:
         width: "288"
-    team_post_meta:
+    team_square_small:
       attr:
-        class: "image--team-post-meta"
+        class: "image--team-square-small"
         itemprop: "image"
       ppi: [1, 2]
       source_default:
