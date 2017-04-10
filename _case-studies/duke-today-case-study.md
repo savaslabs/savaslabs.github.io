@@ -4,6 +4,7 @@ featured: 1
 weight: -5
 project_title: Duke Today Redesign
 tags: docker drupal durham front-end-dev migration module-development performance user-experience
+featured_tags: [Drupal, Content Migration, UX, Docker]
 client_name: Duke Today
 client_url: "https://today.duke.edu"
 client_quote: |
@@ -45,6 +46,7 @@ project_results_image_alt: "Duke Today website before and after screenshot"
 tile_image: "/assets/img/work/duke-today-case-study/duke-today-tile.jpg"
 tile_description: |
   After multiple organizational transitions left Duke's flagship news outlet's redesign incomplete, partner Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration in just 4 months.
+block_image: "/assets/img/work/duke-today-case-study/duke-today-block.jpg"
 
 ---
 

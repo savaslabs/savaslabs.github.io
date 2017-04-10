@@ -4,6 +4,7 @@ featured: 1
 weight: -4
 project_title: Durham Civil and Human Rights History Map
 tags: cartography css design drupal drupal8 durham front-end-dev leaflet module-development sass theming
+featured_tags: [Drupal 8, Responsive Design, UX, Web Mapping]
 client_name: Pauli Murray Project, Duke Human Rights Center
 client_url: "http://www.durhamcivilrightsmap.org"
 client_quote: |
@@ -44,5 +45,6 @@ project_results_image_alt: "An educational page on desktop and tablet screens"
 tile_image: "/assets/img/work/civil-rights-map-case-study/pmp-tile.jpg"
 tile_description: |
   Savas Labs worked with the Pauli Murray Project to create a fresh responsive design to showcase the rich stories of Durham's Civil and Human Rights history.
+block_image: "/assets/img/work/civil-rights-map-case-study/pmp-block.jpg"
 
 ---
