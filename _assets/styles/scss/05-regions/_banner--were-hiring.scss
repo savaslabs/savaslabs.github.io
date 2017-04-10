@@ -33,6 +33,7 @@
     img {
       @include grid-media($large-screen-up) {
         display: block;
+        float: right;
         max-width: 730px;
         width: 100%;
       }
