@@ -11,11 +11,7 @@ redirect_from:
 {% include regions/case-study-blocks--limit-3.html %}
 {% for client in site.data.clients %}
   {% if client.project == "duke_today" %}
-    {% assign name = client.name %}
-    {% assign title = client.title %}
-    {% assign image = client.image %}
-    {% assign quote = client.quote %}
-    {% include regions/client-quote.html class="region--client-quote--light" image=image name=name title=title quote=quote %}
+    {% include regions/client-quote.html class="region--client-quote--light" client=client %}
   {% endif %}
 {% endfor %}
 {% include regions/client-logos.html %}
