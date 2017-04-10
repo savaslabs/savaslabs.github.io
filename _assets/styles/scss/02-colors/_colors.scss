@@ -77,6 +77,10 @@ parent: colors
     <code>$grey</code>
   </div>
   <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-light-grey"></div>
+    <code>$light-grey</code>
+  </div>
+  <div class="styleguide-color-chip__wrapper">
     <div class="styleguide-color-chip__bg bg-light-teal"></div>
     <code>$light-teal</code>
   </div>
@@ -91,6 +95,7 @@ parent: colors
 
 // Secondary colors.
 $grey: #565d5e;
+$light-grey: lighten($grey, 40%);
 $light-teal: #f3f6f7;
 
 /*doc
@@ -168,6 +173,7 @@ $success-color: transparentize($green, .8);
 .bg-teal { background-color: $teal; }
 .bg-dark-teal { background-color: $dark-teal; }
 .bg-grey { background-color: $grey; }
+.bg-light-grey { background-color: $light-grey; }
 .bg-light-teal { background-color: $light-teal; }
 .bg-purple { background-color: $purple; }
 .bg-pink { background-color: $pink; }
@@ -179,6 +185,7 @@ $success-color: transparentize($green, .8);
 .c-teal { color: $teal; }
 .c-dark-teal { color: $dark-teal; }
 .c-grey { color: $grey; }
+.c-light-grey { color: $light-grey; }
 .c-light-teal { color: $light-teal; }
 .c-purple { color: $purple; }
 .c-pink { color: $pink; }
