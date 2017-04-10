@@ -1,0 +1,13 @@
+{% comment %} Prints small case study blocks, excluding the first 4. {% endcomment %}
+<div class="region--case-study-blocks region--case-study-blocks--small region">
+  <div class="region--case-study-blocks__case-studies">
+    {% assign count = 0 %}
+    {% assign items = site.case-studies | sort: 'weight' %}
+    {% for item in items %}
+    {% if count > 3 %}
+    {% include components/case-study-block.html item=item %}
+    {% endif %}
+    {% assign count = count | plus:1 %}
+    {% endfor %}
+  </div>
+</div>
