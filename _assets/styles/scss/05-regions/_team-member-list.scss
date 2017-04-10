@@ -87,14 +87,6 @@ plugin to create a `<picture>` element for the team member photo.
 
 .region--team-member-list {
 
-  // On extra large screens, set region to 9 columns.
-  .region--team-member-list__wrapper {
-    @include grid-media($extra-large-screen-up) {
-      @include grid-column(9);
-      @include grid-shift(1.5);
-    }
-  }
-
   // Justify bios center on small screens and left on extra large and up.
   .region--team-member-list__list {
     display: flex;
@@ -107,15 +99,30 @@ plugin to create a `<picture>` element for the team member photo.
 
     // Layout styles for the bios in the list.
     .team-member-bio {
-      flex-basis: 250px;
+      flex-basis: 100%;
       flex-grow: 0;
       flex-shrink: 0;
-      padding: 0 $base-spacing * .75 $base-spacing * 2;
+      padding: 0 $base-spacing * 0.5 $base-spacing * 3 0;
 
-      @include grid-media($extra-large-screen-up) {
-        padding-left: 0;
-        padding-right: $base-spacing * 1.5;
+      @include grid-media($small-screen-up) {
+        flex-basis: 50%;
+        padding: 0 $base-spacing * 1.5 $base-spacing * 3;
       }
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 33.33%;
+      }
+
+      @include grid-media($large-screen-up) {
+        flex-basis: 25%;
+        padding-left: 0;
+      }
+
+      @include grid-media($max-width-up) {
+        flex-basis: 16.66%;
+        padding-left: 0;
+      }
+
     }
   }
 }
