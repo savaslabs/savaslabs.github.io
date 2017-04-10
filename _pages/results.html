@@ -8,22 +8,7 @@ redirect_from:
   - /work/
 ---
 
-  <div class="case-studies">
-    <h2>Recent case studies</h2>
-    {% assign items = site.case-studies | sort: 'weight' %}
-    {% for item in items %}
-    <div class="case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
-      <div class="case-study__title">
-        <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
-      </div>
-      <div class="case-study__description">
-        {{ item.project_description | markdownify }}
-        <a href="{{ item.url }}">Read more <i class="fa fa-long-arrow-right"></i></a>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-
+{% include regions/case-study-blocks--limit-3.html %}
 {% for client in site.data.clients %}
   {% if client.project == "duke_today" %}
     {% assign name = client.name %}
