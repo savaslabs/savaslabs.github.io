@@ -119,10 +119,8 @@ plugin to create a `<picture>` element for the team member photo.
       }
 
       @include grid-media($max-width-up) {
-        flex-basis: 16.66%;
-        padding-left: 0;
+        flex-basis: 20%;
       }
-
     }
   }
 }
