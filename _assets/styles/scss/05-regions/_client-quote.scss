@@ -30,6 +30,11 @@ The class `region--client-quote--dark` can be included for a dark teal backgroun
 */
 
 .region--client-quote {
+  padding: $base-margin / 2 0;
+
+  @include grid-media($medium-screen-up) {
+    padding: $base-margin 0;
+  }
 
   .region--client-quote__wrapper {
     padding-left: $base-spacing;

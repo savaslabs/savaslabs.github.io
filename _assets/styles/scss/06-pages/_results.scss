@@ -10,10 +10,5 @@
   .region--client-quote {
     border-bottom: solid 1px $light-grey;
     border-top: solid 1px $light-grey;
-    padding: $base-margin / 2 0;
-
-    @include grid-media($medium-screen-up) {
-      padding: $base-margin 0;
-    }
   }
 }
