@@ -5,7 +5,7 @@
     {% assign items = site.case-studies | sort: 'weight' %}
     {% for item in items %}
     {% if count > 3 %}
-    {% include components/case-study-block.html item=item %}
+    {% include components/case-study-block.html item=item heading_level="h3" %}
     {% endif %}
     {% assign count = count | plus:1 %}
     {% endfor %}

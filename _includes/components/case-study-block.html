@@ -3,7 +3,11 @@
     <div class="case-study-block__image">
       <img src="{{ include.item.block_image }}" alt="{{ include.item.project_title }}">
     </div>
-    <h3 class="heading--underline--orange">{{ include.item.project_title }}</h3>
+    {% if include.heading_level == "h2" %}
+    <h2 class="case-study-block__title heading--underline--orange">{{ include.item.project_title }}</h2>
+    {% else %}
+    <h3 class="case-study-block__title heading--underline--orange">{{ include.item.project_title }}</h3>
+    {% endif %}
     <div class="case-study-block__tags">
       {% assign count = 0 %}
       {% for tag in include.item.featured_tags %}
