@@ -40,6 +40,14 @@
   }
 }
 
+// Add a class for divs that contain an item that is horizontally and vertically
+// centered via flexbox.
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 // TODO: Remove styles below if not needed.
 
 .flex-container {
