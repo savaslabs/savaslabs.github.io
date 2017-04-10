@@ -1,0 +1,122 @@
+/**
+ * @file
+ *
+ * Styles for client quote regions.
+ */
+
+/*doc
+---
+title: Client quote
+name: client-quote
+category: Regions
+---
+The class `region--client-quote--dark` can be included for a dark teal background.
+
+```html_example
+<div class="region--client-quote region--full-width region--client-quote--light">
+  <div class="region--client-quote__wrapper region--full-width__wrapper">
+    <div class="region--client-quote__client-info">
+      <img src="/assets/img/work/clients/bm-dt.jpg" class="region--client-quote__client-info__image" alt="Blyth Morrell">
+      <p class="region--client-quote__client-info__name heading--bold">Blyth Morrell</p>
+      <p class="region--client-quote__client-info__title">Director of Strategic and Digital Communications at Duke University</p>
+    </div>
+    <div class="region--client-quote__quote">
+      <p class="region--client-quote__quote__text">We've gotten nothing but rave reviews about the new site.</p>
+    </div>
+  </div>
+</div>
+```
+
+*/
+
+.region--client-quote {
+
+  .region--client-quote__wrapper {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+
+    // On medium screens and larger, items will appear inline.
+    @include grid-media($medium-screen-up) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .region--client-quote__client-info {
+
+    @include grid-media($medium-screen-up) {
+      border-right: solid 2px $orange;
+      flex-basis: 200px;
+      flex-shrink: 0;
+      margin-left: $base-spacing * 2;
+      text-align: right;
+    }
+
+    img {
+      border-right: solid 2px $orange;
+      float: left;
+      height: 100px;
+      margin: 0 $base-spacing $base-spacing * 1.5 0;
+      width: 100px;
+
+      @include grid-media($medium-screen-up) {
+        border: 0;
+        float: none;
+        margin: 0;
+      }
+    }
+
+    p {
+      font-size: 1.1em;
+      font-style: italic;
+      margin-bottom: 0;
+
+      @include grid-media($medium-screen-up) {
+        margin-right: .75em;
+      }
+    }
+
+  }
+
+  .region--client-quote__quote {
+    background: url('/assets/img/icons-and-logos/testimonial-quote.svg') top left no-repeat;
+    background-size: 15%;
+    clear: both;
+    padding: $base-spacing $base-spacing $base-spacing $base-spacing * 1.5;
+
+    @include grid-media($medium-screen-up) {
+      margin-left: 10%;
+      margin-top: 0;
+      padding: $base-spacing * 2 $base-spacing * 2 $base-spacing * 2 $base-spacing * 3;
+    }
+
+    .region--client-quote__quote__text {
+      font-size: 1.44em;
+      max-width: 600px;
+
+      @include grid-media($medium-screen-up) {
+        font-size: 1.953em;
+      }
+    }
+  }
+}
+
+// Light background version {
+.region--client-quote--light {
+  .region--client-quote__quote__text {
+    color: $dark-teal;
+  }
+}
+
+// Dark background version.
+.region--client-quote--dark {
+  background-color: $dark-teal;
+  color: $eggshell;
+
+  .region--client-quote__quote__text {
+    color: $eggshell;
+  }
+}

@@ -1,0 +1,20 @@
+# For client quote regions.
+
+- project: duke_today
+  name: Blyth Morrell
+  title: Director of Strategic and Digital Communications at Duke University
+  image: /assets/img/work/clients/bm-dt.jpg
+  quote: |
+    We've gotten nothing but rave reviews about the new site.
+- project: omega
+  name: Laurie Zollo
+  title: Assistant Director of Digital Marketing at the Omega Institute for Holistic Studies
+  image: /assets/img/work/clients/lz-eo.jpg
+  quote: |
+    Of the 15 years I've been in this, the Savas team has had the most impeccable QA
+- project: transaction_advisors
+  name: Nora K. Hickey
+  title: Managing Director, Finance Information Group
+  image: /assets/img/work/clients/nh-ta.jpg
+  quote: |
+    When faced with a challenging multi-site buildout that included importing content from a very old platform, creating 3 integrated subscription forms, and launching under a tight timeline, Savas Labs was strategic, knowledgeable, and great to work with. They were the right team for our complex project!
