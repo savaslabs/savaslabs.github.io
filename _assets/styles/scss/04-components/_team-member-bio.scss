@@ -29,7 +29,6 @@ Note that the component template uses the Jekyll Picture Tag plugin to create a
 */
 
 .team-member-bio {
-  max-width: 250px;
 
   // Set up hover styles for entire block.
   .team-member-bio__link {
@@ -76,6 +75,7 @@ Note that the component template uses the Jekyll Picture Tag plugin to create a
   }
 
   .team-member-bio__title {
+    font-size: .85em;
     text-transform: uppercase;
   }
 
