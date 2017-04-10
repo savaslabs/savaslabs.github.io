@@ -4,6 +4,7 @@ featured: 1
 weight: -5
 project_title: HIV Prevention Trials Network (HPTN) Site Redesign
 tags: css design drupal drupal8 durham front-end-dev module-development performance sass theming user-experience
+featured_tags: [Drupal 8, Responsive Design, UX, Client Server Integration]
 client_name: HIV Prevention Trials Network
 client_url: "https://www.hptn.org"
 client_description: |
@@ -46,6 +47,7 @@ project_results_image_alt: "The HPTN news page on multiple screen sizes."
 tile_image: "/assets/img/work/hptn-case-study/hptn-tile.jpg"
 tile_description: |
   When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, Savas Labs helped them implement a new content management system that would meet their needs.
+block_image: "/assets/img/work/hptn-case-study/hptn-block.jpg"
 
 ---
 

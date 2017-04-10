@@ -57,6 +57,10 @@
   }
 }
 
+@mixin ease() {
+  transition: all .2s ease-in-out;
+}
+
 @mixin link--light() {
   color: $eggshell;
 

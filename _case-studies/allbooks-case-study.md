@@ -3,6 +3,7 @@ layout: case-study
 weight: -2
 project_title: MIT Press AllBooks Importer
 tags: drupal module-development php testing
+featured_tags: [Drupal, Module Development, PHP, Testing]
 client_name: MIT Press
 client_url: "http://mitpress.mit.edu"
 client_description: |
@@ -36,5 +37,6 @@ project_process_image: "/work/allbooks-case-study/allbooks-process.jpg"
 project_process_image_alt: "Reporting interface shows import results for site administrators."
 project_results_image: "/work/allbooks-case-study/allbooks-results.jpg"
 project_results_image_alt: "A title node, with content populated by the importer."
+block_image: "/assets/img/work/allbooks-case-study/allbooks-block.jpg"
 
 ---
