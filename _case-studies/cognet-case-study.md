@@ -22,9 +22,9 @@ project_process: |
 project_results: |
   MIT Press CogNet went from a desktop-only site to a clean, modern, easy to navigate site on all screen sizes. Thanks to our strong partnership with the client, effective planning, and the powerful technologies used, this project was delivered under budget.
 services_provided: |
-  - [Web design](/services#design-ux)
+  - [Web design](/services/design-ux)
   - [Drupal theme development](/blog/tag/theming/)
-  - [Drupal custom module development](/services#development)
+  - [Drupal custom module development](/services/development)
 technologies_used: |
   - [Drupal 7](/blog/tag/drupal)
   - [Zurb Foundation theme](/blog/tag/theming)
