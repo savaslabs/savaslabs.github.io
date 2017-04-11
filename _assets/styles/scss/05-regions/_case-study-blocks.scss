@@ -97,10 +97,6 @@ The following example outputs 3 case study blocks with a CTA link.
       margin-top: 0;
 
       @include grid-media($large-screen-up) {
-        margin-top: $base-margin;
-      }
-
-      @include grid-media($large-screen-up) {
         margin-top: 0;
       }
 
