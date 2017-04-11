@@ -50,8 +50,8 @@ collections:
     output: true
     permalink: /work/:path/
   services:
-    output: false
-    permalink: /what-we-do/:path/
+    output: true
+    permalink: /services/:path/
 
 # Gems
 gems:
