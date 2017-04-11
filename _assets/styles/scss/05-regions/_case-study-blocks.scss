@@ -69,6 +69,8 @@ The following example outputs 3 case study blocks with a CTA link.
 
 .region--case-study-blocks {
   .region--case-study-blocks__title {
+    color: $dark-teal;
+    font-size: 1.728em;
     margin-bottom: $base-spacing * 1.5;
   }
 
@@ -100,6 +102,12 @@ The following example outputs 3 case study blocks with a CTA link.
 
       // This will make the button appear vertically centered with image.
       a {
+        font-size: 1em;
+
+        @include grid-media($small-screen-up) {
+          font-size: 1.25em;
+        }
+
         @include grid-media($large-screen-up) {
           margin-bottom: 134px;
         }
