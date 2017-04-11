@@ -1,18 +1,18 @@
 /**
  * @file
  *
- * Services icons region styles.
+ * Service icons region styles.
  */
 
 /*doc
 ---
-title: Services icons
-name: services-icons
+title: Service icons
+name: service-icons
 category: Regions
 ---
 
 ```html_example
-<div class="region--services-icons region">
+<div class="region--service-icons region">
   <div class="icon--service">
     <a href="/services/strategy/" class="icon--service__link">
       <div class="icon--service__image">
@@ -50,7 +50,7 @@ category: Regions
 
 */
 
-.region.region--services-icons {
+.region.region--service-icons {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
