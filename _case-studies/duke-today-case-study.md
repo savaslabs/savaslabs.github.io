@@ -34,6 +34,7 @@ technologies_used: |
   - [Migrate module](/blog/tag/migration)
   - [Docker](/blog/tag/docker)
 client_logo: "/assets/img/work/duke-today-case-study/duke-today-logo.png"
+client_logo_light: "/assets/img/work/logos/duke-today-logo-eggshell.png"
 client_logo_width: "268px"
 client_logo_height: "74px"
 client_hero_image: "/assets/img/work/duke-today-case-study/duke-today-hero.jpg"

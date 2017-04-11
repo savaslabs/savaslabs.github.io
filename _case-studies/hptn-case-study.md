@@ -35,6 +35,7 @@ technologies_used: |
   - Microsoft SQL Server data integration
   - Microsoft Azure Cloud Services
 client_logo: "/assets/img/work/logos/hptn-logo.png"
+client_logo_light: "/assets/img/work/logos/hptn-logo-eggshell.png"
 client_logo_width: "229"
 client_logo_height: "91"
 client_hero_image: "/assets/img/work/hptn-case-study/hptn-hero.jpg"

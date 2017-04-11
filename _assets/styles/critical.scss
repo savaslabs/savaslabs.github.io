@@ -29,6 +29,7 @@
 @import 'scss/04-components/buttons';
 @import 'scss/04-components/buttons--arrow';
 @import 'scss/04-components/buttons--submit';
+@import 'scss/04-components/case-study-block';
 @import 'scss/04-components/form-elements';
 @import 'scss/04-components/form-elements--text';
 @import 'scss/04-components/form-elements--textarea';
@@ -57,6 +58,7 @@
 
 // Region rules.
 // TODO: Add any more regions needed.
+@import 'scss/05-regions/case-study-blocks';
 @import 'scss/05-regions/header';
 @import 'scss/05-regions/hero-image';
 

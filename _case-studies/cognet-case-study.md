@@ -32,6 +32,7 @@ technologies_used: |
   - [Sass](/blog/tag/sass)
   - [jQuery](/blog/tag/javascript)
 client_logo: "/assets/img/work/cognet-case-study/cognet_logo.png"
+client_logo_light: "/assets/img/work/logos/cognet-logo-eggshell.png"
 client_logo_width: "325px"
 client_logo_height: "60px"
 client_hero_image: "/assets/img/work/cognet-case-study/cognet_hero.jpg"

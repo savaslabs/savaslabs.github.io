@@ -28,6 +28,7 @@ technologies_used: |
   - [Drupal 6](/blog/tag/drupal/)
   - [PHPUnit](/blog/tag/testing/)
 client_logo: "/assets/img/work/logos/mitpress-logo.png"
+client_logo_light: "/assets/img/work/logos/mitpress-logo-eggshell.png"
 client_logo_width: "110px"
 client_logo_height: "107px"
 client_hero_image: "/assets/img/work/allbooks-case-study/allbooks-hero.jpg"

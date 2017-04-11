@@ -14,11 +14,11 @@ The following example outputs 3 case study blocks with a CTA link.
 
 ```html_example
 <div class="region--case-study-blocks region">
-  <h2 class="heading--underline--orange">Case Studies</h2>
+  <h2 class="heading--underline--orange region--case-study-blocks__title">Case Studies</h2>
   <div class="region--case-study-blocks__case-studies">
     <div class="case-study-block">
       <a class="case-study-block__link" href="/work/duke-today-case-study/">
-        <div class="case-study-block__image">
+        <div class="case-study-block__image" style="background-image: url(/assets/img/work/logos/duke-today-logo-eggshell.png);">
           <img src="/assets/img/work/duke-today-case-study/duke-today-block.jpg" alt="Duke Today Redesign">
         </div>
         <h3 class="heading--underline--orange">Duke Today Redesign</h3>
@@ -32,7 +32,7 @@ The following example outputs 3 case study blocks with a CTA link.
     </div>
     <div class="case-study-block">
       <a class="case-study-block__link" href="/work/hptn-case-study/">
-        <div class="case-study-block__image">
+        <div class="case-study-block__image" style="background-image: url(/assets/img/work/logos/hptn-logo-eggshell.png);">
           <img src="/assets/img/work/hptn-case-study/hptn-block.jpg" alt="HIV Prevention Trials Network (HPTN) Site Redesign">
         </div>
         <h3 class="heading--underline--orange">HIV Prevention Trials Network (HPTN) Site Redesign</h3>
@@ -46,7 +46,7 @@ The following example outputs 3 case study blocks with a CTA link.
     </div>
     <div class="case-study-block">
       <a class="case-study-block__link" href="/work/civil-rights-map-case-study/">
-        <div class="case-study-block__image">
+        <div class="case-study-block__image" style="background-image: url(/assets/img/work/logos/pmp-logo-eggshell.png);">
           <img src="/assets/img/work/civil-rights-map-case-study/pmp-block.jpg" alt="Durham Civil and Human Rights History Map">
         </div>
         <h3 class="heading--underline--orange">Durham Civil and Human Rights History Map</h3>
@@ -68,7 +68,9 @@ The following example outputs 3 case study blocks with a CTA link.
 */
 
 .region--case-study-blocks {
-  h2 {
+  .region--case-study-blocks__title {
+    color: $dark-teal;
+    font-size: 1.728em;
     margin-bottom: $base-spacing * 1.5;
   }
 
@@ -78,8 +80,6 @@ The following example outputs 3 case study blocks with a CTA link.
     justify-content: center;
 
     @include grid-media($large-screen-up) {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
     }
 
@@ -102,6 +102,12 @@ The following example outputs 3 case study blocks with a CTA link.
 
       // This will make the button appear vertically centered with image.
       a {
+        font-size: 1em;
+
+        @include grid-media($small-screen-up) {
+          font-size: 1.25em;
+        }
+
         @include grid-media($large-screen-up) {
           margin-bottom: 134px;
         }

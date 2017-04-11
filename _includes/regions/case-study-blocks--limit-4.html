@@ -1,0 +1,10 @@
+{% comment %} Prints large case study blocks, limited to the first 4 case studies. {% endcomment %}
+<div class="region--case-study-blocks region">
+  <h1 class="region--case-study-blocks__title heading--underline--orange">Case Studies</h1>
+  <div class="region--case-study-blocks__case-studies">
+    {% assign items = site.case-studies | sort: 'weight' %}
+    {% for item in items | limit:4 %}
+    {% include components/case-study-block.html item=item heading_level="h2" %}
+    {% endfor %}
+  </div>
+</div>
