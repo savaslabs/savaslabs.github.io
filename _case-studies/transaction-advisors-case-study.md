@@ -3,6 +3,7 @@ layout: case-study
 weight: -1
 project_title: Transaction Advisors Multisite Development
 tags: drupal front-end-dev multisite payment-processing theming
+featured_tags: [Drupal, Multisite, Payment Processing, Responsive Design]
 client_name: Transaction Advisors
 client_url: "https://www.transactionadvisors.com"
 client_description: |
@@ -34,7 +35,7 @@ technologies_used: |
   - [Drupal Feeds](/blog/tag/drupal)
   - [Responsive design](/blog/tag/front-end-dev/)
   - [jQuery](/blog/tag/javascript)
-client_logo: "/assets/img/work/logos/transaction-advisors-logo.jpg"
+client_logo: "/assets/img/work/logos/transaction-advisors-logo.png"
 client_hero_image: "/assets/img/work/transaction-advisors-case-study/transaction_advisors_hero.jpg"
 project_objective_image: "/work/transaction-advisors-case-study/transaction_advisors_objective.jpg"
 project_objective_image_alt: "The Transaction Advisors home page on desktop and mobile."
@@ -42,5 +43,6 @@ project_process_image: "/work/transaction-advisors-case-study/transaction_adviso
 project_process_image_alt: "The SatelliteFinance home page on desktop and mobile."
 project_results_image: "/work/transaction-advisors-case-study/transaction_advisors_results.jpg"
 project_results_image_alt: "The TelecomFinance home page on desktop and mobile."
+block_image: "/assets/img/work/transaction-advisors-case-study/transaction-advisors-block.jpg"
 
 ---

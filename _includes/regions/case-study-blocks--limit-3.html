@@ -1,0 +1,12 @@
+<div class="region--case-study-blocks region">
+  <h2 class="heading--underline--orange">Case Studies</h2>
+  <div class="region--case-study-blocks__case-studies">
+    {% assign items = site.case-studies | sort: 'weight' %}
+    {% for item in items | limit:3 %}
+    {% include components/case-study-block.html item=item %}
+    {% endfor%}
+    <div class="region--case-study-blocks__cta flex-center">
+      <a href="/results/case-studies" class="button--arrow--orange">View all case studies</a>
+    </div>
+  </div>
+</div>

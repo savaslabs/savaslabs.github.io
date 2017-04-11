@@ -41,7 +41,7 @@
   image: sandstorm-logo.png
   weight: 14
 - name: Transaction Advisors
-  image: transaction-advisors-logo.jpg
+  image: transaction-advisors-logo.png
   weight: 15
 - name: Tilthy Rich Compost
   image: trc-logo.png

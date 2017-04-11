@@ -1,0 +1,18 @@
+<div class="case-study-block">
+  <a class="case-study-block__link" href="{{ include.item.url }}">
+    <div class="case-study-block__image">
+      <img src="{{ include.item.block_image }}" alt="{{ include.item.project_title }}">
+    </div>
+    <h3 class="heading--underline--orange">{{ include.item.project_title }}</h3>
+    <div class="case-study-block__tags">
+      {% assign count = 0 %}
+      {% for tag in include.item.featured_tags %}
+      <p>{{ tag }} </p>
+      {% if count < 3 %}
+      <p>&bull; </p>
+      {% endif %}
+      {% assign count = count | plus:1 %}
+      {% endfor %}
+    </div>
+  </a>
+</div>

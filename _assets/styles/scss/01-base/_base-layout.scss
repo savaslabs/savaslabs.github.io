@@ -7,6 +7,7 @@
 // For regions that need max width and left and right padding.
 .region {
   @include outer-container;
+  clear: both;
   max-width: $max-width - 40;
   padding: $base-margin / 2 1em;
   vertical-align: baseline;
@@ -23,6 +24,7 @@
 // For regions that should appear full width, but whose content should have
 // a max-width.
 .region--full-width {
+  clear: both;
   margin: $base-margin / 2 0;
 
   @include grid-media($medium-screen-up) {
@@ -36,6 +38,14 @@
     max-width: $max-width - 40;
     vertical-align: baseline;
   }
+}
+
+// Add a class for divs that contain an item that is horizontally and vertically
+// centered via flexbox.
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 // TODO: Remove styles below if not needed.

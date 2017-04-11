@@ -3,6 +3,7 @@ layout: case-study
 weight: -3
 project_title: Hunter Boots E-Commerce / Redesign
 tags: drupal front-end-dev javascript payment-processing theming
+featured_tags: [Drupal, Responsive Design, Payment Processing, Javascript]
 client_name: Hunter Boots
 client_url: "http://us.hunterboots.com/"
 client_description: |
@@ -42,5 +43,6 @@ project_results_image: "/work/hunter-boots-case-study/hunter_results.jpg"
 project_results_image_alt: "The Hunter Boots home page on desktop and mobile"
 client_quote2_author: Jodi Sweetbaum, President of Lloyd & Co.
 client_quote2: The site is looking amazing. I was very proud to present it today. Thank you so so so much! THANK YOU a million times over.
+block_image: "/assets/img/work/hunter-boots-case-study/hunter-block.jpg"
 
 ---

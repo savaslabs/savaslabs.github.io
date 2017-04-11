@@ -17,6 +17,7 @@
 @import 'scss/03-typography/headings';
 @import 'scss/03-typography/headings--underline';
 @import 'scss/03-typography/hr';
+@import 'scss/03-typography/intro-paragraph';
 @import 'scss/03-typography/links';
 @import 'scss/03-typography/links--arrow';
 @import 'scss/03-typography/links--cta';
@@ -29,6 +30,7 @@
 @import 'scss/04-components/buttons';
 @import 'scss/04-components/buttons--arrow';
 @import 'scss/04-components/buttons--submit';
+@import 'scss/04-components/case-study-block';
 @import 'scss/04-components/expander';
 @import 'scss/04-components/footer-navigation';
 @import 'scss/04-components/footer-navigation--menu-link';
@@ -42,6 +44,7 @@
 @import 'scss/04-components/header-navigation--menu-link';
 @import 'scss/04-components/icons';
 @import 'scss/04-components/images';
+@import 'scss/04-components/images--grayscale';
 @import 'scss/04-components/images--hero';
 @import 'scss/04-components/key-value-list-item';
 @import 'scss/04-components/logos';
@@ -54,7 +57,6 @@
 // TODO: Refactor and remove.
 @import 'scss/04-components/blog';
 @import 'scss/04-components/cards';
-@import 'scss/04-components/case-study-list';
 @import 'scss/04-components/comments';
 @import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
@@ -70,17 +72,20 @@
 @import 'scss/04-components/team-member-badges';
 @import 'scss/04-components/team-member-posts';
 @import 'scss/04-components/team-member-top';
-@import 'scss/04-components/work';
 @import 'scss/04-components/work-case-study';
 @import 'scss/04-components/work-case-study-cover-image';
 @import 'scss/04-components/work-table';
 
 // Region rules.
 @import 'scss/05-regions/banner';
+@import 'scss/05-regions/banner--open-source';
 @import 'scss/05-regions/banner--were-hiring';
 @import 'scss/05-regions/blog-tiles';
 @import 'scss/05-regions/call-to-action';
+@import 'scss/05-regions/case-study-blocks';
 @import 'scss/05-regions/case-study-tiles';
+@import 'scss/05-regions/client-logos';
+@import 'scss/05-regions/client-quote';
 @import 'scss/05-regions/footer';
 @import 'scss/05-regions/header';
 @import 'scss/05-regions/hero-image';
@@ -89,4 +94,6 @@
 @import 'scss/05-regions/team-member-list';
 
 // Page rules (layout).
+@import 'scss/06-pages/company';
 @import 'scss/06-pages/home';
+@import 'scss/06-pages/results';

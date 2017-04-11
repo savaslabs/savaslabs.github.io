@@ -1,0 +1,19 @@
+---
+layout: default
+title: Results
+permalink: "/results/"
+class: page--results
+excerpt: A selection of recent work done by Savas Labs
+redirect_from:
+  - /work/
+---
+
+{% include regions/case-study-blocks--limit-3.html %}
+{% for client in site.data.clients %}
+  {% if client.project == "duke_today" %}
+    {% include regions/client-quote.html class="region--client-quote--light" client=client %}
+  {% endif %}
+{% endfor %}
+{% include regions/client-logos.html %}
+{% include regions/banner--open-source.html %}
+{% include regions/cta--move-work-forward.html %}

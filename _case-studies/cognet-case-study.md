@@ -3,6 +3,7 @@ layout: case-study
 weight: 0
 project_title: MIT Press CogNet Responsive Redesign
 tags: css design drupal front-end-dev javascript sass theming
+featured_tags: [Drupal, Responsive Design, UX, Javascript]
 client_name: MIT Press CogNet
 client_url: "http://cognet.mit.edu"
 client_description: |
@@ -40,5 +41,6 @@ project_process_image: "/work/cognet-case-study/cognet_process.jpg"
 project_process_image_alt: "Mockups paired with the final site on mobile screens"
 project_results_image: "/work/cognet-case-study/cognet_results.jpg"
 project_results_image_alt: "The MIT Press CogNet site on three screen sizes"
+block_image: "/assets/img/work/cognet-case-study/cognet-block.jpg"
 
 ---
