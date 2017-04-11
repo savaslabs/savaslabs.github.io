@@ -78,6 +78,7 @@ The class `region--client-quote--dark` can be included for a dark teal backgroun
       font-size: 1.1em;
       font-style: italic;
       margin-bottom: 0;
+      max-width: 300px;
 
       @include grid-media($medium-screen-up) {
         margin-right: .75em;
@@ -88,23 +89,28 @@ The class `region--client-quote--dark` can be included for a dark teal backgroun
 
   .region--client-quote__quote {
     background: url('/assets/img/icons-and-logos/testimonial-quote.svg') top left no-repeat;
-    background-size: 15%;
+    background-size: 30%;
     clear: both;
-    padding: $base-spacing $base-spacing $base-spacing $base-spacing * 1.5;
+    padding: $base-spacing * 2 $base-spacing $base-spacing * 2 $base-spacing * 1.5;
+
+    @include grid-media($small-screen-up) {
+      background-size: 20%;
+    }
 
     @include grid-media($medium-screen-up) {
+      background-size: 25%;
       margin-left: 10%;
       margin-top: 0;
-      padding: $base-spacing * 2 $base-spacing * 2 $base-spacing * 2 $base-spacing * 3;
+      padding: $base-spacing * 2.5 $base-spacing * 2 $base-spacing * 2.5 $base-spacing * 3;
     }
 
     .region--client-quote__quote__text {
-      font-size: 1.44em;
+      font-size: 1.25em;
       margin-bottom: 0;
       max-width: 600px;
 
       @include grid-media($medium-screen-up) {
-        font-size: 1.953em;
+        font-size: 1.44em;
       }
     }
   }
@@ -121,6 +127,19 @@ The class `region--client-quote--dark` can be included for a dark teal backgroun
 .region--client-quote--dark {
   background-color: $dark-teal;
   color: $eggshell;
+
+  .region--client-quote__quote {
+    background: url('/assets/img/icons-and-logos/testimonial-quote-dark.svg') top left no-repeat;
+    background-size: 30%;
+
+    @include grid-media($small-screen-up) {
+      background-size: 20%;
+    }
+
+    @include grid-media($medium-screen-up) {
+      background-size: 25%;
+    }
+  }
 
   .region--client-quote__quote__text {
     color: $eggshell;
