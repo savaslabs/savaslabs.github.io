@@ -15,3 +15,35 @@ category: Components
 ```
 
 */
+
+.expander {
+
+  .expander-trigger {
+    color: $magenta;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: $expander-toggle-size / 4;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+
+    &::before {
+      content: '\25BC';
+      font-size: $expander-arrow-width;
+      margin-right: .5em;
+    }
+  }
+
+  .expander-hidden {
+    &::before {
+      content: '\25BA';
+      font-size: $expander-arrow-width;
+    }
+
+    + .expander-content {
+      display: none;
+    }
+  }
+}

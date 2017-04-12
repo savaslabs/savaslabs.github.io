@@ -84,12 +84,18 @@ parent: colors
     <div class="styleguide-color-chip__bg bg-light-teal"></div>
     <code>$light-teal</code>
   </div>
+  <div class="styleguide-color-chip__wrapper">
+    <div class="styleguide-color-chip__bg bg-light-orange"></div>
+    <code>$light-orange</code>
+  </div>
 </div>
 
-| Variable     | Hex       | rgb             |
-| ------------ | --------- | --------------- |
-| `$grey`      | `#565d5e` | `86,93,94`      |
-| `$light-teal`| `#0a5365` | `10,83,101,.95` |
+| Variable       | Hex       | rgb           |
+| -------------- | --------- | ------------- |
+| `$grey`        | `#565d5e` | `86,93,94`    |
+| `$light-grey`  | `#bdc2c3` | `189,194,195` |
+| `$light-teal`  | `#f3f6f7` | `243,246,247` |
+| `$light-orange`| `#f29c96` | `242,156,150` |
 
 */
 
@@ -97,6 +103,7 @@ parent: colors
 $grey: #565d5e;
 $light-grey: lighten($grey, 40%);
 $light-teal: #f3f6f7;
+$light-orange: lighten($orange, 30%);
 
 /*doc
 ---
@@ -175,6 +182,7 @@ $success-color: transparentize($green, .8);
 .bg-grey { background-color: $grey; }
 .bg-light-grey { background-color: $light-grey; }
 .bg-light-teal { background-color: $light-teal; }
+.bg-light-orange { background-color: $light-orange; }
 .bg-purple { background-color: $purple; }
 .bg-pink { background-color: $pink; }
 .bg-yellow { background-color: $yellow; }
@@ -187,6 +195,7 @@ $success-color: transparentize($green, .8);
 .c-grey { color: $grey; }
 .c-light-grey { color: $light-grey; }
 .c-light-teal { color: $light-teal; }
+.c-light-orange { color: $light-orange; }
 .c-purple { color: $purple; }
 .c-pink { color: $pink; }
 .c-yellow { color: $yellow; }

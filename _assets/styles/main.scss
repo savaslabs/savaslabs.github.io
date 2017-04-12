@@ -23,6 +23,7 @@
 @import 'scss/03-typography/links--cta';
 @import 'scss/03-typography/links--inline';
 @import 'scss/03-typography/lists';
+@import 'scss/03-typography/lists--bordered';
 @import 'scss/03-typography/paragraphs';
 
 // Component rules.
@@ -31,6 +32,7 @@
 @import 'scss/04-components/buttons--arrow';
 @import 'scss/04-components/buttons--submit';
 @import 'scss/04-components/case-study-block';
+@import 'scss/04-components/comment';
 @import 'scss/04-components/expander';
 @import 'scss/04-components/footer-navigation';
 @import 'scss/04-components/footer-navigation--menu-link';
@@ -39,7 +41,6 @@
 @import 'scss/04-components/form-elements--textarea';
 @import 'scss/04-components/forms';
 @import 'scss/04-components/forms--comment';
-@import 'scss/04-components/forms--contact';
 @import 'scss/04-components/header-navigation';
 @import 'scss/04-components/header-navigation--menu-link';
 @import 'scss/04-components/icons';
@@ -57,7 +58,6 @@
 // TODO: Refactor and remove.
 @import 'scss/04-components/blog';
 @import 'scss/04-components/cards';
-@import 'scss/04-components/comments';
 @import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
 @import 'scss/04-components/home-cover-image';
@@ -87,6 +87,7 @@
 @import 'scss/05-regions/case-study-tiles';
 @import 'scss/05-regions/client-logos';
 @import 'scss/05-regions/client-quote';
+@import 'scss/05-regions/comments';
 @import 'scss/05-regions/footer';
 @import 'scss/05-regions/header';
 @import 'scss/05-regions/hero-image';

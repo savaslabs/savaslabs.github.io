@@ -1,0 +1,23 @@
+/**
+ * @file
+ *
+ * Styles for the comments on a blog post.
+ */
+
+/*doc
+---
+title: Comments
+name: comments
+category: Regions
+---
+
+```html_example
+
+```
+
+*/
+
+// Existing comments.
+.post-comments {
+  margin-top: 2.5em;
+}

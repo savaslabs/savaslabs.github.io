@@ -12,32 +12,63 @@ category: Typography
 ---
 
 ```html_example
+<blockquote>
+  <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh
+  onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+</blockquote>
 ```
 
 */
 
-// Thanks CSS-Tricks!
-// https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 blockquote {
-  background-color: lighten($light-gray, 10);
-  border-left: 10px solid transparentize($dark-teal, .6);
-  border-radius: 0 $base-border-radius * 3 $base-border-radius * 3 0;
+  background: url('/assets/img/icons-and-logos/testimonial-quote.svg') 3% 5% no-repeat;
+  background-size: 20%;
+  border-bottom: solid 1px $light-orange;
+  border-top: solid 1px $light-orange;
   font-style: italic;
-  margin: 2em 0;
-  padding: 1em;
-  quotes: '\201C' '\201D';
+  margin: $base-spacing * 2 0;
+  padding-bottom: .25em;
+  padding-top: .25em;
+  position: relative;
+
+  @include grid-media($small-screen-up) {
+    background-position: 3% 20%;
+    background-size: 12%;
+  }
+
+  @include grid-media($large-screen-up) {
+    background-position: 7% 20%;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+  }
 
   &::before {
-    color: transparentize($dark-teal, .6);
-    content: open-quote;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 4em;
-    line-height: .1em;
-    margin-right: .25em;
-    vertical-align: -.4em;
+    border-top: solid 1px $light-orange;
+  }
+
+  &::after {
+    border-bottom: solid 1px $light-orange;
   }
 
   p {
-    display: inline;
+    @include paragraph-loud-responsive;
+
+    color: lighten($teal, 10%);
+    margin-bottom: 0;
+    padding: $base-spacing * 2 $base-spacing;
+    text-align: center;
+
+    @include grid-media($small-screen-up) {
+      padding: $base-spacing * 2;
+    }
+
+    @include grid-media($large-screen-up) {
+      padding: $base-spacing * 2 $base-spacing * 4;
+    }
   }
 }
