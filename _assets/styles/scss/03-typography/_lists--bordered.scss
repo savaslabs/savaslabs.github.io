@@ -1,0 +1,63 @@
+/**
+ * @file
+ *
+ * Typography: list styles.
+ */
+
+/*doc
+---
+title: Bordered lists
+name: lists--bordered
+category: Typography
+parent: lists
+---
+
+```html_example
+<div class="list--bordered">
+  <ul>
+    <li>Drupal CMS</li>
+    <li>Architecture</li>
+    <li>Software & Databases</li>
+    <li>Data Migration</li>
+  </ul>
+  <ul>
+    <li>E-Commerce</li>
+    <li>Performance Optimization</li>
+    <li>Automated Testing</li>
+    <li>Security</li>
+  </ul>
+</div>
+```
+
+*/
+
+.list--bordered {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include grid-media($medium-screen-up) {
+    flex-wrap: nowrap;
+  }
+
+  ul {
+    border-left: solid 2px lighten($orange, 30%);
+    flex-basis: 100%;
+    margin: 0;
+    padding-left: $base-spacing;
+
+    @include grid-media($medium-screen-up) {
+      flex-basis: 50%;
+    }
+
+    li {
+      color: $teal;
+      font-size: 1.25em;
+      padding: .25em 0;
+    }
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+  }
+}
