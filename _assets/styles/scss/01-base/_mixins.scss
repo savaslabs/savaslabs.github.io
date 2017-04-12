@@ -99,6 +99,19 @@
   }
 }
 
+@mixin button-dark($background-color: $teal, $color: $eggshell) {
+  @include button($background-color, $color);
+
+  background-color: $background-color;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color, 10%);
+    border-color: lighten($background-color, 10%);
+    color: lighten($background-color, 10%);
+  }
+}
+
 @mixin button-arrow($background-color: $white, $color: $teal) {
   @include button($background-color, $color);
 

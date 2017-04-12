@@ -13,10 +13,14 @@ parent: buttons
 ---
 
 ```html_example_table
+<input type="submit" value="Post comment" id="submit">
 ```
 
 */
 
 [type="submit"] {
-  @include button;
+  @include button-dark;
+
+  padding: .75em 3em;
+  text-transform: none;
 }
