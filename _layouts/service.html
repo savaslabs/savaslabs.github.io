@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% include regions/service-icons.html %}
+
+<div class="page--service__content">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ content }}
+  <div class="page--service__content__services list--bordered">
+    <ul>
+      {% for item in page.services | limit:4 %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <ul>
+      {% assign count = 0 %}
+      {% for item in page.services %}
+      {% if count > 3 %}
+      <li>{{ item }}</li>
+      {% endif %}
+      {% assign count = count | plus:1 %}
+      {% endfor %}
+    </ul>
+  </div>
+  <img class="page--service__vertical-image" src="{{ page.verical-image }}">
+  <a class="link--arrow" href="/services">Explore our expertise</a>
+</div>
+{% for client in site.data.clients %}
+{% if client.project == {{ page.quote_project }} %}
+{% include regions/client-quote.html class="region--client-quote--dark" client=client %}
+{% endif %}
+{% endfor %}
+{% if page.slug == development %}
+{% endif %}
+<div class="region flex-center">
+  <a class="button--arrow--orange" href="/contact">Work with us</a>
+</div>
