@@ -78,10 +78,10 @@ The class `region--client-quote--dark` can be included for a dark teal backgroun
       font-size: 1.1em;
       font-style: italic;
       margin-bottom: 0;
-      max-width: 300px;
 
       @include grid-media($medium-screen-up) {
         margin-right: .75em;
+        max-width: 300px;
       }
     }
 
