@@ -5,7 +5,10 @@ permalink: "/services/"
 excerpt: Savas Labs is a full-service digital agency leveraging the power of Drupal.
 ---
 
-{% assign services = site.services | sort: 'weight' %}
-{% for service in services limit:4 %}
-
+{% include regions/service-tiles.html %}
+{% for client in site.data.clients %}
+  {% if client.project == "duke_today" %}
+    {% include regions/client-quote.html class="region--client-quote--light" client=client %}
+  {% endif %}
 {% endfor %}
+{% include regions/cta--move-work-forward.html %}

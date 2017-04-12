@@ -1,0 +1,105 @@
+/**
+ * @file
+ *
+ * Service tile region styles.
+ */
+
+/*doc
+---
+title: Service tiles
+name: service-tiles
+category: Regions
+---
+
+```html_example
+<div class="region--service-tiles region--full-width">
+  <div class="tile--service">
+    <a href="/services/strategy/" class="tile--service__link">
+      <div class="tile--service__content">
+        <img class="tile--service__image" src="/assets/img/icons-and-logos/strategy-icon.svg" alt="Strategy / Consulting">
+        <div class="tile--service__content__text">
+          <h2 class="tile--service__title heading--sans-serif">Strategy / Consulting</h2>
+          <p class="tile--service__summary paragraph--loud">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+          <p class="tile--service__cta link--arrow paragraph--loud">Learn more</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="tile--service">
+    <a href="/services/development/" class="tile--service__link">
+      <div class="tile--service__content">
+        <img class="tile--service__image" src="/assets/img/icons-and-logos/development-icon.svg" alt="Development">
+        <div class="tile--service__content__text">
+          <h2 class="tile--service__title heading--sans-serif">Development</h2>
+          <p class="tile--service__summary paragraph--loud">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+          <p class="tile--service__cta link--arrow paragraph--loud">Learn more</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="tile--service">
+    <a href="/services/design-ux/" class="tile--service__link">
+      <div class="tile--service__content">
+        <img class="tile--service__image" src="/assets/img/icons-and-logos/design-ux-icon.svg" alt="Design / UX">
+        <div class="tile--service__content__text">
+          <h2 class="tile--service__title heading--sans-serif">Design / UX</h2>
+          <p class="tile--service__summary paragraph--loud">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+          <p class="tile--service__cta link--arrow paragraph--loud">Learn more</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="tile--service">
+    <a href="/services/support/" class="tile--service__link">
+      <div class="tile--service__content">
+        <img class="tile--service__image" src="/assets/img/icons-and-logos/support-maintenance-icon.svg" alt="Support / Maintenance">
+        <div class="tile--service__content__text">
+          <h2 class="tile--service__title heading--sans-serif">Support / Maintenance</h2>
+          <p class="tile--service__summary paragraph--loud">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+          <p class="tile--service__cta link--arrow paragraph--loud">Learn more</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+*/
+
+.region--service-tiles {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > div {
+    flex-basis: 100%;
+    padding-bottom: $base-spacing / 4;
+    padding-top: $base-spacing / 4;
+
+    @include grid-media($medium-screen-up) {
+      flex-basis: 50%;
+
+      &:first-child,
+      &:nth-child(3) {
+        padding-right: $base-spacing / 4;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        padding-left: $base-spacing / 4;
+      }
+    }
+
+    // Above max-width, align left tiles to the right.
+    &:first-child,
+    &:nth-child(3) {
+      .tile--service__link {
+        @include grid-media($max-width-up) {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
