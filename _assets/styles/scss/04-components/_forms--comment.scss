@@ -16,3 +16,93 @@ parent: forms
 ```
 
 */
+
+.post-comments {
+
+  // General form field styles.
+  .comment-form__field {
+    margin-bottom: 1.5em;
+
+    &__label {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p,
+    input,
+    textarea {
+      margin-bottom: 0;
+    }
+  }
+
+  // Text inputs.
+  .comment-form__field--name,
+  .comment-form__field--email {
+    max-width: 375px;
+  }
+
+  .comment-form__field--comment {
+    max-width: 600px;
+
+    // This removes extra space under textarea in some browsers.
+    textarea {
+      vertical-align: top;
+    }
+  }
+
+  // Helptext below fields.
+  .comment-form__field__helptext {
+    font-size: .8em;
+  }
+
+  // Hide honeypot field.
+  // scss-lint:disable IdSelector
+  #url {
+    display: none;
+  }
+  // scss-lint:enable IdSelector
+
+  // Nocaptcha field.
+  .comment-form__field--nocaptcha {
+    @include grid-column(12);
+
+    &__image {
+      @include grid-column(3);
+      text-align: center;
+
+      img {
+        width: 4em;
+      }
+    }
+
+    &__input {
+      @include grid-column(9);
+
+      input {
+        width: 100px;
+      }
+    }
+  }
+
+  // Submit button.
+  .comment-form__submit {
+    @include button;
+    margin-top: 0;
+  }
+
+  // Style the success message above the new comment.
+  .flash-success {
+    margin-top: 1.5em;
+  }
+
+  // Style the error message at the top of the comment form.
+  .flash-error {
+    margin-top: $base-spacing;
+  }
+
+  // Highlight field indicated in an error response.
+  .error-field {
+    border-color: $magenta;
+    border-width: 3px;
+  }
+}

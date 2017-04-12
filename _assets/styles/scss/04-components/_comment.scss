@@ -1,0 +1,42 @@
+/**
+ * @file
+ *
+ * Styles for a single comment.
+ */
+
+/*doc
+---
+title: Comment
+name: comment
+category: Components
+---
+
+```html_example
+```
+
+*/
+
+// TODO: Refactor markup to use BEM classes.
+.comment {
+  .comment__logo {
+    float: left;
+    height: 1.44em;
+    margin-right: .5em;
+    padding: .25em 0;
+  }
+
+  h5 {
+    margin-bottom: 0;
+  }
+
+  .comment-date {
+    color: darken($light-gray, 25%);
+    font-size: .9em;
+    margin: .5em 0 .4em;
+  }
+
+  .comment-date,
+  .comment-text {
+    margin-left: 1em;
+  }
+}

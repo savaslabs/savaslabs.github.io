@@ -12,7 +12,9 @@ category: Components
 parent: form-elements
 ---
 
-```html_example
+```html_example_table
+<label for="comment">Comment</label>
+<textarea name="comment" id="comment" required=""></textarea>
 ```
 
 */

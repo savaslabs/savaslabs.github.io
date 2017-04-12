@@ -10,7 +10,8 @@ title: Buttons
 name: buttons
 category: Components
 ---
-A basic link styled as a button. Default is teal.
+A basic link styled as a button. Default is teal. Dark background mixin
+`button-dark($background-color: $teal, $color: $eggshell)` available.
 
 ```html_example_table
 <div class="styleguide-wrapper">
@@ -35,6 +36,10 @@ A basic link styled as a button. Default is teal.
 
 <div class="styleguide-wrapper bg-orange">
   <a href="#" class="button--white-orange">Get in touch</a>
+</div>
+
+<div class="styleguide-wrapper">
+  <a href="#" class="button--dark">Get in touch</a>
 </div>
 ```
 
@@ -62,4 +67,8 @@ A basic link styled as a button. Default is teal.
 
 .button--white-orange {
   @include button($orange, $white);
+}
+
+.button--dark {
+  @include button-dark;
 }
