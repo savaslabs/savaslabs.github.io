@@ -4,6 +4,7 @@ title: "Composing with Composer Manager"
 date: 2015-10-15
 author: Dan Murphy
 tags: drupal composer module-development
+services: development
 summary: Using composer manager to manage a custom module's dependencies.
 
 ---

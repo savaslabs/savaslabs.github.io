@@ -4,6 +4,7 @@ featured: 1
 weight: -5
 project_title: Duke Today Redesign
 tags: docker drupal durham front-end-dev migration module-development performance user-experience
+services: strategy development design-ux
 featured_tags: [Drupal, Content Migration, UX, Docker]
 client_name: Duke Today
 client_url: "https://today.duke.edu"

@@ -4,6 +4,7 @@ weight: -1
 project_title: Transaction Advisors Multisite Development
 tags: drupal front-end-dev multisite payment-processing theming
 featured_tags: [Drupal, Multisite, Payment Processing, Responsive Design]
+services: strategy development design-ux
 client_name: Transaction Advisors
 client_url: "https://www.transactionadvisors.com"
 client_description: |

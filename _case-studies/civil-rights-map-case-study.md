@@ -5,6 +5,7 @@ weight: -4
 project_title: Durham Civil and Human Rights History Map
 tags: cartography css design drupal drupal8 durham front-end-dev leaflet module-development sass theming
 featured_tags: [Drupal 8, Responsive Design, UX, Web Mapping]
+services: development design-ux
 client_name: Pauli Murray Project, Duke Human Rights Center
 client_url: "http://www.durhamcivilrightsmap.org"
 client_quote: |

@@ -4,6 +4,7 @@ featured: 1
 weight: -5
 project_title: HIV Prevention Trials Network (HPTN) Site Redesign
 tags: css design drupal drupal8 durham front-end-dev module-development performance sass theming user-experience
+services: strategy development design-ux
 featured_tags: [Drupal 8, Responsive Design, UX, Client Server Integration]
 client_name: HIV Prevention Trials Network
 client_url: "https://www.hptn.org"

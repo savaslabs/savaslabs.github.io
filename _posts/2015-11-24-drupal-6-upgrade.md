@@ -4,6 +4,7 @@ title: "It's nearly 2016, your site is running on Drupal 6, now what? Part 1: Th
 date: 2015-11-24
 author: Chris Russo
 tags: drupal drupal8 drupal-planet
+services: strategy development
 summary: What to plan for as Drupal 6 EOL approaches.
 
 ---

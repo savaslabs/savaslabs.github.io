@@ -4,6 +4,7 @@ title: Five Drupal 8 Tips to Empower Content Authors
 date: 2017-03-06
 author: Oksana Cyrwus
 tags: drupal drupal8 drupal-planet user-experience
+services: strategy development design-ux
 featured_image: "/blog/content-authoring-d8.jpg"
 featured_image_alt: "Five Drupal 8 Tips to Empower Content Authors"
 featured_image_height: "917px"
