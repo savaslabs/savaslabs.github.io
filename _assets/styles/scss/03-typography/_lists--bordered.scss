@@ -40,7 +40,7 @@ parent: lists
   }
 
   ul {
-    border-left: solid 2px lighten($orange, 30%);
+    border-left: solid 2px $light-orange;
     flex-basis: 100%;
     margin: 0;
     padding-left: $base-spacing;
