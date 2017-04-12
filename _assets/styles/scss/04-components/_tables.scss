@@ -10,32 +10,74 @@ title: Tables
 name: tables
 category: Components
 ---
+Use the class `table--minimal` to produce the following:
 
 ```html_example
+<table class="table--minimal">
+  <tbody>
+    <tr>
+      <td class="label"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Client since</td>
+      <td>2016 - present</td>
+    </tr>
+    <tr>
+      <td class="label"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Services provided</td>
+      <td>
+        <ul>
+          <li><a href="/services#audits">Standard Audit</a></li>
+          <li><a href="/services#migration">Drupal 6 to 7 migration</a></li>
+          <li><a href="/blog/tag/theming">Drupal theming and site-building</a></li>
+          <li><a href="/services#development">Drupal custom module development</a></li>
+          <li><a href="/services#performance">Performance improvements</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="label"><i class="fa fa-code"></i>&nbsp;&nbsp;Technologies used</td>
+      <td>
+        <ul>
+          <li><a href="/blog/tag/drupal">Drupal 7</a></li>
+          <li><a href="/blog/tag/migration">Migrate module</a></li>
+          <li><a href="/blog/tag/docker">Docker</a></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 ```
 
 */
 
 // Table refill.
-.table-minimal {
+.table--minimal {
   @include table-minimal;
-}
 
-// Contact page table.
-.table-minimal--contact {
-  p {
-    display: none;
+  // Override some of the default styles.
+  tbody {
+    tr {
+      &:first-child td,
+      td {
+        border-color: $grey;
+      }
 
-    @include grid-media($small-screen-up) {
-      display: inline;
+      &:hover,
+      &:focus {
+        > td,
+        > th {
+          @include ease;
+
+          background-color: $light-teal;
+          color: $dark-teal;
+        }
+      }
     }
-  }
 
-  .table-minimal--contact__label {
-    width: 30%;
+    ul {
+      margin: 0;
+    }
 
-    @include grid-media($small-screen-up) {
-      width: 50%;
+    ul,
+    li {
+      list-style-type: none;
     }
   }
 }
