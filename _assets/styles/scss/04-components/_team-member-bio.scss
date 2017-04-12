@@ -59,19 +59,9 @@ Note that the component template uses the Jekyll Picture Tag plugin to create a
   }
 
   .team-member-bio__image {
-    margin-bottom: $base-spacing;
-    position: relative;
+    @include hover-border-bottom;
 
-    // This sets up the orange bottom border on hover.
-    &::after {
-      background-color: transparent;
-      bottom: 0;
-      content: '';
-      height: 5px;
-      position: absolute;
-      transition: all .5s ease;
-      width: 0;
-    }
+    margin-bottom: $base-spacing;
 
     img {
       display: block;
