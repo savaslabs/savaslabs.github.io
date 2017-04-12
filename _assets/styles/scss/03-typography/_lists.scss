@@ -10,8 +10,30 @@ title: Lists
 name: lists
 category: Typography
 ---
+*/
 
-```html_example
+/*doc
+---
+title: Basic lists
+name: lists--basic
+category: Typography
+parent: lists
+---
+
+```html_example_table
+<ul>
+  <li>Drupal CMS</li>
+  <li>Architecture</li>
+  <li>Software & Databases</li>
+  <li>Data Migration</li>
+</ul>
+
+<ol>
+  <li>E-Commerce</li>
+  <li>Performance Optimization</li>
+  <li>Automated Testing</li>
+  <li>Security</li>
+</ol>
 ```
 
 */
