@@ -36,3 +36,10 @@ layout: default
 <div class="region flex-center">
   <a class="button--arrow--orange" href="/contact">Work with us</a>
 </div>
+
+{% if page.slug == 'support-maintenance' %}
+{% assign tags = 'strategy|development' | split: '|' %}
+{% else %}
+{% assign tags = page.slug %}
+{% endif %}
+{% include regions/case-study-blocks--related.html tags=tags %}
