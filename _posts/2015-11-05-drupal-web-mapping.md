@@ -4,6 +4,7 @@ title: "Drupalized Web Mapping @ NACIS 2015"
 date: 2015-11-05
 author: Tim Stallmann
 tags: drupal drupal-planet cartography
+services: development
 summary: Slides from Tim's talk on building web maps using Drupal at the 2015 NACIS conference.
 ---
 

@@ -4,6 +4,7 @@ title: "Sassy Drupal theming: Best practices"
 date: 2015-09-03
 author: Anne Tomasevich
 tags: drupal theming sass bourbon front-end-dev
+services: development design-ux
 summary: Some lessons learned about writing lean, easy-to-understand SCSS and capitalizing on all Sass has to offer.
 
 ---

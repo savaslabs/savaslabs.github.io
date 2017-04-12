@@ -4,6 +4,7 @@ title: "An Event Apart Nashville: post-conference thoughts"
 date: 2016-03-21
 author: Anne Tomasevich
 tags: conference design front-end-dev
+services: design-ux
 summary: Some recap and reflection after my first An Event Apart conference.
 featured_image: "/blog/aea_nashville_hero.jpg"
 featured_image_alt: "An Event Apart: Nashville logo over Broadway Street"

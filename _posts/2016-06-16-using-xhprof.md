@@ -4,6 +4,7 @@ title: "Using XHProf to profile your Drupal module"
 date: 2016-06-16
 author: Tim Stallmann
 tags: php performance drupal drupal-planet module-development
+services: development
 summary: A case study of using XHProf to profile a Drupal module.
 drupal_planet_summary:
   Second part in a series of how to use XHProf effectively within a VM for a Drupal website.

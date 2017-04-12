@@ -4,6 +4,7 @@ title: "When Drupal database sanitization isn't enough"
 date: 2015-08-04
 author: Chris Russo
 tags: drupal drupal8 drupal-planet best-practices
+services: development
 summary: |
   The user revision module does not (_yet_) care about `drush sqlsan`,
   and it should!

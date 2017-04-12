@@ -4,6 +4,7 @@ title: Optimizing Jekyll Performance with Gulp
 date: 2016-10-19
 author: Anne Tomasevich
 tags: performance jekyll javascript css sass front-end-dev
+services: development design-ux
 summary: |
   How we improved our company site's performance with a better Jekyll workflow
 featured_image: "/blog/test-tubes.jpg"
