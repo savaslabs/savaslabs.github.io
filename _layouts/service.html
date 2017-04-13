@@ -26,7 +26,7 @@ layout: default
     <a class="link--arrow" href="/services">Explore our expertise</a>
   </div>
 </div>
-<img class="page--service__vertical-image" src="{{ page.vertical_image }}">
+<img class="page--service__vertical-image" src="{{ page.vertical_image }}" alt="{{ page.vertical_image_alt }}">
 {% for client in site.data.clients %}
 {% if client.project == page.quote_project %}
 {% include regions/client-quote.html class="region--client-quote--dark" client=client %}
