@@ -17,8 +17,8 @@
 
   .page--service__content {
     @include grid-media($large-screen-up) {
-     float: left;
-     width: 50%;
+      float: left;
+      width: 50%;
     }
 
     @include grid-media($extra-large-screen-up) {
