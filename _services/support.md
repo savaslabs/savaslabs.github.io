@@ -6,10 +6,10 @@ weight: 4
 summary: |
   Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
 icon: "support-maintenance-icon.svg"
-vertical_image: "/assets/img/services/development-hero.jpg"
-vertical_image_alt: "Chris walking with a client"
-quote_project: "duke_today"
-services: [These, Need, To, Be, Added, Later]
+vertical_image: "/assets/img/services/support-maintenance-hero.jpg"
+vertical_image_alt: "Various visual representations of statistics"
+quote_project: "omega-lz"
+services: [Drupal CMS, Architecture, Software & Databases, Data Migration, E-Commerce, Performance Optimization, Automated Testing, Security]
 
 ---
 

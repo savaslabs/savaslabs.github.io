@@ -6,8 +6,8 @@ weight: 3
 summary: |
   Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
 icon: "design-ux-icon.svg"
-vertical_image: "/assets/img/services/development-hero.jpg"
-vertical_image_alt: "Chris walking with a client"
+vertical_image: "/assets/img/services/design-ux-hero.jpg"
+vertical_image_alt: "User experience design concepts"
 quote_project: "omega-md"
 services: [User Experience Strategy, Wireframing & Prototyping, Interface Design, Conversion Optimization, Concepting & Ideation, E-Commerce Web Design, Styleguide Design, Usability & User Testing]
 
