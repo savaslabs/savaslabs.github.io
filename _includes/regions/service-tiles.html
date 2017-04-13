@@ -1,0 +1,17 @@
+<div class="region--service-tiles region--full-width">
+  {% assign services = site.services | sort: 'weight' %}
+  {% for item in services %}
+  <div class="tile--service">
+    <a href="{{ item.url }}" class="tile--service__link">
+      <div class="tile--service__content">
+        <img class="tile--service__image" src="/assets/img/icons-and-logos/{{ item.icon }}" alt="{{ item.title }}">
+        <div class="tile--service__content__text">
+          <h2 class="tile--service__title heading--sans-serif">{{ item.title }}</h2>
+          <p class="tile--service__summary">{{ item.summary }}</p>
+          <p class="tile--service__cta link--arrow paragraph--loud">Learn more</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>

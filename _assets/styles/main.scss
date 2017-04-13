@@ -44,6 +44,7 @@
 @import 'scss/04-components/header-navigation';
 @import 'scss/04-components/header-navigation--menu-link';
 @import 'scss/04-components/icons';
+@import 'scss/04-components/icons--service';
 @import 'scss/04-components/images';
 @import 'scss/04-components/images--grayscale';
 @import 'scss/04-components/images--hero';
@@ -53,6 +54,7 @@
 @import 'scss/04-components/team-member-bio';
 @import 'scss/04-components/tiles--blog';
 @import 'scss/04-components/tiles--case-study';
+@import 'scss/04-components/tiles--service';
 @import 'scss/04-components/tiles';
 
 // TODO: Refactor and remove.
@@ -66,8 +68,6 @@
 @import 'scss/04-components/post-footnotes';
 @import 'scss/04-components/post-top';
 @import 'scss/04-components/previous-next-links';
-@import 'scss/04-components/services-top';
-@import 'scss/04-components/sub-services';
 @import 'scss/04-components/tag';
 @import 'scss/04-components/team-member-badges';
 @import 'scss/04-components/team-member-posts';
@@ -86,13 +86,15 @@
 @import 'scss/05-regions/case-study-blocks--small';
 @import 'scss/05-regions/case-study-tiles';
 @import 'scss/05-regions/client-logos';
+@import 'scss/05-regions/client-logos-stripe';
 @import 'scss/05-regions/client-quote';
 @import 'scss/05-regions/comments';
 @import 'scss/05-regions/footer';
 @import 'scss/05-regions/header';
 @import 'scss/05-regions/hero-image';
 @import 'scss/05-regions/key-value-list';
-@import 'scss/05-regions/services-icons';
+@import 'scss/05-regions/service-icons';
+@import 'scss/05-regions/service-tiles';
 @import 'scss/05-regions/team-member-list';
 
 // Page rules (layout).
@@ -100,3 +102,4 @@
 @import 'scss/06-pages/company';
 @import 'scss/06-pages/home';
 @import 'scss/06-pages/results';
+@import 'scss/06-pages/services';

@@ -22,8 +22,8 @@ project_process: |
 project_results: |
   Our importer processed MIT Press's next import of new titles smoothly with a minimum of manual input. We've continued to work with the Press to further customize field mappings and import processes as new fields come online in the AllBooks database, and to handle new kinds of imports, including eBooks.
 services_provided: |
-  - [Drupal custom module development](/services#development)
-  - [Unit testing](/services#testing)
+  - [Drupal custom module development](/services/development)
+  - [Unit testing](/services/development)
 technologies_used: |
   - [Drupal 6](/blog/tag/drupal/)
   - [PHPUnit](/blog/tag/testing/)

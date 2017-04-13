@@ -1,0 +1,101 @@
+/**
+ * @file
+ *
+ * Styles for client logos stripe regions.
+ */
+
+/*doc
+---
+title: Client logos stripe
+name: client-logos-stripe
+category: Regions
+---
+
+```html_example
+<div class="region--client-logos-stripe region--full-width">
+  <div class="region--client-logos-stripe__wrapper region--full-width__wrapper">
+    <div class="region--client-logos-stripe__text">
+      <p class="paragraph--loud">Some of the organizations that entrusted us with their success:</p>
+    </div>
+    <div class="region--client-logos__logos">
+      <div class="region--client-logos__logo">
+        <img alt="Duke University" src="/assets/img/work/logos/duke-logo.png" class="image--grayscale">
+      </div>
+      <div class="region--client-logos__logo">
+        <img alt="University of North Carolina at Chapel Hill" src="/assets/img/work/logos/unc-logo.jpg" class="image--grayscale">
+      </div>
+      <div class="region--client-logos__logo">
+        <img alt="The MIT Press" src="/assets/img/work/logos/mitpress-logo.png" class="image--grayscale">
+      </div>
+      <div class="region--client-logos__logo">
+        <img alt="Harvard Medical School" src="/assets/img/work/logos/hms-logo.png" class="image--grayscale">
+      </div>
+      <div class="region--client-logos__logo">
+        <img alt="Acquia" src="/assets/img/work/logos/acquia-logo.png" class="image--grayscale">
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+*/
+
+.region--client-logos-stripe {
+  background-color: $light-teal;
+  padding: $base-spacing;
+
+  @include grid-media($medium-screen-up) {
+    padding: $base-spacing * 3;
+  }
+
+  .region--client-logos-stripe__wrapper {
+    @include grid-media($medium-screen-up) {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .region--client-logos-stripe__text {
+      text-align: center;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 240px;
+        flex-shrink: 0;
+        padding-right: $base-spacing * 2;
+        text-align: right;
+      }
+    }
+
+    .region--client-logos__logos {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @include grid-media($large-screen-up) {
+        flex-wrap: nowrap;
+      }
+
+      .region--client-logos__logo {
+        flex-basis: 50%;
+        flex-grow: 0;
+        padding: $base-spacing * .75 $base-spacing;
+        text-align: center;
+
+        @include grid-media($small-screen-up) {
+          flex-basis: 33.33%;
+        }
+
+        // On xl-screens and up, logos should be in a single horizontal line.
+        @include grid-media($extra-large-screen-up) {
+          flex-basis: 20%;
+          padding: 0 $base-spacing * 1.5;
+        }
+
+        @include grid-media($max-width-up) {
+          padding: 0 $base-spacing * 2;
+        }
+      }
+    }
+  }
+}

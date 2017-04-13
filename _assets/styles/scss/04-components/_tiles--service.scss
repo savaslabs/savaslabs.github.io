@@ -1,0 +1,114 @@
+/**
+ * @file
+ *
+ * Service tile styles.
+ *
+ * Note: these aren't included as components in the style guide since their
+ * layout styles depend on each other and the region as a whole. See the
+ * work tile region in the style guide for reference, or view
+ * 05-regions/_service-tiles.scss
+ */
+
+.tile--service {
+
+  .tile--service__link {
+    @include hover-border-bottom;
+
+    background-color: $light-teal;
+    display: block;
+
+    &:hover,
+    &:focus {
+      background-color: $teal;
+      color: $eggshell;
+
+      &::after {
+        background-color: $orange;
+        width: 100%;
+      }
+
+      .tile--service__image {
+        filter: brightness(0) invert(1);
+      }
+
+      h2 {
+        color: $eggshell;
+      }
+    }
+  }
+
+  .tile--service__content {
+    max-width: 668px;
+    padding: $base-spacing;
+
+    @include grid-media($small-screen-up) {
+      align-items: flex-start;
+      display: flex;
+    }
+
+    @include grid-media($medium-screen-up) {
+      display: block;
+      padding: $base-spacing * 2;
+    }
+
+    @include grid-media($large-screen-up) {
+      display: flex;
+      justify-content: flex-start;
+      padding: $base-spacing * 3 $base-spacing * 2;
+    }
+
+    h2,
+    p {
+      @include ease;
+    }
+
+    .tile--service__image {
+      @include ease;
+
+      float: left;
+      margin-right: $base-spacing;
+      width: 60px;
+
+      @include grid-media($small-screen-up) {
+        float: none;
+        margin-right: $base-spacing * 2;
+      }
+
+      @include grid-media($medium-screen-up) {
+        float: left;
+        margin-right: $base-spacing;
+      }
+
+      @include grid-media($large-screen-up) {
+        float: none;
+        margin-right: $base-spacing * 2;
+      }
+    }
+
+    .tile--service__title {
+      font-weight: normal;
+      margin-bottom: 1em;
+      margin-top: .5em;
+
+      // This minimizes the screen widths at which the tiles may appear to be
+      // different heights.
+      @include grid-media($medium-screen-up) {
+        font-size: 1.44em;
+      }
+
+      @include grid-media($large-screen-up) {
+        font-size: 1.953em;
+      }
+    }
+
+    .tile--service__summary {
+      @include grid-media($extra-large-screen-up) {
+        @include paragraph-loud;
+      }
+    }
+
+    .tile--service__cta {
+      margin-bottom: 0;
+    }
+  }
+}
