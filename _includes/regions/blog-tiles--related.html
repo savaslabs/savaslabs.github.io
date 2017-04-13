@@ -1,0 +1,20 @@
+<div class="region--blog-tiles region--full-width">
+  <div class="region--blog-tiles__wrapper">
+    <div class="tile--title--blog bg-magenta">
+      <h2 class="c-eggshell">Sharing Our Expertise</h2>
+    </div>
+    {% assign tile_count = 0 %}
+    {% assign post_urls = '' %}
+    {% for post in site.posts %}
+      {% for tag in include.tags %}
+        {% if post.services contains tag and tile_count < 3 %}
+          {% unless post_urls contains post.url %}
+            {% include components/tile--blog.html post=post %}
+            {% assign post_urls = post_urls | append: post.url %}
+            {% assign tile_count = tile_count | plus:1 %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
