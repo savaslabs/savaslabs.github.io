@@ -101,6 +101,11 @@
       }
     }
 
+    .tile--service__summary {
+      @include grid-media($extra-large-screen-up) {
+        @include paragraph-loud;
+      }
+    }
     .tile--service__cta {
       margin-bottom: 0;
     }
