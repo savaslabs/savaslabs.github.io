@@ -16,10 +16,10 @@
   }
 
   .page--service__content {
-     @include grid-media($large-screen-up) {
-       float: left;
-       width: 50%;
-     }
+    @include grid-media($large-screen-up) {
+     float: left;
+     width: 50%;
+    }
 
     @include grid-media($extra-large-screen-up) {
       float: left;
@@ -27,18 +27,18 @@
     }
 
     .page--service__content__text {
-      padding: $base-spacing * 3 $base-spacing;
+      padding: $base-margin $base-spacing;
 
       @include grid-media($large-screen-up) {
         padding: $base-spacing * 1.5 $base-spacing $base-spacing;
       }
 
       @include grid-media($extra-large-screen-up) {
-        padding: $base-spacing * 3 $base-spacing * 3;
+        padding: $base-margin;
       }
 
       @include grid-media($max-width-up) {
-        padding: $base-spacing * 4.5 $base-spacing * 3 $base-spacing * 1.5;
+        padding: $base-spacing * 4.5 $base-margin $base-spacing * 1.5;
       }
 
       .page--service__content__services {
