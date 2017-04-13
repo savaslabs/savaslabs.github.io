@@ -1,0 +1,20 @@
+<div class="tile--blog tile">
+  <a href="{{ include.post.url }}" class="tile--blog__link">
+    <div class="tile--blog__content tile__content bg-light-teal">
+      {% if post.featured_image %}
+      <div class="tile--blog__image" style="background-image: url(/assets/img{{ include.post.featured_image }});">
+        {% else %}
+        <!--TODO: Default image-->
+        <!--<div class="tile--blog__image" style="background-image: url('/assets/img/blog/default.jpg');">-->
+        {% endif %}
+      </div>
+      <div class="tile--blog__post-title">
+        {{ include.post.title | markdownify }}
+      </div>
+    </div>
+    <div class="tile--blog__hover tile__hover bg-orange">
+      {{ include.post.summary | markdownify }}
+      <p class="link--cta link--cta--inverse">Read more</p>
+    </div>
+  </a>
+</div>

@@ -15,18 +15,7 @@
       {% assign items = site.case-studies | sort: 'weight' %}
       {% for item in items %}
         {% if item.featured == 1 %}
-        <div class="tile--case-study tile">
-          <a href="{{ item.url }}" class="tile--case-study__link">
-            <div class="tile--case-study__content tile__content bg-dark-teal" style="background-image: url({{ item.tile_image }});">
-              <h3 class="heading--bold c-eggshell h4">{{ item.project_title }}</h3>
-            </div>
-            <div class="tile--case-study__hover tile__hover bg-orange">
-              {% capture tile_description %}{{ item.tile_description }}{% endcapture %}
-              {{ tile_description | markdownify }}
-              <p class="link--cta link--cta--inverse">Learn more</p>
-            </div>
-          </a>
-        </div>
+        {% include components/tile--case-study.html item=item %}
         {% endif %}
       {% endfor %}
     </div>
