@@ -6,7 +6,7 @@ weight: 4
 summary: |
   Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
 icon: "support-maintenance-icon.svg"
-vertical_image: "assets/img/services/development-hero.jpg"
+vertical_image: "/assets/img/services/development-hero.jpg"
 vertical_image_alt: "Chris walking with a client"
 quote_project: "duke_today"
 services: [These, Need, To, Be, Added, Later]

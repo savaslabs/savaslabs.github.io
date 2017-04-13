@@ -1,6 +1,6 @@
 <div class="region--service-icons region">
   {% assign services = site.services | sort: 'weight' %}
   {% for item in services %}
-  {% include components/icon--service.html item=item %}
+  {% include components/icon--service.html item=item class=include.class %}
   {% endfor %}
 </div>

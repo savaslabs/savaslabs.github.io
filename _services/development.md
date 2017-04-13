@@ -6,7 +6,7 @@ weight: 2
 summary: |
   Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
 icon: "development-icon.svg"
-vertical_image: "assets/img/services/development-hero.jpg"
+vertical_image: "/assets/img/services/development-hero.jpg"
 vertical_image_alt: "Websites built by Savas Labs displayed on mobile screens"
 quote_project: "duke_today"
 services: [Drupal CMS, Architecture, Software & Databases, Data Migration, E-Commerce, Performance Optimization, Automated Testing, Security]

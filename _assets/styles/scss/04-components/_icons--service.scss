@@ -29,21 +29,6 @@ parent: icons
     align-items: center;
     display: flex;
     flex-direction: column;
-
-    &:hover,
-    &:focus {
-      .icon--service__image {
-        background-color: $orange;
-
-        img {
-          filter: brightness(0) invert(1);
-        }
-      }
-
-      .icon--service__title {
-        color: $orange;
-      }
-    }
   }
 
   .icon--service__image {
@@ -68,5 +53,47 @@ parent: icons
     @include grid-media($large-screen-up) {
       @include paragraph-loud;
     }
+  }
+}
+
+// Bold hover styles for service icons on the home page and elsewhere.
+.icon--service--bold {
+  .icon--service__link {
+    &:hover,
+    &:focus {
+      .icon--service__image {
+        background-color: $orange;
+
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      .icon--service__title {
+        color: $orange;
+      }
+    }
+  }
+}
+
+// More subtle hover styles for service icons on service pages and elsewhere.
+.icon--service--subtle {
+  .icon--service__link {
+    @include ease;
+
+    border-bottom: solid 3px transparent;
+
+    &:hover,
+    &:focus {
+      border-color: $orange;
+    }
+  }
+
+  .icon--service__image {
+    margin-bottom: 0;
+  }
+
+  .icon--service__title {
+    font-size: 1em;
   }
 }
