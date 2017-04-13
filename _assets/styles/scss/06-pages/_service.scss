@@ -1,0 +1,74 @@
+/**
+ * @file
+ *
+ * Styles for the individual Service pages.
+ */
+
+.page--service {
+
+  .page-content {
+    border-top: solid 1px lighten($teal, 10%);
+  }
+
+  .region.region--service-icons {
+    border-bottom: solid 1px lighten($teal, 10%);
+    padding: .25em 1em 0;
+  }
+
+  .page--service__content {
+     @include grid-media($large-screen-up) {
+       float: left;
+       width: 50%;
+     }
+
+    @include grid-media($extra-large-screen-up) {
+      float: left;
+      width: 66.666%;
+    }
+
+    .page--service__content__text {
+      padding: $base-spacing * 3 $base-spacing;
+
+      @include grid-media($large-screen-up) {
+        padding: $base-spacing * 1.5 $base-spacing $base-spacing;
+      }
+
+      @include grid-media($extra-large-screen-up) {
+        padding: $base-spacing * 3 $base-spacing * 3;
+      }
+
+      @include grid-media($max-width-up) {
+        padding: $base-spacing * 4.5 $base-spacing * 3 $base-spacing * 1.5;
+      }
+
+      .page--service__content__services {
+        padding: $base-spacing * 1.5 0 $base-margin;
+
+        @include grid-media($extra-large-screen-up) {
+          padding: $base-margin 0;
+        }
+      }
+    }
+  }
+
+  .page--service__vertical-image {
+    @include grid-media($large-screen-up) {
+      float: left;
+      width: 50%;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      float: left;
+      width: 33.333%;
+    }
+  }
+
+  .region--blog-tiles {
+    margin: 0;
+  }
+
+  .region--footer {
+    margin-top: 0;
+  }
+}
+
