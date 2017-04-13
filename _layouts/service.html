@@ -32,12 +32,13 @@ layout: default
 {% include regions/client-quote.html class="region--client-quote--dark" client=client %}
 {% endif %}
 {% endfor %}
-{% if page.slug == development %}
+{% if page.slug == 'development' %}
+{% include regions/banner--performance-optimization.html %}
+{% include regions/banner--custom-integrations.html %}
 {% endif %}
 <div class="region flex-center">
   <a class="button--arrow--orange" href="/contact">Work with us</a>
 </div>
-
 {% if page.slug == 'support-maintenance' %}
 {% assign tags = 'strategy|development' | split: '|' %}
 {% else %}
