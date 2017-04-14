@@ -1,21 +1,17 @@
 {% comment %} Prints small case study blocks for related case studies, limit 2. {% endcomment %}
-<div class="region--post-aside__case-studies">
-  <h2 class="heading--sans-serif">Related Case Studies</h2>
-  <div class="region--post-aside__case-studies__items">
-    {% assign items = site.case-studies | sort: 'weight' %}
-    {% assign block_count = 0 %}
-    {% assign case_study_titles = '' %}
-    {% for item in items %}
-    {% for tag in include.tags %}
-    {% if item.tags contains tag and block_count < 2 %}
-    {% unless case_study_titles contains item.project_title %}
-    {% include components/case-study-block.html item=item heading_level="h3" %}
-    {% assign case_study_titles = case_study_titles | append: item.project_title %}
-    {% assign block_count = block_count | plus:1 %}
-    {% endunless %}
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
-  </div>
-  <a href="/results" class="button--arrow--orange">Explore our work</a>
+<div class="region--post-aside__case-studies__items">
+  {% assign items = site.case-studies | sort: 'weight' %}
+  {% assign block_count = 0 %}
+  {% assign case_study_titles = '' %}
+  {% for item in items %}
+  {% for tag in include.tags %}
+  {% if item.tags contains tag and block_count < include.limit %}
+  {% unless case_study_titles contains item.project_title %}
+  {% include components/case-study-block.html item=item heading_level="h3" %}
+  {% assign case_study_titles = case_study_titles | append: item.project_title %}
+  {% assign block_count = block_count | plus:1 %}
+  {% endunless %}
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
 </div>
