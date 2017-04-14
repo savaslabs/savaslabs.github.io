@@ -1,0 +1,34 @@
+/**
+ * @file
+ *
+ * Styles for heading banner region.
+ */
+
+.region--banner--heading {
+  // TODO: background image.
+  margin: 0 0 $base-spacing * .5;
+
+  .region--banner--heading__text {
+    padding: $base-spacing;
+
+    @include grid-media($medium-screen-up) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: $base-spacing * 2 $base-spacing * 3;
+    }
+
+    h1,
+    h1::after {
+      @include grid-media($medium-screen-up) {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      font-style: italic;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+}
