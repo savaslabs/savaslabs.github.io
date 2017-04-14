@@ -37,7 +37,6 @@
 
       @include grid-media($large-screen-up) {
         flex-basis: 50%;
-        max-width: 50%;
         padding: $base-margin $base-spacing * 4.5;
       }
 
