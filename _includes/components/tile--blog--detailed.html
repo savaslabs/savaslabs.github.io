@@ -1,4 +1,4 @@
-<div class="tile--blog tile">
+<div class="tile--blog tile--blog--detailed tile">
   <a href="{{ include.post.url }}" class="tile--blog__link">
     <div class="tile--blog__content tile__content bg-light-teal">
       {% if include.post.featured_image %}
@@ -7,9 +7,18 @@
       <!--TODO: Add default image path-->
       {% assign image = '/assets/img/' %}
       {% endif %}
-      <div class="tile--blog__image" style="background-image: url({{ image }});"></div>
+      <div class="tile--blog__image" style="background-image: url({{ image }});">
+        <div class="tile--blog--detailed__primary-tag">
+          {% for tag in include.post.tags | limit:1 %}
+          <p>{{ tag }}</p>
+          {% endfor %}
+        </div>
+      </div>
       <div class="tile--blog__post-title">
         {{ include.post.title | markdownify }}
+        <div class="tile--blog--detailed__author">
+          <!--TODO: Include author image.-->
+        </div>
       </div>
     </div>
     <div class="tile--blog__hover tile__hover bg-orange">
