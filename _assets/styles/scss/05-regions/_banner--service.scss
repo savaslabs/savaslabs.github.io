@@ -56,3 +56,20 @@
     }
   }
 }
+
+.region--banner--service--integrations .region--full-width__wrapper {
+  .region--banner--service__image {
+    display: none;
+
+    @include grid-media($large-screen-up) {
+      display: block;
+      padding: 0;
+    }
+
+    img {
+      @include grid-media($large-screen-up) {
+        display: block;
+      }
+    }
+  }
+}
