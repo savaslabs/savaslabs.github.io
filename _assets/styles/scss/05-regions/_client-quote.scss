@@ -39,14 +39,14 @@ The class `region--client-quote--dark` can be included for a dark teal backgroun
   .region--client-quote__wrapper {
     padding-left: $base-spacing;
     padding-right: $base-spacing;
+    padding-top: $base-spacing * 2;
 
     // On medium screens and larger, items will appear inline.
     @include grid-media($medium-screen-up) {
       align-items: center;
       display: flex;
       justify-content: center;
-      padding-left: 0;
-      padding-right: 0;
+      padding: 0;
     }
   }
 

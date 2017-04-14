@@ -37,6 +37,7 @@
 
       @include grid-media($large-screen-up) {
         flex-basis: 50%;
+        max-width: 50%;
         padding: $base-margin $base-spacing * 4.5;
       }
 
@@ -58,18 +59,25 @@
 }
 
 .region--banner--service--integrations .region--full-width__wrapper {
-  .region--banner--service__image {
-    display: none;
+  background-image: url('/assets/img/services/custom-integrations.jpg');
+  background-position: center calc(100% + 140px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  justify-content: flex-start;
+  padding-bottom: 100px;
 
+    @include grid-media($small-screen-up) {
+      background-position: center calc(100% + 220px);
+      padding-bottom: 200px;
+    }
+    @include grid-media($medium-screen-up) {
+      background-position: center calc(100% + 280px);
+    }
     @include grid-media($large-screen-up) {
-      display: block;
-      padding: 0;
+      background-position: calc(100% + 180px) center;
+      padding-bottom: 0;
     }
-
-    img {
-      @include grid-media($large-screen-up) {
-        display: block;
-      }
+    @include grid-media($extra-large-screen-up) {
+      background-position: right center;
     }
-  }
 }
