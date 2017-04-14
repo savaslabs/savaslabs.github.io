@@ -1,11 +1,14 @@
 ---
-layout: page
+layout: default
 title: Blog
 redirect_from:
   - /news/
+class: page--blog
 excerpt: Blabs by Savas Labs. Blog posts too!
 ---
-<p class="page-description">Check out our latest blog posts and information about upcoming events.</p>
+
+{% include regions/banner--heading.html heading="Blog" subheading="Technical. Practical. Inspiring." %}
+
 <div class="flex-container">
     <div class="cards blog-cards">
         {% for post in paginator.posts %}
