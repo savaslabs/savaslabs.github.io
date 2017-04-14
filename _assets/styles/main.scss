@@ -58,13 +58,13 @@
 @import 'scss/04-components/tables';
 @import 'scss/04-components/team-member-bio';
 @import 'scss/04-components/tiles--blog';
+@import 'scss/04-components/tiles--blog--latest';
 @import 'scss/04-components/tiles--case-study';
 @import 'scss/04-components/tiles--service';
 @import 'scss/04-components/tiles';
 
 // TODO: Refactor and remove.
 @import 'scss/04-components/blog';
-@import 'scss/04-components/cards';
 @import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
 @import 'scss/04-components/post';
@@ -87,6 +87,7 @@
 @import 'scss/05-regions/banner--service';
 @import 'scss/05-regions/banner--were-hiring';
 @import 'scss/05-regions/blog-tiles';
+@import 'scss/05-regions/blog-tiles--latest';
 @import 'scss/05-regions/call-to-action';
 @import 'scss/05-regions/case-study-blocks';
 @import 'scss/05-regions/case-study-blocks--small';

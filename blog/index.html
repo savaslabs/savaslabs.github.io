@@ -8,31 +8,7 @@ excerpt: Blabs by Savas Labs. Blog posts too!
 ---
 
 {% include regions/banner--heading.html heading="Blog" subheading="Technical. Practical. Inspiring." %}
-
-<div class="flex-container">
-    <div class="cards blog-cards">
-        {% for post in paginator.posts %}
-            <div class="card blog-card">
-                <a class="url" href="{{ post.url }}">
-                    <div class="card-image">
-                    </div>
-                    <div class="card-header">
-                        {{ post.title }}
-                    </div>
-                    <div class="card-copy">
-                      <p>By {{ post.author }}</p>
-                      <p>{{ post.date | date: "%b %-d, %Y" }}</p>
-                      {% if site.comment_server_enabled == 1 %}
-                        <span class="comment-count"></span>
-                      {% endif %}
-                      {% capture summary %}{{ post.summary }}{% endcapture %}
-                      <p>{{ summary | markdownify }}</p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-    </div>
-</div>
+{% include regions/blog-tiles--latest.html %}
 
 <!-- Pagination links -->
 <div class="pagination">

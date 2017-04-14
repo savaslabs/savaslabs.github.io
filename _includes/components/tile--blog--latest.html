@@ -1,0 +1,18 @@
+{% if post.featured_image %}
+{% capture image %}/assets/img{{ include.post.featured_image }}{% endcapture %}
+{% else %}
+<!--TODO: Default image-->
+<!--{% assign image = '/assets/img/blog/default.jpg' %}-->
+{% endif %}
+<div class="tile--blog--latest bg-light-teal" style="background-image: url({{ image }});">
+  <a href="{{ include.post.url }}" class="tile--blog--latest__link">
+    <div class="tile--blog--latest__text">
+      <h2 class="tile--blog--latest__text__title heading--sans-serif heading--bold h4">{{ include.post.title }}</h2>
+      {% if include.featured == 1 %}
+      <div class="tile--blog--latest__text__summary">{{ include.post.summary | markdownify }}</div>
+      {% endif %}
+      <p class="tile--blog--latest__text__author">By {{ post.author }}</p>
+      <p class="tile--blog--latest__text__date">{{ post.date | date: "%b %-d, %Y" }}</p>
+    </div>
+  </a>
+</div>
