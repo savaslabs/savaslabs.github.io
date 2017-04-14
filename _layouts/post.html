@@ -32,8 +32,15 @@ layout: default
   {{ content }}
 </article>
 <div class="region--post-aside">
-  {% include regions/blog-tiles--related--post.html tags=page.tags %}
-  {% include regions/case-study-blocks--related--post.html tags=page.tags %}
+  <div class="region--post-aside__posts">
+    <h2 class="heading--sans-serif">Related Blog Posts</h2>
+    {% include regions/blog-tiles--related--post.html tags=page.tags limit=2 %}
+  </div>
+  <div class="region--post-aside__case-studies">
+    <h2 class="heading--sans-serif">Related Case Studies</h2>
+    {% include regions/case-study-blocks--related--post.html tags=page.tags limit=2 %}
+    <a href="/results" class="button--arrow--orange">Explore our work</a>
+  </div>
 </div>
 <div class="region--post-prev-next-links">
   {% include regions/previous-next-links.html %}
