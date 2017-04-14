@@ -3,50 +3,43 @@ layout: default
 ---
 
 {% include tag-logic.html %}
+{% include post-authors-logic.html author=page.author%}
 
-<div class="post">
-  <div class="post__body">
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
-
-      {% include post-authors.html author = page.author %}
-
-      <p class="centerdot">&centerdot; </p>
-      <p>{{ page.date | date: "%b %-d, %Y" }} </p><br>
-      <i class="fa fa-tags"></i><p>{{ tags_content }}</p>
-      {% if site.comment_server_enabled == 1 %}
-      <div><p><span id="comment-count"></span></p></div>
-      {% endif %}
-      {% if page.featured_image %}
-        <div class="post-featured-image">
-          {% picture post_featured_image {{ page.featured_image }} alt="{{ page.featured_image_alt }}" %}
-          {% if page.featured_image_caption %}
-            {{ page.featured_image_caption | markdownify }}
-          {% endif %}
-        </div>
-      {% endif %}
-    </header>
-
-    {% if page.disclaimer %}
-      <div class="disclaimer">
-        <h5>Proceed with caution</h5>
-        {{ page.disclaimer | markdownify }}
-      </div>
-    {% endif %}
-
-    <article class="post-content">
-      {{ content }}
-      <hr>
-
-      {% if site.comment_server_enabled == 1 %}
-        {% include comment-form.html %}
-      {% endif %}
-    </article>
-  </div><!-- post__body -->
-
-  {% if page %}
-    {% include post-bottom.html %}
+{% if page.featured_image %}
+<div class="region--featured-image">
+  {% picture post_featured_image {{ page.featured_image }} alt="{{ page.featured_image_alt }}" %}
+  {% if page.featured_image_caption %}
+  {{ page.featured_image_caption | markdownify }}
   {% endif %}
-
-  {% include previous-next-links.html %}
-</div><!-- post -->
+</div>
+{% endif %}
+<div class="region--post-header">
+  <h1 class="region--post-header__title">{{ page.title }}</h1>
+  {{ author_markup }}
+  <p><i class="fa fa-calendar"></i>{{ page.date | date: "%b %-d, %Y" }} </p>
+  <p><i class="fa fa-tags"></i>{{ tags_content }}</p>
+  {% if site.comment_server_enabled == 1 %}
+  <p><span id="comment-count"></span></p>
+  {% endif %}
+  {% if page.disclaimer %}
+  <div class="region--post-header__disclaimer">
+    <h5>Proceed with caution</h5>
+    {{ page.disclaimer | markdownify }}
+  </div>
+  {% endif %}
+</div>
+<article class="region--post-content">
+  {{ content }}
+</article>
+<div class="region--post-aside">
+  {% include regions/blog-tiles--related--post.html tags=page.tags %}
+  {% include regions/case-study-blocks--related--post.html tags=page.tags %}
+</div>
+<div class="region--post-prev-next-links">
+  {% include regions/previous-next-links.html %}
+</div>
+<div class="region--post-comments">
+  {% if site.comment_server_enabled == 1 %}
+  {% include regions/comments.html %}
+  {% endif %}
+</div>
