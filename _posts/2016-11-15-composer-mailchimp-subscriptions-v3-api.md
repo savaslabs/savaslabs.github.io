@@ -4,6 +4,7 @@ title: "Using MailChimp API v3.0 to subscribe users to email lists in Drupal cus
 date: 2016-11-15
 author: Dan Murphy
 tags: drupal drupal-planet composer module-development mailchimp
+services: development
 summary: How to use Composer along with the ThinkShout PHP library for MailChimp API v3.0 to easily subscribe users to mailing lists without the MailChimp contributed module.
 featured_image: "/blog/mailchimp_3_drupal_composer_3.jpg"
 featured_image_alt: "sheet music"

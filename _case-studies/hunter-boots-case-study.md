@@ -4,6 +4,7 @@ weight: -3
 project_title: Hunter Boots E-Commerce / Redesign
 tags: drupal front-end-dev javascript payment-processing theming
 featured_tags: [Drupal, Responsive Design, Payment Processing, Javascript]
+services: development design-ux
 client_name: Hunter Boots
 client_url: "http://us.hunterboots.com/"
 client_description: |

@@ -1,0 +1,85 @@
+/**
+ * @file
+ *
+ * Styles for the Performance Optimization and Custom Integrations banners.
+ */
+
+.region--banner--service {
+  .region--full-width__wrapper {
+    @include grid-media($large-screen-up) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .region--banner--service__image {
+      padding: $base-spacing;
+      text-align: center;
+
+      @include grid-media($large-screen-up) {
+        flex-basis: 50%;
+        padding: 0 $base-spacing * 4.5;
+      }
+
+      img {
+        @include grid-media($small-screen-up) {
+          max-width: 300px;
+        }
+
+        @include grid-media($large-screen-up) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .region--banner--service__text {
+      padding: $base-spacing * 1.5 $base-spacing;
+
+      @include grid-media($large-screen-up) {
+        flex-basis: 50%;
+        padding: $base-margin $base-spacing * 4.5;
+      }
+
+      h2 {
+        margin-bottom: 2em;
+      }
+
+      p,
+      a {
+        font-size: 1.1em;
+      }
+
+      a {
+        display: block;
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+.region--banner--service--integrations .region--full-width__wrapper {
+  background-image: url('/assets/img/services/custom-integrations.jpg');
+  background-position: center calc(100% + 140px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  justify-content: flex-start;
+  padding-bottom: 100px;
+
+  @include grid-media($small-screen-up) {
+    background-position: center calc(100% + 220px);
+    padding-bottom: 200px;
+  }
+
+  @include grid-media($medium-screen-up) {
+    background-position: center calc(100% + 280px);
+  }
+
+  @include grid-media($large-screen-up) {
+    background-position: calc(100% + 180px) center;
+    padding-bottom: 0;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    background-position: right center;
+  }
+}

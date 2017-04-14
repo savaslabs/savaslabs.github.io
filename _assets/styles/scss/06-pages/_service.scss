@@ -1,0 +1,86 @@
+/**
+ * @file
+ *
+ * Styles for the individual Service pages.
+ */
+
+.page--service {
+
+  .region--header {
+    border-bottom: solid 1px lighten($teal, 10%);
+  }
+
+  .region.region--service-icons {
+    border-bottom: solid 1px lighten($teal, 10%);
+    padding: .25em 0 0;
+  }
+
+  .page--service__content {
+    background-position: calc(100% + 80px) center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    max-width: 1400px;
+
+    @include grid-media($large-screen-up) {
+      background-position: right center;
+    }
+
+    .page--service__content__main {
+      background-color: $white;
+      width: 100%;
+
+      @include grid-media($medium-screen-up) {
+        padding-bottom: 3em;
+        width: 66.666%;
+      }
+
+      @include grid-media($extra-large-screen-up) {
+        width: 66.666%;
+      }
+
+      .page--service__content__text {
+        padding: $base-margin $base-spacing;
+
+        @include grid-media($large-screen-up) {
+          padding: $base-spacing * 1.5 $base-spacing $base-spacing;
+        }
+
+        @include grid-media($extra-large-screen-up) {
+          padding: $base-margin;
+        }
+
+        @include grid-media($max-width-up) {
+          padding: $base-spacing * 4.5 $base-margin $base-spacing * 1.5;
+        }
+
+        h1 {
+          @include grid-media($large-screen-up) {
+            margin: .67em 0;
+          }
+        }
+
+        .page--service__content__services {
+          padding: $base-spacing * 1.5 0 $base-margin;
+
+          @include grid-media($extra-large-screen-up) {
+            padding: $base-margin 0;
+          }
+        }
+      }
+    }
+  }
+
+  .region--client-quote {
+    margin-top: 0;
+  }
+
+  .region--blog-tiles {
+    margin: 0;
+  }
+
+  .region--footer {
+    margin-top: 0;
+  }
+}
+

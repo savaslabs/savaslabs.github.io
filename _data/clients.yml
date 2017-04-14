@@ -6,12 +6,18 @@
   image: /assets/img/work/clients/bm-dt.jpg
   quote: |
     We've gotten nothing but rave reviews about the new site.
-- project: omega
+- project: omega-lz
   name: Laurie Zollo
   title: Assistant Director of Digital Marketing at the Omega Institute for Holistic Studies
   image: /assets/img/work/clients/lz-eo.jpg
   quote: |
     Of the 15 years I've been in this, the Savas team has had the most impeccable QA
+- project: omega-md
+  name: Meg Downey
+  title: Director of Digital Marketing at the Omega Institute for Holistic Studies
+  image: /assets/img/work/clients/md-eo.jpg
+  quote: |
+    We would like to thank all of the developers at Savas Labs in North Carolina for their hard work and dedication to helping us create a quality e-commerce platform.
 - project: transaction_advisors
   name: Nora K. Hickey
   title: Managing Director, Finance Information Group
