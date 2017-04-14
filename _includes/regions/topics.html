@@ -1,0 +1,13 @@
+{% assign delim = '|' %}
+{% assign tag_count = '' %}
+{% for data_tag in site.data.tags %}
+  {% assign count = 0 %}
+  {% for post in site.posts %}
+    {% if post.tags contains data_tag.slug %}
+      {% assign count = count | plus:1 %}
+    {% endif %}
+  {% endfor %}
+  {% assign count = count | append: delim %}
+  {% assign tag_count = tag_count | append: count %}
+{% endfor %}
+{% assign tag_count = tag_count | split: delim %}
