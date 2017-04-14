@@ -36,19 +36,6 @@
         margin: 3em 0;
       }
     }
-
-    // Optional disclaimer section.
-    .disclaimer {
-      background-color: transparentize($magenta, .9);
-      border: solid 1px transparentize($magenta, .7);
-      border-radius: 5px;
-      margin-bottom: 1.875em;
-      padding: 1em;
-
-      h5 {
-        margin-top: 0;
-      }
-    }
   }
 
   // This needs to go in here (to be included in critical.css) to avoid this

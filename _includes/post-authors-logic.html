@@ -1,0 +1,28 @@
+{% assign author_markup = '' %}
+{% assign author_count = 0 %}
+{% for person in site.team %}{% if include.author contains person.name %}
+{% capture author_link %}<a href="{{ person.name | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">{{ person.name }}</a>{% endcapture %}
+{% if author_count == 0 %}{% assign author_string_prefix = 'By ' %}
+{% else %}{% assign author_string_prefix = 'and ' %}{% endif %}
+{% capture author_markup %}{{ author_markup }}
+<div class="post-author">
+  <img class="post-author__photo" src="/assets/img/team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg" alt="{{ person.name }}">
+  <p class="post-author__name">{{ author_string_prefix }}{{ author_link }}</p>
+  <p class="post-author__title">{{ person.job_title }}</p>
+</div>
+{% endcapture %}
+{% assign author_count = author_count | plus: 1 %}
+{% endif %}{% endfor %}
+
+{% for person in site.team-former %}{% if page.author contains person.name %}
+{% if author_count == 0 %}{% assign author_strip_prefix = 'By ' %}
+{% else %}{% assign author_string_prefix = 'and ' %}{% endif %}
+{% capture author_markup %}{{ author_markup }}
+<div class="post-author">
+<img class="post-author__photo" src="/assets/img/team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg" alt="{{ person.name }}">
+<p class="post-author__name">{{ author_string_prefix }}{{ author_link }}</p>
+<p class="post-author__title">{{ person.title }}</p>
+</div>
+{% endcapture %}
+{% assign author_count = author_count | plus: 1 %}
+{% endif %}{% endfor %}
