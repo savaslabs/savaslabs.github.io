@@ -1,0 +1,95 @@
+/**
+ * @file
+ *
+ * Blog tile styles for the blog page and subpages.
+ *
+ * Note: these aren't included as components in the style guide since their
+ * layout styles depend on each other and the region as a whole. See the
+ * blog tile region in the style guide for reference, or view
+ * 05-regions/_blog-tiles--all.scss
+ */
+
+.tile--title--blog {
+  padding: $base-spacing * 2;
+}
+
+// Styles for blog tiles.
+.tile--blog {
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  @include grid-media($large-screen-up) {
+    flex-basis: 25%;
+  }
+
+  // Content shown in non-hover state.
+  .tile--blog__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > div {
+      height: 150px;
+
+      // Image should be taller between small-medium screens since each tile
+      // will be full-width, e.g. 450 - 600 px wide.
+      @include grid-media($small-screen-up) {
+        height: 200px;
+      }
+
+      @include grid-media($medium-screen-up) {
+        height: 150px;
+      }
+
+      @include grid-media($extra-large-screen-up) {
+        height: 175px;
+      }
+
+      @include grid-media($max-width-up) {
+        height: 200px;
+      }
+    }
+
+    // Set image as a cover to account for various image sizes.
+    .tile--blog__image {
+      @include cover-image;
+
+      width: 100%;
+    }
+
+    .tile--blog__post-title {
+      align-items: center;
+      color: $dark-teal;
+      display: flex;
+      padding: $base-spacing;
+      width: 100%;
+
+      p::before {
+        @include accent-line($magenta);
+      }
+    }
+  }
+
+  .tile--blog__hover {
+    height: 300px;
+
+    // Set height of tile hover content equal to height of image * 2.
+    @include grid-media($small-screen-up) {
+      height: 400px;
+    }
+
+    @include grid-media($medium-screen-up) {
+      height: 300px;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      height: 350px;
+    }
+
+    @include grid-media($max-width-up) {
+      height: 400px;
+    }
+  }
+}
