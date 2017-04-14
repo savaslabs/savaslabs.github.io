@@ -69,13 +69,16 @@
       background-position: center calc(100% + 220px);
       padding-bottom: 200px;
     }
+
     @include grid-media($medium-screen-up) {
       background-position: center calc(100% + 280px);
     }
+
     @include grid-media($large-screen-up) {
       background-position: calc(100% + 180px) center;
       padding-bottom: 0;
     }
+
     @include grid-media($extra-large-screen-up) {
       background-position: right center;
     }
