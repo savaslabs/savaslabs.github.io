@@ -5,11 +5,12 @@
  */
 
 .page--blog {
-  .region--banner--open-source {
-    margin-bottom: 0;
-  }
-
+  .region--blog-tiles--latest,
   .region--footer {
     margin-top: 0;
+  }
+
+  .region--banner--open-source {
+    margin-bottom: 0;
   }
 }

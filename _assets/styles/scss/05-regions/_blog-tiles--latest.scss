@@ -4,15 +4,53 @@
  * Latest blog tile region styles.
  */
 
-/*doc
----
-title: Latest blog tiles
-name: blog-tiles--latest
-category: Regions
----
+.region--blog-tiles--latest {
+  .region--blog-tiles--latest__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-```html_example
+    @include grid-media($large-screen-up) {
+      flex-direction: column;
+      height: 600px;
+    }
 
-```
+    .tile--blog--latest {
+      margin-bottom: .5em;
+      width: 100%;
 
-*/
+      @include grid-media($large-screen-up) {
+        align-self: flex-end;
+        margin: 0;
+        width: 49.5%;
+      }
+
+      &:first-child {
+        @include grid-media($large-screen-up) {
+          align-self: flex-start;
+        }
+      }
+    }
+
+    // Explicitly set heights of tiles.
+    .tile--blog--latest,
+    .tile--blog--latest a {
+      height: 300px;
+
+      @include grid-media($medium-screen-up) {
+        height: 450px;
+      }
+
+      @include grid-media($large-screen-up) {
+        height: 294px;
+      }
+    }
+
+    .tile--blog--latest:first-child,
+    .tile--blog--latest:first-child a {
+      @include grid-media($large-screen-up) {
+        height: 600px;
+      }
+    }
+  }
+}
