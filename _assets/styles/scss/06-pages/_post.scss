@@ -1,0 +1,42 @@
+/**
+ * @file
+ *
+ * Page-level styles for blog posts.
+ *
+ * Note that this is for layout items. Component rules should live in the
+ * 04-components directory in separate files.
+ */
+
+.page--post {
+  .region--header {
+    border-bottom: solid 1px $light-grey;
+  }
+
+  .page-content {
+    @include outer-container;
+  }
+
+  .page--post__main {
+    @include grid-media($large-screen-up) {
+      @include grid-column(8);
+
+      border-right: solid 1px $light-grey;
+      padding-bottom: $base-margin;
+    }
+
+    .region--post-header,
+    .region--post-content {
+      padding-right: $base-spacing;
+    }
+  }
+
+  .page--post__aside {
+    @include grid-media($large-screen-up) {
+      @include grid-column(4);
+    }
+  }
+
+  .region--post-prev-next-links {
+    clear: both;
+  }
+}

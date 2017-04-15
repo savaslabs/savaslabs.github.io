@@ -1,12 +1,12 @@
-<div class="region--post-prev-next-links__next">
+<div class="pagination__previous">
   {% if page.next.url %}
   <a href="{{ page.next.url }}"><i class="fa fa-angle-left "></i> Prev</a>
   {% endif %}
 </div>
-<div class="region--post-prev-next-links__view-all">
+<div class="pagination__view-all">
   <a href="/blog">View All Blog Posts</a>
 </div>
-<div class="region--post-prev-next-links__previous">
+<div class="pagination__next">
   {% if page.previous.url %}
   <a href="{{ page.previous.url }}"> Next <i class="fa fa-angle-right"></i></a>
   {% endif %}

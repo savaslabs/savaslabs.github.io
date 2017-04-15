@@ -6,7 +6,7 @@
 {% else %}{% assign author_string_prefix = 'and ' %}{% endif %}
 {% capture author_markup %}{{ author_markup }}
 <div class="post-author">
-  <img class="post-author__photo" src="/assets/img/team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg" alt="{{ person.name }}">
+  {% picture team_blog_tile /team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
   <p class="post-author__name">{{ author_string_prefix }}{{ author_link }}</p>
   <p class="post-author__title">{{ person.job_title }}</p>
 </div>
@@ -19,9 +19,9 @@
 {% else %}{% assign author_string_prefix = 'and ' %}{% endif %}
 {% capture author_markup %}{{ author_markup }}
 <div class="post-author">
-<img class="post-author__photo" src="/assets/img/team/team-former/{{ person.slug }}/{{ person.slug }}-square-outside.jpg" alt="{{ person.name }}">
-<p class="post-author__name">{{ author_string_prefix }}{{ author_link }}</p>
-<p class="post-author__title">{{ person.title }}</p>
+  {% picture team_blog_tile /team/team-former/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+  <p class="post-author__name">{{ author_string_prefix }}{{ author_link }}</p>
+  <p class="post-author__title">{{ person.title }}</p>
 </div>
 {% endcapture %}
 {% assign author_count = author_count | plus: 1 %}
