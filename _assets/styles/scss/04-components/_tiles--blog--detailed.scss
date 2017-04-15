@@ -2,94 +2,90 @@
  * @file
  *
  * Blog tile styles for the blog page and subpages.
- *
- * Note: these aren't included as components in the style guide since their
- * layout styles depend on each other and the region as a whole. See the
- * blog tile region in the style guide for reference, or view
- * 05-regions/_blog-tiles--all.scss
  */
 
-.tile--title--blog {
-  padding: $base-spacing * 2;
-}
+/*doc
+---
+title: Detailed blog tile
+name: tile--blog--detailed
+category: Components
+parent: tiles
+---
 
-// Styles for blog tiles.
-.tile--blog {
-  flex-basis: 300px;
-  flex-grow: 1;
-  flex-shrink: 0;
+```html_example
+<div style="max-width: 400px;">
+  <div class="tile--blog tile--blog--detailed tile">
+    <a href="/2017/02/20/drupal-docker-pattern-lab.html" class="tile--blog__link">
+      <div class="tile--blog__content tile__content bg-light-teal"><div class="tile--blog__image" style="background-image: url(/assets/img/blog/docker-drupal-pattern-lab.jpg);">
+        <p class="tile--blog--detailed__primary-tag">Drupal</p>
+      </div>
+        <div class="tile--blog__post-title">
+          <p>Docker and the Drupal Pattern Lab Starter Theme</p>
+          <div class="tile--blog--detailed__author">
+            <img src="/assets/img/team/dan/dan-square-outside.jpg" class="image--team-blog-tile" itemprop="image" alt="Dan Murphy">
+          </div>
+          <div class="tile--blog--detailed__author-bg"></div>
+        </div>
+      </div>
+      <div class="tile--blog__hover tile__hover bg-orange">
+        <p>This post demonstrates how to build a Docker image that can be used in local Drupal development with the Pattern Lab Starter theme and/or with other common front-end applications such as npm, Gulp, and Bower.</p>
+        <p class="link--cta link--cta--inverse">Read more</p>
+      </div>
+    </a>
+  </div>
+</div>
+```
 
-  @include grid-media($large-screen-up) {
-    flex-basis: 25%;
-  }
+*/
 
-  // Content shown in non-hover state.
-  .tile--blog__content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.tile--blog--detailed {
+  .tile--blog__image {
+    position: relative;
 
-    > div {
-      height: 150px;
-
-      // Image should be taller between small-medium screens since each tile
-      // will be full-width, e.g. 450 - 600 px wide.
-      @include grid-media($small-screen-up) {
-        height: 200px;
-      }
-
-      @include grid-media($medium-screen-up) {
-        height: 150px;
-      }
-
-      @include grid-media($extra-large-screen-up) {
-        height: 175px;
-      }
-
-      @include grid-media($max-width-up) {
-        height: 200px;
-      }
-    }
-
-    // Set image as a cover to account for various image sizes.
-    .tile--blog__image {
-      @include cover-image;
-
-      width: 100%;
-    }
-
-    .tile--blog__post-title {
-      align-items: center;
-      color: $dark-teal;
-      display: flex;
-      padding: $base-spacing;
-      width: 100%;
-
-      p::before {
-        @include accent-line($magenta);
-      }
+    .tile--blog--detailed__primary-tag {
+      background-color: $teal;
+      bottom: 1em;
+      color: $eggshell;
+      font-size: .9em;
+      font-style: italic;
+      left: -1em;
+      margin-bottom: 0;
+      padding: .25em 1em;
+      position: absolute;
+      text-transform: uppercase;
     }
   }
 
-  .tile--blog__hover {
-    height: 300px;
+  .tile--blog__post-title {
+    position: relative;
+    z-index: 99;
 
-    // Set height of tile hover content equal to height of image * 2.
-    @include grid-media($small-screen-up) {
-      height: 400px;
+    // Account for the absolutely positioned author image.
+    p {
+      padding-right: 44px;
     }
 
-    @include grid-media($medium-screen-up) {
-      height: 300px;
+    .tile--blog--detailed__author {
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      z-index: 999;
+
+      img {
+        display: block;
+        filter: grayscale(100%);
+        height: 60px;
+        width: 60px;
+      }
     }
 
-    @include grid-media($extra-large-screen-up) {
-      height: 350px;
-    }
-
-    @include grid-media($max-width-up) {
-      height: 400px;
+    .tile--blog--detailed__author-bg {
+      background-color: transparentize($teal, .8);
+      bottom: -8px;
+      height: 60px;
+      position: absolute;
+      right: -8px;
+      width: 60px;
     }
   }
 }

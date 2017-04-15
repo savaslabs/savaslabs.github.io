@@ -5,11 +5,22 @@
  */
 
 .region--blog-tiles--all {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  .region--blog-tiles--all__tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-  > div {
-    flex-basis: 33%;
+    > div {
+      flex-basis: 100%;
+      padding: $base-spacing;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 50%;
+      }
+
+      @include grid-media($large-screen-up) {
+        flex-basis: 33%;
+      }
+    }
   }
 }

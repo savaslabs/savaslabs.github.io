@@ -95,6 +95,13 @@ picture:
       ppi: [1, 2]
       source_default:
         width: "288"
+    team_blog_tile:
+      attr:
+        class: "image--team-blog-tile"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_default:
+        width: "60"
     case_study:
       attr:
         class: "image--case-study"

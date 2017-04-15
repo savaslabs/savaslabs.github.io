@@ -3,6 +3,7 @@ layout: post
 title: "Dramatically Improve MySQL Import Performance with Docker"
 date: 2017-02-15
 author: Kosta Harlan and Chris Russo
+primary_author: Kosta Harlan
 tags: drupal drupal-planet docker continuous-integration performance productivity
 services: development
 summary: "How to dramatically improve MySQL database import performance on Drupal with Docker stacks"

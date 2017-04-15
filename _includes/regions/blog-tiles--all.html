@@ -1,18 +1,20 @@
-<div class="region--blog-tiles--all">
-  {% if paginator.page == 1 %}
-  {% assign count = 0 %}
-  {% for post in paginator.posts %}
-  {% if count > 2 %}
-  {% include components/tile--blog--detailed.html post=post %}
-  {% endif %}
-  {% assign count = count | plus:1 %}
-  {% endfor %}
-  {% else %}
-  {% for post in paginator.posts %}
-  {% include components/tile--blog--detailed.html post=post %}
-  {% endfor %}
-  {% endif %}
-  <div class="region--blog-tiles--all__pagination">
+<div class="region--blog-tiles--all region">
+  <div class="region--blog-tiles--all__tiles">
+    {% if paginator.page == 1 %}
+    {% assign count = 0 %}
+    {% for post in paginator.posts %}
+    {% if count > 2 %}
+    {% include components/tile--blog--detailed.html post=post %}
+    {% endif %}
+    {% assign count = count | plus:1 %}
+    {% endfor %}
+    {% else %}
+    {% for post in paginator.posts %}
+    {% include components/tile--blog--detailed.html post=post %}
+    {% endfor %}
+    {% endif %}
+  </div>
+  <div class="pagination region--blog-tiles--all__pagination">
     {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path }}" class="pagination__previous"><i class="fa fa-angle-left"></i> Prev</a>
     {% endif %}
