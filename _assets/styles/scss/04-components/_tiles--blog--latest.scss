@@ -2,9 +2,62 @@
  * @file
  *
  * Latest blog tile styles.
- *
- * Note: these aren't included as components in the style guide since their
- * layout styles depend on each other and the region as a whole. See the
- * blog tile region in the style guide for reference, or view
- * 05-regions/_blog-tiles--latest.scss
  */
+
+.tile--blog--latest {
+  @include cover-image;
+
+  .tile--blog--latest__link {
+    @include hover-border-bottom;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: $orange;
+        width: 100%;
+      }
+
+      .tile--blog--latest__text {
+        background-color: transparentize($eggshell, .1);
+        color: $dark-teal;
+
+        h2 {
+          color: $dark-teal;
+        }
+      }
+    }
+
+    .tile--blog--latest__text {
+      @include ease;
+
+      background-color: transparentize($dark-teal, .1);
+      color: $eggshell;
+      padding: $base-spacing;
+
+      @include grid-media($large-screen-up) {
+        padding: $base-spacing $base-spacing * 2;
+      }
+
+      h2 {
+        @include ease;
+
+        color: $eggshell;
+      }
+
+      .tile--blog--latest__text__author,
+      .tile--blog--latest__text__date {
+        display: inline;
+        font-style: italic;
+        margin-bottom: 0;
+      }
+
+      .tile--blog--latest__text__date {
+        float: right;
+      }
+    }
+  }
+}
