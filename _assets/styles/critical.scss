@@ -50,6 +50,9 @@
 @import 'scss/04-components/key-value-list-item';
 @import 'scss/04-components/logos';
 @import 'scss/04-components/tables';
+@import 'scss/04-components/tiles';
+@import 'scss/04-components/tiles--blog';
+@import 'scss/04-components/tiles--blog--detailed';
 @import 'scss/04-components/tiles--blog--latest';
 @import 'scss/04-components/tiles--service';
 
@@ -61,6 +64,7 @@
 // Region rules.
 // TODO: Add any more regions needed.
 @import 'scss/05-regions/banner--heading';
+@import 'scss/05-regions/blog-tiles--all';
 @import 'scss/05-regions/blog-tiles--latest';
 @import 'scss/05-regions/case-study-blocks';
 @import 'scss/05-regions/header';
