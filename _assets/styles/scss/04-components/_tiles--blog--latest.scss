@@ -4,6 +4,30 @@
  * Latest blog tile styles.
  */
 
+/*doc
+---
+title: Latest blog tile
+name: tile--blog--latest
+category: Components
+parent: tiles
+---
+
+```html_example
+<div style="max-width: 400px;">
+  <div class="tile--blog--latest bg-light-teal" style="background-image: url(/assets/img/blog/on-web-typography-featured.jpg);">
+    <a href="/2017/02/27/on-web-typography-review.html" class="tile--blog--latest__link" style="height: 300px;">
+      <div class="tile--blog--latest__text">
+        <h2 class="tile--blog--latest__text__title heading--sans-serif heading--bold h4">On Web Typography - a Book Review</h2>
+        <p class="tile--blog--latest__text__author">By Anne Tomasevich</p>
+        <p class="tile--blog--latest__text__date">Feb 27, 2017</p>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+*/
+
 .tile--blog--latest {
   @include cover-image;
 

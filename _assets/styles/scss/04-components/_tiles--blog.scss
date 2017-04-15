@@ -9,6 +9,35 @@
  * 05-regions/_blog-tiles.scss
  */
 
+/*doc
+---
+title: Blog tile
+name: tile--blog
+category: Components
+parent: tiles
+---
+
+```html_example
+<div style="max-width: 400px;">
+  <div class="tile--blog tile">
+    <a href="/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html" class="tile--blog__link">
+      <div class="tile--blog__content tile__content bg-light-teal">
+        <div class="tile--blog__image" style="background-image: url(/assets/img/blog/content-authoring-d8.jpg);"></div>
+        <div class="tile--blog__post-title">
+          <p>Five Drupal 8 Tips to Empower Content Authors</p>
+        </div>
+      </div>
+      <div class="tile--blog__hover tile__hover bg-orange">
+        <p>Five Drupal 8 tips to make the content authoring experience more enjoyable and productive!</p>
+        <p class="link--cta link--cta--inverse">Read more</p>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+*/
+
 // Layout styles for title and blog tiles.
 .tile--title--blog,
 .tile--blog {
