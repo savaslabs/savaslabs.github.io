@@ -8,17 +8,32 @@
       {% assign image = '/assets/img/' %}
       {% endif %}
       <div class="tile--blog__image" style="background-image: url({{ image }});">
-        <div class="tile--blog--detailed__primary-tag">
-          {% for tag in include.post.tags | limit:1 %}
-          <p>{{ tag }}</p>
-          {% endfor %}
-        </div>
+        {% assign primary_tag = include.post.tags | first %}
+        {% for data_tag in site.data.tags %}
+        {% if data_tag.slug == primary_tag %}
+        <p class="tile--blog--detailed__primary-tag">{{ data_tag.name }}</p>
+        {% endif %}
+        {% endfor %}
       </div>
       <div class="tile--blog__post-title">
         {{ include.post.title | markdownify }}
         <div class="tile--blog--detailed__author">
-          <!--TODO: Include author image.-->
+          {% if include.post.primary_author %}{% for person in site.team %}
+          {% if person.name == include.post.primary_author %}
+          {% picture team_blog_tile /team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}
+          {% for person in site.team-former %}{% if person.name == include.post.primary_author %}
+          {% picture team_blog_tile /team/team-former/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}
+          {% else %}
+          {% for person in site.team %}{% if person.name == include.post.author %}
+          {% picture team_blog_tile /team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}
+          {% for person in site.team-former %}{% if person.name == include.post.author %}
+          {% picture team_blog_tile /team/team-former/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}{% endif %}
         </div>
+        <div class="tile--blog--detailed__author-bg"></div>
       </div>
     </div>
     <div class="tile--blog__hover tile__hover bg-orange">
