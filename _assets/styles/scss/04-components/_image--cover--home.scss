@@ -6,7 +6,7 @@
 
 .home__cover {
   align-items: center;
-  background: url('/assets/img/home-cover.jpg') $white 70% center no-repeat;
+  background: url('/assets/img/bg/home-cover.jpg') $white 70% center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -54,8 +54,12 @@
     }
 
     @include grid-media($extra-large-screen-up) {
+      font-size: 3em;
+    }
+
+    @include grid-media($max-width-up) {
       font-size: 4em;
-      max-width: 1140px;
+      max-width: 960px;
     }
   }
 
