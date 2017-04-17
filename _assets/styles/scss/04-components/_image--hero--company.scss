@@ -1,0 +1,145 @@
+/**
+ * @file
+ *
+ * Hero image styles.
+ */
+
+/*doc
+---
+title: Hero image
+name: images--hero
+category: Components
+parent: images
+---
+
+```html_example
+<div class="region--hero region--hero--company region--full-width">
+  <div class="region--hero--company__wrapper region--full-width__wrapper">
+
+      <div class="region--hero--company__heading-full-width">
+        <h1 class="heading--sans-serif heading--bold h1">What we've got is pretty special</h1>
+        <a class="link--arrow" href="/company/mission-and-values">Our mission and core values</a>
+      </div>
+      <div class="region--hero--company__two-col">
+        <div class="region--hero--company__two-col__text">
+          <h2>Strong Ideas. Diverse Talent. Teamwork in the Spirit of Innovation.</h2>
+          <p>We're a full-service web development and design shop, anchored in Durham, NC. Our team has years of experience in Drupal, web development, cartography, design, and project management.</p>
+        </div>
+        <div class="region--hero--company__two-col__image"></div>
+      </div>
+
+  </div>
+</div>
+```
+
+*/
+
+.region--hero--company {
+  background: url('/assets/img/bg/blue-bg-glow.jpg') $dark-teal center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  position: relative;
+  width: 100%;
+
+  @include grid-media($medium-screen-up) {
+    height: calc(100vh - 84px);
+  }
+
+  .region--hero--company__wrapper {
+    display: block;
+    left: 0;
+    margin: auto;
+    padding: 0;
+    right: 0;
+    width: 100%;
+
+    @include grid-media($medium-screen-up) {
+      bottom: 0;
+      padding: 0 $base-spacing;
+      position: absolute;
+    }
+
+    .region--hero--company__heading-full-width {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      padding: $base-spacing * 2;
+
+      h1,
+      a {
+        color: $eggshell;
+      }
+
+      h1 {
+        font-family: $heading-font;
+        text-align: center;
+        text-shadow: lighten($dark-teal, .1) 2px 2px 2px;
+      }
+
+      a {
+        &:hover::after,
+        &:focus::after,
+        &:active::after {
+          color: $orange;
+        }
+      }
+    }
+
+    .region--hero--company__two-col {
+
+      @include grid-media($medium-screen-up) {
+        align-items: center;
+        display: flex;
+      }
+
+      .region--hero--company__two-col__text,
+      .region--hero--company__two-col__image {
+        display: block;
+        position: relative;
+        width: 100%;
+
+        @include grid-media($medium-screen-up) {
+          flex-basis: 50%;
+          height: 50vh;
+          min-height: 340px;
+        }
+      }
+
+      .region--hero--company__two-col__text {
+        background: $dark-teal;
+        color: $eggshell;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: $base-spacing * 2 $base-spacing;
+
+        @include grid-media($extra-large-screen-up) {
+          padding: $base-spacing * 2 $base-spacing * 3;
+        }
+
+        h2 {
+          color: $eggshell;
+          font-size: 1.25em;
+
+          @include grid-media($medium-screen-up) {
+            font-size: 1.75em;;
+          }
+        }
+
+        p {
+          @include grid-media($medium-screen-up) {
+            @include paragraph-loud;
+          }
+        }
+      }
+
+      .region--hero--company__two-col__image {
+        background: url('/assets/img/bg/company-hero.jpg') $dark-teal 20% center no-repeat;
+        background-size: cover;
+      }
+
+    }
+  }
+}
