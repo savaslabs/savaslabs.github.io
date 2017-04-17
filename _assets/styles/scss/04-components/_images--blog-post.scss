@@ -1,29 +1,22 @@
 /**
  * @file
  *
- * Below the fold styles for blog posts.
+ * Blog post image styles.
  */
 
-.post {
+/*doc
+---
+title: Blog post images
+name: images--blog-post
+category: Components
+parent: images;
+---
 
-  // Need to override inline style from Twitter iframe.
-  // scss-lint:disable ImportantRule
-  .twitter-tweet {
-    margin: 3em auto !important;
-  }
-  // scss-lint:enable ImportantRule
+```html_example
+```
 
-  .table-minimal {
-    margin-bottom: 3em;
-    margin-top: 3em;
-  }
+*/
 
-  ul ul {
-    margin-bottom: 0;
-  }
-}
-
-// Images within posts ---------------------------------------------------------
 .blog-image {
   background: $gainsboro;
   box-shadow: 0 2px 4px darken($gainsboro, 10%);
@@ -59,18 +52,14 @@
 .blog-image-xl {
   @extend .blog-image;
   height: auto;
-  max-width: 737px; // Width of narrow column layout on lg screens
+  max-width: 895px; // Width of main post sections on largest screens.
   width: 100%;
 }
 
+// Image captions.
 .caption {
   display: block;
   font-size: .9em;
   margin: 0 auto 2em;
-  text-align: center;
-}
-
-// Asciinema iframe styles.
-.asciicast {
   text-align: center;
 }

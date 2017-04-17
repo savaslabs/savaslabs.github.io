@@ -9,7 +9,7 @@
 title: Lists
 name: lists
 category: Typography
----
+--
 */
 
 /*doc
@@ -60,3 +60,8 @@ ol ol li {
   font-size: 1em !important;
 }
 // scss-lint:enable ImportantRule
+
+// Remove margin-bottom from nested uls.
+ul ul {
+  margin-bottom: 0;
+}
