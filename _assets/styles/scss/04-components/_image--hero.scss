@@ -1,0 +1,92 @@
+/**
+ * @file
+ *
+ * Hero image styles.
+ */
+
+/*doc
+---
+title: Hero image
+name: images--hero
+category: Components
+parent: images
+---
+
+```html_example
+```
+
+*/
+
+.region--hero {
+  margin: 0 0 $base-spacing * 2 0;
+  .region--hero__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+
+    @include grid-media($medium-screen-up) {
+      flex-wrap: nowrap;
+    }
+  }
+
+}
+// Region with hero image takes 50% of vertical height.
+.region--hero--half-height {
+  background: $dark-teal;
+
+  .region--hero__wrapper {
+    min-height: calc(50vh - 84px);
+  }
+
+}
+
+// Hero image takes 50% of horizontal width.
+.region--hero--half-width {
+
+  .region--hero__text,
+  .region--hero__image {
+    flex-basis: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: 200px;
+
+    @include grid-media($medium-screen-up) {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .region--hero__text {
+    color: $eggshell;
+    padding: $base-spacing * 4 $base-spacing $base-spacing * 4 $base-spacing;
+    order: 2;
+
+    @include grid-media($medium-screen-up) {
+      padding: $base-spacing * 4 $base-spacing * 2 $base-spacing * 4 $base-spacing;
+      order: 1;
+    }
+
+    h1 {
+      font-size: 1.25em;
+
+      @include grid-media($medium-screen-up) {
+        font-size: 1.953em;
+      }
+    }
+  }
+
+  .region--hero__image {
+    background-color: $dark-teal;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    order: 1;
+
+    @include grid-media($medium-screen-up) {
+      order: 2;
+    }
+  }
+}
