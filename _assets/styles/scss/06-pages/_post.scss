@@ -52,7 +52,7 @@
 
   // See the _post-aside.scss region SCSS file for page-agnostic styles.
   .page--post__aside {
-    border-top: solid 1px $light-grey;
+    margin-top: 0;
 
     @include grid-media($large-screen-up) {
       border-top: 0;
@@ -61,6 +61,19 @@
 
   .region--post-prev-next-links {
     clear: both;
+    display: none;
+
+    @include grid-media($large-screen-up) {
+      display: flex;
+    }
+  }
+
+  .region--post-prev-next-links--mobile {
+    display: flex;
+
+    @include grid-media($large-screen-up) {
+      display: none;
+    }
   }
 }
 
