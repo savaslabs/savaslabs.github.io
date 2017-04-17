@@ -19,11 +19,12 @@ parent: images
 
 .region--hero {
   margin: 0 0 $base-spacing * 2 0;
+
   .region--hero__wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
-    flex-wrap: wrap;
 
     @include grid-media($medium-screen-up) {
       flex-wrap: nowrap;
@@ -31,6 +32,7 @@ parent: images
   }
 
 }
+
 // Region with hero image takes 50% of vertical height.
 .region--hero--half-height {
   background: $dark-teal;
@@ -52,8 +54,8 @@ parent: images
     min-height: 200px;
 
     @include grid-media($medium-screen-up) {
-      flex-basis: 50%;
       display: flex;
+      flex-basis: 50%;
       flex-direction: column;
       justify-content: center;
     }
@@ -62,7 +64,6 @@ parent: images
   .region--hero__text {
     color: $eggshell;
     padding: $base-spacing * 4 $base-spacing $base-spacing * 4 $base-spacing;
-    order: 2;
 
     @include grid-media($medium-screen-up) {
       padding: $base-spacing * 4 $base-spacing * 2 $base-spacing * 4 $base-spacing;
