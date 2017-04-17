@@ -5,6 +5,10 @@
  */
 
 .page--blog {
+  .region--banner--heading {
+    background: url('/assets/img/bg/diamond-texture.svg') $teal repeat;
+  }
+
   .region--blog-tiles--latest,
   .region--footer {
     margin-top: 0;
