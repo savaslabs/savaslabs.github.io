@@ -2,117 +2,86 @@
 layout: default
 ---
 
-<div class="case-study">
-
-  <!-- Header with client logo and client/project descriptions. -->
-  <div class="case-study__header">
-    <div class="case-study__header__text">
-      <div class="case-study__header__text--left">
-        <h1>{{ page.project_title }}</h1>
-        {{ page.project_description | markdownify }}
-        <a class="case-study__header__link" href="{{ page.client_url }}">View site</a>
-      </div>
-      <div class="case-study__header__text--right">
-        <h3>Project highlights:</h3>
-        <ul>
-          {% for item in page.project_highlights %}
-          <li><p>{{ item }}</p></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+<div class="case-study__header" style="background-image: url(/assets/img/work/{{ page.slug }}/{{ page.slug }}-laptop.jpg);">
+  <div class="case-study__header__text">
+    <h1 class="heading--bold heading--underline--orange">{{ page.project_title }}</h1>
+    {{ page.project_description | markdownify }}
+    <a class="case-study__header__link link--arrow" href="{{ page.client_url }}">View site</a>
   </div>
+</div>
 
-  <!-- Highlights, on small screens. -->
-  <div class="case-study__highlights">
-    <h2>Project highlights</h2>
-    <ul>
-      {% for item in page.project_highlights %}
-      <li class="case-study__highlights__highlight"><p>{{ item }}</p></li>
-      {% endfor %}
-    </ul>
+<div class="case-study__client">
+  <img class="case-study__client__logo" src="{{ page.client_logo }}" alt="{{ page.client_name }} logo" width="{{ page.client_logo_width }}" height="{{ page.client_logo_height }}">
+  {{ page.client_description | markdownify }}
+</div>
+
+<div class="case-study__highlights">
+  <h2>Project highlights</h2>
+  <ul>
+    {% for item in page.project_highlights %}
+    <li class="case-study__highlights__highlight"><p>{{ item }}</p></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="case-study__objective-approach">
+  <div class="case-study__objective-approach__objective">
+    <h2>The Objective</h2>
+    {{ page.project_objective | markdownify }}
   </div>
-
-  <!-- Client introduction. -->
-  <div class="case-study__client">
-    <div class="wrapper">
-      {{ page.client_description | markdownify }}
-    </div>
+  <div class="case-study__objective-approach__approach">
+    <h2>Our Approach</h2>
+    {{ page.project_process | markdownify }}
   </div>
+</div>
 
-  {% if page.client_quote2 %}
-  <!-- Client Quote 2. -->
-  <div class="case-study__client-quote case-study__client-quote--top">
-    <div class="wrapper">
-      <blockquote>
-        <p class="case-study__client-quote__quote">{{ page.client_quote2 }}</p><br>
-        <p class="case-study__client-quote__attribution">&mdash; {{ page.client_quote2_author }}</p>
-      </blockquote>
-    </div>
+{% if page.client_quote2 %}
+{% for client in site.data.clients %}
+{% if client.project == page.client_quote2 %}
+{% include regions/client-quote.html class="region--client-quote--dark" client=client %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+<div class="case-study__showcase">
+  <img class="case-study__showcase__image" src="/assets/img/work/{{ page.slug }}/{{ page.slug }}-showcase.jpg" alt="{{ page.client_name }} website on various devices">
+</div>
+
+<div class="case-study__results">
+  <div class="case-study__results__results">
+    <h2>The Results</h2>
+    {{ page.project_results | markdownify }}
   </div>
-  {% endif %}
-
-  <!-- Objective, Process, and Results sections. -->
-  <div class="case-study__content case-study__content--objective">
-    <div class="case-study__content__text case-study__content__text--objective">
-      <h2>The Objective</h2>
-    </div>
-    <div class="case-study__square-image case-study__square-image--objective">
-    </div>
+  <div class="case-study__results__details">
+    <h2>The Details</h2>
+    <table class="table--minimal">
+      <tbody>
+      <tr>
+        <td class="label"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Client since</td>
+        <td>{{ page.client_dates }}</td>
+      </tr>
+      <tr>
+        <td class="label"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Services provided</td>
+        <td>{{ page.services_provided | markdownify }}</td>
+      </tr>
+      <tr>
+        <td class="label"><i class="fa fa-code"></i>&nbsp;&nbsp;Technologies used</td>
+        <td>{{ page.technologies_used | markdownify }}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
+</div>
 
-  <div class="case-study__content case-study__content--process">
-    <div class="case-study__content__text case-study__content__text--process">
-      <h2>Our Approach</h2>
-    </div>
-    <div class="case-study__square-image case-study__square-image--process">    </div>
+{% if page.client_quote %}
+{% for client in site.data.clients %}
+{% if client.project == page.client_quote %}
+{% include regions/client-quote.html class="region--client-quote--dark" client=client %}
+{% endif %}
+{% endfor %}
+{% endif %}
 
-  </div>
-
-  <div class="case-study__content case-study__content--results">
-    <div class="case-study__content__text case-study__content__text--results">
-      <h2>The Results</h2>
-    </div>
-    <div class="case-study__square-image case-study__square-image--results">    </div>
-
-  </div>
-
-  {% if page.client_quote %}
-  <!-- Client Quote. -->
-  <div class="case-study__client-quote case-study__client-quote--bottom">
-    <div class="wrapper">
-    <blockquote>
-      <p class="case-study__client-quote__quote">{{ page.client_quote }}</p><br>
-      <p class="case-study__client-quote__attribution">&mdash; {{ page.client_quote_author }}</p>
-    </blockquote>
-      </div>
-  </div>
-  {% endif %}
-
-  <!-- Technical details. -->
-  <div class="case-study__details">
-    <div class="wrapper">
-      <h2>The Details</h2>
-      <table class="table--minimal">
-        <tbody>
-        <tr>
-          <td class="label"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Client since</td>
-          <td>{{ page.client_dates }}</td>
-        </tr>
-        <tr>
-          <td class="label"><i class="fa fa-wrench"></i>&nbsp;&nbsp;Services provided</td>
-          <td>{{ page.services_provided | markdownify }}</td>
-        </tr>
-        <tr>
-          <td class="label"><i class="fa fa-code"></i>&nbsp;&nbsp;Technologies used</td>
-          <td>{{ page.technologies_used | markdownify }}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="view-more-link">
-    <i class="fa fa-arrow-up"></i> <a href="/work"> View all case studies</a>
-  </div>
-</div><!--case-study-->
+<div class="region--prev-next-links region--prev-next-links--case-study pagination">
+  {% include regions/previous-next-links--case-study.html %}
+</div>
+{% include regions/cta--move-work-forward.html %}

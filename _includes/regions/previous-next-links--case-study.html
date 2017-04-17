@@ -1,0 +1,22 @@
+{% assign case_studies = site.case-studies | sort: 'weight' %}
+{% for case_study in case_studies %}
+{% if case_study.url == page.url %}
+{% if forloop.index != 1 %}
+{% assign next_index = forloop.index | minus:2 %}
+{% assign next = case_studies[next_index] %}
+{% endif %}
+{% assign previous = case_studies[forloop.index] %}
+{% endif %}
+{% endfor %}
+
+{% if previous.url %}
+<a href="{{ previous.url }}" class="pagination__previous"><i class="fa fa-angle-left "></i> Prev</a>
+{% else %}
+<span class="pagination__previous"></span>
+{% endif %}
+<a href="/blog" class="pagination__view-all">View All Case Studies</a>
+{% if next.url %}
+<a href="{{ next.url }}" class="pagination__next"> Next <i class="fa fa-angle-right"></i></a>
+{% else %}
+<span class="pagination__next"></span>
+{% endif %}

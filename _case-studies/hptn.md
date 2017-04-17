@@ -11,9 +11,7 @@ client_url: "https://www.hptn.org"
 client_description: |
   [The HIV Prevention Trials Network (HPTN)](https://www.hptn.org) is a worldwide collaborative clinical trials network that brings together investigators, ethicists, community and other partners to develop and test the safety and efficacy of interventions designed to prevent the acquisition and transmission of HIV.
 client_dates: 2015 - present
-client_quote: |
-  Leadership loves the new website. They had zero concerns or commentary other than being impressed. Awesome, guys.
-client_quote_author: Laura Smith, Web & Data Manager, HPTN
+client_quote: hptn
 project_description: |
   When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, they started evaluating the capabilities of various content management systems that would meet their needs. They settled on Drupal 8.
 project_highlights: [Responsive web design, UX design, Drupal 8, Client server integration]
@@ -36,6 +34,8 @@ technologies_used: |
   - Microsoft SQL Server data integration
   - Microsoft Azure Cloud Services
 client_logo: "/assets/img/work/logos/hptn-logo.png"
+client_logo_width: "229"
+client_logo_height: "91"
 client_logo_light: "/assets/img/work/logos/hptn-logo-eggshell.png"
 tile_description: |
   When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, Savas Labs helped them implement a new content management system that would meet their needs.

@@ -8,10 +8,7 @@ services: strategy development design-ux
 featured_tags: [Drupal, Content Migration, UX, Docker]
 client_name: Duke Today
 client_url: "https://today.duke.edu"
-client_quote: |
-   We've gotten nothing but rave reviews about the new site.
-client_quote_author: |
-  Blyth Morrell, Director of Strategic and Digital Communications at Duke University
+client_quote: duke_today
 client_description: |
   Duke Today is a hub for news produced around Duke University. Articles are produced by staff and faculty across the university and health system to comprise a one-stop-shop for news from around Duke.
 client_dates: 2016 - present
@@ -35,6 +32,8 @@ technologies_used: |
   - [Migrate module](/blog/tag/migration)
   - [Docker](/blog/tag/docker)
 client_logo: "/assets/img/work/duke-today/duke-today-logo.png"
+client_logo_width: "268px"
+client_logo_height: "74px"
 client_logo_light: "/assets/img/work/logos/duke-today-logo-eggshell.png"
 tile_description: |
   After multiple organizational transitions left Duke's flagship news outlet's redesign incomplete, partner Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration in just 4 months.
