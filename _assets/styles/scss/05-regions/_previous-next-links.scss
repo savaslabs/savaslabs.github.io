@@ -12,7 +12,7 @@ category: Regions
 ---
 
 ```html_example
-<div class="region--post-prev-next-links pagination">
+<div class="region--prev-next-links pagination">
   <a href="/2017/02/27/on-web-typography-review.html" class="pagination__previous"><i class="fa fa-angle-left "></i> Prev</a>
   <a href="/blog" class="pagination__view-all">View All Blog Posts</a>
   <a href="/2017/03/20/lightning-q1-2017.html" class="pagination__next"> Next <i class="fa fa-angle-right"></i></a>
@@ -21,7 +21,7 @@ category: Regions
 
 */
 
-.region--post-prev-next-links {
+.region--prev-next-links {
   align-items: center;
   border-bottom: solid 1px $light-grey;
   border-top: solid 1px $light-grey;

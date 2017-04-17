@@ -10,9 +10,7 @@ client_name: MIT Press
 client_url: "http://mitpress.mit.edu"
 client_description: |
   The MIT Press is the only university press in the United States whose list is based in science and technology. MIT Press publishes about 200 new books a year and over 30 journals.
-client_quote: |
-  It’s a genuine pleasure to encounter a transparent, systematic development team that clearly knows their environment backwards and forwards (and schools us in sound methodology). I wish we’d found you four years ago.
-client_quote_author: Jake Furbush, MIT Press Digital Publishing Manager (2009 - 2015)
+client_quote: mitpress-jf
 client_dates: 2014 - present
 project_description: |
   When the MIT Press needed to bring new product information into their website from their back-end database, Savas Labs came through with an automated importer module that did the job in a flexible and extensible way.
@@ -30,6 +28,8 @@ technologies_used: |
   - [Drupal 6](/blog/tag/drupal/)
   - [PHPUnit](/blog/tag/testing/)
 client_logo: "/assets/img/work/logos/mitpress-logo.png"
+client_logo_width: "110px"
+client_logo_height: "107px"
 client_logo_light: "/assets/img/work/logos/mitpress-logo-eggshell.png"
 redirect_from:
   - /work/allbooks-case-study/

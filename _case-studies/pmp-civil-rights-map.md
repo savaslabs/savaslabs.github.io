@@ -9,9 +9,7 @@ featured_tags: [Drupal 8, Responsive Design, UX, Web Mapping]
 services: development design-ux
 client_name: Pauli Murray Project, Duke Human Rights Center
 client_url: "http://www.durhamcivilrightsmap.org"
-client_quote: |
-   I have so enjoyed working with Savas Labs to redesign our online educational civil and human rights activism map. The Savas Labs staff are knowledgeable, creative problem solvers with a real commitment to Durham and to social justice. The map is now sleek and easier to use, the best since we started it in 2009.
-client_quote_author: Barbara Lau, Director, Pauli Murray Project
+client_quote: pmp
 client_description: |
   Pauli Murray was a champion for civil and human rights who grew up in Durham. Her insights and vision continue to resonate powerfully in our times. To build a better Durham the Pauli Murray Project engages a diversity of residents to lift up the vision and legacy of activist, scholar, feminist, poet, and priest Pauli Murray in order to tackle enduring inequities and injustice in our community.
 client_dates: 2015 - present
@@ -35,6 +33,8 @@ technologies_used: |
   - [Pantheon](/blog/tag/drupal)
   - [Responsive design](/blog/tag/front-end-dev)
 client_logo: "/assets/img/work/logos/pauli-murray-logo.png"
+client_logo_width: "300px"
+client_logo_height: "72px"
 client_logo_light: "/assets/img/work/logos/pmp-logo-eggshell.png"
 tile_description: |
   Savas Labs worked with the Pauli Murray Project to create a fresh responsive design to showcase the rich stories of Durham's Civil and Human Rights history.

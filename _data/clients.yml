@@ -24,3 +24,39 @@
   image: /assets/img/work/clients/nh-ta.jpg
   quote: |
     When faced with a challenging multi-site buildout that included importing content from a very old platform, creating 3 integrated subscription forms, and launching under a tight timeline, Savas Labs was strategic, knowledgeable, and great to work with. They were the right team for our complex project!
+- project: hptn
+  name: Laura Smith
+  title: Web & Data Manager, HPTN
+  image: /assets/img/work/clients/ls-hptn.jpg
+  quote: |
+    Leadership loves the new website. They had zero concerns or commentary other than being impressed. Awesome, guys.
+- project: hunter-boots-js
+  name: Jodi Sweetbaum
+  title: President of Lloyd & Co.
+  image: /assets/img/work/clients/js-hb.jpg
+  quote: |
+    The site is looking amazing. I was very proud to present it today. Thank you so so so much! THANK YOU a million times over.
+- project: hunter-boots-sp
+  name: Steve Parise
+  title: VP of Operations and E-Commerce
+  image: /assets/img/work/clients/sp-hb.jpg
+  quote: |
+    Thanks to the team for all their support and hard work, especially Chris, in getting us live.
+- project: mitpress-jf
+  name: Jake Furbush
+  title: MIT Press Digital Publishing Manager (2009 - 2015)
+  image: /assets/img/work/clients/jf-mit.jpg
+  quote: |
+    It’s a genuine pleasure to encounter a transparent, systematic development team that clearly knows their environment backwards and forwards (and schools us in sound methodology). I wish we’d found you four years ago.
+- project: mitpress-bt
+  name: Bill Trippe
+  title: Director of Technology, The MIT Press
+  image: /assets/img/work/clients/bt-mit.jpg
+  quote: |
+    Many thanks for getting this done, in such a thoughtful manner, and in a way that really honors the content and provides such a useful, attractive set of interactions for the readers.
+- project: pmp
+  name: Barbara Lau
+  title: Director, Pauli Murray Project
+  image: /assets/img/work/clients/bl-pm.jpg
+  quote: |
+    I have so enjoyed working with Savas Labs to redesign our online educational civil and human rights activism map. The Savas Labs staff are knowledgeable, creative problem solvers with a real commitment to Durham and to social justice. The map is now sleek and easier to use, the best since we started it in 2009.
