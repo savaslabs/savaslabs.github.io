@@ -37,6 +37,7 @@
 @import 'scss/04-components/expander';
 @import 'scss/04-components/footer-navigation';
 @import 'scss/04-components/footer-navigation--menu-link';
+@import 'scss/04-components/footnotes';
 @import 'scss/04-components/form-elements';
 @import 'scss/04-components/form-elements--text';
 @import 'scss/04-components/form-elements--textarea';
@@ -51,7 +52,9 @@
 @import 'scss/04-components/image--hero--company';
 @import 'scss/04-components/image--hero--results';
 @import 'scss/04-components/image--hero--services';
+@import 'scss/04-components/iframes';
 @import 'scss/04-components/images';
+@import 'scss/04-components/images--blog-post';
 @import 'scss/04-components/images--grayscale';
 @import 'scss/04-components/images--hero';
 @import 'scss/04-components/key-value-list-item';
@@ -69,8 +72,6 @@
 // TODO: Refactor and remove.
 @import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
-@import 'scss/04-components/post';
-@import 'scss/04-components/post-footnotes';
 @import 'scss/04-components/team-member-badges';
 @import 'scss/04-components/team-member-posts';
 @import 'scss/04-components/team-member-top';
