@@ -118,8 +118,8 @@ parent: headings
   font-weight: 700;
 }
 
-// Add margin top for posts.
-.post {
+// Add margin top for article content.
+article {
   h2,
   h3,
   h4,
@@ -128,3 +128,21 @@ parent: headings
     margin-top: 1.5em;
   }
 }
+
+// Add underline style to h2s in articles.
+article h2 {
+  @include heading-underline();
+}
+
+// Headings in blog post content should be magenta.
+.page--post__main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $magenta;
+  }
+}
+
