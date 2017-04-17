@@ -9,11 +9,11 @@
   background: url('/assets/img/home-cover.jpg') $white center center no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
   height: auto;
+  flex-direction: column;
   justify-content: flex-start;
-  text-align: center;
   position: relative;
+  text-align: center;
 
   @include grid-media($medium-screen-up) {
     height: 80vh;
@@ -37,8 +37,8 @@
     display: block;
     font-size: 1.5em;
     font-weight: 400;
-    max-width: 780px;
     margin-top: 84px;
+    max-width: 780px;
     padding: $base-spacing * 2 $base-spacing;
     text-shadow: lighten($eggshell, .1) 2px 2px 10px;
 
@@ -47,7 +47,7 @@
     }
 
     @include grid-media($extra-large-screen-up) {
-      font-size: 2.441em;
+      font-size: 3em;
     }
   }
 
@@ -72,7 +72,7 @@
       &:hover,
       &:focus,
       &:active {
-       background-color: lighten($teal, 10%);
+        background-color: lighten($teal, 10%);
       }
     }
   }
@@ -84,10 +84,10 @@
     @include grid-media($medium-screen-up) {
       bottom: 0;
       display: flex;
-      left: 0;
-      position: absolute;
       height: 20%;
       justify-content: flex-start;
+      left: 0;
+      position: absolute;
     }
 
     h2,
@@ -95,8 +95,8 @@
       color: $eggshell;
       font-family: $copytext-font;
       font-weight: normal;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
 
     .home__cover__content__col-left,
@@ -121,8 +121,8 @@
 
       .home__cover__content__col-left__text {
         display: block;
-        position: relative;
         padding: $base-spacing / 2 $base-spacing;
+        position: relative;
 
         @include grid-media($medium-screen-up) {
           display: table;
@@ -133,17 +133,17 @@
           top: 0;
           z-index: 1;
 
-          &:after {
+          &::after {
             background-image: url('assets/img/hp-arrow.svg');
             background-position: right center;
             background-repeat: no-repeat;
             background-size: cover;
-            content: "";
+            content: '';
             height: 100%;
-            width: 50%;
-            right: -15%;
             position: absolute;
+            right: -15%;
             top: 0;
+            width: 50%;
             z-index: -1;
           }
         }
