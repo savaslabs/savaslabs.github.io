@@ -11,19 +11,28 @@ name: disclaimer
 category: Components
 ---
 Used to add words of caution to outdated blog posts.
+
 ```html_example
+<div class="region--post-header__disclaimer">
+  <h2 class="h4">Proceed with caution</h2>
+  <p>This post details the use of the Bourbon mixin library version 4*, but Bourbon is in the process of updating to major version 5. The new version includes significant changes and some of the mixins in this post will no longer exist. <a href="https://github.com/thoughtbot/bourbon/issues/702">See this GitHub thread</a> for more information.</p>
+</div>
 ```
 
 */
 
 .region--post-header__disclaimer {
-  background-color: transparentize($magenta, .9);
   border: solid 1px transparentize($magenta, .7);
   border-radius: 5px;
-  margin-bottom: 1.875em;
+  margin: $base-spacing * 1.5 0;
   padding: 1em;
 
   h5 {
+    color: $magenta;
     margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }
