@@ -6,9 +6,22 @@ class: page--home
 
 <!-- Cover image and overlaid text. -->
 <div class="home__cover">
-  <h1 class="home__cover__heading">Savas Labs</h1><hr>
-  <p class="home__cover__site-description">{{ site.description }}</p>
-  <i class="fa fa-angle-double-down fa-lg" id="home-down-arrow"></i>
+  <h1 class="home__cover__heading">We craft elegant Drupal web systems that <span class="nowrap">propel organizations</span></h1>
+  <div class="home__cover__cta">
+    <a href="/contact" class="button--arrow">Work with us</a>
+  </div>
+  <div class="home__cover__content">
+    <div class="home__cover__content__col-left">
+      <div class="home__cover__content__col-left__text">
+        <h2><strong>{{ site.title }}</strong> is a full-service web development and design shop, anchored in <span class="nowrap">Durham, NC</span></h2>
+      </div>
+    </div>
+    <div class="home__cover__content__col-right">
+      <div class="home__cover__content__col-right__text">
+        <h3>Designing applications <span class="nowrap">that users love</span></h3>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% include regions/service-icons.html class="icon--service--bold" %}

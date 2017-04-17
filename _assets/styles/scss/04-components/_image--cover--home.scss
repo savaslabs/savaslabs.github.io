@@ -1,0 +1,222 @@
+/**
+ * @file
+ *
+ * Styles for the home page cover image (above the fold).
+ */
+
+.home__cover {
+  align-items: center;
+  background: url('/assets/img/home-cover.jpg') $white 70% center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  position: relative;
+  text-align: center;
+
+  @include grid-media($small-screen-up) {
+    background-position: center center;
+  }
+
+  @include grid-media($medium-screen-up) {
+    height: 80vh;
+  }
+
+  @include grid-media($large-screen-up) {
+    height: 75vh;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    height: 100vh;
+  }
+
+  .home__cover__heading,
+  .home__cover__cta {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  .home__cover__heading {
+    color: $dark-teal;
+    display: block;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 84px;
+    max-width: 780px;
+    padding: $base-spacing * 2 $base-spacing;
+    text-shadow: lighten($eggshell, .1) 2px 2px 10px;
+
+    @include grid-media($medium-screen-up) {
+      font-size: 2em;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      font-size: 4em;
+      max-width: 1140px;
+    }
+  }
+
+  .home__cover__cta {
+
+    margin-bottom: 3em;
+
+    @include grid-media($medium-screen-up) {
+      bottom: 30%;
+      margin-bottom: 0;
+      position: absolute;
+    }
+
+    a {
+      background-color: transparentize($eggshell, .8);
+      font-size: 1em;
+
+      @include grid-media($medium-screen-up) {
+        font-size: 1.25em;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: lighten($teal, 10%);
+      }
+    }
+  }
+
+  .home__cover__content {
+    display: block;
+    width: 100%;
+
+    @include grid-media($medium-screen-up) {
+      bottom: 0;
+      display: flex;
+      height: 20%;
+      justify-content: flex-start;
+      left: 0;
+      position: absolute;
+    }
+
+    h2,
+    h3 {
+      color: $eggshell;
+      font-family: $copytext-font;
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    .home__cover__content__col-left,
+    .home__cover__content__col-right {
+      bottom: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .home__cover__content__col-left {
+      background-color: $magenta;
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+
+      @include grid-media($medium-screen-up) {
+        display: flex;
+        flex-basis: 33.33%;
+        justify-content: flex-end;
+      }
+
+      .home__cover__content__col-left__text {
+        display: block;
+        padding: $base-spacing / 2 $base-spacing;
+        position: relative;
+
+        @include grid-media($medium-screen-up) {
+          align-items: center;
+          display: flex;
+          justify-content: none;
+          max-width: 446px;
+          padding: 0 $base-spacing;
+          position: relative;
+          z-index: 1;
+
+          &::after {
+            background-image: url('assets/img/hp-arrow.svg');
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            right: -15%;
+            top: 0;
+            width: 50%;
+            z-index: -1;
+          }
+        }
+
+        h2 {
+          font-size: .85em;
+          font-style: italic;
+          text-align: center;
+
+          @include grid-media($medium-screen-up) {
+            font-size: 1em;
+            max-width: 240px;
+          }
+
+          @include grid-media($extra-large-screen-up) {
+            font-size: 1.25em;
+          }
+        }
+
+      }
+    }
+
+    .home__cover__content__col-right {
+      background-color: transparentize($dark-teal, .2);
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+
+      @include grid-media($medium-screen-up) {
+        display: flex;
+        flex-basis: 66.66%;
+        justify-content: flex-start;
+      }
+
+      .home__cover__content__col-right__text {
+        display: block;
+        padding: $base-spacing / 2 $base-spacing;
+        width: 100%;
+
+        @include grid-media($medium-screen-up) {
+          align-items: center;
+          display: flex;
+          justify-content: flex-start;
+          max-width: 890px;
+          padding: 0 $base-spacing * 2 0 $base-spacing * 5;
+        }
+
+        h3 {
+          font-size: 1em;
+          font-weight: 300;
+          text-align: center;
+          text-transform: uppercase;
+
+          @include grid-media($medium-screen-up) {
+            font-size: 1.5em;
+            text-align: left;
+            text-transform: none;
+          }
+
+          @include grid-media($extra-large-screen-up) {
+            font-size: 1.75em;
+          }
+        }
+      }
+    }
+  }
+}
