@@ -1,7 +1,7 @@
 <div class="case-study-block">
   <a class="case-study-block__link" href="{{ include.item.url }}">
     <div class="case-study-block__image" style="background-image: url({{ include.item.client_logo_light }});">
-      <img src="{{ include.item.block_image }}" alt="{{ include.item.project_title }}">
+      <img src="/assets/img/work/{{ include.item.slug }}/{{ include.item.slug }}-block.jpg" alt="{{ include.item.project_title }}">
     </div>
     {% if include.heading_level == "h2" %}
     <h2 class="case-study-block__title heading--underline--orange">{{ include.item.project_title }}</h2>
