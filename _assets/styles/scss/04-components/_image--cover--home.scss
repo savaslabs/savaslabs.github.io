@@ -33,7 +33,9 @@
 
   .home__cover__heading,
   .home__cover__cta {
+    display: block;
     margin: 0;
+    width: 100%;
   }
 
   .home__cover__heading {
@@ -107,7 +109,7 @@
     .home__cover__content__col-left,
     .home__cover__content__col-right {
       bottom: 0;
-      padding: $base-spacing / 2 0;
+      padding: 0;
       text-align: center;
     }
 
@@ -130,12 +132,12 @@
         position: relative;
 
         @include grid-media($medium-screen-up) {
-          display: table;
-          height: 100%;
+          align-items: center;
+          display: flex;
+          justify-content: none;
           max-width: 446px;
           padding: 0 $base-spacing;
-          position: absolute;
-          top: 0;
+          position: relative;
           z-index: 1;
 
           &::after {
@@ -144,6 +146,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             content: '';
+            display: block;
             height: 100%;
             position: absolute;
             right: -15%;
@@ -154,14 +157,11 @@
         }
 
         h2 {
-          display: block;
           font-size: .85em;
           font-style: italic;
           text-align: center;
-          vertical-align: middle;
 
           @include grid-media($medium-screen-up) {
-            display: table-cell;
             font-size: 1em;
             max-width: 240px;
           }
@@ -188,23 +188,23 @@
       }
 
       .home__cover__content__col-right__text {
-        display: table;
-        height: 100%;
+        display: block;
         padding: $base-spacing / 2 $base-spacing;
         width: 100%;
 
         @include grid-media($medium-screen-up) {
+          align-items: center;
+          display: flex;
+          justify-content: flex-start;
           max-width: 890px;
           padding: 0 $base-spacing * 2 0 $base-spacing * 5;
         }
 
         h3 {
-          display: table-cell;
           font-size: 1em;
           font-weight: 300;
           text-align: center;
           text-transform: uppercase;
-          vertical-align: middle;
 
           @include grid-media($medium-screen-up) {
             font-size: 1.5em;
