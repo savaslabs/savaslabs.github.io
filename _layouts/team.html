@@ -1,83 +1,62 @@
 ---
 layout: default
 ---
-<div class="team-member">
-    <header class="team-header">
-      <h1 class="team-member-name">{{ page.name }}</h1>
-      {% picture team_individual /team/{{ page.slug }}/{{ page.slug }}-square-outside.jpg alt="{{ page.name }}" %}
-      <h4 class="team-member-job-title">{{ page.job_title }}</h4>
-    </header>
-    <div class="team-links">
-      {% if page.drupal %}
-        <li><i class="fa fa-drupal"></i><a href="https://www.drupal.org/u/{{ page.drupal }}">&nbsp;&nbsp;Drupal</a></li>
-      {% endif %}
-      {% if page.github %}
-        <li><span class="fa fa-github"></span><a href="https://github.com/{{ page.github }}">&nbsp;&nbsp;Github</a></li>
-      {% endif %}
-      {% if page.twitter %}
-        <li><i class="fa fa-twitter"></i><a href="https://twitter.com/{{ page.twitter }}">&nbsp;&nbsp;Twitter</a></li>
-      {% endif %}
-      {% if page.linkedin %}
-        <li><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/{{ page.linkedin }}">&nbsp;&nbsp;LinkedIn</a></li>
-      {% endif %}
-      {% if page.stack-exchange %} 
-        <li><i class="fa fa-stack-exchange"></i><a href="http://stackexchange.com/users/{{ page.stack-exchange }}?tab=accounts">  Stack Exchange</a></li> 
-      {% endif %}
-      {% if page.website %}
-        <li><i class="fa fa-globe"></i><a href="{{ page.website }}">&nbsp;&nbsp;Website</a></li>
-      {% endif %}
-      {% if page.resume %}
-        <li><i class="fa fa-file-text"></i><a href="{{ page.resume }}">&nbsp;&nbsp;Resume</a></li>
-      {% endif %}
-    </div>
 
-    <article class="team-member-bio">
-        {{ content }}
-    </article>
+<div class="region--team-member-top" style="background-image: url(/assets/img/team/{{ page.slug }}/{{ page.slug }}-bg.jpg)">
+  <div class="region--team-member-top__image">
+    {% picture team_individual /team/{{ page.slug }}/{{ page.slug }}-square-outside.jpg alt="{{ page.name }}" %}
+  </div>
+  <div class="region--team-member-top__name">
+    <h1 class="heading--sans-serif heading--underline--orange">{{ page.name }}</h1>
+    <p class="paragraph--loud c-teal">{{ page.job_title }}</p>
+  </div>
+  <div class="region--team-member-top__bio">
+    {{ content }}
+  </div>
+  <div class="region--team-member-top__links">
+    <ul class="region--team-member-top__links__list">
+      {% if page.drupal %}<li class="region--team-member-top__links__list-item"><i class="fa fa-drupal"></i><a href="https://www.drupal.org/u/{{ page.drupal }}">&nbsp;&nbsp;Drupal</a></li>{% endif %}
+      {% if page.github %}<li class="region--team-member-top__links__list-item"><span class="fa fa-github"></span><a href="https://github.com/{{ page.github }}">&nbsp;&nbsp;Github</a></li>{% endif %}
+      {% if page.twitter %}<li class="region--team-member-top__links__list-item"><i class="fa fa-twitter"></i><a href="https://twitter.com/{{ page.twitter }}">&nbsp;&nbsp;Twitter</a></li>{% endif %}
+      {% if page.linkedin %}<li class="region--team-member-top__links__list-item"><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/{{ page.linkedin }}">&nbsp;&nbsp;LinkedIn</a></li>{% endif %}
+      {% if page.stack-exchange %} <li class="region--team-member-top__links__list-item"><i class="fa fa-stack-exchange"></i><a href="http://stackexchange.com/users/{{ page.stack-exchange }}?tab=accounts">&nbsp;&nbsp;Stack Exchange</a></li> {% endif %}
+      {% if page.website %}<li class="region--team-member-top__links__list-item"><i class="fa fa-globe"></i><a href="{{ page.website }}">&nbsp;&nbsp;Website</a></li>{% endif %}
+      {% if page.resume %}<li class="region--team-member-top__links__list-item"><i class="fa fa-file-text"></i><a href="{{ page.resume }}">&nbsp;&nbsp;Resume</a></li>{% endif %}
+    </ul>
+  </div>
+  {% if page.badges %}
+  <div class="region--team-member-top__badges">
+    {% for badge in page.badges %}
+    <a class="region--team-member-top__badges__badge" href="{{ badge.link }}">
+      <img src="/{{ badge.image }}" alt="{{ badge.alt }}">
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+<div class="region--team-member-gallery">
+  <div class="region--team-member-gallery__square">
+    <!--TODO: Use Jekyll picture tag plugin to generate picture element.-->
+    <img src="/assets/img/team/{{ page.slug }}/{{ page.slug }}-gallery-square.jpg" alt="{{ page.name }}">
+  </div>
+  <div class="region--team-member-gallery__cta">
+    <h2 class="heading--sans-serif">We Drive Results</h2>
+    <a href="/contact" class="link--arrow">Get in touch</a>
+  </div>
+  <div class="region--team-member-gallery__landscape">
+    <!--TODO: Use Jekyll picture tag plugin to generate picture element.-->
+    <img src="/assets/img/team/{{ page.slug }}/{{ page.slug }}-gallery-landscape.jpg" alt="{{ page.name }}">
+  </div>
+</div>
+{% assign counter = 0 %}
+{% for post in site.posts %}
+{% if post.author contains page.name %}{% assign counter = counter | plus: 1 %}
+{% endif %}{% endfor %}
+{% if counter > 0 %}
+<h2 class="heading--underline--orange">Recent Blog Posts</h2>
+{% include regions/blog-tiles--by-author.html author=page.name %}
+{% endif %}
 
-    {% if page.badges %}
-    <div class="team-badges">
-      {% for badge in page.badges %}
-        <a class="team-badges__badge" href="{{ badge.link }}">
-         <img src="/{{ badge.image }}" alt="{{ badge.alt }}">
-        </a>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-    {% assign counter = 0 %}
-    {% for post in site.posts %}
-      {% if post.author contains page.name %}{% assign counter = counter |plus: 1 %}
-    {% endif %}{% endfor %}
-    {% if counter > 0 %}
-    <div class="team-recent-blog flex-container wrapper">
-      <h3>Latest posts</h3>
-      <div class="cards">
-      {% assign blog-counter = 0 %}
-      {% for post in site.posts %}{% if blog-counter < 7 %}{% if post.author contains page.name %}{% assign blog-counter = blog-counter |plus: 1 %}
-        <div class="card">
-          <a class="url" href="{{ post.url }}">
-            <div class="card-image">
-            </div>
-            <div class="card-header">
-              {{ post.title }}
-            </div>
-            <div class="card-copy">
-              <p>By {{ post.author }}</p>
-              <p>{{ post.date | date: "%b %-d, %Y" }}</p>
-              {% if site.comment_server_enabled == 1 %}
-              <span class="comment-count"></span>
-              {% endif %}
-              <p>{{ post.summary | markdownify }}</p>
-            </div>
-          </a>
-        </div>
-      {% endif %}{% endif %}{% endfor %}
-      </div>
-    </div>
-    {% endif %}
-    <hr />
-    <div class="view-more-link">
-        <i class="fa fa-arrow-up"></i> <a href="/team"> View all team members</a>
-    </div>
+<div class="view-more-link flex-center">
+  <a href="/team" class="link--arrow">View all team members</a>
 </div>
