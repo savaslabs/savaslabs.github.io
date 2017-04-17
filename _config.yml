@@ -48,7 +48,7 @@ collections:
     output: false
   case-studies:
     output: true
-    permalink: /work/:path/
+    permalink: /results/case-studies/:path/
   services:
     output: true
     permalink: /services/:path/
