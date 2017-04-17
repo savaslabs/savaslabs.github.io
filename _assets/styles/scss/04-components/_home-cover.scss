@@ -47,7 +47,8 @@
     }
 
     @include grid-media($extra-large-screen-up) {
-      font-size: 3em;
+      font-size: 4em;
+      max-width: 1140px;
     }
   }
 
@@ -207,7 +208,7 @@
             text-transform: none;
           }
 
-          @include grid-media($large-screen-up) {
+          @include grid-media($extra-large-screen-up) {
             font-size: 1.75em;
           }
         }
