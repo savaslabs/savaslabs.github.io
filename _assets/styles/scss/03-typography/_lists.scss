@@ -45,6 +45,12 @@ ul,
 ol {
   margin-bottom: 1em;
   margin-left: 2em;
+
+  // Remove margin-bottom from nested lists.
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
 }
 
 // Keep ems from cascading in nested lists.
@@ -60,8 +66,3 @@ ol ol li {
   font-size: 1em !important;
 }
 // scss-lint:enable ImportantRule
-
-// Remove margin-bottom from nested uls.
-ul ul {
-  margin-bottom: 0;
-}

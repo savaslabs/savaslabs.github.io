@@ -43,7 +43,7 @@
       display: block;
     }
 
-    > div  {
+    > div {
       margin-bottom: $base-spacing;
 
       @include grid-media($medium-screen-up) {
