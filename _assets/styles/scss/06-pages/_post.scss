@@ -7,6 +7,7 @@
  * 04-components directory in separate files.
  */
 
+// Layout styles for post pages.
 .page--post {
   .region--header {
     border-bottom: solid 1px $light-grey;
@@ -29,6 +30,8 @@
       padding-left: $base-spacing * 2;
     }
 
+    // Apply padding to post info and post content rather than entire post main
+    // section so featured image can be full width.
     .region--post-header,
     .region--post-content {
       padding: 0 $base-spacing;
@@ -58,5 +61,72 @@
 
   .region--post-prev-next-links {
     clear: both;
+  }
+}
+
+// Post header.
+.region--post-header {
+  margin: $base-margin 0;
+
+  .region--post-header__title {
+    margin-bottom: 1.5em;
+  }
+}
+
+// Post information.
+.region--post-header__post-info {
+  @include grid-media($medium-screen-up) {
+    display: flex;
+
+    > div {
+      width: 50%;
+    }
+  }
+
+  p {
+    font-style: italic;
+    margin-bottom: .25em;
+  }
+
+  i {
+    margin-right: .5em;
+  }
+
+  .post-author {
+    &:not(:first-child) {
+      clear: left;
+      margin-top: $base-spacing;
+    }
+
+    picture {
+      float: left;
+      margin-right: $base-spacing;
+
+      img {
+        display: block;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+
+  .region--post-header__post-info__stats {
+    clear: both;
+    margin-top: $base-spacing * 1.5;
+
+    @include grid-media($medium-screen-up) {
+      clear: none;
+      margin-top: 0;
+    }
+
+    p {
+      display: inline-block;
+      margin-right: $base-spacing;
+
+      @include grid-media($medium-screen-up) {
+        display: block;
+        margin-right: 0;
+      }
+    }
   }
 }
