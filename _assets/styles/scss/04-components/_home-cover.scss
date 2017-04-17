@@ -6,82 +6,212 @@
 
 .home__cover {
   align-items: center;
-  background: url('/assets/img/home-cover-image/home-cover-code-400.png') $dark-teal center center no-repeat;
+  background: url('/assets/img/home-cover.jpg') $white center center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 88vh;
-  justify-content: center;
+  height: auto;
+  justify-content: flex-start;
   text-align: center;
+  position: relative;
 
-  // Use proper image depending on screen size and resolution.
-  @media (min-resolution: 192dpi) {
-    background-image: url('/assets/img/home-cover-image/home-cover-code-800.png');
-  }
-
-  // Adjust image height and image used based on screne size and resolution.
-  @include grid-media($small-screen-up) {
-    background-image: url('/assets/img/home-cover-image/home-cover-code-640.png');
-
-    @media (min-resolution: 192dpi) {
-      background-image: url('/assets/img/home-cover-image/home-cover-code-1280.png');
-    }
-  }
-
-  @include grid-media($horizontal-bar-mode) {
-    background-image: url('/assets/img/home-cover-image/home-cover-code-860.png');
-    height: 78vh;
-
-    @media (min-resolution: 192dpi) {
-      background-image: url('/assets/img/home-cover-image/home-cover-code-1720.png');
-    }
+  @include grid-media($medium-screen-up) {
+    height: 80vh;
   }
 
   @include grid-media($large-screen-up) {
-    background-image: url('/assets/img/home-cover-image/home-cover-code-1120.png');
-    height: 88vh;
-
-    @media (min-resolution: 192dpi) {
-      background-image: url('/assets/img/home-cover-image/home-cover-code-2240.png');
-    }
+    height: 75vh;
   }
 
   @include grid-media($extra-large-screen-up) {
-    background-image: url('/assets/img/home-cover-image/home-cover-code-1200.png');
-
-    @media (min-resolution: 192dpi) {
-      background-image: url('/assets/img/home-cover-image/home-cover-code.png');
-    }
+    height: 100vh;
   }
 
   .home__cover__heading,
-  .home__cover__site-description {
+  .home__cover__cta {
     margin: 0;
   }
 
   .home__cover__heading {
-    font-size: 2em;
-    font-weight: 400;
-    margin-top: 30px;
-  }
-
-  hr {
-    border: solid 2px $teal;
-    border-radius: .5px;
-    margin: 10px auto 15px;
-    width: 170px;
-  }
-
-  .home__cover__site-description {
-    color: $base-background-color;
+    color: $dark-teal;
+    display: block;
     font-size: 1.5em;
-    line-height: 1.3em;
-    width: 230px;
+    font-weight: 400;
+    max-width: 780px;
+    margin-top: 84px;
+    padding: $base-spacing * 2 $base-spacing;
+    text-shadow: lighten($eggshell, .1) 2px 2px 10px;
+
+    @include grid-media($medium-screen-up) {
+      font-size: 2em;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      font-size: 2.441em;
+    }
   }
 
-  i {
-    color: $teal;
-    font-size: 2.8em;
-    padding-top: 20px;
+  .home__cover__cta {
+
+    margin-bottom: 3em;
+
+    @include grid-media($medium-screen-up) {
+      bottom: 30%;
+      margin-bottom: 0;
+      position: absolute;
+    }
+
+    a {
+      background-color: transparentize($eggshell, .8);
+      font-size: 1em;
+
+      @include grid-media($medium-screen-up) {
+        font-size: 1.25em;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+       background-color: lighten($teal, 10%);
+      }
+    }
+  }
+
+  .home__cover__content {
+    display: block;
+    width: 100%;
+
+    @include grid-media($medium-screen-up) {
+      bottom: 0;
+      display: flex;
+      left: 0;
+      position: absolute;
+      height: 20%;
+      justify-content: flex-start;
+    }
+
+    h2,
+    h3 {
+      color: $eggshell;
+      font-family: $copytext-font;
+      font-weight: normal;
+      padding: 0;
+      margin: 0;
+    }
+
+    .home__cover__content__col-left,
+    .home__cover__content__col-right {
+      bottom: 0;
+      padding: $base-spacing / 2 0;
+      text-align: center;
+    }
+
+    .home__cover__content__col-left {
+      background-color: $magenta;
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+
+      @include grid-media($medium-screen-up) {
+        display: flex;
+        flex-basis: 33.33%;
+        justify-content: flex-end;
+      }
+
+      .home__cover__content__col-left__text {
+        display: block;
+        position: relative;
+        padding: $base-spacing / 2 $base-spacing;
+
+        @include grid-media($medium-screen-up) {
+          display: table;
+          height: 100%;
+          max-width: 446px;
+          padding: 0 $base-spacing;
+          position: absolute;
+          top: 0;
+          z-index: 1;
+
+          &:after {
+            background-image: url('assets/img/hp-arrow.svg');
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            height: 100%;
+            width: 50%;
+            right: -15%;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+          }
+        }
+
+        h2 {
+          display: block;
+          font-size: .85em;
+          font-style: italic;
+          text-align: center;
+          vertical-align: middle;
+
+          @include grid-media($medium-screen-up) {
+            display: table-cell;
+            font-size: 1em;
+            max-width: 240px;
+          }
+
+          @include grid-media($extra-large-screen-up) {
+            font-size: 1.25em;
+          }
+        }
+
+      }
+    }
+
+    .home__cover__content__col-right {
+      background-color: transparentize($dark-teal, .3);
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+
+      @include grid-media($medium-screen-up) {
+        display: flex;
+        flex-basis: 66.66%;
+        justify-content: flex-start;
+      }
+
+      .home__cover__content__col-right__text {
+        display: table;
+        height: 100%;
+        padding: $base-spacing / 2 $base-spacing;
+        width: 100%;
+
+        @include grid-media($medium-screen-up) {
+          max-width: 890px;
+          padding: 0 $base-spacing * 2 0 $base-spacing * 5;
+        }
+
+        h3 {
+          display: table-cell;
+          font-size: 1em;
+          font-weight: 300;
+          text-align: center;
+          text-transform: uppercase;
+          vertical-align: middle;
+
+          @include grid-media($medium-screen-up) {
+            font-size: 1.5em;
+            text-align: left;
+            text-transform: none;
+          }
+
+          @include grid-media($large-screen-up) {
+            font-size: 1.75em;
+          }
+        }
+      }
+    }
   }
 }
