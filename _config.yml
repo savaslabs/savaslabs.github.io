@@ -127,8 +127,21 @@ picture:
         itemprop: "image"
       ppi: [1, 2]
       source_1120:
+        media: "(min-width: 1120px)"
+        height: "539"
+        width: "959"
+      source_860:
+        media: "(min-width: 860px)"
+        height: "419"
+        width: "746"
+      source_640:
+        media: "(min-width: 640px)"
+        height: "484"
+        width: "860"
+      source_400:
         media: "(min-width: 400px)"
-        height: "535"
-        width: "926"
+        height: "360"
+        width: "640"
       source_default:
+        height: "225"
         width: "400"
