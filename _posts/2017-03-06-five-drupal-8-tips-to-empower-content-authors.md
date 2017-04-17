@@ -20,6 +20,8 @@ drupal_planet_summary: |
 
 Creating and publishing quality content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
 
+<img src="/assets/video/blog/test-recording.mov" class="blog-image-large" alt="Structured vs unstructured content">
+
 During the architectural phase, it's critical to craft the editorial experience to the specific needs of content authors to ensure the best content editing experience possible. Drupal 8 makes it even easier than previous versions for digital agencies to empower content creators and editors with the right tools to get the job done efficiently, and more enjoyably.
 
 Our five tips to enhance the content editing experience with Drupal 8 are:

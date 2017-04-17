@@ -149,6 +149,19 @@ gulp.task('clean:fonts', function(callback) {
     callback();
 });
 
+// Copies video files.
+gulp.task('build:videos', function() {
+    return gulp.src(paths.videoFiles)
+        .pipe(gulp.dest(paths.jekyllVideoFiles))
+        .pipe(gulp.dest(paths.siteVideoFiles))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('clean:videos', function(callback) {
+    del([paths.jekyllVideoFiles, paths.siteVideoFiles]);
+    callback();
+});
+
 // Runs jekyll build command.
 gulp.task('build:jekyll', function() {
     var shellCommand = 'bundle exec jekyll build --config _config.yml';
