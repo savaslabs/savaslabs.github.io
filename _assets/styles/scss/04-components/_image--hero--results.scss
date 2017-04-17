@@ -1,0 +1,32 @@
+/**
+ * @file
+ *
+ * Hero image styles.
+ */
+
+/*doc
+---
+title: Hero image
+name: images--hero
+category: Components
+parent: images
+---
+
+```html_example
+```
+
+*/
+
+.region--hero--results {
+
+  .region--hero__text {
+
+    h1 {
+      color: $eggshell;
+    }
+  }
+
+  .region--hero__image {
+    background-image: url('/assets/img/bg/results-hero.jpg');
+  }
+}
