@@ -1,0 +1,11 @@
+{% if page.previous.url %}
+<a href="{{ page.previous.url }}" class="pagination__previous"><i class="fa fa-angle-left "></i> Prev</a>
+{% else %}
+<span class="pagination__previous"></span>
+{% endif %}
+<a href="/blog" class="pagination__view-all">View All Blog Posts</a>
+{% if page.next.url %}
+<a href="{{ page.next.url }}" class="pagination__next"> Next <i class="fa fa-angle-right"></i></a>
+{% else %}
+<span class="pagination__next"></span>
+{% endif %}
