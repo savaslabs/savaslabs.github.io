@@ -1,0 +1,11 @@
+<div class="region--blog-tiles region--blog-tiles--team region--full-width">
+  <div class="region--blog-tiles__wrapper">
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+    {% if post.author contains include.author and count < 4 %}
+    {% include components/tile--blog.html post=post %}
+    {% assign count = count | plus:1 %}
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
