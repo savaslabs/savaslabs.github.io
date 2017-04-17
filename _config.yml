@@ -102,25 +102,6 @@ picture:
       ppi: [1, 2]
       source_default:
         width: "60"
-    case_study:
-      attr:
-        class: "image--case-study"
-        itemprop: "image"
-      ppi: [1, 2]
-      source_1200:
-        media: "(min-width: 1200px)"
-        width: "860"
-      source_860:
-        media: "(min-width: 860px)"
-        width: "592"
-      source_640:
-        media: "(min-width: 640px)"
-        width: "860"
-      source_400:
-        media: "(min-width: 400px)"
-        width: "640"
-      source_default:
-        width: "400"
     post_featured_image:
       attr:
         class: "image--post-featured-image"
