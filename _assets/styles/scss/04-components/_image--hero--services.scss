@@ -1,0 +1,46 @@
+/**
+ * @file
+ *
+ * Hero image styles.
+ */
+
+/*doc
+---
+title: Hero image
+name: images--hero
+category: Components
+parent: images
+---
+
+```html_example
+```
+
+*/
+
+.region--hero--services {
+  background-color: $magenta;
+  margin: 0;
+
+  .region--hero__text {
+    color: $eggshell;
+
+    h1 {
+      color: $eggshell;
+    }
+
+    a {
+      color: $eggshell;
+    }
+
+    p {
+      @include grid-media($medium-screen-up) {
+        @include paragraph-loud;
+      }
+    }
+  }
+
+  .region--hero__image {
+    background-image: url('/assets/img/bg/services-hero.jpg');
+    background-position: 10% center;
+  }
+}
