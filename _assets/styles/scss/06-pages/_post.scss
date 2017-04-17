@@ -18,21 +18,41 @@
 
   .page--post__main {
     @include grid-media($large-screen-up) {
-      @include grid-column(8);
-
       border-right: solid 1px $light-grey;
+      float: left;
       padding-bottom: $base-margin;
+      padding-left: $base-spacing * 1.5;
+      width: 66.666%;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      padding-left: $base-spacing * 2;
     }
 
     .region--post-header,
     .region--post-content {
-      padding-right: $base-spacing;
+      padding: 0 $base-spacing;
+
+      @include grid-media($medium-screen-up) {
+        padding: 0 $base-spacing * 2;
+      }
+
+      @include grid-media($large-screen-up) {
+        padding: 0 $base-spacing * 1.5 0 0;
+      }
+
+      @include grid-media($extra-large-screen-up) {
+        padding-right: $base-spacing * 2;
+      }
     }
   }
 
+  // See the _post-aside.scss region SCSS file for page-agnostic styles.
   .page--post__aside {
+    border-top: solid 1px $light-grey;
+
     @include grid-media($large-screen-up) {
-      @include grid-column(4);
+      border-top: 0;
     }
   }
 

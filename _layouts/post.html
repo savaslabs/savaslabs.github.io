@@ -33,15 +33,21 @@ layout: default
     {{ content }}
   </article>
 </div>
-<div class="page--post__aside">
-  <div class="region--post-aside__posts">
-    <h2 class="heading--sans-serif">Related Blog Posts</h2>
-    {% include regions/blog-tiles--related--post.html tags=page.tags limit=2 %}
+<div class="page--post__aside region--post-aside">
+  <div class="region--post-aside__section__wrapper--posts">
+    <div class="region--post-aside__section region--post-aside__section--posts">
+      <h2 class="heading--sans-serif c-grey h3">Related Blog Posts</h2>
+      {% include regions/blog-tiles--related--post.html tags=page.tags limit=2 %}
+    </div>
   </div>
-  <div class="region--post-aside__case-studies">
-    <h2 class="heading--sans-serif">Related Case Studies</h2>
-    {% include regions/case-study-blocks--related--post.html tags=page.tags limit=2 %}
-    <a href="/results" class="button--arrow--orange">Explore our work</a>
+  <div class="region--post-aside__section__wrapper--case-studies">
+    <div class="region--post-aside__section region--post-aside__section--case-studies">
+      <h2 class="heading--sans-serif c-grey h3">Related Case Studies</h2>
+      {% include regions/case-study-blocks--related--post.html tags=page.tags limit=2 %}
+      <div class="region--post-aside__section--case-studies__cta flex-center">
+        <a href="/results" class="button--arrow--orange">Explore our work</a>
+      </div>
+    </div>
   </div>
 </div>
 <div class="region--post-prev-next-links pagination">
