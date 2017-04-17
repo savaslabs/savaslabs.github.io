@@ -5,6 +5,10 @@
  */
 
 .page--home {
+  header {
+    position: absolute;
+  }
+
   .region--case-study-tiles {
     margin-top: 0;
   }
