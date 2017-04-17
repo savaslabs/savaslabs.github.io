@@ -1,0 +1,29 @@
+/**
+ * @file
+ *
+ * Styles for the pagination links on the main blog page.
+ */
+
+.pagination {
+  margin-top: $base-margin;
+  text-align: center;
+
+  .pagination__page-number {
+    padding: 0 $base-spacing * 1.5;
+  }
+
+  .pagination__previous,
+  .pagination__next {
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      color: $orange;
+    }
+
+    i {
+      font-size: 1.25em;
+      margin: 0 .5em;
+    }
+  }
+}

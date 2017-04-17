@@ -1,0 +1,50 @@
+/**
+ * @file
+ *
+ * Styles for previous-next links.
+ */
+
+/*doc
+---
+title: Previous & Next links
+name: previous-next-links
+category: Regions
+---
+
+```html_example
+<div class="region--post-prev-next-links pagination">
+  <a href="/2017/02/27/on-web-typography-review.html" class="pagination__previous"><i class="fa fa-angle-left "></i> Prev</a>
+  <a href="/blog" class="pagination__view-all">View All Blog Posts</a>
+  <a href="/2017/03/20/lightning-q1-2017.html" class="pagination__next"> Next <i class="fa fa-angle-right"></i></a>
+</div>
+```
+
+*/
+
+.region--post-prev-next-links {
+  align-items: center;
+  border-bottom: solid 1px $light-grey;
+  border-top: solid 1px $light-grey;
+  display: flex;
+
+  .pagination__previous,
+  .pagination__view-all,
+  .pagination__next {
+    display: block;
+    padding: $base-spacing * 1.5 $base-spacing;
+    width: 33.333%;
+
+    @include grid-media($large-screen-up) {
+      padding: $base-spacing * 1.5;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      padding: $base-spacing * 1.5 $base-spacing * 2;
+    }
+  }
+
+  .pagination__view-all {
+    border-left: solid 1px $light-grey;
+    border-right: solid 1px $light-grey;
+  }
+}

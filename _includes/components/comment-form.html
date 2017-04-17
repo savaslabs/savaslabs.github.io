@@ -1,0 +1,36 @@
+<form id="comment-form" class="comment-form">
+  <h4>Leave a comment</h4>
+
+  <div class="comment-form__field comment-form__field--name">
+    <label class="comment-form__field__label" for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+  </div>
+
+  <div class="comment-form__field comment-form__field--email">
+    <label class="comment-form__field__label" for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    <p class="comment-form__field__helptext">Savas Labs will never sell your email address or spam you.</p>
+  </div>
+
+  <div class="comment-form__field comment-form__field--comment">
+    <label class="comment-form__field__label" for="comment">Comment</label>
+    <textarea name="comment" id="comment" required></textarea>
+    <p class="comment-form__field__helptext">Plain text format only please.</p>
+  </div>
+
+  <input type="hidden" name="slug" id="slug" value="{{ page.url }}">
+  <input type="text" name="url" id="url">
+
+  <div class="comment-form__field comment-form__field--nocaptcha">
+    <div class="comment-form__field--nocaptcha__image">
+      <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
+    </div>
+    <div class="comment-form__field--nocaptcha__input">
+      <label class="comment-form__field__label" for="nocaptcha">What type of animal is the Savas Labs logo?</label>
+      <p class="comment-form__field__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
+      <input type="text" name="nocaptcha" id="nocaptcha" required>
+    </div>
+  </div>
+
+  <input type="submit" value="Post comment" id="submit" class="comment-form__submit">
+</form>

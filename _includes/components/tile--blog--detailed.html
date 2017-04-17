@@ -1,0 +1,44 @@
+<div class="tile--blog tile--blog--detailed tile">
+  <a href="{{ include.post.url }}" class="tile--blog__link">
+    <div class="tile--blog__content tile__content bg-light-teal">
+      {% if include.post.featured_image %}
+      {% capture image %}/assets/img{{ include.post.featured_image }}{% endcapture %}
+      {% else %}
+      <!--TODO: Add default image path-->
+      {% assign image = '/assets/img/' %}
+      {% endif %}
+      <div class="tile--blog__image" style="background-image: url({{ image }});">
+        {% assign primary_tag = include.post.tags | first %}
+        {% for data_tag in site.data.tags %}
+        {% if data_tag.slug == primary_tag %}
+        <p class="tile--blog--detailed__primary-tag">{{ data_tag.name }}</p>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="tile--blog__post-title">
+        {{ include.post.title | markdownify }}
+        <div class="tile--blog--detailed__author">
+          {% if include.post.primary_author %}{% for person in site.team %}
+          {% if person.name == include.post.primary_author %}
+          {% picture team_blog_tile /team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}
+          {% for person in site.team-former %}{% if person.name == include.post.primary_author %}
+          {% picture team_blog_tile /team/team-former/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}
+          {% else %}
+          {% for person in site.team %}{% if person.name == include.post.author %}
+          {% picture team_blog_tile /team/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}
+          {% for person in site.team-former %}{% if person.name == include.post.author %}
+          {% picture team_blog_tile /team/team-former/{{ person.slug }}/{{ person.slug }}-square-outside.jpg alt="{{ person.name }}"%}
+          {% endif %}{% endfor %}{% endif %}
+        </div>
+        <div class="tile--blog--detailed__author-bg"></div>
+      </div>
+    </div>
+    <div class="tile--blog__hover tile__hover bg-orange">
+      {{ include.post.summary | markdownify }}
+      <p class="link--cta link--cta--inverse">Read more</p>
+    </div>
+  </a>
+</div>

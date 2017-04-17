@@ -1,43 +1,15 @@
 ---
-layout: page
+layout: default
 title: Blog
 redirect_from:
   - /news/
+class: page--blog
 excerpt: Blabs by Savas Labs. Blog posts too!
 ---
-<p class="page-description">Check out our latest blog posts and information about upcoming events.</p>
-<div class="flex-container">
-    <div class="cards blog-cards">
-        {% for post in paginator.posts %}
-            <div class="card blog-card">
-                <a class="url" href="{{ post.url }}">
-                    <div class="card-image">
-                    </div>
-                    <div class="card-header">
-                        {{ post.title }}
-                    </div>
-                    <div class="card-copy">
-                      <p>By {{ post.author }}</p>
-                      <p>{{ post.date | date: "%b %-d, %Y" }}</p>
-                      {% if site.comment_server_enabled == 1 %}
-                        <span class="comment-count"></span>
-                      {% endif %}
-                      {% capture summary %}{{ post.summary }}{% endcapture %}
-                      <p>{{ summary | markdownify }}</p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-    </div>
-</div>
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="pagination__previous"><i class="fa fa-long-arrow-left"></i> Previous</a>
-  {% endif %}
-    <span class="pagination__page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="pagination__next">Next <i class="fa fa-long-arrow-right"></i></a>
-  {% endif %}
-</div>
+{% include regions/banner--heading.html heading="Blog" subheading="Technical. Practical. Inspiring." %}
+{% if paginator.page == 1 %}
+{% include regions/blog-tiles--latest.html %}
+{% endif %}
+{% include regions/blog-tiles--all.html %}
+{% include regions/banner--open-source.html class="bg-magenta" %}

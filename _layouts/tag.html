@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 ---
 
 {% comment %} Find the name of this tag page. {% endcomment %}
@@ -8,79 +8,36 @@ layout: page
         {% assign tag = tag.name %}
     {% endif %}
 {% endfor %}
+{% if tag == "Event" %}
+{% assign title = "Upcoming events" %}
+{% else %}
+{% assign title = tag %}
+{% endif %}
+{% include regions/banner--heading.html heading=title %}
 
-<header>
-    {% if tag == "Event" %}
-        <h1>Upcoming Events</h1>
-    {% else %}
-        <h1>{{ tag }}</h1>
-    {% endif %}
-  <hr>
-</header>
+{% comment %} See if there are any related case studies. {% endcomment %}
+{% assign items = site.case-studies | sort: 'weight' %}
+{% assign related_case_studies = 0 %}
+{% for item in items %}
+{% if item.tags contains page.tag %}
+{% assign related_case_studies = related_case_studies | plus: 1 %}
+{% endif %}
+{% endfor %}
 
-<div class="tag">
-  {% comment %} See if there are any related case studies. {% endcomment %}
-  {% assign items = site.case-studies | sort: 'weight' %}
-  {% assign related_case_studies = 0 %}
-  {% for item in items %}
-    {% if item.tags contains page.tag %}
-      {% assign related_case_studies = related_case_studies | plus: 1 %}
-    {% endif %}
-  {% endfor %}
+{% comment %} If so, output the top-weighted three. {% endcomment %}
+{% if related_case_studies > 0 %}
+<div class="tag__related-case-studies">
+  <h2 class="heading--underline--orange">Related Case Studies</h2>
+  {% include regions/case-study-blocks--related--post.html tags=page.tag limit=3 %}
+</div>
+<div class="view-more-link">
+  <a href="/work" class="button--arrow--orange">View all case studies</a>
+</div>
+<hr>
+{% endif %}
 
-  {% comment %} If so, output the top-weighted three. {% endcomment %}
-  {% if related_case_studies > 0 %}
-  <div class="tag__related-case-studies">
-    <h2>Related case studies</h2>
-    <div class="flex-container">
-      <div class="tag__related-case-studies__content">
-        {% assign counter = 0 %}
-        {% for item in items %}
-          {% if item.tags contains page.tag and counter < 3 %}
-            <div class="case-studies__case-study" style="background-image: url({{ item.client_hero_image }});">
-              <h3><a href="{{ item.url }}">{{ item.project_title }}</a></h3>
-            </div>
-            {% assign counter = counter | plus: 1 %}
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <div class="view-more-link">
-    <a href="/work">View all case studies <i class="fa fa-arrow-right"></i></a>
-  </div>
-  <hr>
-  {% endif %}
-
-  <div class="tag__related-posts">
-    <h2>Related blog posts</h2>
-    <div class="flex-container">
-      <div class="cards blog-cards">
-        {% if site.tags[page.tag] %}
-        {% for post in site.tags[page.tag] %}
-        <div class="card blog-card">
-          <a class="url" href="{{ post.url }}">
-            <div class="card-image">
-            </div>
-            <div class="card-header">
-              {{ post.title }}
-            </div>
-            <div class="card-copy">
-              <p>By {{ post.author }}</p>
-              {% if site.comment_server_enabled == 1 %}
-              <span class="comment-count"></span>
-              {% endif %}
-              <p>{{ post.summary | markdownify }}</p>
-            </div>
-          </a>
-        </div>
-        {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-  </div>
-
-  <div class="view-more-link">
-    <a href="/blog">View all blog posts and events <i class="fa fa-arrow-right"></i></a>
-  </div>
+<div class="tag__related-posts">
+  <h2 class="heading--underline--orange">Related Blog Posts</h2>
+  {% include regions/blog-tiles--related--post.html tags=page.tag limit=8 %}
+  <a href="/blog" class="link--arrow">View all blog</a>
 </div>

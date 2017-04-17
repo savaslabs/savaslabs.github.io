@@ -50,22 +50,28 @@
 @import 'scss/04-components/key-value-list-item';
 @import 'scss/04-components/logos';
 @import 'scss/04-components/tables';
+@import 'scss/04-components/tiles';
+@import 'scss/04-components/tiles--blog';
+@import 'scss/04-components/tiles--blog--detailed';
+@import 'scss/04-components/tiles--blog--latest';
 @import 'scss/04-components/tiles--service';
 
 // TODO: refactor and remove.
-@import 'scss/04-components/cards';
-@import 'scss/04-components/post-top';
-@import 'scss/04-components/previous-next-links';
-@import 'scss/04-components/tag';
+@import 'scss/04-components/fa-icons';
 @import 'scss/04-components/team-member-top';
 @import 'scss/04-components/work-case-study-cover-image';
 
 // Region rules.
 // TODO: Add any more regions needed.
+@import 'scss/05-regions/banner--heading';
+@import 'scss/05-regions/blog-tiles--all';
+@import 'scss/05-regions/blog-tiles--latest';
 @import 'scss/05-regions/case-study-blocks';
 @import 'scss/05-regions/header';
+@import 'scss/05-regions/post-aside';
 @import 'scss/05-regions/service-icons';
 @import 'scss/05-regions/service-tiles';
 
 // Layout and page-level rules.
+@import 'scss/06-pages/post';
 @import 'scss/06-pages/service';

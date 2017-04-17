@@ -48,7 +48,8 @@ Use the class `table--minimal` to produce the following:
 */
 
 // Table refill.
-.table--minimal {
+.table--minimal,
+article table {
   @include table-minimal;
 
   // Override some of the default styles.
@@ -80,4 +81,10 @@ Use the class `table--minimal` to produce the following:
       list-style-type: none;
     }
   }
+}
+
+// Add space before and after tables in articles.
+article table {
+  margin-bottom: 3em;
+  margin-top: 3em;
 }

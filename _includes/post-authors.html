@@ -1,8 +1,0 @@
-{% assign author_string = include.author %}
-{% for person in site.team %}
-  {% if include.author contains person.name %}
-    {% capture author_link %}<a href="{{ person.name | downcase | replace: ' ', '-'  | prepend: "/team/" | strip_newlines }}">{{ person.name }}</a>{% endcapture %}
-    {% capture author_string %}{{ author_string | replace: person.name, author_link }}{% endcapture %}
-  {% endif %}
-{% endfor %}
-<p>By {{ author_string }}</p>

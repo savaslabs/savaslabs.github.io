@@ -1,0 +1,87 @@
+/**
+ * @file
+ *
+ * Latest blog tile styles.
+ */
+
+/*doc
+---
+title: Latest blog tile
+name: tile--blog--latest
+category: Components
+parent: tiles
+---
+
+```html_example
+<div style="max-width: 400px;">
+  <div class="tile--blog--latest bg-light-teal" style="background-image: url(/assets/img/blog/on-web-typography-featured.jpg);">
+    <a href="/2017/02/27/on-web-typography-review.html" class="tile--blog--latest__link" style="height: 300px;">
+      <div class="tile--blog--latest__text">
+        <h2 class="tile--blog--latest__text__title heading--sans-serif heading--bold h4">On Web Typography - a Book Review</h2>
+        <p class="tile--blog--latest__text__author">By Anne Tomasevich</p>
+        <p class="tile--blog--latest__text__date">Feb 27, 2017</p>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+*/
+
+.tile--blog--latest {
+  @include cover-image;
+
+  .tile--blog--latest__link {
+    @include hover-border-bottom;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: $orange;
+        width: 100%;
+      }
+
+      .tile--blog--latest__text {
+        background-color: transparentize($eggshell, .1);
+        color: $dark-teal;
+
+        h2 {
+          color: $dark-teal;
+        }
+      }
+    }
+
+    .tile--blog--latest__text {
+      @include ease;
+
+      background-color: transparentize($dark-teal, .1);
+      color: $eggshell;
+      padding: $base-spacing;
+
+      @include grid-media($large-screen-up) {
+        padding: $base-spacing $base-spacing * 2;
+      }
+
+      h2 {
+        @include ease;
+
+        color: $eggshell;
+      }
+
+      .tile--blog--latest__text__author,
+      .tile--blog--latest__text__date {
+        display: inline;
+        font-style: italic;
+        margin-bottom: 0;
+      }
+
+      .tile--blog--latest__text__date {
+        float: right;
+      }
+    }
+  }
+}

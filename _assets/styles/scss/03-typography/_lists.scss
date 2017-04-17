@@ -9,7 +9,7 @@
 title: Lists
 name: lists
 category: Typography
----
+--
 */
 
 /*doc
@@ -45,6 +45,12 @@ ul,
 ol {
   margin-bottom: 1em;
   margin-left: 2em;
+
+  // Remove margin-bottom from nested lists.
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
 }
 
 // Keep ems from cascading in nested lists.

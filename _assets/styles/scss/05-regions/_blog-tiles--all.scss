@@ -1,0 +1,26 @@
+/**
+ * @file
+ *
+ * Styles for the blog tiles region on the main blog page.
+ */
+
+.region--blog-tiles--all {
+  .region--blog-tiles--all__tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > div {
+      flex-basis: 100%;
+      padding: $base-spacing;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 50%;
+      }
+
+      @include grid-media($large-screen-up) {
+        flex-basis: 33%;
+      }
+    }
+  }
+}

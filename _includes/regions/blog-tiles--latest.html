@@ -1,0 +1,13 @@
+<div class="region--blog-tiles--latest region--full-width">
+  <div class="region--blog-tiles--latest__wrapper">
+    {% assign count = 0 %}
+    {% for post in site.posts limit:3 %}
+    {% if count == 0 %}
+    {% include components/tile--blog--latest.html post=post featured=1 %}
+    {% else %}
+    {% include components/tile--blog--latest.html post=post featured=0 %}
+    {% endif %}
+    {% assign count = count | plus:1 %}
+    {% endfor %}
+  </div>
+</div>

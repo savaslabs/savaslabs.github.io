@@ -1,13 +1,13 @@
 <div class="tile--blog tile">
   <a href="{{ include.post.url }}" class="tile--blog__link">
     <div class="tile--blog__content tile__content bg-light-teal">
-      {% if post.featured_image %}
-      <div class="tile--blog__image" style="background-image: url(/assets/img{{ include.post.featured_image }});">
-        {% else %}
-        <!--TODO: Default image-->
-        <!--<div class="tile--blog__image" style="background-image: url('/assets/img/blog/default.jpg');">-->
-        {% endif %}
-      </div>
+      {% if include.post.featured_image %}
+      {% capture image %}/assets/img{{ include.post.featured_image }}{% endcapture %}
+      {% else %}
+      <!--TODO: Add default image path-->
+      {% assign image = '/assets/img/' %}
+      {% endif %}
+      <div class="tile--blog__image" style="background-image: url({{ image }});"></div>
       <div class="tile--blog__post-title">
         {{ include.post.title | markdownify }}
       </div>

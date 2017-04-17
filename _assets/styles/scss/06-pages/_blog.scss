@@ -1,0 +1,20 @@
+/**
+ * @file
+ *
+ * Styles for the main blog page.
+ */
+
+.page--blog {
+  .region--banner--heading {
+    background: url('/assets/img/bg/diamond-texture.svg') $teal repeat;
+  }
+
+  .region--blog-tiles--latest,
+  .region--footer {
+    margin-top: 0;
+  }
+
+  .region--banner--open-source {
+    margin-bottom: 0;
+  }
+}

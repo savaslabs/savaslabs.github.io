@@ -1,0 +1,22 @@
+<div class="post-comments">
+
+  {% if page.comments_enabled == 0 %}
+  <p>Comments are disabled for this post.</p>
+
+  {% else %}
+  <div class="expander">
+    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Comments!</a>
+
+    <div id="js-expander-content" class="expander-content">
+
+      <!-- If there are existing comments, output them here. -->
+      <div id="post-comments" class="post-comments"></div>
+
+      <!-- New comment form -->
+  {% include components/comment-form.html %}
+
+    </div><!-- comments and comment form -->
+  </div><!-- expander -->
+  {% endif %}
+  <hr>
+</div>
