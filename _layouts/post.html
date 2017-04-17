@@ -16,15 +16,21 @@ layout: default
   {% endif %}
   <div class="region--post-header">
     <h1 class="region--post-header__title">{{ page.title }}</h1>
-    {{ author_markup }}
-    <p><i class="fa fa-calendar"></i>{{ page.date | date: "%b %-d, %Y" }} </p>
-    <p><i class="fa fa-tags"></i>{{ tags_content }}</p>
-    {% if site.comment_server_enabled == 1 %}
-    <p><span id="comment-count"></span></p>
-    {% endif %}
+    <div class="region--post-header__post-info">
+      <div class="region--post-header__post-info__authors">
+        {{ author_markup }}
+      </div>
+      <div class="region--post-header__post-info__stats">
+        <p><i class="fa fa-calendar"></i>{{ page.date | date: "%b %-d, %Y" }} </p>
+        <p><i class="fa fa-tags"></i>{{ tags_content }}</p>
+        {% if site.comment_server_enabled == 1 %}
+        <p><span id="comment-count"></span></p>
+        {% endif %}
+      </div>
+    </div>
     {% if page.disclaimer %}
     <div class="region--post-header__disclaimer">
-      <h5>Proceed with caution</h5>
+      <h2 class="h4">Proceed with caution</h2>
       {{ page.disclaimer | markdownify }}
     </div>
     {% endif %}
@@ -45,7 +51,7 @@ layout: default
       <h2 class="heading--sans-serif c-grey h3">Related Case Studies</h2>
       {% include regions/case-study-blocks--related--post.html tags=page.tags limit=2 %}
       <div class="region--post-aside__section--case-studies__cta flex-center">
-        <a href="/results" class="button--arrow--orange">Explore our work</a>
+        <a href="/results" class="button--arrow--orange">Our work</a>
       </div>
     </div>
   </div>
