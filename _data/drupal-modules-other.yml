@@ -1,0 +1,9 @@
+# Drupal modules we maintain or contribute to, to be output as simple links on
+# the Open Source page.
+
+- name: Authorize.net Advanced (CIM) Payment Gateway
+  number_commits: 1
+  link: https://www.drupal.org/project/uc_cim
+- name: Behat Drupal Extension
+  number_commits: 2
+  link: https://www.drupal.org/project/drupalextension
