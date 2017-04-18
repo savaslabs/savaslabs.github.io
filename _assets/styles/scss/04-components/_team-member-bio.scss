@@ -75,6 +75,7 @@
 .region--team-member-top {
   margin: 0 auto;
   max-width: $max-width;
+  padding-bottom: 3em;
 }
 
 .region--team-member-top__image_name {
@@ -246,6 +247,6 @@
     height: auto;
     margin-bottom: $base-spacing * 2;
     max-width: 80%;
-    width: 140px;
+    width: 180px;
   }
 }
