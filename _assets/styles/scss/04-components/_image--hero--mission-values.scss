@@ -1,0 +1,41 @@
+/**
+ * @file
+ *
+ * Hero image styles.
+ */
+
+/*doc
+---
+title: Hero image
+name: images--hero
+category: Components
+parent: images
+---
+
+```html_example
+```
+
+*/
+
+.region--hero--mission-values {
+  background-color: $dark-teal;
+  background-image: url('/assets/img/bg/mission-values-hero.jpg');
+  background-position: center center;
+  background-size: cover;
+  margin: 0;
+
+  .region--hero__text {
+    color: $eggshell;
+
+    h1 {
+      color: $eggshell;
+      text-shadow: lighten($dark-teal, .1) 2px 2px 2px;
+    }
+
+    p {
+      @include grid-media($medium-screen-up) {
+        @include paragraph-loud;
+      }
+    }
+  }
+}
