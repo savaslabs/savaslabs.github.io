@@ -12,6 +12,10 @@ category: Components
 ---
 
 ```html_example
+<div class="flash-alert">Here's something important!</div>
+<div class="flash-error">Oh no, an error message!</div>
+<div class="flash-notice">Just some information.</div>
+<div class="flash-success">Yay, success!</div>
 ```
 
 */
@@ -23,3 +27,10 @@ category: Components
 .flash-notice { @include flash($notice-color); }
 
 .flash-success { @include flash($success-color); }
+
+.flash-alert,
+.flash-error,
+.flash-notice,
+.flash-success {
+  color: $dark-teal;
+}

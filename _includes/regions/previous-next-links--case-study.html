@@ -8,15 +8,16 @@
 {% assign previous = case_studies[forloop.index] %}
 {% endif %}
 {% endfor %}
-
-{% if previous.url %}
-<a href="{{ previous.url }}" class="pagination__previous"><i class="fa fa-angle-left "></i> Prev</a>
-{% else %}
-<span class="pagination__previous"></span>
-{% endif %}
-<a href="/results/case-studies" class="pagination__view-all">View All Case Studies</a>
-{% if next.url %}
-<a href="{{ next.url }}" class="pagination__next"> Next <i class="fa fa-angle-right"></i></a>
-{% else %}
-<span class="pagination__next"></span>
-{% endif %}
+<div class="outer-container">
+  {% if previous.url %}
+  <a href="{{ previous.url }}" class="pagination__previous"><i class="fa fa-angle-left "></i> Prev</a>
+  {% else %}
+  <span class="pagination__previous"></span>
+  {% endif %}
+  <a href="/results/case-studies" class="pagination__view-all">View All Case Studies</a>
+  {% if next.url %}
+  <a href="{{ next.url }}" class="pagination__next"> Next <i class="fa fa-angle-right"></i></a>
+  {% else %}
+  <span class="pagination__next"></span>
+  {% endif %}
+</div>

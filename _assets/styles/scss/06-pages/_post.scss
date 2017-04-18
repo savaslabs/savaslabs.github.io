@@ -13,10 +13,6 @@
     border-bottom: solid 1px $light-grey;
   }
 
-  .page-content {
-    @include outer-container;
-  }
-
   .page--post__main {
     @include grid-media($large-screen-up) {
       border-right: solid 1px $light-grey;
@@ -48,13 +44,24 @@
         padding-right: $base-spacing * 2;
       }
     }
+
+    .region--post-content {
+      color: $dark-teal;
+
+      .caption {
+        color: $grey;
+        font-style: italic;
+      }
+    }
   }
 
   // See the _post-aside.scss region SCSS file for page-agnostic styles.
   .page--post__aside {
+    border-bottom: solid 1px $light-grey;
     margin-top: 0;
 
     @include grid-media($large-screen-up) {
+      border-bottom: 0;
       border-top: 0;
     }
   }
@@ -68,12 +75,17 @@
     }
   }
 
-  .region--post-prev-next-links--mobile {
+  .region--prev-next-links--mobile {
     display: flex;
+    margin-top: 3em;
 
     @include grid-media($large-screen-up) {
       display: none;
     }
+  }
+
+  .region--footer {
+    margin-top: 0;
   }
 }
 
@@ -142,4 +154,6 @@
       }
     }
   }
+
+
 }
