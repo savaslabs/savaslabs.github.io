@@ -1,5 +1,6 @@
 ---
 layout: case-study
+featured: 1
 weight: -6
 project_title: Duke Today Redesign
 slug: duke-today
