@@ -69,7 +69,6 @@
     }
 
     @include grid-media($extra-large-screen-up) {
-      flex-basis: 46.66%;
       padding-left: 2em;
     }
   }
