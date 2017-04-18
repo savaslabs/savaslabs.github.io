@@ -79,36 +79,13 @@ $(document).ready(
             });
     });
 
-// COMMENT COUNT ON CARDS.
-$(document).ready(
-    function () {
-        var commentServer = '{{ site.comment_server_url }}';
-        var requri = commentServer + '/api/comments/count';
-        $.getJSON(
-            requri, function (json) {
-                $(".card .url").each(function () {
-                    var truncatedSlug = $(this).attr('href').substring(1, $(this).attr('href').length);
-                    if (truncatedSlug in json.data[0]) {
-                        var commentString = 'comments';
-                        if (json.data[0][truncatedSlug] == 1) {
-                            commentString = 'comment';
-                        }
-                        $(this).find(".comment-count").html('<a href="' + $(this).attr('href') + '">' + '<i class="fa fa-comment-o"></i>' + json.data[0][truncatedSlug] + ' ' + commentString + '</a>');
-                    }
-                    else {
-                        $(this).find(".comment-count").remove();
-                    }
-                });
-            });
-    });
-
 // Export comment functionality and include functionality for comment count button
 function enableCommentForm($id) {
     if ($id == '#js-expander-trigger') {
-        $('#js-expander-trigger').toggleClass("expander-hidden");
+        $('#js-expander-trigger').toggleClass("expander--hidden");
     }
     if ($id == '#comment-count') {
-        $('#js-expander-trigger').removeClass("expander-hidden");
+        $('#js-expander-trigger').removeClass("expander--hidden");
     }
 
     // Create variable for request URI.
@@ -129,7 +106,7 @@ function enableCommentForm($id) {
 
                 // If there are comments, include a link to the comment form.
                 if (json.data.length > 0) {
-                    outhtml = '<p class="comment-form-link" id="comment-form-link"><a href="#comment-form">Leave a comment</a></p>'
+                    outhtml = '<p class="region--comments__link" id="region--comments__link"><a href="#form--comment">Leave a comment</a></p>'
                 }
 
                 // Loop through comments.
@@ -148,13 +125,13 @@ function enableCommentForm($id) {
                         // Create HTML output.
                         outhtml = outhtml + '<div class="' + commentClass + '">';
                         if (json.data[i].savasian == 1) {
-                            outhtml = outhtml + '<img src="/assets/img/logo.png" class="comment__logo" alt="Savas Labs logo">'
+                            outhtml = outhtml + '<img src="/assets/img/logo.svg" class="comment__logo" alt="Savas Labs logo">'
                         }
-                        outhtml = outhtml + '<h5>' + name + ' says:</h5>';
-                        outhtml = outhtml + '<p class="comment-date">' + created + '</p>';
-                        outhtml = outhtml + '<p class="comment-text">' + comment + '</p></div>';
+                        outhtml = outhtml + '<p><span class="c-magenta">' + name + '</span> says:</p>';
+                        outhtml = outhtml + '<p class="comment__date">' + created + '</p>';
+                        outhtml = outhtml + '<p class="comment__text">' + comment + '</p></div>';
                     });
-                $('#post-comments').html(outhtml);
+                $('#region--comments__comments').html(outhtml);
             },
             error: function (e) {
             }
@@ -189,7 +166,7 @@ function enableCommentForm($id) {
                         // Check to see if we got an error from the server.
                         if (data.success == false) {
                             var message = '<div class="flash-error">' + data.message + '</div>';
-                            $('#post-comments').prepend(message);
+                            $('#region--comments__comments').prepend(message);
                             return;
                         }
 
@@ -199,25 +176,34 @@ function enableCommentForm($id) {
 
                         // Create HTML output.
                         var thanks = '<div class="flash-success">Thanks for submitting your comment!</div>';
-                        $('#post-comments').append(thanks);
+                        $('#region--comments__comments').append(thanks);
                         $('.flash-success').delay(10000).fadeOut();
                         form.trigger('reset');
                         form.hide();
                         submit.val('Post comment').removeAttr('disabled');
 
                         // Append new comment.
-                        var outhtml = '';
-                        outhtml = outhtml + '<div class="comment new"><h5>' + name + ' says:</h5>';
-                        outhtml = outhtml + '<p class="comment-date">' + created + '</p>';
-                        outhtml = outhtml + '<p class="comment-text">' + comment + '</p></div>';
+                        var commentClass = 'comment';
+                        if (json.data[i].savasian == 1) {
+                          commentClass = 'comment savasian';
+                        }
+
+                        // Create HTML output.
+                        outhtml = outhtml + '<div class="' + commentClass + '">';
+                        if (json.data[i].savasian == 1) {
+                          outhtml = outhtml + '<img src="/assets/img/logo.svg" class="comment__logo" alt="Savas Labs logo">'
+                        }
+                        outhtml = outhtml + '<p><span class="c-magenta">' + name + '</span> says:</p>';
+                        outhtml = outhtml + '<p class="comment__date">' + created + '</p>';
+                        outhtml = outhtml + '<p class="comment__text">' + comment + '</p></div>';
 
                         // Append with fadeIn, see http://stackoverflow.com/a/978731
                         var item = $(outhtml).hide().fadeIn(800);
-                        $('#post-comments').append(item);
+                        $('#region--comments__comments').append(item);
 
                         // Comment form is hidden but should show if user clicks
                         // the link.
-                        $('#comment-form-link').click(function () {
+                        $('#region--comments__link').click(function () {
                             form.show();
                         });
                     },
@@ -238,7 +224,7 @@ function enableCommentForm($id) {
                           });
                         }
                         else {
-                          $('#comment-form').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
+                          $('#form--comment').prepend('<div class="flash-error">' + e.responseJSON.message  + '</div>');
                         }
                     }
                 });

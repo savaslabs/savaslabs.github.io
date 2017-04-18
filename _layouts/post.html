@@ -62,8 +62,6 @@ layout: default
 <div class="region--prev-next-links region--prev-next-links--post pagination">
   {% include regions/previous-next-links--post.html %}
 </div>
-<div class="region--post-comments">
-  {% if site.comment_server_enabled == 1 %}
-  {% include regions/comments.html %}
-  {% endif %}
-</div>
+{% if site.comment_server_enabled == 1 %}
+{% include regions/comments.html %}
+{% endif %}

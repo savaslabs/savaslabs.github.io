@@ -16,14 +16,5 @@ category: Components
 
 */
 
-// Override browser styles to match hover styles to our color palette.
-// scss-lint:disable ColorVariable
-[type="text"]:focus,
-[type="email"]:focus,
-textarea:focus {
-  border-color: lighten($orange, 25%);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .06), 0 0 5px rgba(246, 67, 62, .7);
-}
-// scss-lint:enable ColorVariable
 
 
