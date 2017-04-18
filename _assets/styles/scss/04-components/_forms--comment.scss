@@ -17,10 +17,10 @@ parent: forms
 
 */
 
-.post-comments {
+.form__comment {
 
   // General form field styles.
-  .comment-form__field {
+  .form__comment__field {
     margin-bottom: 1.5em;
 
     &__label {
@@ -36,12 +36,12 @@ parent: forms
   }
 
   // Text inputs.
-  .comment-form__field--name,
-  .comment-form__field--email {
+  .form__comment__field--name,
+  .form__comment__field--email {
     max-width: 375px;
   }
 
-  .comment-form__field--comment {
+  .form__comment__field--comment {
     max-width: 600px;
 
     // This removes extra space under textarea in some browsers.
@@ -51,7 +51,7 @@ parent: forms
   }
 
   // Helptext below fields.
-  .comment-form__field__helptext {
+  .form__comment__field__helptext {
     font-size: .8em;
   }
 
@@ -63,11 +63,9 @@ parent: forms
   // scss-lint:enable IdSelector
 
   // Nocaptcha field.
-  .comment-form__field--nocaptcha {
-    @include grid-column(12);
+  .form__comment__field--nocaptcha {
 
     &__image {
-      @include grid-column(3);
       text-align: center;
 
       img {
@@ -76,7 +74,6 @@ parent: forms
     }
 
     &__input {
-      @include grid-column(9);
 
       input {
         width: 100px;
@@ -85,8 +82,8 @@ parent: forms
   }
 
   // Submit button.
-  .comment-form__submit {
-    @include button;
+  .form__comment__submit {
+    @include button-dark;
     margin-top: 0;
   }
 

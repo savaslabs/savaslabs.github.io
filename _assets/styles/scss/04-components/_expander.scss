@@ -12,38 +12,65 @@ category: Components
 ---
 
 ```html_example
+<div class="expander">
+  <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander--hidden">
+    <p>Expander</p>
+  </a>
+  <div id="js-expander-content" class="expander-content region">
+    <h2>Expander content</h2>
+  </div>
+</div>
 ```
 
 */
 
 .expander {
-
   .expander-trigger {
-    color: $magenta;
+    background-color: $eggshell;
+    border-bottom: solid 1px $light-grey;
     cursor: pointer;
     display: block;
+    font-weight: bold;
     font-size: 1.2em;
-    margin-bottom: $expander-toggle-size;
-    padding-bottom: $expander-toggle-size / 4;
-    text-align: center;
+    overflow: auto;
     text-decoration: none;
     user-select: none;
 
-    &::before {
-      content: '\25BC';
-      font-size: $expander-arrow-width;
-      margin-right: .5em;
+    p {
+      color: $grey;
+      display: block;
+      margin-bottom: 0;
+      padding: $base-spacing 0;
+      text-transform: uppercase;
+
+      @include grid-media($medium-screen-up) {
+        @include grid-column(8);
+        @include grid-shift(2);
+      }
+
+      &::before {
+        content: '\25BC';
+        font-size: $expander-arrow-width;
+        margin-right: .5em;
+      }
     }
   }
 
-  .expander-hidden {
-    &::before {
+  .expander--hidden {
+    p::before {
       content: '\25BA';
       font-size: $expander-arrow-width;
     }
 
     + .expander-content {
       display: none;
+    }
+  }
+
+  .expander-content {
+    @include grid-media($medium-screen-up) {
+      @include grid-column(8);
+      @include grid-shift(2);
     }
   }
 }
