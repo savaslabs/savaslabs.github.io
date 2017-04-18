@@ -10,7 +10,11 @@
 
     .region--comments__link {
       font-weight: bold;
-      margin-bottom: $base-spacing;
+    }
+
+    // Style the success message above the new comment.
+    .flash-success {
+      margin-top: 1.5em;
     }
   }
 }

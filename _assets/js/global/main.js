@@ -106,7 +106,7 @@ function enableCommentForm($id) {
 
                 // If there are comments, include a link to the comment form.
                 if (json.data.length > 0) {
-                    outhtml = '<p class="region--comments__link" id="region--comments__link"><a href="#form--comment">Leave a comment</a></p>'
+                    outhtml = '<a href="#form--comment" id="region--comments__link" class="region--comments__link link--inline">Leave a comment</a>'
                 }
 
                 // Loop through comments.
@@ -182,18 +182,9 @@ function enableCommentForm($id) {
                         form.hide();
                         submit.val('Post comment').removeAttr('disabled');
 
-                        // Append new comment.
-                        var commentClass = 'comment';
-                        if (json.data[i].savasian == 1) {
-                          commentClass = 'comment savasian';
-                        }
-
                         // Create HTML output.
-                        outhtml = outhtml + '<div class="' + commentClass + '">';
-                        if (json.data[i].savasian == 1) {
-                          outhtml = outhtml + '<img src="/assets/img/logo.svg" class="comment__logo" alt="Savas Labs logo">'
-                        }
-                        outhtml = outhtml + '<p><span class="c-magenta">' + name + '</span> says:</p>';
+                        var outhtml = '';
+                        outhtml = outhtml + '<div class="comment new"><p><span class="c-magenta">' + name + '</span> says:</p>';
                         outhtml = outhtml + '<p class="comment__date">' + created + '</p>';
                         outhtml = outhtml + '<p class="comment__text">' + comment + '</p></div>';
 
