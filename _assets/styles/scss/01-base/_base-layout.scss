@@ -40,6 +40,12 @@
   }
 }
 
+// Sets max width and centers content in browser window.
+.outer-container {
+  @include outer-container;
+  width: 100%;
+}
+
 // Add a class for divs that contain an item that is horizontally and vertically
 // centered via flexbox.
 .flex-center {
