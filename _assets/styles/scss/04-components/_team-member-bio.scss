@@ -4,30 +4,6 @@
  * Team member bio styles.
  */
 
-/*doc
----
-title: Team member bio
-name: team-member-bio
-category: Components
----
-Note that the component template uses the Jekyll Picture Tag plugin to create a
-`<picture>` element for the team member photo.
-
-```html_example
-<div class="team-member-bio">
-  <a class="team-member-bio__link" href="/company/chris-russo/">
-    <div class="team-member-bio__image">
-      <img src="/assets/img/team/chris/chris-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Chris Russo">
-    </div>
-    <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Chris Russo</h3>
-    <p class="team-member-bio__title">Principal Director</p>
-    <p class="team-member-bio__description">Chris does his best to ensure that his team is learning and growing and that our clients feel like partners.</p>
-  </a>
-</div>
-```
-
-*/
-
 .team-member-bio {
 
   // Set the max width of the component to the max-width of the image at each
@@ -85,5 +61,191 @@ Note that the component template uses the Jekyll Picture Tag plugin to create a
   h3,
   p {
     transition: color .2s ease-in-out;
+  }
+}
+
+
+// Team member page.
+.region--team-member-top__wrapper {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.region--team-member-top {
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+.region--team-member-top__image_name {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.region--team-member-top__image {
+  flex-basis: 100%;
+  padding: 0;
+
+  @include grid-media($small-screen-up) {
+    flex-basis: 35%;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    flex-basis: 30%;
+  }
+
+  img {
+    margin-top: 0;
+
+    @include grid-media($small-screen-up) {
+      margin-top: 2em;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      padding-right: 1em;
+    }
+  }
+}
+
+.region--team-member-top__name {
+  flex-basis: 100%;
+  padding: $base-spacing;
+
+  @include grid-media($small-screen-up) {
+    display: flex;
+    flex-basis: 65%;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 $base-spacing;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    flex-basis: 70%;
+    padding: $base-spacing;
+  }
+
+  h1 {
+    color: $dark-teal;
+    font-family: $copytext-font;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 0;
+
+    &::after {
+      margin: 10px 0 .2em;
+    }
+  }
+
+  p {
+    font-weight: 300;
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+    @include grid-media($extra-large-screen-up) {
+      margin-bottom: .75em;
+    }
+  }
+}
+
+.region--team-member-top__bio_links {
+  display: flex;
+  flex-wrap: wrap;
+
+  > div {
+    padding: 0 $base-spacing;
+
+    @include grid-media($small-screen-up) {
+      padding: $base-spacing * 2 $base-spacing 0;
+    }
+  }
+}
+
+.region--team-member-top__links {
+  flex-basis: 100%;
+
+  @include grid-media($medium-screen-up) {
+    flex-basis: 35%;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    flex-basis: 30%;
+  }
+
+  ul {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+
+    @include grid-media($medium-screen-up) {
+      display: block;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: .5em;
+      padding: .5em;
+
+      @include grid-media($medium-screen-up) {
+        display: block;
+      }
+
+      a {
+        color: $dark-teal;
+
+        &:hover,
+        &:focus,
+        &active {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+.region--team-member-top__bio {
+  flex-basis: 100%;
+
+  @include grid-media($medium-screen-up) {
+    flex-basis: 65%;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    flex-basis: 40%;
+  }
+}
+
+.region--team-member-top__badges {
+  align-items: center;
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include grid-media($medium-screen-up) {
+    margin-left: 35%;
+    width: 65%;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    align-items: center;
+    flex-basis: 30%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  a {
+    text-align: center;
+  }
+
+  img {
+    height: auto;
+    margin-bottom: $base-spacing * 2;
+    max-width: 80%;
+    width: 140px;
   }
 }
