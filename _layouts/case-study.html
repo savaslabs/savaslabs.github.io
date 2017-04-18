@@ -3,25 +3,29 @@ layout: default
 ---
 
 <div class="case-study__header" style="background-image: url(/assets/img/work/{{ page.slug }}/{{ page.slug }}-laptop.jpg);">
-  <div class="case-study__header__text">
-    <h1 class="heading--bold heading--underline--orange">{{ page.project_title }}</h1>
-    {{ page.project_description | markdownify }}
-    <a class="case-study__header__link link--arrow" href="{{ page.client_url }}">View site</a>
+  <div class="case-study__header__wrapper">
+    <div class="case-study__header__text">
+      <h1 class="heading--bold heading--underline--orange">{{ page.project_title }}</h1>
+      {{ page.project_description | markdownify }}
+      <a class="case-study__header__link link--arrow" href="{{ page.client_url }}">View site</a>
+    </div>
   </div>
 </div>
 
-<div class="case-study__client">
-  <img class="case-study__client__logo" src="{{ page.client_logo }}" alt="{{ page.client_name }} logo" width="{{ page.client_logo_width }}" height="{{ page.client_logo_height }}">
-  {{ page.client_description | markdownify }}
-</div>
+<div class="case-study__client-highlights">
+  <div class="case-study__client-highlights__client">
+    <img class="case-study__client__logo" src="{{ page.client_logo }}" alt="{{ page.client_name }} logo" width="{{ page.client_logo_width }}" height="{{ page.client_logo_height }}">
+    {{ page.client_description | markdownify }}
+  </div>
 
-<div class="case-study__highlights">
-  <h2>Project highlights</h2>
-  <ul>
-    {% for item in page.project_highlights %}
-    <li class="case-study__highlights__highlight"><p>{{ item }}</p></li>
-    {% endfor %}
-  </ul>
+  <div class="case-study__client-highlights__highlights">
+    <h2>Project highlights</h2>
+    <ul>
+      {% for item in page.project_highlights %}
+      <li class="case-study__client-highlights__highlights__highlight"><p>{{ item }}</p></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
 
 <div class="case-study__objective-approach">
