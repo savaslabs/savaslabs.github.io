@@ -1,0 +1,22 @@
+# Presentations by Savas Labs team members.
+
+- title: "Total value of ownership: Drupal 8 and beyond"
+  event: DrupalCon New Orleans 2016
+  team-member: Chris Russo
+  link: https://events.drupal.org/neworleans2016/sessions/total-value-ownership-drupal-8-and-beyond
+  icon:
+- title: "Getting Started with Docker for Development"
+  event: DrupalCamp Atlanta 2016
+  team-member: Lisa Ridley
+  link: http://drupalcampatlanta.com/file/drupalcamp-atlanta-2016-getting-started-docker-development-lisa-ridley
+  icon:
+- title: "Personal Git Workflow... FOR EVERYONE!"
+  event: DrupalCamp Asheville 2015
+  team-member: Chris Russo
+  link: http://chrisarusso.github.io/asheville.html#/
+  icon:
+- title: "Building a Custom Theme in Drupal 8"
+  event: DrupalCamp Asheville 2015
+  team-member: Anne Tomasevich
+  link: http://annetee.github.io/create-a-custom-theme-d8/#/
+  icon:
