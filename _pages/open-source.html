@@ -5,3 +5,17 @@ permalink: "/results/open-source/"
 class: page--results__open-source
 excerpt: Open source contributions by Savas Labs
 ---
+
+{% include regions/open-source-hero.html %}
+
+<div class="region--drupal-contributions region--text-block-list region">
+  <h2 class="heading--underline--orange">Giving Back to the Drupal Community</h2>
+  <p>Savas Labs maintains and contributes to a number of Drupal modules.</p>
+  {% include regions/text-block-list.html items=site.data.drupal-modules-featured %}
+  <div class="delimited-list">
+    <p>And many others:</p>
+    {% for module in site.data.drupal-modules-other %}
+    <a href="{{ module.link }}" class="delimited-list__item">{{ module.name }} ({{ module.number_commits }})</a>
+    {% endfor %}
+  </div>
+</div>

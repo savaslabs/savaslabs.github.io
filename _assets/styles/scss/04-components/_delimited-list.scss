@@ -1,0 +1,35 @@
+/**
+ * @file
+ *
+ * Delimited list styles.
+ */
+
+/*doc
+---
+title: Delimited list
+name: delimited-list
+category: Components
+---
+
+```html_example
+
+```
+
+*/
+
+.delimited-list {
+  > p,
+  > a {
+    display: inline;
+  }
+
+  .delimited-list__item {
+    &::after {
+      content: ' |';
+    }
+
+    &:last-child::after {
+      content: '';
+    }
+  }
+}

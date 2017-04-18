@@ -1,0 +1,27 @@
+# Drupal modules we maintain or contribute to, to be output as text block list
+# items on the Open Source page.
+
+- name: Drush Rebuild
+  description: |
+    Drush Rebuild is a utility for rebuilding your local development environments.
+  link: https://www.drupal.org/project/rebuild
+- name: Tournament
+  description: |
+    This module provides a full tournament management system for Drupal.
+  link: https://www.drupal.org/project/tournament
+- name: Salesforce Suite
+  description: |
+    This suite of modules supports integration with Salesforce by synchronizing Drupal entities with Salesforce objects.
+  link: https://www.drupal.org/project/salesforce
+- name: SubDrush
+  description: |
+    Drush integration for Sublime Text 3.
+  link: https://www.drupal.org/sandbox/kostajh/1978148
+- name: Drush Code Deploy
+  description: |
+    Drush Code Deploy provides a set of commands for deploying code changes via Git to a remote environment.
+  link: https://www.drupal.org/sandbox/kostajh/1965494
+- name: Drupal Up
+  description: |
+    Drupal-up is a Drush extension that facilitates building virtual machines for local development of Drupal sites
+  link: https://www.drupal.org/project/drupal_up
