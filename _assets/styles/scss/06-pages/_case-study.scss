@@ -1,0 +1,209 @@
+/**
+ * @file
+ *
+ * Styles for the Case Studies page.
+ */
+
+.page--case-study {
+  color: $dark-teal;
+
+  header {
+    position: absolute;
+  }
+
+  .case-study__header {
+    background-color: $white;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 160%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 60%;
+    padding-top: 84px;
+
+    @include grid-media($medium-screen-up) {
+      background-position: 65% center;
+      background-size: cover;
+      min-height: calc(50vh - 84px);
+      padding-bottom: 0;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      background-position: right center;
+    }
+
+    .case-study__header__wrapper {
+      display: flex;
+      justify-content: flex-start;
+      margin: 0 auto;
+      max-width: $max-width;
+      padding: $base-spacing * 2 $base-spacing;
+    }
+
+    .case-study__header__text {
+      color: $dark-teal;
+      flex-basis: 100%;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 44%;
+      }
+
+      h1 {
+        color: $dark-teal;
+        font-size: 1.75em;
+
+        @include grid-media($medium-screen-up) {
+          font-size: 2.074em;
+        }
+      }
+
+      p {
+        @include grid-media($large-screen-up) {
+          @include paragraph-loud;
+        }
+      }
+    }
+  }
+
+  // Wrapper widths.
+  .case-study__client-highlights,
+  .case-study__objective-approach,
+  .case-study__results {
+    display: flex;
+    margin: $base-spacing * 3 auto;
+    max-width: $max-width;
+
+    > div {
+      padding: $base-spacing;
+    }
+
+    div {
+      &:first-child {
+        @include grid-media($medium-screen-up) {
+          padding-right: 3em;
+        }
+      }
+    }
+
+    h2 {
+      color: $dark-teal;
+      font-family: $copytext-font;
+      font-weight: 700;
+    }
+  }
+
+  // Client / Highlights.
+  .case-study__client-highlights {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+
+    .case-study__client-highlights__client {
+      color: $grey;
+      flex-basis: 100%;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 50%;
+        flex-wrap: nowrap;
+        padding-right: $base-spacing * 6;
+      }
+
+      @include grid-media($extra-large-screen-up) {
+        flex-basis: 66.66%;
+      }
+
+      img {
+        display: block;
+        height: auto;
+        margin: 0 1em 1em 0;
+        max-width: 200px;
+
+        @include grid-media($small-screen-up) {
+
+        }
+
+        @include grid-media($large-screen-up) {
+          display: inline-block;
+          float: left;
+          margin: 0 2em 1em 0;
+        }
+      }
+    }
+
+    .case-study__client-highlights__highlights {
+      display: flex;
+      flex-basis: 100%;
+      flex-direction: column;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 50%;
+        flex-wrap: nowrap;
+      }
+
+      @include grid-media($extra-large-screen-up) {
+        flex-basis: 33.33%;
+      }
+
+      h2 {
+        border-bottom: solid 1px $dark-teal;
+      }
+
+      ul {
+        margin: 0;
+
+        li {
+          color: $dark-teal;
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  // Objective / Approach.
+  .case-study__objective-approach {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+
+    .case-study__objective-approach__objective,
+    .case-study__objective-approach__approach {
+      display: flex;
+      flex-basis: 100%;
+      flex-direction: column;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 50%;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  // Results.
+  .case-study__results {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+
+    .case-study__results__results,
+    .case-study__results__details {
+      display: flex;
+      flex-basis: 100%;
+      flex-direction: column;
+
+      @include grid-media($medium-screen-up) {
+        flex-basis: 50%;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  .region--client-quote--last {
+    margin-bottom: 0;
+  }
+
+  .pagination {
+    margin-bottom: 3em;
+    margin-top: 0;
+  }
+}
