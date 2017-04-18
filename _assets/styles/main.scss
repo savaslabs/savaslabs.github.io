@@ -33,6 +33,7 @@
 @import 'scss/04-components/buttons--submit';
 @import 'scss/04-components/case-study-block';
 @import 'scss/04-components/comment';
+@import 'scss/04-components/delimited-list';
 @import 'scss/04-components/disclaimer';
 @import 'scss/04-components/expander';
 @import 'scss/04-components/footer-navigation';
@@ -47,14 +48,12 @@
 @import 'scss/04-components/header-navigation--menu-link';
 @import 'scss/04-components/icons';
 @import 'scss/04-components/icons--service';
-@import 'scss/04-components/image--hero';
-@import 'scss/04-components/image--cover--home';
+@import 'scss/04-components/image--hero--home';
 @import 'scss/04-components/image--hero--company';
 @import 'scss/04-components/image--hero--mission-values';
 @import 'scss/04-components/image--hero--results';
 @import 'scss/04-components/image--hero--services';
 @import 'scss/04-components/iframes';
-@import 'scss/04-components/images';
 @import 'scss/04-components/images--blog-post';
 @import 'scss/04-components/images--grayscale';
 @import 'scss/04-components/images--hero';
@@ -63,22 +62,14 @@
 @import 'scss/04-components/pagination';
 @import 'scss/04-components/tables';
 @import 'scss/04-components/team-member-bio';
+@import 'scss/04-components/text-block-list-item';
 @import 'scss/04-components/tiles--blog';
 @import 'scss/04-components/tiles--blog--detailed';
 @import 'scss/04-components/tiles--blog--latest';
 @import 'scss/04-components/tiles--case-study';
 @import 'scss/04-components/tiles--service';
 @import 'scss/04-components/tiles';
-
-// TODO: Refactor and remove.
-@import 'scss/04-components/contact-block';
 @import 'scss/00-lib/font-awesome/font-awesome';
-@import 'scss/04-components/team-member-badges';
-@import 'scss/04-components/team-member-posts';
-@import 'scss/04-components/team-member-top';
-@import 'scss/04-components/work-case-study';
-@import 'scss/04-components/work-case-study-cover-image';
-@import 'scss/04-components/work-table';
 
 // Region rules.
 @import 'scss/05-regions/banner';
@@ -106,6 +97,7 @@
 @import 'scss/05-regions/service-icons';
 @import 'scss/05-regions/service-tiles';
 @import 'scss/05-regions/team-member-list';
+@import 'scss/05-regions/text-block-list';
 
 // Page rules (layout).
 @import 'scss/06-pages/blog';

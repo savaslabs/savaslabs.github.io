@@ -1,9 +1,11 @@
 ---
-layout: page-narrow
+layout: page
 title: Web designer
 permalink: "/web-designer/"
 excerpt: |
   Savas Labs is seeking to employ a web designer.
+redirect_to:
+  - https://savas-labs.breezy.hr/
 ---
 
 ### The position
