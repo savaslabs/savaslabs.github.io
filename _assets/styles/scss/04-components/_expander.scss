@@ -40,12 +40,29 @@ category: Components
       color: $grey;
       display: block;
       margin-bottom: 0;
-      padding: $base-spacing 0;
+      padding: $base-spacing;
       text-transform: uppercase;
 
       @include grid-media($medium-screen-up) {
         @include grid-column(8);
         @include grid-shift(2);
+
+        padding: $base-spacing 0;
+      }
+
+      @include grid-media($large-screen-up) {
+        @include grid-column(10);
+        @include grid-shift(1);
+      }
+
+      @include grid-media($extra-large-screen-up) {
+        @include grid-column(8);
+        @include grid-shift(2);
+      }
+
+      @include grid-media($max-width-up) {
+        @include grid-column(6);
+        @include grid-shift(3);
       }
 
       &::before {
@@ -71,6 +88,21 @@ category: Components
     @include grid-media($medium-screen-up) {
       @include grid-column(8);
       @include grid-shift(2);
+    }
+
+    @include grid-media($large-screen-up) {
+      @include grid-column(10);
+      @include grid-shift(1);
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      @include grid-column(8);
+      @include grid-shift(2);
+    }
+
+    @include grid-media($max-width-up) {
+      @include grid-column(6);
+      @include grid-shift(3);
     }
   }
 }

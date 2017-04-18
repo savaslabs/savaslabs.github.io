@@ -17,7 +17,8 @@ include an underline transition on hover.</p>
 ```
 */
 
-p a {
+p a,
+.link--inline {
   border-bottom: .1em solid transparentize($orange, .9);
   color: $orange;
 
