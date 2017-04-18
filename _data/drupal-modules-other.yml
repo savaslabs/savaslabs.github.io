@@ -7,9 +7,6 @@
 - name: Behat Drupal Extension
   number_commits: 2
   link: https://www.drupal.org/project/drupalextension
-- name: BigPipe
-  number_commits: 0
-  link: https://www.drupal.org/project/big_pipe
 - name: Commerce Discount
   number_commits: 1
   link: https://www.drupal.org/project/commerce_discount
@@ -24,7 +21,7 @@
   link: https://www.drupal.org/project/security_check
 - name: Drush
   number_commits: 2
-  link: https://www.drupal.org/project/drush
+  link: https://github.com/drush-ops/drush
 - name: Drush Daemon API
   number_commits: 2
   link: https://www.drupal.org/project/drushd
@@ -34,9 +31,6 @@
 - name: Entityblock
   number_commits: 1
   link: https://www.drupal.org/project/entityblock
-- name: Feeds
-  number_commits: 0
-  link: https://www.drupal.org/project/feeds
 - name: inuit.css
   number_commits: 8
   link: https://www.drupal.org/project/inuit
