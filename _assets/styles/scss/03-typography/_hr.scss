@@ -12,11 +12,13 @@ category: Typography
 ---
 
 ```html_example
+<hr>
 ```
 
 */
 
 hr {
+  border-color: $light-grey;
   clear: both;
   margin: $base-margin 0;
 }
