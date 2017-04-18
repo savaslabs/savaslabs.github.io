@@ -80,7 +80,7 @@ layout: default
 {% if page.client_quote %}
 {% for client in site.data.clients %}
 {% if client.project == page.client_quote %}
-{% include regions/client-quote.html class="region--client-quote--dark" client=client %}
+{% include regions/client-quote.html class="region--client-quote--dark region--client-quote--last" client=client %}
 {% endif %}
 {% endfor %}
 {% endif %}
