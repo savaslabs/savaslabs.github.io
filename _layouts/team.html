@@ -2,37 +2,43 @@
 layout: default
 ---
 
-<div class="region--team-member-top" style="background-image: url(/assets/img/team/{{ page.slug }}/{{ page.slug }}-bg.jpg)">
-  <div class="region--team-member-top__image">
-    {% picture team_individual /team/{{ page.slug }}/{{ page.slug }}-square-outside.jpg alt="{{ page.name }}" %}
+<div class="region--team-member-top__wrapper" style="background-image: url(/assets/img/team/{{ page.slug }}/{{ page.slug }}-bg.jpg)">
+  <div class="region--team-member-top">
+    <div class="region--team-member-top__image_name">
+      <div class="region--team-member-top__image">
+        {% picture team_individual /team/{{ page.slug }}/{{ page.slug }}-square-outside.jpg alt="{{ page.name }}" %}
+      </div>
+      <div class="region--team-member-top__name">
+        <h1 class="heading--sans-serif heading--underline--orange">{{ page.name }}</h1>
+        <p class="paragraph--loud c-teal">{{ page.job_title }}</p>
+      </div>
+    </div>
+    <div class="region--team-member-top__bio_links">
+      <div class="region--team-member-top__links">
+        <ul class="region--team-member-top__links__list">
+          {% if page.drupal %}<li class="region--team-member-top__links__list-item"><a href="https://www.drupal.org/u/{{ page.drupal }}"><i class="fa fa-drupal"></i>&nbsp;&nbsp;Drupal</a></li>{% endif %}
+          {% if page.github %}<li class="region--team-member-top__links__list-item"><a href="https://github.com/{{ page.github }}"><i class="fa fa-github"></i>&nbsp;&nbsp;Github</a></li>{% endif %}
+          {% if page.twitter %}<li class="region--team-member-top__links__list-item"><i class="fa fa-twitter"></i><a href="https://twitter.com/{{ page.twitter }}">&nbsp;&nbsp;Twitter</a></li>{% endif %}
+          {% if page.linkedin %}<li class="region--team-member-top__links__list-item"><a href="https://www.linkedin.com/in/{{ page.linkedin }}"><i class="fa fa-linkedin"></i>&nbsp;&nbsp;LinkedIn</a></li>{% endif %}
+          {% if page.stack-exchange %} <li class="region--team-member-top__links__list-item"><a href="http://stackexchange.com/users/{{ page.stack-exchange }}?tab=accounts"><i class="fa fa-stack-exchange"></i>&nbsp;&nbsp;Stack Exchange</a></li> {% endif %}
+          {% if page.website %}<li class="region--team-member-top__links__list-item"><a href="{{ page.website }}"><i class="fa fa-globe"></i>&nbsp;&nbsp;Website</a></li>{% endif %}
+          {% if page.resume %}<li class="region--team-member-top__links__list-item"><a href="{{ page.resume }}"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Resume</a></li>{% endif %}
+        </ul>
+      </div>
+      <div class="region--team-member-top__bio">
+        {{ content }}
+      </div>
+      {% if page.badges %}
+      <div class="region--team-member-top__badges">
+        {% for badge in page.badges %}
+        <a class="region--team-member-top__badges__badge" href="{{ badge.link }}">
+          <img src="/{{ badge.image }}" alt="{{ badge.alt }}">
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
   </div>
-  <div class="region--team-member-top__name">
-    <h1 class="heading--sans-serif heading--underline--orange">{{ page.name }}</h1>
-    <p class="paragraph--loud c-teal">{{ page.job_title }}</p>
-  </div>
-  <div class="region--team-member-top__bio">
-    {{ content }}
-  </div>
-  <div class="region--team-member-top__links">
-    <ul class="region--team-member-top__links__list">
-      {% if page.drupal %}<li class="region--team-member-top__links__list-item"><i class="fa fa-drupal"></i><a href="https://www.drupal.org/u/{{ page.drupal }}">&nbsp;&nbsp;Drupal</a></li>{% endif %}
-      {% if page.github %}<li class="region--team-member-top__links__list-item"><span class="fa fa-github"></span><a href="https://github.com/{{ page.github }}">&nbsp;&nbsp;Github</a></li>{% endif %}
-      {% if page.twitter %}<li class="region--team-member-top__links__list-item"><i class="fa fa-twitter"></i><a href="https://twitter.com/{{ page.twitter }}">&nbsp;&nbsp;Twitter</a></li>{% endif %}
-      {% if page.linkedin %}<li class="region--team-member-top__links__list-item"><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/{{ page.linkedin }}">&nbsp;&nbsp;LinkedIn</a></li>{% endif %}
-      {% if page.stack-exchange %} <li class="region--team-member-top__links__list-item"><i class="fa fa-stack-exchange"></i><a href="http://stackexchange.com/users/{{ page.stack-exchange }}?tab=accounts">&nbsp;&nbsp;Stack Exchange</a></li> {% endif %}
-      {% if page.website %}<li class="region--team-member-top__links__list-item"><i class="fa fa-globe"></i><a href="{{ page.website }}">&nbsp;&nbsp;Website</a></li>{% endif %}
-      {% if page.resume %}<li class="region--team-member-top__links__list-item"><i class="fa fa-file-text"></i><a href="{{ page.resume }}">&nbsp;&nbsp;Resume</a></li>{% endif %}
-    </ul>
-  </div>
-  {% if page.badges %}
-  <div class="region--team-member-top__badges">
-    {% for badge in page.badges %}
-    <a class="region--team-member-top__badges__badge" href="{{ badge.link }}">
-      <img src="/{{ badge.image }}" alt="{{ badge.alt }}">
-    </a>
-    {% endfor %}
-  </div>
-  {% endif %}
 </div>
 <div class="region--team-member-gallery">
   <div class="region--team-member-gallery__square">
@@ -58,5 +64,5 @@ layout: default
 {% endif %}
 
 <div class="view-more-link flex-center">
-  <a href="/team" class="link--arrow">View all team members</a>
+  <a href="/company/#team" class="link--arrow">View all team members</a>
 </div>
