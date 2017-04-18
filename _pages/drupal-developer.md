@@ -1,9 +1,11 @@
 ---
-layout: page-narrow
+layout: page
 title: Drupal developer
 permalink: "/drupal-developer/"
 excerpt: |
   Savas Labs hiring for Drupal developer.
+redirect_to:
+  - https://savas-labs.breezy.hr/
 ---
 
 <p style="text-align:center;">

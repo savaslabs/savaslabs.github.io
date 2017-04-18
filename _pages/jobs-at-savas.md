@@ -1,11 +1,13 @@
 ---
-layout: page-narrow
+layout: page
 title: Opportunities at Savas Labs
 permalink: "/jobs-at-savas/"
 excerpt: |
  The needs at Savas Labs are constantly evolving, but *​*we are always**​ on the
  lookout for talented and engaged people to help us deliver excellence to the
  interwebs and beyond for our clients.
+redirect_to:
+  - https://savas-labs.breezy.hr/
 ---
 
 <p class="page-description">

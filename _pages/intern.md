@@ -1,9 +1,11 @@
 ---
-layout: page-narrow
+layout: page
 title: Internship
 permalink: "/intern/"
 excerpt: |
   Savas Labs is hiring for internship positions.
+redirect_to:
+  - https://savas-labs.breezy.hr/
 ---
 
 ### The position
