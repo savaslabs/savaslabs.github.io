@@ -46,6 +46,13 @@ parent: images
 
 }
 
+// Hero image takes 100% of horizontal width.
+// Text content center over the hero image and
+// weighted towards the bottom of the image.
+.region--hero--full-width {
+
+}
+
 // Hero image takes 50% of horizontal width.
 .region--hero--half-width {
 
