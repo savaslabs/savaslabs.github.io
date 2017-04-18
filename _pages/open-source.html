@@ -19,3 +19,12 @@ excerpt: Open source contributions by Savas Labs
     {% endfor %}
   </div>
 </div>
+
+{% include regions/banner--drupal-meetup.html class="bg-orange" %}
+
+<div class="region--presentations region--text-block-list region">
+  <h2 class="heading--underline--orange">Presentations</h2>
+  {% include regions/text-block-list--presentations.html items=site.data.presentations %}
+</div>
+
+{% include regions/cta--explore-our-work.html %}

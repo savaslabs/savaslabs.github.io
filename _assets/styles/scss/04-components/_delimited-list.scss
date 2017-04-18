@@ -24,7 +24,15 @@ category: Components
   }
 
   .delimited-list__item {
+    color: $orange;
+
+    &:hover,
+    &:focus {
+      color: $magenta;
+    }
+
     &::after {
+      color: $dark-teal;
       content: ' |';
     }
 
