@@ -21,8 +21,6 @@
 
 // Region with hero image takes 50% of vertical height.
 .region--hero--half-height {
-  background-color: $dark-teal;
-
   .region--hero__wrapper {
     @include grid-media($medium-screen-up) {
       min-height: calc(50vh - 84px);
@@ -152,6 +150,33 @@
 
     @include grid-media($large-screen-up) {
       flex-basis: 65%;
+    }
+  }
+}
+
+// Hero region, split in three equal width columns.
+.region--hero--three-col {
+  .region--hero__wrapper {
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    @include grid-media($large-screen-up) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .region--hero__col {
+    flex-basis: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: 200px;
+
+    @include grid-media($medium-screen-up) {
+      display: flex;
+      flex-basis: 33.33%;
+      flex-direction: column;
+      justify-content: center;
+      padding: $base-spacing;
     }
   }
 }
