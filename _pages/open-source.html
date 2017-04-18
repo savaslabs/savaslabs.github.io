@@ -14,7 +14,8 @@ excerpt: Open source contributions by Savas Labs
   {% include regions/text-block-list.html items=site.data.drupal-modules-featured %}
   <div class="delimited-list">
     <p>And many others:</p>
-    {% for module in site.data.drupal-modules-other %}
+    {% assign modules = site.data.drupal-modules-other | sort: 'number_commits' | reverse %}
+    {% for module in modules %}
     <a href="{{ module.link }}" class="delimited-list__item">{{ module.name }} ({{ module.number_commits }})</a>
     {% endfor %}
   </div>
