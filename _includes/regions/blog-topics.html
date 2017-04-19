@@ -1,0 +1,106 @@
+{% assign delim = '|' %}
+{% assign tag_count = '' %}
+{% for data_tag in site.data.tags %}
+  {% assign count = 0 %}
+  {% for post in site.posts %}
+    {% if post.tags contains data_tag.slug %}
+      {% assign count = count | plus:1 %}
+    {% endif %}
+  {% endfor %}
+  {% assign count = count | append: delim %}
+  {% assign tag_count = tag_count | append: count %}
+{% endfor %}
+{% assign tag_count = tag_count | split: delim %}
+
+<div class="region--blog-topics">
+  <p class="heading--bold h4">TOPICS</p>
+  <div class="region--blog-topics__topics">
+    {% comment %}
+      Once logic is set up, this should be used:
+      {% for tag in ordered_tag_list | limit: 20 %}
+        {% include components/blog-topic.html topic=tag %}
+      {% endfor %}
+    {% endcomment %}
+    {% comment %} Sample markup for styling purposes {% endcomment %}
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal</p>
+      <p class="blog-topic__number">31</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Front End Development</p>
+      <p class="blog-topic__number">18</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal 8</p>
+      <p class="blog-topic__number">10</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Docker</p>
+      <p class="blog-topic__number">4</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal</p>
+      <p class="blog-topic__number">31</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Front End Development</p>
+      <p class="blog-topic__number">18</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal 8</p>
+      <p class="blog-topic__number">10</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Docker</p>
+      <p class="blog-topic__number">4</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal</p>
+      <p class="blog-topic__number">31</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Front End Development</p>
+      <p class="blog-topic__number">18</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal 8</p>
+      <p class="blog-topic__number">10</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Docker</p>
+      <p class="blog-topic__number">4</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal</p>
+      <p class="blog-topic__number">31</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Front End Development</p>
+      <p class="blog-topic__number">18</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal 8</p>
+      <p class="blog-topic__number">10</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Docker</p>
+      <p class="blog-topic__number">4</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal</p>
+      <p class="blog-topic__number">31</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Front End Development</p>
+      <p class="blog-topic__number">18</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Drupal 8</p>
+      <p class="blog-topic__number">10</p>
+    </div>
+    <div class="blog-topic">
+      <p class="blog-topic__name">Docker</p>
+      <p class="blog-topic__number">4</p>
+    </div>
+  </div>
+</div>
