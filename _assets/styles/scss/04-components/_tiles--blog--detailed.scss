@@ -39,6 +39,9 @@ parent: tiles
 */
 
 .tile--blog--detailed {
+  flex-basis: auto;
+  flex-grow: 0;
+
   .tile--blog__image {
     position: relative;
 

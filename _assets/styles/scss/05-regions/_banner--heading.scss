@@ -5,6 +5,7 @@
  */
 
 .region--banner--heading {
+  background: url('/assets/img/bg/diamond-texture.svg') $teal repeat;
   margin: 0 0 $base-spacing * .75;
 
   .region--banner--heading__text {
@@ -19,15 +20,18 @@
 
     h1,
     h1::after {
-      @include grid-media($medium-screen-up) {
-        margin-bottom: 0;
-      }
+      margin-bottom: 0;
     }
 
     p {
       font-style: italic;
       margin-bottom: 0;
+      margin-top: $base-spacing;
       text-transform: uppercase;
+
+      @include grid-media($medium-screen-up) {
+        margin-top: 0;
+      }
     }
   }
 }

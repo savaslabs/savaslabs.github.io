@@ -23,12 +23,5 @@ parent: links
 */
 
 .link--arrow {
-  text-transform: uppercase;
-
-  &::after {
-    content: '\f105';
-    font-family: FontAwesome;
-    font-size: 1.25em;
-    margin-left: .75em;
-  }
+  @include link-arrow;
 }

@@ -47,13 +47,17 @@ layout: default
     <div class="region--post-aside__section__wrapper--posts">
       <div class="region--post-aside__section region--post-aside__section--posts">
         <h2 class="heading--sans-serif c-grey h3">Related Blog Posts</h2>
-        {% include regions/blog-tiles--related--post.html tags=page.tags limit=2 %}
+        <div class="region--post-aside__section__items region--post-aside__section--posts__items">
+          {% include regions/blog-tiles--related--post.html tags=page.tags limit=2 %}
+        </div>
       </div>
     </div>
     <div class="region--post-aside__section__wrapper--case-studies">
       <div class="region--post-aside__section region--post-aside__section--case-studies">
         <h2 class="heading--sans-serif c-grey h3">Related Case Studies</h2>
-        {% include regions/case-study-blocks--related--post.html tags=page.tags limit=2 %}
+        <div class="region--post-aside__section__items region--post-aside__section--posts__items">
+          {% include regions/case-study-blocks--related--post.html tags=page.tags limit=2 %}
+        </div>
         <div class="region--post-aside__section--case-studies__cta flex-center">
           <a href="/results" class="button--arrow--orange">Our work</a>
         </div>

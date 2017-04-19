@@ -1,0 +1,65 @@
+/**
+ * @file
+ *
+ * Styles for the Contact page.
+ */
+
+.page--contact__content {
+  @include grid-media($medium-screen-up) {
+    max-width: 80%;
+  }
+
+  @include grid-media($large-screen-up) {
+    max-width: $max-width - 40;
+  }
+
+  .page--contact__content-wrapper {
+    @include grid-media($large-screen-up) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+
+.page--contact__copy {
+  @include grid-media($large-screen-up) {
+    margin-right: $base-spacing * 1.5;
+    max-width: 350px;
+  }
+
+  .table--minimal--contact {
+    margin-top: $base-spacing * 1.5;
+  }
+
+  .table--minimal__first-column {
+    width: 33.333%;
+  }
+
+  .table--minimal--contact__label {
+    font-weight: bold;
+  }
+}
+
+.page--contact__image {
+  text-align: center;
+
+  @include grid-media($large-screen-up) {
+    flex-basis: 50%;
+    text-align: right;
+  }
+
+  img {
+    display: block;
+    margin-bottom: $base-margin;
+  }
+
+  a {
+    color: $orange;
+
+    &:hover,
+    &:focus {
+      color: $magenta;
+    }
+  }
+}
