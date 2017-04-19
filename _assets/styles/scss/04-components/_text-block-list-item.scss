@@ -12,7 +12,49 @@ category: Components
 ---
 
 ```html_example
-
+<div class="text-block-list-item">
+  <a href="https://www.drupal.org/project/rebuild" class="text-block-list-item__link">
+    <div class="text-block-list-item__content">
+      <h3 class="text-block-list-item__heading heading--bold heading--sans-serif h4">Drush Rebuild</h3>
+      <p class="text-block-list-item__text">Drush Rebuild is a utility for rebuilding your local development environments.</p>
+      <p class="link--arrow">Learn More</p>
+    </div>
+  </a>
+</div>
 ```
 
 */
+
+.text-block-list-item {
+  padding: $base-spacing;
+  text-align: center;
+
+  .text-block-list-item__link {
+    display: block;
+
+    &:hover,
+    &:focus {
+      h3,
+      p {
+        color: $orange;
+      }
+    }
+  }
+
+  .text-block-list-item__heading,
+  .text-block-list-item__text {
+    @include ease;
+
+    color: $dark-teal;
+    margin-bottom: 0;
+  }
+
+  .text-block-list-item__text {
+    margin: $base-spacing 0;
+  }
+
+  .link--arrow {
+    color: $orange;
+    text-transform: none;
+  }
+}

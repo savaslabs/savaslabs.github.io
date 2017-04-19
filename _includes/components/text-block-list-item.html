@@ -1,7 +1,9 @@
 <div class="text-block-list-item">
   <a href="{{ include.item.link }}" class="text-block-list-item__link">
-    <h3 class="heading--bold heading--sans-serif h4">{{ include.item.name }}</h3>
-    <p>{{ include.item.description }}</p>
-    <p class="link--arrow">Learn More</p>
+    <div class="text-block-list-item__content">
+      <h3 class="text-block-list-item__heading heading--bold heading--sans-serif h4">{{ include.item.name }}</h3>
+      <p class="text-block-list-item__text">{{ include.item.description }}</p>
+      <p class="link--arrow">Learn More</p>
+    </div>
   </a>
 </div>
