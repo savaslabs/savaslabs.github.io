@@ -157,6 +157,10 @@ category: Regions
       padding-top: $footer-padding;
     }
 
+    @include grid-media($max-width-up) {
+      padding-right: 0;
+    }
+
     .region--footer__main__social__icons {
       display: flex;
       justify-content: center;
