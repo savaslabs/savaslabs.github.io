@@ -3,7 +3,7 @@
 {% for post in site.posts %}
 {% for tag in include.tags %}
 {% if post.tags contains tag and tile_count < include.limit %}
-{% unless post_urls contains post.url %}
+{% unless post.url == include.url %}
 {% include components/tile--blog--detailed.html post=post %}
 {% assign post_urls = post_urls | append: post.url %}
 {% assign tile_count = tile_count | plus:1 %}
