@@ -12,7 +12,7 @@
 
     @include grid-media($large-screen-up) {
       flex-direction: column;
-      height: 600px;
+      height: 700px;
     }
 
     .tile--blog--latest {
@@ -22,7 +22,7 @@
       @include grid-media($large-screen-up) {
         align-self: flex-end;
         margin: 0;
-        width: 49.5%;
+        width: 50%;
       }
 
       &:first-child {
@@ -38,18 +38,31 @@
       height: 300px;
 
       @include grid-media($medium-screen-up) {
+        border: 0;
         height: 450px;
       }
 
       @include grid-media($large-screen-up) {
-        height: 294px;
+        height: 350px;
       }
     }
 
     .tile--blog--latest:first-child,
     .tile--blog--latest:first-child a {
       @include grid-media($large-screen-up) {
-        height: 600px;
+        height: 700px;
+      }
+    }
+
+    .tile--blog--latest:first-child a {
+      @include grid-media($large-screen-up) {
+        border-right: 6px solid $white;
+      }
+    }
+
+    .tile--blog--latest:nth-child(2) a {
+      @include grid-media($large-screen-up) {
+        border-bottom: 6px solid $white;
       }
     }
   }
