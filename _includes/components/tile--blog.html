@@ -4,8 +4,7 @@
       {% if include.post.featured_image %}
       {% capture image %}/assets/img{{ include.post.featured_image }}{% endcapture %}
       {% else %}
-      <!--TODO: Add default image path-->
-      {% assign image = '/assets/img/' %}
+      {% assign image = '/assets/img/blog/default.jpg' %}
       {% endif %}
       <div class="tile--blog__image" style="background-image: url({{ image }});"></div>
       <div class="tile--blog__post-title">
