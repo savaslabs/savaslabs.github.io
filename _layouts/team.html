@@ -63,7 +63,6 @@ layout: default
 {% if post.author contains page.name %}{% assign counter = counter | plus: 1 %}
 {% endif %}{% endfor %}
 {% if counter > 0 %}
-<h2 class="heading--underline--orange">Recent Blog Posts</h2>
 {% include regions/blog-tiles--by-author.html author=page.name %}
 {% endif %}
 
