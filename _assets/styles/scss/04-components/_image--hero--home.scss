@@ -22,6 +22,7 @@
 
   @include grid-media($medium-screen-up) {
     height: 80vh;
+    min-height: 540px;
   }
 
   @include grid-media($large-screen-up) {
