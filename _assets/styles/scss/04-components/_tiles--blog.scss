@@ -43,10 +43,9 @@ parent: tiles
 .tile--blog {
   flex-basis: 300px;
   flex-grow: 1;
-  flex-shrink: 0;
 
   @include grid-media($large-screen-up) {
-    flex-basis: 25%;
+    width: 25%;
   }
 }
 

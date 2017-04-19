@@ -79,6 +79,17 @@
   }
 }
 
+@mixin link-arrow() {
+  text-transform: uppercase;
+
+  &::after {
+    content: '\f105';
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    margin-left: .75em;
+  }
+}
+
 @mixin button($background-color: $white, $color: $teal) {
   background-color: transparent;
   border: solid 2px $color;

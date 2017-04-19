@@ -66,16 +66,18 @@ For smaller case study blocks.
 .region--case-study-blocks.region--case-study-blocks--small {
   .region--case-study-blocks__case-studies {
     @include grid-media($medium-screen-up) {
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     > div {
+      padding: $base-spacing;
+
       @include grid-media($medium-screen-up) {
-        width: 49%;
+        width: 50%;
       }
 
       @include grid-media($large-screen-up) {
-        width: 32%;
+        width: 33.333%;
       }
     }
   }
