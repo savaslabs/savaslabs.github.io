@@ -1,4 +1,6 @@
 <div class="blog-topic">
-  <p class="blog-topic__name">{% include.topic.name %}</p>
-  <p class="blog-topic__number">{% include.topic.number %}</p>
+  <a class="blog_topic__link" href="{{ include.topic.url }}">
+    <p class="blog-topic__name">{{ include.topic.name }}</p>
+    <p class="blog-topic__number">{{ include.topic.number }}</p>
+  </a>
 </div>

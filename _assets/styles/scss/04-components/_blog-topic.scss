@@ -5,5 +5,19 @@
  */
 
 .blog-topic {
+  margin: .25em;
 
+  p {
+    display: inline;
+    padding: .25em;
+  }
+
+  .blog-topic__name {
+    background-color: $eggshell;
+  }
+
+  .blog-topic__number {
+    background-color: $teal;
+    color: $eggshell;
+  }
 }

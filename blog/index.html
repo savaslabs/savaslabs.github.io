@@ -11,9 +11,8 @@ excerpt: Blabs by Savas Labs. Blog posts too!
 {% if paginator.page == 1 %}
 {% include regions/blog-tiles--latest.html %}
 {% endif %}
-<div class="page--blog__wrapper">
+<div class="page--blog__wrapper region">
   {% include regions/blog-tiles--all.html %}
   {% include regions/blog-topics.html %}
 </div>
-{% include regions/blog-tiles--all.html %}
 {% include regions/banner--open-source.html class="bg-magenta" %}

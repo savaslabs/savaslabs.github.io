@@ -9,6 +9,36 @@
     margin-bottom: 6px;
   }
 
+  .page--blog__wrapper {
+    @include grid-media($large-screen-up) {
+      display: flex;
+    }
+
+    .region--blog-tiles--all {
+      @include grid-media($large-screen-up) {
+        flex-basis: 75%;
+      }
+
+      .region--blog-tiles--all__tiles {
+        > div {
+          @include grid-media($large-screen-up) {
+            width: 50%;
+          }
+
+          @include grid-media($extra-large-screen-up) {
+            width: 33.333%;
+          }
+        }
+      }
+    }
+
+    .region--blog-topics {
+      @include grid-media($large-screen-up) {
+        flex-basis: 25%;
+      }
+    }
+  }
+
   .region--blog-tiles--latest,
   .region--footer {
     margin-top: 0;
