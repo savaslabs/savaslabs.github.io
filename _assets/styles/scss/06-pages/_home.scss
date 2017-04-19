@@ -12,4 +12,14 @@
   .region--case-study-tiles {
     margin-top: 0;
   }
+
+  .tile--title--blog,
+  .tile--blog {
+    flex-basis: 300px;
+    flex-grow: 1;
+
+    @include grid-media($large-screen-up) {
+      width: 25%;
+    }
+  }
 }

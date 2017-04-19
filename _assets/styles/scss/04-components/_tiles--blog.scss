@@ -38,17 +38,6 @@ parent: tiles
 
 */
 
-// Layout styles for title and blog tiles.
-.tile--title--blog,
-.tile--blog {
-  flex-basis: 300px;
-  flex-grow: 1;
-
-  @include grid-media($large-screen-up) {
-    width: 25%;
-  }
-}
-
 // Styles for the title tile.
 .tile--title--blog {
   padding: $base-spacing * 2;

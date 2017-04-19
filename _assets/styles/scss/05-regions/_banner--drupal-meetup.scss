@@ -13,7 +13,7 @@
 
     @include grid-media($medium-screen-up) {
       flex-wrap: nowrap;
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 
@@ -44,6 +44,8 @@
       }
 
       a {
+        font-weight: 300;
+
         @include grid-media($medium-screen-up) {
           border-bottom: solid 1px transparentize($eggshell, .5);
         }
