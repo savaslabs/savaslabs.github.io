@@ -38,7 +38,8 @@ category: Regions
   }
 
   .region--cta__heading {
-    margin-bottom: $base-spacing * 1.5;
+    margin: 0 auto $base-spacing * 1.5;
+    max-width: 500px;
   }
 
   .region--cta__text {
