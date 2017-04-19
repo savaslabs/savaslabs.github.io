@@ -45,7 +45,7 @@
   text-align: center;
 
   @include grid-media($large-screen-up) {
-    max-width: 600px;
+    flex-basis: 50%;
     text-align: right;
   }
 
