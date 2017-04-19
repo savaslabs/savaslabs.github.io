@@ -15,38 +15,51 @@ category: Components
 */
 
 .tile {
+  position: relative;
 
   // Description and read more link should show on link hover.
   .tile__hover {
-    display: none;
+    align-items: center;
+    color: $eggshell;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    padding: $base-spacing;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all .3s ease;
+    width: 100%;
+    z-index: 1;
+
+    // The tile summary.
+    p:first-child {
+      margin-bottom: $base-spacing * 1.5;
+      max-width: 15em;
+    }
+
+    .link--cta {
+      margin-bottom: 0;
+      transition: all .2s ease-in-out;
+    }
   }
 
   &:hover,
   &:focus {
-    .tile__content {
-      display: none;
-    }
-
     // Content shown on hover.
     .tile__hover {
-      align-items: center;
-      color: $eggshell;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: $base-spacing;
-      text-align: center;
+      opacity: 1;
+    }
 
-      // The tile summary.
-      p:first-child {
-        margin-bottom: $base-spacing * 1.5;
-        max-width: 15em;
-      }
+    .tile--blog--detailed__primary-tag {
+      margin-left: 1em;
+    }
 
-      .link--cta {
-        margin-bottom: 0;
-        transition: all .2s ease-in-out;
-      }
+    .tile--blog__post-title .tile--blog--detailed__author-bg {
+      bottom: 0;
+      right: 0;
     }
   }
 
