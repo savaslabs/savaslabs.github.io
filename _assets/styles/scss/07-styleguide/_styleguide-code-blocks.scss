@@ -7,13 +7,15 @@
 .codeBlock {
   clear: both;
 
+  // scss-lint:disable ImportantRule
   .highlight {
-    border-color: $gainsboro;
+    border: 1px solid $light-grey !important;
     border-radius: 0;
     margin: 0;
+    // scss-lint:enable ImportantRule
 
     pre {
-      background-color: lighten($light-gray, 10);
+      background-color: lighten($light-grey, 20%);
       padding: .8em;
       word-break: break-all;
       word-wrap: break-word;
