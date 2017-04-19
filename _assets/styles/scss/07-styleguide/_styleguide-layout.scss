@@ -23,15 +23,15 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    padding: 0 $base-spacing * 1.5;
+    padding: 0 0 $base-spacing * 1.5;
 
     li {
       font-size: 1.2em;
-      padding: $base-spacing / 4;
+      padding: 0 $base-spacing / 4 $base-spacing / 4 0;
       //width: 100%;
 
       @include grid-media($small-screen-up) {
-        padding: $base-spacing / 2;
+        padding: 0 $base-spacing / 2 $base-spacing / 2 0;
         //width: 50%;
       }
 
