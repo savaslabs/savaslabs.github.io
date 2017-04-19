@@ -7,14 +7,16 @@ layout: default
 
 <div class="outer-container">
   <div class="page--post__main">
-    {% if page.featured_image %}
     <div class="region--featured-image">
+      {% if page.featured_image %}
       {% picture post_featured_image {{ page.featured_image }} alt="{{ page.featured_image_alt }}" %}
       {% if page.featured_image_caption %}
       {{ page.featured_image_caption | markdownify }}
       {% endif %}
+      {% else %}
+      {% picture post_featured_image /blog/default.jpg alt="Savas Labs blog" %}
+      {% endif %}
     </div>
-    {% endif %}
     <div class="region--post-header">
       <h1 class="region--post-header__title">{{ page.title }}</h1>
       <div class="region--post-header__post-info">
