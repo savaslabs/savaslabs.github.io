@@ -56,6 +56,7 @@ parent: tiles
       padding: .25em 1em;
       position: absolute;
       text-transform: uppercase;
+      transition: all .3s ease-in-out;
     }
   }
 
@@ -88,6 +89,7 @@ parent: tiles
       height: 60px;
       position: absolute;
       right: -8px;
+      transition: all .3s ease-in-out;
       width: 60px;
     }
   }

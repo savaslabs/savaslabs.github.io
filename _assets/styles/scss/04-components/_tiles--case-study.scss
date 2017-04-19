@@ -35,7 +35,7 @@ parent: tiles
   @include cover-image;
 
   background-image: url('/assets/img/au-staircase-tile.jpg');
-  margin-bottom: $base-spacing / 2;
+  margin-bottom: 6px;
   padding: $base-spacing * 3 $base-spacing;
   width: 100%;
 
@@ -50,7 +50,7 @@ parent: tiles
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 0;
-    margin-right: $base-spacing / 4;
+    margin-right: 6px;
     padding: $base-spacing * 6 $base-spacing * 4;
     text-align: right;
     width: 50%;
@@ -99,7 +99,7 @@ parent: tiles
 // The case study tiles.
 .tile--case-study {
   height: 310px;
-  margin-bottom: $base-spacing / 2;
+  margin-bottom: 6px;
   text-align: center;
   width: 100%;
 
@@ -122,7 +122,19 @@ parent: tiles
   &:not(:first-child) {
     @include grid-media($medium-screen-up) {
       margin-bottom: 0;
-      width: 49%;
+      width: 50%;
+    }
+  }
+
+  &:nth-child(2) {
+    @include grid-media($medium-screen-up) {
+      border-right: 3px solid $white;
+    }
+  }
+
+  &:nth-child(3) {
+    @include grid-media($medium-screen-up) {
+      border-left: 3px solid $white;
     }
   }
 
