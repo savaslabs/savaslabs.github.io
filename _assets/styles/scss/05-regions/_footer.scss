@@ -108,7 +108,7 @@ category: Regions
 
   // Footer menu, on left on large screens.
   .region--footer__main__menu {
-    background-color: $footer-background;
+    background-color: transparentize($footer-background, .3);
     padding-top: $footer-padding / 2;
 
     .region--footer__logo {
@@ -192,7 +192,7 @@ category: Regions
 
 // Footer bottom, including copyright.
 .region--footer__bottom {
-  background-color: $footer-background;
+  background-color: transparentize($footer-background, .3);
   padding: $footer-padding / 2 $navigation-padding-horizontal-small;
 
   @include grid-media($medium-screen-up) {
