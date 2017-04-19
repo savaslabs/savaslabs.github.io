@@ -47,7 +47,7 @@ A normal menu link plus the bold, magenta Contact link.
 
   // Styles for final menu item.
   // When not active or in hover/focus state, color should be magenta.
-  &:last-child:not(.active-nav-item):not(:hover):not(:focus) {
+  &:last-child:not(.header-navigation__active-nav-item):not(:hover):not(:focus) {
     a {
       color: $magenta;
     }
