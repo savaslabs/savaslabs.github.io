@@ -15,6 +15,7 @@
 
   @include grid-media($medium-screen-up) {
     height: calc(100vh - 84px);
+    min-height: 740px;
   }
 
   .region--hero--company__wrapper {
@@ -29,6 +30,10 @@
       bottom: 0;
       padding: 0 $base-spacing;
       position: absolute;
+    }
+
+    @include grid-media($max-width-up) {
+      padding: 0;
     }
 
     .region--hero--company__heading-full-width {
@@ -78,7 +83,7 @@
         @include grid-media($medium-screen-up) {
           flex-basis: 50%;
           height: 50vh;
-          min-height: 340px;
+          min-height: 440px;
         }
       }
 
@@ -88,7 +93,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: $base-spacing * 2 $base-spacing;
+        padding: $base-spacing * 2 $base-spacing * 1.5;
 
         @include grid-media($extra-large-screen-up) {
           padding: $base-spacing * 2 $base-spacing * 3;
@@ -111,7 +116,7 @@
       }
 
       .region--hero--company__two-col__image {
-        background: url('/assets/img/bg/company-hero.jpg') $dark-teal 20% center no-repeat;
+        background: url('/assets/img/bg/company-hero.jpg') $dark-teal 10% center no-repeat;
         background-size: cover;
       }
 
