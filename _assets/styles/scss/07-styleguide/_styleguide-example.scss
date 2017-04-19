@@ -8,15 +8,15 @@
   margin: $base-spacing 0;
 
   .exampleOutput {
-    border-left: 1px solid $gainsboro;
-    border-right: 1px solid $gainsboro;
-    border-top: 1px solid $gainsboro;
+    border-left: 1px solid $light-grey;
+    border-right: 1px solid $light-grey;
+    border-top: 1px solid $light-grey;
     overflow: auto;
     padding: 3em 1.5em 1.5em;
     position: relative;
 
     &::before {
-      color: darken($gainsboro, 10%);
+      color: darken($light-grey, 10%);
       content: 'Example';
       font-size: .8em;
       left: .8em;

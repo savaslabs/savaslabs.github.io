@@ -6,20 +6,12 @@
  * Note: this file is imported by _variables.scss.
  */
 
-/*doc
----
-title: Colors
-name: colors
-category: colors
----
-*/
 
 /*doc
 ---
 title: Primary colors
 name: 1colors--primary
-category: colors
-parent: colors
+category: Colors
 ---
 The main color palette.
 
@@ -67,8 +59,7 @@ $dark-teal: #06282d;
 ---
 title: Secondary colors
 name: 2colors--secondary
-category: colors
-parent: colors
+category: Colors
 ---
 
 <div class="styleguide-color-chips">
@@ -109,8 +100,7 @@ $light-orange: lighten($orange, 30%);
 ---
 title: Code highlighting colors
 name: 3colors--code
-category: colors
-parent: colors
+category: Colors
 ---
 Based on a sass port of the Solarized theme, created by Brandon Mathis at
 Octopress, and adapted for our color palette.

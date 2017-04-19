@@ -9,40 +9,48 @@
 }
 
 .sg-content {
-  padding: $base-margin 0;
-}
+  padding: $base-margin $base-spacing;
 
-// Sidebar menu.
-.sg-content__content__menu {
-  display: none;
-
-  @include grid-media($large-screen-up) {
-    @include grid-column(2);
-
-    display: block;
-
-    ul {
-      border: solid 1px $gainsboro;
-      border-radius: $base-border-radius;
-
-      li {
-        border-bottom: solid 1px $gainsboro;
-        padding: .5em;
-
-        &:last-child {
-          border-bottom: 0;
-        }
-      }
-    }
+  .sg-content__content {
+    clear: both;
+    padding-top: $base-margin;
   }
 }
 
-// Main content.
-.sg-content__content__body {
-  @include grid-column(12);
+// Component menu.
+.sg-content__content__menu {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0 $base-spacing * 1.5;
 
-  @include grid-media($large-screen-up) {
-    @include grid-column(10);
+    li {
+      font-size: 1.2em;
+      padding: $base-spacing / 4;
+      //width: 100%;
+
+      @include grid-media($small-screen-up) {
+        padding: $base-spacing / 2;
+        //width: 50%;
+      }
+
+      @include grid-media($medium-screen-up) {
+        //width: 33.333%;
+      }
+
+      @include grid-media($large-screen-up) {
+        //width: 25%;
+      }
+
+      a {
+        @include button-dark($orange);
+
+        font-size: 1em;
+        padding: .25em 1.25em;
+        text-transform: none;
+      }
+    }
   }
 }
 
