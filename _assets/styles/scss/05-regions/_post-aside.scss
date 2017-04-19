@@ -47,13 +47,14 @@
       margin-bottom: $base-spacing;
 
       @include grid-media($medium-screen-up) {
-        flex-basis: 48.5%;
         flex-grow: 0;
         margin-bottom: 0;
+        width: 48.5%;
       }
 
       @include grid-media($large-screen-up) {
         margin-bottom: $base-spacing;
+        width: 100%;
       }
     }
   }
