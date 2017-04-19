@@ -11,8 +11,8 @@
     justify-content: flex-start;
 
     > div {
-      width: 100%;
       padding: $base-spacing;
+      width: 100%;
 
       @include grid-media($medium-screen-up) {
         width: 50%;
