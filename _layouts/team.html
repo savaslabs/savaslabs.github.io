@@ -41,17 +41,21 @@ layout: default
   </div>
 </div>
 <div class="region--team-member-gallery">
-  <div class="region--team-member-gallery__square">
-    <!--TODO: Use Jekyll picture tag plugin to generate picture element.-->
-    <img src="/assets/img/team/{{ page.slug }}/{{ page.slug }}-gallery-square.jpg" alt="{{ page.name }}">
+  <div class="region--team-member-gallery__left">
+    <div class="region--team-member-gallery__square">
+      <!--TODO: Use Jekyll picture tag plugin to generate picture element.-->
+      <img class="image--grayscale image--grayscale--team-gallery" src="/assets/img/team/{{ page.slug }}/{{ page.slug }}-gallery-square.jpg" alt="{{ page.name }}">
+    </div>
   </div>
-  <div class="region--team-member-gallery__cta">
-    <h2 class="heading--sans-serif">We Drive Results</h2>
-    <a href="/contact" class="link--arrow">Get in touch</a>
-  </div>
-  <div class="region--team-member-gallery__landscape">
-    <!--TODO: Use Jekyll picture tag plugin to generate picture element.-->
-    <img src="/assets/img/team/{{ page.slug }}/{{ page.slug }}-gallery-landscape.jpg" alt="{{ page.name }}">
+  <div class="region--team-member-gallery__right">
+    <div class="region--team-member-gallery__cta">
+      <h2 class="heading--sans-serif">We Drive Results</h2>
+      <a href="/contact" class="link--arrow">Get in touch</a>
+    </div>
+    <div class="region--team-member-gallery__landscape">
+      <!--TODO: Use Jekyll picture tag plugin to generate picture element.-->
+      <img class="image--grayscale image--grayscale--team-gallery" src="/assets/img/team/{{ page.slug }}/{{ page.slug }}-gallery-landscape.jpg" alt="{{ page.name }}">
+    </div>
   </div>
 </div>
 {% assign counter = 0 %}

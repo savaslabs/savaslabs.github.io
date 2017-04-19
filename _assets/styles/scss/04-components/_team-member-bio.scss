@@ -75,7 +75,10 @@
 .region--team-member-top {
   margin: 0 auto;
   max-width: $max-width;
-  padding-bottom: 3em;
+
+  @include grid-media($small-screen-up) {
+    padding-bottom: 3em;
+  }
 }
 
 .region--team-member-top__image_name {
@@ -173,23 +176,27 @@
   }
 
   ul {
-    align-content: space-between;
+    align-content: space-around;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
 
     @include grid-media($medium-screen-up) {
-      display: block;
+      align-content: space-between;
     }
 
     li {
+      display: block;
       list-style: none;
       margin-bottom: .5em;
-      padding: .5em;
+      padding: .5em 1em;
+
 
       @include grid-media($medium-screen-up) {
-        display: block;
+        display: flex;
+        flex-basis: 100%;
+        padding: .5em;
       }
 
       a {
@@ -248,5 +255,79 @@
     margin-bottom: $base-spacing * 2;
     max-width: 80%;
     width: 180px;
+  }
+}
+
+
+// Team Member Gallery.
+.region--team-member-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: .25em auto;
+  margin-bottom: 3em;
+  max-width: $max-width;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .region--team-member-gallery__left {
+    flex-basis: 100%;
+
+    @include grid-media($small-screen-up) {
+      border-right: .25em solid $white;
+      flex-basis: 50%;
+    }
+  }
+
+  .region--team-member-gallery__right {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+
+    @include grid-media($small-screen-up) {
+      flex-basis: 50%;
+    }
+
+    .region--team-member-gallery__cta {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      margin: 3em auto;
+
+      @include grid-media($small-screen-up) {
+        margin: 0;
+      }
+
+      h2 {
+        color: $dark-teal;
+        font-size: 1.25em;
+        font-weight: 400;
+        margin-bottom: 0;
+        padding: .5em 1em;
+        text-transform: uppercase;
+
+        @include grid-media($large-screen-up) {
+          font-size: 1.953em;
+        }
+      }
+
+      a {
+        color: $orange;
+
+        &:hover,
+        &:focus,
+        &active {
+          color: $dark-teal;
+        }
+      }
+    }
+
+    .region--team-member-gallery__landscape {
+      flex: 1;
+    }
   }
 }

@@ -28,3 +28,13 @@ and unfiltered to show full color on hover or focus.
     filter: none;
   }
 }
+
+.image--grayscale--team-gallery {
+  opacity: .6;
+  transition: all .4s ease;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
