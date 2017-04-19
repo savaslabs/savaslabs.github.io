@@ -5,12 +5,6 @@
  */
 
 // Team member page.
-.page--team {
-  .region--blog-tiles--all {
-    max-width: $max-width;
-  }
-}
-
 .region--team-member-top__wrapper {
   background-position: center center;
   background-repeat: no-repeat;
@@ -278,10 +272,16 @@
 }
 
 // Blog tiles.
-.page--team .region--blog-tiles--all .region--blog-tiles--all__tiles > div {
-  padding: $base-spacing / 4;
+.page--team {
+  .region--blog-tiles--all {
+    max-width: $max-width;
 
-  @include grid-media($large-screen-up) {
-    width: 25%;
+    .region--blog-tiles--all__tiles > div {
+      padding: $base-spacing / 4;
+
+      @include grid-media($large-screen-up) {
+        width: 25%;
+      }
+    }
   }
 }
