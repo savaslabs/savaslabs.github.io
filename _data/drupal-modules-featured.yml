@@ -17,7 +17,7 @@
   link: https://www.drupal.org/project/salesforce
 - name: SubDrush
   description: |
-    Drush integration for Sublime Text 3.
+    This project offers a Drush integration for the Sublime Text 3 text editor.
   link: https://www.drupal.org/sandbox/kostajh/1978148
 - name: Drush Code Deploy
   description: |

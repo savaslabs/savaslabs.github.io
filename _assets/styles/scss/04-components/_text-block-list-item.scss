@@ -26,7 +26,7 @@ category: Components
 */
 
 .text-block-list-item {
-  padding: $base-spacing;
+  padding: $base-spacing * 2 $base-spacing;
   text-align: center;
 
   .text-block-list-item__link {
@@ -46,15 +46,29 @@ category: Components
     @include ease;
 
     color: $dark-teal;
-    margin-bottom: 0;
+  }
+
+  .text-block-list-item__heading {
+    margin-bottom: $base-spacing;
   }
 
   .text-block-list-item__text {
-    margin: $base-spacing 0;
+    margin-bottom: 0;
   }
 
   .link--arrow {
     color: $orange;
+    margin-top: $base-spacing;
     text-transform: none;
   }
+
+  img {
+    display: block;
+    margin: 0 auto $base-spacing;
+    max-height: 100px;
+  }
+}
+
+.region--presentations .text-block-list-item {
+  text-align: left;
 }

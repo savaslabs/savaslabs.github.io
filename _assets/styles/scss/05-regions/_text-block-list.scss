@@ -83,21 +83,32 @@ category: Regions
     width: 50%;
 
     @include grid-media($large-screen-up) {
-      width: 33%;
-    }
-
-    @include grid-media($extra-large-screen-up) {
       width: 25%;
     }
 
-    // This seems insane, but this sets the borders up correctly at various
-    // screen sizes.
     &:nth-child(2n) {
       border-right: 0;
 
       @include grid-media($large-screen-up) {
         border-right: solid 1px $light-grey;
       }
+    }
+
+    &:nth-last-child(2),
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.region--drupal-contributions .region--text-block-list {
+  .text-block-list-item {
+    @include grid-media($large-screen-up) {
+      width: 33%;
+    }
+
+    @include grid-media($extra-large-screen-up) {
+      width: 25%;
     }
 
     &:nth-child(3n) {
@@ -116,11 +127,6 @@ category: Regions
       }
     }
 
-    &:nth-last-child(2),
-    &:last-child {
-      border-bottom: 0;
-    }
-
     &:nth-last-child(3) {
       @include grid-media($large-screen-up) {
         border-bottom: 0;
@@ -130,6 +136,20 @@ category: Regions
         border-bottom: solid 1px $light-grey;
       }
 
+    }
+  }
+}
+
+.region--presentations .region--text-block-list {
+  .text-block-list-item {
+    @include grid-media($large-screen-up) {
+      border-bottom: 0;
+    }
+
+    &:last-child {
+      @include grid-media($large-screen-up) {
+        border-right: 0;
+      }
     }
   }
 }
