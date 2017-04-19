@@ -93,4 +93,9 @@ parent: tiles
       width: 60px;
     }
   }
+
+  .tile--blog__hover {
+    margin: 1em;
+    width: calc(100% - 2em);
+  }
 }
