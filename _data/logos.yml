@@ -2,7 +2,7 @@
   image: duke-logo.png
   weight: 1
 - name: University of North Carolina at Chapel Hill
-  image: unc-logo.jpg
+  image: unc-logo.png
   weight: 2
 - name: The MIT Press
   image: mitpress-logo.png
