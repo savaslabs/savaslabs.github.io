@@ -270,3 +270,12 @@
     }
   }
 }
+
+// Blog tiles.
+.page--team .region--blog-tiles--all .region--blog-tiles--all__tiles > div {
+  padding: $base-spacing / 4;
+
+  @include grid-media($large-screen-up) {
+    width: 25%;
+  }
+}

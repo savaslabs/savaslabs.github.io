@@ -1,5 +1,6 @@
-<div class="region--blog-tiles region--blog-tiles--team region--full-width">
-  <div class="region--blog-tiles__wrapper">
+<div class="region--blog-tiles--all region">
+  <h2 class="heading--underline--orange">Recent Blog Posts</h2>
+  <div class="region--blog-tiles--all__tiles">
     {% assign count = 0 %}
     {% for post in site.posts %}
     {% if post.author contains include.author and count < 4 %}
