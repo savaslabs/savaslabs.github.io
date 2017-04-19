@@ -129,16 +129,20 @@
       padding: $base-spacing * 4 $base-spacing * 2 $base-spacing * 4 $base-spacing;
     }
 
-    h1 {
-      font-size: 1.25em;
-
-      @include grid-media($medium-screen-up) {
-        font-size: 1.953em;
+    p {
+      @include grid-media($large-screen-up) {
+        @include paragraph-loud;
       }
     }
 
     a {
       font-size: 1em;
+
+      &:hover,
+      &:focus,
+      &active {
+        color: $orange;
+      }
     }
   }
 

@@ -10,6 +10,9 @@
 
   .region--hero__text {
     color: $eggshell;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     h1 {
       color: $eggshell;
