@@ -1,0 +1,53 @@
+/**
+ * @file
+ *
+ * Styles for Open Source Contributions banner region.
+ */
+
+.region--banner--drupal-meetup {
+  .region--full-width__wrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include grid-media($medium-screen-up) {
+      flex-wrap: nowrap;
+      justify-content: space-around;
+    }
+  }
+
+  .region--banner--drupal-meetup__image {
+    img {
+      display: block;
+
+      @include grid-media($medium-screen-up) {
+        max-width: 400px;
+      }
+    }
+  }
+
+  .region--banner--drupal-meetup__text {
+    padding: $base-spacing * 3 $base-spacing;
+
+    @include grid-media($medium-screen-up) {
+      padding: $base-spacing;
+    }
+
+    h2 {
+      line-height: 1.75em;
+      margin-bottom: 0;
+      text-align: center;
+
+      @include grid-media($large-screen-up) {
+        line-height: 1.5em;
+      }
+
+      a {
+        @include grid-media($medium-screen-up) {
+          border-bottom: solid 1px transparentize($eggshell, .5);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Drupal modules we maintain or contribute to, to be output as text block list
 # items on the Open Source page.
+# NOTE: If you add another item, the SCSS will need to be updated to generate
+# the proper borders!
 
 - name: Drush Rebuild
   description: |
@@ -15,7 +17,7 @@
   link: https://www.drupal.org/project/salesforce
 - name: SubDrush
   description: |
-    Drush integration for Sublime Text 3.
+    This project offers a Drush integration for the Sublime Text 3 text editor.
   link: https://www.drupal.org/sandbox/kostajh/1978148
 - name: Drush Code Deploy
   description: |

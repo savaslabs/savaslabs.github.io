@@ -1,4 +1,7 @@
 # Presentations by Savas Labs team members.
+# NOTE: If you add another item, the SCSS will need to be updated to generate
+# the proper borders!
+# Add new items to the top of the list.
 
 - title: "Total value of ownership: Drupal 8 and beyond"
   event: DrupalCon New Orleans 2016
