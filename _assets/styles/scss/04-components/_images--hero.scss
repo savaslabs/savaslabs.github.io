@@ -122,23 +122,36 @@
   }
 
   .region--hero__text {
-    padding: $base-spacing * 3 $base-spacing;
+    margin: $base-spacing * 3 0;
 
     @include grid-media($large-screen-up) {
       flex-basis: 35%;
-      padding: $base-spacing * 4 $base-spacing * 2 $base-spacing * 4 $base-spacing;
+      padding: $base-spacing * 4 0;
     }
 
     h1 {
-      font-size: 1.25em;
+      padding: 0 20px;
+    }
 
-      @include grid-media($medium-screen-up) {
-        font-size: 1.953em;
+    p,
+    a {
+      padding: 0 2em 0 20px;
+    }
+
+    p {
+      @include grid-media($large-screen-up) {
+        @include paragraph-loud;
       }
     }
 
     a {
       font-size: 1em;
+
+      &:hover,
+      &:focus,
+      &active {
+        color: $orange;
+      }
     }
   }
 

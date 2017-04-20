@@ -81,7 +81,6 @@ category: Regions
     width: 100%;
 
     @include grid-media($large-screen-up) {
-      margin-left: $base-spacing / 4;
       width: 50%;
     }
   }

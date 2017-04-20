@@ -99,6 +99,10 @@
     flex-shrink: 0;
     flex-wrap: wrap;
 
+    @include grid-media($medium-screen-up) {
+      flex-wrap: nowrap;
+    }
+
     .case-study__client-highlights__client {
       color: $grey;
       flex-basis: 100%;
@@ -166,6 +170,10 @@
     flex-shrink: 0;
     flex-wrap: wrap;
 
+    @include grid-media($medium-screen-up) {
+      flex-wrap: nowrap;
+    }
+
     .case-study__objective-approach__objective,
     .case-study__objective-approach__approach {
       display: flex;
@@ -184,6 +192,10 @@
     flex-grow: 0;
     flex-shrink: 0;
     flex-wrap: wrap;
+
+    @include grid-media($medium-screen-up) {
+      flex-wrap: nowrap;
+    }
 
     .case-study__results__results,
     .case-study__results__details {

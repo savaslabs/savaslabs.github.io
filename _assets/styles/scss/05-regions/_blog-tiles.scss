@@ -84,18 +84,29 @@ lessons learned to our workflow.</p>
 
   // Set spacing between tiles.
   > div {
-    margin: .125em;
+    border-bottom: 6px solid $white;
+    display: flex;
+    flex-basis: 100%;
+
+    @include grid-media($medium-screen-up) {
+      flex-basis: 50%;
+
+      &:not(:nth-child(even)) {
+        border-right: 6px solid $white;
+      }
+    }
 
     @include grid-media($large-screen-up) {
-      margin: 0 .125em;
+      flex-basis: 25%;
 
-      &:first-child {
-        margin-left: 0;
+      &:not(:last-child) {
+        border-right: 6px solid $white;
       }
+    }
 
-      &:last-child {
-        margin-right: 0;
-      }
+    a {
+      display: block;
+      width: 100%;
     }
   }
 }

@@ -15,7 +15,11 @@
       align-items: center;
       display: flex;
       justify-content: space-between;
-      padding: $base-spacing * 2 $base-spacing * 3;
+      padding: $base-spacing * 2 $base-spacing * 1;
+    }
+
+    @include grid-media($max-width-up) {
+      padding: $base-spacing * 2 $base-spacing * 3 $base-spacing * 2 0;
     }
 
     h1,
