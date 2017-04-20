@@ -175,9 +175,11 @@
     bottom: 0;
     content: '';
     height: 5px;
+    left: 0;
     position: absolute;
     transition: all .5s ease;
     width: 0;
+    z-index: 1;
   }
 }
 
