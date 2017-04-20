@@ -29,6 +29,11 @@
 
   .region--post-aside__section__wrapper--posts {
     border-bottom: solid 1px $light-grey;
+
+    .tile--blog__hover {
+      margin: 0;
+      width: 100%;
+    }
   }
 
   // Apply same layout styles to related posts and case studies.
