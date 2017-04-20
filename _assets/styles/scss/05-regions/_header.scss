@@ -65,6 +65,7 @@ category: Regions
   .region--header__logo {
     display: inline-block;
     float: left;
+    height: $navigation-height;
     margin: 0;
     padding-left: $navigation-padding-horizontal-small;
 

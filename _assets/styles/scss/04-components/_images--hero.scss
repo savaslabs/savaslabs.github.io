@@ -122,11 +122,20 @@
   }
 
   .region--hero__text {
-    padding: $base-spacing * 3 $base-spacing;
+    margin: $base-spacing * 3 0;
 
     @include grid-media($large-screen-up) {
       flex-basis: 35%;
-      padding: $base-spacing * 4 $base-spacing * 2 $base-spacing * 4 $base-spacing;
+      padding: $base-spacing * 4 0;
+    }
+
+    h1 {
+      padding: 0 20px;
+    }
+
+    p,
+    a {
+      padding: 0 2em 0 20px;
     }
 
     p {

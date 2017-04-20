@@ -28,3 +28,11 @@ Main logo and light logo.
   height: $navigation-height;
   padding: $navigation-padding-vertical 0;
 }
+
+.savas-logo--main {
+  display: block;
+  height: 2.25em;
+  margin: $navigation-padding-vertical 0;
+  padding: 0;
+  width: 5.125em;
+}
