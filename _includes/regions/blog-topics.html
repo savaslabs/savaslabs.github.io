@@ -2,7 +2,6 @@
   <p class="region--blog-topics__heading heading--bold h4 c-dark-teal">TOPICS</p>
   <div class="region--blog-topics__topics">
   {% for tag in site.data.tags | sort | limit: 50 %}
-    {% assign topic = '' %}
     {% assign count = 0 %}
     {% for post in site.posts %}
       {% if post.tags contains tag.slug %}
@@ -10,13 +9,14 @@
       {% endif %}
     {% endfor %}
     {% if count > 0 %}
-      {% assign topic = "tag.name,count" | split: "," %}
-      <div class="blog-topic">
-        <a class="blog-topic__link" href="/blog/tag/{{ tag.slug }}">
-          <p class="blog-topic__name">{{ tag.name }}</p>
-          <p class="blog-topic__number">{{ count }}</p>
-        </a>
-      </div>
+      {% if tag.slug != "drupal-planet" and tag.slug != "marketing" %}
+        <div class="blog-topic">
+          <a class="blog-topic__link" href="/blog/tag/{{ tag.slug }}">
+            <p class="blog-topic__name">{{ tag.name }}</p>
+            <p class="blog-topic__number">{{ count }}</p>
+          </a>
+        </div>
+      {% endif %}
     {% endif %}
   {% endfor %}
   </div>
