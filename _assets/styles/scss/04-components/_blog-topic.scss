@@ -4,20 +4,29 @@
  * Styles for single blog topics.
  */
 
-.blog-topic {
-  margin: .25em;
+.blog-topic__link {
+  @include ease;
+  background-color: $eggshell;
+  border: 1px solid $gainsboro;
+  display: block;
+  margin: 0 .5em .5em 0;
 
-  p {
-    display: inline;
-    padding: .25em;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $orange;
+    color: $eggshell;
   }
 
-  .blog-topic__name {
-    background-color: $eggshell;
+  span {
+    display: inline-block;
+    padding: .25em .5em;
   }
 
   .blog-topic__number {
-    background-color: $teal;
+    background-color: transparentize($teal, .2);
     color: $eggshell;
+    min-width: 32px;
+    text-align: center;
   }
 }
