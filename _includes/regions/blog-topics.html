@@ -12,8 +12,8 @@
       {% if tag.slug != "drupal-planet" and tag.slug != "marketing" %}
         <div class="blog-topic">
           <a class="blog-topic__link" href="/blog/tag/{{ tag.slug }}">
-            <p class="blog-topic__name">{{ tag.name }}</p>
-            <p class="blog-topic__number">{{ count }}</p>
+            <span class="blog-topic__name">{{ tag.name }}</span>
+            <span class="blog-topic__number">{{ count }}</span>
           </a>
         </div>
       {% endif %}
