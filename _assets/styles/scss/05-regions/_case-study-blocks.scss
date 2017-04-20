@@ -83,6 +83,8 @@ The following example outputs 3 case study blocks with a CTA link.
     }
 
     > div {
+      width: 100%;
+
       @include grid-media($large-screen-up) {
         width: 49%;
       }
