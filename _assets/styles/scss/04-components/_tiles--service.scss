@@ -65,8 +65,12 @@
     .tile--service__image {
       @include ease;
 
+      display: block;
       float: left;
+      height: 60px;
       margin-right: $base-spacing;
+      min-height: 60px;
+      min-width: 60px;
       width: 60px;
 
       @include grid-media($small-screen-up) {

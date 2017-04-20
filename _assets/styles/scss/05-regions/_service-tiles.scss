@@ -73,22 +73,25 @@ category: Regions
   margin-top: .25em;
 
   > div {
-    padding-bottom: $base-spacing / 4;
-    padding-top: $base-spacing / 4;
+    border-bottom: 6px solid $white;
+    display: flex;
+    flex-basis: 100%;
     width: 100%;
 
     @include grid-media($medium-screen-up) {
+      flex-basis: 50%;
       width: 50%;
 
       &:first-child,
       &:nth-child(3) {
-        padding-right: $base-spacing / 4;
+        .tile--service__link {
+          border-right: 6px solid $white;
+        }
       }
+    }
 
-      &:nth-child(2),
-      &:nth-child(4) {
-        padding-left: $base-spacing / 4;
-      }
+    .tile--service__link {
+      width: 100%;
     }
 
     // Above max-width, align left tiles to the right.
