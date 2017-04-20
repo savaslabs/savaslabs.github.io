@@ -90,6 +90,17 @@
   }
 }
 
+@mixin link-inline() {
+  border-bottom: .1em solid transparentize($orange, .9);
+  color: $orange;
+
+  &:hover,
+  &:focus {
+    border-bottom: .1em solid $magenta;
+    color: $magenta;
+  }
+}
+
 @mixin button($background-color: $white, $color: $teal) {
   background-color: transparent;
   border: solid 2px $color;

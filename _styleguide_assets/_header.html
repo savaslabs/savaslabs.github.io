@@ -13,42 +13,52 @@
     <meta name="description" content="A style guide and component library for Savas Labs">
   </head>
   <body class="sg-body <%= 'sg-home' if title.length == 0 %>">
-    <header class="sg-header">
-      <div class="sg-header__title">
-        <div class="sg-outer-container">
-          <img class="sg-header__title__logo" src="images/logo.png" alt="Savas Labs">
-          <p class="sg-header__title__text">Savas Labs Front End Style Guide</p>
-        </div>
-      </div>
-      <div class="sg-header__menu">
-        <div class="sg-outer-container">
-          <nav class="sg-header__menu__nav">
-            <ul>
-              <li><a class="<%= 'active' if title.length == 0 %>" href="index.html">Intro</a></li>
-              <li><a class="<%= 'active' if title == 'colors' %>" href="colors.html">Colors</a></li>
-              <li><a class="<%= 'active' if title == 'Typography' %>" href="typography.html">Typography</a></li>
-              <li><a class="<%= 'active' if title == 'Components' %>" href="components.html">Components</a></li>
-              <li><a class="<%= 'active' if title == 'Regions' %>" href="regions.html">Regions</a></li>
-            </ul>
-          </nav>
-        </div>
+    <header class="region--header sg-header" role="banner">
+      <div class="region--header__wrapper">
+
+        <a href="/" class="region--header__logo">
+          <img class="savas-logo savas-logo--main" src="images/logo.svg" alt="Savas Labs">
+        </a>
+
+        <!-- Mobile menu button. -->
+        <a href="/" id="js-mobile-menu" class="header-navigation__mobile-menu-link">MENU</a>
+
+        <!-- Main menu. -->
+        <nav role="navigation" class="header-navigation">
+          <ul id="js-navigation-menu" class="header-navigation__menu show">
+            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title.length == 0 %>"><a href="index.html">Intro</a></li>
+            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'colors' %>"><a href="colors.html">Colors</a></li>
+            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'Typography' %>"><a href="typography.html">Typography</a></li>
+            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'Components' %>"><a href="components.html">Components</a></li>
+            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'Regions' %>"><a href="regions.html">Regions</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <section class="sg-content">
       <div class="sg-outer-container">
-        <div class="sg-content__content">
-          <% if @blocks.length > 0 %>
-            <div class="sg-content__content__menu">
-              <ul>
-                <%# Print top-level components. %>
-                <% @blocks.each do |b| %>
-                  <% if b[:parent] == nil %>
-                    <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
-                  <% end %>
-                <% end %>
-              </ul>
-            </div>
+        <div class="sg-content__title">
+          <% if title.length == 0 %>
+          <h1 class="sg-content__title__title heading--underline--orange">Savas Labs Front End Style Guide</h1>
+          <% else %>
+          <h1 class="sg-content__title__title heading--underline--orange"><%= title %></h1>
           <% end %>
+        </div>
+        <% if @blocks.length > 0 %>
+        <div class="sg-content__toc">
+          <div class="sg-content__content__menu">
+            <ul>
+              <%# Print top-level components. %>
+              <% @blocks.each do |b| %>
+              <% if b[:parent] == nil %>
+              <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+              <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <% end %>
+        <div class="sg-content__content">
           <div class="sg-content__content__body">
 

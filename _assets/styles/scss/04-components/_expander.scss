@@ -66,26 +66,4 @@ category: Components
       display: none;
     }
   }
-
-  .expander-content {
-    @include grid-media($medium-screen-up) {
-      @include grid-column(8);
-      @include grid-shift(2);
-    }
-
-    @include grid-media($large-screen-up) {
-      @include grid-column(10);
-      @include grid-shift(1);
-    }
-
-    @include grid-media($extra-large-screen-up) {
-      @include grid-column(8);
-      @include grid-shift(2);
-    }
-
-    @include grid-media($max-width-up) {
-      @include grid-column(6);
-      @include grid-shift(3);
-    }
-  }
 }
