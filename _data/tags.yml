@@ -15,8 +15,8 @@
   name: CSS
 - slug: testing
   name: Testing
-- slug: cartography
-  name: Cartography
+- slug: mapping
+  name: Mapping
 - slug: drupal8
   name: Drupal 8
 - slug: event
@@ -31,8 +31,6 @@
   name: OS X
 - slug: leaflet
   name: Leaflet.js
-- slug: durham
-  name: Durham
 - slug: theming
   name: Theming
 - slug: business
@@ -41,8 +39,6 @@
   name: Identity
 - slug: git
   name: Git
-- slug: efficiency
-  name: Efficiency
 - slug: productivity
   name: Productivity
 - slug: best-practices
@@ -55,8 +51,6 @@
   name: MailChimp
 - slug: drupalcamp
   name: DrupalCamp
-- slug: tridug
-  name: TriDUG
 - slug: front-end-dev
   name: Front End Development
 - slug: design

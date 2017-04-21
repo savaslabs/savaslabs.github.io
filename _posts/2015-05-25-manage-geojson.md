@@ -3,7 +3,7 @@ layout: post
 title: "Managing GeoJSON data using GDAL"
 date: 2015-05-25
 author: Tim Stallmann
-tags: cartography leaflet
+tags: mapping leaflet javascript
 summary: Sometimes the data you want isn't exactly the data you have. This post examines how to clean, filter and convert data using free and open-source tools.
 ---
 

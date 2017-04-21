@@ -3,7 +3,7 @@ layout: post
 title: "How we added comments to our Jekyll site"
 date: 2016-04-20
 author: Kosta Harlan
-tags: jekyll
+tags: jekyll javascript
 services: development
 summary: |
   A peek under the hood at our website's commenting app, Squabble.

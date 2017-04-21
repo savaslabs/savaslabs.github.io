@@ -13,7 +13,7 @@ location-url: http://americanunderground.com/
 street-address: 201 W Main St.
 city-state: Durham, North Carolina
 postal-code: 27701
-tags: drupal event
+tags: drupal drupal8 event
 comments_enabled: 0
 summary: |
   After a long lull in activity, Savas Labs would like to reinvigorate the TriDUG evening meetups.

@@ -3,7 +3,7 @@ layout: post
 title: "TriDUG recap: Drupal 8 case studies"
 date: 2016-03-18
 author: Kosta Harlan
-tags: drupal8 tridug
+tags: drupal8 drupal event
 summary: |
   On Thursday March 17, about thirty TriDUG members gathered to discuss case studies in Drupal 8 site builds.
 ---

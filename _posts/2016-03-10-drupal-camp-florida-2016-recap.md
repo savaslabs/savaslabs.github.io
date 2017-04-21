@@ -3,7 +3,7 @@ layout: post
 title: "DrupalCamp Florida 2016 Recap"
 date: 2016-03-10
 author: Lisa Ridley
-tags: drupal drupalcamp drupal8
+tags: drupal drupal8 conference
 summary: Lisa Ridley of Savas Labs attended Drupal Camp Florida in March 2016.  Here's what she learned.
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "Drupalcon New Orleans 2016: a Twitter recap"
 date: 2016-05-20
 author: Chris Russo
-tags: drupal drupal8 drupalcon event
+tags: drupal drupal8 conference event
 summary: The ins and outs of the talks, sessions, parties, and more from Drupalcon New Orleans 2016.
 ---
 
