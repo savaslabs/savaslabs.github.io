@@ -4,7 +4,7 @@ title: Support / Maintenance
 slug: support-maintenance
 weight: 4
 summary: |
-  Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+  Maintenance work doesn't typically evoke dreamy visions like building a new application does. However, we recognize the original investment is only truly borne when it's in reliable operation. With the help of generous robots (who we pay), and partners, we ensure 24/7/365 support.
 icon: "support-maintenance-icon.svg"
 vertical_image: "/assets/img/services/support-maintenance-hero.jpg"
 vertical_image_alt: "Various visual representations of statistics"

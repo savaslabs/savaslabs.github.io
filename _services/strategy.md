@@ -4,7 +4,7 @@ title: Strategy / Consulting
 slug: strategy
 weight: 1
 summary: |
-  Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+  Simple execution is never simple until all avenues have been explored. A stitch in time saves nine, and a minute of planning saves 10 in execution. We've learned these lessons, and cherish a challenge to think creatively for most appropriate solutions for our partners.
 icon: "strategy-icon.svg"
 vertical_image: "/assets/img/services/strategy-hero.jpg"
 vertical_image_alt: "Chris walking with a client"

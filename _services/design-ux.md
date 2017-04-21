@@ -4,7 +4,7 @@ title: Design / UX
 slug: design-ux
 weight: 3
 summary: |
-  Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+  To make beautiful design is easy. To design with purpose that is aware on the user's every hopes and dream and with usability focus that empowers content editors to soar, now that's another thing. UX in every permutation is what drives our design choices.
 icon: "design-ux-icon.svg"
 vertical_image: "/assets/img/services/design-ux-hero.jpg"
 vertical_image_alt: "User experience design concepts"

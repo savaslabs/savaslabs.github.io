@@ -4,7 +4,7 @@ title: Development
 slug: development
 weight: 2
 summary: |
-  Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+  Turning real-world challenges into technical solutions are among our favorite activities amidst the beakers and bunsen burners in the Savas lab. Developing novel functionality that is right-fit for our client's needs drives our creative spirit.
 icon: "development-icon.svg"
 vertical_image: "/assets/img/services/development-hero.jpg"
 vertical_image_alt: "Websites built by Savas Labs displayed on mobile screens"
