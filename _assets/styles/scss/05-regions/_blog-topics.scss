@@ -1,0 +1,23 @@
+/**
+ * @file
+ *
+ * Styles for the blog topics region.
+ */
+
+.region--blog-topics {
+  padding-top: $base-margin;
+
+  @include grid-media($large-screen-up) {
+    padding-left: $base-spacing;
+    padding-top: $base-spacing;
+  }
+
+  .region--blog-topics__heading {
+    border-bottom: solid 1px $dark-teal;
+  }
+
+  .region--blog-topics__topics {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
