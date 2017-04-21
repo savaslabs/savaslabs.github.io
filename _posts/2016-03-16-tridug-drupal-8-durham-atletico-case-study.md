@@ -1,5 +1,5 @@
 ---
-layout: event
+layout: post
 title: "TriDUG: Drupal 8 case studies, presentation, and discussion"
 date: 2016-03-16
 author: Chris Russo

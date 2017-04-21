@@ -1,5 +1,5 @@
 ---
-layout: event
+layout: post
 title: "TriDUG lightning talks"
 date: 2016-03-22
 author: Chris Russo

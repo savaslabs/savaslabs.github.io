@@ -1,5 +1,5 @@
 ---
-layout: event
+layout: post
 title: "Code sprint: Help port Views GeoJSON to Drupal 8"
 date: 2015-04-16
 author: Kosta Harlan
