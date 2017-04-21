@@ -17,6 +17,11 @@
       flex-wrap: nowrap;
     }
   }
+
+  h1 {
+    // Fix for nokia lumia smartphones.
+    width: 100%;
+  }
 }
 
 // Region with hero image takes 50% of vertical height.

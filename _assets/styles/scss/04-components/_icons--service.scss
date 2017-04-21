@@ -26,15 +26,15 @@ parent: icons
 
 .icon--service {
   .icon--service__link {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    padding: 0 .25em;
+    width: 100%;
   }
 
   .icon--service__image {
     @include ease;
     border-radius: 50%;
     height: 4em;
+    margin: 0 auto;
     margin-bottom: $base-spacing / 2;
     padding: .75em;
     width: 4em;
@@ -49,6 +49,7 @@ parent: icons
     @include ease;
 
     font-size: 1.1em;
+    max-width: 100%;
     text-align: center;
 
     @include grid-media($large-screen-up) {
