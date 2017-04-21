@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Savas Labs</title>
-    <description>A full-service web agency leveraging the power of Drupal.
+    <description>We craft elegant Drupal web systems that propel organizations.
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 Apr 2017 06:27:11 +0000</pubDate>
-    <lastBuildDate>Fri, 21 Apr 2017 06:27:11 +0000</lastBuildDate>
+    <pubDate>Fri, 21 Apr 2017 20:18:01 +0000</pubDate>
+    <lastBuildDate>Fri, 21 Apr 2017 20:18:01 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
     
@@ -419,7 +419,7 @@ EOL approaches. This post takes a deep dive into the risks specifically.
         
         <category>drupal-planet</category>
         
-        <category>cartography</category>
+        <category>mapping</category>
         
         
       </item>
@@ -551,9 +551,11 @@ In this post we&#39;ll add the Leaflet library to a custom theme using the new *
         
         <category>drupal-planet</category>
         
-        <category>cartography</category>
+        <category>mapping</category>
         
         <category>leaflet</category>
+        
+        <category>javascript</category>
         
         
       </item>

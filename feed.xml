@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Savas Labs</title>
-    <description>A full-service web agency leveraging the power of Drupal.
+    <description>We craft elegant Drupal web systems that propel organizations.
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 Apr 2017 06:27:11 +0000</pubDate>
-    <lastBuildDate>Fri, 21 Apr 2017 06:27:11 +0000</lastBuildDate>
+    <pubDate>Fri, 21 Apr 2017 20:18:01 +0000</pubDate>
+    <lastBuildDate>Fri, 21 Apr 2017 20:18:01 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -16,7 +16,7 @@
 
 &lt;p&gt;The web development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.&lt;/p&gt;
 
-&lt;p&gt;One of our core &lt;a href=&quot;/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; “Lightning Skillshares!” &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;One of our core &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; “Lightning Skillshares!” &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Since we believe in the open source ethos and sharing with the community, in this series, we’ll highlight some tips we use to improve our day-to-day efficiency (and hopefully yours too!).&lt;/p&gt;
 
@@ -116,7 +116,7 @@
         
         <category>skillshare</category>
         
-        <category>efficiency</category>
+        <category>productivity</category>
         
         <category>docker</category>
         
@@ -410,7 +410,7 @@ every time, and is a nice way to practice the skills suggested above.&lt;/p&gt;
 &lt;p&gt;I would highly recommend checking out &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;&lt;em&gt;On Web Typography&lt;/em&gt;&lt;/a&gt;,
 especially if you’re a typography novice looking to step up your game. In
 closing, I’ll leave you with Santa Maria’s thoughts on another benefit of
-developing type design skills: a greater sense of &lt;a href=&quot;/mission-and-values/#empathize&quot;&gt;empathy&lt;/a&gt; for your website’s
+developing type design skills: a greater sense of &lt;a href=&quot;/company/mission-and-values/#empathize&quot;&gt;empathy&lt;/a&gt; for your website’s
 users.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -607,7 +607,7 @@ npm start
     
       <item>
         <title>Dramatically Improve MySQL Import Performance with Docker</title>
-        <description>&lt;p&gt;We use &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; for our development environments because it helps us adhere to our &lt;a href=&quot;/mission-and-values/#excel&quot;&gt;commitment to excellence&lt;/a&gt;. It ensures an identical development platform across the team while also achieving parity with the production environment. These efficiency gains (among others we’ll share in an ongoing &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker series&lt;/a&gt;) over traditional development methods enable us to spend less time on setup and more time building amazing things.&lt;/p&gt;
+        <description>&lt;p&gt;We use &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; for our development environments because it helps us adhere to our &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;commitment to excellence&lt;/a&gt;. It ensures an identical development platform across the team while also achieving parity with the production environment. These efficiency gains (among others we’ll share in an ongoing &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker series&lt;/a&gt;) over traditional development methods enable us to spend less time on setup and more time building amazing things.&lt;/p&gt;
 
 &lt;p&gt;Part of our workflow includes a mechanism to establish and update the &lt;a href=&quot;https://en.wikipedia.org/wiki/Database_seeding&quot;&gt;seed database&lt;/a&gt; which we use to load near-real-time production content to our development environments as well as our &lt;a href=&quot;/blog/tag/testing/&quot;&gt;automated testing&lt;/a&gt; infrastructure. We’ve found it’s best to have real data throughout the development process, rather than using stale or dummy data which runs the risk of encountering unexpected issues toward the end of a project. One efficiency boon we’ve recently implemented and are excited to share is a technique that dramatically speeds up database imports, especially large ones. This is a big win for us since we’re often importing large databases multiple times a day on a project. In this post we’ll look at:&lt;/p&gt;
 
@@ -826,7 +826,7 @@ s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&qu
       &lt;p&gt;It’s worth noting that there are &lt;a href=&quot;https://github.com/juampynr/syncdb&quot;&gt;cool projects out there&lt;/a&gt; for doing parallel imports of a SQL dump file which improve the import experience. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Hat tip to &lt;a href=&quot;/team/tim-stallmann/&quot;&gt;Tim Stallmann&lt;/a&gt; for taking a proof of concept and incorporating it into a &lt;a href=&quot;/work/hptn-case-study/&quot;&gt;real-world project&lt;/a&gt;, from which many of the code samples here are drawn. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Hat tip to Tim Stallmann for taking a proof of concept and incorporating it into a &lt;a href=&quot;/work/hptn-case-study/&quot;&gt;real-world project&lt;/a&gt;, from which many of the code samples here are drawn. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
