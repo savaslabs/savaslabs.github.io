@@ -4,6 +4,94 @@
  * Styles for single blog topics.
  */
 
+/*doc
+---
+title: Blog topics
+name: blog-topics
+category: Regions
+---
+
+```html_example
+ <div class="region--blog-topics">
+  <p class="region--blog-topics__heading heading--bold h4 c-dark-teal">TOPICS</p>
+  <div class="region--blog-topics__topics">
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Drupal</span>
+        <span class="blog-topic__number">31</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">User Experience</span>
+        <span class="blog-topic__number">6</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Drupal 8</span>
+        <span class="blog-topic__number">8</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Front End Development</span>
+        <span class="blog-topic__number">4</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Design / UX</span>
+        <span class="blog-topic__number">7</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Composer</span>
+        <span class="blog-topic__number">3</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Continuous Integration</span>
+        <span class="blog-topic__number">11</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Drupal 8</span>
+        <span class="blog-topic__number">8</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Front End Development</span>
+        <span class="blog-topic__number">4</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Design / UX</span>
+        <span class="blog-topic__number">7</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Composer</span>
+        <span class="blog-topic__number">3</span>
+      </a>
+    </div>
+    <div class="blog-topic">
+      <a class="blog-topic__link" href="/blog/tag/drupal">
+        <span class="blog-topic__name">Continuous Integration</span>
+        <span class="blog-topic__number">11</span>
+      </a>
+    </div>
+  </div>
+</div>
+```
+ */
+
 .blog-topic__link {
   @include ease;
   // background-color: $eggshell;
