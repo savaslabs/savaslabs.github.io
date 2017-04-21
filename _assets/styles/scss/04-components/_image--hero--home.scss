@@ -6,7 +6,7 @@
 
 .home__cover {
   align-items: center;
-  background: url('/assets/img/bg/home-cover.jpg') $white 70% center no-repeat;
+  background: url('/assets/img/bg/home-cover.jpg') $white 65% center no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -41,6 +41,7 @@
     justify-content: center;
     margin: 0 auto;
     max-width: 100%;
+    padding-top: 1.75em;
     position: relative;
   }
 
@@ -52,11 +53,13 @@
     font-weight: 400;
     margin-top: 84px;
     max-width: 780px;
-    padding: $base-spacing * 2 $base-spacing;
+    padding: $base-spacing $base-spacing $base-spacing * 2;
     text-shadow: lighten($eggshell, .1) 2px 2px 10px;
+    width: 100%;
 
     @include grid-media($medium-screen-up) {
       font-size: 2em;
+      padding: $base-spacing * 2 $base-spacing;
     }
 
     @include grid-media($extra-large-screen-up) {
