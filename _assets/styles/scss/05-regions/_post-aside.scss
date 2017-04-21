@@ -68,6 +68,13 @@
     font-weight: 400;
   }
 
+  .region--post-aside__section--case-studies {
+    .case-study-block__title {
+      font-family: $copytext-font;
+      font-weight: 400;
+    }
+  }
+
   .region--post-aside__section--case-studies__cta {
     margin-top: $base-margin;
   }
