@@ -12,5 +12,4 @@ _includes/critical.css
 vendor
 
 # For the Hologram style guide.
-styleguide
-_styleguide_assets/styleguide.css
+# Do not hide it any longer!!!
