@@ -6,27 +6,40 @@
 
 .blog-topic__link {
   @include ease;
-  background-color: $eggshell;
-  border: 1px solid $gainsboro;
+  // background-color: $eggshell;
+  border-bottom: 1px solid $gainsboro;
   display: block;
-  margin: 0 .5em .5em 0;
+  margin: 0 1.25em .5em 0;
+  position: relative;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: $orange;
-    color: $eggshell;
+    border-color: $orange;
+    color: $orange;
   }
 
   span {
     display: inline-block;
-    padding: .25em .5em;
+    padding: .25em .5em .15em;
+  }
+
+  .blog-topic__name {
+    padding-right: 10px;
   }
 
   .blog-topic__number {
-    background-color: transparentize($teal, .2);
-    color: $eggshell;
-    min-width: 32px;
+    background-color: $white;
+    border: 1px solid $gainsboro;
+    border-radius: 13px;
+    bottom: -10px;
+    color: $teal;
+    display: block;
+    font-size: .6em;
+    height: 22px;
+    min-width: 22px;
+    position: absolute;
+    right: -13px;
     text-align: center;
   }
 }
