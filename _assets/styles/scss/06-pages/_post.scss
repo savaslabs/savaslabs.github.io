@@ -26,6 +26,10 @@
       padding-left: $base-spacing * 2;
     }
 
+    @include grid-media($max-width-up) {
+      padding-left: $base-spacing;
+    }
+
     // Apply padding to post info and post content rather than entire post main
     // section so featured image can be full width.
     .region--post-header,
@@ -45,8 +49,23 @@
       }
     }
 
+    .region--post-header {
+      h1 {
+        font-weight: 400;
+      }
+    }
+
     .region--post-content {
       color: $dark-teal;
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: $copytext-font;
+        font-weight: 400;
+      }
 
       .caption {
         color: $grey;
