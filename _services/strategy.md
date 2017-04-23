@@ -8,7 +8,7 @@ summary: |
 icon: "strategy-icon.svg"
 vertical_image: "/assets/img/services/strategy-hero.jpg"
 vertical_image_alt: "Chris walking with a client"
-quote_project: "duke_today"
+quote_project: "transaction_advisors"
 services: [Research, Ideation, Content Strategy, Channel Identification, User Journey Mapping, Competitive Analysis, Campaign Planning]
 
 ---
