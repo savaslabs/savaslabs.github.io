@@ -28,7 +28,7 @@ class: "page--tag"
 {% comment %} If so, output the top-weighted three. {% endcomment %}
 {% if related_case_studies > 0 %}
 <div class="tag__related-case-studies region--case-study-blocks region--case-study-blocks--small region">
-  <h2 class="heading--underline--orange">Related Case Studies</h2>
+  <h2 class="heading--underline--orange">Case Studies that include {{ tag }}</h2>
   <div class="region--case-study-blocks__case-studies">
     {% include regions/case-study-blocks--related--post.html tags=page.tag limit=3 %}
   </div>
@@ -40,7 +40,7 @@ class: "page--tag"
 {% endif %}
 
 <div class="tag__related-posts region--blog-tiles--all region">
-  <h2 class="heading--underline--orange">Related Blog Posts</h2>
+  <h2 class="heading--underline--orange">Blog Posts about {{ tag }}</h2>
   <div class="region--blog-tiles--all__tiles">
     {% include regions/blog-tiles--related--post.html tags=page.tag limit=8 %}
   </div>
