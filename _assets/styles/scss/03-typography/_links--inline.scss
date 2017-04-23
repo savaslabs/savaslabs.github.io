@@ -18,8 +18,8 @@ include an underline transition on hover.</p>
 */
 
 p a,
-ul a,
-ol a,
+article ul a,
+article ol a,
 .link--inline {
   @include link-inline;
 }
