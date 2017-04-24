@@ -47,14 +47,12 @@ category: Components
   > div {
     width: 100%;
 
-    @include grid-media($medium-screen-up) {
-      width: 50%;
-    }
   }
 
   .key-value-list__item__key {
     @include grid-media($medium-screen-up) {
       padding: $base-margin $base-margin $base-margin $base-spacing;
+      width: 35%;
     }
 
     h3 {
@@ -70,6 +68,7 @@ category: Components
     padding-bottom: $base-spacing * 2;
 
     @include grid-media($medium-screen-up) {
+      width: 65%;
       border-left: solid 1px $orange;
       padding: $base-margin $base-spacing $base-margin $base-margin;
     }
