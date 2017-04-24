@@ -97,15 +97,14 @@ plugin to create a `<picture>` element for the team member photo.
 
 .region--team-member-list {
 
+  h2 {
+    text-align: center;
+  }
   // Justify bios center on small screens and left on extra large and up.
   .region--team-member-list__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    @include grid-media($extra-large-screen-up) {
-      justify-content: flex-start;
-    }
 
     // Layout styles for the bios in the list.
     .team-member-bio {
@@ -126,10 +125,6 @@ plugin to create a `<picture>` element for the team member photo.
       @include grid-media($large-screen-up) {
         flex-basis: 25%;
         padding-left: 0;
-      }
-
-      @include grid-media($max-width-up) {
-        flex-basis: 20%;
       }
     }
   }
