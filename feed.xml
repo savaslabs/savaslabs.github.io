@@ -6,9 +6,108 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Apr 2017 13:44:44 +0000</pubDate>
-    <lastBuildDate>Sun, 23 Apr 2017 13:44:44 +0000</lastBuildDate>
+    <pubDate>Mon, 24 Apr 2017 16:08:28 +0000</pubDate>
+    <lastBuildDate>Mon, 24 Apr 2017 16:08:28 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Savaslabs.com Redesign</title>
+        <description>&lt;p&gt;At Savas Labs, we are a forward-looking bunch, much like our neighbors around the corner from our Durham office, The Republik, who wear that badge a little more… overtly:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/the-republik-building.jpg&quot; alt=&quot;Front of The Republik building&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Though future-focused-first, we &lt;em&gt;also&lt;/em&gt; recognize the importance of history and the value of a little reflection. After all, we  &lt;em&gt;must&lt;/em&gt; learn from our mistakes to truly thrive.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Know from whence you came. If you know whence you came, there are absolutely no limitations to where you can go. - James Baldwin&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Aside: I can’t recommend the award-winning documentary about James Baldwin’s legacy &lt;a href=&quot;http://www.iamnotyournegrofilm.com/&quot;&gt;&lt;em&gt;I am not your negro&lt;/em&gt;&lt;/a&gt; strongly enough. See it.&lt;/p&gt;
+
+&lt;h3 id=&quot;from-whence-we-came&quot;&gt;From whence we came…&lt;/h3&gt;
+&lt;p&gt;Savas Labs matured substantially in 2016, refining processes and adding new team members who brought complementary skills. It’s both intriguing and humbling to reflect on just how much we learned in the past year. It wasn’t all &lt;a href=&quot;https://www.google.com/search?biw=1524&amp;amp;bih=979&amp;amp;tbm=isch&amp;amp;sa=1&amp;amp;q=puppy+dogs+and+ice+cream&amp;amp;oq=puppy+dogs+and+ice+cream&quot;&gt;puppy dogs and ice cream&lt;/a&gt;, but the successes and the challenges helped us carve out our place in the world. We worked with consultants, analyzed and soul-searched to elicit what it is we love doing &lt;em&gt;and&lt;/em&gt; are really good at as a growing team. One manifestation of these pursuits was the establishment of &lt;a href=&quot;/company/mission-and-values/&quot;&gt;our core values&lt;/a&gt;. They help hold us and future Savasians (coining the demonym &lt;em&gt;Savasian&lt;/em&gt; - another thing we did in 2016) accountable to an agreed upon set of principles which drive how we treat one another and our partners.&lt;/p&gt;
+
+&lt;p&gt;In addition to internal anlaysis we studied our best projects to see what characteristics in partners and their challenges for which we are best fit. We uncovered that what we enjoy most and truly &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;excel&lt;/a&gt; at are projects with strategic and complex needs that lean heavily on our deep Drupal expertise usually requiring inter-departmental engagement within organizations.&lt;/p&gt;
+
+&lt;p&gt;Ergo: our positioning statement that appears front-and-center on our &lt;a href=&quot;/&quot;&gt;homepage&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We craft elegant Drupal web systems that propel organizations&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;why-the-redesign&quot;&gt;Why the redesign&lt;/h3&gt;
+
+&lt;p&gt;You know, the typical reasons, because we wanted to ;) In truth, we were due for a redesign as the last time we did this was &lt;a href=&quot;/2015/04/01/building-our-site.html&quot;&gt;over two years ago&lt;/a&gt;. Additionally, given our growth, we felt our website did not reflect the quality of work we’ve been doing. As we updated our messaging, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, &lt;a href=&quot;/company/oksana-cyrwus/&quot;&gt;Oksana Cyrwus&lt;/a&gt;, to create a vision of our team’s identity.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg&quot; alt=&quot;Many devices testing responsive&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Oksana’s cross browser testing lab&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;construction-materials&quot;&gt;Construction Materials&lt;/h3&gt;
+
+&lt;p&gt;Although we’re usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we’ve &lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;written about before&lt;/a&gt; as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given &lt;s&gt;Sunday&lt;/s&gt; workday.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/construction.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;Man cutting wood&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As &lt;a href=&quot;https://twitter.com/codeguy&quot;&gt;Josh Lockhart&lt;/a&gt; a local author and creator of the &lt;a href=&quot;https://www.slimframework.com/&quot;&gt;Slim PHP MicroFramework&lt;/a&gt; advised a developer audience at a recent PHP conference talk (&lt;a href=&quot;https://youtu.be/hH4HyfXiH9Y?t=924&quot;&gt;Video link&lt;/a&gt;):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Be aware that other tools exist and that they may be better suited for certain tasks.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ultimately, for us, the benefits outweighed the drawbacks:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bennies&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;No database back-end, means reducted security threats and reduced hosting complexity. We’re able to host for free on &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;A &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;highly-performant framework&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;Ease of deployment&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Efficient for our workflow as it is developer oriented.&lt;/li&gt;
+  &lt;li&gt;Inertia.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/inertia.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;man pushing a rock: inertia&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Drawbacks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Requires Ruby ecosystem competency which are often new skills for Drupalers.&lt;/li&gt;
+  &lt;li&gt;Requires developer-level skills to update.&lt;/li&gt;
+  &lt;li&gt;Not as robust of an ecosystem as Drupal for example.
+    &lt;ol&gt;
+      &lt;li&gt;Example: When we were dissatisfied with our comment options, we &lt;a href=&quot;/2016/04/20/squabble-comments.html&quot;&gt;built our own server&lt;/a&gt; on guess what.. a different framework. This took us time and is less feature-rich than what we’d get with Drupal out of the box.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These drawbacks, though not without their costs, are also opportunities for us to be a part of the broader web ecosystem and learn. The more exposure to best-practices and other frameworks, the more we can borrow from and employ them in our work, though it &lt;em&gt;is&lt;/em&gt; an investment to develop the expertise.&lt;/p&gt;
+
+&lt;p&gt;Jekyll works for us since the &lt;a href=&quot;/company#team&quot;&gt;team of savvy Savasians&lt;/a&gt; is comfortable rapidly learning a new worfklow to publish updates to our website. Additionally our website needs are relatively simple, certainly compared to the needs of many of our partners. Our partners often have personnel with a wide range of technical training and often require sophisticated content models, granular authentication and permissions, advanced content publishing workflows among many other common needs for which a modular ecosystem of plugins like Drupal’s would be better suited.&lt;/p&gt;
+
+&lt;p&gt;Alongside Jekyll, we used &lt;a href=&quot;http://trulia.github.io/hologram/&quot;&gt;Hologram&lt;/a&gt; developed by Trulia for our &lt;a href=&quot;/styleguide&quot;&gt;styleguide&lt;/a&gt;. It proved to be a great worklfow for our designer, front-end developer and myself to interact efficiently and see updated results in the browser rapidly.&lt;/p&gt;
+
+&lt;h3 id=&quot;timing&quot;&gt;Timing&lt;/h3&gt;
+
+&lt;p&gt;And today… Today we celebrate our independ… no - we celebrate our redesigned website launch and the &lt;a href=&quot;https://events.drupal.org/baltimore2017&quot;&gt;Drupalcon Baltimore&lt;/a&gt; kickoff simultaneously! Coincidence? Of course not! However, I would like to give a shoutout to my entire team for making this happen on a tight schedule and an extra big-ups to Anne and Oksana who put in extra hours in the weeks leading up to make today possible. It was fun to be a part of the building process again; I found myself feverishly reloading the site every time new code was pushed up, which was often many, many times a day.&lt;/p&gt;
+
+&lt;p&gt;So now it’s time to show off our fancy new website complete with business cards to boot! Tell us what you think &lt;a href=&quot;#js-expander-trigger&quot;&gt;in comments&lt;/a&gt; or on &lt;a href=&quot;https://twitter.com/intent/tweet?text=We%20think%20the%20redesign%20is%20likely,%20nay,%20probable,%20to%20bring%20about%20world%20peace%20%F0%9F%8C%8F%20%E2%98%AE%EF%B8%8F%20Congrats%20%40Savas_Labs%21&amp;amp;source=webclient&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Got the new fully recyclable ♻️  green business cards in honor of &lt;a href=&quot;https://twitter.com/hashtag/EarthDay2017?src=hash&quot;&gt;#EarthDay2017&lt;/a&gt; 🌏 📅  just in time for &lt;a href=&quot;https://twitter.com/hashtag/Drupalcon?src=hash&quot;&gt;#Drupalcon&lt;/a&gt; &lt;a href=&quot;https://t.co/YMg90yU1UT&quot;&gt;pic.twitter.com/YMg90yU1UT&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/854730073152385027&quot;&gt;April 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+        <link>http://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</link>
+        <guid isPermaLink="true">http://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</guid>
+        
+        <category>design</category>
+        
+        <category>user-experience</category>
+        
+        <category>jekyll</category>
+        
+        
+      </item>
     
       <item>
         <title>Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017</title>
@@ -2410,89 +2509,6 @@ a must-read for gulp beginners!&lt;/li&gt;
         <category>drupal-planet</category>
         
         <category>marketing</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>A Savas Labs Internship</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/blog/internship-slave.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;Sipress Cartoon&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;&lt;a href=&quot;https://www.cartoonbank.com/search/-/search/results?p_p_state=pop_up&amp;amp;_listenersearchresults_WAR_searchportlet_struts.portlet.action=%2Fview%2FshowDetail&amp;amp;_listenersearchresults_WAR_searchportlet_pageNumber=1&amp;amp;_listenersearchresults_WAR_searchportlet_search=feature%3Acncartoons+intern&amp;amp;_listenersearchresults_WAR_searchportlet_match=a&amp;amp;_listenersearchresults_WAR_searchportlet_sort=d&amp;amp;_listenersearchresults_WAR_searchportlet_byline=Sipress&amp;amp;_listenersearchresults_WAR_searchportlet_docdaterng=2004&amp;amp;_listenersearchresults_WAR_searchportlet_searchFeatures=cncartoons&amp;amp;_listenersearchresults_WAR_searchportlet_tagId=cncartoons022239&quot;&gt;&lt;em&gt;Source&lt;/em&gt;&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;If you’ve ever contemplated a drastic career change, then you’ve probably thought about what it’d be like to start at the beginning again at some point.&lt;/p&gt;
-
-&lt;p&gt;In this post, I’d like to share my 3 month internship experience for anyone who’s considering making the switch to Web Development, or who may be curious about the learning environment here at Savas Labs.&lt;/p&gt;
-
-&lt;h2 id=&quot;visiting-the-team&quot;&gt;Visiting the Team&lt;/h2&gt;
-
-&lt;p&gt;Since I’m located &lt;a href=&quot;https://www.google.com/maps/dir/Portland,+OR/Durham,+NC/@39.4988195,-118.778336,4z/data=!4m13!4m12!1m5!1m1!1s0x54950b0b7da97427:0x1c36b9e6f6d18591!2m2!1d-122.6764816!2d45.5230622!1m5!1m1!1s0x89ace471120f66f1:0xe17ada898a46f27e!2m2!1d-78.898619!2d35.9940329&quot;&gt;2,845 miles&lt;/a&gt; from Savas Labs HQ, one of my biggest concerns starting out as a newbie was the added challenge of telecommuting. To get me up and running as fast as possible, &lt;a href=&quot;http://savaslabs.com/team/chris-russo/&quot;&gt;Chris&lt;/a&gt; and I decided I’d fly to Durham to meet the team and work in the office together for my first week.&lt;/p&gt;
-
-&lt;p&gt;It was great to kick-off my internship with in-person QA sessions and impromptu whiteboarding (not to mention meeting my teammates and being graciously invited to their homes!). Even though we relied on screenshares and conference calls just fine after that first week, being in the same physical space to start off with helped establish my presence with the team and laid a strong learning foundation for the remainder of my internship.&lt;/p&gt;
-
-&lt;h2 id=&quot;an-inclusive-learning-environment&quot;&gt;An Inclusive Learning Environment&lt;/h2&gt;
-
-&lt;p&gt;Everyone at Savas Labs contributed to my learning! I was encouraged by the entire team, and no one was above taking the time to show me how to &lt;a href=&quot;https://www.drupal.org/node/1791676&quot;&gt;install Composer&lt;/a&gt; or configure &lt;a href=&quot;https://www.drupalvm.com/&quot;&gt;DrupalVM&lt;/a&gt;. I felt comfortable asking questions and was encouraged to do so from the beginning.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/internship-encouragement.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;Slack Encouragement&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Supportive Savasians!&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;It helped that many on the team had also transitioned from other careers and understood what it felt like to be overwhelmed by a barrage of new information. More than once, &lt;a href=&quot;http://savaslabs.com/team/dan-murphy/&quot;&gt;Dan&lt;/a&gt; or &lt;a href=&quot;http://savaslabs.com/team/anne-tomasevich/&quot;&gt;Anne&lt;/a&gt; would check in and ask me if I needed any help or had any general questions (thanks you guys!). And I could tell everyone took my internship seriously, and never once was I made to feel inconsequential!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/internship-dilbert.gif&quot; class=&quot;blog-image-xl&quot; alt=&quot;Dilbert Cartoon&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;&lt;a href=&quot;http://dilbert.com/strip/2011-04-22&quot;&gt;&lt;em&gt;Source&lt;/em&gt;&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Likewise, I found the internship to be anything but a one-sided experience. My thoughts on workflow and documentation were welcome from the beginning and it was nice to have my voice be a part of the discussion about virtualization, even though I had minimal experience. It was very satisfying to contribute to the company while Savas Labs was investing in me.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-learning&quot;&gt;The Learning&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;There is. A lot. To. Learn&lt;/strong&gt; (I mean, it can’t &lt;em&gt;all&lt;/em&gt; be roses right?).&lt;/p&gt;
-
-&lt;p&gt;Though comfortable with programming syntax when I started (a significant portion of my last job was writing custom object-oriented programs for mechanical systems), I had never heard of &lt;a href=&quot;https://git-scm.com/&quot;&gt;git&lt;/a&gt; before or had any idea how to use the command line. I had, essentially, &lt;em&gt;zero&lt;/em&gt; Web Development experience&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;p&gt;To be honest, I wasn’t expecting the sheer breadth and volume of material I’d need to know just to reach a modicum level of proficiency. I spent the first month figuring out the foundations – making pull requests, figuring out how to download software from the command line (don’t even get me started on virtualization)– before I could even start to dip my toes into Drupal development. This sounds naive now, but I was genuinely surprised when I realized that Web Development was going to be &lt;a href=&quot;https://web.archive.org/web/20160507042856/http://www.codem0nk3y.com/wp-content/uploads/2012/04/cms-learning-curve.png&quot;&gt;much more difficult&lt;/a&gt; than reading a few good books on Drupal and CSS!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/internship-learning-cartoon.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;So much to learn!&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;At times it felt like I’d inadvertently walked into a trap. &lt;em&gt;Source&lt;/em&gt;: Me!&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Likewise, I think this presented a teaching challenge for Savas Labs as well. Before I started, Chris and Remy&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; created a list of what I was expected to cover in the course of this internship. Frankly, the topics assumed a lot of foundational knowledge that I didn’t have yet. I’d start tackling a task only to realize that I was missing a critical package manager or had skipped a step I didn’t even know was needed. In those moments I found myself wishing there was a more structured curriculum.&lt;/p&gt;
-
-&lt;p&gt;As I started to get the basics down, my learning became more focused as I began to get involved with client projects. I found task-based learning more satisfying because I was contributing to projects and the team. While no project is without busywork, the team wasn’t just trying to offload mindless drudgery to the newest pair of hands – I could tell my teammates were thinking about the value of each assignment and how that would help me build upon the previous lessons I’d just learned.&lt;/p&gt;
-
-&lt;h2 id=&quot;mentoring--community&quot;&gt;Mentoring &amp;amp; Community&lt;/h2&gt;
-&lt;p&gt;My mentor, Lisa, was instrumental in the success of my internship. Given how much there was (and still is!) to learn, having an experienced person actively direct my focus was invaluable.&lt;/p&gt;
-
-&lt;p&gt;When I became a bit adrift after the first month, Lisa guided me towards site building and eventually even created a &lt;a href=&quot;https://github.com/savaslabs/autism-case-study&quot;&gt;simulated D7 client project&lt;/a&gt; for me to work on. And mindful of the changing Web Development landscape, Lisa counseled me to emphasize Drupal 7/Drupal 8 learning instead of spending time on Drupal 6 projects. We started meeting twice a week (sometimes more!) to discuss my progress or deep dive into topics like the history of version control. All this took a significant amount of Lisa’s time (thank you Lisa!), and is proof of the Savas Labs team’s dedication to each other’s growth as developers.&lt;/p&gt;
-
-&lt;p&gt;More generally, this generosity is something I’ve noticed throughout the Web and Drupal communities. In the few months since I’ve started, I sense that my colleagues don’t just look towards their day-to-day responsibilities at Savas Labs, but also beyond, at what they can contribute to Development at large. This isn’t exclusive to our company either. The number of &lt;a href=&quot;http://www.metaltoad.com/blog/how-write-drupal-update-scripts&quot;&gt;how-to articles&lt;/a&gt;, &lt;a href=&quot;http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal&quot;&gt;Stack Exchange conversations&lt;/a&gt;, and Open Source &lt;a href=&quot;https://github.com/fish-shell/fish-shell&quot;&gt;public repos&lt;/a&gt; available is inspiring!&lt;/p&gt;
-
-&lt;h2 id=&quot;last-thoughts&quot;&gt;Last Thoughts&lt;/h2&gt;
-
-&lt;p&gt;There’s still &lt;em&gt;mountains&lt;/em&gt; to learn, and I’ll probably be bouncing around the “&lt;a href=&quot;https://www.vikingcodeschool.com/posts/why-learning-to-code-is-so-damn-hard&quot;&gt;Desert of Despair&lt;/a&gt;” for some time to come. But I’d like to end by saying that it’s been incredibly satisfying to have even come this far (with the help of my knowledgeable and amazingly supportive teammates of course!).&lt;/p&gt;
-
-&lt;p&gt;And yes, I’ve &lt;a href=&quot;https://github.com/lrowang/savaslabs.github.io/commit/c6fc9b630f55e19962560eebdd3f66b438defc11&quot;&gt;graduated&lt;/a&gt;!&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;If you’re just starting out, Viking Code School sums up the &lt;a href=&quot;https://www.vikingcodeschool.com/posts/why-learning-to-code-is-so-damn-hard&quot;&gt;learning challenges&lt;/a&gt; quite well (the concepts are &lt;a href=&quot;https://drupalize.me/blog/201607/why-learning-drupal-hard?utm_source=The+Weekly+Drop&amp;amp;utm_medium=email&amp;amp;utm_campaign=The_Weekly_Drop_Issue_250_07_28_2016&quot;&gt;applicable to Drupal&lt;/a&gt; too), and I found the description to be painfully accurate! &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;&lt;strong&gt;Fun Fact&lt;/strong&gt;: I met Chris/Savas through my husband, &lt;a href=&quot;https://www.isovera.com/staff/remy-denton&quot;&gt;Remy Denton&lt;/a&gt; (yes, we’re aware of the &lt;em&gt;House of Cards&lt;/em&gt; &lt;a href=&quot;http://house-of-cards.wikia.com/wiki/Remy_Danton&quot;&gt;guy&lt;/a&gt;!). Remy is a Developer and former colleague of Chris’s at &lt;a href=&quot;https://www.isovera.com/&quot;&gt;Isovera&lt;/a&gt;. He put me in touch with Savas while I was considering the transition to Web Development and helped Chris put together the initial learning curriculum. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Mon, 29 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/08/29/internship-thoughts.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/08/29/internship-thoughts.html</guid>
-        
-        <category>internship</category>
-        
-        <category>identity</category>
         
         
       </item>
