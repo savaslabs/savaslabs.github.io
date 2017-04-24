@@ -68,9 +68,9 @@ category: Components
     padding-bottom: $base-spacing * 2;
 
     @include grid-media($medium-screen-up) {
-      width: 65%;
       border-left: solid 1px $orange;
       padding: $base-margin $base-spacing $base-margin $base-margin;
+      width: 65%;
     }
   }
 }
