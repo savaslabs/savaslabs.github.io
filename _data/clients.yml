@@ -60,3 +60,15 @@
   image: /assets/img/work/clients/bl-pm.jpg
   quote: |
     I have so enjoyed working with Savas Labs to redesign our online educational civil and human rights activism map. The Savas Labs staff are knowledgeable, creative problem solvers with a real commitment to Durham and to social justice. The map is now sleek and easier to use, the best since we started it in 2009.
+- project: bioraft-d5
+  name: Michelle Lauer
+  title: Technical Project Manager, BioRAFT
+  image: /assets/img/work/clients/ml-bioraft.jpg
+  quote: |
+    Savas was extremely professional and produced extremely high quality work for us. Our internal development team thoroughly reviewed their work and found their code and approaches to be impeccable and aligned with our demanding quality standards.
+- project: ka-consult
+  name: Greg Go
+  title: CTO, Wisebread.com
+  image: /assets/img/work/clients/gg-ka.jpg
+  quote: |
+    The upgrade was super smooth, super low downtime, and I was super informed despite not being able to stay actively on top of it. Great communication, great planning, great execution... all around, AMAZING experience.

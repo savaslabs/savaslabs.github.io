@@ -8,7 +8,7 @@ summary: |
 icon: "development-icon.svg"
 vertical_image: "/assets/img/services/development-hero.jpg"
 vertical_image_alt: "Websites built by Savas Labs displayed on mobile screens"
-quote_project: "duke_today"
+quote_project: "ka-consult"
 services: [Drupal CMS, Architecture, Software & Databases, Data Migration, E-Commerce, Performance Optimization, Automated Testing, Security]
 
 ---
