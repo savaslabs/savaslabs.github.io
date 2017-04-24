@@ -14,8 +14,8 @@
   width: 100%;
 
   @include grid-media($medium-screen-up) {
-    height: calc(100vh - 84px);
-    min-height: 740px;
+    height: calc(90vh - 84px);
+    min-height: 660px;
   }
 
   .region--hero--company__wrapper {
