@@ -54,7 +54,6 @@
     margin-top: 84px;
     max-width: 400px;
     padding: $base-spacing $base-spacing $base-spacing * 3;
-    text-shadow: lighten($eggshell, .1) 2px 2px 10px;
     width: 100%;
 
     @include grid-media($medium-screen-up) {
@@ -169,7 +168,6 @@
 
         h2 {
           font-size: .85em;
-          font-style: italic;
           text-align: center;
 
           @include grid-media($medium-screen-up) {
