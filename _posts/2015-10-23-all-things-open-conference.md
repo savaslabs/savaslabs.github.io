@@ -37,7 +37,7 @@ systems don't. At the very least, we have opportunities to
 ![My little brony](/assets/img/blog/rainbowdash by krazy3.jpg)
 
 #### Performance Profiling Tools & Tricks
-[Brad Blake](https://www.phase2technology.com/brad-blake/), self-proclaimed
+Brad Blake, self-proclaimed
 [non-brony](http://whatisabrony.com/) (don't worry, I was in the dark too during
 this presentation) with [Phase 2
 technology](https://www.phase2technology.com/) gave an
