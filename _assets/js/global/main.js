@@ -75,6 +75,7 @@ $(document).ready(
                         commentString = 'comment';
                     }
                     $("#comment-count").html('<a href="#js-expander-trigger"><i class="fa fa-comment"></i>' + json.data[0][truncatedSlug] + ' ' + commentString + '</a>');
+                    $('#comments-trigger').html('Comments (' + json.data[0][truncatedSlug] + ')');
                 }
             });
     });
