@@ -18,16 +18,7 @@
       border-right: solid 1px $light-grey;
       float: left;
       padding-bottom: $base-margin;
-      padding-left: $base-spacing * 1.5;
       width: 66.666%;
-    }
-
-    @include grid-media($extra-large-screen-up) {
-      padding-left: $base-spacing * 2;
-    }
-
-    @include grid-media($max-width-up) {
-      padding-left: $base-spacing;
     }
 
     // Apply padding to post info and post content rather than entire post main
@@ -37,11 +28,7 @@
       padding: 0 $base-spacing;
 
       @include grid-media($medium-screen-up) {
-        padding: 0 $base-spacing * 2;
-      }
-
-      @include grid-media($large-screen-up) {
-        padding: 0 $base-spacing * 1.5 0 0;
+        padding: 0 $base-spacing * 1.5;
       }
 
       @include grid-media($extra-large-screen-up) {

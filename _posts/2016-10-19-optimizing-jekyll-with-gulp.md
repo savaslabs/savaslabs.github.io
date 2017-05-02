@@ -898,12 +898,18 @@ injected is fantastic!
 After implementing these changes, our mobile PageSpeed score shot up to 92/100,
 with our desktop score at 95/100!
 
-<img src="/assets/img/blog/pagespeed-insights-results.jpg" class="blog-image-xl" alt="95/100 Google PageSpeed Insights score!">
+<img src="/assets/img/blog/pagespeed-insights-results.jpg" alt="95/100 Google PageSpeed Insights score!">
+
+---
 
 To pat ourselves on the back a little more, I should mention that we were already
 doing great in the user experience department.
 
-<img src="/assets/img/blog/pagespeed-insights-user-experience.jpg" class="blog-image-xl" alt="Passing Google PageSpeed Insights user experience items.">
+---
+
+<img src="/assets/img/blog/pagespeed-insights-user-experience.jpg" alt="Passing Google PageSpeed Insights user experience items.">
+
+---
 
 That's grounds for a little celebration in my opinion!
 

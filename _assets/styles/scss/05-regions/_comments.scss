@@ -5,6 +5,12 @@
  */
 
 .region--comments {
+  .region--comments--disabled {
+    margin-bottom: 0;
+    padding: 1em;
+    text-align: center;
+  }
+
   .region--comments__comments {
     margin-bottom: $base-margin;
 
