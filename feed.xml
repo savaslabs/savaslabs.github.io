@@ -6,15 +6,15 @@
 </description>
     <link>http://savaslabs.com/</link>
     <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 May 2017 14:59:40 +0000</pubDate>
-    <lastBuildDate>Tue, 02 May 2017 14:59:40 +0000</lastBuildDate>
+    <pubDate>Tue, 02 May 2017 20:50:36 +0000</pubDate>
+    <lastBuildDate>Tue, 02 May 2017 20:50:36 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
         <title>Savaslabs.com Redesign</title>
         <description>&lt;p&gt;At Savas Labs, we are a forward-looking bunch, much like our neighbors around the corner from our Durham office, The Republik, who wear that badge a little more… overtly:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/the-republik-building.jpg&quot; alt=&quot;Front of The Republik building&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/the-republik-building.jpg&quot; alt=&quot;Front of The Republik building&quot; class=&quot;blog-image-full-width&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Though future-focused-first, we &lt;em&gt;also&lt;/em&gt; recognize the importance of history and the value of a little reflection. After all, we  &lt;em&gt;must&lt;/em&gt; learn from our mistakes to truly thrive.&lt;/p&gt;
 
@@ -39,14 +39,14 @@
 
 &lt;p&gt;You know, the typical reasons, because we wanted to ;) In truth, we were due for a redesign as the last time we did this was &lt;a href=&quot;/2015/04/01/building-our-site.html&quot;&gt;over two years ago&lt;/a&gt;. Additionally, given our growth, we felt our website did not reflect the quality of work we’ve been doing. As we updated our messaging, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, &lt;a href=&quot;/company/oksana-cyrwus/&quot;&gt;Oksana Cyrwus&lt;/a&gt;, to create a vision of our team’s identity.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg&quot; alt=&quot;Many devices testing responsive&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg&quot; alt=&quot;Many devices testing responsive&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Oksana’s cross browser testing lab&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;construction-materials&quot;&gt;Construction Materials&lt;/h3&gt;
 
 &lt;p&gt;Although we’re usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we’ve &lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;written about before&lt;/a&gt; as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given &lt;s&gt;Sunday&lt;/s&gt; workday.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/construction.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;Man cutting wood&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/construction.jpg&quot; class=&quot;blog-image-full-width&quot; alt=&quot;Man cutting wood&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As &lt;a href=&quot;https://twitter.com/codeguy&quot;&gt;Josh Lockhart&lt;/a&gt; a local author and creator of the &lt;a href=&quot;https://www.slimframework.com/&quot;&gt;Slim PHP MicroFramework&lt;/a&gt; advised a developer audience at a recent PHP conference talk (&lt;a href=&quot;https://youtu.be/hH4HyfXiH9Y?t=924&quot;&gt;Video link&lt;/a&gt;):&lt;/p&gt;
 
@@ -55,6 +55,8 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;Ultimately, for us, the benefits outweighed the drawbacks:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/inertia.jpg&quot; alt=&quot;man pushing a rock: inertia&quot; class=&quot;blog-image-right&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Bennies&lt;/strong&gt;&lt;/p&gt;
 
@@ -65,8 +67,6 @@
   &lt;li&gt;Efficient for our workflow as it is developer oriented.&lt;/li&gt;
   &lt;li&gt;Inertia.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/inertia.jpg&quot; class=&quot;blog-image-large&quot; alt=&quot;man pushing a rock: inertia&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Drawbacks&lt;/strong&gt;&lt;/p&gt;
 
@@ -135,7 +135,7 @@
 
 &lt;p&gt;Be aware, collaborators will have &lt;em&gt;direct&lt;/em&gt; access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it’s free and easy to set up – check it out &lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-teleconsole-demo.gif&quot; class=&quot;blog-image-xl&quot; alt=&quot;Teleconsole demo&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-teleconsole-demo.gif&quot; class=&quot;blog-image-full-width&quot; alt=&quot;Teleconsole demo&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Terminal sharing 2,700 miles away!&lt;/span&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm&lt;/h2&gt;
@@ -186,11 +186,11 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm2.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm2.png&quot; class=&quot;blog-image-full-width&quot; alt=&quot;phpstorm connect2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! &lt;img class=&quot;emoji&quot; title=&quot;:star2:&quot; alt=&quot;:star2:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f31f.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm3.png&quot; class=&quot;blog-image-xl&quot; alt=&quot;phpstorm connect3&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm3.png&quot; class=&quot;blog-image-full-width&quot; alt=&quot;phpstorm connect3&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Write and save custom queries!&lt;/span&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Screen Recorder to capture your screen&lt;/h2&gt;
@@ -2293,12 +2293,18 @@ injected is fantastic!&lt;/p&gt;
 &lt;p&gt;After implementing these changes, our mobile PageSpeed score shot up to 92/100,
 with our desktop score at 95/100!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-results.jpg&quot; class=&quot;blog-image-xl&quot; alt=&quot;95/100 Google PageSpeed Insights score!&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-results.jpg&quot; alt=&quot;95/100 Google PageSpeed Insights score!&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;To pat ourselves on the back a little more, I should mention that we were already
 doing great in the user experience department.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-user-experience.jpg&quot; class=&quot;blog-image-xl&quot; alt=&quot;Passing Google PageSpeed Insights user experience items.&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-user-experience.jpg&quot; alt=&quot;Passing Google PageSpeed Insights user experience items.&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;That’s grounds for a little celebration in my opinion!&lt;/p&gt;
 
