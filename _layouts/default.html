@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body{% if page.class %} class="{{ page.class }}"{% else %} class="{{ page.layout | prepend: 'page--' }}"{% endif %}>
+  <body{% if page.class %} class="{{ page.class | prepend: 'page--'  }}"{% else %} class="{{ page.layout | prepend: 'page--' }}"{% endif %}>
 
     {% include regions/header.html %}
 
