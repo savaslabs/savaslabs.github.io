@@ -3,13 +3,20 @@
  *
  * Blog post image styles.
  */
+.page--post {
+  .region--featured-image {
+    img,
+    picture {
+      width: 100%;
+    }
+  }
+}
 
 .blog-image {
-  background: $gainsboro;
-  box-shadow: 0 2px 4px darken($gainsboro, 10%);
   display: block;
   margin: 1em auto;
   max-width: 250px;
+  width: 100%;
 
   @include grid-media($medium-screen-up) {
     &.wrap-right {
@@ -36,11 +43,62 @@
   width: 100%;
 }
 
-.blog-image-xl {
+.blog-image-full-width {
   @extend .blog-image;
-  height: auto;
-  max-width: 895px; // Width of main post sections on largest screens.
-  width: 100%;
+  display: block;
+  margin-left: -$base-spacing;
+  max-width: none;
+  width: calc(100% + 2em);
+
+  @include grid-media($medium-screen-up) {
+    margin-left: -$base-spacing * 1.5;
+    width: calc(100% + 3em);
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    margin-left: -$base-spacing * 2;
+    width: calc(100% + 4em);
+  }
+}
+
+.blog-image-left {
+  @extend .blog-image;
+  display: inline-block;
+  float: left;
+  margin-left: -$base-spacing;
+  margin-right: $base-spacing * 1;
+  max-width: none;
+  width: calc(100% + 2em);
+
+  @include grid-media($medium-screen-up) {
+    margin-left: -$base-spacing * 1.5;
+    width: calc(50% + 1.5em);
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    margin-left: -$base-spacing * 2;
+    width: calc(50% + 2em);
+  }
+}
+
+.blog-image-right {
+  @extend .blog-image;
+  display: inline-block;
+  float: right;
+  margin-left: $base-spacing * 1;
+  margin-right: -$base-spacing;
+  max-width: none;
+  width: calc(100% + 2em);
+
+  @include grid-media($medium-screen-up) {
+    margin-right: -$base-spacing * 1.5;
+    width: calc(50% + 1.5em);
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    margin-right: -$base-spacing * 2;
+    width: calc(50% + 2em);
+  }
 }
 
 // Image captions.
@@ -49,4 +107,19 @@
   font-size: .9em;
   margin: 0 auto 2em;
   text-align: center;
+}
+
+.blog-image-left .caption,
+.blog-image-right .caption {
+  margin-bottom: 0;
+  padding: $base-spacing / 2 $base-spacing;
+  text-align: left;
+
+  @include grid-media($medium-screen-up) {
+    padding: $base-spacing / 2 $base-spacing * 1.5;
+  }
+
+  @include grid-media($extra-large-screen-up) {
+    padding: $base-spacing / 2 $base-spacing * 2;
+  }
 }

@@ -13,7 +13,7 @@ featured_image_width: "1474px"
 
 At Savas Labs, we are a forward-looking bunch, much like our neighbors around the corner from our Durham office, The Republik, who wear that badge a little more... overtly:
 
-<img src="/assets/img/blog/the-republik-building.jpg" alt="Front of The Republik building">
+<img src="/assets/img/blog/the-republik-building.jpg" alt="Front of The Republik building" class="blog-image-full-width">
 
 Though future-focused-first, we _also_ recognize the importance of history and the value of a little reflection. After all, we  _must_ learn from our mistakes to truly thrive.
 
@@ -34,20 +34,22 @@ Ergo: our positioning statement that appears front-and-center on our [homepage](
 
 You know, the typical reasons, because we wanted to ;) In truth, we were due for a redesign as the last time we did this was [over two years ago](/2015/04/01/building-our-site.html). Additionally, given our growth, we felt our website did not reflect the quality of work we've been doing. As we updated our messaging, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, [Oksana Cyrwus](/company/oksana-cyrwus/), to create a vision of our team's identity.
 
-<img src="/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg" alt="Many devices testing responsive">
+<img src="/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg" alt="Many devices testing responsive" class="blog-image-full-width">
 <span class="caption">Oksana's cross browser testing lab</span>
 
 ### Construction Materials
 
 Although we're usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we've [written about before](/blog/tag/jekyll/) as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given <s>Sunday</s> workday.
 
-<img src="/assets/img/blog/construction.jpg" class="blog-image-large" alt="Man cutting wood">
+<img src="/assets/img/blog/construction.jpg" class="blog-image-full-width" alt="Man cutting wood">
 
 As [Josh Lockhart](https://twitter.com/codeguy) a local author and creator of the [Slim PHP MicroFramework](https://www.slimframework.com/) advised a developer audience at a recent PHP conference talk ([Video link](https://youtu.be/hH4HyfXiH9Y?t=924)):
 
 > Be aware that other tools exist and that they may be better suited for certain tasks.
 
 Ultimately, for us, the benefits outweighed the drawbacks:
+
+<img src="/assets/img/blog/inertia.jpg" alt="man pushing a rock: inertia" class="blog-image-right">
 
 **Bennies**
 
@@ -56,8 +58,6 @@ Ultimately, for us, the benefits outweighed the drawbacks:
 1. [Ease of deployment](/2016/10/25/deploy-jekyll-with-travis.html).
 1. Efficient for our workflow as it is developer oriented.
 1. Inertia.
-
-<img src="/assets/img/blog/inertia.jpg" class="blog-image-large" alt="man pushing a rock: inertia">
 
 **Drawbacks**
 

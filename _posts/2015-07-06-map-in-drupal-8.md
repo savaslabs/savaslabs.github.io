@@ -122,7 +122,7 @@ Next we'll add a view that will output a list of our "place" nodes as GeoJSON th
 6. Under "Pager," change the number of fields to display to 0 (which means unlimited in this case).
 
 For reference, here's the settings for my Places view:
-<img src="/assets/img/blog/map-in-drupal-8/places-view.jpg" alt="Screenshot of settings for the Places view" class="blog-image-xl">
+<img src="/assets/img/blog/map-in-drupal-8/places-view.jpg" alt="Screenshot of settings for the Places view" class="blog-image-full-width">
 
 We've just set up a view that outputs GeoJSON data at [site-url]/points. Take a minute to go to that URL and check out your data. In the next step, we'll use this page to populate our map with points.
 
@@ -180,7 +180,7 @@ Now we need to add a base map. We're using Positron by CartoDB. We'll import the
 
 Go to your Drupal site and rebuild your cache and you should see your base map!
 
-<img src="/assets/img/blog/map-in-drupal-8/map-without-markers.jpg" alt="Screenshot the base map" class="blog-image-xl">
+<img src="/assets/img/blog/map-in-drupal-8/map-without-markers.jpg" alt="Screenshot the base map" class="blog-image-full-width">
 
 ## Add our points
 
@@ -206,13 +206,13 @@ Now we'll use `.getJSON` to retrieve our data from the url "/points," then trigg
 
  Refresh - we've got points!
 
-<img src="/assets/img/blog/map-in-drupal-8/map-with-markers.jpg" alt="Screenshot of the map with markers" class="blog-image-xl">
+<img src="/assets/img/blog/map-in-drupal-8/map-with-markers.jpg" alt="Screenshot of the map with markers" class="blog-image-full-width">
 
 ## Add popups
 
 The last thing to do is add popups to each point when they're clicked. We'll insert this code in the `addDataToMap` function. If you actually navigate to [site-url]/points, you can inspect your GeoJSON and see which array keys have been assigned to the fields in your content type.
 
-<img src="/assets/img/blog/map-in-drupal-8/geojson-points.jpg" alt="Screenshot of GeoJSON" class="blog-image-xl">
+<img src="/assets/img/blog/map-in-drupal-8/geojson-points.jpg" alt="Screenshot of GeoJSON" class="blog-image-full-width">
 
 I want to display the node title in the popup, which I can see is at `feature.property.name`.
 
@@ -230,6 +230,6 @@ I want to display the node title in the popup, which I can see is at `feature.pr
 
 Now when I click on a point I get a nice little popup with the node title.
 
-<img src="/assets/img/blog/map-in-drupal-8/map-with-popup.jpg" alt="Screenshot of the map with a popup open" class="blog-image-xl">
+<img src="/assets/img/blog/map-in-drupal-8/map-with-popup.jpg" alt="Screenshot of the map with a popup open" class="blog-image-full-width">
 
 Check out the entire [map.js file](https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/js/page--front--map.js) and be sure to visit Savas Labs GitHub repository for the [Durham Civil Rights Mapping project](https://github.com/savaslabs/durham-civil-rights-map) and the [completed site](http://www.durhamcivilrightsmap.org/) to see a Drupal 8 site in action!

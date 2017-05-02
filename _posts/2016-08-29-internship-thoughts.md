@@ -30,7 +30,7 @@ Everyone at Savas Labs contributed to my learning! I was encouraged by the entir
 
 It helped that many on the team had also transitioned from other careers and understood what it felt like to be overwhelmed by a barrage of new information. More than once, [Dan](http://savaslabs.com/team/dan-murphy/) or [Anne](http://savaslabs.com/team/anne-tomasevich/) would check in and ask me if I needed any help or had any general questions (thanks you guys!). And I could tell everyone took my internship seriously, and never once was I made to feel inconsequential!
 
-<img src="/assets/img/blog/internship-dilbert.gif" class="blog-image-xl" alt="Dilbert Cartoon">
+<img src="/assets/img/blog/internship-dilbert.gif" class="blog-image-full-width" alt="Dilbert Cartoon">
 
 <span class="caption">[_Source_](http://dilbert.com/strip/2011-04-22).</span>
 
@@ -44,7 +44,7 @@ Though comfortable with programming syntax when I started (a significant portion
 
 To be honest, I wasn’t expecting the sheer breadth and volume of material I’d need to know just to reach a modicum level of proficiency. I spent the first month figuring out the foundations -- making pull requests, figuring out how to download software from the command line (don’t even get me started on virtualization)-- before I could even start to dip my toes into Drupal development. This sounds naive now, but I was genuinely surprised when I realized that Web Development was going to be [much more difficult](https://web.archive.org/web/20160507042856/http://www.codem0nk3y.com/wp-content/uploads/2012/04/cms-learning-curve.png) than reading a few good books on Drupal and CSS!
 
-<img src="/assets/img/blog/internship-learning-cartoon.png" class="blog-image-xl" alt="So much to learn!">
+<img src="/assets/img/blog/internship-learning-cartoon.png" class="blog-image-full-width" alt="So much to learn!">
 
 <span class="caption">At times it felt like I'd inadvertently walked into a trap. _Source_: Me!</span>
 
