@@ -72,7 +72,7 @@ The first thing to note is the different file structure. The `core` folder now h
 
 Let’s create a folder for our new theme. Savas Labs is working on a Drupal 8 mapping project, so I’ll use that as an example. Our theme is called “Mappy,” so we’ve created a folder for our theme within `themes/custom`.
 
-<img class="blog-image-full-width" src="{{ site.base_url }}/assets/img/blog/theme-folder-location.jpg" alt="Screenshot of D8 file structure.">
+<img src="{{ site.base_url }}/assets/img/blog/theme-folder-location.jpg" alt="Screenshot of D8 file structure.">
 
 The first file we’ll want to create is `[theme-name].info.yml`, which replaces D7’s `[theme-name].info` file. I’ve created `mappy.info.yml`, shown below. If you’re new to YAML, Symfony has a [nice writeup](http://symfony.com/doc/current/components/yaml/yaml_format.html#collections) on syntax. Pay close attention to the whitespace - for example, a space is required after the colon in key-value pairs.
 
@@ -378,7 +378,7 @@ Enter the beloved Devel module and the new Devel Kint module. Kint is to Drupal 
 {% endraw %}
 ```
 
-<img class="blog-image-full-width" src="{{ site.base_url }}/assets/img/blog/kint-output.jpg" alt="Screenshot of kint function output.">
+<img src="{{ site.base_url }}/assets/img/blog/kint-output.jpg" alt="Screenshot of kint function output.">
 
 Ahh, much better!
 

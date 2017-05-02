@@ -36,9 +36,7 @@ There were also several non-Drupal specific sessions covering such topics as:
 
 ####  Visual Regression Testing
 
-<div class="blog-image-large wrap-left">
-   <img src="/assets/img/blog/visual-regression-testing.jpg" alt="Visual Regression Testing, courtesy of Flickr">
-</div>
+<img src="/assets/img/blog/visual-regression-testing.jpg" alt="Visual Regression Testing, courtesy of Flickr" class="blog-image-right">
 
 I presented a session on [Visual Regression Testing with Webdriver.io](https://www.fldrupal.camp/sites/default/files/slides/2015/VisualRegressionTestingWebdriverSavas_0.pdf) which was well attended, and I received a lot of positive feedback on the session from attendees.  Most of the attendees had no experience with visual regression testing and did not know that such testing capabilities existed, so there was a great deal of fruitful discussion during the session.  Several attendees came up afterwards, and expressed excitement about the potential uses of visual regression testing in their daily workflow.  This mirrored my own excitement about visual regression testing when I was first exposed to it nearly two years ago.
 
@@ -59,9 +57,7 @@ The fourth session I attended was presented by Mike Anello of Drupal Easy (also 
 The final session I attended was presented by David Laietta, Chief Technology Officer for Dinosaur Iceberg, on [designing for the end user](https://www.fldrupal.camp/sessions/approved/florida-drupalcamp-2016/design-theming-front-end-development/designing-those-who).  David's expertise lies with Wordpress, but many of the issues and tips that he covered are platform agnostic.  Much of what David covered is common sense if you stop and think about it, but we as developer immersed in the web development world on a daily basis tend to unconsciously apply filters to our view of the web, and this was a reminder that when approaching projects we need to consciously attempt to remove our filters to get better insight into the design and user experience from the end user standpoint.
 
 ### After Party
-<div class="blog-image-large wrap-left">
-  <img src="/assets/img/blog/pantheon-booth-at-drupalcamp-florida.jpg" alt="Pantheon Booth at DrupalCamp Florida">
-</div>
+<img src="/assets/img/blog/pantheon-booth-at-drupalcamp-florida.jpg" alt="Pantheon Booth at DrupalCamp Florida" class="blog-image-right">
 
 The after party, sponsored by [Pantheon](https://pantheon.io), was excellent as always!  Many thanks to Pantheon and Ben Stoffel-Rosales, Partner Manager at Pantheon, for their graciousness and sponsorship of the camp and the after party.
 
