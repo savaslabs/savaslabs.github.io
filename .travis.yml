@@ -1,7 +1,7 @@
 language: node_js
 sudo: required
 script:
-  - travis_wait 30 ./_scripts/run-tests.sh
+  - ./_scripts/run-tests.sh
 branches:
   except:
   - master
