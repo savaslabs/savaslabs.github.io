@@ -7,6 +7,10 @@
 .page--blog {
   .region--banner--heading {
     margin-bottom: 6px;
+
+    h1 {
+      @include heading-underline($orange);
+    }
   }
 
   .page--blog__wrapper {
