@@ -9,7 +9,7 @@ services: development design-ux
 client_name: Hunter Boots
 client_url: "http://us.hunterboots.com/"
 client_description: |
-  [Hunter Boots](http://us.hunterboots.com/) Hunter is a British heritage brand renowned for its iconic Original boot. Founded in Scotland in 1856 by American entrepreneur Henry Lee Norris as the North British Rubber Company, the brand has a history of innovation and pioneering design
+  [Hunter Boots](http://us.hunterboots.com/) Hunter is a British heritage brand renowned for its iconic Original boot. Founded in Scotland in 1856 by American entrepreneur Henry Lee Norris as the North British Rubber Company, the brand has a history of innovation and pioneering design.
 client_quote: hunter-boots-sp
 client_dates: 2011 - 2015
 project_description: |
