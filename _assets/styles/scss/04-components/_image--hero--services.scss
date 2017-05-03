@@ -18,9 +18,13 @@
       color: $eggshell;
     }
 
-    a {
-      color: $eggshell;
+    // scss-lint:disable ImportantRule
+    a,
+    a:hover,
+    a:focus {
+      color: $eggshell !important;
     }
+    // scss-lint:enable ImportantRule
 
     p {
       @include grid-media($medium-screen-up) {
