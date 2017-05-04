@@ -76,7 +76,7 @@ You can also generate a tabular format using `html_example_table`:
 
 ### Critical CSS
 
-Components should be as modular as possible and, for page styles, should be separated by region so that above-the-fold styles can easily be picked out as entire SCSS partials. These partials are included in `critical.scss`, which is inlined in the `<head>` element (see `_includes/head.html`, where `critical.css` is included in `<style>` tags). All SCSS partials are included in `main.scss`, which is loaded asynchronously in the `<head>` and, as a backup, loaded in full in a `<noscript>` tag in `_includes/scripts.html`.
+Components should be as modular as possible and, for page-specific styles, should be separated by region so that above-the-fold styles can easily be picked out as entire SCSS partials. These partials are included in each layout's `critical*.scss`, which is inlined in the `<head>` element (see `_includes/head.html`, where `critical*.css` is included in `<style>` tags). All SCSS partials are included in `main.scss`, which is loaded asynchronously in the `<head>` and, as a backup, loaded in full in a `<noscript>` tag in `_includes/scripts.html`.
 
 See [this article from Go Make Things](https://gomakethings.com/inlining-critical-css-for-better-web-performance/) for a good explanation of why we chose this strategy.
 
