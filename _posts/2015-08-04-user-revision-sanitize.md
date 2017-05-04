@@ -12,6 +12,8 @@ drupal_planet_summary: |
   One of the most embarrassing and potentially costly things we can do as developers is to send emails out to real people unintentionally from a development environment. It happens, and often times we aren't even aware of it until the damage is done and a background process sends out, say, 11,000 automated emails to existing customers (actually happened to a former employer recently). In the Drupal world, there are [myriad ways](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/commit/64a558e2) to [attempt to address](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/blob/master/scripts/sanitize.php) this problem.
 
   We discuss how to use a drush hook on the `drush sqlsan` command to ensure proper sanitization while using the `user revision` module.
+disclaimer: |
+    After enough whining, my patch (discussed later in the post) [did make it in](https://www.drupal.org/commitlog/commit/17646/c4c24e4cd9e5c267d4bff6af5c11e3d514f788f1) to the `user_revision` module. Thanks Peter.
 ---
 
 ## The general problem
