@@ -5,7 +5,7 @@ date: 2016-06-15
 author: Dan Murphy
 tags: git
 summary: An overview of strategies and tools I like to use when I encounter conflicts during merges.
-featured_image: "blog/git_merge_conflict_screenshot.jpg"
+featured_image: "/blog/git_merge_conflict_screenshot.jpg"
 featured_image_alt: "screenshot of git merge output"
 featured_image_height: "288px"
 featured_image_width: "885px"
