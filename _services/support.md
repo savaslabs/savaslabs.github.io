@@ -4,13 +4,13 @@ title: Support / Maintenance
 slug: support-maintenance
 weight: 4
 summary: |
-  Maintenance work doesn't typically evoke dreamy visions like building a new application does. However, we recognize the original investment is only truly borne when it's in reliable operation. With the help of generous robots (who we pay), and partners, we ensure 24/7/365 support.
+  An application serves its purpose best when running. With the help of robots, we ensure maximum uptime and provide ongoing iterative improvements that a modern web system requires to remain relevant.
 icon: "support-maintenance-icon.svg"
 vertical_image: "/assets/img/services/support-maintenance-hero.jpg"
 vertical_image_alt: "Various visual representations of statistics"
 quote_project: "omega-lz"
-services: [Drupal CMS, Architecture, Software & Databases, Data Migration, E-Commerce, Performance Optimization, Automated Testing, Security]
+services: [Uptime monitoring, 24x7x365 Support, Bug Fixing,  Feature Enhancements, Drupal Security Updates, Disaster Recovery Planning, Backup Strategy]
 
 ---
 
-A site with an audience that is engaged on a daily basis requires the same technical attention behind the scenes. We provide just that. Our robot friends ensure that our clients' sites are alive and well with robust monitoring. Our humans quickly test and apply security updates and make recommendations on sustainability best practices. A support & maintenance agreement will often start with an audit.
+An organization with a captive audience who cares deeply about its missions requires the same technical attention behind the scenes to ensure its applications are functional. We provide this assurance through best-in-class monitoring tools, around-the-clock application support engineers, and a genuine yearning to see our partners and their applications thrive. With a broad and deep understanding of security risks in the ever-interconnected world, we consult on all aspects from the technical stack to organizational stakeholders to maximize the effectiveness of our partner's web systems.

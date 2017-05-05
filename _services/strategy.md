@@ -4,15 +4,13 @@ title: Strategy / Consulting
 slug: strategy
 weight: 1
 summary: |
-  Simple execution is never simple until all avenues have been explored. A stitch in time saves nine, and a minute of planning saves 10 in execution. We've learned these lessons and cherish a challenge to think creatively for the most appropriate solutions for our partners.
+  Our seasoned team combines wisdom from years of digital consulting experience with a holistic eye to think creatively, leaving no stone unturned to discern the best solutions for our partners.
 icon: "strategy-icon.svg"
 vertical_image: "/assets/img/services/strategy-hero.jpg"
 vertical_image_alt: "Chris walking with a client"
 quote_project: "transaction_advisors"
-services: [Research, Ideation, Content Strategy, Channel Identification, User Journey Mapping, Competitive Analysis, Campaign Planning]
+services: [Content Strategy, SEO, Technical Audit / Planning, Channel Identification, Competitive Analysis, Analytics Insights, Information Architecture, User Journey Mapping, Brand Assessment, Digital Marketing, Campaign Planning  ]
 
 ---
 
-We empower organizations to sift through seemingly limitless technical choices and focus on what the organization is trying to achieve. Whether through a technical audit, SEO, content analysis, or other measures, we ensure our clients use their resources most effectively to meet their needs and reach their audiences.
-
-We lean on lessons learned to inform our process while catering to each organization's unique needs in space and time.
+We turn organizational data into actionable information so our partners can focus on what they know best: their organization's needs. We always listen carefully to our client's pain points and their visions of a better future, while providing a complementary, fresh perspective viewed from outside of the institutional lens. Some of the highest impact we can provide is to help steer the planning and technical investment methodically in concert with our partners to pursue the best opportunities available.
