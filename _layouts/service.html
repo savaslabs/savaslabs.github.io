@@ -10,21 +10,23 @@ layout: default
       {{ content }}
       <div class="page--service__content__services list--bordered">
         <ul>
-          {% for item in page.services | limit:4 %}
-          <li>{{ item }}</li>
+          {% assign numServices = page.services | size %}
+          {% assign halfWay = numServices | divided_by: 2.0 | ceil %}
+          {% for item in page.services | limit: halfWay %}
+            <li>{{ item }}</li>
           {% endfor %}
         </ul>
         <ul>
           {% assign count = 0 %}
           {% for item in page.services %}
-          {% if count > 3 %}
-          <li>{{ item }}</li>
-          {% endif %}
-          {% assign count = count | plus:1 %}
+            {% if count >= halfWay %}
+              <li>{{ item }}</li>
+            {% endif %}
+            {% assign count = count | plus:1 %}
           {% endfor %}
         </ul>
       </div>
-      <a class="link--arrow" href="/services">Explore our expertise</a>
+      <a class="link--arrow" href="/contact">{{ page.title }} questions? Reach out!</a>
     </div>
   </div>
 </div>
