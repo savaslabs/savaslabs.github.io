@@ -10,10 +10,10 @@ excerpt: Savas Labs open source contributions
 
 <div class="region--drupal-contributions region">
   <h2 class="heading--underline--orange">Giving Back to the Drupal Community</h2>
-  <p>Savas Labs maintains and contributes to a number of Drupal modules.</p>
+  <p>We contribute to the Drupal ecosystem in many ways. We triage issues, donate code, provide documentation and mentor others when we have the opportunity. Here are a few examples of Drupal code we've written in the form of Drupal modules we maintain.</p>
   {% include regions/text-block-list.html items=site.data.drupal-modules-featured %}
   <div class="delimited-list">
-    <p>And many others:</p>
+    <p>We also contribute to projects started by others in the community. Our code contributions are quantified in parentheses:</p>
     {% assign modules = site.data.drupal-modules-other | sort: 'number_commits' | reverse %}
     {% for module in modules %}
     <a href="{{ module.link }}" class="delimited-list__item">{{ module.name }} ({{ module.number_commits }})</a>
