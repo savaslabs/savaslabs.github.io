@@ -4,13 +4,13 @@ title: Support / Maintenance
 slug: support-maintenance
 weight: 4
 summary: |
-  An application serves its purpose best when running. With the help of robots, we ensure maximum uptime and provide ongoing iterative improvements that a modern web system requires to remain relevant.
+  An application serves its purpose best when running. With the help of robots, we ensure maximum uptime and provide ongoing iterative improvements that modern web systems demand to maximize their potential.
 icon: "support-maintenance-icon.svg"
 vertical_image: "/assets/img/services/support-maintenance-hero.jpg"
 vertical_image_alt: "Various visual representations of statistics"
 quote_project: "omega-lz"
-services: [Uptime monitoring, 24x7x365 Support, Bug Fixing,  Feature Enhancements, Drupal Security Updates, Disaster Recovery Planning, Backup Strategy]
+services: [Uptime Monitoring, 24x7x365 Support, Bug Fixing, Feature Enhancements, Drupal Security Updates, Disaster Recovery Planning, Backup Strategy, Best Practices Consultation]
 
 ---
 
-An organization with a captive audience who cares deeply about its missions requires the same technical attention behind the scenes to ensure its applications are functional. We provide this assurance through best-in-class monitoring tools, around-the-clock application support engineers, and a genuine yearning to see our partners and their applications thrive. With a broad and deep understanding of security risks in the ever-interconnected world, we consult on all aspects from the technical stack to organizational stakeholders to maximize the effectiveness of our partner's web systems.
+Our partners' audiences _always_ represent substantial value to the organization, and are often deeply committed to it too. We help reciprocate that dedication by sustaining the applications that serve those audiences. With a genuine desire to see our partners thrive, we provide the required attention and care through best-in-class monitoring tools, a holistic understanding of security in an ever-interconnected world, and around-the-clock application support. We advise on all aspects of application integrity, which range from technical to behavioral, to maximize the effectiveness of our partner's web systems.

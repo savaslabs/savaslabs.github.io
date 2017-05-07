@@ -4,7 +4,7 @@ title: Development
 slug: development
 weight: 2
 summary: |
-  Manifesting strategic organizational challenges via technical execution is one of the most cherished activities we participate in. We employ a wide variety of tools to tailor-make solutions for our partner's constantly evolving needs.
+  Turning organizational challenges into creative technical solutions is very rewarding to us. We employ an ever-expanding set of tools to fulfill our partners' constantly evolving needs.
 icon: "development-icon.svg"
 vertical_image: "/assets/img/services/development-hero.jpg"
 vertical_image_alt: "Websites built by Savas Labs displayed on mobile screens"
