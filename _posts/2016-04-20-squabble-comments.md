@@ -5,6 +5,9 @@ date: 2016-04-20
 author: Kosta Harlan
 tags: jekyll javascript
 services: development
+comments_enabled: 0
+disclaimer: |
+    Due to numerous "Just testing this" type comments, we've disabled comments on this post. But we hope you do test this comment system out on your own site!
 summary: |
   A peek under the hood at our website's commenting app, Squabble.
 ---
