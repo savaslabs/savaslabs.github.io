@@ -21,7 +21,7 @@ badges:
 redirect_from:
   - /team/oksana-cyrwus/
 ---
-Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user’s needs. As a Designer & Developer at Savas Labs, Oksana grounds her work in analytic research swiftly composing balanced solutions that fulfill high-level organizational goals.
+Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user’s needs. As a Solutions Architect & Designer at Savas Labs, Oksana grounds her work in analytic research swiftly composing balanced solutions that fulfill high-level organizational goals.
 
 She began building her digital marketing skill set in 2007 as she worked towards her Master’s Degree in Applied Mathematics and Informatics. Having lived and worked in the eastern and western hemispheres, Oksana has refined a unique vision and discipline working with diverse cultures and industries. She is committed to delivering robust systems that are intuitive to the humans that use them.
 
