@@ -94,7 +94,7 @@ parent: tiles
     }
   }
 
-  .tile--blog__hover {
+  &.tile--blog .tile--blog__hover {
     margin: 1em;
     width: calc(100% - 2em);
   }
