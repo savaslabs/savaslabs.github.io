@@ -16,6 +16,7 @@
 @import 'scss/03-typography/paragraphs';
 
 // Component rules.
+@import 'scss/04-components/buttons--arrow';
 @import 'scss/04-components/case-study-block';
 @import 'scss/04-components/header-navigation';
 @import 'scss/04-components/header-navigation--menu-link';
@@ -26,3 +27,6 @@
 @import 'scss/05-regions/case-study-blocks';
 @import 'scss/05-regions/case-study-blocks--small';
 @import 'scss/05-regions/header';
+
+// Page rules.
+@import 'scss/06-pages/tag';
