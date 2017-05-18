@@ -5,8 +5,14 @@
  */
 
 .page--tag {
+  .tag__related-case-studies {
+    padding-bottom: 0;
+  }
+
   .view-more-link a {
     @include link-arrow;
+
+    margin-bottom: $base-margin;
 
     @include grid-media($medium-screen-up) {
       @include button-arrow($white, $orange);

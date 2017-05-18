@@ -282,6 +282,11 @@
       @include grid-media($large-screen-up) {
         width: 25%;
       }
+
+      .tile--blog__hover {
+        margin: $base-spacing / 4;
+        width: calc(100% - .5em);
+      }
     }
   }
 }

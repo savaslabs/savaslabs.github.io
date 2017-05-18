@@ -16,13 +16,22 @@
 @import 'scss/03-typography/paragraphs';
 
 // Component rules.
+@import 'scss/04-components/buttons--arrow';
 @import 'scss/04-components/case-study-block';
 @import 'scss/04-components/header-navigation';
 @import 'scss/04-components/header-navigation--menu-link';
 @import 'scss/04-components/logos';
+@import 'scss/04-components/tiles';
+@import 'scss/04-components/tiles--blog';
+@import 'scss/04-components/tiles--blog--detailed';
 
 // Region rules.
 @import 'scss/05-regions/banner--heading';
+@import 'scss/05-regions/blog-tiles';
+@import 'scss/05-regions/blog-tiles--all';
 @import 'scss/05-regions/case-study-blocks';
 @import 'scss/05-regions/case-study-blocks--small';
 @import 'scss/05-regions/header';
+
+// Page rules.
+@import 'scss/06-pages/tag';
