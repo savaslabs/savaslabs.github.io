@@ -1,0 +1,10 @@
+<div class="region--team-partner-list region">
+  <div class="region--team-partner-list__wrapper">
+    <h2 id="team">Partners</h2>
+    <div class="region--team-partner-list__list">
+      {% for partner in site.team-former %}
+      {% include components/team-partner-bio.html person=partner %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
