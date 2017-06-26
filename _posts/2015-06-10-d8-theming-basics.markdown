@@ -40,7 +40,7 @@ Check out Drupal's [change log](https://www.drupal.org/list-changes/published/dr
 Though the theming layer in Drupal 8 is quite different from Drupal 7 and will require some relearning, these changes come with great improvements, including:
 
 - Fewer Drupal-specific conventions and more popular, well-documented frameworks (such as Twig), meaning non-Drupalers can jump in much more quickly. Let’s face it - Drupal 7 theming has a major learning curve, which can keep developers and designers from using Drupal at all.
-- Template files are more secure since they no longer contain PHP code (thanks to Twig). Sanders at [d8.sqndr.com](http://d8.sqndr.com/) offers this nice/scary example of PHP code that could be executed in a Drupal 7 template file:
+- Template files are more secure since they no longer contain PHP code (thanks to Twig). In his D8 theming guide, [Sander Tirez](http://sandertirez.be/) offers this nice/scary example of PHP code that could be executed in a Drupal 7 template file:
 
 ```php
 // This really shouldn’t be allowed to work, and it won’t in D8.
@@ -385,5 +385,4 @@ Ahh, much better!
 
 ## Further reading:
 - Start with Drupal.org's [theming guide](https://www.drupal.org/theme-guide/8)
-- Check out sqndr's excellent [Drupal 8 theming guide](http://d8.sqndr.com/)
 - Drupalize Me's [post](https://drupalize.me/blog/201405/lets-debug-twig-drupal-8) about debugging Twig has some detailed information about `dump()`, devel and kint. Be aware that some of the information in that post on configuring Twig is out of date.
