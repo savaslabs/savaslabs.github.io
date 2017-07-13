@@ -18,13 +18,13 @@ XHProf is a profiling tool for PHP code -- it tracks the amount of time and memo
 
 I had run across a number of blog posts about using XHProf + Drupal, but never actually got it to work sucessfully for a project. Because so much of the documentation online is incomplete or out-of-date, I thought it would be useful to document my process using XHProf to profile a Drupal 8 custom module here. YMMV, but please post your thoughts/experiences in the comments!
 
-### How to find documentation
+## How to find documentation
 
 I find the [php.net XHProf manual entry](http://php.net/manual/en/book.xhprof.php) super-confusing and circular. Part of the problem is that Facebook's original documentation for the library has since been removed from the internet and is only accessible via [the WayBack Machine](http://web.archive.org).
 
 If there's only one thing you take away from this blog post, let it be: read and bookmark the WayBack machine view of the original XHProf documentation, which is at [http://web.archive.org/web/20110514095512/http://mirror.facebook.net/facebook/xhprof/doc.html](http://web.archive.org/web/20110514095512/http://mirror.facebook.net/facebook/xhprof/doc.html).
 
-### Install XHProf in a VM
+## Install XHProf in a VM
 
 If you're not running DrupalVM, you'll need to install XHProf manually via [PECL](https://pecl.php.net/). On [DrupalVM](http://docs.drupalvm.com/en/latest/), XHProf is already installed and you can skip to the next step.
 
@@ -41,7 +41,7 @@ And, if you want to view nice callgraph trees like the one below you'll need to 
 
 <img src="/assets/img/blog/xhprof-callgraph.jpg" alt="Image of a sample XHProf callgraph">
 
-### Configure PHP to run XHProf
+## Configure PHP to run XHProf
 
 You need to tell PHP to enable the xhprof extension via your php.ini files. Usually these are in `/etc/php5/apache2/php.ini` and `/etc/php5/cli/php.ini`. Add the following lines to the bottom of each file if they're not there already. You will also need to create the `/var/tmp/xhprof` directory if it doesn't already exist.
 
@@ -58,7 +58,7 @@ xhprof.output_dir="/var/tmp/xhprof"
 
 Lastly, restart Apache so that the PHP config changes take effect.
 
-### Set up a path to view the XHProf GUI
+## Set up a path to view the XHProf GUI
 
 The XHProf GUI runs off a set of HTML files in the `xhprof_html` directory. If you've been following the install steps above, you should be able to find that directory at `/usr/share/php/xhprof_html`. Now you need to set up your virtual host configuration to serve the files in the `xhprof_html` directory.
 
@@ -68,7 +68,7 @@ I find the easiest way to do this is just to symlink the `xhprof_html` directory
 
 If you're using DrupalVM, a separate vhost configuration will already be set up for XHProf, and the default URL is `http://xhprof.drupalvm.dev/` although it can be changed in your `config.yml` file.
 
-### Hooking XHProf into your module code
+## Hooking XHProf into your module code
 
 Generally, the process of profiling a chunk of code using XHProf goes as follows:
 
@@ -134,13 +134,13 @@ The `echo` command here works fine for a Drush command, but for other tasks you 
 
 Note: Another way to run XHProf on a Drupal site is using the [XHProf](https://www.drupal.org/project/xhprof) module, but I haven't had great luck with that.
 
-### Viewing profiler results
+## Viewing profiler results
 
 If everything is configured correctly, when you run your module you should get a run ID output either to the screen (via `echo`, as above, or however you've configured this logging). Visit the URL you configured above for xhprof, and you should see a list of all the stored runs. Clicking on a run will bring up the full profiler report.
 
 <img src="/assets/img/blog/xhprof-screenshot.jpg" alt="Sample screenshot of an XHProf profiler report">
 
-### Now what?
+## Now what?
 
 Now you've got all this data -- how to make sense of it? What to do with it? Stay tuned for more discussion of how to interpret XHProf results and a real-world example of profiling a D8 module, next week!
 

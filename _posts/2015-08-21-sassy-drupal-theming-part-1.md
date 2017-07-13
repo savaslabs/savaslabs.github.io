@@ -26,21 +26,21 @@ I'll be pulling some examples from our Drupal 8 theme, but none of this is Drupa
 ## Definitions
 Let's talk vocab.
 
-#### Sass
+### Sass
 A preprocessor for CSS. [Sass](http://sass-lang.com/guide) offers functionalities not yet available in CSS like variables, rule nesting, and much more.
 
-#### SCSS
+### SCSS
 "Sassy CSS." Early Sass, with the file extension `.sass`, used a syntax quite different from the CSS syntax we're already familiar with. Version 3 of Sass brought SCSS, returning to the same syntax as CSS and proving easier to use for most developers. Importantly, this means that valid CSS is also valid SCSS. Files ending with the `.scss` extension are written in SCSS. I still call them "Sass files"; please don't be mad at me.
 
 If you found that last paragraph terribly interesting, you should [read this](http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better).
 
-#### Partial
+### Partial
 An SCSS file that is not directly compiled into a CSS file, but is instead imported into another SCSS file. A partial is denoted by the underscore that begins its filename (e.g. `_base.scss`).
 
-#### Bourbon
+### Bourbon
 A [Sass mixin library](http://bourbon.io/) by [thoughtbot, inc.](https://thoughtbot.com/) Bourbon makes Sass easier and more powerful by providing extremely useful mixins, meaning you don't have to write them yourself. I particularly enjoy using Bourbon for CSS3 mixins, which allow me to use modern CSS3 modules without having to worry about vendor prefixes.
 
-#### Neat
+### Neat
 A [lightweight grid framework](http://neat.bourbon.io/) written for Sass, also by thoughtbot. The best part of Neat, in my opinion, is the separation of content from layout that comes from defining layout in Sass files rather than template files. This makes your grid system easier to define, update and maintain and keeps your template files cleaner.
 
 <hr>
@@ -51,13 +51,13 @@ Now that we're all dying to use these awesome things with Drupal, let's set it u
 
 We need to install Bourbon and Neat, which are both Ruby gems. We could do a quick `gem install bourbon` then `bourbon install` to create a folder of the entire Bourbon library, but this isn't ideal if we're ever going to be sharing this code since each developer (and deployment environment) will need to have these gems installed on their machine. Enter [Bundler](http://bundler.io/), a package manager for Ruby gems. Per the documentation, we only need to do a few things:
 
-#### 1. Install Bundler, which is a Ruby gem itself
+### 1. Install Bundler, which is a Ruby gem itself
 
 ```bash
 $ gem install bundler
 ```
 
-#### 2. Create a Gemfile in our theme directory
+### 2. Create a Gemfile in our theme directory
 
 ```bash
 $ cd my-custom-theme
@@ -78,13 +78,13 @@ gem 'neat'           # Bourbon Neat grid framework.
 
 See Bundler's [documentation](http://bundler.io/gemfile.html) to read about specifying versions within your Gemfile.
 
-#### 3. Install all your dependencies.
+### 3. Install all your dependencies.
 
 ```bash
 $ bundle install
 ```
 
-#### 4. Commit the Gemfile and Gemfile.lock to ensure that everyone is using the same libraries.
+### 4. Commit the Gemfile and Gemfile.lock to ensure that everyone is using the same libraries.
 
 ```bash
 $ git add .
@@ -181,7 +181,7 @@ In `_init.scss` we will (in this order):
 
 You can view an example of a full `_init.scss` file [here](https://github.com/savaslabs/durham-civil-rights-map/blob/master/themes/custom/mappy/sass/_init.scss), but I'll go through some of the highlights.
 
-#### 1. Import `bourbon.scss` and `neat-helpers.scss`
+### 1. Import `bourbon.scss` and `neat-helpers.scss`
 
 First we import all of Bourbon and Neat's settings and functions, which are included in `neat-helpers.scss`.
 
@@ -191,7 +191,7 @@ First we import all of Bourbon and Neat's settings and functions, which are incl
 @import "lib/neat/neat-helpers";
 ```
 
-#### 2. Create overrides
+### 2. Create overrides
 
 Now we'll override some of Neat's settings and create our breakpoints.
 
@@ -221,7 +221,7 @@ $wide:     new-breakpoint(min-width em(851px, $font-size) $grid-columns);
 $horizontal-bar-mode: new-breakpoint(min-width em(950px, $font-size) $grid-columns);
 ```
 
-#### 3. Import Neat
+### 3. Import Neat
 
 Now that we've completed our settings, we'll import the entire Neat library and our overrides will apply and cause the grid to function the way we want it to.
 
@@ -230,7 +230,7 @@ Now that we've completed our settings, we'll import the entire Neat library and 
 @import "lib/neat/neat";
 ```
 
-#### 4. Import fonts
+### 4. Import fonts
 
 I like to include my fonts in this file to be consistent about how I'm importing my libraries (e.g. the Font Awesome library, which I've included in `sass/lib`). Some people might move this into a `_typography.scss` file or something similar, perhaps residing in the `base` directory. Do what feels right!
 

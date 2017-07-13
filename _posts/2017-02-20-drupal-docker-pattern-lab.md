@@ -29,7 +29,7 @@ Along the way, I'll also provide:
 
 ## Background
 
-We switched to using Docker for local development last year and we love it - so much so that we even proposed [a Drupalcon session on our approach and experience](https://events.drupal.org/node/17250) we hope to deliver. Using Docker makes it easy for developers to quickly spin up consistent local development environments that match production. In the past we used Vagrant and virtual machines, even a Drupal-specific flavor [DrupalVM](https://www.drupalvm.com/), for these purposes, but we've found Docker to be faster when switching between multiple projects, which we often do on any given <s>Sun</s>workday.
+We switched to using Docker for local development last year and we love it - so much so that we even proposed [a Drupalcon session on our approach and experience](https://events.drupal.org/node/17250) we hope to deliver. Using Docker makes it easy for developers to quickly spin up consistent local development environments that match production. In the past we used Vagrant and virtual machines, even a Drupal-specific flavor [DrupalVM](https://www.drupalvm.com/), for these purposes, but we've found Docker to be faster when switching between multiple projects, which we often do on any given <del>Sun</del>workday.
 
 Usually we build our Docker images from scratch to closely match production environments. However, for agile development and rapid prototyping, we often make use of public Docker images. In these cases we've relied on [Wodby's Docker4Drupal project](https://github.com/wodby/docker4drupal), which is "a set of docker containers optimized for Drupal."
 

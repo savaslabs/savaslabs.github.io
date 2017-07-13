@@ -64,14 +64,14 @@ Reviewing Google Analytics is a great first step towards focusing user testing o
 
 Viewing the analytics interface for the first time can be a bit overwhelming, so I'll review some terminology and some of the points on which I like to focus for the purposes of usability testing.
 
-##### Terminology
+#### Terminology
 
 - **Bounce rate:** The percentage of users who leave the site after viewing a single page
 - **Exit page:** The last page a user views before leaving the site
 - **Organic search:** search results not provided by paid advertisements
 - **Engagement:** A combination of bounce rate, session duration, and pages viewed per session
 
-##### Useful information
+#### Useful information
 
 - Where are the users located?
   - Audience <i class="fa fa-long-arrow-right"></i> Geo <i class="fa fa-long-arrow-right"></i> Location
@@ -103,7 +103,7 @@ In tandem with reviewing analytics, we examine our client's competitors' website
 
 After gathering information from analytics and competitive analysis, we design our user tests. These are in-person meetings with a single participant at a time who is asked to complete tasks on the website, acting as one of the user personas. After reading the persona description and the task to the user, we observe their experience and record how they interact with the site.
 
-##### Designing the tests
+#### Designing the tests
 
 Designing the user tests is a multi-step process:
 
@@ -130,7 +130,7 @@ Some other tips for designing user tests:
 - Before conducting any real tests, do a pilot study on a willing participant (a coworker with a free hour works!) This will uncover any phrasing that doesn't work and allow you to check the timing of the test, and it may even start revealing UX issues with the site.
 - Offering compensation for a participant's time is not only good practice, it helps immensely with recruitment!
 
-##### Conducting the tests
+#### Conducting the tests
 
 Once participants are recruited, we bring them in one at a time and include as many observers/note takers as possible to capture the user's actions, reactions, emotions, and words during the test scenarios. We ask the user to think out loud so we can understand their thought process and expectations. We'll first read them the user persona they're portraying, followed by each scenario they'll need to act out. If relevant (and it almost always is), we'll have participants complete some scenarios on their mobile phone or a tablet.
 

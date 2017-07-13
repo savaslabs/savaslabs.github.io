@@ -40,15 +40,15 @@ The Savas Labs team stays dialed in on the current trends of Search Engines Opti
 
 Here are four ranking factors that we've identified as being most important as of Q4 2016. Our forecast is that these four factors will likely remain at the top of the list throughout 2017.
 
-#### 1. Content
+### 1. Content
 
 [Content is still king!](https://mention.com/blog/2017-content-marketing-predictions/) Yes, that's right. It is and it always will be! You've got to be relevant in order to even appear in search. And nothing will make you more relevant than carefully crafted, practical, awesome, juicy, shareable, actionable (you name it) CONTENT! It is important to note that marketers should stop thinking of content as purely text and focus their efforts on providing [visual content](http://blog.hubspot.com/marketing/visual-content-marketing-strategy#sm.00001bvjy82syzedqpgnd8w6p9mw8) that supports storytelling, is engaging and [matches user intent](https://varvy.com/matching-user-intent.html).
 
-#### 2. Backlinks
+### 2. Backlinks
 
 Not just any good ‘ol link to your website. [Good backlinks](http://cognitiveseo.com/blog/3057/the-definition-of-the-high-quality-backlink/) come from high authority domains that are in the same niche as your website. Strong backlinks bring quality traffic and are therefore considered highly desirable to your SEO cause.
 
-#### 3. Responsive Design
+### 3. Responsive Design
 
 With more people using their handheld devices to browse the internet, it has become increasingly important to make a website look good across multiple platforms (smartphone, tablet, etc.). It is not an option in 2017 - it is a necessity! While we won't get into the notoriously labeled [Google algorithm update "Mobilegeddon"](https://webmasters.googleblog.com/2015/04/rolling-out-mobile-friendly-update.html) that happened in April 2015, we will provide some interesting statistics to back up the importance of responsive design.
 
@@ -56,7 +56,7 @@ With more people using their handheld devices to browse the internet, it has bec
 
 > [4 out of 5 consumers use a Smartphone to shop.](http://www.convinceandconvert.com/mobile/7-mobile-marketing-stats-that-will-blow-your-mind/)
 
-#### 4. Page Speed
+### 4. Page Speed
 
 In response to the substantial increase in mobile traffic growth, search engines have acknowledged the importance of page speed and the effect it has on user experience (UX) and now give more weight to fast-loading websites.
 
@@ -74,11 +74,11 @@ A good CMS must provide means for your marketing team to work independently from
 
 Let's take a look at some of the new features in core that make search engines love Drupal 8.
 
-#### Drupal 8 is Responsive out of the Box
+### Drupal 8 is Responsive out of the Box
 
 Drupal 8 comes with responsive themes in core. Now both public facing and admin facing themes are responsive and make user experience great on any device.
 
-#### Drupal 8 Page Load is Fast
+### Drupal 8 Page Load is Fast
 
 There has been a lot of debate about Drupal 8 vs. Drupal 7 performance / page load since the Drupal 8's release. It is a fact that vanilla Drupal 8 is running much more code than vanilla Drupal 7. It runs vendor code like Symfony, which adds some overhead. However, Drupal 8 has a significant number of performance improvements that are making up for that overhead:
 
@@ -92,7 +92,7 @@ There has been a lot of debate about Drupal 8 vs. Drupal 7 performance / page lo
 
 These improvements have the potential to make your Drupal 8 website fly! And if after all that it is not "flying" - than you need someone to review the code that powers your website's features. [Contact us](/contact/).
 
-#### Semantic Markup
+### Semantic Markup
 
 Search engines appreciate clean markup that explicitly describes the purpose of on-page elements. Thanks to the [HTML5 Initiative](https://www.drupal.org/community-initiatives/drupal-core/html5) for Drupal 8 development, we now have a number of great markup improvements right in Drupal core:
 
@@ -108,13 +108,13 @@ Search engines appreciate clean markup that explicitly describes the purpose of 
 
 - Twig theming engine - makes it harder for developers to create messy, non-semantic code
 
-#### Content-as-a-Service
+### Content-as-a-Service
 
 Another exciting new feature of Drupal 8 is a [flexible content delivery](https://drupal.com/feature/content-as-a-service).
 
 Today, content owners want to get their content to as many platforms and channels as possible: web, mobile, social networks, smart devices, etc. It is expensive to have a separate solution for every channel. It is much more efficient to have a single editorial team and single software platform that allows for well-organized content management. Drupal 8 and its content-as-a-service capability provides a one-stop solution where content is created and managed via unified web-interface and then consumed by other channels with minimal effort.
 
-#### Drupal 8  Multilingual Capabilities
+### Drupal 8  Multilingual Capabilities
 
 To reach audiences from around the world, companies need to speak to users in their native language. In 2017, producing content in English language [is not enough](http://www.bloggingpro.com/archives/2016/01/04/why-having-a-multilingual-website-is-the-smartest-marketing-decision/), even if English is considered an internationally accepted language. The United States is now the world's second largest Spanish-speaking country after Mexico, which amplifies the necessity of serving multilingual content for U.S. based audience. To help put things in perspective we checked recent statistics.
 
