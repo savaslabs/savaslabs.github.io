@@ -39,4 +39,8 @@ a {
   @include link--light--no-hover;
 }
 
+// Hide text only meant for screen readers (e.g. link text for image links).
+.sr-only {
+  display: none;
+}
 
