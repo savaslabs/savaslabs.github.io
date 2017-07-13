@@ -136,7 +136,7 @@ category: Regions
       text-align: left;
     }
 
-    h4 {
+    h3 {
       color: $eggshell;
       margin-bottom: $footer-padding / 2;
       text-transform: uppercase;
@@ -162,15 +162,18 @@ category: Regions
     }
 
     .region--footer__main__social__icons {
-      display: flex;
-      justify-content: center;
       margin-bottom: $footer-padding / 2;
 
-      @include grid-media($medium-screen-up) {
-        justify-content: flex-end;
+      ul {
+        display: flex;
+        justify-content: center;
+
+        @include grid-media($medium-screen-up) {
+          justify-content: flex-end;
+        }
       }
 
-      a {
+      li {
         padding: 0 $footer-padding / 4;
 
         &:last-child {

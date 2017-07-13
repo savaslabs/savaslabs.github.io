@@ -79,6 +79,14 @@
     margin: 0;
   }
 
+  .case-study-block__title {
+    font-size: 1.44em;
+
+    @include grid-media($medium-screen-up) {
+      font-size: 1.563em;
+    }
+  }
+
   .region--footer {
     margin-top: 0;
   }
