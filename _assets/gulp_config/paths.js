@@ -68,4 +68,22 @@ paths.jekyllImageFilesGlob = paths.jekyllImageFiles + paths.imagePattern;
 // Site files globs
 paths.siteHtmlFilesGlob = paths.siteDir + paths.htmlPattern;
 
+// HTML pages to run through the accessibility test.
+paths.htmlTestFiles = [
+  '_site/index.html',
+  '_site/2017/**/*.html',
+  '_site/blog/index.html',
+  '_site/blog/tag/drupal/index.html',
+  '_site/company/index.html',
+  '_site/company/anne-tomasevich/index.html',
+  '_site/company/mission-and-values/index.html',
+  '_site/contact/index.html',
+  '_site/results/index.html',
+  '_site/results/case-studies/index.html',
+  '_site/results/case-studies/duke-today/index.html',
+  '_site/results/open-source/index.html',
+  '_site/services/index.html',
+  '_site/services/development/index.html'
+];
+
 module.exports = paths;
