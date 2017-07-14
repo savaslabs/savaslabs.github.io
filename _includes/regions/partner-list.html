@@ -1,0 +1,12 @@
+<div class="region--partner-list region">
+  <div class="region--partner-list__wrapper">
+    <h3 id="team">Partners</h3>
+    Our partners augment the core team when we need to scale up or bring in specialized skills to deliver for our clients.
+    <br>
+    <div class="region--partner-list__list">
+      {% for partner in site.partners %}
+      {% include components/partner-bio.html person=partner %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
