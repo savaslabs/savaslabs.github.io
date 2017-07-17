@@ -20,6 +20,9 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   - secure: Bc8sgN7Q2qSL349XIw0Loc/sT2+7M9i9eitmw6hR4r22fErVontMeD0KaXkCL0pgs1qy2N/MP0tSdKhZD2jlpyP1OicwetmoJc4XEeM3QUjagG8qfhWJOWNMq1WBdWwM4hc4bOwUVchVAPUceorMTscF5ZtejxxFSq1zwTFBmeg=
   - secure: cZzIlGtTm/yRXJOT3sB8XJI/lJwtxMReOnpBLik/+KW36/hwFkOoYaJa6aif6bLaAixcH/IlmZYE6bNjMQ7HtSLoaZLzmBXu39Qhj305LT78A/r4P9zt43JFhAYB9T+WjzT3qeX1k+YKdhC8CM9p0GPAT1LQ24co5/TbOjKzpGs=
+  - secure: jTsZx0ii96qcFVN2EgQoH84lHf+UuU+BFTp28wH3m28PqWDf+L4gbyR4mpUhBoIkPOUy0Egc7ffOhGhiiZ5K4w5I7xVDxkZBIOBHmUWFnAmHiQTbW/0913hnF4/DtTkBp+ftMWyWKP1uQfU8fpGDI4Dd1d5Oesz6msJmfVpt4s8=
+  - secure: qnmX5CVN7KmLKPwX3WBA/dGkqRONiNes3Xyd3f9Ad27G9lJ5jmfBPULEpRJOXrVT9oa6lHdSS/QFT4WEZKLjzp0SmMFIqECqVteAPQJlmezWvfImdS8kGNhU/BEF1/Qve2aNdLJ6780Kt1S8skXoP2TLr7vP9iXyU2LsFMZBk14=
+  - secure: ZUaQ/y2MlfL/qHIsAMcqtG2Cm+TwNq6ttJByMQxZDDf9i+wBbxIEmWQAYSq6RRpHFMmq4nVuRG44bdeyomio8n/UGF1SDQd4WUCFtZcH9FI/QR37A1eF6KdbSMtlrIfrefGtibsdzTD91kmK0s8tlIsqn7CSK6fhep2h7U4VGXo=
 deploy:
   provider: script
   script: "./_scripts/build.sh"

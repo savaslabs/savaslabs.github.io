@@ -34,3 +34,10 @@ git add -A .
 git status
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
 git push --quiet origin master > /dev/null 2>&1
+
+# Purge the CloudFlare cache.
+curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE}/purge_cache" \
+  -H "X-Auth-Email: ${CF_EMAIL}" \
+  -H "X-Auth-Key: ${CF_KEY}" \
+  -H "Content-Type: application/json" \
+  --data '{"purge_everything":true}'
