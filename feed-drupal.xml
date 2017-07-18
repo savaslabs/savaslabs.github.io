@@ -4,10 +4,10 @@
     <title>Savas Labs</title>
     <description>We craft elegant Drupal web systems that propel organizations.
 </description>
-    <link>http://savaslabs.com/</link>
-    <atom:link href="http://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Jul 2017 07:15:07 +0000</pubDate>
-    <lastBuildDate>Tue, 18 Jul 2017 07:15:07 +0000</lastBuildDate>
+    <link>https://savaslabs.com/</link>
+    <atom:link href="https://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 18 Jul 2017 18:07:41 +0000</pubDate>
+    <lastBuildDate>Tue, 18 Jul 2017 18:07:41 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
     
@@ -21,7 +21,7 @@
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/content-authoring-d8.jpg&quot; alt=&quot;Five Drupal 8 Tips to Empower Content Authors&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/content-authoring-d8.jpg&quot; alt=&quot;Five Drupal 8 Tips to Empower Content Authors&quot; &gt;
             
             Creating and publishing quality content within time constraints is a common challenge for many content authors. As web engineers, we are focused on helping our clients overcome this challenge by delivering systems that are intuitive, stable, and a pleasure to operate.
 
@@ -29,12 +29,12 @@ Customizing the user experience for content authors is a critical component that
 
 Here are five tips in Drupal 8 that make the content authoring experience more enjoyable and productive.
 
-                &lt;a href=&quot;http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Mon, 06 Mar 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</guid>
+        <link>https://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</guid>
         
         <category>drupal</category>
         
@@ -57,16 +57,16 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/docker-drupal-pattern-lab.jpg&quot; alt=&quot;Docker Drupal 8 Pattern Lab logos on a circuited background&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/docker-drupal-pattern-lab.jpg&quot; alt=&quot;Docker Drupal 8 Pattern Lab logos on a circuited background&quot; &gt;
             
             How to build a Docker Pattern Lab image for local Drupal development with the Pattern Lab Starter theme and/or with other common front-end applications such as npm, Gulp, and Bower.
 
-                &lt;a href=&quot;http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</guid>
+        <link>https://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</guid>
         
         <category>drupal</category>
         
@@ -91,16 +91,16 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/sea-ocean-boats-port.jpg&quot; alt=&quot;Docker, ships, the sea&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/sea-ocean-boats-port.jpg&quot; alt=&quot;Docker, ships, the sea&quot; &gt;
             
             A tutorial to show how you can use data volume restore for MySQL on Drupal Docker stacks to dramatically improve import performance with notes on how to integrate this with your development and continuous integration workflow.
 
-                &lt;a href=&quot;http://savaslabs.com/2017/02/15/docker-mysql-performance.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2017/02/15/docker-mysql-performance.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/02/15/docker-mysql-performance.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/02/15/docker-mysql-performance.html</guid>
+        <link>https://savaslabs.com/2017/02/15/docker-mysql-performance.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/02/15/docker-mysql-performance.html</guid>
         
         <category>drupal</category>
         
@@ -125,16 +125,16 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/mailchimp_3_drupal_composer_3.jpg&quot; alt=&quot;sheet music&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/mailchimp_3_drupal_composer_3.jpg&quot; alt=&quot;sheet music&quot; &gt;
             
             A tutorial that shows you how to use Composer and ThinkShout&#39;s new PHP library for MailChimp API v3.0 to easily subscribe users to mailing lists in Drupal custom modules without using the MailChimp contributed module. This is a follow-up to a previous post that used the old API, and also includes some new Drupal 8 specifics.
 
-                &lt;a href=&quot;http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</guid>
+        <link>https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</guid>
         
         <category>drupal</category>
         
@@ -161,15 +161,15 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/supercharged-seo-with-drupal-8.jpg&quot; alt=&quot;Supercharged SEO with Drupal 8&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/supercharged-seo-with-drupal-8.jpg&quot; alt=&quot;Supercharged SEO with Drupal 8&quot; &gt;
             
             SEO trends 2017 and an in depth look at Drupal 8&#39;s new features that make Drupal the best option for your long-term marketing campaign.
-                &lt;a href=&quot;http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</guid>
+        <link>https://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</guid>
         
         <category>drupal</category>
         
@@ -194,12 +194,12 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
             Second part in a series of how to use XHProf effectively within a VM for a Drupal website.
-                &lt;a href=&quot;http://savaslabs.com/2016/06/16/using-xhprof.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2016/06/16/using-xhprof.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Thu, 16 Jun 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/06/16/using-xhprof.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/06/16/using-xhprof.html</guid>
+        <link>https://savaslabs.com/2016/06/16/using-xhprof.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/06/16/using-xhprof.html</guid>
         
         <category>php</category>
         
@@ -224,15 +224,15 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/xhprof-callgraph.jpg&quot; alt=&quot;an XHProf callgraph&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/xhprof-callgraph.jpg&quot; alt=&quot;an XHProf callgraph&quot; &gt;
             
             First part in a series of how to use XHProf effectively within a VM for a Drupal website.
-                &lt;a href=&quot;http://savaslabs.com/2016/05/26/installing-xhprof.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2016/05/26/installing-xhprof.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/05/26/installing-xhprof.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/05/26/installing-xhprof.html</guid>
+        <link>https://savaslabs.com/2016/05/26/installing-xhprof.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/05/26/installing-xhprof.html</guid>
         
         <category>php</category>
         
@@ -271,15 +271,15 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/retirement.jpg&quot; alt=&quot;a retirement sign at the beach&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/retirement.jpg&quot; alt=&quot;a retirement sign at the beach&quot; &gt;
             
             Part 4 of a series investigating what options you have with your Drupal 6 site as EOL has now come. We discuss whether Drupal 7 or Drupal 8 make sense for your site.
-                &lt;a href=&quot;http://savaslabs.com/2016/02/24/drupal-6-part-4.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2016/02/24/drupal-6-part-4.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/02/24/drupal-6-part-4.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/02/24/drupal-6-part-4.html</guid>
+        <link>https://savaslabs.com/2016/02/24/drupal-6-part-4.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/02/24/drupal-6-part-4.html</guid>
         
         <category>drupal</category>
         
@@ -298,15 +298,15 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/options.jpg&quot; alt=&quot;a highway-looking sign with arrows pointing to many possibilities&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/options.jpg&quot; alt=&quot;a highway-looking sign with arrows pointing to many possibilities&quot; &gt;
             
             Part 3 of a series investigating what options you have with your Drupal 6 site as EOL approaches. We discuss what your options really are given the many difficult decisions you are likely faced given your organization&#39;s budget, level of risk and tolerance for it, and other business priorities.
-                &lt;a href=&quot;http://savaslabs.com/2016/01/25/drupal-6-part-3.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2016/01/25/drupal-6-part-3.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/01/25/drupal-6-part-3.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/01/25/drupal-6-part-3.html</guid>
+        <link>https://savaslabs.com/2016/01/25/drupal-6-part-3.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/01/25/drupal-6-part-3.html</guid>
         
         <category>drupal</category>
         
@@ -325,16 +325,16 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/composer.jpg&quot; alt=&quot;composer&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/composer.jpg&quot; alt=&quot;composer&quot; &gt;
             
             A demonstration on how to use Composer Manager and the MailChimp PHP library to simply and easily subscribe users to mailing lists without using the MailChimp contributed module.
 
-                &lt;a href=&quot;http://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html</guid>
+        <link>https://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/01/22/composer-mailchimp-subscriptions.html</guid>
         
         <category>drupal</category>
         
@@ -357,17 +357,17 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
           &lt;p&gt;
             
               
-              &lt;img src=&quot;http://savaslabs.com/assets/img/blog/crossed-out-angel.jpg&quot; alt=&quot;Crossed out angel&quot; &gt;
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/crossed-out-angel.jpg&quot; alt=&quot;Crossed out angel&quot; &gt;
             
             Part 2 of a series investigating what to do with your Drupal 6 site as
 EOL approaches. This post takes a deep dive into the risks specifically.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/12/10/drupal-6-part-2.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/12/10/drupal-6-part-2.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Thu, 10 Dec 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/12/10/drupal-6-part-2.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/12/10/drupal-6-part-2.html</guid>
+        <link>https://savaslabs.com/2015/12/10/drupal-6-part-2.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/12/10/drupal-6-part-2.html</guid>
         
         <category>drupal</category>
         
@@ -386,12 +386,12 @@ EOL approaches. This post takes a deep dive into the risks specifically.
           &lt;p&gt;
             
             
-                &lt;a href=&quot;http://savaslabs.com/2015/11/24/drupal-6-upgrade.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/11/24/drupal-6-upgrade.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/11/24/drupal-6-upgrade.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/11/24/drupal-6-upgrade.html</guid>
+        <link>https://savaslabs.com/2015/11/24/drupal-6-upgrade.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/11/24/drupal-6-upgrade.html</guid>
         
         <category>drupal</category>
         
@@ -410,12 +410,12 @@ EOL approaches. This post takes a deep dive into the risks specifically.
           &lt;p&gt;
             
             
-                &lt;a href=&quot;http://savaslabs.com/2015/11/05/drupal-web-mapping.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/11/05/drupal-web-mapping.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Thu, 05 Nov 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/11/05/drupal-web-mapping.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/11/05/drupal-web-mapping.html</guid>
+        <link>https://savaslabs.com/2015/11/05/drupal-web-mapping.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/11/05/drupal-web-mapping.html</guid>
         
         <category>drupal</category>
         
@@ -441,12 +441,12 @@ EOL approaches. This post takes a deep dive into the risks specifically.
             
             It takes some forethought, but a well-organized theme means code that is modular and easy to maintain or pass off to another developer. SMACSS principles are becoming more and more widespread and can be applied to a Drupal theme. At Savas Labs we&#39;ve picked out what we love from SMACSS and simplified the rest, creating a stylesheet organization method that works for us. In this post (part 2 of my three-part series on Drupal theming with Sass) I&#39;ll go through our version of SMACSS and link to real examples.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/08/28/sassy-drupal-theming-part-2.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/08/28/sassy-drupal-theming-part-2.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Fri, 28 Aug 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/08/28/sassy-drupal-theming-part-2.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/08/28/sassy-drupal-theming-part-2.html</guid>
+        <link>https://savaslabs.com/2015/08/28/sassy-drupal-theming-part-2.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/08/28/sassy-drupal-theming-part-2.html</guid>
         
         <category>drupal</category>
         
@@ -474,12 +474,12 @@ EOL approaches. This post takes a deep dive into the risks specifically.
             
             When Savas Labs built a custom Drupal 8 theme, we needed to include a grid framework and chose Bourbon&#39;s Neat for its ease of use, its light weight, and the library of useful Sass mixins provided by Bourbon. In this post I detail how to set all of this up and use Compass to compile SCSS.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Fri, 21 Aug 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html</guid>
+        <link>https://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html</guid>
         
         <category>drupal</category>
         
@@ -509,12 +509,12 @@ EOL approaches. This post takes a deep dive into the risks specifically.
 
 We discuss how to use a drush hook on the `drush sqlsan` command to ensure proper sanitization while using the `user revision` module.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/08/04/user-revision-sanitize.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/08/04/user-revision-sanitize.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Tue, 04 Aug 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/08/04/user-revision-sanitize.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/08/04/user-revision-sanitize.html</guid>
+        <link>https://savaslabs.com/2015/08/04/user-revision-sanitize.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/08/04/user-revision-sanitize.html</guid>
         
         <category>drupal</category>
         
@@ -540,12 +540,12 @@ We discuss how to use a drush hook on the `drush sqlsan` command to ensure prope
 
 In this post we&#39;ll add the Leaflet library to a custom theme using the new *.libaries.yml file, write a little Javascript to create our map, and pull in map points via a REST export view.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/07/06/map-in-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/07/06/map-in-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/07/06/map-in-drupal-8.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/07/06/map-in-drupal-8.html</guid>
+        <link>https://savaslabs.com/2015/07/06/map-in-drupal-8.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/07/06/map-in-drupal-8.html</guid>
         
         <category>drupal</category>
         
@@ -575,12 +575,12 @@ Drupal&#39;s Form API combined with the CTools module provide a solid platform f
 
 On a recent project, though, a client asked us to create a multi-step form using only a block, so it could be placed on a page using Panels. It turns out this is pretty straightforward but as it&#39;s not well documented elsewhere, here&#39;s a quick guide to what you need to do. (Note: I created [an example module on GitHub](https://github.com/savaslabs/ctools_multistep_form_block), so please reference that as needed. This post is just covering the highlights.)
 
-                &lt;a href=&quot;http://savaslabs.com/2015/06/23/implementing-ctools-multi-step-form-block.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/06/23/implementing-ctools-multi-step-form-block.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/06/23/implementing-ctools-multi-step-form-block.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/06/23/implementing-ctools-multi-step-form-block.html</guid>
+        <link>https://savaslabs.com/2015/06/23/implementing-ctools-multi-step-form-block.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/06/23/implementing-ctools-multi-step-form-block.html</guid>
         
         <category>drupal</category>
         
@@ -602,12 +602,12 @@ On a recent project, though, a client asked us to create a multi-step form using
 
 Since most contributed base themes don&#39;t have an 8.x branch in a useable state at this point, Savas Labs created a custom theme based on Classy, Drupal&#39;s new base theme. I&#39;ll step through the process of creating a custom theme and walk through the basics of Twig and Twig debugging.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/06/10/d8-theming-basics.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/06/10/d8-theming-basics.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/06/10/d8-theming-basics.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/06/10/d8-theming-basics.html</guid>
+        <link>https://savaslabs.com/2015/06/10/d8-theming-basics.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/06/10/d8-theming-basics.html</guid>
         
         <category>drupal8</category>
         
@@ -639,12 +639,12 @@ Since most contributed base themes don&#39;t have an 8.x branch in a useable sta
             
             In this post I explain how my team used Docker, Docker Compose, and Bowline to spin up consistent local dev environments on OS X as part of a Drupal 8 contrib module sprint.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/04/23/drupal-8-docker-bowline-setup.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/04/23/drupal-8-docker-bowline-setup.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Thu, 23 Apr 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/04/23/drupal-8-docker-bowline-setup.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/04/23/drupal-8-docker-bowline-setup.html</guid>
+        <link>https://savaslabs.com/2015/04/23/drupal-8-docker-bowline-setup.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/04/23/drupal-8-docker-bowline-setup.html</guid>
         
         <category>docker</category>
         
@@ -672,12 +672,12 @@ Since most contributed base themes don&#39;t have an 8.x branch in a useable sta
             
             Drupal is a thriving FOSS project, and one of the main organizations moving it forward is the Drupal Association. Today, Savas Labs is proud to have become a supporting member of the Drupal Association.
 
-                &lt;a href=&quot;http://savaslabs.com/2015/04/07/savas-supports-drupal-association.html&quot;&gt;Continue reading…&lt;/a&gt;
+                &lt;a href=&quot;https://savaslabs.com/2015/04/07/savas-supports-drupal-association.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
         <pubDate>Tue, 07 Apr 2015 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2015/04/07/savas-supports-drupal-association.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2015/04/07/savas-supports-drupal-association.html</guid>
+        <link>https://savaslabs.com/2015/04/07/savas-supports-drupal-association.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2015/04/07/savas-supports-drupal-association.html</guid>
         
         <category>drupal</category>
         

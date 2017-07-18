@@ -12,12 +12,13 @@
   
   <meta name="description" content="It’s hard to believe it’s been over a year and a half since our site’s inaugural blog post (written just two months after my career change into web developme...">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="canonical" href="http://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html">
-  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
+  <link rel="canonical" href="https://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html">
+  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="https://savaslabs.com/feed.xml" />
   
   
   
   
+
 
 
 
@@ -29,7 +30,7 @@
       "@type": "BlogPosting",
       "about": "How we improved our company site's performance with a better Jekyll workflow
 ",
-      "articleBody": "&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s &lt;a href=&quot;http://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt; (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
+      "articleBody": "&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s &lt;a href=&quot;https://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt; (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
 
 &lt;p&gt;We based a lot of our gulp workflow on
 &lt;a href=&quot;https://robwise.github.io/blog/jekyll-and-gulp&quot;&gt;this excellent post&lt;/a&gt; by Rob Wise.
@@ -58,7 +59,7 @@ to be able to practice what we preach!&lt;/p&gt;
 
 &lt;p&gt;Our ultimate motivator was our not-so-great Google PageSpeed score.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Yikes!&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Going off of these recommendations and adding a few things of our own, we ended
@@ -135,7 +136,7 @@ we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp serve&lt;/code
 they’re updated and copy them directly into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory, then push the
 changes to the browser via BrowserSync.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;changes-to-jekyll-config&quot;&gt;Changes to Jekyll config&lt;/h3&gt;
 
@@ -524,7 +525,7 @@ initial render, we’re loading the scripts asynchronously via the &lt;code clas
 attribute in our &lt;code class=&quot;highlighter-rouge&quot;&gt;scripts.html&lt;/code&gt; template included on each page after the footer.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{# in scripts.html #}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://savaslabs.com/assets/js/main.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://savaslabs.com/assets/js/main.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;noscript&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;/assets/styles/main.css&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;stylesheet&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;text/css&#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;stylesheet&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;text/css&#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -1000,12 +1001,12 @@ a must-read for gulp beginners!&lt;/li&gt;
         "datePublished": "2016-10-19 00:00:00 +0000",
         "description": "Test tubes with brightly color liquids inside",
         "height": "912px",
-        "url": "http://savaslabs.com/assets/img/blog/test-tubes.jpg",
+        "url": "https://savaslabs.com/assets/img/blog/test-tubes.jpg",
         "width": "1474px"
       },
       "inLanguage": "en-US",
       "keywords": "performance, jekyll, javascript, css, sass, front-end-dev",
-      "mainEntityOfPage": "http://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html",
+      "mainEntityOfPage": "https://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html",
       "publisher": {
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -1023,15 +1024,15 @@ a must-read for gulp beginners!&lt;/li&gt;
           "@type": "ImageObject",
           "description": "Savas Labs logo",
           "height": "50px",
-          "url": "http://savaslabs.com/assets/img/logo.png",
+          "url": "https://savaslabs.com/assets/img/logo.png",
           "width": "114px"
         },
         "name": "Savas Labs",
         "telephone": "(919) 432-4660",
-        "url": "http://savaslabs.com"
+        "url": "https://savaslabs.com"
       },
       "sourceOrganization": "Savas Labs",
-      "text": "&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s &lt;a href=&quot;http://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt; (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
+      "text": "&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s &lt;a href=&quot;https://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt; (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
 
 &lt;p&gt;We based a lot of our gulp workflow on
 &lt;a href=&quot;https://robwise.github.io/blog/jekyll-and-gulp&quot;&gt;this excellent post&lt;/a&gt; by Rob Wise.
@@ -1060,7 +1061,7 @@ to be able to practice what we preach!&lt;/p&gt;
 
 &lt;p&gt;Our ultimate motivator was our not-so-great Google PageSpeed score.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Yikes!&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Going off of these recommendations and adding a few things of our own, we ended
@@ -1137,7 +1138,7 @@ we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp serve&lt;/code
 they’re updated and copy them directly into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory, then push the
 changes to the browser via BrowserSync.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;changes-to-jekyll-config&quot;&gt;Changes to Jekyll config&lt;/h3&gt;
 
@@ -1526,7 +1527,7 @@ initial render, we’re loading the scripts asynchronously via the &lt;code clas
 attribute in our &lt;code class=&quot;highlighter-rouge&quot;&gt;scripts.html&lt;/code&gt; template included on each page after the footer.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{# in scripts.html #}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://savaslabs.com/assets/js/main.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://savaslabs.com/assets/js/main.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;noscript&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;/assets/styles/main.css&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;stylesheet&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;text/css&#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;stylesheet&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;text/css&#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -1984,7 +1985,7 @@ a must-read for gulp beginners!&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2014/05/responsive-images-done-right-guide-picture-srcset/&quot;&gt;Smashing Magazine’s guide to the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;picture&amp;gt;&lt;/code&gt; element&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 ",
-      "url": "http://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html"
+      "url": "https://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html"
     }
   </script>
 
@@ -2016,7 +2017,7 @@ a must-read for gulp beginners!&lt;/li&gt;
   <div class="region--header__wrapper">
 
     <a href="/" class="region--header__logo">
-      <img src="http://savaslabs.com/assets/img/logo.svg" alt="Savas Labs logo" class="savas-logo savas-logo--main">
+      <img src="https://savaslabs.com/assets/img/logo.svg" alt="Savas Labs logo" class="savas-logo savas-logo--main">
     </a>
 
     <!-- Mobile menu button. -->
@@ -2081,17 +2082,17 @@ a must-read for gulp beginners!&lt;/li&gt;
     <div class="region--featured-image">
       
       <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-1474by912-9446e4.jpg" media="(min-width: 1120px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1120px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-1000by619-9446e4.jpg" media="(min-width: 1120px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-1474by912-9446e4.jpg" media="(min-width: 860px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 860px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-746by462-9446e4.jpg" media="(min-width: 860px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-1474by912-9446e4.jpg" media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 640px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-860by532-9446e4.jpg" media="(min-width: 640px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-1280by792-9446e4.jpg" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-640by396-9446e4.jpg" media="(min-width: 400px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-800by495-9446e4.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/test-tubes-400by247-9446e4.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/blog/test-tubes-400by247-9446e4.jpg" class="image--post-featured-image" itemprop="image" alt="Test tubes with brightly color liquids inside" >
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-1474by912-9446e4.jpg" media="(min-width: 1120px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1120px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-1000by619-9446e4.jpg" media="(min-width: 1120px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-1474by912-9446e4.jpg" media="(min-width: 860px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 860px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-746by462-9446e4.jpg" media="(min-width: 860px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-1474by912-9446e4.jpg" media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 640px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-860by532-9446e4.jpg" media="(min-width: 640px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-1280by792-9446e4.jpg" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-640by396-9446e4.jpg" media="(min-width: 400px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-800by495-9446e4.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/test-tubes-400by247-9446e4.jpg">
+    <img src="https://savaslabs.com/assets/processed-img/blog/test-tubes-400by247-9446e4.jpg" class="image--post-featured-image" itemprop="image" alt="Test tubes with brightly color liquids inside" >
   </picture>
 
       
@@ -2104,9 +2105,9 @@ a must-read for gulp beginners!&lt;/li&gt;
           
 <div class="post-author">
   <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-120by122-bebfe8.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg" class="image--team-blog-tile" itemprop="image" alt="Anne Tomasevich" >
+    <source srcset="https://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-120by122-bebfe8.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg">
+    <img src="https://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg" class="image--team-blog-tile" itemprop="image" alt="Anne Tomasevich" >
   </picture>
 
   <p class="post-author__name">By <a href="/team/anne-tomasevich">Anne Tomasevich</a></p>
@@ -2125,7 +2126,7 @@ a must-read for gulp beginners!&lt;/li&gt;
       
     </div>
     <article class="region--post-content">
-      <p>It’s hard to believe it’s been over a year and a half since our site’s <a href="http://savaslabs.com/2015/04/01/building-our-site.html">inaugural blog post</a> (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of <a href="https://jekyllrb.com/">Jekyll</a>. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in <code class="highlighter-rouge">jekyll</code> commands to build the site. Instead, we’re using <a href="http://gulpjs.com/">gulp</a>, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!</p>
+      <p>It’s hard to believe it’s been over a year and a half since our site’s <a href="https://savaslabs.com/2015/04/01/building-our-site.html">inaugural blog post</a> (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of <a href="https://jekyllrb.com/">Jekyll</a>. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in <code class="highlighter-rouge">jekyll</code> commands to build the site. Instead, we’re using <a href="http://gulpjs.com/">gulp</a>, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!</p>
 
 <p>We based a lot of our gulp workflow on
 <a href="https://robwise.github.io/blog/jekyll-and-gulp">this excellent post</a> by Rob Wise.
@@ -2154,7 +2155,7 @@ to be able to practice what we preach!</p>
 
 <p>Our ultimate motivator was our not-so-great Google PageSpeed score.</p>
 
-<p><img src="http://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg" alt="Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!" />
+<p><img src="https://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg" alt="Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!" />
 <span class="caption">Yikes!</span></p>
 
 <p>Going off of these recommendations and adding a few things of our own, we ended
@@ -2231,7 +2232,7 @@ we created a <code class="highlighter-rouge">gulp serve</code> task using <code 
 they’re updated and copy them directly into the <code class="highlighter-rouge">_site</code> directory, then push the
 changes to the browser via BrowserSync.</p>
 
-<p><img src="http://savaslabs.com/assets/img/blog/gulp-workflow.svg" alt="Diagram of our basic gulp workflow" /></p>
+<p><img src="https://savaslabs.com/assets/img/blog/gulp-workflow.svg" alt="Diagram of our basic gulp workflow" /></p>
 
 <h3 id="changes-to-jekyll-config">Changes to Jekyll config</h3>
 
@@ -2620,7 +2621,7 @@ initial render, we’re loading the scripts asynchronously via the <code class="
 attribute in our <code class="highlighter-rouge">scripts.html</code> template included on each page after the footer.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>{# in scripts.html #}
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"http://savaslabs.com/assets/js/main.js"</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://savaslabs.com/assets/js/main.js"</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;noscript&gt;</span>
   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">'/assets/styles/main.css'</span> <span class="na">rel=</span><span class="s">'stylesheet'</span> <span class="na">type=</span><span class="s">'text/css'</span><span class="nt">&gt;</span>
   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro'</span> <span class="na">rel=</span><span class="s">'stylesheet'</span> <span class="na">type=</span><span class="s">'text/css'</span><span class="nt">&gt;</span>
@@ -3205,9 +3206,9 @@ a must-read for gulp beginners!</li>
           
           
           <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-120by120-925265.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg" class="image--team-blog-tile" itemprop="image" alt="Chris Russo" >
+    <source srcset="https://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-120by120-925265.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg">
+    <img src="https://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg" class="image--team-blog-tile" itemprop="image" alt="Chris Russo" >
   </picture>
 
           
@@ -3393,9 +3394,9 @@ a must-read for gulp beginners!</li>
           
           
           <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/dan/dan-square-outside-120by120-370cd4.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/dan/dan-square-outside-60by60-370cd4.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/dan/dan-square-outside-60by60-370cd4.jpg" class="image--team-blog-tile" itemprop="image" alt="Dan Murphy" >
+    <source srcset="https://savaslabs.com/assets/processed-img/team/dan/dan-square-outside-120by120-370cd4.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/team/dan/dan-square-outside-60by60-370cd4.jpg">
+    <img src="https://savaslabs.com/assets/processed-img/team/dan/dan-square-outside-60by60-370cd4.jpg" class="image--team-blog-tile" itemprop="image" alt="Dan Murphy" >
   </picture>
 
           
@@ -4337,7 +4338,7 @@ a must-read for gulp beginners!</li>
   <div class="region--footer__main">
     <div class="region--footer__main__menu">
       <a href="/" class="region--footer__logo">
-        <img src="http://savaslabs.com/assets/img/logo-light.svg" alt="Savas Labs" class="savas-logo savas-logo--light">
+        <img src="https://savaslabs.com/assets/img/logo-light.svg" alt="Savas Labs" class="savas-logo savas-logo--light">
       </a>
       <nav role="navigation" class="footer-navigation">
   <ul class="footer-navigation__menu">
@@ -4413,7 +4414,7 @@ a must-read for gulp beginners!</li>
   </div>
 </footer>
 
-    <script type="text/javascript" src="http://savaslabs.com/assets/js/main.js" async></script>
+    <script type="text/javascript" src="https://savaslabs.com/assets/js/main.js" async></script>
 
 <noscript>
   <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>

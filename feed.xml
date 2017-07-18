@@ -4,10 +4,10 @@
     <title>Savas Labs</title>
     <description>We craft elegant Drupal web systems that propel organizations.
 </description>
-    <link>http://savaslabs.com/</link>
-    <atom:link href="http://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Jul 2017 07:15:07 +0000</pubDate>
-    <lastBuildDate>Tue, 18 Jul 2017 07:15:07 +0000</lastBuildDate>
+    <link>https://savaslabs.com/</link>
+    <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 18 Jul 2017 18:07:41 +0000</pubDate>
+    <lastBuildDate>Tue, 18 Jul 2017 18:07:41 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -96,8 +96,8 @@
 &lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</guid>
+        <link>https://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</guid>
         
         <category>design</category>
         
@@ -209,8 +209,8 @@
 &lt;p&gt;We hope you find this quarter’s top picks helpful! Leave a comment if you have additions to share with us!&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/03/20/lightning-q1-2017.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/03/20/lightning-q1-2017.html</guid>
+        <link>https://savaslabs.com/2017/03/20/lightning-q1-2017.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/03/20/lightning-q1-2017.html</guid>
         
         <category>skillshare</category>
         
@@ -354,8 +354,8 @@
 &lt;p&gt;With the right mix of forethought and understanding, Drupal 8 allows web engineers to deliver content publishing platforms that are unique to the client’s specific needs, while making web authoring a productive and satisfying experience.&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 Mar 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</guid>
+        <link>https://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/03/06/five-drupal-8-tips-to-empower-content-authors.html</guid>
         
         <category>drupal</category>
         
@@ -392,7 +392,7 @@ process.&lt;/p&gt;
 
 &lt;h2 id=&quot;base-knowledge&quot;&gt;Base knowledge&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-typeface-anatomy.jpg&quot; alt=&quot;A diagram of typeface terminology&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-typeface-anatomy.jpg&quot; alt=&quot;A diagram of typeface terminology&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;A diagram of typeface anatomy&lt;br /&gt;
 &lt;em&gt;From&lt;/em&gt; &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;On Web Typography&lt;/a&gt; &lt;em&gt;by Jason Santa Maria&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -417,7 +417,7 @@ offer (true bolds and italics, language sets and punctuation among others)&lt;/l
 
 &lt;h2 id=&quot;evaluating-typefaces&quot;&gt;Evaluating typefaces&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-helvetica-alternatives.jpg&quot; alt=&quot;Examples of alternatives to Helvetica based on Helvetica&#39;s physical characteristics&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-helvetica-alternatives.jpg&quot; alt=&quot;Examples of alternatives to Helvetica based on Helvetica&#39;s physical characteristics&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Finding alternatives to Helvetica by examining its physical characteristics&lt;br /&gt;
 &lt;em&gt;From&lt;/em&gt; &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;On Web Typography&lt;/a&gt; &lt;em&gt;by Jason Santa Maria&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -436,7 +436,7 @@ level and prepare you for the next part: actually selecting and applying them.&l
 your site. Santa Maria introduces two separate contexts to consider: type for a
 moment (a menu link, a heading, etc.) and type to live with (long text).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-contexts.jpg&quot; alt=&quot;Examples of type in different contexts&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-contexts.jpg&quot; alt=&quot;Examples of type in different contexts&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Some examples of the two contexts&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;These contexts demand different typeface choices based on what’s important
@@ -473,7 +473,7 @@ bookmarking the source in an “Inspiration” folder. &lt;a href=&quot;http://a
 written about this process&lt;/a&gt;, so don’t be afraid
 to be inspired by others’ work!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/on-web-typography-inspiration.jpg&quot; alt=&quot;Screenshots of websites with nice type design&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-inspiration.jpg&quot; alt=&quot;Screenshots of websites with nice type design&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Some samples from my Inspiration folder&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;After perusing my Inspiration folder, I follow these guidelines when designing
@@ -519,8 +519,8 @@ but you also put yourself in your readers’ shoes.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 27 Feb 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/02/27/on-web-typography-review.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/02/27/on-web-typography-review.html</guid>
+        <link>https://savaslabs.com/2017/02/27/on-web-typography-review.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/02/27/on-web-typography-review.html</guid>
         
         <category>design</category>
         
@@ -685,8 +685,8 @@ npm start
 &lt;p&gt;If you have any questions or comments, please post them below!&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</guid>
+        <link>https://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/02/20/drupal-docker-pattern-lab.html</guid>
         
         <category>drupal</category>
         
@@ -930,8 +930,8 @@ s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&qu
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2017/02/15/docker-mysql-performance.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2017/02/15/docker-mysql-performance.html</guid>
+        <link>https://savaslabs.com/2017/02/15/docker-mysql-performance.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2017/02/15/docker-mysql-performance.html</guid>
         
         <category>drupal</category>
         
@@ -1106,8 +1106,8 @@ drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span cla
 &lt;p&gt;Lastly, a special thanks to &lt;a href=&quot;https://thinkshout.com/&quot;&gt;ThinkShout&lt;/a&gt; for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</guid>
+        <link>https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</guid>
         
         <category>drupal</category>
         
@@ -1140,7 +1140,7 @@ up Travis in their &lt;a href=&quot;https://docs.travis-ci.com/&quot;&gt;docs&lt
 &lt;p&gt;Previously, Travis would build the site and run our tests, then we would merge
 branches into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, triggering GitHub Pages to rebuild and deploy our site.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Original deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Now, we want to build our site before it gets to GitHub Pages to ensure our
@@ -1156,7 +1156,7 @@ directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code
   &lt;li&gt;This triggers GitHub Pages to deploy our pre-built site.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;New deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;create-a-new-default-branch&quot;&gt;Create a new default branch&lt;/h3&gt;
@@ -1180,7 +1180,7 @@ a personal access token by visiting the
 new token. We used a bot account that has access to our repository to avoid
 needing to use one of our personal accounts.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We’ll need to use the access token and the account’s email address in our
 deployment script, so to keep those items out of version control we used
@@ -1373,8 +1373,8 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html</guid>
+        <link>https://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html</guid>
         
         <category>jekyll</category>
         
@@ -1385,7 +1385,7 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
     
       <item>
         <title>Optimizing Jekyll Performance with Gulp</title>
-        <description>&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s &lt;a href=&quot;http://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt; (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
+        <description>&lt;p&gt;It’s hard to believe it’s been over a year and a half since our site’s &lt;a href=&quot;https://savaslabs.com/2015/04/01/building-our-site.html&quot;&gt;inaugural blog post&lt;/a&gt; (written just two months after my career change into web development!) It’s been great fun building our site and adding content thanks to the power and simplicity of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. We recently deployed a series of changes to optimize our CSS, JS, and images, and in doing so finally moved away from using built-in &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; commands to build the site. Instead, we’re using &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;, a task runner — or, as they put so nicely on their website, a “streaming build system”. In this post I’ll go over our motivations for this change, how we integrated gulp with Jekyll, and the awesome results!&lt;/p&gt;
 
 &lt;p&gt;We based a lot of our gulp workflow on
 &lt;a href=&quot;https://robwise.github.io/blog/jekyll-and-gulp&quot;&gt;this excellent post&lt;/a&gt; by Rob Wise.
@@ -1414,7 +1414,7 @@ to be able to practice what we preach!&lt;/p&gt;
 
 &lt;p&gt;Our ultimate motivator was our not-so-great Google PageSpeed score.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Yikes!&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Going off of these recommendations and adding a few things of our own, we ended
@@ -1491,7 +1491,7 @@ we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp serve&lt;/code
 they’re updated and copy them directly into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory, then push the
 changes to the browser via BrowserSync.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;changes-to-jekyll-config&quot;&gt;Changes to Jekyll config&lt;/h3&gt;
 
@@ -1880,7 +1880,7 @@ initial render, we’re loading the scripts asynchronously via the &lt;code clas
 attribute in our &lt;code class=&quot;highlighter-rouge&quot;&gt;scripts.html&lt;/code&gt; template included on each page after the footer.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{# in scripts.html #}
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://savaslabs.com/assets/js/main.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://savaslabs.com/assets/js/main.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;noscript&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;/assets/styles/main.css&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;stylesheet&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;text/css&#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic,700italic|PT+Serif|Source+Sans+Pro&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;stylesheet&#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;text/css&#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -2339,8 +2339,8 @@ a must-read for gulp beginners!&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 19 Oct 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html</guid>
+        <link>https://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/10/19/optimizing-jekyll-with-gulp.html</guid>
         
         <category>performance</category>
         
@@ -2504,8 +2504,8 @@ a must-read for gulp beginners!&lt;/li&gt;
 &lt;p&gt;&lt;strong&gt;Drupal 8 satisfies current SEO trends enabling marketers do their job effectively and efficiently! Even with minimal configuration, Drupal 8 lays a solid base for future marketing performance.&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
-        <link>http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</link>
-        <guid isPermaLink="true">http://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</guid>
+        <link>https://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html</guid>
         
         <category>drupal</category>
         

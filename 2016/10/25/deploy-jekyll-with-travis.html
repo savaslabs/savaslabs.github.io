@@ -12,12 +12,13 @@
   
   <meta name="description" content="Since our company’s inception, we at Savas Labs have used Jekyll to build our company website and GitHub Pages to host it with great success. Jekyll is a pow...">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="canonical" href="http://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html">
-  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="http://savaslabs.com/feed.xml" />
+  <link rel="canonical" href="https://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html">
+  <link rel="alternate" type="application/rss+xml" title="Savas Labs" href="https://savaslabs.com/feed.xml" />
   
   
   
   
+
 
 
 
@@ -46,7 +47,7 @@ up Travis in their &lt;a href=&quot;https://docs.travis-ci.com/&quot;&gt;docs&lt
 &lt;p&gt;Previously, Travis would build the site and run our tests, then we would merge
 branches into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, triggering GitHub Pages to rebuild and deploy our site.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Original deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Now, we want to build our site before it gets to GitHub Pages to ensure our
@@ -62,7 +63,7 @@ directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code
   &lt;li&gt;This triggers GitHub Pages to deploy our pre-built site.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;New deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;create-a-new-default-branch&quot;&gt;Create a new default branch&lt;/h3&gt;
@@ -86,7 +87,7 @@ a personal access token by visiting the
 new token. We used a bot account that has access to our repository to avoid
 needing to use one of our personal accounts.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We’ll need to use the access token and the account’s email address in our
 deployment script, so to keep those items out of version control we used
@@ -296,12 +297,12 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
         "datePublished": "2016-10-25 00:00:00 +0000",
         "description": "Jekyll, Gulp, Travis, and GitHub logos",
         "height": "739px",
-        "url": "http://savaslabs.com/assets/img/blog/travis-hero.png",
+        "url": "https://savaslabs.com/assets/img/blog/travis-hero.png",
         "width": "1474px"
       },
       "inLanguage": "en-US",
       "keywords": "jekyll, continuous-integration",
-      "mainEntityOfPage": "http://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html",
+      "mainEntityOfPage": "https://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html",
       "publisher": {
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -319,12 +320,12 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
           "@type": "ImageObject",
           "description": "Savas Labs logo",
           "height": "50px",
-          "url": "http://savaslabs.com/assets/img/logo.png",
+          "url": "https://savaslabs.com/assets/img/logo.png",
           "width": "114px"
         },
         "name": "Savas Labs",
         "telephone": "(919) 432-4660",
-        "url": "http://savaslabs.com"
+        "url": "https://savaslabs.com"
       },
       "sourceOrganization": "Savas Labs",
       "text": "&lt;p&gt;Since our company’s inception, we at Savas Labs have used &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; to build our company website and &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; to host it with great success. Jekyll is a powerful tool out of the box, and it’s hard to imagine a simpler hosting strategy than GitHub Pages, which only requires a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot;&gt;specifically named branch&lt;/a&gt; and a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages&quot;&gt;single settings update&lt;/a&gt; to get your site live for free. Although we often use &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt; to build complex, data-heavy systems that need to have a simple workflow for site admins, for our own site we recognized that Jekyll was a better tool for our workflow that would mitigate security risks, eliminate site hosting costs, and reduce complexity since there’s no need for a database back-end.&lt;/p&gt;
@@ -343,7 +344,7 @@ up Travis in their &lt;a href=&quot;https://docs.travis-ci.com/&quot;&gt;docs&lt
 &lt;p&gt;Previously, Travis would build the site and run our tests, then we would merge
 branches into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, triggering GitHub Pages to rebuild and deploy our site.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Original deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Now, we want to build our site before it gets to GitHub Pages to ensure our
@@ -359,7 +360,7 @@ directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code
   &lt;li&gt;This triggers GitHub Pages to deploy our pre-built site.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;New deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;create-a-new-default-branch&quot;&gt;Create a new default branch&lt;/h3&gt;
@@ -383,7 +384,7 @@ a personal access token by visiting the
 new token. We used a bot account that has access to our repository to avoid
 needing to use one of our personal accounts.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We’ll need to use the access token and the account’s email address in our
 deployment script, so to keep those items out of version control we used
@@ -575,7 +576,7 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://mlota.github.io/2015/11/23/automating-deployment-github-pages-jekyll-travis.html&quot;&gt;Automating deployment of a GitHub Pages hosted site with Jekyll and Travis CI&lt;/a&gt; by Mel Lota&lt;/li&gt;
 &lt;/ul&gt;
 ",
-      "url": "http://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html"
+      "url": "https://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html"
     }
   </script>
 
@@ -607,7 +608,7 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
   <div class="region--header__wrapper">
 
     <a href="/" class="region--header__logo">
-      <img src="http://savaslabs.com/assets/img/logo.svg" alt="Savas Labs logo" class="savas-logo savas-logo--main">
+      <img src="https://savaslabs.com/assets/img/logo.svg" alt="Savas Labs logo" class="savas-logo savas-logo--main">
     </a>
 
     <!-- Mobile menu button. -->
@@ -672,17 +673,17 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
     <div class="region--featured-image">
       
       <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png" media="(min-width: 1120px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1120px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-1000by501-d50036.png" media="(min-width: 1120px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png" media="(min-width: 860px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 860px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-746by374-d50036.png" media="(min-width: 860px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png" media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 640px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-860by431-d50036.png" media="(min-width: 640px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-1280by642-d50036.png" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-640by321-d50036.png" media="(min-width: 400px)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-800by401-d50036.png" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png">
-    <img src="http://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png" class="image--post-featured-image" itemprop="image" alt="Jekyll, Gulp, Travis, and GitHub logos" >
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png" media="(min-width: 1120px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1120px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-1000by501-d50036.png" media="(min-width: 1120px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png" media="(min-width: 860px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 860px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-746by374-d50036.png" media="(min-width: 860px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-1474by739-d50036.png" media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 640px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-860by431-d50036.png" media="(min-width: 640px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-1280by642-d50036.png" media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-640by321-d50036.png" media="(min-width: 400px)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-800by401-d50036.png" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png">
+    <img src="https://savaslabs.com/assets/processed-img/blog/travis-hero-400by201-d50036.png" class="image--post-featured-image" itemprop="image" alt="Jekyll, Gulp, Travis, and GitHub logos" >
   </picture>
 
       
@@ -695,9 +696,9 @@ Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
           
 <div class="post-author">
   <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-120by122-bebfe8.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg" class="image--team-blog-tile" itemprop="image" alt="Anne Tomasevich" >
+    <source srcset="https://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-120by122-bebfe8.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg">
+    <img src="https://savaslabs.com/assets/processed-img/team/anne/anne-square-outside-60by61-bebfe8.jpg" class="image--team-blog-tile" itemprop="image" alt="Anne Tomasevich" >
   </picture>
 
   <p class="post-author__name">By <a href="/team/anne-tomasevich">Anne Tomasevich</a></p>
@@ -732,7 +733,7 @@ up Travis in their <a href="https://docs.travis-ci.com/">docs</a>.</p>
 <p>Previously, Travis would build the site and run our tests, then we would merge
 branches into <code class="highlighter-rouge">master</code>, triggering GitHub Pages to rebuild and deploy our site.</p>
 
-<p><img src="http://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg" alt="Diagram of original deployment workflow" />
+<p><img src="https://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg" alt="Diagram of original deployment workflow" />
 <span class="caption">Original deployment workflow</span></p>
 
 <p>Now, we want to build our site before it gets to GitHub Pages to ensure our
@@ -748,7 +749,7 @@ directory to the <code class="highlighter-rouge">master</code> branch, then push
   <li>This triggers GitHub Pages to deploy our pre-built site.</li>
 </ol>
 
-<p><img src="http://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg" alt="Diagram of new deployment workflow" />
+<p><img src="https://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg" alt="Diagram of new deployment workflow" />
 <span class="caption">New deployment workflow</span></p>
 
 <h3 id="create-a-new-default-branch">Create a new default branch</h3>
@@ -772,7 +773,7 @@ a personal access token by visiting the
 new token. We used a bot account that has access to our repository to avoid
 needing to use one of our personal accounts.</p>
 
-<p><img src="http://savaslabs.com/assets/img/blog/github-token.jpg" alt="Generating a personal access token in GitHub" /></p>
+<p><img src="https://savaslabs.com/assets/img/blog/github-token.jpg" alt="Generating a personal access token in GitHub" /></p>
 
 <p>We’ll need to use the access token and the account’s email address in our
 deployment script, so to keep those items out of version control we used
@@ -1089,9 +1090,9 @@ Dockerizing our site but that’s a subject for another post!</li>
           
           
           <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-120by120-925265.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg" class="image--team-blog-tile" itemprop="image" alt="Chris Russo" >
+    <source srcset="https://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-120by120-925265.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg">
+    <img src="https://savaslabs.com/assets/processed-img/team/chris/chris-square-outside-60by60-925265.jpg" class="image--team-blog-tile" itemprop="image" alt="Chris Russo" >
   </picture>
 
           
@@ -1249,9 +1250,9 @@ Dockerizing our site but that’s a subject for another post!</li>
           
           
           <picture>
-    <source srcset="http://savaslabs.com/assets/processed-img/team/kosta/kosta-square-outside-120by120-c7115d.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-    <source srcset="http://savaslabs.com/assets/processed-img/team/kosta/kosta-square-outside-60by60-c7115d.jpg">
-    <img src="http://savaslabs.com/assets/processed-img/team/kosta/kosta-square-outside-60by60-c7115d.jpg" class="image--team-blog-tile" itemprop="image" alt="Kosta Harlan" >
+    <source srcset="https://savaslabs.com/assets/processed-img/team/kosta/kosta-square-outside-120by120-c7115d.jpg" media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
+    <source srcset="https://savaslabs.com/assets/processed-img/team/kosta/kosta-square-outside-60by60-c7115d.jpg">
+    <img src="https://savaslabs.com/assets/processed-img/team/kosta/kosta-square-outside-60by60-c7115d.jpg" class="image--team-blog-tile" itemprop="image" alt="Kosta Harlan" >
   </picture>
 
           
@@ -1680,7 +1681,7 @@ Dockerizing our site but that’s a subject for another post!</li>
   <div class="region--footer__main">
     <div class="region--footer__main__menu">
       <a href="/" class="region--footer__logo">
-        <img src="http://savaslabs.com/assets/img/logo-light.svg" alt="Savas Labs" class="savas-logo savas-logo--light">
+        <img src="https://savaslabs.com/assets/img/logo-light.svg" alt="Savas Labs" class="savas-logo savas-logo--light">
       </a>
       <nav role="navigation" class="footer-navigation">
   <ul class="footer-navigation__menu">
@@ -1756,7 +1757,7 @@ Dockerizing our site but that’s a subject for another post!</li>
   </div>
 </footer>
 
-    <script type="text/javascript" src="http://savaslabs.com/assets/js/main.js" async></script>
+    <script type="text/javascript" src="https://savaslabs.com/assets/js/main.js" async></script>
 
 <noscript>
   <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>
