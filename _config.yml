@@ -7,7 +7,7 @@ description: >
 # (http://jekyllrb.com/docs/github-pages/) which is to say, it's
 # not used at all.
 baseurl: ""
-url: "http://savaslabs.com"
+url: "https://savaslabs.com"
 comment_server_url: "http://comments.savaslabs.com"
 comment_server_enabled: 1
 

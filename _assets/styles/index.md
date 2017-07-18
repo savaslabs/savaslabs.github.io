@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the [Savas Labs](http://savaslabs.com) front end style guide!
+Welcome to the [Savas Labs](https://savaslabs.com) front end style guide!
 
 ## About this style guide
 
