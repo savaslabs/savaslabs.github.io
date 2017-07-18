@@ -1,3 +1,4 @@
+{% assign logo = '/assets/img/logo.png' %}
 <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -12,7 +13,7 @@
       "email": "info@savaslabs.com",
       "name": "Savas Labs",
       "telephone": "(919) 432-4660",
-      "url": "http://savaslabs.com",
-      "logo": "http://savaslabs.com/assets/img/logo.png"
+      "url": "{{ site.url }}",
+      "logo": "{{ <logo></logo> | prepend: site.url }}"
     }
 </script>

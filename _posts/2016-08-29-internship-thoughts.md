@@ -16,7 +16,7 @@ In this post, I'd like to share my 3 month internship experience for anyone who'
 
 ## Visiting the Team
 
-Since I’m located [2,845 miles](https://www.google.com/maps/dir/Portland,+OR/Durham,+NC/@39.4988195,-118.778336,4z/data=!4m13!4m12!1m5!1m1!1s0x54950b0b7da97427:0x1c36b9e6f6d18591!2m2!1d-122.6764816!2d45.5230622!1m5!1m1!1s0x89ace471120f66f1:0xe17ada898a46f27e!2m2!1d-78.898619!2d35.9940329) from Savas Labs HQ, one of my biggest concerns starting out as a newbie was the added challenge of telecommuting. To get me up and running as fast as possible, [Chris](http://savaslabs.com/team/chris-russo/) and I decided I’d fly to Durham to meet the team and work in the office together for my first week.
+Since I’m located [2,845 miles](https://www.google.com/maps/dir/Portland,+OR/Durham,+NC/@39.4988195,-118.778336,4z/data=!4m13!4m12!1m5!1m1!1s0x54950b0b7da97427:0x1c36b9e6f6d18591!2m2!1d-122.6764816!2d45.5230622!1m5!1m1!1s0x89ace471120f66f1:0xe17ada898a46f27e!2m2!1d-78.898619!2d35.9940329) from Savas Labs HQ, one of my biggest concerns starting out as a newbie was the added challenge of telecommuting. To get me up and running as fast as possible, [Chris](/team/chris-russo/) and I decided I’d fly to Durham to meet the team and work in the office together for my first week.
 
 It was great to kick-off my internship with in-person QA sessions and impromptu whiteboarding (not to mention meeting my teammates and being graciously invited to their homes!). Even though we relied on screenshares and conference calls just fine after that first week, being in the same physical space to start off with helped establish my presence with the team and laid a strong learning foundation for the remainder of my internship.
 
@@ -28,7 +28,7 @@ Everyone at Savas Labs contributed to my learning! I was encouraged by the entir
 
 <span class="caption">Supportive Savasians!</span>
 
-It helped that many on the team had also transitioned from other careers and understood what it felt like to be overwhelmed by a barrage of new information. More than once, [Dan](http://savaslabs.com/team/dan-murphy/) or [Anne](http://savaslabs.com/team/anne-tomasevich/) would check in and ask me if I needed any help or had any general questions (thanks you guys!). And I could tell everyone took my internship seriously, and never once was I made to feel inconsequential!
+It helped that many on the team had also transitioned from other careers and understood what it felt like to be overwhelmed by a barrage of new information. More than once, [Dan](/team/dan-murphy/) or [Anne](/team/anne-tomasevich/) would check in and ask me if I needed any help or had any general questions (thanks you guys!). And I could tell everyone took my internship seriously, and never once was I made to feel inconsequential!
 
 <img src="/assets/img/blog/internship-dilbert.gif" class="blog-image-full-width" alt="Dilbert Cartoon">
 

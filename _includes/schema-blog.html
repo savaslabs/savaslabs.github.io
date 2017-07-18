@@ -52,12 +52,12 @@
           "@type": "ImageObject",
           "description": "Savas Labs logo",
           "height": "50px",
-          "url": "http://savaslabs.com/assets/img/logo.png",
+          "url": "{{ /assets/img/logo.png | prepend: site.url }}",
           "width": "114px"
         },
         "name": "Savas Labs",
         "telephone": "(919) 432-4660",
-        "url": "http://savaslabs.com"
+        "url": "{{ site.url }}"
       },
       "sourceOrganization": "Savas Labs",
       "text": "{{ page.content | escape | textify }}",
@@ -94,7 +94,7 @@
           "@type": "ImageObject",
           "description": "Savas Labs logo",
           "height": "50px",
-          "url": "http://savaslabs.com/assets/img/logo.png",
+          "url": "{{ /assets/img/logo.png | prepend: site.url }}",
           "width": "114px"
         }
       },
