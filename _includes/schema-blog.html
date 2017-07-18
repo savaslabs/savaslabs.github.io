@@ -2,6 +2,7 @@
 {% if page.date_modified %}
   {% assign date_modified = page.date_modified %}
 {% endif %}
+{% assign logo = '/assets/img/logo.png' %}
 
 {% if page.featured_image %}
   {% capture image_path_start %}/assets/img{% endcapture %}
@@ -52,7 +53,7 @@
           "@type": "ImageObject",
           "description": "Savas Labs logo",
           "height": "50px",
-          "url": "{{ /assets/img/logo.png | prepend: site.url }}",
+          "url": "{{ logo | prepend: site.url }}",
           "width": "114px"
         },
         "name": "Savas Labs",
@@ -94,7 +95,7 @@
           "@type": "ImageObject",
           "description": "Savas Labs logo",
           "height": "50px",
-          "url": "{{ /assets/img/logo.png | prepend: site.url }}",
+          "url": "{{ logo | prepend: site.url }}",
           "width": "114px"
         }
       },
