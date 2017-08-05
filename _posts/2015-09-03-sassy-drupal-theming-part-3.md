@@ -74,7 +74,7 @@ Every developer (and your production environment) should be compiling SCSS into 
 ```text
 # Compiled source #
 path/to/theme/.sass-cache/*
-paht/to/theme/stylesheets/*
+path/to/theme/stylesheets/*
 ```
 
 <hr>

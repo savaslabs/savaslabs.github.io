@@ -58,7 +58,7 @@ You should also create a custom JavaScript file to hold your map code - ours is 
 
 Next you'll need to add the Leaflet library to your theme's [libraries file](https://www.drupal.org/developing/api/8/assets). In `mappy.libraries.yml`, shown below, I've defined a new library called `leaflet` and stated the paths to leaflet.css, leaflet.js and my custom JS file map.js.
 
-Note that I've listed jQuery as a dependency - in Drupal 8 jQuery is no longer loaded on every page, so it needs to be explictly included here.
+Note that I've listed jQuery as a dependency - in Drupal 8 jQuery is no longer loaded on every page, so it needs to be explicitly included here.
 
 ```yaml
 # From mappy.libraries.yml
@@ -100,7 +100,7 @@ Now we need a content type that includes a location field.
 2. Give your new content type a name (we called ours "Place"), then click "Save and manage fields."
 3. Add a new field with the field type Geofield. If Geofield isn't an option, you should double-check that the Geofield module is installed. Add a label (we used "Location Coordinates"), then click "Save and continue."
 <img src="/assets/img/blog/map-in-drupal-8/geofield_creation.jpg" alt="Screenshot of geofield creation" class="blog-image-large">
-4. On the next page, leave the number of maxiumum values at 1 and click "Save field settings."
+4. On the next page, leave the number of maximum values at 1 and click "Save field settings."
 
 That's it! Obviously you can add more fields to your content type if you'd like, but all we need to generate a map marker is the geofield that we created.
 
