@@ -34,7 +34,7 @@ There were also several non-Drupal specific sessions covering such topics as:
 
 ### Camp Sessions
 
-####  Visual Regression Testing
+#### Visual Regression Testing
 
 <img src="/assets/img/blog/visual-regression-testing.jpg" alt="Visual Regression Testing, courtesy of Flickr" class="blog-image-right">
 
