@@ -21,7 +21,7 @@ To close out this series, I've compiled some lessons learned along the way that 
 ## 1. Document the crap out of everything
 One criticism of Sass is that, particularly because of nesting, things can get complicated quickly and other developers may not know what's going on when you pass off your code. I like to follow these three rules:
 
-#### Place a docblock comment in every `scss` file.
+### Place a docblock comment in every `scss` file.
 People may not be familiar with SMACSS or whatever personal version of it you're using. Docblock comments makes your files easy to navigate.
 
 In each file, I state the purpose of the file, and include anything that may not be extremely evident. This is the docblock of a layout partial for a tricky map page:
@@ -38,7 +38,7 @@ In each file, I state the purpose of the file, and include anything that may not
  */
 ```
 
-#### Comment on your grid layout technique.
+### Comment on your grid layout technique.
 
 ```scss
 // Title box: 10 columns on mobile and narrow, 6 on wide and up.
@@ -52,7 +52,7 @@ In each file, I state the purpose of the file, and include anything that may not
 }
 ```
 
-#### Comment on anything that isn't immediately obvious.
+### Comment on anything that isn't immediately obvious.
 
 This is as much for yourself in 6 months as it is for other developers who may someday look at your code. (I'm not the only one who forgets why I did something in the first place unless I comment it, right?)
 

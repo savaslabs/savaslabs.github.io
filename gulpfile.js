@@ -14,10 +14,11 @@
  */
 
 // Define variables.
+var accessibility  = require('gulp-accessibility');
 var appendPrepend  = require('gulp-append-prepend');
 var autoprefixer   = require('autoprefixer');
 var browserSync    = require('browser-sync').create();
-var cache         = require('gulp-cache');
+var cache          = require('gulp-cache');
 var cleancss       = require('gulp-clean-css');
 var concat         = require('gulp-concat');
 var del            = require('del');
@@ -526,4 +527,45 @@ gulp.task('update:gems', function() {
  */
 gulp.task('cache-clear', function(done) {
     return cache.clearAll(done);
+});
+
+/**
+ * Task: accessibility-test
+ *
+ * Runs the accessibility test against WCAG standards.
+ *
+ * Tests we're ignoring and why:
+ *   1. WCAG2A.Principle1.Guideline1_3.1_3_1.H49.I: it's common practice (and,
+ *   arguably, more semantic) to use <i> for icons.
+ *   2. WCAG2A.Principle1.Guideline1_3.1_3_1.H48: This is throwing a false
+ *   positive. We have marked up our menus as unordered lists.
+ *   3. WCAG2A.Principle1.Guideline1_3.1_3_1.H49.AlignAttr: Sadly, we must
+ *   ignore this test if we are to use our emoji plugin.
+ *   4. WCAG2A.Principle1.Guideline1_3.1_3_1.H73.3.NoSummary: We can't use
+ *   table summaries in kramdown in our blog posts.
+ *   5. WCAG2A.Principle1.Guideline1_3.1_3_1.H39.3.NoCaption: We can't use
+ *   table captions in kramdown in our blog posts.
+ *   6. WCAG2A.Principle1.Guideline1_3.1_3_1.H42: This throws a lot of false
+ *   positives for text that should not be headings.
+ *
+ * We're also skipping redirect pages like /news/* and /team/*.
+ */
+gulp.task('accessibility-test', function() {
+    console.log('Auditing for accessibility...');
+    return gulp.src(paths.htmlTestFiles)
+    .pipe(accessibility({
+        force: false,
+        accessibilityLevel: 'WCAG2A',
+        reportLevels: { notice: false, warning: true, error: true },
+        ignore: [
+          'WCAG2A.Principle1.Guideline1_3.1_3_1.H49.I',
+          'WCAG2A.Principle1.Guideline1_3.1_3_1.H48',
+          'WCAG2A.Principle1.Guideline1_3.1_3_1.H49.AlignAttr',
+          'WCAG2A.Principle1.Guideline1_3.1_3_1.H73.3.NoSummary',
+          'WCAG2A.Principle1.Guideline1_3.1_3_1.H39.3.NoCaption',
+          'WCAG2A.Principle1.Guideline1_3.1_3_1.H42'
+        ]
+    }))
+      .on('error', console.log)
+      .on('end', function(){ console.log('Accessibility audit complete'); });
 });

@@ -68,4 +68,22 @@ paths.jekyllImageFilesGlob = paths.jekyllImageFiles + paths.imagePattern;
 // Site files globs
 paths.siteHtmlFilesGlob = paths.siteDir + paths.htmlPattern;
 
+// HTML pages to run through the accessibility test.
+paths.htmlTestFiles = [
+  '_site/**/*.html',
+  '!_site/2015/**/*.*',
+  '!_site/2016/**/*.*',
+  '!_site/mission-and-values/**/*.*',
+  '!_site/news/**/*.*',
+  '!_site/styleguide/**/*.*',
+  '!_site/team/**/*.*',
+  '!_site/work/**/*.*',
+  '!_site/blog/tag/cartography/index.html',
+  '!_site/blog/tag/front-end-dev/index.html',
+  '!_site/blog/tag/drupalcamp/index.html',
+  '!_site/blog/tag/drupalcon/index.html',
+  '!_site/blog/tag/efficiency/index.html',
+  '!_site/blog/tag/tridug/index.html'
+];
+
 module.exports = paths;

@@ -16,7 +16,7 @@ This is part 2 of a series on using XHProf for profiling Drupal modules.
 
 After you've [installed XHProf](/2016/05/26/installing-xhprof.html), what's next? How can you make use of its recommendations to tune a module or a website? Unfortunately there are no hard-and-fast rules for optimizing code to run more efficiently. What I can offer here is my own experience trying to optimize a D8 module using XHProf.
 
-### Understanding an XHProf run report
+## Understanding an XHProf run report
 
 The XHProf GUI displays the result of a given profiler run, or a group of runs. It can even compare 2 runs, but we'll get to that in a minute. If you followed [my previous post](/2016/05/26/installing-xhprof.html), you should have the `xhprof_html` directory symlinked into the root web directory for your Drupal site; so visiting `<my-local-site>/xhprof/` should give you a list of all available stored run IDs, and you can click through one of those to view a specific run report.
 
@@ -32,13 +32,13 @@ The core of the run report is a table of each function or method which your code
 
 In general, the inclusive metrics (for CPU time and memory usage) will give you a sense of what your expensive methods/functions are -- these are the methods or functions that you should avoid calling if possible. In contrast, the exclusive metrics will tell you where you can potentially improve the way a given method/function is implemented. For methods which belong to Drupal Core or other contrib modules, inclusive and exclusive metrics are basically equivalent, since you don't usually have the option of impacting the implementation details of a function unless you're working on its code directly. Note also that because your overall parent method and any other high-level methods in your code will *always* show up at the top of the inclusive time chart, you may have better luck really understanding where your performance hits come from by sorting by exclusive CPU time.
 
-### Take a step back and plan your test scenarios
+## Take a step back and plan your test scenarios
 
 Before digging in to optimizing your module code, you need to take a step back and think about the big picture. First, what are you optimizing for? Many optimizations involve a tradeoff between time and memory usage. Are you trying to reduce overall run-time at the expense of more memory? Is keeping the memory footprint of a given function down more important? In order to answer these questions you need to think about the overall context in which your code is running. In my case, I was optimizing a background import module which was run via cron, so the top priority was that the memory usage and number of database optimizations were low enough not to impact the user-facing site performance.
 
 Second, what use case for your code are you profiling? If this is a single method call, what arguments will be passed? If you're profiling page loads on a website, which pages are you profiling? In order to successfully track whether the changes you're making are having an impact on the metrics you're concerned about, you need to be able to narrow down the possible use cases for your code into a handful of most-likely real world scenarios which you'll actually choose to track via the profiler.
 
-### Keep things organized
+## Keep things organized
 
 Now it's time to get organized. Write a simple test script so that you can easily run through all your use cases in an automated way -- this is not strictly necessary, but it will save you a lot of work and potential error as you move through the process. In my case, I was testing a drush command hook, so I just wrote a bash shell script which executed the command three times in each of two different ways. For profiling page loads, I would recommend using [Apache JMeter](https://jmeter.apache.org/) - and you'll need to consider whether you want to force an uncached page load by passing a random dummy query parameter. Ideally, you should be running each scenario a few times so that you can then average the results to account for any small variations in run-time.
 
@@ -50,7 +50,7 @@ Once you have a set of run IDs for a given use case + codebase version, you can 
 
 Go ahead and test your run scripts to make sure that you can get a consistent baseline result at this point -- if you're seeing large differences in average total CPU times or average memory usage across different runs of the same codebase, you likely won't be able to compare run times across *different* versions of the code.
 
-### Actually getting to work!
+## Actually getting to work!
 
 After all this set-up, you should be ready to experiment and see what the impact of changes in your code base are on the metrics that you want to shift. In my case, the code I was working on used a [streaming JSON parser class](https://github.com/squix78/jsonstreamingparser), and I noticed that one of the top function calls in the inital profiler report was the `consumeChar` method of the parser.
 
@@ -62,12 +62,12 @@ That was the major place where the XHProf profiler report gave me insights I wou
 
 It's useful to mention that across the board the biggest performance hit in your Drupal code will probably be database calls, so cutting down on those wherever possible will save run-time (sometimes at the expense of memory, if you're caching large amounts of data). Remember, also, that if DB log is enabled each logging call is a separate database operation, so use the log sparingly -- or just log to `syslog` and use service like [Papertrail](https://papertrailapp.com/) or [Loggly](https://www.loggly.com/) on production sites.
 
-### The final results
+## The final results
 
 As the results below show, using XHProf and some thoughtful optimizations I was able to cut total run time significantly in one use case (Case 2) and slightly in another use case (Case 1). Case 1 was already running in a reasonable amount of time, so here I was mostly interested in the Case 2 numbers (assuming I didn't make anything too much worse).
 
 <img src="/assets/img/blog/xhprof-results-graph.jpg" alt="Bar chart comparing the run time of various runs">
 
-### Think of the big picture, part 2
+## Think of the big picture, part 2
 
 Remember that controlled experimental metrics are just a means to understanding and improving real-world performance (which you can also measure directly using tools like [blackfire](https://blackfire.io/), but that's another blog post). In my case, at the end of the day we decided that the most important thing was to ensure that there wasn't a performance impact on the production site while this background import code was running; so one of the optimizations we actually ended up implementing was to force this code to run **slower** by throttling `$entity->save()` operations to maximally 1 every 1/2 second or so, as a way to minimize the number of requests MySQL was having to respond to from the importer. XHProf is a powerful tool, but don't lose the forest for the trees when it comes to optimization.

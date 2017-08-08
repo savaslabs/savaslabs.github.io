@@ -71,4 +71,8 @@ category: Components
 
 .region--presentations .text-block-list-item {
   text-align: left;
+
+  .text-block-list-item__text--event {
+    font-weight: bold;
+  }
 }

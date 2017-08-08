@@ -21,7 +21,7 @@ No longer do you have to wonder:
 * Where was Ninth Street Bakery before it was on W Chapel Hill Street, and when did it move (776 Ninth Street, 1997)
 * Is it true when people say that there were no restaurants downtown in the 1990s? (not exactly, but there were a lot fewer)
 
-<br><b>Click here to [take a look!](http://www.savaslabs.com/durham-restaurants-map)</b>
+<br>**Click here to [take a look!](http://www.savaslabs.com/durham-restaurants-map)**
 And we'd love to hear what you think! You can reach us on twitter at <a href="https://twitter.com/savas_labs">@savas_labs</a>, or email <a href="mailto:info@savaslabs.com">info@savaslabs.com</a>.
 
 ## Sources

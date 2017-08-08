@@ -21,7 +21,7 @@ Though future-focused-first, we _also_ recognize the importance of history and t
 
 Aside: I can't recommend the award-winning documentary about James Baldwin's legacy [_I am not your negro_](http://www.iamnotyournegrofilm.com/) strongly enough. See it.
 
-### From whence we came...
+## From whence we came...
 Savas Labs matured substantially in 2016, refining processes and adding new team members who brought complementary skills. It's both intriguing and humbling to reflect on just how much we learned in the past year. It wasn't all [puppy dogs and ice cream](https://www.google.com/search?biw=1524&bih=979&tbm=isch&sa=1&q=puppy+dogs+and+ice+cream&oq=puppy+dogs+and+ice+cream), but the successes and the challenges helped us carve out our place in the world. We worked with consultants, analyzed and soul-searched to elicit what it is we love doing _and_ are really good at as a growing team. One manifestation of these pursuits was the establishment of [our core values](/company/mission-and-values/). They help hold us and future Savasians (coining the demonym _Savasian_ - another thing we did in 2016) accountable to an agreed upon set of principles which drive how we treat one another and our partners.
 
 In addition to internal analysis, we studied our best projects to see what characteristics in partners and their challenges for which we are best fit. We uncovered that what we enjoy most and truly [excel](/company/mission-and-values/#excel) at are projects with strategic and complex needs that lean heavily on our deep Drupal expertise usually requiring inter-departmental engagement within organizations.
@@ -30,16 +30,16 @@ Ergo: our positioning statement that appears front-and-center on our [homepage](
 
 > We craft elegant Drupal web systems that propel organizations
 
-### Why the redesign
+## Why the redesign
 
 You know, the typical reason, because we wanted to :wink:. In truth, we were due for a redesign as the last time we did this was [over two years ago](/2015/04/01/building-our-site.html). Additionally, given our growth, we felt our website did not reflect the quality of work we've been doing. As we updated our message, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, [Oksana Cyrwus](/company/oksana-cyrwus/), to create a vision of our team's identity.
 
 <img src="/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg" alt="Many devices testing responsive" class="blog-image-full-width">
 <span class="caption">Oksana's cross browser testing lab</span>
 
-### Construction Materials
+## Construction Materials
 
-Although we're usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we've [written about before](/blog/tag/jekyll/) as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given <s>Sunday</s> workday.
+Although we're usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we've [written about before](/blog/tag/jekyll/) as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given <del>Sunday</del> workday.
 
 <img src="/assets/img/blog/construction.jpg" class="blog-image-full-width" alt="Man cutting wood">
 
@@ -51,7 +51,7 @@ Ultimately, for us, the benefits outweighed the drawbacks:
 
 <img src="/assets/img/blog/inertia.jpg" alt="man pushing a rock: inertia" class="blog-image-right">
 
-**Bennies**
+### Bennies
 
 1. No database back-end, meaning reduced security threats and reduced hosting complexity. We're able to host for free on [GitHub Pages](https://pages.github.com/).
 1. A [highly-performant framework](/2016/10/19/optimizing-jekyll-with-gulp.html).
@@ -59,7 +59,7 @@ Ultimately, for us, the benefits outweighed the drawbacks:
 1. Efficient for our workflow as it is developer oriented.
 1. Inertia.
 
-**Drawbacks**
+### Drawbacks
 
 1. Requires Ruby ecosystem competency which often presents the need to acquire new skills for Drupalers.
 1. Requires developer-level skills to update.
@@ -72,7 +72,7 @@ Jekyll works for us since the [team of savvy Savasians](/company#team) is comfor
 
 Alongside Jekyll, we used [Hologram](http://trulia.github.io/hologram/) developed by Trulia for our [style guide](/styleguide). It proved to be a great workflow for our designer, front-end developer and myself to interact efficiently and see updated results in the browser rapidly.
 
-### Timing
+## Timing
 
 And today... Today we celebrate our independ... no - we celebrate our redesigned website launch and the [Drupalcon Baltimore](https://events.drupal.org/baltimore2017) kickoff simultaneously! Coincidence? Of course not! However, I would like to give a shoutout to my entire team for making this happen on a tight schedule and an extra big-ups to Anne and Oksana who put in extra hours in the weeks leading up to make today possible. It was fun to be a part of the building process again; I found myself feverishly reloading the site every time new code was pushed up, which was often many, many times a day.
 

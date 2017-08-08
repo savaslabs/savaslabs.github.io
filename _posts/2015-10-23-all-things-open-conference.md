@@ -8,7 +8,7 @@ summary: Attending and sharing experiences from the All Things Open conference.
 
 ---
 
-Last week, I attended the [All Things Open conference](http://allthingsopen.org/) conference. The conference is hosted in Raleigh, so for those of us carless folks, it is a very accessible world-class conference a mere 30-minute bus ride away. I attended the conference last year (its 2nd year running) and enjoyed a shallow dive into a [wide variety](http://allthingsopen.org/schedule/) of open source technologies. Some of which was applicable to the work I was doing, and some of which was more geared towards inspiration, new ideas, and learning about technologies that I could utilize or at least should be aware of. This year I attended with a similar perspective, but also with my employer (red) hat ([and shoes](https://twitter.com/Savas_Labs/status/656108971175116801)) on.
+Last week, I attended the [All Things Open conference](http://allthingsopen.org/) conference. The conference is hosted in Raleigh, so for those of us carless folks, it is a very accessible world-class conference a mere 30-minute bus ride away. I attended the conference last year (its 2nd year running) and enjoyed a shallow dive into a wide variety of open source technologies. Some of which was applicable to the work I was doing, and some of which was more geared towards inspiration, new ideas, and learning about technologies that I could utilize or at least should be aware of. This year I attended with a similar perspective, but also with my employer (red) hat ([and shoes](https://twitter.com/Savas_Labs/status/656108971175116801)) on.
 
 It was fun to network and discuss opportunities of diversity with organizations
 like [girl develop it](https://www.girldevelopit.com/) and advocate that the
@@ -24,15 +24,14 @@ getting our name out there a bit more.
 ### Sessions
 
 #### Bitcoin, the Blockchain, and Open Source
-[Eric Martindale](https://twitter.com/martindale?lang=en)'s
-[session on bitcoin](http://allthingsopen.org/talks/bitcoin-the-blockchain-and-open-source/)
+[Eric Martindale](https://twitter.com/martindale?lang=en)'s session on bitcoin
 was a very intriguing one. He described the complexity of the bitcoin system and
 underlying advanced cryptographic concepts methodically, and as thoroughly
 as he could in 40 minutes. Kudos. We probably won't accept payments in bitcoin
 anytime too soon, but a future of a more open, and distributed financial system
 seems to theoretically well-address some issues that existing concentrated
 systems don't. At the very least, we have opportunities to
-[bet in more open and democractic ways](http://www.augur.net/)
+[bet in more open and democratic ways](http://www.augur.net/)
 
 ![My little brony](/assets/img/blog/rainbowdash by krazy3.jpg)
 
@@ -40,8 +39,7 @@ systems don't. At the very least, we have opportunities to
 Brad Blake, self-proclaimed
 [non-brony](http://whatisabrony.com/) (don't worry, I was in the dark too during
 this presentation) with [Phase 2
-technology](https://www.phase2technology.com/) gave an
-[excellent presentation](http://allthingsopen.org/talks/performance-profiling-tools-tricks)
+technology](https://www.phase2technology.com/) gave an excellent presentation
 on performance profiling which he incidentally found out upon arrival he had 10
 minutes less to give than he had prepared for. This talk was likely the most
 applicable and valuable to improving our performance toolset. Perhaps the
@@ -56,8 +54,7 @@ for a thorough reference.
 #### Just Be Nice: Rethinking Tech Hiring
 
 [Mark Lavin](https://twitter.com/DrOhYes) of the across-the-street
-[Caktus Group](https://www.caktusgroup.com/) gave [an excellent
-talk](http://allthingsopen.org/talks/just-be-nice-rethinking-tech-hiring/)
+[Caktus Group](https://www.caktusgroup.com/) gave an excellent talk
 about hiring in tech. This was a pervasive theme throughout the conference,
 but Mark's perspective and examples were insightful and helpful, especially as
 an employer.
