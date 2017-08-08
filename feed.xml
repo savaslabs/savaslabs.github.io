@@ -6,8 +6,8 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Aug 2017 07:20:11 +0000</pubDate>
-    <lastBuildDate>Tue, 08 Aug 2017 07:20:11 +0000</lastBuildDate>
+    <pubDate>Tue, 08 Aug 2017 15:38:44 +0000</pubDate>
+    <lastBuildDate>Tue, 08 Aug 2017 15:38:44 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -24,7 +24,7 @@
 
 &lt;p&gt;Aside: I can’t recommend the award-winning documentary about James Baldwin’s legacy &lt;a href=&quot;http://www.iamnotyournegrofilm.com/&quot;&gt;&lt;em&gt;I am not your negro&lt;/em&gt;&lt;/a&gt; strongly enough. See it.&lt;/p&gt;
 
-&lt;h3 id=&quot;from-whence-we-came&quot;&gt;From whence we came…&lt;/h3&gt;
+&lt;h2 id=&quot;from-whence-we-came&quot;&gt;From whence we came…&lt;/h2&gt;
 &lt;p&gt;Savas Labs matured substantially in 2016, refining processes and adding new team members who brought complementary skills. It’s both intriguing and humbling to reflect on just how much we learned in the past year. It wasn’t all &lt;a href=&quot;https://www.google.com/search?biw=1524&amp;amp;bih=979&amp;amp;tbm=isch&amp;amp;sa=1&amp;amp;q=puppy+dogs+and+ice+cream&amp;amp;oq=puppy+dogs+and+ice+cream&quot;&gt;puppy dogs and ice cream&lt;/a&gt;, but the successes and the challenges helped us carve out our place in the world. We worked with consultants, analyzed and soul-searched to elicit what it is we love doing &lt;em&gt;and&lt;/em&gt; are really good at as a growing team. One manifestation of these pursuits was the establishment of &lt;a href=&quot;/company/mission-and-values/&quot;&gt;our core values&lt;/a&gt;. They help hold us and future Savasians (coining the demonym &lt;em&gt;Savasian&lt;/em&gt; - another thing we did in 2016) accountable to an agreed upon set of principles which drive how we treat one another and our partners.&lt;/p&gt;
 
 &lt;p&gt;In addition to internal analysis, we studied our best projects to see what characteristics in partners and their challenges for which we are best fit. We uncovered that what we enjoy most and truly &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;excel&lt;/a&gt; at are projects with strategic and complex needs that lean heavily on our deep Drupal expertise usually requiring inter-departmental engagement within organizations.&lt;/p&gt;
@@ -35,16 +35,16 @@
   &lt;p&gt;We craft elegant Drupal web systems that propel organizations&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;why-the-redesign&quot;&gt;Why the redesign&lt;/h3&gt;
+&lt;h2 id=&quot;why-the-redesign&quot;&gt;Why the redesign&lt;/h2&gt;
 
 &lt;p&gt;You know, the typical reason, because we wanted to &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;. In truth, we were due for a redesign as the last time we did this was &lt;a href=&quot;/2015/04/01/building-our-site.html&quot;&gt;over two years ago&lt;/a&gt;. Additionally, given our growth, we felt our website did not reflect the quality of work we’ve been doing. As we updated our message, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, &lt;a href=&quot;/company/oksana-cyrwus/&quot;&gt;Oksana Cyrwus&lt;/a&gt;, to create a vision of our team’s identity.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg&quot; alt=&quot;Many devices testing responsive&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Oksana’s cross browser testing lab&lt;/span&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;construction-materials&quot;&gt;Construction Materials&lt;/h3&gt;
+&lt;h2 id=&quot;construction-materials&quot;&gt;Construction Materials&lt;/h2&gt;
 
-&lt;p&gt;Although we’re usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we’ve &lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;written about before&lt;/a&gt; as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given &lt;s&gt;Sunday&lt;/s&gt; workday.&lt;/p&gt;
+&lt;p&gt;Although we’re usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we’ve &lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;written about before&lt;/a&gt; as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given &lt;del&gt;Sunday&lt;/del&gt; workday.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/construction.jpg&quot; class=&quot;blog-image-full-width&quot; alt=&quot;Man cutting wood&quot; /&gt;&lt;/p&gt;
 
@@ -58,7 +58,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/inertia.jpg&quot; alt=&quot;man pushing a rock: inertia&quot; class=&quot;blog-image-right&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Bennies&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;bennies&quot;&gt;Bennies&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;No database back-end, meaning reduced security threats and reduced hosting complexity. We’re able to host for free on &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;/li&gt;
@@ -68,7 +68,7 @@
   &lt;li&gt;Inertia.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;Drawbacks&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;drawbacks&quot;&gt;Drawbacks&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Requires Ruby ecosystem competency which often presents the need to acquire new skills for Drupalers.&lt;/li&gt;
@@ -86,7 +86,7 @@
 
 &lt;p&gt;Alongside Jekyll, we used &lt;a href=&quot;http://trulia.github.io/hologram/&quot;&gt;Hologram&lt;/a&gt; developed by Trulia for our &lt;a href=&quot;/styleguide&quot;&gt;style guide&lt;/a&gt;. It proved to be a great workflow for our designer, front-end developer and myself to interact efficiently and see updated results in the browser rapidly.&lt;/p&gt;
 
-&lt;h3 id=&quot;timing&quot;&gt;Timing&lt;/h3&gt;
+&lt;h2 id=&quot;timing&quot;&gt;Timing&lt;/h2&gt;
 
 &lt;p&gt;And today… Today we celebrate our independ… no - we celebrate our redesigned website launch and the &lt;a href=&quot;https://events.drupal.org/baltimore2017&quot;&gt;Drupalcon Baltimore&lt;/a&gt; kickoff simultaneously! Coincidence? Of course not! However, I would like to give a shoutout to my entire team for making this happen on a tight schedule and an extra big-ups to Anne and Oksana who put in extra hours in the weeks leading up to make today possible. It was fun to be a part of the building process again; I found myself feverishly reloading the site every time new code was pushed up, which was often many, many times a day.&lt;/p&gt;
 
@@ -555,7 +555,7 @@ but you also put yourself in your readers’ shoes.&lt;/p&gt;
 
 &lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
 
-&lt;p&gt;We switched to using Docker for local development last year and we love it - so much so that we even proposed &lt;a href=&quot;https://events.drupal.org/node/17250&quot;&gt;a Drupalcon session on our approach and experience&lt;/a&gt; we hope to deliver. Using Docker makes it easy for developers to quickly spin up consistent local development environments that match production. In the past we used Vagrant and virtual machines, even a Drupal-specific flavor &lt;a href=&quot;https://www.drupalvm.com/&quot;&gt;DrupalVM&lt;/a&gt;, for these purposes, but we’ve found Docker to be faster when switching between multiple projects, which we often do on any given &lt;s&gt;Sun&lt;/s&gt;workday.&lt;/p&gt;
+&lt;p&gt;We switched to using Docker for local development last year and we love it - so much so that we even proposed &lt;a href=&quot;https://events.drupal.org/node/17250&quot;&gt;a Drupalcon session on our approach and experience&lt;/a&gt; we hope to deliver. Using Docker makes it easy for developers to quickly spin up consistent local development environments that match production. In the past we used Vagrant and virtual machines, even a Drupal-specific flavor &lt;a href=&quot;https://www.drupalvm.com/&quot;&gt;DrupalVM&lt;/a&gt;, for these purposes, but we’ve found Docker to be faster when switching between multiple projects, which we often do on any given &lt;del&gt;Sun&lt;/del&gt;workday.&lt;/p&gt;
 
 &lt;p&gt;Usually we build our Docker images from scratch to closely match production environments. However, for agile development and rapid prototyping, we often make use of public Docker images. In these cases we’ve relied on &lt;a href=&quot;https://github.com/wodby/docker4drupal&quot;&gt;Wodby’s Docker4Drupal project&lt;/a&gt;, which is “a set of docker containers optimized for Drupal.”&lt;/p&gt;
 
@@ -2385,15 +2385,15 @@ a must-read for gulp beginners!&lt;/li&gt;
 
 &lt;p&gt;Here are four ranking factors that we’ve identified as being most important as of Q4 2016. Our forecast is that these four factors will likely remain at the top of the list throughout 2017.&lt;/p&gt;
 
-&lt;h4 id=&quot;content&quot;&gt;1. Content&lt;/h4&gt;
+&lt;h3 id=&quot;content&quot;&gt;1. Content&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://mention.com/blog/2017-content-marketing-predictions/&quot;&gt;Content is still king!&lt;/a&gt; Yes, that’s right. It is and it always will be! You’ve got to be relevant in order to even appear in search. And nothing will make you more relevant than carefully crafted, practical, awesome, juicy, shareable, actionable (you name it) CONTENT! It is important to note that marketers should stop thinking of content as purely text and focus their efforts on providing &lt;a href=&quot;http://blog.hubspot.com/marketing/visual-content-marketing-strategy#sm.00001bvjy82syzedqpgnd8w6p9mw8&quot;&gt;visual content&lt;/a&gt; that supports storytelling, is engaging and &lt;a href=&quot;https://varvy.com/matching-user-intent.html&quot;&gt;matches user intent&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;backlinks&quot;&gt;2. Backlinks&lt;/h4&gt;
+&lt;h3 id=&quot;backlinks&quot;&gt;2. Backlinks&lt;/h3&gt;
 
 &lt;p&gt;Not just any good ‘ol link to your website. &lt;a href=&quot;http://cognitiveseo.com/blog/3057/the-definition-of-the-high-quality-backlink/&quot;&gt;Good backlinks&lt;/a&gt; come from high authority domains that are in the same niche as your website. Strong backlinks bring quality traffic and are therefore considered highly desirable to your SEO cause.&lt;/p&gt;
 
-&lt;h4 id=&quot;responsive-design&quot;&gt;3. Responsive Design&lt;/h4&gt;
+&lt;h3 id=&quot;responsive-design&quot;&gt;3. Responsive Design&lt;/h3&gt;
 
 &lt;p&gt;With more people using their handheld devices to browse the internet, it has become increasingly important to make a website look good across multiple platforms (smartphone, tablet, etc.). It is not an option in 2017 - it is a necessity! While we won’t get into the notoriously labeled &lt;a href=&quot;https://webmasters.googleblog.com/2015/04/rolling-out-mobile-friendly-update.html&quot;&gt;Google algorithm update “Mobilegeddon”&lt;/a&gt; that happened in April 2015, we will provide some interesting statistics to back up the importance of responsive design.&lt;/p&gt;
 
@@ -2405,7 +2405,7 @@ a must-read for gulp beginners!&lt;/li&gt;
   &lt;p&gt;&lt;a href=&quot;http://www.convinceandconvert.com/mobile/7-mobile-marketing-stats-that-will-blow-your-mind/&quot;&gt;4 out of 5 consumers use a Smartphone to shop.&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&quot;page-speed&quot;&gt;4. Page Speed&lt;/h4&gt;
+&lt;h3 id=&quot;page-speed&quot;&gt;4. Page Speed&lt;/h3&gt;
 
 &lt;p&gt;In response to the substantial increase in mobile traffic growth, search engines have acknowledged the importance of page speed and the effect it has on user experience (UX) and now give more weight to fast-loading websites.&lt;/p&gt;
 
@@ -2427,11 +2427,11 @@ a must-read for gulp beginners!&lt;/li&gt;
 
 &lt;p&gt;Let’s take a look at some of the new features in core that make search engines love Drupal 8.&lt;/p&gt;
 
-&lt;h4 id=&quot;drupal-8-is-responsive-out-of-the-box&quot;&gt;Drupal 8 is Responsive out of the Box&lt;/h4&gt;
+&lt;h3 id=&quot;drupal-8-is-responsive-out-of-the-box&quot;&gt;Drupal 8 is Responsive out of the Box&lt;/h3&gt;
 
 &lt;p&gt;Drupal 8 comes with responsive themes in core. Now both public facing and admin facing themes are responsive and make user experience great on any device.&lt;/p&gt;
 
-&lt;h4 id=&quot;drupal-8-page-load-is-fast&quot;&gt;Drupal 8 Page Load is Fast&lt;/h4&gt;
+&lt;h3 id=&quot;drupal-8-page-load-is-fast&quot;&gt;Drupal 8 Page Load is Fast&lt;/h3&gt;
 
 &lt;p&gt;There has been a lot of debate about Drupal 8 vs. Drupal 7 performance / page load since the Drupal 8’s release. It is a fact that vanilla Drupal 8 is running much more code than vanilla Drupal 7. It runs vendor code like Symfony, which adds some overhead. However, Drupal 8 has a significant number of performance improvements that are making up for that overhead:&lt;/p&gt;
 
@@ -2452,7 +2452,7 @@ a must-read for gulp beginners!&lt;/li&gt;
 
 &lt;p&gt;These improvements have the potential to make your Drupal 8 website fly! And if after all that it is not “flying” - than you need someone to review the code that powers your website’s features. &lt;a href=&quot;/contact/&quot;&gt;Contact us&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;semantic-markup&quot;&gt;Semantic Markup&lt;/h4&gt;
+&lt;h3 id=&quot;semantic-markup&quot;&gt;Semantic Markup&lt;/h3&gt;
 
 &lt;p&gt;Search engines appreciate clean markup that explicitly describes the purpose of on-page elements. Thanks to the &lt;a href=&quot;https://www.drupal.org/community-initiatives/drupal-core/html5&quot;&gt;HTML5 Initiative&lt;/a&gt; for Drupal 8 development, we now have a number of great markup improvements right in Drupal core:&lt;/p&gt;
 
@@ -2477,13 +2477,13 @@ a must-read for gulp beginners!&lt;/li&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;content-as-a-service&quot;&gt;Content-as-a-Service&lt;/h4&gt;
+&lt;h3 id=&quot;content-as-a-service&quot;&gt;Content-as-a-Service&lt;/h3&gt;
 
 &lt;p&gt;Another exciting new feature of Drupal 8 is a &lt;a href=&quot;https://drupal.com/feature/content-as-a-service&quot;&gt;flexible content delivery&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Today, content owners want to get their content to as many platforms and channels as possible: web, mobile, social networks, smart devices, etc. It is expensive to have a separate solution for every channel. It is much more efficient to have a single editorial team and single software platform that allows for well-organized content management. Drupal 8 and its content-as-a-service capability provides a one-stop solution where content is created and managed via unified web-interface and then consumed by other channels with minimal effort.&lt;/p&gt;
 
-&lt;h4 id=&quot;drupal-8--multilingual-capabilities&quot;&gt;Drupal 8  Multilingual Capabilities&lt;/h4&gt;
+&lt;h3 id=&quot;drupal-8--multilingual-capabilities&quot;&gt;Drupal 8  Multilingual Capabilities&lt;/h3&gt;
 
 &lt;p&gt;To reach audiences from around the world, companies need to speak to users in their native language. In 2017, producing content in English language &lt;a href=&quot;http://www.bloggingpro.com/archives/2016/01/04/why-having-a-multilingual-website-is-the-smartest-marketing-decision/&quot;&gt;is not enough&lt;/a&gt;, even if English is considered an internationally accepted language. The United States is now the world’s second largest Spanish-speaking country after Mexico, which amplifies the necessity of serving multilingual content for U.S. based audience. To help put things in perspective we checked recent statistics.&lt;/p&gt;
 
