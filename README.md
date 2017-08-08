@@ -16,7 +16,7 @@ The site is built using Jekyll and Gulp.
 6. [Proselint](https://github.com/amperser/proselint/): `pip install proselint`
 7. [Aspell](http://aspell.net/): `_scripts/aspell.sh`. This script will install and configure Aspell.
 
-## Site setup
+### Site setup
 
 1. Clone the repo (default branch is `source`; do not use master.)
 2. Run `git config core.hooksPath hooks`. This configures git to use hooks inside the `hooks` directory instead of `.git/hooks`.
@@ -48,6 +48,8 @@ you can update the build command in the `build:jekyll:local` task to include the
 
 ## Git workflow
 
+### Branches
+
 Because we're using Travis to build the site and push to master, which is then
 deployed by GitHub Pages, the master branch contains the generated `_site`
 directory. The main development branch you should pull from and open pull
@@ -66,7 +68,7 @@ To add words to the custom dictionary:
 1. Add the words to `savas_wordlist.txt` (one word per line)
 2. Run `_scripts/aspell.sh` to update the dictionary.
 
-To ignore the tests and commit (only recommended for Proselint errors):
+To ignore the tests and commit (only recommended for proselint errors):
 
 1. Run `git commit --no-verify`
 
