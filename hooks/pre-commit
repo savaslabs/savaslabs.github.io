@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# Set variables for printing to the command line.
+RED='\033[1;31m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+PASS=true
+
+# Run Aspell on staged markdown files.
+ASPELL=$(which aspell)
+if [ $? != 0 ]; then
+  printf "${RED}\nPlease install Aspell with homebrew before proceeding.\n${NC}"
+  PASS=false
+else
+  for FILE in $(git diff-index --cached HEAD --name-only | grep -E '.md')
+  do
+    WORDS=$(cat $FILE | aspell --lang=en --extra-dicts='en-savas.pws' list)
+
+    # Print Aspell words.
+    if [ ! -z "$WORDS" ]; then
+      printf "${RED}\nAspell found some potentially misspelled words in $FILE.
+${YELLOW}Correct the following words or add them to the custom dictionary:\n${NC}"
+      for word in "$WORDS"; do
+        printf "%-8s\n" "${word}"
+      done | column
+      PASS=false
+    fi
+  done
+fi
+
+# Run markdown lint (mdl).
+MD_ERRORS=$(bundle exec mdl . -c .mdlrc --git-recurse)
+RESULT=$?
+
+# Print mdl errors.
+if [ $RESULT != 0 ]; then
+  printf "${RED}\nmarkdownlint failed.
+${YELLOW}Correct the following markdown errors before committing:\n${NC}"
+  echo "$MD_ERRORS"
+  PASS=false
+fi
+
+# Run proselint on staged markdown and HTML files.
+PROSELINT=$(which proselint)
+if [ $? != 0 ]; then
+  printf "${RED}\nPlease install proselint with pip before proceeding.\n${NC}"
+  PASS=false
+else
+  SUGGESTIONS=$(git diff-index --cached HEAD --name-only | grep -E '.md|.html' | xargs proselint)
+  RESULT=$?
+
+  # Print proselint suggestions.
+  if [ $RESULT != 0 ]; then
+    printf "${RED}\nproselint has some suggestions for you.
+${YELLOW}You can ignore these suggestions and proceed with your
+commit by running git commit with the --no-verify tag.
+Don't worry, proselint is a bit picky!\n\n${NC}"
+    echo "$SUGGESTIONS\n"
+    PASS=false
+  fi
+fi
+
+# If there were no failures, proceed with commit.
+if $PASS; then
+  exit 0
+fi
+
+exit 1
