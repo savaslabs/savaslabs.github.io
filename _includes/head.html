@@ -13,22 +13,25 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}" />
+
+  <!-- Structured data. -->
   {% if page.permalink == "/" or page.permalink == "/team/" or page.permalink == "/mission-and-values/" or page.permalink == "/services/" or page.permalink == "/blog/" or page.permalink == "/contact/" %}{% include schema-organization.html %}{% endif %}
   {% if page.layout == "team" %}{% include schema-team.html %}{% endif %}
   {% if page.permalink == "/services/" %}{% include schema-professional-service.html %}{% endif %}
   {% if page.path contains "_posts" %}{% include schema-blog.html %}{% endif %}
   {% include googleanalytics.html %}
+
+  <!-- Load main CSS file asynchronously via loadCSS. -->
   <script>
     !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function l(){d.addEventListener&&d.removeEventListener("load",l),d.media=r||"all"}var a,i=e.document,d=i.createElement("link");if(n)a=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;a=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){a.parentNode.insertBefore(d,n?a:a.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",l),d.onloadcssdefined=f,f(l),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)})}}}(this);
     loadCSS('/assets/styles/main.css');
     loadCSS('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400');
   </script>
-  {% if page.class %}
-  {% capture custom_critical_css %}css/critical--{{ page.class }}.css{% endcapture %}
-  {% else %}
-  {% capture custom_critical_css %}css/critical--{{ page.layout }}.css{% endcapture %}
-  {% endif %}
-  <style>{% include {{ custom_critical_css }} %}</style>
+
+  <!-- Inline critical CSS. -->
+  <style>{% include css/critical.css %}</style>
+
+  {% comment %} If post has custom CSS file, include it here. {% endcomment %}
   {% if page.path contains "_posts" and page.custom_css %}
     <link href='/assets/styles/{{ page.custom_css }}' rel='stylesheet' type='text/css'>
   {% endif %}
