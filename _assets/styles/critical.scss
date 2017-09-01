@@ -1,0 +1,67 @@
+/**
+ * @file
+ *
+ * Styles needed above the fold on /home.
+ */
+
+// Libraries and base rules.
+@import 'scss/01-base/normalize';
+@import 'scss/01-base/base';
+@import 'scss/01-base/base-layout';
+
+// Typography rules.
+@import 'scss/03-typography/headings';
+@import 'scss/03-typography/headings--underline';
+@import 'scss/03-typography/links';
+@import 'scss/03-typography/links--arrow';
+@import 'scss/03-typography/links--inline';
+@import 'scss/03-typography/lists';
+@import 'scss/03-typography/lists--bordered';
+@import 'scss/03-typography/paragraphs';
+
+// Component rules.
+@import 'scss/04-components/buttons--arrow';
+@import 'scss/04-components/case-study-block';
+@import 'scss/04-components/fa-icons';
+@import 'scss/04-components/header-navigation';
+@import 'scss/04-components/header-navigation--menu-link';
+@import 'scss/04-components/icons--service';
+@import 'scss/04-components/image--hero--company';
+@import 'scss/04-components/image--hero--home';
+@import 'scss/04-components/image--hero--mission-values';
+@import 'scss/04-components/image--hero--open-source';
+@import 'scss/04-components/image--hero--results';
+@import 'scss/04-components/image--hero--services';
+@import 'scss/04-components/images--hero';
+@import 'scss/04-components/key-value-list-item';
+@import 'scss/04-components/logos';
+@import 'scss/04-components/tables';
+@import 'scss/04-components/tiles';
+@import 'scss/04-components/tiles--blog';
+@import 'scss/04-components/tiles--blog--detailed';
+@import 'scss/04-components/tiles--blog--latest';
+@import 'scss/04-components/tiles--service';
+
+// Region rules.
+@import 'scss/05-regions/banner--heading';
+@import 'scss/05-regions/blog-tiles';
+@import 'scss/05-regions/blog-tiles--all';
+@import 'scss/05-regions/blog-tiles--latest';
+@import 'scss/05-regions/case-study-blocks';
+@import 'scss/05-regions/case-study-blocks--small';
+@import 'scss/05-regions/centered-paragraph';
+@import 'scss/05-regions/header';
+@import 'scss/05-regions/post-aside';
+@import 'scss/05-regions/service-icons';
+@import 'scss/05-regions/service-tiles';
+
+// Layout and page-level rules.
+@import 'scss/06-pages/blog';
+@import 'scss/06-pages/case-study';
+@import 'scss/06-pages/contact';
+@import 'scss/06-pages/home';
+@import 'scss/06-pages/post';
+@import 'scss/06-pages/service';
+@import 'scss/06-pages/services';
+@import 'scss/06-pages/tag';
+@import 'scss/06-pages/team';
