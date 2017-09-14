@@ -20,6 +20,7 @@
 $copytext-font: 'Roboto Condensed', Arial Narrow, Arial, sans-serif;
 $heading-font: 'Roboto Slab', Verdana, sans-serif;
 $monospace-font: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace !default;
+$post-font: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
 
 // Spacing and other utilities -------------------------------------------------
 $max-width: 1440px;
@@ -130,5 +131,5 @@ $solar-green:     $green;
 
 // Non highlighted code colors.
 $pre-bg: $base03 !default;
-$pre-border: darken($base01, 5) !default;
+$pre-border: darken($base01, 20) !default;
 $pre-color: $base1 !default;
