@@ -84,7 +84,7 @@ A good visual merge tool will display at least 3 panels for each file with confl
 
 I prefer merge tools (such as the P4Merge tool shown below) which also include a fourth display panel showing the version of that file in the merge base:
 
-<img src="/assets/img/blog/P4Merge_screenshot.jpg" alt="P4Merge tool screenshot">
+<img src="/assets/img/blog/P4Merge_screenshot.jpg" alt="P4Merge tool screenshot" class="blog-image-full-width">
 
 There are many visual merge tools to choose from, some of which may already be installed on your system.
 

@@ -29,7 +29,7 @@ up Travis in their [docs](https://docs.travis-ci.com/).
 Previously, Travis would build the site and run our tests, then we would merge
 branches into `master`, triggering GitHub Pages to rebuild and deploy our site.
 
-![Diagram of original deployment workflow]({{ site.url }}/assets/img/blog/original-deployment-workflow.jpg)
+![Diagram of original deployment workflow]({{ site.url }}/assets/img/blog/original-deployment-workflow.jpg){:class="blog-image-full-width"}
 <span class="caption">Original deployment workflow</span>
 
 Now, we want to build our site before it gets to GitHub Pages to ensure our
@@ -43,7 +43,7 @@ builds the site.
 directory to the `master` branch, then pushes the `master` branch.
 4. This triggers GitHub Pages to deploy our pre-built site.
 
-![Diagram of new deployment workflow]({{ site.url }}/assets/img/blog/new-deployment-workflow.jpg)
+![Diagram of new deployment workflow]({{ site.url }}/assets/img/blog/new-deployment-workflow.jpg){:class="blog-image-full-width"}
 <span class="caption">New deployment workflow</span>
 
 ### Create a new default branch
@@ -67,7 +67,7 @@ a personal access token by visiting the
 new token. We used a bot account that has access to our repository to avoid
 needing to use one of our personal accounts.
 
-![Generating a personal access token in GitHub]({{ site.url }}/assets/img/blog/github-token.jpg)
+![Generating a personal access token in GitHub]({{ site.url }}/assets/img/blog/github-token.jpg){:class="blog-image-full-width"}
 
 We'll need to use the access token and the account's email address in our
 deployment script, so to keep those items out of version control we used
