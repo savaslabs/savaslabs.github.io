@@ -30,14 +30,14 @@
       @include grid-media($medium-screen-up) {
         padding: 0 $base-spacing * 1.5;
       }
-
-      @include grid-media($extra-large-screen-up) {
-        padding-right: $base-spacing * 2;
-      }
     }
 
     .region--post-header {
       margin: $base-margin 0;
+
+      @include grid-media($extra-large-screen-up) {
+        padding-right: $base-spacing * 2;
+      }
 
       .region--post-header__title {
         font-weight: 400;
@@ -49,11 +49,23 @@
       color: $dark-teal;
       word-wrap: break-word;
 
-      // Set a max-width to post text so line length stays reasonable.
-      // This is the width of the post text below the extra large breakpoint.
+      // Add left & right padding to post body on large screens to keep text
+      // width at a readable level, 680-730px. See _images--blog-post.scss for
+      // corresponding styles on .blog-image-full-width.
       @include grid-media($extra-large-screen-up) {
-        margin: 0 auto;
-        width: 728px;
+        padding: 0 4em;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        padding: 0 5em;
+      }
+
+      @media only screen and (min-width: 1360px) {
+        padding: 0 7em;
+      }
+
+      @include grid-media($max-width-up) {
+        padding: 0 8em;
       }
 
       h2,
