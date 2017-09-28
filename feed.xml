@@ -6,8 +6,8 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Sep 2017 07:48:32 +0000</pubDate>
-    <lastBuildDate>Thu, 28 Sep 2017 07:48:32 +0000</lastBuildDate>
+    <pubDate>Thu, 28 Sep 2017 21:24:09 +0000</pubDate>
+    <lastBuildDate>Thu, 28 Sep 2017 21:24:09 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -392,7 +392,7 @@ process.&lt;/p&gt;
 
 &lt;h2 id=&quot;base-knowledge&quot;&gt;Base knowledge&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-typeface-anatomy.jpg&quot; alt=&quot;A diagram of typeface terminology&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-typeface-anatomy.jpg&quot; alt=&quot;A diagram of typeface terminology&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;A diagram of typeface anatomy&lt;br /&gt;
 &lt;em&gt;From&lt;/em&gt; &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;On Web Typography&lt;/a&gt; &lt;em&gt;by Jason Santa Maria&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -417,7 +417,7 @@ offer (true bolds and italics, language sets and punctuation among others)&lt;/l
 
 &lt;h2 id=&quot;evaluating-typefaces&quot;&gt;Evaluating typefaces&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-helvetica-alternatives.jpg&quot; alt=&quot;Examples of alternatives to Helvetica based on Helvetica&#39;s physical characteristics&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-helvetica-alternatives.jpg&quot; alt=&quot;Examples of alternatives to Helvetica based on Helvetica&#39;s physical characteristics&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Finding alternatives to Helvetica by examining its physical characteristics&lt;br /&gt;
 &lt;em&gt;From&lt;/em&gt; &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;On Web Typography&lt;/a&gt; &lt;em&gt;by Jason Santa Maria&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -436,7 +436,7 @@ level and prepare you for the next part: actually selecting and applying them.&l
 your site. Santa Maria introduces two separate contexts to consider: type for a
 moment (a menu link, a heading, etc.) and type to live with (long text).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-contexts.jpg&quot; alt=&quot;Examples of type in different contexts&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-contexts.jpg&quot; alt=&quot;Examples of type in different contexts&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Some examples of the two contexts&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;These contexts demand different typeface choices based on what’s important
@@ -473,7 +473,7 @@ bookmarking the source in an “Inspiration” folder. &lt;a href=&quot;http://a
 written about this process&lt;/a&gt;, so don’t be afraid
 to be inspired by others’ work!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-inspiration.jpg&quot; alt=&quot;Screenshots of websites with nice type design&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-inspiration.jpg&quot; alt=&quot;Screenshots of websites with nice type design&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Some samples from my Inspiration folder&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;After perusing my Inspiration folder, I follow these guidelines when designing
@@ -1140,7 +1140,7 @@ up Travis in their &lt;a href=&quot;https://docs.travis-ci.com/&quot;&gt;docs&lt
 &lt;p&gt;Previously, Travis would build the site and run our tests, then we would merge
 branches into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, triggering GitHub Pages to rebuild and deploy our site.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Original deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Now, we want to build our site before it gets to GitHub Pages to ensure our
@@ -1156,7 +1156,7 @@ directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code
   &lt;li&gt;This triggers GitHub Pages to deploy our pre-built site.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;New deployment workflow&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;create-a-new-default-branch&quot;&gt;Create a new default branch&lt;/h3&gt;
@@ -1180,7 +1180,7 @@ a personal access token by visiting the
 new token. We used a bot account that has access to our repository to avoid
 needing to use one of our personal accounts.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; class=&quot;blog-image-full-width&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We’ll need to use the access token and the account’s email address in our
 deployment script, so to keep those items out of version control we used
@@ -1414,7 +1414,7 @@ to be able to practice what we preach!&lt;/p&gt;
 
 &lt;p&gt;Our ultimate motivator was our not-so-great Google PageSpeed score.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/pagespeed-insights-initial.jpg&quot; alt=&quot;Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Yikes!&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Going off of these recommendations and adding a few things of our own, we ended
@@ -1491,7 +1491,7 @@ we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp serve&lt;/code
 they’re updated and copy them directly into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory, then push the
 changes to the browser via BrowserSync.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/gulp-workflow.svg&quot; alt=&quot;Diagram of our basic gulp workflow&quot; class=&quot;blog-image-full-width&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;changes-to-jekyll-config&quot;&gt;Changes to Jekyll config&lt;/h3&gt;
 
@@ -2292,7 +2292,7 @@ injected is fantastic!&lt;/p&gt;
 &lt;p&gt;After implementing these changes, our mobile PageSpeed score shot up to 92/100,
 with our desktop score at 95/100!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-results.jpg&quot; alt=&quot;95/100 Google PageSpeed Insights score!&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-results.jpg&quot; alt=&quot;95/100 Google PageSpeed Insights score!&quot; class=&quot;blog-image-full-width&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -2301,7 +2301,7 @@ doing great in the user experience department.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-user-experience.jpg&quot; alt=&quot;Passing Google PageSpeed Insights user experience items.&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/pagespeed-insights-user-experience.jpg&quot; alt=&quot;Passing Google PageSpeed Insights user experience items.&quot; class=&quot;blog-image-full-width&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 

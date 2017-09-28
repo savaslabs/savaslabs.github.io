@@ -100,16 +100,22 @@ pixels to satisfy Google's structured data requirements.
 
 #### Image placement and size within the post body
 
+You can add images with the following markdown syntax:
+
+```
+![Image alt text here]({{ site.url }}/assets/img/blog/image-name.jpg){:class="blog-image-full-width"}
+```
+
 You can add following classes to contextual images:
-- class="blog-image-full-width" - image will span the whole width of the post
-- class="blog-image-left" - image will float left
-- class="blog-image-right" - image will float right
+- `class="blog-image-full-width"` - image will span the whole width of the post
+- `class="blog-image-left"` - image will float left
+- `class="blog-image-right"` - image will float right
 
 Images without class will use default styling which is 100% post width.
 
 Captions can be added to full width images by adding `<span class="caption">Caption</span>` right under the image tag.
 
-To add caption to floated images wrap <IMG> tag in a div and give it a class. E.g.
+To add caption to floated images wrap <img> tag in a div and give it a class. E.g.
 
 ``` html
 <div class="blog-image-left">
