@@ -53,7 +53,9 @@ ul ol li,
 ol ul,
 ol ul li,
 ol ol,
-ol ol li {
+ol ol li,
+ul p,
+ol p {
   font-size: 1em !important;
 }
 // scss-lint:enable ImportantRule

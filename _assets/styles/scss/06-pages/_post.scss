@@ -30,27 +30,49 @@
       @include grid-media($medium-screen-up) {
         padding: 0 $base-spacing * 1.5;
       }
+    }
+
+    .region--post-header {
+      margin: $base-margin 0;
 
       @include grid-media($extra-large-screen-up) {
         padding-right: $base-spacing * 2;
       }
-    }
 
-    .region--post-header {
-      h1 {
+      .region--post-header__title {
         font-weight: 400;
+        margin-bottom: 1.5em;
       }
     }
 
     .region--post-content {
       color: $dark-teal;
+      word-wrap: break-word;
+
+      // Add left & right padding to post body on large screens to keep text
+      // width at a readable level, 680-730px. See _images--blog-post.scss for
+      // corresponding styles on .blog-image-full-width.
+      @include grid-media($extra-large-screen-up) {
+        padding: 0 4em;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        padding: 0 5em;
+      }
+
+      @media only screen and (min-width: 1360px) {
+        padding: 0 7em;
+      }
+
+      @include grid-media($max-width-up) {
+        padding: 0 8em;
+      }
 
       h2,
       h3,
       h4,
       h5,
       h6 {
-        font-family: $copytext-font;
         font-weight: 400;
       }
 
@@ -58,6 +80,21 @@
         color: $grey;
         font-style: italic;
       }
+
+      p,
+      ol,
+      ul {
+        font-family: $post-font;
+        font-size: 1.125em;
+        line-height: 1.625;
+        margin-bottom: 1em;
+      }
+
+      li {
+        margin-bottom: .325em;
+      }
+
+
     }
   }
 
@@ -92,15 +129,6 @@
 
   .region--footer {
     margin-top: 0;
-  }
-}
-
-// Post header.
-.region--post-header {
-  margin: $base-margin 0;
-
-  .region--post-header__title {
-    margin-bottom: 1.5em;
   }
 }
 

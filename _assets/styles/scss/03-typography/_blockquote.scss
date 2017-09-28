@@ -72,3 +72,8 @@ blockquote {
     }
   }
 }
+
+// In blog posts, align blockquote text left for better readability.
+.region--post-content blockquote p {
+  text-align: left;
+}

@@ -34,7 +34,7 @@ process.
 
 ## Base knowledge
 
-![A diagram of typeface terminology]({{ site.url }}/assets/img/blog/on-web-typography-typeface-anatomy.jpg)
+![A diagram of typeface terminology]({{ site.url }}/assets/img/blog/on-web-typography-typeface-anatomy.jpg){:class="blog-image-full-width"}
 <span class="caption">A diagram of typeface anatomy<br>
 *From* [On Web Typography](https://abookapart.com/products/on-web-typography) *by Jason Santa Maria*</span>
 
@@ -57,7 +57,7 @@ offer (true bolds and italics, language sets and punctuation among others)
 
 ## Evaluating typefaces
 
-![Examples of alternatives to Helvetica based on Helvetica's physical characteristics]({{ site.url }}/assets/img/blog/on-web-typography-helvetica-alternatives.jpg)
+![Examples of alternatives to Helvetica based on Helvetica's physical characteristics]({{ site.url }}/assets/img/blog/on-web-typography-helvetica-alternatives.jpg){:class="blog-image-full-width"}
 <span class="caption">Finding alternatives to Helvetica by examining its physical characteristics<br>
 *From* [On Web Typography](https://abookapart.com/products/on-web-typography) *by Jason Santa Maria*</span>
 
@@ -76,7 +76,7 @@ All the previous sections culminate in the ultimate goal: how to design type for
 your site. Santa Maria introduces two separate contexts to consider: type for a
 moment (a menu link, a heading, etc.) and type to live with (long text).
 
-![Examples of type in different contexts]({{ site.url }}/assets/img/blog/on-web-typography-contexts.jpg)
+![Examples of type in different contexts]({{ site.url }}/assets/img/blog/on-web-typography-contexts.jpg){:class="blog-image-full-width"}
 <span class="caption">Some examples of the two contexts</span>
 
 These contexts demand different typeface choices based on what's important
@@ -113,7 +113,7 @@ bookmarking the source in an "Inspiration" folder. [Entire books have been
 written about this process](http://austinkleon.com/steal/), so don't be afraid
 to be inspired by others' work!
 
-![Screenshots of websites with nice type design]({{ site.url }}/assets/img/blog/on-web-typography-inspiration.jpg)
+![Screenshots of websites with nice type design]({{ site.url }}/assets/img/blog/on-web-typography-inspiration.jpg){:class="blog-image-full-width"}
 <span class="caption">Some samples from my Inspiration folder</span>
 
 After perusing my Inspiration folder, I follow these guidelines when designing

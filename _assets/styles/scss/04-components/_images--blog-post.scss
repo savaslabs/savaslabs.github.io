@@ -14,6 +14,9 @@
 
 .blog-image {
   display: block;
+
+  // Set font size to what is normally 1em for spacing purposes.
+  font-size: .888em;
   margin: 1em auto;
   max-width: 250px;
   width: 100%;
@@ -50,14 +53,33 @@
   max-width: none;
   width: calc(100% + 2em);
 
+  // The following styles make full width images span the width of the article
+  // container, even though the text body may be less wide to maintain
+  // readability. See _post.scss for corresponding styles on
+  // .region--post-content.
   @include grid-media($medium-screen-up) {
-    margin-left: -$base-spacing * 1.5;
+    margin-left: -1.5em;
     width: calc(100% + 3em);
   }
 
   @include grid-media($extra-large-screen-up) {
-    margin-left: -$base-spacing * 2;
-    width: calc(100% + 4em);
+    margin-left: -4em;
+    width: calc(100% + 8em);
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: -5em;
+    width: calc(100% + 10em);
+  }
+
+  @media (min-width: 1360px) {
+    margin-left: -7em;
+    width: calc(100% + 14em);
+  }
+
+  @include grid-media($max-width-up) {
+    margin-left: -8em;
+    width: calc(100% + 16em);
   }
 }
 
@@ -70,14 +92,30 @@
   max-width: none;
   width: calc(100% + 2em);
 
+  // On larger screens, image should touch left side of container.
   @include grid-media($medium-screen-up) {
     margin-left: -$base-spacing * 1.5;
     width: calc(50% + 1.5em);
   }
 
   @include grid-media($extra-large-screen-up) {
-    margin-left: -$base-spacing * 2;
-    width: calc(50% + 2em);
+    margin-left: -$base-spacing * 4;
+    width: calc(50% + 4em);
+  }
+
+  @media (min-width: 1280px) {
+    margin-left: -5em;
+    width: calc(50% + 5em);
+  }
+
+  @media (min-width: 1360px) {
+    margin-left: -7em;
+    width: calc(50% + 7em);
+  }
+
+  @include grid-media($max-width-up) {
+    margin-left: -8em;
+    width: calc(50% + 8em);
   }
 }
 
@@ -90,14 +128,30 @@
   max-width: none;
   width: calc(100% + 2em);
 
+  // On larger screens, image should touch right side of container.
   @include grid-media($medium-screen-up) {
     margin-right: -$base-spacing * 1.5;
     width: calc(50% + 1.5em);
   }
 
   @include grid-media($extra-large-screen-up) {
-    margin-right: -$base-spacing * 2;
-    width: calc(50% + 2em);
+    margin-right: -$base-spacing * 4;
+    width: calc(50% + 4em);
+  }
+
+  @media (min-width: 1280px) {
+    margin-right: -5em;
+    width: calc(50% + 5em);
+  }
+
+  @media (min-width: 1360px) {
+    margin-right: -7em;
+    width: calc(50% + 7em);
+  }
+
+  @include grid-media($max-width-up) {
+    margin-right: -8em;
+    width: calc(50% + 8em);
   }
 }
 
@@ -107,19 +161,4 @@
   font-size: .9em;
   margin: 0 auto 2em;
   text-align: center;
-}
-
-.blog-image-left .caption,
-.blog-image-right .caption {
-  margin-bottom: 0;
-  padding: $base-spacing / 2 $base-spacing;
-  text-align: left;
-
-  @include grid-media($medium-screen-up) {
-    padding: $base-spacing / 2 $base-spacing * 1.5;
-  }
-
-  @include grid-media($extra-large-screen-up) {
-    padding: $base-spacing / 2 $base-spacing * 2;
-  }
 }

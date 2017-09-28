@@ -40,7 +40,7 @@ to be able to practice what we preach!
 
 Our ultimate motivator was our not-so-great Google PageSpeed score.
 
-![Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!]({{ site.url }}/assets/img/blog/pagespeed-insights-initial.jpg)
+![Initial Google PageSpeed Insights score for savaslabs.com. Several significant problems exist!]({{ site.url }}/assets/img/blog/pagespeed-insights-initial.jpg){:class="blog-image-full-width"}
 <span class="caption">Yikes!</span>
 
 Going off of these recommendations and adding a few things of our own, we ended
@@ -106,7 +106,7 @@ we created a `gulp serve` task using `gulp.watch()` to process assets as
 they're updated and copy them directly into the `_site` directory, then push the
 changes to the browser via BrowserSync.
 
-![Diagram of our basic gulp workflow]({{ site.url }}/assets/img/blog/gulp-workflow.svg)
+![Diagram of our basic gulp workflow]({{ site.url }}/assets/img/blog/gulp-workflow.svg){:class="blog-image-full-width"}
 
 ### Changes to Jekyll config
 
@@ -898,7 +898,7 @@ injected is fantastic!
 After implementing these changes, our mobile PageSpeed score shot up to 92/100,
 with our desktop score at 95/100!
 
-<img src="/assets/img/blog/pagespeed-insights-results.jpg" alt="95/100 Google PageSpeed Insights score!">
+<img src="/assets/img/blog/pagespeed-insights-results.jpg" alt="95/100 Google PageSpeed Insights score!" class="blog-image-full-width">
 
 ---
 
@@ -907,7 +907,7 @@ doing great in the user experience department.
 
 ---
 
-<img src="/assets/img/blog/pagespeed-insights-user-experience.jpg" alt="Passing Google PageSpeed Insights user experience items.">
+<img src="/assets/img/blog/pagespeed-insights-user-experience.jpg" alt="Passing Google PageSpeed Insights user experience items." class="blog-image-full-width">
 
 ---
 

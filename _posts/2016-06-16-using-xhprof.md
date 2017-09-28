@@ -22,7 +22,7 @@ The XHProf GUI displays the result of a given profiler run, or a group of runs. 
 
 You can also go directly to a specific run report via the URL `<my-local-site>/xhprof/index.php?run=<run-id>&source=<source-id>` (which you should have been logging already via an `echo` statement or `dblog` if you followed the last post).
 
-<img src="/assets/img/blog/xhprof-results-page-screenshot.jpg" alt="Header of an XHProf run report">
+<img src="/assets/img/blog/xhprof-results-page-screenshot.jpg" alt="Header of an XHProf run report" class="blog-image-full-width">
 
 The core of the run report is a table of each function or method which your code called while it was being profiled, along with a set of statistics about that function. This allows you to understand which parts of your code are most resource-intensive, and which are being called frequently in the use case that you're profiling. Clicking on any one of the column headers will sort the list by that metric. To understand this report, it's helpful to have some terminology:
 
@@ -44,7 +44,7 @@ Now it's time to get organized. Write a simple test script so that you can easil
 
 Keeping your different runs organized is probably the most important part of successfully profiling module code using XHProf! Each run has a unique run ID, but **you** are solely responsible for knowing which use case scenario and which version of the codebase that run ID corresponds to. I set up a basic spreadsheet in OpenOffice where I could paste in run numbers and basic run stats to compare (but there's almost certainly a nicer automated way to do this than what I used).
 
-<img src="/assets/img/blog/xhprof-results-spreadsheet.jpg" alt="Screenshot of an OpenOffice spreadsheet summarizing XHProf results for various runs">
+<img src="/assets/img/blog/xhprof-results-spreadsheet.jpg" alt="Screenshot of an OpenOffice spreadsheet summarizing XHProf results for various runs" class="blog-image-full-width">
 
 Once you have a set of run IDs for a given use case + codebase version, you can generate a *composite* xhprof report using the query string syntax `http://<your-local-site>/xhprof/index.php?run=<first-run-id>,<second-run-id>,<third-run-id>&source=<source-string>` Averaging out across a few runs should give you more [precise](https://en.wikipedia.org/wiki/Accuracy_and_precision) measurements for CPU time and memory usage, but beware that if parts of your code involve caching you may want to either throw out the first run's results in each version of the code base, since that's where the cache will be generated, or clear the cache between runs.
 
@@ -54,7 +54,7 @@ Go ahead and test your run scripts to make sure that you can get a consistent ba
 
 After all this set-up, you should be ready to experiment and see what the impact of changes in your code base are on the metrics that you want to shift. In my case, the code I was working on used a [streaming JSON parser class](https://github.com/squix78/jsonstreamingparser), and I noticed that one of the top function calls in the inital profiler report was the `consumeChar` method of the parser.
 
-<img src="/assets/img/blog/xhprof-results-page.jpg" alt="Image of XHProf profiler report with the method consumeChar highlighted in yellow">
+<img src="/assets/img/blog/xhprof-results-page.jpg" alt="Image of XHProf profiler report with the method consumeChar highlighted in yellow" class="blog-image-full-width">
 
 It turns out that the JSON files I was importing were pretty-printed, thus containing more whitespace than they needed to. Sine the `consumeChar` method gets called on each incoming character of the input stream, that added up to a lot of unnecessary method calls in the original code. By tweaking the JSON file export code to remove the pretty print flag, I cut down the number of times this method was called from 729,099 to 499,809, saving .2 seconds of run time right off the bat.
 
