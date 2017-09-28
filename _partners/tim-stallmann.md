@@ -2,7 +2,7 @@
 name: Tim Stallmann
 slug: tim
 title: Back-end Systems Expert
-description: Tim is a cartographer and developer at Savas Labs, implementing complex web applications for our clients.
+description: Tim is a former employee of Savas Labs, and we call upon him for his myriad expertise in servers, data analysis and visualization, and complex back-end solutions.
 photo: "/partners/tim-stallmann.jpg"
 partner: yes
 ---
