@@ -1,0 +1,39 @@
+/**
+ * @file
+ *
+ * Partner bio styles.
+ */
+
+.partner-bio {
+
+  // Set the max width of the component to the max-width of the image at each
+  // screen size. This makes sure the image hover style will not overflow the
+  // image itself.
+  max-width: 223px;
+
+  @include grid-media($small-screen-up) {
+    max-width: 223px;
+  }
+
+  .partner-bio__image {
+    margin-bottom: $base-spacing;
+
+    img {
+      display: block;
+    }
+  }
+
+  .partner-bio__name,
+  .partner-bio__description {
+    margin-bottom: 0;
+  }
+
+  .partner-bio__title {
+    font-size: .85em;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $grey;
+  }
+}
