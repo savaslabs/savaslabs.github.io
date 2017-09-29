@@ -29,6 +29,9 @@
 // Component rules.
 @import 'scss/04-components/alerts';
 @import 'scss/04-components/article-heading-links';
+@import 'scss/04-components/bio-list';
+@import 'scss/04-components/bio--partner';
+@import 'scss/04-components/bio--team-member';
 @import 'scss/04-components/blog-topic';
 @import 'scss/04-components/buttons';
 @import 'scss/04-components/buttons--arrow';
@@ -64,7 +67,6 @@
 @import 'scss/04-components/logos';
 @import 'scss/04-components/pagination';
 @import 'scss/04-components/tables';
-@import 'scss/04-components/team-member-bio';
 @import 'scss/04-components/text-block-list-item';
 @import 'scss/04-components/tiles--blog';
 @import 'scss/04-components/tiles--blog--detailed';
@@ -97,6 +99,7 @@
 @import 'scss/05-regions/footer';
 @import 'scss/05-regions/header';
 @import 'scss/05-regions/key-value-list';
+@import 'scss/05-regions/partner-list';
 @import 'scss/05-regions/post-aside';
 @import 'scss/05-regions/previous-next-links';
 @import 'scss/05-regions/service-icons';

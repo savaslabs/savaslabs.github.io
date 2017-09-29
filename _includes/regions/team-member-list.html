@@ -1,9 +1,9 @@
 <div class="region--team-member-list region">
   <div class="region--team-member-list__wrapper">
-    <h2 id="team">Team</h2>
-    <div class="region--team-member-list__list">
+    <h2 id="team">Core Team</h2>
+    <div class="region--team-member-list__list bio-list">
       {% for person in site.team %}
-      {% include components/team-member-bio.html person=person %}
+      {% include components/bio--team-member.html person=person %}
       {% endfor %}
     </div>
   </div>

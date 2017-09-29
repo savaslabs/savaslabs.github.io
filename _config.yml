@@ -52,6 +52,8 @@ collections:
   services:
     output: true
     permalink: /services/:path/
+  partners:
+    output: false
 
 # Gems
 gems:
@@ -102,6 +104,13 @@ picture:
       ppi: [1, 2]
       source_default:
         width: "60"
+    partner_square:
+      attr:
+        class: "image--partner-square"
+        itemprop: "image"
+      ppi: [1, 2]
+      source_default:
+        width: "223"
     post_featured_image:
       attr:
         class: "image--post-featured-image"

@@ -1,0 +1,32 @@
+/**
+ * @file
+ *
+ * Partner list region styles.
+ */
+
+.region.region--partner-list {
+  padding-bottom: 0;
+  padding-top: 0;
+
+  h3,
+  .region--partner-list__description {
+    text-align: center;
+  }
+
+  .region--partner-list__description {
+    margin: 0 auto .75em;
+    max-width: 520px;
+  }
+
+  .region--partner-list__list {
+    clear: both;
+
+    .partner-bio {
+      @include grid-media($large-screen-up) {
+        margin-left: .75em;
+        margin-right: .75em;
+      }
+    }
+  }
+}
+

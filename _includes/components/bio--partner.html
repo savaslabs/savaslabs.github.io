@@ -1,0 +1,8 @@
+<div class="partner-bio bio-list__bio">
+  <div class="partner-bio__image">
+    {% picture partner_square {{ include.partner.photo }} alt="{{ include.partner.name }}" %}
+  </div>
+  <h4 class="partner-bio__name heading--bold heading--sans-serif h5 c-dark-teal">{{ include.partner.name }}</h4>
+  <p class="partner-bio__title">{{ include.partner.title }}</p>
+  <p class="partner-bio__description">{{ include.partner.description }}</p>
+</div>

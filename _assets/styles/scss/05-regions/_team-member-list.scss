@@ -2,6 +2,8 @@
  * @file
  *
  * Team member list region styles.
+ *
+ * See 04-components/_bio-list.scss for generic bio list styles.
  */
 
 /*doc
@@ -96,36 +98,7 @@ plugin to create a `<picture>` element for the team member photo.
 */
 
 .region--team-member-list {
-
   h2 {
     text-align: center;
-  }
-  // Justify bios center on small screens and left on extra large and up.
-  .region--team-member-list__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    // Layout styles for the bios in the list.
-    .team-member-bio {
-      flex-basis: 100%;
-      flex-grow: 0;
-      flex-shrink: 0;
-      padding: 0 $base-spacing * .5 $base-spacing * 3;
-
-      @include grid-media($small-screen-up) {
-        flex-basis: 50%;
-        padding: 0 $base-spacing * 1.5 $base-spacing * 3;
-      }
-
-      @include grid-media($medium-screen-up) {
-        flex-basis: 33.33%;
-      }
-
-      @include grid-media($large-screen-up) {
-        flex-basis: 25%;
-        padding-left: 0;
-      }
-    }
   }
 }
