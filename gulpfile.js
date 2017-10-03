@@ -414,6 +414,17 @@ gulp.task('build:scripts:watch', ['build:scripts'], function(callback) {
 });
 
 /**
+ * Task: build:scripts:comments:watch
+ *
+ * Special task for running webpack to compile React code for comments app. Once
+ * this finishes, the updated comments.js file will trigger build:scripts:watch.
+ */
+gulp.task('build:scripts:comments:watch', function() {
+    return gulp.src('')
+      .pipe(run('cd _comments-app && npm run build-dev'));
+});
+
+/**
  * Task: serve
  *
  * Static Server + watching files.
@@ -444,6 +455,9 @@ gulp.task('serve', ['build:local'], function() {
 
     // Watch .js files.
     gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
+
+    // Watch comment app files.
+    gulp.watch('_comments-app/app/**/*', ['build:scripts:comments:watch']);
 
     // Watch image files; changes are piped to browserSync.
     gulp.watch('_assets/img/**/*', ['build:images']);
