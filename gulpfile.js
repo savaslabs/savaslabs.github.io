@@ -159,6 +159,20 @@ gulp.task('build:scripts:global', function() {
 });
 
 /**
+ * Task: build:scripts:comments
+ *
+ * Copies comments app to the assets directory.
+ */
+gulp.task('build:scripts:comments', function() {
+    return gulp.src([
+        paths.jsFiles + '/comments.js'
+    ])
+      .pipe(gulp.dest(paths.jekyllJsFiles))
+      .pipe(gulp.dest(paths.siteJsFiles))
+      .on('error', gutil.log);
+});
+
+/**
  * Task: build:scripts:leaflet
  *
  * Concatenates and uglifies leaflet JS files and outputs result to the
@@ -181,7 +195,11 @@ gulp.task('build:scripts:leaflet', function() {
  *
  * Builds all scripts.
  */
-gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
+gulp.task('build:scripts', [
+    'build:scripts:global',
+    'build:scripts:comments',
+    'build:scripts:leaflet'
+]);
 
 /**
  * Task: clean:scripts
