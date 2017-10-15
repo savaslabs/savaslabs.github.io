@@ -1,9 +1,16 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var App = require('./components/App');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import CommentCount from './components/CommentCount';
 
-// Attach component to the DOM.
+// Attach comments section to the DOM.
 ReactDOM.render(
   <App />,
   document.getElementById('js-comments')
+);
+
+// Attach comment count to the DOM.
+ReactDOM.render(
+  <CommentCount />,
+  document.getElementById('js-comment-count')
 );

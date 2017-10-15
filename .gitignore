@@ -14,3 +14,6 @@ vendor
 # For the Hologram style guide.
 styleguide
 _styleguide_assets/styleguide.css
+
+# For the comments app.
+npm-debug.log

@@ -1,12 +1,17 @@
-var React = require('react');
+import React from 'react';
+import Comments from  './Comments';
+import CommentForm from './CommentForm';
 
 class App extends React.Component {
   render () {
-    console.log('React is working!');
     return (
-      <p>Hello World!</p>
+      <div className="comments">
+        <p>Hello World</p>
+        <CommentForm />
+        <Comments />
+      </div>
     )
   }
 }
 
-module.exports = App;
+export default App;
