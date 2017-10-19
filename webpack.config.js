@@ -1,9 +1,9 @@
 var path = require('path');
 
 module.exports = {
-  entry: './app/index.js',
+  entry: './_comments-app/app/index.js',
   output: {
-    path: path.resolve(__dirname, '../_assets/js'),
+    path: path.resolve(__dirname, './_assets/js'),
     filename: 'comments.js',
     publicPath: '/'
   },
@@ -15,4 +15,4 @@ module.exports = {
   devServer: {
     historyApiFallback: true
   }
-}
+};
