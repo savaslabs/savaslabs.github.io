@@ -159,6 +159,42 @@ gulp.task('build:scripts:global', function() {
 });
 
 /**
+ * Task: build:scripts:webpack
+ *
+ * Special task for running webpack to compile React code for comments app for
+ * production.
+ */
+gulp.task('build:scripts:webpack', function() {
+    return gulp.src('')
+      .pipe(run('npm run build-comments'));
+});
+
+/**
+ * Task: build:scripts:webpack:dev
+ *
+ * Special task for running webpack to compile React code for comments app for
+ * development.
+ */
+gulp.task('build:scripts:webpack:dev', function() {
+    return gulp.src('')
+      .pipe(run('npm run build-comments-dev'));
+});
+
+/**
+ * Task: build:scripts:comments
+ *
+ * Copies comments app to the assets directory.
+ */
+gulp.task('build:scripts:comments', function() {
+    return gulp.src([
+        paths.jsFiles + '/comments.js'
+    ])
+      .pipe(gulp.dest(paths.jekyllJsFiles))
+      .pipe(gulp.dest(paths.siteJsFiles))
+      .on('error', gutil.log);
+});
+
+/**
  * Task: build:scripts:leaflet
  *
  * Concatenates and uglifies leaflet JS files and outputs result to the
@@ -181,7 +217,22 @@ gulp.task('build:scripts:leaflet', function() {
  *
  * Builds all scripts.
  */
-gulp.task('build:scripts', ['build:scripts:global', 'build:scripts:leaflet']);
+gulp.task('build:scripts', function(callback) {
+    runSequence('build:scripts:webpack',
+      ['build:scripts:global', 'build:scripts:comments', 'build:scripts:leaflet'],
+      callback);
+});
+
+/**
+ * Task: build:scripts:dev
+ *
+ * Builds all scripts, running webpack for dev environment.
+ */
+gulp.task('build:scripts:dev', function(callback) {
+    runSequence('build:scripts:webpack:dev',
+      ['build:scripts:global', 'build:scripts:comments', 'build:scripts:leaflet'],
+      callback);
+});
 
 /**
  * Task: clean:scripts
@@ -355,13 +406,13 @@ gulp.task('build:test', function(callback) {
 });
 
 /**
- * Task: build:test
+ * Task: build:local
  *
  * Builds the site anew using test and local config.
  */
 gulp.task('build:local', function(callback) {
     runSequence('clean',
-        ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+        ['build:scripts:dev', 'build:images', 'build:styles', 'build:fonts'],
         'styleguide',
         'build:jekyll:local',
       callback);
@@ -389,7 +440,7 @@ gulp.task('build:jekyll:watch', ['build:jekyll:local'], function(callback) {
  *
  * Special task for building scripts then reloading via BrowserSync.
  */
-gulp.task('build:scripts:watch', ['build:scripts'], function(callback) {
+gulp.task('build:scripts:watch', ['build:scripts:dev'], function(callback) {
     runSequence('build:jekyll:local');
     browserSync.reload();
     callback();
@@ -425,7 +476,13 @@ gulp.task('serve', ['build:local'], function() {
     );
 
     // Watch .js files.
-    gulp.watch('_assets/js/**/*.js', ['build:scripts:watch']);
+    gulp.watch(
+      ['_assets/js/**/*.js', '_comments-app/app/**/*'],
+      ['build:scripts:watch']
+    );
+
+    // Watch comment app files.
+    gulp.watch('_comments-app/app/**/*', ['build:scripts:watch']);
 
     // Watch image files; changes are piped to browserSync.
     gulp.watch('_assets/img/**/*', ['build:images']);
@@ -441,7 +498,8 @@ gulp.task('serve', ['build:local'], function() {
     // Watch HTML and markdown files.
     gulp.watch(
       ['**/*.+(html|md|markdown|MD)', '!_site/**/*.*', '!_styleguide_assets/**/*.*', '!_assets/styles/*.md'],
-      ['build:jekyll:watch']);
+      ['build:jekyll:watch']
+    );
 
     // Watch RSS feed XML files.
     gulp.watch('**.xml', ['build:jekyll:watch']);
@@ -461,7 +519,8 @@ gulp.task('serve', ['build:local'], function() {
     // Watch style guide HTML.
     gulp.watch(
       ['_styleguide_assets/*.html', '_assets/styles/*.md'],
-      ['build:styleguide', 'build:jekyll:watch']);
+      ['build:styleguide', 'build:jekyll:watch']
+    );
 });
 
 // -----------------------------------------------------------------------------
