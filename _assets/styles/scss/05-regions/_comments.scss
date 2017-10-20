@@ -11,20 +11,19 @@
     text-align: center;
   }
 
-  .region--comments__comments {
-    margin-bottom: $base-margin;
-
-    .region--comments__link {
-      font-weight: bold;
-    }
-
-    // Style the success message above the new comment.
-    .flash-success {
-      margin-top: 1.5em;
+  .comments-app {
+    h2 {
+      border-bottom: solid 1px $light-grey;
+      margin-bottom: 0;
+      padding: $base-spacing;
+      text-align: center;
+      text-transform: uppercase;
     }
   }
 
-  .expander .expander-content {
+  .comments-app__wrapper {
+    margin-bottom: $base-margin;
+
     @include grid-media($medium-screen-up) {
       @include grid-column(8);
       @include grid-shift(2);
@@ -43,6 +42,15 @@
     @include grid-media($max-width-up) {
       @include grid-column(6);
       @include grid-shift(3);
+    }
+
+    .region--comments__link {
+      font-weight: bold;
+    }
+
+    // Style the success message above the new comment.
+    .flash-success {
+      margin-top: 1.5em;
     }
   }
 }

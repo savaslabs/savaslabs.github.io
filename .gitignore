@@ -17,4 +17,4 @@ _styleguide_assets/styleguide.css
 
 # For the comments app.
 _assets/js/comments.js
-npm-debug.log
+npm-debug.log*
