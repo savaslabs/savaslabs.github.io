@@ -24,9 +24,14 @@ class CommentForm extends React.Component {
     // Submit a POST request to the comments server.
     var commentData = qs.stringify(this.state);
     api.postComment(commentData).then(function (response) {
-      console.log(response);
-      // TODO: post new comment, remove comment form.
+
+      // Update state of App so Comments list will refresh.
+      this.props.refreshComments();
+
+      // Hide the comment form.
+      this.props.hideCommentForm();
     }.bind(this));
+
   }
   handleChange(event) {
     // Update state for the changed input.
