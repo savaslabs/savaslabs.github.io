@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../utils/api';
-import Comment from './Comment';
+import PropTypes from 'prop-types';
 
 function CommentFormLink () {
   return (
@@ -11,6 +11,23 @@ function CommentFormLink () {
       Leave a comment
     </a>
   )
+}
+
+function Comment (props) {
+  return (
+    <li className={props.class}>
+      <p className="comment__name"><span className="c-magenta">{props.name}</span> says:</p>
+      <p className="comment__date">{props.date}</p>
+      <p className="comment__text">{props.comment}</p>
+    </li>
+  )
+}
+
+Comment.propTypes = {
+  savasian: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired
 }
 
 class Comments extends React.Component {
