@@ -22,6 +22,7 @@ CommentFormLink.propTypes = {
 function Comment (props) {
   return (
     <li className={props.class}>
+      {props.savasian == 1 && <img src="/assets/img/logo.svg" className="comment__logo" alt="Savas Labs logo" />}
       <p className="comment__name"><span className="c-magenta">{props.name}</span> says:</p>
       <p className="comment__date">{props.date}</p>
       <p className="comment__text">{props.comment}</p>

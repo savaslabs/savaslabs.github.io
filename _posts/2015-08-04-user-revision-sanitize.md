@@ -45,7 +45,7 @@ So, in _most_ cases, `drush sqlsan` (alias) is enough, and the mail redirection
 options linked above are additional safety measures. Of course, I'm not
 writing about _most_ scenarios now am I? Sadly, I'm not yet aware of a
 comprehensive solution that ensures no email will be sent from a development
-environment. Please [comment](#js-expander-trigger) if you know of one!
+environment. Please [comment](#js-comments) if you know of one!
 
 ## The _specific_ problem with `user_revision` module
 One pernicious case, in which `drush sqlsan` is insufficient in sanitizing your

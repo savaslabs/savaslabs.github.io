@@ -19,7 +19,7 @@ In this three-part series I'll detail:
 - [Creating a Sass file structure following a light version of SMACSS](/2015/08/28/sassy-drupal-theming-part-2.html)
 - [What we at Savas Labs consider best practices for creating shareable, maintainable Sass](/2015/09/03/sassy-drupal-theming-part-3.html)
 
-I'll be pulling some examples from our Drupal 8 theme, but none of this is Drupal-8-specific and really, it's not entirely Drupal-specific. These principles can be applied to any site. Much of the material in these posts is also largely a matter of opinion, so if you disagree or if something else works better for you, sound off about it in the [comments!](#js-expander-trigger)
+I'll be pulling some examples from our Drupal 8 theme, but none of this is Drupal-8-specific and really, it's not entirely Drupal-specific. These principles can be applied to any site. Much of the material in these posts is also largely a matter of opinion, so if you disagree or if something else works better for you, sound off about it in the [comments!](#js-comments)
 
 <hr>
 
