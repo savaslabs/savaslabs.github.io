@@ -3,7 +3,9 @@ import React from 'react';
 class CommentCount extends React.Component {
   render () {
     return (
-      <p>Comment count goes here</p>
+      <a href="#js-expander-trigger">
+        <i className="fa fa-comment"></i>
+      </a>
     )
   }
 }
