@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import api from '../utils/api';
 import PropTypes from 'prop-types';
 
 function CommentFormLink (props) {
+  'use strict';
+
   // On click, we'll make sure the comment form is rendered.
   return (
     <a
@@ -17,12 +19,12 @@ function CommentFormLink (props) {
 
 CommentFormLink.propTypes = {
   onClick: PropTypes.func.isRequired
-}
+};
 
 function Comment (props) {
   return (
     <li className={props.class}>
-      {props.savasian == 1 && <img src="/assets/img/logo.svg" className="comment__logo" alt="Savas Labs logo" />}
+      {props.savasian === "1" && <img src="/assets/img/logo.svg" className="comment__logo" alt="Savas Labs logo" />}
       <p className="comment__name"><span className="c-magenta">{props.name}</span> says:</p>
       <p className="comment__date">{props.date}</p>
       <p className="comment__text">{props.comment}</p>
@@ -35,9 +37,9 @@ Comment.propTypes = {
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired
-}
+};
 
-class Comments extends React.Component {
+class Comments extends Component {
   constructor(props) {
     super(props);
 
@@ -45,7 +47,7 @@ class Comments extends React.Component {
       comments: null,
       loading: true,
       newComment: false
-    }
+    };
 
     this.loadComments = this.loadComments.bind(this);
   }
@@ -71,7 +73,7 @@ class Comments extends React.Component {
   }
   render () {
     // While API call is made, show loading text.
-    var loading = this.state.loading;
+    let loading = this.state.loading;
     if (loading === true) {
       return (
         <p>Loading...</p>
@@ -79,13 +81,13 @@ class Comments extends React.Component {
     }
 
     // Once we have comments, display the Comment components.
-    var comments = this.state.comments.data;
+    let comments = this.state.comments.data;
     return (
       <div>
-        {comments && <CommentFormLink onClick={this.props.showCommentForm} />}
+        {comments.length !== 0 && <CommentFormLink onClick={this.props.showCommentForm} />}
         <ul className="comments__list">
           {comments.map(function (comment, index) {
-            var commentClass = 'comment';
+            let commentClass = 'comment';
             if (comment.savasian === 1) {
               commentClass = 'comment savasian';
             }
