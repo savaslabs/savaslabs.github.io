@@ -482,7 +482,7 @@ gulp.task('serve', ['build:local'], function() {
     );
 
     // Watch comment app files.
-    gulp.watch('_comments-app/app/**/*', ['build:scripts:watch']);
+    gulp.watch('_comments-app/**/*', ['build:scripts:watch']);
 
     // Watch image files; changes are piped to browserSync.
     gulp.watch('_assets/img/**/*', ['build:images']);
