@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import api from '../utils/api';
 import PropTypes from 'prop-types';
+import Message from './Message';
 
 function CommentFormLink (props) {
   'use strict';
@@ -46,7 +47,7 @@ class Comments extends Component {
     this.state = {
       comments: null,
       loading: true,
-      newComment: false
+      hideMessage: false
     };
 
     this.loadComments = this.loadComments.bind(this);
@@ -69,11 +70,16 @@ class Comments extends Component {
     // Comments list will be re-rendered and will include the new comment.
     if (newProps.newComment === true) {
       this.loadComments();
+
+      // Remove success message after 10 seconds.
+      this.timer = setTimeout(_ => {
+        this.setState({ hideMessage: true });
+      }, 10000);
     }
   }
   render () {
     // While API call is made, show loading text.
-    let loading = this.state.loading;
+    const loading = this.state.loading;
     if (loading === true) {
       return (
         <p>Loading...</p>
@@ -81,7 +87,7 @@ class Comments extends Component {
     }
 
     // Once we have comments, display the Comment components.
-    let comments = this.state.comments.data;
+    const comments = this.state.comments.data;
     return (
       <div>
         {comments.length !== 0 && <CommentFormLink onClick={this.props.showCommentForm} />}
@@ -103,6 +109,12 @@ class Comments extends Component {
             )
           })}
         </ul>
+        {this.props.newComment &&
+        <Message
+          type='success'
+          message='Thanks for submitting your comment!'
+          hide={this.state.hideMessage}
+        />}
       </div>
     )
   }

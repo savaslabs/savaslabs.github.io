@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import api from '../utils/api';
 import qs from 'qs';
+import Message from './Message';
 
-class CommentForm extends React.Component {
+class CommentForm extends Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +13,10 @@ class CommentForm extends React.Component {
       comment: '',
       url: '',
       nocaptcha: '',
-      slug: window.location.pathname
+      slug: window.location.pathname,
+      error: false,
+      errorField: null,
+      message: null
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,20 +26,31 @@ class CommentForm extends React.Component {
     event.preventDefault();
 
     // Submit a POST request to the comments server.
-    var commentData = qs.stringify(this.state);
+    const commentData = qs.stringify(this.state);
     api.postComment(commentData).then(function (response) {
+      if (response.data.success === true) {
+        // Update state of App so Comments list will refresh.
+        this.props.refreshComments();
 
-      // Update state of App so Comments list will refresh.
-      this.props.refreshComments();
+        // Hide the comment form.
+        this.props.hideCommentForm();
+      } else {
+        // Set error message and error field.
+        this.setState(function () {
+          return {
+            error: true,
+            errorField: response.data.data.error_field,
+            message: response.data.message
+          };
+        });
+      }
 
-      // Hide the comment form.
-      this.props.hideCommentForm();
     }.bind(this));
 
   }
   handleChange(event) {
     // Update state for the changed input.
-    const state = this.state
+    const state = this.state;
     state[event.target.name] = event.target.value;
     this.setState(state);
   }
@@ -43,21 +58,45 @@ class CommentForm extends React.Component {
     const { name, email, comment, url, nocaptcha, slug } = this.state;
     return (
       <form id="form--comment" className="form--comment" onSubmit={this.handleSubmit}>
+        {this.state.error && <Message type='error' message={this.state.message} />}
         <div className="form--comment__row">
           <div className="form--comment__row__item">
             <div className="form--comment__field form--comment__field--name">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" value={name} onChange={this.handleChange} required />
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className={this.state.errorField === 'name' && 'error-field'}
+                value={name}
+                onChange={this.handleChange}
+                required
+              />
             </div>
             <div className="form--comment__field form--comment__field--email">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" value={email} onChange={this.handleChange} required />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className={this.state.errorField === 'email' && 'error-field'}
+                value={email} onChange={this.handleChange}
+                required
+              />
               <p className="form--comment__helptext">Savas Labs will never sell your email address or spam you.</p>
             </div>
           </div>
           <div className="form--comment__field form--comment__field--comment form--comment__row__item">
             <label htmlFor="comment">Comment</label>
-            <textarea name="comment" id="comment" value={comment} onChange={this.handleChange} rows="4" required></textarea>
+            <textarea
+              name="comment"
+              id="comment"
+              className={this.state.errorField === 'comment' && 'error-field'}
+              value={comment}
+              onChange={this.handleChange}
+              rows="4"
+              required>
+            </textarea>
             <p className="form--comment__helptext">Plain text format only please.</p>
           </div>
         </div>
@@ -73,7 +112,15 @@ class CommentForm extends React.Component {
             <div className="form--comment__field--nocaptcha__input">
               <label htmlFor="nocaptcha">What type of animal is the Savas Labs logo?</label>
               <p className="form--comment__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
-              <input type="text" name="nocaptcha" id="nocaptcha" value={nocaptcha} onChange={this.handleChange} required />
+              <input
+                type="text"
+                name="nocaptcha"
+                id="nocaptcha"
+                className={this.state.errorField === 'nocaptcha' && 'error-field'}
+                value={nocaptcha}
+                onChange={this.handleChange}
+                required
+              />
             </div>
           </div>
           <div className="form--comment__row__item">
