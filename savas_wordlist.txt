@@ -385,6 +385,5 @@ WordPress
 WordPress's
 interconnectedness
 architecting
-rearchitecture
 Driesnote
-Drupalcons
+DrupalCons
