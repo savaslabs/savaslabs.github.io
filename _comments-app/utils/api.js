@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// TODO: Update this to use Jekyll variable.
-const commentServer = 'http://local.comments.savaslabs.com';
+const commentServer = '{{ site.comment_server_url }}';
 const postSlug = window.location.pathname;
 
 // Remove leading forward slash.
