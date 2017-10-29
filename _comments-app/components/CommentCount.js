@@ -11,7 +11,9 @@ class CommentCount extends Component {
   }
   componentDidMount() {
     api.getComments().then(function (data) {
-      this.setState({ count: data.data.length });
+      if (data) {
+        this.setState({ count: data.data.length });
+      }
     }.bind(this));
   }
   render () {

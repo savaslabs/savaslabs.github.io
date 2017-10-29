@@ -53,13 +53,15 @@ class Comments extends Component {
     this.loadComments = this.loadComments.bind(this);
   }
   loadComments() {
-    api.getComments().then(function (data) {
-      this.setState(function () {
-        return {
-          comments: data,
-          loading: false
-        }
-      });
+    api.getComments().then(function (response) {
+      if (response) {
+        this.setState(function () {
+          return {
+            comments: response,
+            loading: false
+          }
+        });
+      }
     }.bind(this));
   }
   componentDidMount() {
@@ -81,9 +83,7 @@ class Comments extends Component {
     // While API call is made, show loading text.
     const loading = this.state.loading;
     if (loading === true) {
-      return (
-        <p>Loading...</p>
-      )
+      return null;
     }
 
     // Once we have comments, display the Comment components.
