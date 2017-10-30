@@ -75,9 +75,9 @@ class Comments extends Component {
       this.loadComments();
 
       // Remove success message after 10 seconds.
-      this.timer = setTimeout(_ => {
+      this.timer = setTimeout(function () {
         this.setState({ hideMessage: true });
-      }, 10000);
+      }.bind(this), 10000);
     }
   }
   render () {
@@ -128,8 +128,8 @@ class Comments extends Component {
 }
 
 Comments.propTypes = {
-  newComment: PropTypes.string,
-  showCommentForm: PropTypes.string,
+  newComment: PropTypes.bool,
+  showCommentForm: PropTypes.func,
 };
 
 export default Comments;

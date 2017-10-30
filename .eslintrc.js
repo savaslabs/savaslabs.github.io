@@ -14,6 +14,9 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    "globals": {
+        "module": false,
+    },
     "rules": {
         "indent": [
             "error",
