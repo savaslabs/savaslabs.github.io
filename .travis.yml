@@ -1,12 +1,31 @@
 language: node_js
+
 sudo: required
+
+cache:
+  - directories:
+      - "node_modules"
+      - "vendor"
+
 script:
-  - node_modules/eslint/bin/eslint.js _comments-app/
-  - gulp build:test
-  - gulp accessibility-test
-  - bundle exec scss-lint _assets/styles/scss/*/*.scss
   - bundle exec mdl . -c .mdlrc --git-recurse
   - bundle exec rake test -f Rakefile
+
+jobs:
+  include:
+    - stage: test
+      script: node_modules/eslint/bin/eslint.js _comments-app/
+    - stage: test
+      script: gulp build:test
+    - stage: test
+      script: gulp accessibility-test
+    - stage: test
+      script: bundle exec scss-lint _assets/styles/scss/*/*.scss
+    - stage: test
+      script: bundle exec mdl . -c .mdlrc --git-recurse
+    - stage: test
+      script: bundle exec rake test -f Rakefile
+
 branches:
   except:
   - master
@@ -14,7 +33,6 @@ node_js:
  - '6.1'
 before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
-  - npm cache clear
   - rvm install 2.1
   - rvm use 2.1
   - . $HOME/.nvm/nvm.sh && nvm install 6.1 && nvm use 6.1
