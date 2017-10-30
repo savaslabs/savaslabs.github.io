@@ -56,10 +56,37 @@ else
 ${YELLOW}You can ignore these suggestions and proceed with your
 commit by running git commit with the --no-verify tag.
 Don't worry, proselint is a bit picky!\n\n${NC}"
-    echo "$SUGGESTIONS\n"
+    echo "$SUGGESTIONS"
     PASS=false
   fi
 fi
+
+# Check for Drupal Planet tag and summary if relevant.
+DASHES="---"
+for FILE in $(git diff-index --cached HEAD --name-only | grep -E '_posts')
+do
+  FRONT_MATTER=$(sed -n '/^---$/,/^---$/p' $FILE)
+  FRONT_MATTER=${FRONT_MATTER#${DASHES}}
+  FRONT_MATTER=${FRONT_MATTER%${DASHES}}
+
+  # If it's a Drupal post...
+  if [[ $FRONT_MATTER == *" drupal"* ]]; then
+    # Check for the Drupal Planet tag...
+    if [[ $FRONT_MATTER == *" drupal-planet"* ]]; then
+      # If that's found, check for a Drupal Planet summary.
+      if [[ $FRONT_MATTER != *"drupal_planet_summary:"* ]]; then
+        printf "${RED}\nYour post $FILE is missing a Drupal Planet summary.
+${YELLOW}Please include a Drupal Planet summary in your post's front matter.\n\n${NC}"
+        PASS=false
+      fi
+    else
+      printf "${YELLOW}\nYou've tagged $FILE as a Drupal post.
+If appropriate, you should consider including the Drupal Planet tag and
+summary as well. To ignore this and proceed, use git commit --no-verify.\n\n${NC}"
+      PASS=false
+    fi
+  fi
+done
 
 # If there were no failures, proceed with commit.
 if $PASS; then
