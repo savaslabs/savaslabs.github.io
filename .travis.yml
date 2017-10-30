@@ -8,31 +8,27 @@ cache:
       - "vendor"
       - "_site/assets/processed-img"
 
-jobs:
-  include:
-    - stage: test
-      script: node_modules/eslint/bin/eslint.js _comments-app/
-    - stage: test
-      script: gulp build:test
-    - stage: test
-      script: gulp accessibility-test
-    - stage: test
-      script: bundle exec scss-lint _assets/styles/scss/*/*.scss
-    - stage: test
-      script: bundle exec mdl . -c .mdlrc --git-recurse
-    - stage: test
-      script: bundle exec rake test -f Rakefile
+script:
+  - node_modules/eslint/bin/eslint.js _comments-app/
+  - gulp build:test
+  - gulp accessibility-test
+  - bundle exec scss-lint _assets/styles/scss/*/*.scss
+  - bundle exec mdl . -c .mdlrc --git-recurse
+  - bundle exec rake test -f Rakefile
 
 branches:
   except:
   - master
+
 node_js:
  - '6.1'
+
 before_install:
   - rvm install 2.1
   - rvm use 2.1
   - gem install bundler
   - bundle check || bundle install
+
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -41,6 +37,7 @@ env:
   - secure: jTsZx0ii96qcFVN2EgQoH84lHf+UuU+BFTp28wH3m28PqWDf+L4gbyR4mpUhBoIkPOUy0Egc7ffOhGhiiZ5K4w5I7xVDxkZBIOBHmUWFnAmHiQTbW/0913hnF4/DtTkBp+ftMWyWKP1uQfU8fpGDI4Dd1d5Oesz6msJmfVpt4s8=
   - secure: qnmX5CVN7KmLKPwX3WBA/dGkqRONiNes3Xyd3f9Ad27G9lJ5jmfBPULEpRJOXrVT9oa6lHdSS/QFT4WEZKLjzp0SmMFIqECqVteAPQJlmezWvfImdS8kGNhU/BEF1/Qve2aNdLJ6780Kt1S8skXoP2TLr7vP9iXyU2LsFMZBk14=
   - secure: ZUaQ/y2MlfL/qHIsAMcqtG2Cm+TwNq6ttJByMQxZDDf9i+wBbxIEmWQAYSq6RRpHFMmq4nVuRG44bdeyomio8n/UGF1SDQd4WUCFtZcH9FI/QR37A1eF6KdbSMtlrIfrefGtibsdzTD91kmK0s8tlIsqn7CSK6fhep2h7U4VGXo=
+
 deploy:
   provider: script
   script: "./_scripts/build.sh"
