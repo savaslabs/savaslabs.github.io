@@ -140,8 +140,6 @@ class CommentForm extends Component {
 }
 
 CommentForm.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
   refreshComments: PropTypes.func.isRequired,
   hideCommentForm: PropTypes.func.isRequired,
 };
