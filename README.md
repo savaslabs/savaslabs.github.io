@@ -91,7 +91,7 @@ You can include a featured image in the front matter using the `featured_image`
 and `featured_image_alt` keys. This will work for our site and for Drupal Planet.
 Please try to do this for every post!
 
-[UPDATE THIS] Your image should be 1474px wide. Blog images should be placed in
+Blog images should be placed in
 `_/assets/img/blog`, but you should only include `/blog/[filename].jpg` in the
 front matter of your post.
 
@@ -123,6 +123,10 @@ To add caption to floated images wrap <img> tag in a div and give it a class. E.
   <span class="caption">{caption}</span>
 </div>
 ```
+
+### Drupal planet posts
+
+For Drupal planet posts, i.e. those that include the `drupal-planet` tag, please include the `drupal_planet_summary` option to your front matter.
 
 ## Syntax Highlighting
 

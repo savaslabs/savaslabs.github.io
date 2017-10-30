@@ -7,8 +7,6 @@ tags: drupal drupal8 drupal-planet
 summary: Drupal 8 has been around for almost two years. We take a look at where it's been and where it's going.
 featured_image: "/blog/drupal-7-outweighs-8.jpg"
 featured_image_alt: "Drupal 7 outweighs Drupal 8 in 2016"
-featured_image_height: "917px"
-featured_image_width: "1474px"
 ---
 
 Drupal 8's official release was [nearly two years ago](https://www.drupal.org/blog/drupal-800-released), and many ask how is it doing? Has it lived up to its ambition to revolutionize Drupal websites?
