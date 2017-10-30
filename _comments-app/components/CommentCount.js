@@ -23,7 +23,7 @@ class CommentCount extends Component {
           <i className="fa fa-comment"></i>
           {this.state.count} comments
         </a>
-      )
+      );
     }
     return null;
   }
