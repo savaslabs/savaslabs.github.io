@@ -127,4 +127,9 @@ class Comments extends Component {
   }
 }
 
+Comments.propTypes = {
+  newComment: PropTypes.string,
+  showCommentForm: PropTypes.string,
+};
+
 export default Comments;
