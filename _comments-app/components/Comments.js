@@ -114,7 +114,7 @@ class Comments extends Component {
                 comment={comment.comment}
               />
             );
-          })};
+          })}
         </ul>
         {this.props.newComment &&
         <Message
