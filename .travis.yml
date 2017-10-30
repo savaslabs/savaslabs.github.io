@@ -2,6 +2,9 @@ language: node_js
 
 sudo: required
 
+before_cache:
+  - rm -f ./node_modules/.bin/which
+
 cache:
   - directories:
       - "node_modules"
