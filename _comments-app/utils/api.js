@@ -2,12 +2,15 @@ import axios from 'axios';
 
 // Jekyll variable; see config files.
 const commentServer = '{{ site.comment_server_url }}';
-const postSlug = window.location.pathname;
 
-// Remove leading forward slash.
+// Create URI for fetching comments.
+const postSlug = window.location.pathname;
 const truncatedSlug = postSlug.substring(1, postSlug.length);
 const encodedSlug = encodeURIComponent(truncatedSlug);
 const requestUri = commentServer + '/api/comments/post?slug=' + encodedSlug;
+
+// Create URI for posting comment.
+const postUri = commentServer + '/api/comments/new';
 
 module.exports = {
   getComments: function () {
@@ -24,7 +27,7 @@ module.exports = {
     'use strict';
     return axios({
       method: 'post',
-      url: 'http://local.comments.savaslabs.com/api/comments/new',
+      url: postUri,
       data: commentData
     })
       .then(function (response) {
