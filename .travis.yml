@@ -1,20 +1,32 @@
 language: node_js
+
 sudo: required
+
+before_cache:
+  - rm -f ./node_modules/.bin/which
+
+cache:
+  - directories:
+      - "node_modules"
+      - "vendor"
+      - "_site/assets/processed-img"
+
 script:
   - ./_scripts/run-tests.sh
+
 branches:
   except:
   - master
+
 node_js:
  - '6.1'
+
 before_install:
-  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
-  - npm cache clear
   - rvm install 2.1
   - rvm use 2.1
-  - . $HOME/.nvm/nvm.sh && nvm install 6.1 && nvm use 6.1
   - gem install bundler
   - bundle check || bundle install
+
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -23,6 +35,7 @@ env:
   - secure: jTsZx0ii96qcFVN2EgQoH84lHf+UuU+BFTp28wH3m28PqWDf+L4gbyR4mpUhBoIkPOUy0Egc7ffOhGhiiZ5K4w5I7xVDxkZBIOBHmUWFnAmHiQTbW/0913hnF4/DtTkBp+ftMWyWKP1uQfU8fpGDI4Dd1d5Oesz6msJmfVpt4s8=
   - secure: qnmX5CVN7KmLKPwX3WBA/dGkqRONiNes3Xyd3f9Ad27G9lJ5jmfBPULEpRJOXrVT9oa6lHdSS/QFT4WEZKLjzp0SmMFIqECqVteAPQJlmezWvfImdS8kGNhU/BEF1/Qve2aNdLJ6780Kt1S8skXoP2TLr7vP9iXyU2LsFMZBk14=
   - secure: ZUaQ/y2MlfL/qHIsAMcqtG2Cm+TwNq6ttJByMQxZDDf9i+wBbxIEmWQAYSq6RRpHFMmq4nVuRG44bdeyomio8n/UGF1SDQd4WUCFtZcH9FI/QR37A1eF6KdbSMtlrIfrefGtibsdzTD91kmK0s8tlIsqn7CSK6fhep2h7U4VGXo=
+
 deploy:
   provider: script
   script: "./_scripts/build.sh"

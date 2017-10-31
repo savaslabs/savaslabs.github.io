@@ -2126,7 +2126,7 @@ a must-read for gulp beginners!&lt;/li&gt;
           <p><i class="fa fa-calendar"></i>Oct 19, 2016 </p>
           <p><i class="fa fa-tags"></i><a href="/blog/tag/performance/">Performance</a>, <a href="/blog/tag/jekyll/">Jekyll</a>, <a href="/blog/tag/javascript/">Javascript</a>, <a href="/blog/tag/css/">CSS</a>, <a href="/blog/tag/sass/">Sass</a>, <a href="/blog/tag/front-end-dev/">Front End Development</a></p>
           
-          <p><span id="comment-count"></span></p>
+          <p><span id="js-comment-count"></span></p>
           
         </div>
       </div>
@@ -4305,56 +4305,7 @@ a must-read for gulp beginners!</li>
 
 <div class="region--comments">
   
-  <div class="expander">
-    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander--hidden">
-      <p id="comments-trigger">Comments</p>
-    </a>
-    <div id="js-expander-content" class="expander-content region">
-
-      <!-- If there are existing comments, output them here. -->
-      <div id="region--comments__comments" class="region--comments__comments"></div>
-      <form id="form--comment" class="form--comment">
-  <div class="form--comment__row">
-    <div class="form--comment__row__item">
-      <div class="form--comment__field form--comment__field--name">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-      </div>
-      <div class="form--comment__field form--comment__field--email">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-        <p class="form--comment__helptext">Savas Labs will never sell your email address or spam you.</p>
-      </div>
-    </div>
-    <div class="form--comment__field form--comment__field--comment form--comment__row__item">
-      <label for="comment">Comment</label>
-      <textarea name="comment" id="comment" rows="4" required></textarea>
-      <p class="form--comment__helptext">Plain text format only please.</p>
-    </div>
-  </div>
-
-  <input type="hidden" name="slug" id="slug" value="/2016/10/19/optimizing-jekyll-with-gulp.html">
-  <label for="url" class="sr-only">If you are a human, do not fill out this field.</label>
-  <input type="text" name="url" id="url">
-
-  <div class="form--comment__row">
-    <div class="form--comment__field form--comment__field--nocaptcha form--comment__row__item">
-      <div class="form--comment__field--nocaptcha__image">
-        <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
-      </div>
-      <div class="form--comment__field--nocaptcha__input">
-        <label for="nocaptcha">What type of animal is the Savas Labs logo?</label>
-        <p class="form--comment__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
-        <input type="text" name="nocaptcha" id="nocaptcha" required>
-      </div>
-    </div>
-    <div class="form--comment__row__item">
-      <input type="submit" value="Post comment" id="submit" class="form--comment__submit">
-    </div>
-  </div>
-</form>
-    </div>
-  </div>
+  <div id="js-comments"></div>
   
 </div>
 
@@ -4443,6 +4394,9 @@ a must-read for gulp beginners!</li>
 </footer>
 
     <script type="text/javascript" src="https://savaslabs.com/assets/js/main.js" async></script>
+
+
+<script type="text/javascript" src="/assets/js/comments.js" async></script>
 
 <noscript>
   <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>

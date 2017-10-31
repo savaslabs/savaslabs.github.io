@@ -78,7 +78,7 @@
           &lt;p&gt;&lt;i class=&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;Jun 16, 2016 &lt;/p&gt;
           &lt;p&gt;&lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;a href=&quot;/blog/tag/php/&quot;&gt;PHP&lt;/a&gt;, &lt;a href=&quot;/blog/tag/performance/&quot;&gt;Performance&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/module-development/&quot;&gt;Module Development&lt;/a&gt;&lt;/p&gt;
           
-          &lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;span id=&quot;js-comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;
           
         &lt;/div&gt;
       &lt;/div&gt;
@@ -1261,56 +1261,7 @@
 
 &lt;div class=&quot;region--comments&quot;&gt;
   
-  &lt;div class=&quot;expander&quot;&gt;
-    &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander--hidden&quot;&gt;
-      &lt;p id=&quot;comments-trigger&quot;&gt;Comments&lt;/p&gt;
-    &lt;/a&gt;
-    &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content region&quot;&gt;
-
-      &lt;!-- If there are existing comments, output them here. --&gt;
-      &lt;div id=&quot;region--comments__comments&quot; class=&quot;region--comments__comments&quot;&gt;&lt;/div&gt;
-      &lt;form id=&quot;form--comment&quot; class=&quot;form--comment&quot;&gt;
-  &lt;div class=&quot;form--comment__row&quot;&gt;
-    &lt;div class=&quot;form--comment__row__item&quot;&gt;
-      &lt;div class=&quot;form--comment__field form--comment__field--name&quot;&gt;
-        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; required&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;form--comment__field form--comment__field--email&quot;&gt;
-        &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-        &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; required&gt;
-        &lt;p class=&quot;form--comment__helptext&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form--comment__field form--comment__field--comment form--comment__row__item&quot;&gt;
-      &lt;label for=&quot;comment&quot;&gt;Comment&lt;/label&gt;
-      &lt;textarea name=&quot;comment&quot; id=&quot;comment&quot; rows=&quot;4&quot; required&gt;&lt;/textarea&gt;
-      &lt;p class=&quot;form--comment__helptext&quot;&gt;Plain text format only please.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;input type=&quot;hidden&quot; name=&quot;slug&quot; id=&quot;slug&quot; value=&quot;/2016/06/16/using-xhprof.html&quot;&gt;
-  &lt;label for=&quot;url&quot; class=&quot;sr-only&quot;&gt;If you are a human, do not fill out this field.&lt;/label&gt;
-  &lt;input type=&quot;text&quot; name=&quot;url&quot; id=&quot;url&quot;&gt;
-
-  &lt;div class=&quot;form--comment__row&quot;&gt;
-    &lt;div class=&quot;form--comment__field form--comment__field--nocaptcha form--comment__row__item&quot;&gt;
-      &lt;div class=&quot;form--comment__field--nocaptcha__image&quot;&gt;
-        &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;form--comment__field--nocaptcha__input&quot;&gt;
-        &lt;label for=&quot;nocaptcha&quot;&gt;What type of animal is the Savas Labs logo?&lt;/label&gt;
-        &lt;p class=&quot;form--comment__helptext&quot;&gt;Hint: 3 letters long, starts with an &quot;o&quot; and ends with an &quot;l&quot;.&lt;/p&gt;
-        &lt;input type=&quot;text&quot; name=&quot;nocaptcha&quot; id=&quot;nocaptcha&quot; required&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form--comment__row__item&quot;&gt;
-      &lt;input type=&quot;submit&quot; value=&quot;Post comment&quot; id=&quot;submit&quot; class=&quot;form--comment__submit&quot;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+  &lt;div id=&quot;js-comments&quot;&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 ",
@@ -1391,7 +1342,7 @@
           &lt;p&gt;&lt;i class=&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;Jun 16, 2016 &lt;/p&gt;
           &lt;p&gt;&lt;i class=&quot;fa fa-tags&quot;&gt;&lt;/i&gt;&lt;a href=&quot;/blog/tag/php/&quot;&gt;PHP&lt;/a&gt;, &lt;a href=&quot;/blog/tag/performance/&quot;&gt;Performance&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt;, &lt;a href=&quot;/blog/tag/drupal-planet/&quot;&gt;Drupal Planet&lt;/a&gt;, &lt;a href=&quot;/blog/tag/module-development/&quot;&gt;Module Development&lt;/a&gt;&lt;/p&gt;
           
-          &lt;p&gt;&lt;span id=&quot;comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;span id=&quot;js-comment-count&quot;&gt;&lt;/span&gt;&lt;/p&gt;
           
         &lt;/div&gt;
       &lt;/div&gt;
@@ -2574,56 +2525,7 @@
 
 &lt;div class=&quot;region--comments&quot;&gt;
   
-  &lt;div class=&quot;expander&quot;&gt;
-    &lt;a href=&quot;javascript:void(0)&quot; id=&quot;js-expander-trigger&quot; class=&quot;expander-trigger expander--hidden&quot;&gt;
-      &lt;p id=&quot;comments-trigger&quot;&gt;Comments&lt;/p&gt;
-    &lt;/a&gt;
-    &lt;div id=&quot;js-expander-content&quot; class=&quot;expander-content region&quot;&gt;
-
-      &lt;!-- If there are existing comments, output them here. --&gt;
-      &lt;div id=&quot;region--comments__comments&quot; class=&quot;region--comments__comments&quot;&gt;&lt;/div&gt;
-      &lt;form id=&quot;form--comment&quot; class=&quot;form--comment&quot;&gt;
-  &lt;div class=&quot;form--comment__row&quot;&gt;
-    &lt;div class=&quot;form--comment__row__item&quot;&gt;
-      &lt;div class=&quot;form--comment__field form--comment__field--name&quot;&gt;
-        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; required&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;form--comment__field form--comment__field--email&quot;&gt;
-        &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-        &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; required&gt;
-        &lt;p class=&quot;form--comment__helptext&quot;&gt;Savas Labs will never sell your email address or spam you.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form--comment__field form--comment__field--comment form--comment__row__item&quot;&gt;
-      &lt;label for=&quot;comment&quot;&gt;Comment&lt;/label&gt;
-      &lt;textarea name=&quot;comment&quot; id=&quot;comment&quot; rows=&quot;4&quot; required&gt;&lt;/textarea&gt;
-      &lt;p class=&quot;form--comment__helptext&quot;&gt;Plain text format only please.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;input type=&quot;hidden&quot; name=&quot;slug&quot; id=&quot;slug&quot; value=&quot;/2016/06/16/using-xhprof.html&quot;&gt;
-  &lt;label for=&quot;url&quot; class=&quot;sr-only&quot;&gt;If you are a human, do not fill out this field.&lt;/label&gt;
-  &lt;input type=&quot;text&quot; name=&quot;url&quot; id=&quot;url&quot;&gt;
-
-  &lt;div class=&quot;form--comment__row&quot;&gt;
-    &lt;div class=&quot;form--comment__field form--comment__field--nocaptcha form--comment__row__item&quot;&gt;
-      &lt;div class=&quot;form--comment__field--nocaptcha__image&quot;&gt;
-        &lt;img src=&quot;/assets/img/icons-and-logos/owl.png&quot; alt=&quot;Savas Labs logo&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;form--comment__field--nocaptcha__input&quot;&gt;
-        &lt;label for=&quot;nocaptcha&quot;&gt;What type of animal is the Savas Labs logo?&lt;/label&gt;
-        &lt;p class=&quot;form--comment__helptext&quot;&gt;Hint: 3 letters long, starts with an &quot;o&quot; and ends with an &quot;l&quot;.&lt;/p&gt;
-        &lt;input type=&quot;text&quot; name=&quot;nocaptcha&quot; id=&quot;nocaptcha&quot; required&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form--comment__row__item&quot;&gt;
-      &lt;input type=&quot;submit&quot; value=&quot;Post comment&quot; id=&quot;submit&quot; class=&quot;form--comment__submit&quot;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+  &lt;div id=&quot;js-comments&quot;&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 ",
@@ -2765,7 +2667,7 @@
           <p><i class="fa fa-calendar"></i>Jun 16, 2016 </p>
           <p><i class="fa fa-tags"></i><a href="/blog/tag/php/">PHP</a>, <a href="/blog/tag/performance/">Performance</a>, <a href="/blog/tag/drupal/">Drupal</a>, <a href="/blog/tag/drupal-planet/">Drupal Planet</a>, <a href="/blog/tag/module-development/">Module Development</a></p>
           
-          <p><span id="comment-count"></span></p>
+          <p><span id="js-comment-count"></span></p>
           
         </div>
       </div>
@@ -3948,56 +3850,7 @@
 
 <div class="region--comments">
   
-  <div class="expander">
-    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander--hidden">
-      <p id="comments-trigger">Comments</p>
-    </a>
-    <div id="js-expander-content" class="expander-content region">
-
-      <!-- If there are existing comments, output them here. -->
-      <div id="region--comments__comments" class="region--comments__comments"></div>
-      <form id="form--comment" class="form--comment">
-  <div class="form--comment__row">
-    <div class="form--comment__row__item">
-      <div class="form--comment__field form--comment__field--name">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-      </div>
-      <div class="form--comment__field form--comment__field--email">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-        <p class="form--comment__helptext">Savas Labs will never sell your email address or spam you.</p>
-      </div>
-    </div>
-    <div class="form--comment__field form--comment__field--comment form--comment__row__item">
-      <label for="comment">Comment</label>
-      <textarea name="comment" id="comment" rows="4" required></textarea>
-      <p class="form--comment__helptext">Plain text format only please.</p>
-    </div>
-  </div>
-
-  <input type="hidden" name="slug" id="slug" value="/2016/06/16/using-xhprof.html">
-  <label for="url" class="sr-only">If you are a human, do not fill out this field.</label>
-  <input type="text" name="url" id="url">
-
-  <div class="form--comment__row">
-    <div class="form--comment__field form--comment__field--nocaptcha form--comment__row__item">
-      <div class="form--comment__field--nocaptcha__image">
-        <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
-      </div>
-      <div class="form--comment__field--nocaptcha__input">
-        <label for="nocaptcha">What type of animal is the Savas Labs logo?</label>
-        <p class="form--comment__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
-        <input type="text" name="nocaptcha" id="nocaptcha" required>
-      </div>
-    </div>
-    <div class="form--comment__row__item">
-      <input type="submit" value="Post comment" id="submit" class="form--comment__submit">
-    </div>
-  </div>
-</form>
-    </div>
-  </div>
+  <div id="js-comments"></div>
   
 </div>
 
@@ -4086,6 +3939,9 @@
 </footer>
 
     <script type="text/javascript" src="https://savaslabs.com/assets/js/main.js" async></script>
+
+
+<script type="text/javascript" src="/assets/js/comments.js" async></script>
 
 <noscript>
   <link href='/assets/styles/main.css' rel='stylesheet' type='text/css'>
