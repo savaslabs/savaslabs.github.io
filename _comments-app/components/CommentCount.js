@@ -18,12 +18,13 @@ class CommentCount extends Component {
   }
   render () {
     if (this.state.count > 0) {
+      const label = this.state.count > 1 ? 'comments' : 'comment';
       return (
         <a href="#js-comments">
           <i className="fa fa-comment"></i>
-          {this.state.count} comments
+          {this.state.count} {label}
         </a>
-      )
+      );
     }
     return null;
   }

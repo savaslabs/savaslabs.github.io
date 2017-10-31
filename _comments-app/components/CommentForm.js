@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import api from '../utils/api';
+import PropTypes from 'prop-types';
 import qs from 'qs';
 import Message from './Message';
 
 class CommentForm extends Component {
+
   constructor(props) {
     super(props);
 
@@ -28,6 +30,11 @@ class CommentForm extends Component {
     // Submit a POST request to the comments server.
     const commentData = qs.stringify(this.state);
     api.postComment(commentData).then(function (response) {
+      /**
+       * @param response
+       * @param response.data.array_member[].data
+       * @param response.data.data.array_member[].error_field
+       */
       if (response.data.success === true) {
         // Update state of App so Comments list will refresh.
         this.props.refreshComments();
@@ -55,7 +62,7 @@ class CommentForm extends Component {
     this.setState(state);
   }
   render () {
-    const { name, email, comment, url, nocaptcha, slug } = this.state;
+    const { name, email, comment, url, nocaptcha } = this.state;
     return (
       <form id="form--comment" className="form--comment" onSubmit={this.handleSubmit}>
         {this.state.error && <Message type='error' message={this.state.message} />}
@@ -110,8 +117,8 @@ class CommentForm extends Component {
               <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo" />
             </div>
             <div className="form--comment__field--nocaptcha__input">
-              <label htmlFor="nocaptcha">What type of animal is the Savas Labs logo?</label>
-              <p className="form--comment__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
+              <label htmlFor="nocaptcha">{'What type of animal is the Savas Labs logo?'}</label>
+              <p className="form--comment__helptext">{'Hint: 3 letters long, starts with an "o" and ends with an "l".'}</p>
               <input
                 type="text"
                 name="nocaptcha"
@@ -128,8 +135,13 @@ class CommentForm extends Component {
           </div>
         </div>
       </form>
-    )
+    );
   }
 }
+
+CommentForm.propTypes = {
+  refreshComments: PropTypes.func.isRequired,
+  hideCommentForm: PropTypes.func.isRequired,
+};
 
 export default CommentForm;

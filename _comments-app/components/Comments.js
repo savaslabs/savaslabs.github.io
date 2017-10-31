@@ -15,7 +15,7 @@ function CommentFormLink (props) {
       onClick={props.onClick}>
       Leave a comment
     </a>
-  )
+  );
 }
 
 CommentFormLink.propTypes = {
@@ -25,15 +25,16 @@ CommentFormLink.propTypes = {
 function Comment (props) {
   return (
     <li className={props.class}>
-      {props.savasian === "1" && <img src="/assets/img/logo.svg" className="comment__logo" alt="Savas Labs logo" />}
+      {props.savasian === '1' && <img src='/assets/img/logo.svg' className='comment__logo' alt='Savas Labs logo' />}
       <p className="comment__name"><span className="c-magenta">{props.name}</span> says:</p>
       <p className="comment__date">{props.date}</p>
       <p className="comment__text">{props.comment}</p>
     </li>
-  )
+  );
 }
 
 Comment.propTypes = {
+  class: PropTypes.string.isRequired,
   savasian: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -59,7 +60,7 @@ class Comments extends Component {
           return {
             comments: response,
             loading: false
-          }
+          };
         });
       }
     }.bind(this));
@@ -74,9 +75,9 @@ class Comments extends Component {
       this.loadComments();
 
       // Remove success message after 10 seconds.
-      this.timer = setTimeout(_ => {
+      this.timer = setTimeout(function () {
         this.setState({ hideMessage: true });
-      }, 10000);
+      }.bind(this), 10000);
     }
   }
   render () {
@@ -87,11 +88,17 @@ class Comments extends Component {
     }
 
     // Once we have comments, display the Comment components.
+    /**
+     * @param comments
+     * @param comments.array_member[].created_at
+     */
     const comments = this.state.comments.data;
+
     return (
       <div>
         {comments.length !== 0 && <CommentFormLink onClick={this.props.showCommentForm} />}
         <ul className="comments__list">
+
           {comments.map(function (comment, index) {
             let commentClass = 'comment';
             if (comment.savasian === 1) {
@@ -106,7 +113,7 @@ class Comments extends Component {
                 date={comment.created_at}
                 comment={comment.comment}
               />
-            )
+            );
           })}
         </ul>
         {this.props.newComment &&
@@ -116,8 +123,13 @@ class Comments extends Component {
           hide={this.state.hideMessage}
         />}
       </div>
-    )
+    );
   }
 }
+
+Comments.propTypes = {
+  newComment: PropTypes.bool,
+  showCommentForm: PropTypes.func,
+};
 
 export default Comments;

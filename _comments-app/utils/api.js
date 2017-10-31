@@ -27,11 +27,11 @@ module.exports = {
       url: 'http://local.comments.savaslabs.com/api/comments/new',
       data: commentData
     })
-    .then(function (response) {
-      return response;
-    })
-    .catch(function (error) {
-      return error.response;
-    });
+      .then(function (response) {
+        return response;
+      })
+      .catch(function (error) {
+        return error.response;
+      });
   }
 };

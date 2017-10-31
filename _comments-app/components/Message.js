@@ -11,7 +11,7 @@ function Message (props) {
     <div className={className}>
       {props.message}
     </div>
-  )
+  );
 }
 
 Message.propTypes = {
