@@ -6,8 +6,8 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Oct 2017 18:27:32 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Oct 2017 18:27:32 +0000</lastBuildDate>
+    <pubDate>Tue, 31 Oct 2017 01:33:05 +0000</pubDate>
+    <lastBuildDate>Tue, 31 Oct 2017 01:33:05 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
     
@@ -19,7 +19,8 @@
               
               &lt;img src=&quot;https://savaslabs.com/assets/img/blog/drupal-7-outweighs-8.jpg&quot; alt=&quot;Drupal 7 outweighs Drupal 8 in 2016&quot; &gt;
             
-            
+            Drupal 8 has been around for almost two years. In the first of a two-part series, we take a look at how successful Drupal 8 has been. In the second, we&#39;ll investigate its future value and the cost of developing on older platforms.
+
                 &lt;a href=&quot;https://savaslabs.com/2017/10/27/drupal-8-turns-2.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
