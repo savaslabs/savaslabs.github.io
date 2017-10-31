@@ -2,16 +2,6 @@
   {% if page.comments_enabled == 0 %}
   <p class="region--comments--disabled">Comments are disabled for this post.</p>
   {% else %}
-  <div class="expander">
-    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander--hidden">
-      <p id="comments-trigger">Comments</p>
-    </a>
-    <div id="js-expander-content" class="expander-content region">
-
-      <!-- If there are existing comments, output them here. -->
-      <div id="region--comments__comments" class="region--comments__comments"></div>
-      {% include components/form--comment.html %}
-    </div>
-  </div>
+  <div id="js-comments"></div>
   {% endif %}
 </div>
