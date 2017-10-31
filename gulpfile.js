@@ -150,9 +150,6 @@ gulp.task('build:scripts:global', function() {
         .pipe(concat('main.js'))
         .pipe(uglify())
 
-        // We need to add front matter so Jekyll will process variables.
-        .pipe(appendPrepend.prependFile('./_assets/gulp_config/front-matter.txt'))
-
         // Only place in `assets` because Jekyll needs to process the file.
         .pipe(gulp.dest(paths.jekyllJsFiles))
         .on('error', gutil.log);
@@ -189,8 +186,11 @@ gulp.task('build:scripts:comments', function() {
     return gulp.src([
         paths.jsFiles + '/comments.js'
     ])
+        // We need to add front matter so Jekyll will process variables.
+      .pipe(appendPrepend.prependFile('./_assets/gulp_config/front-matter.txt'))
+
+      // Only place in `assets` because Jekyll needs to process the file.
       .pipe(gulp.dest(paths.jekyllJsFiles))
-      .pipe(gulp.dest(paths.siteJsFiles))
       .on('error', gutil.log);
 });
 
@@ -482,7 +482,7 @@ gulp.task('serve', ['build:local'], function() {
     );
 
     // Watch comment app files.
-    gulp.watch('_comments-app/app/**/*', ['build:scripts:watch']);
+    gulp.watch('_comments-app/**/*', ['build:scripts:watch']);
 
     // Watch image files; changes are piped to browserSync.
     gulp.watch('_assets/img/**/*', ['build:images']);

@@ -33,4 +33,9 @@ category: Components
 .flash-notice,
 .flash-success {
   color: $dark-teal;
+  transition: all ease-in-out 2s;
+
+  &.hide {
+    opacity: 0;
+  }
 }

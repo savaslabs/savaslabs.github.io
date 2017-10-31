@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Comments from './Comments';
 import CommentForm from './CommentForm';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -19,8 +19,8 @@ class App extends React.Component {
     this.setState(function () {
       return {
         newComment: true
-      }
-    })
+      };
+    });
   }
   showCommentForm() {
     this.setState({ showForm: true });
@@ -45,7 +45,7 @@ class App extends React.Component {
           }
         </div>
       </div>
-    )
+    );
   }
 }
 
