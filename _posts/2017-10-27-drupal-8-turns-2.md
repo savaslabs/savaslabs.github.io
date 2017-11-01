@@ -42,13 +42,13 @@ Before DrupalCon North America in May 2016 in New Orleans, Drupal founder and cu
 
 Many in the community contested the veracity of his optimism in the article's comments and I [commended Dries](https://dri.es/how-is-drupal-8-doing#comment-125541) (yes that's me and not [him](https://twitter.com/MadDogUnleashed), and definitely not [him](http://www.tvguide.com/news/apprentice-trump-russo-39885/)) for facilitating an open conversation that elicited a broad perspective.
 
-About a month later, some six month afters Drupal 8 was released, Savas Labs attended DrupalCon NOLA.
+About a month later, some six months after Drupal 8 was released, Savas Labs attended DrupalCon NOLA.
 
 {% twitter https://twitter.com/Savas_Labs/status/729504649233899521 %}
 
 During the [perennial "Driesnote,"](https://youtu.be/Ksp5JVFryEg?t=464) Dries continued to present Drupal 8 as well on its way to match if not exceed the success of Drupal 7.
 
-> I really truly believe, Drupal 8 will take off. My guess is that, by the end of this year [2016] Drupal 8 will serve an escape velocity... it will become the de facto standard.
+> I really truly believe, Drupal 8 will take off. My guess is that by the end of this year [2016] Drupal 8 will serve an escape velocity... it will become the de facto standard.
 
 and
 
@@ -119,7 +119,7 @@ If an organization doesn't heed the security warnings, and doesn't find enough v
 
 ### An answer to the Drupal 6 problem
 
-In addition to our experience, the usage data show many organizations did not plan sufficiently to upgrade from Drupal 6 to 7 or 8 upon Drupal 8's release. Recognizing that, a Drupal agency My Drop Wizard set up [long-term security support](https://www.mydropwizard.com/drupal-6-lts) for the many Drupal 6 sites that were not ready for upgrade to Drupal 8. It's debatable whether or not this was a good thing for the community. People forced to change, often will change sooner than they would otherwise, but they may resent you for it. Conversely, the you'd be hard-pressed to find an MDW client who didn't experience anxiety relief when offered an inertia-compliant alternative.
+In addition to our experience, the usage data show many organizations did not plan sufficiently to upgrade from Drupal 6 to 7 or 8 upon Drupal 8's release. Recognizing that, a Drupal agency My Drop Wizard set up [long-term security support](https://www.mydropwizard.com/drupal-6-lts) for the many Drupal 6 sites that were not ready to upgrade to Drupal 8. It's debatable whether or not this was a good thing for the community. People forced to change, often will change sooner than they would otherwise, but they may resent you for it. Conversely, you'd be hard-pressed to find an MDW client who didn't experience anxiety relief when offered an inertia-compliant alternative.
 
 Organizations that don't perceive opportunity in the value the new software provides will look at an upgrade strictly as an expense to avoid, likely citing topics we've covered here.
 
