@@ -6,8 +6,8 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Nov 2017 08:07:23 +0000</pubDate>
-    <lastBuildDate>Wed, 01 Nov 2017 08:07:23 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Nov 2017 00:39:01 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Nov 2017 00:39:01 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -46,7 +46,7 @@
 
 &lt;p&gt;Many in the community contested the veracity of his optimism in the article’s comments and I &lt;a href=&quot;https://dri.es/how-is-drupal-8-doing#comment-125541&quot;&gt;commended Dries&lt;/a&gt; (yes that’s me and not &lt;a href=&quot;https://twitter.com/MadDogUnleashed&quot;&gt;him&lt;/a&gt;, and definitely not &lt;a href=&quot;http://www.tvguide.com/news/apprentice-trump-russo-39885/&quot;&gt;him&lt;/a&gt;) for facilitating an open conversation that elicited a broad perspective.&lt;/p&gt;
 
-&lt;p&gt;About a month later, some six month afters Drupal 8 was released, Savas Labs attended DrupalCon NOLA.&lt;/p&gt;
+&lt;p&gt;About a month later, some six months after Drupal 8 was released, Savas Labs attended DrupalCon NOLA.&lt;/p&gt;
 
 &lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We have arrived &lt;a href=&quot;https://twitter.com/hashtag/DrupalCon?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#DrupalCon&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/NOLA?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#NOLA&lt;/a&gt; &lt;a href=&quot;https://twitter.com/DrupalConNA?ref_src=twsrc%5Etfw&quot;&gt;@DrupalConNA&lt;/a&gt;!!!! &lt;a href=&quot;https://twitter.com/hashtag/yesfilter?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#yesfilter&lt;/a&gt; &lt;a href=&quot;https://t.co/RlkNAu99nB&quot;&gt;pic.twitter.com/RlkNAu99nB&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@Savas_Labs) &lt;a href=&quot;https://twitter.com/Savas_Labs/status/729504649233899521?ref_src=twsrc%5Etfw&quot;&gt;May 9, 2016&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -55,7 +55,7 @@
 &lt;p&gt;During the &lt;a href=&quot;https://youtu.be/Ksp5JVFryEg?t=464&quot;&gt;perennial “Driesnote,”&lt;/a&gt; Dries continued to present Drupal 8 as well on its way to match if not exceed the success of Drupal 7.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;I really truly believe, Drupal 8 will take off. My guess is that, by the end of this year [2016] Drupal 8 will serve an escape velocity… it will become the de facto standard.&lt;/p&gt;
+  &lt;p&gt;I really truly believe, Drupal 8 will take off. My guess is that by the end of this year [2016] Drupal 8 will serve an escape velocity… it will become the de facto standard.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;and&lt;/p&gt;
@@ -133,7 +133,7 @@
 
 &lt;h3 id=&quot;an-answer-to-the-drupal-6-problem&quot;&gt;An answer to the Drupal 6 problem&lt;/h3&gt;
 
-&lt;p&gt;In addition to our experience, the usage data show many organizations did not plan sufficiently to upgrade from Drupal 6 to 7 or 8 upon Drupal 8’s release. Recognizing that, a Drupal agency My Drop Wizard set up &lt;a href=&quot;https://www.mydropwizard.com/drupal-6-lts&quot;&gt;long-term security support&lt;/a&gt; for the many Drupal 6 sites that were not ready for upgrade to Drupal 8. It’s debatable whether or not this was a good thing for the community. People forced to change, often will change sooner than they would otherwise, but they may resent you for it. Conversely, the you’d be hard-pressed to find an MDW client who didn’t experience anxiety relief when offered an inertia-compliant alternative.&lt;/p&gt;
+&lt;p&gt;In addition to our experience, the usage data show many organizations did not plan sufficiently to upgrade from Drupal 6 to 7 or 8 upon Drupal 8’s release. Recognizing that, a Drupal agency My Drop Wizard set up &lt;a href=&quot;https://www.mydropwizard.com/drupal-6-lts&quot;&gt;long-term security support&lt;/a&gt; for the many Drupal 6 sites that were not ready to upgrade to Drupal 8. It’s debatable whether or not this was a good thing for the community. People forced to change, often will change sooner than they would otherwise, but they may resent you for it. Conversely, you’d be hard-pressed to find an MDW client who didn’t experience anxiety relief when offered an inertia-compliant alternative.&lt;/p&gt;
 
 &lt;p&gt;Organizations that don’t perceive opportunity in the value the new software provides will look at an upgrade strictly as an expense to avoid, likely citing topics we’ve covered here.&lt;/p&gt;
 
