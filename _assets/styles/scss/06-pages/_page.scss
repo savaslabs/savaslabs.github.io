@@ -1,0 +1,16 @@
+/**
+ * @file
+ *
+ * Styles for basic pages.
+ */
+
+.page--basic {
+  .page--basic__content {
+    padding: 3em 1em;
+
+    @include grid-media($large-screen-up) {
+      @include grid-column(8);
+      @include grid-shift(2);
+    }
+  }
+}

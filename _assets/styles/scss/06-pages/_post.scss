@@ -46,8 +46,6 @@
     }
 
     .region--post-content {
-      color: $dark-teal;
-      word-wrap: break-word;
 
       // Add left & right padding to post body on large screens to keep text
       // width at a readable level, 680-730px. See _images--blog-post.scss for
@@ -68,33 +66,10 @@
         padding: 0 8em;
       }
 
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-weight: 400;
-      }
-
       .caption {
         color: $grey;
         font-style: italic;
       }
-
-      p,
-      ol,
-      ul {
-        font-family: $post-font;
-        font-size: 1.125em;
-        line-height: 1.625;
-        margin-bottom: 1em;
-      }
-
-      li {
-        margin-bottom: .325em;
-      }
-
-
     }
   }
 
