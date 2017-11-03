@@ -3,8 +3,8 @@ layout: page
 title: Director of Marketing
 permalink: "/jobs/director-of-marketing/"
 excerpt: Chris needs to put something here
-cta_heading: Join our team
-cta_paragraph: Interested in working with Savas Labs? Contact us today.
+cta_heading: Join Our Team
+cta_paragraph: To apply for this position, visit our job application website.
 cta_link: https://savas-labs.breezy.hr/
 cta_link_text: Apply Now
 cta_color: orange
@@ -47,4 +47,3 @@ Savas Labs will conduct outbound prospecting to help compliment inbound efforts.
 
 - Equip prospects with resources required to successfully pursue prospects
 - Analyze and share patterns in high-quality leads to pursue
-

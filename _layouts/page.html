@@ -3,8 +3,9 @@ layout: default
 ---
 <div class="page--basic">
   {% if page.hero_region %}
-  {% capture hero_region %}regions/{{ page.hero_region }}{% endcapture %}
-  {% include hero_region %}
+  {% assign hero_region = 'regions/' | append: page.hero_region %}
+  {% include {{ hero_region }} %}
+  <h1 class="page--basic__title heading--bold c-magenta">{{ page.title }}</h1>
   {% else %}
   {% include regions/banner--heading.html heading=page.title %}
   {% endif %}
