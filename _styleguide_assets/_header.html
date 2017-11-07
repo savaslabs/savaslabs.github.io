@@ -14,7 +14,7 @@
 
     <meta name="description" content="A style guide and component library for Savas Labs">
   </head>
-  <body class="sg-body <%= 'sg-home' if title.length == 0 %>">
+  <body class="sg-body <%= 'sg-basic-page' if title.length == 0 %>">
     <header class="region--header sg-header" role="banner">
       <div class="region--header__wrapper">
 
@@ -28,11 +28,12 @@
         <!-- Main menu. -->
         <nav role="navigation" class="header-navigation">
           <ul id="js-navigation-menu" class="header-navigation__menu show">
-            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title.length == 0 %>"><a href="index.html">Intro</a></li>
-            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'colors' %>"><a href="colors.html">Colors</a></li>
-            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'Typography' %>"><a href="typography.html">Typography</a></li>
-            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'Components' %>"><a href="components.html">Components</a></li>
-            <li class="header-navigation__menu-link <%= 'header-navigation__active-nav-item' if title == 'Regions' %>"><a href="regions.html">Regions</a></li>
+            <li class="header-navigation__menu-link"><a href="index.html">Intro</a></li>
+            <li class="header-navigation__menu-link"><a href="colors.html">Colors</a></li>
+            <li class="header-navigation__menu-link"><a href="typography.html">Typography</a></li>
+            <li class="header-navigation__menu-link"><a href="components.html">Components</a></li>
+            <li class="header-navigation__menu-link"><a href="regions.html">Regions</a></li>
+            <li class="header-navigation__menu-link"><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
       </div>
@@ -40,13 +41,11 @@
 
     <section class="sg-content">
       <div class="sg-outer-container">
+        <% if title.length != 0 %>
         <div class="sg-content__title">
-          <% if title.length == 0 %>
-          <h1 class="sg-content__title__title heading--underline--orange">Savas Labs Front End Style Guide</h1>
-          <% else %>
           <h1 class="sg-content__title__title heading--underline--orange"><%= title %></h1>
-          <% end %>
         </div>
+        <% end %>
         <% if @blocks.length > 0 %>
         <div class="sg-content__toc">
           <div class="sg-content__content__menu">
@@ -63,4 +62,3 @@
         <% end %>
         <div class="sg-content__content">
           <div class="sg-content__content__body">
-

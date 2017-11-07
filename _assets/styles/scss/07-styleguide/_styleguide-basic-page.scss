@@ -1,0 +1,62 @@
+/**
+ * @file
+ *
+ * Styles for the style guide home page and other text pages.
+ *
+ * We're mimicking the text styles from blog post pages.
+ */
+
+.sg-basic-page {
+  .sg-content .sg-content__content {
+    color: $dark-teal;
+    padding-top: 0;
+    word-wrap: break-word;
+
+    .sg-content__content__body {
+      max-width: 800px;
+    }
+
+    // Add margin top for headings.
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $magenta;
+      margin-top: 1.5em;
+    }
+
+    // Add underline style to h2s.
+    h2 {
+      @include heading-underline();
+    }
+
+    p,
+    ol,
+    ul {
+      font-family: $post-font;
+      font-size: 1.125em;
+      line-height: 1.625;
+      margin-bottom: 1em;
+    }
+
+    li {
+      margin-bottom: .325em;
+    }
+
+    .caption {
+      color: $grey;
+      font-style: italic;
+    }
+  }
+
+  h1 {
+    @include heading-underline($orange);
+  }
+
+  .codeBlock {
+    margin-bottom: $base-spacing;
+  }
+
+
+}
