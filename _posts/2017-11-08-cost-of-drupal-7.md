@@ -105,7 +105,7 @@ This is a fairly natural outcome given the possibilities afforded by a more stru
 
 ##### Drupal 6 or 7 custom development is especially expensive
 
-However, perhaps the **most important point** is that you may be doubling your efforts for the final time if you're doing custom development on Drupal 6 or 7, since it will invariably need to be rewritten at that same 80-20 rate we mentioned earlier. Given the commitment to easy upgrades and guidelines for backwards compatibility, it's quite likely that custom code written for Drupal 8 will be highly portable to Drupal 9 and 10 that won't require an arduous rewrite.
+However, perhaps the **most important point** is that you may be doubling your efforts for the final time if you're doing custom development on Drupal 6 or 7, since it will invariably need to be rewritten to work on Drupal 8 with the same 80-20 rate we mentioned earlier. Given the commitment to easy upgrades and guidelines for backwards compatibility, it's quite likely that custom code written for Drupal 8 will be highly portable to Drupal 9 and 10 that won't require an arduous rewrite.
 
 ![A Drupal 6 house]({{ site.url }}/assets/img/blog/house-for-drupal-6.jpg)<br>
 <span class="caption"> Not our actual house, and it's not _this_ bad.</span>
