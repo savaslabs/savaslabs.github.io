@@ -14,7 +14,7 @@ drupal_planet_summary: |
 
 Drupal 8's official release was [nearly two years ago](https://www.drupal.org/blog/drupal-800-released), and many ask how is it doing? Has it lived up to its ambition to revolutionize Drupal websites?
 
-In the first of a two-part series, we'll provide our insight into the evolution of Drupal 8 over its first two years in the wild. In part two, we'll look at important factors to consider in your Drupal investments going forward.
+In the first of a [two-part series](/2017/11/08/cost-of-drupal-7.html), we'll provide our insight into the evolution of Drupal 8 over its first two years in the wild. In [part two])(/2017/11/08/cost-of-drupal-7.html), we'll look at important factors to consider in your Drupal investments going forward.
 
 ## (Drupal) Change is hard
 
@@ -60,10 +60,6 @@ According to the [usage statistics](https://www.drupal.org/project/usage/drupal)
 
 ![drupal stats d8]({{ site.url }}/assets/img/blog/drupal-version-graph.png)
   <span class="caption"> A graph started by [Angie Byron of Acquia](https://docs.google.com/spreadsheets/d/1ETrxAEHgLepeCR8WhuMDrWba1IKXJGd32Lq0hh5szjs/edit#gid=93393428) that I updated to present. <br>
-
-<!-- Not sure it's helpful - or maybe link of somewhere if you have the dates <iframe width="100%" height="600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRrWmJhA55RuXDLTrN03W1MDb8wEuWsCMrj4Ne2yxFdJBkdIT2kkH4uxIp4_nQT7rTc5GJsrxRATqH/pubhtml?gid=93393428&amp;single=true&amp;widget=true&amp;headers=false"></iframe>      -->
-
-<!-- ![drupal stats d7]({{ site.url }}/assets/img/blog/drupal-7-adoption.png) -->
 
 When Drupal 7 was released on January 5, 2011, there were already more Drupal 7 sites than sites powered by the major version two releases prior: Drupal 5 (A). The same feat for Drupal 8 took over nine months after its release to achieve (C). Total Drupal 7 sites eclipsed total sites of its predecessor version (6) about 13 months after the release of Drupal 7 (B). After nearly 2 years from the release of Drupal 8, it has not yet eclipsed Drupal 7 installations, and at present there are over 700,000 _more_ Drupal 7 sites than Drupal 8.
 
@@ -125,5 +121,5 @@ Organizations that don't perceive opportunity in the value the new software prov
 
 ## Takeaways
 
-Through experience and analysis, we see there are many understandable and justifiable reasons why many organizations haven't yet upgraded to Drupal 8. Now that we've done the hard reflection, the good news is that the present is a much brighter place for not only Drupal 8 but all future versions of Drupal. We have made it through most of the difficult growing pains, and there's great reason to believe that the community has invested wisely in the future. In part two, we will cover the costs of investing in Drupal 7, and why it's probably time to move to Drupal 8. Stay tuned!
+Through experience and analysis, we see there are many understandable and justifiable reasons why many organizations haven't yet upgraded to Drupal 8. Now that we've done the hard reflection, the good news is that the present is a much brighter place for not only Drupal 8 but all future versions of Drupal. We have made it through most of the difficult growing pains, and there's great reason to believe that the community has invested wisely in the future. In [part two](/2017/11/08/cost-of-drupal-7.html), we cover the costs of investing in Drupal 7, and why it's probably time to move to Drupal 8.
 
