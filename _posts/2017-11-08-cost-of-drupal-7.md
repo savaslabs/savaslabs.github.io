@@ -49,18 +49,11 @@ In developing Drupal 8, perhaps for the first time, the Drupal leadership [took 
 1. [Accessibility at lower cost](https://www.drupal.org/8/usability): Accessibility efforts, though not prioritized by all, continue to gain traction as we continue to expand our ability to [be inclusive](/company/mission-and-values/#be-inclusive). We've seen clients threatened with lawsuits over not adhering to accessibility standards. Whether motivated by benevolence or risk-aversion, accessibility should be on your radar, and it's easier in Drupal 8.
 1. [Multilingual in core](http://www.drupal8multilingual.org/): With a cohesive system now in core, we have been able to build a [couple of](https://www.durhamatletico.com/) [multilingual sites](http://howsyourbabync.org/) with relative ease, not having to dedicate substantial additional time to the translation component.
 
-<!-- @todo: Google Tranlsate HYB and DA it for now -->
-<!-- @todo: Fix Kosta's , header, footer links to Spanish and "about" in header "championship partners" and "sponsors" -->
-
 > Drupal 8 multilingual is a world of difference. What would take 22 or more modules in Drupal 7 you would do with 4 (and all in core). - @kristen_pol
-
-<!-- @todo: how best to cite an author with a quote? I don't do it consistently   -->
 
 ### WIIFM? Performance.
 
 If you take performance seriously, [which you should](https://blog.kissmetrics.com/loading-time/), there's a lot to like about Drupal 8. Sticking with the theme of sophistication, Drupal 8 provides a much more granular ability to cache specific components than its predecessors. And as we know in the high-performance web world, [cache](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) [is](http://blog.catchpoint.com/2017/03/13/caching-web-performance/) [king](https://www.digitalocean.com/community/tutorials/web-caching-basics-terminology-http-headers-and-caching-strategies). When Drupal 8 first came out, a leading Acquia engineer showed some [mixed results](https://www.jeffgeerling.com/blog/2016/yes-drupal-8-slower-drupal-7-heres-why) on Drupal 8 performance. The heavier codebase invariably means having to swim upstream to make it outperform the lighter codebase in Drupal 7, but I'm happy to say the architects had their flippers on when working through these challenges. Take these two fundamental points:
-
-<!-- @todo: Did he comment back yet on my question -->
 
 1. Regardless of how fast the underlying code executes, what matters to users is perceived performance, i.e. how long they have to wait to interact with the page. Perceived delay has been drastically reduced by an experimental-turned-core module (more on that later) called [BigPipe](https://www.drupal.org/docs/8/core/modules/bigpipe/overview). BigPipe loads components of a page in the order in which a user is expected to interact with it while delivering more expensive components as they're available. This breaks with the tradition of all-or-nothing webpages served by Drupal that were either in the cache or not, lending itself to a Facebook-like experience, which is where [BigPipe came from](https://www.facebook.com/notes/facebook-engineering/bigpipe-pipelining-web-pages-for-high-performance/389414033919/).<br><br>
  ![GIF of Drupal 8 BigPipe Video]({{ site.url }}/assets/img/blog/bigpipe-in-drupal-8.gif)<br>
@@ -87,8 +80,6 @@ Just like happy customers tend to be repeat customers, [happier developers](http
 
 There are a few improvements in Drupal 8 that make life _substantially_ better for developers. The [Configuration Management Initiative](https://www.drupal.org/docs/8/configuration-management/managing-your-sites-configuration) was a boon to developers who struggled with a module called "features" which was not designed to do what most of us used it for. The CMI addresses the previous workaround, rife with inconsistencies, of moving site configuration from development to staging and production environments. Although it may seem trivial, developers _love this better system_ in Drupal 8, and it means more efficient development, therefore higher ROI.
 
-<!-- @todo: Get team feedback on this topic. Include composer too? It seems with both there have been some difficulties. Anything else? -->
-
 #### Proudly found elsewhere / not invented here / getting off the island
 
 A primary Drupal 8 philosophy that has largely been successful, but yet to fully bear fruit, is the concept to drastically reduce "Drupalisms" that had proven a challenge for newcomers to the system who had to learn a suite of things specific to only Drupal. The proudly found elsewhere paradigm seeks to mitigate this by leveraging the best of other open source tools when possible rather than reinvent the wheel. A few of the tools Drupal 8 now exploits are [Symfony components](https://symfony.com/), [Twig templating engine](https://twig.symfony.com/), and [Composer Dependency Manager](https://getcomposer.org/). This "borrowing" has two positive consequences: 1) it reduces the workload for Drupal core contributors by utilizing what's freely available and well vetted through other communities, 2) it allows people familiar with those other frameworks a smoother onramp to productivity in Drupal. I believe we haven't yet seen a majority of the benefit to the Drupal 8 project from the many people who were already versed in Symfony and TWIG before working with Drupal.
@@ -96,8 +87,6 @@ A primary Drupal 8 philosophy that has largely been successful, but yet to fully
 To quote Angie Byron for the thousandth time ([full video here](https://youtu.be/wWnhfTSkmoU?t=386)):
 
 > For people who are classically trained or have experience in other languages, Drupal 8 is going to make a lot more sense to them than Drupal 7 did. We're just falling more in line with what the larger people are doing… within the broader PHP community.
-
-<!-- @todo: Ask Anne how best to do [sic] quotes. She didn't mean "large people" she meant "broader community" -->
 
 ### WIIFM? Cost savings.
 
