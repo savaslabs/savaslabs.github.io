@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/savaslabs/savaslabs.github.io.svg?branch=source)](https://travis-ci.org/savaslabs/savaslabs.github.io)
+[![Build Status](https://travis-ci.org/savaslabs/savaslabs.github.io.svg?branch=source)](https://travis-ci.org/savaslabs/savaslabs.github.io) [![Maintainability](https://api.codeclimate.com/v1/badges/c1e3bbe763eb557e9ad7/maintainability)](https://codeclimate.com/github/savaslabs/savaslabs.github.io/maintainability)
 
 This is the website for [Savas Labs](https://savaslabs.com).
 

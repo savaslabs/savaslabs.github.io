@@ -1,0 +1,39 @@
+---
+engines:
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+  css-lint:
+    enabled: true
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
+  scss-lint:
+    enabled: true
+ratings:
+  paths:
+  - "**.md"
+  - "**.css"
+  - "**.scss"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+  - "**.rb"
+exclude_paths:
+- node_modules/
+- vendor/
+- _site/
+- _assets/styles/scss/00-lib/
