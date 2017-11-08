@@ -6,10 +6,7 @@ engines:
     enabled: true
     config:
       languages:
-      - ruby
       - javascript
-      - python
-      - php
   css-lint:
     enabled: true
   eslint:
@@ -25,15 +22,18 @@ ratings:
   - "**.md"
   - "**.css"
   - "**.scss"
-  - "**.inc"
   - "**.js"
   - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
 exclude_paths:
 - node_modules/
 - vendor/
 - _site/
+- assets
+- .sass-cache
 - _assets/styles/scss/00-lib/
+- savas_wordlist.txt
+- _assets/js/leaflet/leaflet-providers.js
+- _assets/js/comments.js
+- _assets/js/global/lib
+- .idea
+- Gemfile*

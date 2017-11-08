@@ -1,3 +1,4 @@
+/*eslint-env jquery*/
 // Mobile menu.
 $(document).ready(
   function () {
