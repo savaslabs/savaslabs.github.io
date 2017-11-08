@@ -76,9 +76,9 @@ blockquote {
 
   // Attribution.
   span {
+    color: $grey;
     display: block;
     margin-top: .5em;
-    color: $grey;
 
     @include grid-media($medium-screen-up) {
       margin-left: 50%;
