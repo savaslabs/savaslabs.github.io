@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The cost of investing in Drupal 7: why it's time for Drupal 8
+title: "The cost of investing in Drupal 7 - why it's time for Drupal 8"
 date: 2017-11-08
 author: Chris Russo
 tags: drupal drupal8 drupal-planet
@@ -49,7 +49,7 @@ In developing Drupal 8, perhaps for the first time, the Drupal leadership [took 
 1. [Accessibility at lower cost](https://www.drupal.org/8/usability): Accessibility efforts, though not prioritized by all, continue to gain traction as we continue to expand our ability to [be inclusive](/company/mission-and-values/#be-inclusive). We've seen clients threatened with lawsuits over not adhering to accessibility standards. Whether motivated by benevolence or risk-aversion, accessibility should be on your radar, and it's easier in Drupal 8.
 1. [Multilingual in core](http://www.drupal8multilingual.org/): With a cohesive system now in core, we have been able to build a [couple of](https://www.durhamatletico.com/) [multilingual sites](http://howsyourbabync.org/) with relative ease, not having to dedicate substantial additional time to the translation component.
 
-> Drupal 8 multilingual is a world of difference. What would take 22 or more modules in Drupal 7 you would do with 4 (and all in core). - @kristen_pol
+> Drupal 8 multilingual is a world of difference. What would take 22 or more modules in Drupal 7 you would do with 4 (and all in core). <span>- @kristen_pol</span>
 
 ### WIIFM? Performance.
 
