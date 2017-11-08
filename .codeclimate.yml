@@ -1,0 +1,39 @@
+---
+engines:
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  css-lint:
+    enabled: true
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
+  scss-lint:
+    enabled: true
+ratings:
+  paths:
+  - "**.md"
+  - "**.css"
+  - "**.scss"
+  - "**.js"
+  - "**.jsx"
+exclude_paths:
+- node_modules/
+- vendor/
+- _site/
+- assets
+- .sass-cache
+- _assets/styles/scss/00-lib/
+- savas_wordlist.txt
+- _assets/js/leaflet/leaflet-providers.js
+- _assets/js/comments.js
+- _assets/js/global/lib
+- .idea
+- Gemfile*
