@@ -53,7 +53,7 @@ $(document).ready(
   function() {
     const currentHref = document.location.pathname.substr(12);
     if (currentHref) {
-      $('#js-navigation-menu').find('a[href^="' + currentHref + '"]').closest('.header-navigation__menu-link').addClass('header-navigation__active-nav-item');
-      $('#js-footer-menu').find('a[href^="' + currentHref + '"]').closest('.footer-navigation__menu-link').addClass('footer-navigation__active-nav-item');
+      $('.sg-header-menu').find('a[href^="' + currentHref + '"]').closest('.header-navigation__menu-link').addClass('header-navigation__active-nav-item');
+      $('.sg-footer-menu').find('a[href^="' + currentHref + '"]').closest('.footer-navigation__menu-link').addClass('footer-navigation__active-nav-item');
     }
   });
