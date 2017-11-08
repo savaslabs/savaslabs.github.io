@@ -18,8 +18,6 @@ In [part one](/2017/10/27/drupal-8-turns-2.html), we discussed how Drupal 8's ad
 ![Image of Drupal 8 adoption curve]({{ site.url }}/assets/img/blog/drupal-early-adopter-vs-majority.png)<br>
 <span class="caption"> Credit: Angie Byron AGAIN on ["Everything you need to know about the top 8 changes in Drupal 8"](https://www.slideshare.net/AcquiaInc/acquia-d8-webinar/58) from May 2015 </span>
 
-<!-- @todo: Should it have a lightened background to contrast the white better? -->
-
 Drupal 8 adoption is certainly no longer in the "early adopter" phase, yet we still haven't entered the "majority" phase. For most organizations _not yet_ powered by Drupal 8, our stance is: **it's probably time to upgrade**. The value you're missing out on with the newer software _is real_. However, perhaps less obviously, if you're investing in your Drupal 7 site beyond passive maintenance, you may well be doubling your long-term costs by deferring and exacerbating what will need to be refactored later. For organizations who have web staff, work with an agency, or do any non-trivial customization to their Drupal website, this applies to you.
 
 #### A disclaimer upfront
@@ -40,8 +38,7 @@ In exploring this deeper, let's start with the technical, and dig into the more 
 
 ### WIIFM? Features.
 
-It's fairly easy to find [information touting Drupal 8's strengths](https://www.fourkitchens.com/blog/digital-strategy/top-5-reasons-migrate-site-drupal-8/
-) around the web, and it's pretty straightforward that software we write today (and have been writing for 4 years) is superior to [software written 8.5 years ago](https://dri.es/drupal-7-code-freeze-september-1st) (or [10.5 years ago with Drupal 6](https://www.drupal.org/forum/deprecated/deprecated-drupal-newsletter/2007-06-06/the-drupal-newsletter-june-2007)). Let's look briefly at some high-impact improved features for site owners and admins.
+It's fairly easy to find information touting Drupal 8's strengths around the web, and it's pretty straightforward that software we write today (and have been writing for 4 years) is superior to [software written 8.5 years ago](https://dri.es/drupal-7-code-freeze-september-1st) (or [10.5 years ago with Drupal 6](https://www.drupal.org/forum/deprecated/deprecated-drupal-newsletter/2007-06-06/the-drupal-newsletter-june-2007)). Let's look briefly at some high-impact improved features for site owners and admins.
 
 #### Design/UX/Usability Improvements with Drupal 8
 
@@ -74,7 +71,7 @@ If you're made of time today, check out our [other articles we've written about 
 
 ### WIIFM? People.
 
-Anyone knows that behind any powerful movement are powerful people. To quote Dries, as I did in my Drupalcon talk in New Orleans:
+We know that behind any powerful movement are powerful people. To quote Dries, as I did in my Drupalcon talk in New Orleans:
 
 > fostering the Drupal community is actually more important than just managing the code base.
 
@@ -94,7 +91,7 @@ There are a few improvements in Drupal 8 that make life _substantially_ better f
 
 #### Proudly found elsewhere / not invented here / getting off the island
 
-A primary Drupal 8 philosophy that has largely been successful, but yet to fully bear fruit, is the concept to drastically reduce "Drupalisms" that had proven a challenge for newcomers to the system who had to learn a suite of things specific to only Drupal. The proudly found elsewhere paradigm seeks to mitigate this by leveraging the best of other open source tools when possible rather than reinvent the wheel. A few of the tools Drupal 8 now exploits are [Symfony’s HTTP Foundation classes](https://symfony.com/), [Twig templating engine](https://twig.symfony.com/), and [Composer Dependency Manager](https://getcomposer.org/). This "borrowing" has two positive consequences: 1) it reduces the workload for Drupal core contributors by utilizing what's freely available and well vetted through other communities, 2) it allows people familiar with those other frameworks a smoother onramp to productivity in Drupal. I believe we haven't yet seen a majority of the benefit to the Drupal 8 project from the many people who were already versed in Symfony and TWIG before working with Drupal.
+A primary Drupal 8 philosophy that has largely been successful, but yet to fully bear fruit, is the concept to drastically reduce "Drupalisms" that had proven a challenge for newcomers to the system who had to learn a suite of things specific to only Drupal. The proudly found elsewhere paradigm seeks to mitigate this by leveraging the best of other open source tools when possible rather than reinvent the wheel. A few of the tools Drupal 8 now exploits are [Symfony components](https://symfony.com/), [Twig templating engine](https://twig.symfony.com/), and [Composer Dependency Manager](https://getcomposer.org/). This "borrowing" has two positive consequences: 1) it reduces the workload for Drupal core contributors by utilizing what's freely available and well vetted through other communities, 2) it allows people familiar with those other frameworks a smoother onramp to productivity in Drupal. I believe we haven't yet seen a majority of the benefit to the Drupal 8 project from the many people who were already versed in Symfony and TWIG before working with Drupal.
 
 To quote Angie Byron for the thousandth time ([full video here](https://youtu.be/wWnhfTSkmoU?t=386)):
 
@@ -115,7 +112,7 @@ Continuing to invest in Drupal 7 (or earlier) can be costly in ways that may not
 
 To the surprise of the community, in an abrupt departure from business-as-usual in early 2017, Dries committed to ["easy upgrades forever"](https://dri.es/making-drupal-upgrades-easy-forever), starting with Drupal 8 of course. The short of it is Drupal 8 to 9 upgrades should be **far easier** (and less expensive) than any previous major version upgrade, and so will be from here on in. That means for those not yet on Drupal 8, you only have one final difficult upgrade left in your Drupal journey until the end of time.
 
-This is a fairly natural outcome given the possibilities afforded by a more structured, object-oriented architecture coupled with the growing desire to ease upgrade pain that has building for some time. Although the difficult, technical work remains to [flesh out exactly how this will be done](https://www.drupal.org/core/d8-bc-policy), the commitment from the top is worth putting a lot of stock in, and the community is well underway in putting this grand proclamation into technical reality. When upgrades are far easier, they will help rectify some of the sentiment of leaving the smaller sites behind, since major version upgrades will be a much less daunting task here on in.
+This is a fairly natural outcome given the possibilities afforded by a more structured, object-oriented architecture coupled with the growing desire to ease upgrade pain that has been building for some time. Although the difficult, technical work remains to [flesh out exactly how this will be done](https://www.drupal.org/core/d8-bc-policy), the commitment from the top is worth putting a lot of stock in, and the community is well underway in putting this grand proclamation into technical reality. When upgrades are far easier, they will help rectify some of the sentiment of leaving the smaller sites behind, since major version upgrades will be a much less daunting task here on in.
 
 ##### Drupal 6 or 7 custom development is especially expensive
 
