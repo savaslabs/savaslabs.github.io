@@ -80,86 +80,8 @@ To run the tests:
 
 ## Writing blog posts
 
-### Headings
-
-Your post title (stored in the post's front matter) will be an H1. Your
-top-level headings should be H2's (##), then H3's (###), etc.
-
-### Images
-
-You can include a featured image in the front matter using the `featured_image`
-and `featured_image_alt` keys. This will work for our site and for Drupal Planet.
-Please try to do this for every post!
-
-Blog images should be placed in
-`_/assets/img/blog`, but you should only include `/blog/[filename].jpg` in the
-front matter of your post.
-
-Lastly, please include `featured_image_width` and `featured_image_height` in
-pixels to satisfy Google's structured data requirements.
-
-#### Image placement and size within the post body
-
-You can add images with the following markdown syntax:
-
-```
-![Image alt text here]({{ site.url }}/assets/img/blog/image-name.jpg){:class="blog-image-full-width"}
-```
-
-You can add following classes to contextual images:
-- `class="blog-image-full-width"` - image will span the whole width of the post
-- `class="blog-image-left"` - image will float left
-- `class="blog-image-right"` - image will float right
-
-Images without class will use default styling which is 100% post width.
-
-Captions can be added to full width images by adding `<span class="caption">Caption</span>` right under the image tag.
-
-To add caption to floated images wrap <img> tag in a div and give it a class. E.g.
-
-``` html
-<div class="blog-image-left">
- <img src="/assets/img/blog/{img}" alt="{alt}">
-  <span class="caption">{caption}</span>
-</div>
-```
-
-### Drupal planet posts
-
-For Drupal planet posts, i.e. those that include the `drupal-planet` tag, please include the `drupal_planet_summary` option to your front matter.
-
-## Syntax Highlighting
-
-Since updating to Jekyll 3.0.2 which uses Kramdown/Rouge, to use syntax
-highlighting in a post you just need to use backticks (similar to GitHub or
-Slack highlighting).
-
-Special tips:
-
-1. You can include the language name after the first set of backticks with no
-space e.g. ```bash
-2. The syntax block must be proceeded and followed by blank lines.
-3. For php you must including an opening php tag to get proper highlighting.
-4. To display raw Liquid code, you'll need to wrap your code in {% raw %} and
-{% endraw %} tags.
-
-## Tags
-
-To add a new tag, complete the following:
-
-1. Add the tag to _data/tags.yml.
-2. Add a new markdown file for the tag in blog/tag. This creates a page for posts with that tag.
-3. Add the tag to the front matter of your post.
-
-## Twitter widget
-
-We're using the jekyll-twitter-plugin to allow us to use a simple Liquid tag to
-add Twitter widgets to blog posts or other pages. Use the following format
-within HTML or markdown files:
-
-```
-{% twitter https://twitter.com/Savas_Labs/status/729504649233899521 %}
-```
+Visit [our style guide](https://savaslabs.com/styleguide/blog.html) to read about how to construct
+a blog post and the standards we follow at Savas Labs.
 
 ## Comments
 

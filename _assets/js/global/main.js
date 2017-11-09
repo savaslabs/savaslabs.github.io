@@ -43,8 +43,17 @@ $(document).ready(
 $(document).ready(
   function () {
     'use strict';
-    $("article h2, article h3, article h4, article h5, article h6").filter("[id]").each(function () {
-      $(this).append('<a class="heading-link" href="#' + $(this).attr("id") + '"><i class="fa fa-link"></i></a>');
+    $('article h2, article h3, article h4, article h5, article h6').filter('[id]').each(function () {
+      $(this).append('<a class="heading-link" href="#' + $(this).attr('id') + '"><i class="fa fa-link"></i></a>');
     });
   });
 
+// Styleguide active nav item.
+$(document).ready(
+  function() {
+    const currentHref = document.location.pathname.substr(12);
+    if (currentHref) {
+      $('.sg-header-menu').find('a[href^="' + currentHref + '"]').closest('.header-navigation__menu-link').addClass('header-navigation__active-nav-item');
+      $('.sg-footer-menu').find('a[href^="' + currentHref + '"]').closest('.footer-navigation__menu-link').addClass('footer-navigation__active-nav-item');
+    }
+  });
