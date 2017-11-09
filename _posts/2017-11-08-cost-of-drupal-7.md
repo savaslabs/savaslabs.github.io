@@ -51,12 +51,9 @@ In developing Drupal 8, perhaps for the first time, the Drupal leadership [took 
 
 > Drupal 8 multilingual is a world of difference. What would take 22 or more modules in Drupal 7 you would do with 4 (and all in core). <span>- @kristen_pol</span>
 
-#### The API-first initiative
+#### RESTful possibilities
 
-One of the larger
-https://www.drupal.org/node/2757967#roadmap
-
-
+One of the developmental focuses of Drupal 8 we believe has tremendous impact on how organizations can maximize the value of their content is the [API-first Initiative](https://www.drupal.org/node/2757967). We will likely write an entire post about this in the future, but in short the initiative makes Drupal 8 much better equipped to serve as a central content repository that can expose content to many types of devices in the formats they require for display. Historically, Drupal has been pretty exclusively focused on producing HTML (one format) for a web browser (the device/software). Drupal 8 now treats Roku, iOS & Android Apps, video game systems and the web browser all as first-rate citizens for content consumption. As the number and variety of devices that connect to the web [continues to rapidly grow](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/), Drupal 8 can serve as a powerful hub and spoke that provides relevant content and experiences to end-users. You'd be remiss to snooze on this one.
 
 ### WIIFM? Performance.
 
