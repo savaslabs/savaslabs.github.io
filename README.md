@@ -80,7 +80,7 @@ To run the tests:
 
 ## Writing blog posts
 
-Visit https://savaslabs.com/styleguide/blog.html to read about how to construct
+Visit [our style guide](https://savaslabs.com/styleguide/blog.html) to read about how to construct
 a blog post and the standards we follow at Savas Labs.
 
 ## Comments
