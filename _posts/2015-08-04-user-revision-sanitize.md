@@ -73,7 +73,7 @@ to figure out once and for all, what was going on. So like any deep-dive, I
 fired up the trusty ol' debugger and discovered the aforementioned culprit.
 
 ## The solution to the _specific_ problem
-After consulting [Kosta](/team/kosta-harlan/), we agreed
+After consulting [Kosta](/company/kosta-harlan/), we agreed
 that the solution would be to write a [drush hook](https://www.drupal.org/node/2534638)
 for the `user_revision` module. This code would need to sanitize the `mail`
 field in the `user_revision` table and would be invoked when the `drush sqlsan`
@@ -103,7 +103,7 @@ is excellent as well. They all seemed to use
 [xdebug](http://xdebug.org/) and [PHPStorm](https://www.jetbrains.com/phpstorm/),
 and though I use PHPStorm, I have been using ZendDebugger for years, with
 reasonable success. But I _had_ been dissatisfied of late, and the rest of the
-[team](/team) uses xdebug anyway, so I figured it would be a safe switch,
+[team](/company) uses xdebug anyway, so I figured it would be a safe switch,
 which proved true. After having xdebug properly installed, you can
 [add a line](https://github.com/kostajh/dotfiles/blob/master/.bashrc#L85)
 to your `.bashrc` file to always make PHPStorm ready to listen for drush

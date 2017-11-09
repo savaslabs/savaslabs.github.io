@@ -49,7 +49,7 @@ Looking around the open source landscape for the right tool to build this app, w
 
 The entry point of our application are some [routing rules](https://github.com/savaslabs/squabble/blob/master/source/app/Http/routes.php) that determine what data to give back to the user when they visit a particular API endpoint.
 
-From there, the requests are processed in the [CommentController](https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php) — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the [News](/news) page to show the comment count per article).
+From there, the requests are processed in the [CommentController](https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php) — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the [blog](/blog) page to show the comment count per article).
 
 The application runs on one of our cloud servers on Linode, and uses a SQLite backend. Because the Lumen framework is very lean, and the application does relatively little, it's very fast — the `api/comments/count` call takes ~84 ms while loading all comments (`api/comments`) takes about 125 ms.
 

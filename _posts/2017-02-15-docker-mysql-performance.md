@@ -203,5 +203,5 @@ We've invested heavily in Docker for our development stack, and this workflow up
 
 [^1]: It's worth noting that there are [cool projects out there](https://github.com/juampynr/syncdb) for doing parallel imports of a SQL dump file which improve the import experience.
 
-[^2]: Hat tip to Tim Stallmann for taking a proof of concept and incorporating it into a [real-world project](/work/hptn-case-study/), from which many of the code samples here are drawn.
+[^2]: Hat tip to Tim Stallmann for taking a proof of concept and incorporating it into a [real-world project](/results/case-studies/hptn/), from which many of the code samples here are drawn.
 
