@@ -36,7 +36,7 @@ class Comment extends Component {
     return dom.body.textContent;
   }
   render () {
-    const commentText = this.decodeHtml(this.props.comment);
+    const commentText = Comment.decodeHtml(this.props.comment);
     return (
       <li className={this.props.class}>
         {this.props.savasian === '1' && <img src='/assets/img/logo.svg' className='comment__logo' alt='Savas Labs logo' />}
