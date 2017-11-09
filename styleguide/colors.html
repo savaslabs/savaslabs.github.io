@@ -27,12 +27,13 @@
 
         <!-- Main menu. -->
         <nav role="navigation" class="header-navigation">
-          <ul id="js-navigation-menu" class="header-navigation__menu show">
-            <li class="header-navigation__menu-link "><a href="index.html">Intro</a></li>
-            <li class="header-navigation__menu-link "><a href="colors.html">Colors</a></li>
-            <li class="header-navigation__menu-link "><a href="typography.html">Typography</a></li>
-            <li class="header-navigation__menu-link "><a href="components.html">Components</a></li>
-            <li class="header-navigation__menu-link "><a href="regions.html">Regions</a></li>
+          <ul id="js-navigation-menu" class="sg-header-menu header-navigation__menu show">
+            <li class="header-navigation__menu-link"><a href="index.html">Intro</a></li>
+            <li class="header-navigation__menu-link"><a href="colors.html">Colors</a></li>
+            <li class="header-navigation__menu-link"><a href="typography.html">Typography</a></li>
+            <li class="header-navigation__menu-link"><a href="components.html">Components</a></li>
+            <li class="header-navigation__menu-link"><a href="regions.html">Regions</a></li>
+            <li class="header-navigation__menu-link"><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
       </div>
@@ -40,11 +41,11 @@
 
     <section class="sg-content">
       <div class="sg-outer-container">
+        
         <div class="sg-content__title">
-          
           <h1 class="sg-content__title__title heading--underline--orange">Colors</h1>
-          
         </div>
+        
         
         <div class="sg-content__toc">
           <div class="sg-content__content__menu">
@@ -69,7 +70,6 @@
         
         <div class="sg-content__content">
           <div class="sg-content__content__body">
-
 <h1 id="1colors--primary" class="styleguide">Primary colors</h1>
 <p class="styleguide">The main color palette.</p>
 <div class="styleguide-color-chips">
@@ -222,17 +222,18 @@ Octopress, and adapted for our color palette.</p>
             <img src="images/logo-light.svg" alt="Savas Labs" class="savas-logo savas-logo--light">
           </a>
           <nav role="navigation" class="footer-navigation">
-            <ul class="footer-navigation__menu">
-              <li class="footer-navigation__menu-link "><a href="index.html">Intro</a></li>
-              <li class="footer-navigation__menu-link "><a href="colors.html">Colors</a></li>
-              <li class="footer-navigation__menu-link "><a href="typography.html">Typography</a></li>
-              <li class="footer-navigation__menu-link "><a href="components.html">Components</a></li>
-              <li class="footer-navigation__menu-link "><a href="regions.html">Regions</a></li>
+            <ul id="js-footer-menu" class="sg-footer-menu footer-navigation__menu">
+              <li class="footer-navigation__menu-link"><a href="index.html">Intro</a></li>
+              <li class="footer-navigation__menu-link"><a href="colors.html">Colors</a></li>
+              <li class="footer-navigation__menu-link"><a href="typography.html">Typography</a></li>
+              <li class="footer-navigation__menu-link"><a href="components.html">Components</a></li>
+              <li class="footer-navigation__menu-link"><a href="regions.html">Regions</a></li>
+              <li class="footer-navigation__menu-link"><a href="blog.html">Blog</a></li>
             </ul>
           </nav>
         </div>
         <div class="region--footer__main__contact">
-          <h4 class="region--footer__main__contact__title h5">Connect with us</h4>
+          <h3 class="region--footer__main__contact__title h5">Connect with us</h3>
           <a href="mailto:info@savaslabs.com">info@savaslabs.com</a>
           <p>(919) 432-4660</p>
           <address>
@@ -244,10 +245,12 @@ Octopress, and adapted for our color palette.</p>
         </div>
         <div class="region--footer__main__social">
           <div class="region--footer__main__social__icons">
-            <a href="https://github.com/savaslabs"><span class="fa fa-github fa-lg fa-2x"></span></a>
-            <a href="https://www.drupal.org/node/2466865"><i class="fa fa-drupal fa-lg fa-2x"></i></a>
-            <a href="https://twitter.com/savas_labs"><i class="fa fa-twitter fa-lg fa-2x"></i></a>
-            <a href="https://www.linkedin.com/company/savas-labs"><i class="fa fa-linkedin fa-lg fa-2x"></i></a>
+            <ul>
+              <li><a href="https://github.com/savaslabs"><i class="fa fa-github fa-lg fa-2x"></i><span class="sr-only">Savas Labs GitHub</span></a></li>
+              <li><a href="https://www.drupal.org/node/2466865"><i class="fa fa-drupal fa-lg fa-2x"></i><span class="sr-only">Savas Labs Drupal.Org</span></a></li>
+              <li><a href="https://twitter.com/savas_labs"><i class="fa fa-twitter fa-lg fa-2x"></i><span class="sr-only">Savas Labs Twitter</span></a></li>
+              <li><a href="https://www.linkedin.com/company/savas-labs"><i class="fa fa-linkedin fa-lg fa-2x"></i><span class="sr-only">Savas Labs LinkedIn</span></a></li>
+            </ul>
           </div>
           <div class="region--footer__main__social__twitter">
             <a class="twitter-timeline"  href="https://twitter.com/Savas_Labs" data-widget-id="720223236315815936">Tweets by @Savas_Labs</a>
