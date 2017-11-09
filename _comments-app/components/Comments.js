@@ -22,15 +22,30 @@ CommentFormLink.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
-function Comment (props) {
-  return (
-    <li className={props.class}>
-      {props.savasian === '1' && <img src='/assets/img/logo.svg' className='comment__logo' alt='Savas Labs logo' />}
-      <p className="comment__name"><span className="c-magenta">{props.name}</span> says:</p>
-      <p className="comment__date">{props.date}</p>
-      <p className="comment__text">{props.comment}</p>
-    </li>
-  );
+class Comment extends Component {
+  /**
+   * Convert encoded HTML before displaying a comment.
+   *
+   * @param commentText
+   */
+  static decodeHtml(commentText) {
+    const parser = new DOMParser;
+    const dom = parser.parseFromString(
+      '<!doctype html><body>' + commentText,
+      'text/html');
+    return dom.body.textContent;
+  }
+  render () {
+    const commentText = this.decodeHtml(this.props.comment);
+    return (
+      <li className={this.props.class}>
+        {this.props.savasian === '1' && <img src='/assets/img/logo.svg' className='comment__logo' alt='Savas Labs logo' />}
+        <p className="comment__name"><span className="c-magenta">{this.props.name}</span> says:</p>
+        <p className="comment__date">{this.props.date}</p>
+        <p className="comment__text">{commentText}</p>
+      </li>
+    );
+  }
 }
 
 Comment.propTypes = {
