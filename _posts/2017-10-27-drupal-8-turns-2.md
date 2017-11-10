@@ -10,7 +10,7 @@ featured_image_alt: "Drupal 7 outweighs Drupal 8 in 2016"
 drupal_planet_summary: |
   Drupal 8 has been around for almost two years. In the first of a two-part series, we take a look at how successful Drupal 8 has been. In the second, we'll investigate its future value and the cost of developing on older platforms.
 disclaimer: |
-  This article provides some criticism of rose-colored lens Dries used when evaluating Drupal 8's adoption in several instances in 2016. However, after having listened to the [#Driesnote at DrupalCon Vienna from September 2017](https://events.drupal.org/vienna2017/driesnote) in which he presents a more balanced analysis on Drupal 8, I realized my North-American-centric focus on DrupalCons limited my contemporary analysis. I recommend his talk. Ultimately, Dries and I come to the same place of optimism for the future using oddly similar language. Who knew?
+  This article provides some criticism of the rose-colored glasses Dries used when evaluating Drupal 8's adoption in several instances in 2016. However, after having listened to the [#Driesnote at DrupalCon Vienna from September 2017](https://events.drupal.org/vienna2017/driesnote) in which he presents a more balanced analysis on Drupal 8, I realized my North-American-centric focus on DrupalCons limited my contemporary analysis. I recommend his talk. Ultimately, Dries and I come to the same place of optimism for the future using oddly similar language. Who knew?
 ---
 
 Drupal 8's official release was [nearly two years ago](https://www.drupal.org/blog/drupal-800-released), and many ask how is it doing? Has it lived up to its ambition to revolutionize Drupal websites?
