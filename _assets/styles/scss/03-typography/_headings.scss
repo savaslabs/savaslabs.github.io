@@ -117,6 +117,7 @@ parent: headings
   font-family: $copytext-font;
 }
 
+// Styles for text-heavy pages like blog posts and job postings.
 article {
 
   // Add margin top for article content.
@@ -125,6 +126,8 @@ article {
   h4,
   h5,
   h6 {
+    color: $magenta;
+    font-weight: 400;
     margin-top: 1.5em;
   }
 
@@ -134,14 +137,7 @@ article {
   }
 }
 
-// Headings in blog post content should be magenta.
-.page--post__main {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: $magenta;
-  }
+// Blog post h1 should also be magenta.
+.page--post__main h1 {
+  color: $magenta;
 }

@@ -2,10 +2,22 @@
 layout: default
 ---
 <div class="page--basic">
-  <header class="page--basic__header">
-    <h1 class="page--basic__header__title">{{ page.title }}</h1>
-  </header>
+  {% if page.hero_region %}
+  {% assign hero_region = 'regions/' | append: page.hero_region %}
+  {% include {{ hero_region }} %}
+  <h1 class="page--basic__title heading--bold c-magenta">{{ page.title }}</h1>
+  {% else %}
+  {% include regions/banner--heading.html heading=page.title %}
+  {% endif %}
   <article class="page--basic__content">
     {{ content }}
   </article>
+  {% if page.cta_heading %}
+  {% include regions/cta.html
+    heading=page.cta_heading
+    paragraph=page.cta_paragraph
+    link=page.cta_link
+    link_text=page.cta_link_text
+    color=page.cta_color %}
+  {% endif %}
 </div>

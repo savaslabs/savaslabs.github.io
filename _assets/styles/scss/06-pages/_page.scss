@@ -1,0 +1,36 @@
+/**
+ * @file
+ *
+ * Styles for basic pages.
+ */
+
+.page--basic {
+  .page--basic__content {
+    padding: 1.5em 1em 3em;
+
+    @include grid-media($large-screen-up) {
+      @include grid-column(8);
+      @include grid-shift(2);
+    }
+  }
+
+  // For title under hero image.
+  .page--basic__title {
+    margin: 1.25em 0 .25em;
+    text-align: center;
+  }
+
+  // For banner title.
+  .region--banner--heading__text h1 {
+    margin: 0 auto;
+  }
+
+  .region--cta {
+    border-top: solid 1px $light-grey;
+
+    @include grid-media($large-screen-up) {
+      @include grid-column(8);
+      @include grid-shift(2);
+    }
+  }
+}

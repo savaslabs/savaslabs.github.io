@@ -40,6 +40,25 @@ body {
   font-family: $copytext-font;
 }
 
+// Styles for text-heavy pages like blog posts and job postings.
+article {
+  color: $dark-teal;
+  word-wrap: break-word;
+
+  p,
+  ol,
+  ul {
+    font-family: $post-font;
+    font-size: 1.125em;
+    line-height: 1.625;
+    margin-bottom: 1em;
+  }
+
+  li {
+    margin-bottom: .325em;
+  }
+}
+
 .paragraph--loud {
   @include paragraph-loud;
 }
