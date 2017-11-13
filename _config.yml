@@ -11,6 +11,9 @@ url: "https://savaslabs.com"
 comment_server_url: "https://squabble.savaslabs.com"
 comment_server_enabled: 1
 
+# Used to determine if Google Analytics should be tracking
+is_production: 1
+
 # Professional and social media links
 twitter_username: savas_labs
 github_username: savaslabs
