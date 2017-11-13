@@ -14,7 +14,7 @@ As Savas Labs’s first marketing hire, we’re looking for someone with the cre
 
 ## Contribute to Marketing Framework
 
-Savas Labs is a cohesive team of outstanding individuals with complementary expertise. We’re looking to greatly expand our reach in the Drupal to provide access to our services to the many that could greatly benefit from them. We’d like an expert to evaluate and enhance our current strategy to raise that awareness and turn it into an action plan.
+Savas Labs is a cohesive team of outstanding individuals with complementary expertise. We’re looking to greatly expand our reach in the Drupal realm to provide access to our services to the many that could greatly benefit from them. We’d like an expert to evaluate and enhance our current strategy to raise that awareness and turn it into an action plan.
 
 ### We’re looking for help to
 
@@ -22,7 +22,7 @@ Savas Labs is a cohesive team of outstanding individuals with complementary expe
 - Refine our contact strategy
 - Select CRM tools
 - Select marketing automation tools
-- improve our website's conversion of prospects
+- Improve our website's conversion of prospects
 
 ## Formulate and Execute Inbound Marketing Efforts
 
@@ -40,4 +40,4 @@ A majority of the marketing  will be establishing, implementing, iterating and i
 - Marketing automation systems
 - CRM systems
 
-Savas Labs is committed to fostering an inclusive work place. We encourage you to evaluate our [values](/company/mission-and-values/) and if they resonate with yours, we strongly encourages you to apply.
+Savas Labs is committed to fostering an inclusive work place. We encourage you to evaluate our [values](/company/mission-and-values/) and if they resonate with yours, we strongly encourage you to apply.
