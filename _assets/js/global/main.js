@@ -5,7 +5,7 @@ $(document).ready(
     'use strict';
     const $menuToggle = $('#js-mobile-menu').unbind();
     const $menu = $('#js-navigation-menu');
-    $menu.removeClass("show");
+    $menu.removeClass('show');
 
     $menuToggle.on(
       'click', function (e) {
@@ -24,9 +24,9 @@ $(document).ready(
 $(document).ready(
   function () {
     'use strict';
-    $('a[href*="#"]:not([href="#"])').click(function () {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
+    $('a[href*="#"]').not('[href="#"]').click(function () {
+      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+        let target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
           $('html, body').animate({
