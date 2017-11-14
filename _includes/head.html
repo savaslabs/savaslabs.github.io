@@ -19,7 +19,8 @@
   {% if page.layout == "team" %}{% include schema-team.html %}{% endif %}
   {% if page.permalink == "/services/" %}{% include schema-professional-service.html %}{% endif %}
   {% if page.path contains "_posts" %}{% include schema-blog.html %}{% endif %}
-  {% include googleanalytics.html %}
+  {% if site.is_production == 1 %}{% include googleanalytics.html %}{% endif %}
+
 
   <!-- Load main CSS file asynchronously via loadCSS. -->
   <script>
