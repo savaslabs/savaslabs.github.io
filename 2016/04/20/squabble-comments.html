@@ -132,7 +132,7 @@
 
 &lt;p&gt;The entry point of our application are some &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/routes.php&quot;&gt;routing rules&lt;/a&gt; that determine what data to give back to the user when they visit a particular API endpoint.&lt;/p&gt;
 
-&lt;p&gt;From there, the requests are processed in the &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php&quot;&gt;CommentController&lt;/a&gt; — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the &lt;a href=&quot;/news&quot;&gt;News&lt;/a&gt; page to show the comment count per article).&lt;/p&gt;
+&lt;p&gt;From there, the requests are processed in the &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php&quot;&gt;CommentController&lt;/a&gt; — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the &lt;a href=&quot;/blog&quot;&gt;blog&lt;/a&gt; page to show the comment count per article).&lt;/p&gt;
 
 &lt;p&gt;The application runs on one of our cloud servers on Linode, and uses a SQLite backend. Because the Lumen framework is very lean, and the application does relatively little, it’s very fast — the &lt;code class=&quot;highlighter-rouge&quot;&gt;api/comments/count&lt;/code&gt; call takes ~84 ms while loading all comments (&lt;code class=&quot;highlighter-rouge&quot;&gt;api/comments&lt;/code&gt;) takes about 125 ms.&lt;/p&gt;
 
@@ -1047,7 +1047,7 @@ Pages using Travis, opening the door for us to use Jekyll Plugins.&lt;/p&gt;
 
 &lt;p&gt;The entry point of our application are some &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/routes.php&quot;&gt;routing rules&lt;/a&gt; that determine what data to give back to the user when they visit a particular API endpoint.&lt;/p&gt;
 
-&lt;p&gt;From there, the requests are processed in the &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php&quot;&gt;CommentController&lt;/a&gt; — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the &lt;a href=&quot;/news&quot;&gt;News&lt;/a&gt; page to show the comment count per article).&lt;/p&gt;
+&lt;p&gt;From there, the requests are processed in the &lt;a href=&quot;https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php&quot;&gt;CommentController&lt;/a&gt; — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the &lt;a href=&quot;/blog&quot;&gt;blog&lt;/a&gt; page to show the comment count per article).&lt;/p&gt;
 
 &lt;p&gt;The application runs on one of our cloud servers on Linode, and uses a SQLite backend. Because the Lumen framework is very lean, and the application does relatively little, it’s very fast — the &lt;code class=&quot;highlighter-rouge&quot;&gt;api/comments/count&lt;/code&gt; call takes ~84 ms while loading all comments (&lt;code class=&quot;highlighter-rouge&quot;&gt;api/comments&lt;/code&gt;) takes about 125 ms.&lt;/p&gt;
 
@@ -2024,7 +2024,7 @@ Pages using Travis, opening the door for us to use Jekyll Plugins.&lt;/p&gt;
 
 <p>The entry point of our application are some <a href="https://github.com/savaslabs/squabble/blob/master/source/app/Http/routes.php">routing rules</a> that determine what data to give back to the user when they visit a particular API endpoint.</p>
 
-<p>From there, the requests are processed in the <a href="https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php">CommentController</a> — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the <a href="/news">News</a> page to show the comment count per article).</p>
+<p>From there, the requests are processed in the <a href="https://github.com/savaslabs/squabble/blob/master/source/app/Http/Controllers/CommentController.php">CommentController</a> — depending on the request, we can create a comment, retrieve a comment, delete it, or get a quick list of all posts and the number of comments per page (we use this information on our home page and on the <a href="/blog">blog</a> page to show the comment count per article).</p>
 
 <p>The application runs on one of our cloud servers on Linode, and uses a SQLite backend. Because the Lumen framework is very lean, and the application does relatively little, it’s very fast — the <code class="highlighter-rouge">api/comments/count</code> call takes ~84 ms while loading all comments (<code class="highlighter-rouge">api/comments</code>) takes about 125 ms.</p>
 
