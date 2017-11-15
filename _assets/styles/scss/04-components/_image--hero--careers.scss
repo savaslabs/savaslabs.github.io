@@ -1,18 +1,25 @@
 /**
  * @file
  *
- * Hero image styles for job postings.
+ * Hero image styles for careers page.
  */
 
-.region--hero--jobs {
+.region--hero--careers {
   background-color: $dark-teal;
-  background-image: url('/assets/img/bg/jobs-hero.jpg');
+  background-image: url('/assets/img/bg/careers-hero.jpg');
   background-position: center center;
   background-size: cover;
   height: 60vh;
   margin: 0;
 
+  &.position {
+    height: 40vh;
+  }
+
   @include grid-media($large-screen-up) {
     height: 70vh;
+    &.position {
+      height: 30vh;
+    }
   }
 }

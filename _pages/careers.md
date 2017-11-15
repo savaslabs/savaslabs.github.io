@@ -3,7 +3,7 @@ layout: page
 title: Careers at Savas Labs
 permalink: "/careers/"
 excerpt: Career positions to work with the talented Savas Labs team
-hero_region: hero--jobs.html
+hero_region: hero--careers--position.html
 cta_heading: Join our team
 cta_paragraph: Interested in working with Savas Labs? Contact us today.
 cta_link: https://savas-labs.breezy.hr/
@@ -27,6 +27,6 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
 
 Savas Labs is always accepting resumés from [excellent](/company/mission-and-values/#excel) people, but we're actively seeking to fill the following positions:
 
-[Marketing Director](/careers/director-of-marketing)
+[Marketing Director](/careers/marketing-director)
 
 The Marketing Director will be Savas Labs's first marketing director and will help shape and execute our marketing plan.
