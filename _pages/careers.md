@@ -3,7 +3,7 @@ layout: page
 title: Careers at Savas Labs
 permalink: "/careers/"
 excerpt: Career positions to work with the talented Savas Labs team
-hero_region: hero--careers--position.html
+hero_region: hero--careers.html
 cta_heading: Join our team
 cta_paragraph: Interested in working with Savas Labs? Contact us today.
 cta_link: https://savas-labs.breezy.hr/

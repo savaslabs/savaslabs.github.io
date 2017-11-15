@@ -14,13 +14,9 @@
 
   @include grid-media($large-screen-up) {
     height: 70vh;
-
-    &.position {
-      height: 30vh;
-    }
   }
 
   &.position {
-    height: 40vh;
+    height: 30vh;
   }
 }
