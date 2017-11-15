@@ -12,14 +12,15 @@
   height: 60vh;
   margin: 0;
 
-  &.position {
-    height: 40vh;
-  }
-
   @include grid-media($large-screen-up) {
     height: 70vh;
+
     &.position {
       height: 30vh;
     }
+  }
+
+  &.position {
+    height: 40vh;
   }
 }
