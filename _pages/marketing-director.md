@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Marketing Director
-permalink: "/careers/director-of-marketing/"
+permalink: "/careers/marketing-director/"
 excerpt: Marketing director job description
 cta_heading: Join Our Team
+hero_region: hero--careers--position.html
 cta_paragraph: To apply for this position, visit our career application website.
 cta_link: https://savas-labs.breezy.hr/
 cta_link_text: Apply Now
