@@ -13,7 +13,7 @@ cta_color: orange
 
 [Company](/company) > [Careers](/careers) > Marketing Director
 
-Savas Labs is a cohesive team of outstanding individuals with complementary skill sets. We’re looking to greatly expand our reach to get  our expertise in the hands of those who could benefit most from it. The Marketing Director will fulfill our first full-time marketing position. We’re looking for someone with the creativity and drive to help shape the marketing vision coupled with the relevant experience to execute it. The marketing director will work directly with the Savas Labs [Principal](/company/chris-russo) to formulate, select tools for, and implement our marketing strategy.
+Savas Labs is a cohesive team of outstanding individuals with complementary skill sets. We’re looking to greatly expand our reach to get our expertise in the hands of those who could benefit most from it. The Marketing Director will fulfill our first full-time marketing position. We’re looking for someone with the creativity and drive to help shape the marketing vision coupled with the relevant experience to execute it. The marketing director will work directly with the Savas Labs [Principal](/company/chris-russo) to formulate, select tools for, and implement our marketing strategy in our **Durham, NC** office.
 
 ## Overall Responsibilities
 
