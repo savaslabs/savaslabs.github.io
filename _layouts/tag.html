@@ -51,12 +51,12 @@ class: "tag"
 <hr>
 {% endif %}
 
-{% comment %} If so, output the latest 9. {% endcomment %}
+{% comment %} If so, output the latest 500 ;) - we used to just show 9 {% endcomment %}
 {% if related_posts > 0 %}
 <div class="tag__related-posts region--blog-tiles--all region">
   <h2 class="heading--underline--orange">Blog Posts about {{ tag }}</h2>
   <div class="region--blog-tiles--all__tiles">
-    {% include regions/blog-tiles--related--post.html tags=page.tag %}
+    {% include regions/blog-tiles--related--post.html tags=page.tag limit=500 %}
   </div>
   <div class="flex-center">
     <a href="/blog" class="link--arrow">Return to blog</a>
