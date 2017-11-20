@@ -56,7 +56,7 @@ class: "tag"
 <div class="tag__related-posts region--blog-tiles--all region">
   <h2 class="heading--underline--orange">Blog Posts about {{ tag }}</h2>
   <div class="region--blog-tiles--all__tiles">
-    {% include regions/blog-tiles--related--post.html tags=page.tag limit=9 %}
+    {% include regions/blog-tiles--related--post.html tags=page.tag %}
   </div>
   <div class="flex-center">
     <a href="/blog" class="link--arrow">Return to blog</a>
