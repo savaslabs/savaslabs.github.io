@@ -55,9 +55,9 @@ blockquote {
     border-bottom: solid 1px $light-orange;
   }
 
+  // Note: font size for p is set in `_paragraphs.scss` to avoid specificity
+  // issues.
   p {
-    @include paragraph-loud-responsive;
-
     color: lighten($teal, 10%);
     // scss-lint:disable ImportantRule
     margin-bottom: 0 !important;
@@ -78,6 +78,7 @@ blockquote {
   span {
     color: $grey;
     display: block;
+    font-size: .8em;
     margin-top: .5em;
 
     @include grid-media($medium-screen-up) {
