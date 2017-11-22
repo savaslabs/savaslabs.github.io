@@ -2,7 +2,6 @@
  * @file
  *
  * Typography: list styles.
- * Note: See _paragraphs.scss for some blog-post-specific list styles.
  */
 
 /*doc
@@ -60,3 +59,20 @@ ol p {
   font-size: 1em !important;
 }
 // scss-lint:enable ImportantRule
+
+// Article styles.
+article {
+  ol,
+  ul {
+    @include post-text;
+  }
+
+  li {
+    margin-bottom: .325em;
+
+    // Nested list items need top margin to keep spacing consistent.
+    li {
+      margin-top: .325em;
+    }
+  }
+}
