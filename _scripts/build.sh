@@ -7,14 +7,13 @@ set -e
 bundle check || bundle install
 
 # NPM install if needed.
-. $HOME/.nvm/nvm.sh && nvm install 6.1 && nvm use 6.1
 npm install
 
 # Build the site.
 gulp
 
 # Checkout master and remove everything
-git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
+git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master --depth=1
 cd ../savaslabs.github.io.master
 git checkout master
 rm -rf *
