@@ -7,8 +7,6 @@ engines:
     config:
       languages:
       - javascript
-  css-lint:
-    enabled: true
   eslint:
     enabled: true
   fixme:
