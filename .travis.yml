@@ -9,7 +9,7 @@ cache:
   - directories:
       - "node_modules"
       - "vendor"
-      - "assets/processed-img"
+      - "assets/img"
 
 script:
   - ./_scripts/run-tests.sh
