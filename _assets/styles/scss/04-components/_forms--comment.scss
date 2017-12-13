@@ -61,12 +61,6 @@ parent: forms
     clear: both;
     margin-top: $base-spacing * 1.5;
     overflow: auto;
-
-    .form--comment__row__item {
-      @include grid-media($large-screen-up) {
-        @include grid-column(4 of 8);
-      }
-    }
   }
 
   .form--comment__field {
@@ -80,8 +74,7 @@ parent: forms
 
   // Text inputs.
   .form--comment__field--name,
-  .form--comment__field--email,
-  .form--comment__field--comment {
+  .form--comment__field--email {
     max-width: 375px;
   }
 
@@ -153,4 +146,106 @@ parent: forms
     border-color: $magenta;
     border-width: 3px;
   }
+}
+
+// The entire text editor component.
+.text-editor {
+  background: $white;
+  border: 1px solid $form-element-border;
+  border-radius: 3px;
+  font-family: $post-font;
+  padding: 1em;
+
+  &:hover {
+    border-color: $form-element-border-hover;
+  }
+}
+
+// Style buttons.
+.text-editor__controls {
+  font-size: .9em;
+  margin-bottom: .25em;
+  user-select: none;
+}
+
+.text-editor__style-button {
+  color: darken($light-grey, 25%);
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 1em;
+  padding: 2px 0;
+}
+
+.text-editor__style-button--active {
+  color: $orange;
+}
+
+// The text area within the editor.
+.text-editor__editor {
+  border-top: 1px solid $form-element-border;
+  cursor: text;
+  font-size: 1em;
+  margin-top: .5em;
+
+  .public-DraftEditorPlaceholder-root,
+  .public-DraftEditor-content {
+    margin: 0 -1em -1em;
+    padding: 1em;
+  }
+
+  .public-DraftEditor-content {
+    min-height: 100px;
+  }
+
+  h3,
+  h4 {
+    font-weight: 400;
+    margin: .75em 0 .5em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// Code blocks.
+.public-DraftStyleDefault-pre {
+  background-color: $light-gray;
+  border: 1px solid $light-gray;
+  margin: 1.5em;
+
+  pre {
+    background-color: $white;
+    border: 0;
+    padding: .8em;
+  }
+}
+
+// Blockquotes within text editor need to be style differently from those in
+// blog posts.
+.text-editor__editor__blockquote {
+  background: 0;
+  border-bottom: 0;
+  border-left: 5px solid $light-orange;
+  border-top: 0;
+  color: darken($light-gray, 25%);
+  font-family: $post-font;
+  font-style: italic;
+  margin: 1em 0;
+  padding: .5em .75em;
+
+  &::before,
+  &::after {
+    border: 0;
+  }
+
+  span {
+    color: lighten($grey, 10%);
+    font-size: 1em;
+    margin: 0;
+  }
+}
+
+.text-editor__editor--hide-placeholder .public-DraftEditorPlaceholder-root {
+  display: none;
 }

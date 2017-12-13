@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import api from '../utils/api';
 import PropTypes from 'prop-types';
+
 import Message from './Message';
 
 function CommentFormLink (props) {

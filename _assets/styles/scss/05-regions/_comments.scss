@@ -12,7 +12,7 @@
   }
 
   .comments-app {
-    h2 {
+    .comments-app__title {
       border-bottom: solid 1px $light-grey;
       margin-bottom: 0;
       padding: $base-spacing;
