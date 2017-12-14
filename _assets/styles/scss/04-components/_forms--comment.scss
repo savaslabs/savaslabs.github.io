@@ -61,12 +61,6 @@ parent: forms
     clear: both;
     margin-top: $base-spacing * 1.5;
     overflow: auto;
-
-    .form--comment__row__item {
-      @include grid-media($large-screen-up) {
-        @include grid-column(4 of 8);
-      }
-    }
   }
 
   .form--comment__field {
@@ -80,8 +74,7 @@ parent: forms
 
   // Text inputs.
   .form--comment__field--name,
-  .form--comment__field--email,
-  .form--comment__field--comment {
+  .form--comment__field--email {
     max-width: 375px;
   }
 

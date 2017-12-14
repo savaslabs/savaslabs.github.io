@@ -27,7 +27,7 @@ h6 {
 }
 
 h1.styleguide {
-  @include heading-underline($light-grey);
+  @include heading-underline($light-gray);
 
   color: $magenta;
   margin-top: $base-spacing * 2;

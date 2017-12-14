@@ -12,8 +12,8 @@
   }
 
   .comments-app {
-    h2 {
-      border-bottom: solid 1px $light-grey;
+    .comments-app__title {
+      border-bottom: solid 1px $light-gray;
       margin-bottom: 0;
       padding: $base-spacing;
       text-align: center;

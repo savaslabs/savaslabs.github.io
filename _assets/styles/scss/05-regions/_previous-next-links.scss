@@ -24,8 +24,8 @@ category: Regions
 */
 
 .region--prev-next-links {
-  border-bottom: solid 1px $light-grey;
-  border-top: solid 1px $light-grey;
+  border-bottom: solid 1px $light-gray;
+  border-top: solid 1px $light-gray;
 
   .outer-container {
     align-items: center;
@@ -48,8 +48,8 @@ category: Regions
     }
 
     .pagination__view-all {
-      border-left: solid 1px $light-grey;
-      border-right: solid 1px $light-grey;
+      border-left: solid 1px $light-gray;
+      border-right: solid 1px $light-gray;
     }
   }
 }

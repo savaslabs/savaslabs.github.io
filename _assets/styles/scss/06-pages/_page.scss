@@ -26,7 +26,7 @@
   }
 
   .region--cta {
-    border-top: solid 1px $light-grey;
+    border-top: solid 1px $light-gray;
 
     @include grid-media($large-screen-up) {
       @include grid-column(8);

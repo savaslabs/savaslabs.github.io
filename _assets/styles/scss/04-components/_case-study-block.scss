@@ -67,7 +67,7 @@ category: Components
     p {
       @include paragraph-loud;
 
-      color: $grey;
+      color: $gray;
       display: inline;
       text-transform: capitalize;
     }

@@ -7,7 +7,6 @@
  * our custom variables in its styles.
  *
  * Useful variables set by Bitters:
- *  $light-gray: #ddd
  *  $dark-gray: #333
  *  $base-background-color: #fff (white)
  *  $base-spacing: 1.5em
@@ -61,7 +60,7 @@ $card-border: 1px solid $card-border-color;
 $card-background: lighten($card-border-color, 10%);
 $card-header-background: $card-background;
 $card-hover-background: lighten($card-background, 5%);
-$card-image-background: $light-gray;
+$card-image-background: $lightest-gray;
 $card-image-hover-background: lighten($card-image-background, 5%);
 $card-margin: 1em;
 

@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import api from '../utils/api';
 import PropTypes from 'prop-types';
 import qs from 'qs';
+
 import Message from './Message';
+import TextEditor from './TextEditor';
 
 class CommentForm extends Component {
-
   constructor(props) {
     super(props);
 
@@ -22,7 +23,19 @@ class CommentForm extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.setEditorState = this.setEditorState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event) {
+    // Update state for the changed input.
+    const state = this.state;
+    state[event.target.name] = event.target.value;
+    this.setState(state);
+  }
+  setEditorState(editorState) {
+    // We'll pass this function as a prop to the TextEditor component so when
+    // the editorState is updated there, it'll be saved in the state here.
+    this.setState({ editorState: editorState });
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -51,18 +64,10 @@ class CommentForm extends Component {
           };
         });
       }
-
     }.bind(this));
-
-  }
-  handleChange(event) {
-    // Update state for the changed input.
-    const state = this.state;
-    state[event.target.name] = event.target.value;
-    this.setState(state);
   }
   render () {
-    const { name, email, comment, url, nocaptcha } = this.state;
+    const { name, email, url, nocaptcha } = this.state;
     return (
       <form id="form--comment" className="form--comment" onSubmit={this.handleSubmit}>
         {this.state.error && <Message type='error' message={this.state.message} />}
@@ -95,16 +100,7 @@ class CommentForm extends Component {
           </div>
           <div className="form--comment__field form--comment__field--comment form--comment__row__item">
             <label htmlFor="comment">Comment</label>
-            <textarea
-              name="comment"
-              id="comment"
-              className={this.state.errorField === 'comment' && 'error-field'}
-              value={comment}
-              onChange={this.handleChange}
-              rows="4"
-              required>
-            </textarea>
-            <p className="form--comment__helptext">Plain text format only please.</p>
+            <TextEditor setEditorState={this.setEditorState}/>
           </div>
         </div>
 

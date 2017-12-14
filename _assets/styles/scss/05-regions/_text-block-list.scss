@@ -78,8 +78,8 @@ category: Regions
   margin: $base-margin 0;
 
   .text-block-list-item {
-    border-bottom: solid 1px $light-grey;
-    border-right: solid 1px $light-grey;
+    border-bottom: solid 1px $light-gray;
+    border-right: solid 1px $light-gray;
     position: relative;
     width: 50%;
 
@@ -91,7 +91,7 @@ category: Regions
       border-right: 0;
 
       @include grid-media($large-screen-up) {
-        border-right: solid 1px $light-grey;
+        border-right: solid 1px $light-gray;
       }
     }
 
@@ -130,7 +130,7 @@ category: Regions
       }
 
       @include grid-media($extra-large-screen-up) {
-        border-right: solid 1px $light-grey;
+        border-right: solid 1px $light-gray;
       }
     }
 
@@ -146,7 +146,7 @@ category: Regions
       }
 
       @include grid-media($extra-large-screen-up) {
-        border-bottom: solid 1px $light-grey;
+        border-bottom: solid 1px $light-gray;
       }
 
     }
