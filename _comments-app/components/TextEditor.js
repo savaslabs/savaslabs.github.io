@@ -70,7 +70,6 @@ StyleButton.propTypes = {
  */
 const BLOCK_TYPES = [
   {label: 'Heading', style: 'header-three'},
-  {label: 'Subheading', style: 'header-four'},
   {label: 'Bullets', style: 'unordered-list-item'},
   {label: 'Numbers', style: 'ordered-list-item'},
   {label: 'Quote', style: 'blockquote'},
@@ -209,17 +208,8 @@ class TextEditor extends Component {
     const { editorState } = this.state;
     let ref = (el) => this.editorRef = el;
 
-    // If user changes block type before entering any text, hide placeholder.
-    let className = 'text-editor__editor';
-    const contentState = editorState.getCurrentContent();
-    if (!contentState.hasText()) {
-      if (contentState.getBlockMap().first().getType() !== 'unstyled') {
-        className += ' text-editor__editor--hide-placeholder';
-      }
-    }
-
     return(
-      <div className="text-editor">
+      <div className='text-editor'>
         <BlockStyleControls
           editorState={editorState}
           onToggle={this.toggleBlockType}
@@ -228,7 +218,7 @@ class TextEditor extends Component {
           editorState={editorState}
           onToggle={this.toggleInlineStyle}
         />
-        <div className={className} onClick={this.focus}>
+        <div className='text-editor__editor' onClick={this.focus}>
           <Editor
             blockStyleFn={getBlockStyle}
             customStyleMap={styleMap}
@@ -236,7 +226,6 @@ class TextEditor extends Component {
             handleKeyCommand={this.handleKeyCommand}
             onChange={this.handleEditorChange}
             onTab={this.onTab}
-            placeholder="What's up?"
             ref={ref}
             spellCheck={true}
           />
