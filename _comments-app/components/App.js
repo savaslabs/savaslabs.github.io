@@ -32,7 +32,7 @@ class App extends Component {
   render () {
     return (
       <div className="comments-app">
-        <h2 className="comments-app__title heading--sans-serif heading--bold h4 c-grey">Comments</h2>
+        <h2 className="comments-app__title heading--sans-serif heading--bold h4 c-gray">Comments</h2>
         <div className="comments-app__wrapper region">
           <Comments
             newComment={this.state.newComment}

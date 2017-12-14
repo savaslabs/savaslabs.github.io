@@ -10,12 +10,12 @@
 // Layout styles for post pages.
 .page--post {
   .region--header {
-    border-bottom: solid 1px $light-grey;
+    border-bottom: solid 1px $light-gray;
   }
 
   .page--post__main {
     @include grid-media($large-screen-up) {
-      border-right: solid 1px $light-grey;
+      border-right: solid 1px $light-gray;
       float: left;
       padding-bottom: $base-margin;
       width: 66.666%;
@@ -67,7 +67,7 @@
       }
 
       .caption {
-        color: $grey;
+        color: $gray;
         font-style: italic;
       }
     }
@@ -75,7 +75,7 @@
 
   // See the _post-aside.scss region SCSS file for page-agnostic styles.
   .page--post__aside {
-    border-bottom: solid 1px $light-grey;
+    border-bottom: solid 1px $light-gray;
     margin-top: 0;
 
     @include grid-media($large-screen-up) {

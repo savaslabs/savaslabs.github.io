@@ -169,7 +169,7 @@ parent: forms
 }
 
 .text-editor__style-button {
-  color: darken($light-grey, 25%);
+  color: darken($light-gray, 25%);
   cursor: pointer;
   display: inline-block;
   margin-right: 1em;
@@ -210,8 +210,8 @@ parent: forms
 
 // Code blocks.
 .public-DraftStyleDefault-pre {
-  background-color: $light-gray;
-  border: 1px solid $light-gray;
+  background-color: $lightest-gray;
+  border: 1px solid $lightest-gray;
   margin: 1.5em;
 
   pre {
@@ -228,7 +228,7 @@ parent: forms
   border-bottom: 0;
   border-left: 5px solid $light-orange;
   border-top: 0;
-  color: darken($light-gray, 25%);
+  color: darken($lightest-gray, 25%);
   font-family: $post-font;
   font-style: italic;
   margin: 1em 0;
@@ -240,7 +240,7 @@ parent: forms
   }
 
   span {
-    color: lighten($grey, 10%);
+    color: lighten($gray, 10%);
     font-size: 1em;
     margin: 0;
   }

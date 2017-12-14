@@ -9,13 +9,13 @@
 
   // scss-lint:disable ImportantRule
   .highlight {
-    border: 1px solid $light-grey !important;
+    border: 1px solid $light-gray !important;
     border-radius: 0;
     margin: 0;
     // scss-lint:enable ImportantRule
 
     pre {
-      background-color: lighten($light-grey, 20%);
+      background-color: lighten($light-gray, 20%);
       padding: .8em;
       word-break: break-all;
       word-wrap: break-word;
