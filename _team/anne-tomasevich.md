@@ -8,6 +8,9 @@ drupal: AnneTee
 github: AnneTee
 linkedin: annetomasevich
 resume: http://stackoverflow.com/cv/annetee
+badges:
+  - image: "assets/img/team/badges/D8_front_end_specialist.png"
+    alt: "Acquia Certified Drupal 8 Front End Specialist"
 redirect_from:
   - /team/anne-tomasevich/
 ---
