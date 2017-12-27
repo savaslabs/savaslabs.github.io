@@ -12,12 +12,15 @@ linkedin: oksanacyrwus
 stack-exchange: 6655373/oksana-c
 website: http://oksanac.com
 badges:
-  - image: "assets/img/team/badges/association_ind_member_badge.svg"
+  - image: "association_ind_member_badge"
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
-  - image: "assets/img/team/badges/D7CD.png"
+  - image: "D8CD"
     alt: "Acquia Certified Developer D7"
-    link: "https://www.acquia.com/customer-success/learning-services/acquia-certification-program-overview"
+    link: "https://certification.acquia.com/user/1593291"
+  - image: "D7CD"
+    alt: "Acquia Certified Developer D7"
+    link: "https://certification.acquia.com/user/1593291"
 redirect_from:
   - /team/oksana-cyrwus/
 ---

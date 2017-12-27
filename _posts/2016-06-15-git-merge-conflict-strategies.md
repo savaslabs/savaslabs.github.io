@@ -23,7 +23,7 @@ In this post I'm going to review the strategies and tools I like to use when res
 
 There are many good online tutorials that cover Git merging, so I'll just review the basics. If you're already fluent in Git, feel free to skip to the [strategies and tools](#strategies-and-tools) section.
 
-As [Atlassian's branching tutorial](https://www.atlassian.com/git/tutorials/using-branches/git-branch) explains "Merging is Git's way of putting a forked history back together again."
+As [Atlassian's branching tutorial](https://www.atlassian.com/git/tutorials/using-branches/git-merge) explains "Merging is Git's way of putting a forked history back together again."
 
 A Git merge is run via the command `git merge <target_branch>`. When merging, Git always merges into the current branch. The branch being merged (aka the target branch) will not be affected.
 
