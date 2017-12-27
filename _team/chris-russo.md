@@ -10,7 +10,7 @@ drupal: chrisarusso
 github: chrisarusso
 linkedin: chrisarusso
 badges:
-  - image: "assets/img/team/badges/DC2016_Spread_The_Word_Sponsor-Speaker.png"
+  - image: "DC2016_Spread_The_Word_Sponsor-Speaker"
     alt: "Drupalcon NOLA speaking Badge"
     link: "https://events.drupal.org/news/sessions-training-opportunities-announced-drupalcon-new-orleans"
 redirect_from:

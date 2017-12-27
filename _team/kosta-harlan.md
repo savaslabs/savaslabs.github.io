@@ -11,7 +11,7 @@ linkedin: kostaharlan
 website: http://www.kostaharlan.net
 resume: https://stackoverflow.com/story/kostajh
 badges:
-  - image: "assets/img/team/badges/association_ind_member_badge.svg"
+  - image: "association_ind_member_badge"
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
 redirect_from:
