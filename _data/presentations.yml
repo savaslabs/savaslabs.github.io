@@ -3,6 +3,11 @@
 # the proper borders!
 # Add new items to the top of the list.
 
+- title: "The Strange Case of Dr. Jekyll and Mr. Drupal"
+  event: DrupalcampNJ Princeton 2018
+  team-member: Chris Russo
+  link: https://www.drupalcampnj.org/sessions/strange-case-dr-jekyll-and-mr-drupal
+  icon: drupalcamp-nj.png
 - title: "Total value of ownership: Drupal 8 and beyond"
   event: DrupalCon New Orleans 2016
   team-member: Chris Russo
