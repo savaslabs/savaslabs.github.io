@@ -23,6 +23,11 @@
   team-member: Lisa Ridley
   link: http://drupalcampatlanta.com/file/drupalcamp-atlanta-2016-getting-started-docker-development-lisa-ridley
   icon: drupal-camp-atlanta.png
+- title: "Exploring New Opportunities for Data Access at Scale with Drupal 8 and ElasticSearch"
+  event: ESIP Summer Meeting Durham 2016
+  team-member: Kosta Harlan
+  link:  http://commons.esipfed.org/node/9102
+  icon: esip.png
 - title: "Personal Git Workflow... FOR EVERYONE!"
   event: DrupalCamp Asheville 2015
   team-member: Chris Russo
