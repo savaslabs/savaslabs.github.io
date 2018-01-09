@@ -16,7 +16,7 @@ badges:
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
   - image: "D8CD"
-    alt: "Acquia Certified Developer D7"
+    alt: "Acquia Certified Developer D8"
     link: "https://certification.acquia.com/user/1593291"
   - image: "D7CD"
     alt: "Acquia Certified Developer D7"

@@ -11,6 +11,9 @@ linkedin: kostaharlan
 website: http://www.kostaharlan.net
 resume: https://stackoverflow.com/story/kostajh
 badges:
+  - image: "D8CD"
+    alt: "Acquia Certified Developer D8"
+    link: "https://certification.acquia.com/user/1650536"
   - image: "association_ind_member_badge"
     alt: "Drupal Association Individual Member"
     link: "https://assoc.drupal.org/membership"
