@@ -12,8 +12,7 @@ Last week, I attended the [All Things Open conference](http://allthingsopen.org/
 
 It was fun to network and discuss opportunities of diversity with organizations
 like [girl develop it](https://www.girldevelopit.com/) and advocate that the
-[iron yard academy](http://theironyard.com/locations/durham/)
-produce a PHP / Drupal class. It was also another chance to be impressed with
+iron yard academy produce a PHP / Drupal class. It was also another chance to be impressed with
 conference organizer [Todd Lewis](https://twitter.com/toddlew)'s ability to say
 "thank you" in nearly every sentence. Thank _you_ Todd! All-in-all-things-open
 it was a productive conference for meeting people, hearing presentations, and
