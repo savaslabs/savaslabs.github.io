@@ -95,6 +95,8 @@ parent: forms
   height: 100%;
 
   textarea {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     height: 4em;
     margin-bottom: 0;
     overflow: hidden;
@@ -107,6 +109,9 @@ parent: forms
     vertical-align: top;
 
     @include grid-media($medium-screen-up) {
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 0;
       height: 66.6%;
     }
 
@@ -118,6 +123,47 @@ parent: forms
       @include grid-media($medium-screen-up) {
         height: 100%;
       }
+    }
+  }
+}
+
+.form--comment__field--name,
+.form--comment__field--email {
+  input {
+    border-top-color: transparent;
+
+    @include grid-media($medium-screen-up) {
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-top-color: $form-border;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $form-border-hover;
+    }
+  }
+}
+
+.form--comment__field--name {
+  input {
+    border-top-right-radius: 0;
+
+    @include grid-media($medium-screen-up) {
+      border-top-right-radius: 3px;
+    }
+  }
+}
+
+.form--comment__field--email {
+  input {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+
+    @include grid-media($medium-screen-up) {
+      border-radius: 0;
     }
   }
 }
