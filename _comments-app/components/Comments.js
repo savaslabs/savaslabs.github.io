@@ -108,10 +108,13 @@ class Comments extends Component {
      * @param comments.array_member[].created_at
      */
     const comments = this.state.comments.data;
+    if (comments.length === 0) {
+      return null;
+    }
 
     return (
-      <div>
-        {comments.length !== 0 && <CommentFormLink onClick={this.props.showCommentForm} />}
+      <div className="region--comments__comments">
+        <CommentFormLink onClick={this.props.showCommentForm} />
         <ul className="comments__list">
 
           {comments.map(function (comment, index) {
