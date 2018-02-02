@@ -22,7 +22,7 @@ class Comment extends Component {
       <li className={this.props.class}>
         <div className="comment__avatar">
           <div className="comment__avatar--image">
-            <Gravatar email="{this.props.email}" default="identicon" />
+            <Gravatar md5={this.props.email} default="identicon" />
           </div>
           <div className="comment__avatar--bg"></div>
         </div>
@@ -50,7 +50,7 @@ Comment.propTypes = {
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
-  emailHash: PropTypes.string
+  email: PropTypes.string
 };
 
 export default Comment;
