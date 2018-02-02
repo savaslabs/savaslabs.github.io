@@ -18,11 +18,12 @@ class Comment extends Component {
 
   render () {
     const commentText = Comment.decodeHtml(this.props.comment);
+
     return (
       <li className={this.props.class}>
         <div className="comment__avatar">
           <div className="comment__avatar--image">
-            <Gravatar md5={this.props.email} default="identicon" />
+            <Gravatar md5={this.props.email} default="mm" />
           </div>
           <div className="comment__avatar--bg"></div>
         </div>

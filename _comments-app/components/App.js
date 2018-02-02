@@ -33,16 +33,16 @@ class App extends Component {
       <div className="comments-app">
         <h2 className="heading--sans-serif heading--bold h4 c-grey">Comments</h2>
         <div className="comments-app__wrapper region">
+          <Comments
+            newComment={this.state.newComment}
+            showCommentForm={this.showCommentForm}
+          />
           {this.state.showForm &&
           <CommentForm
             refreshComments={this.handleNewComment}
             hideCommentForm={this.hideCommentForm}
           />
           }
-          <Comments
-            newComment={this.state.newComment}
-            showCommentForm={this.showCommentForm}
-          />
         </div>
       </div>
     );
