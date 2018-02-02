@@ -51,12 +51,15 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "imagemin-jpeg-recompress": "^5.1.0",
+    "is-retina": "^1.0.3",
     "jshint": "^2.9.3",
+    "md5": "^2.2.1",
     "prop-types": "^15.5.10",
     "qs": "^6.5.1",
     "query-string": "^5.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-gravatar": "^2.6.3",
     "run-sequence": "^1.2.2",
     "webpack": "^3.5.5"
   }

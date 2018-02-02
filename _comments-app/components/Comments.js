@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import api from '../utils/api';
 import PropTypes from 'prop-types';
 import Message from './Message';
+// import Gravatar from './Gravatar';
 
 function CommentFormLink (props) {
   'use strict';
@@ -35,14 +36,34 @@ class Comment extends Component {
       'text/html');
     return dom.body.textContent;
   }
+
   render () {
     const commentText = Comment.decodeHtml(this.props.comment);
     return (
+      // <li className={this.props.class}>
+      //   {this.props.savasian === '1' && <img src='/assets/img/logo.svg' className='comment__logo' alt='Savas Labs logo' />}
+      //   <p className="comment__name"><span className="c-magenta">{this.props.name}</span> says:</p>
+      //   <p className="comment__date">{this.props.date}</p>
+      //   <p className="comment__text">{commentText}</p>
+      // </li>
       <li className={this.props.class}>
-        {this.props.savasian === '1' && <img src='/assets/img/logo.svg' className='comment__logo' alt='Savas Labs logo' />}
-        <p className="comment__name"><span className="c-magenta">{this.props.name}</span> says:</p>
-        <p className="comment__date">{this.props.date}</p>
-        <p className="comment__text">{commentText}</p>
+        <div className="comment__avatar">
+          <div className="comment__avatar--image">{this.props.savasian === '1' && <img src='/assets/img/logo.svg' className='comment__logo' alt='Savas Labs logo' />}</div>
+          <div className="comment__avatar--bg"></div>
+        </div>
+        <div className="comment__content">
+          <div className="comment__content--header">
+            <div className="comment__content--header__name">{this.props.name}</div>
+            <div className="comment__content--header__actions">
+              <a href="#reply" alt="Reply" aria-hidden="true"></a>
+              <a href="#" alt="Copy Permalink" aria-hidden="true"></a>
+            </div>
+          </div>
+          <div className="comment__content--body">
+            <div className="comment__content--body__text">{commentText}</div>
+            <div className="comment__content--body__date">{this.props.date}</div>
+          </div>
+        </div>
       </li>
     );
   }
