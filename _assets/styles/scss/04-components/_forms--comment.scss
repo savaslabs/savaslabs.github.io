@@ -14,41 +14,31 @@ parent: forms
 
 ```html_example
 <form id="form--comment" class="form--comment" _lpchecked="1">
-  <div class="form--comment__row">
-    <div class="form--comment__row__item">
+  <div class="form--comment__helptext">
+    <p>Savas Labs will never sell your email address or spam you.</p>
+    <p>Plain text format only please.</p>
+  </div>
+  <div class="form--comment__wrapper">
+    <div class="form--comment__column--left">
+      <div class="form--comment__field form--comment__field--comment">
+        <label for="comment" class="sr-only">Comment</label>
+        <textarea name="comment" id="comment" class="" rows="4" placeholder="Leave a comment..." required=""></textarea>
+      </div>
+    </div>
+    <div class="form--comment__column--right">
       <div class="form--comment__field form--comment__field--name">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required="">
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" name="name" id="name" class="" value="" placeholder="Name" required="">
       </div>
       <div class="form--comment__field form--comment__field--email">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required="">
-        <p class="form--comment__helptext">Savas Labs will never sell your email address or spam you.</p>
+        <label for="email" class="sr-only">E-mail</label>
+        <input type="email" name="email" id="email" class="" value="" placeholder="E-mail" required="">
       </div>
-    </div>
-    <div class="form--comment__field form--comment__field--comment form--comment__row__item">
-      <label for="comment">Comment</label>
-      <textarea name="comment" id="comment" rows="4" required=""></textarea>
-      <p class="form--comment__helptext">Plain text format only please.</p>
-    </div>
-  </div>
-
-  <input type="hidden" name="slug" id="slug" value="/2017/02/27/on-web-typography-review.html">
-  <input type="text" name="url" id="url">
-
-  <div class="form--comment__row">
-    <div class="form--comment__field form--comment__field--nocaptcha form--comment__row__item">
-      <div class="form--comment__field--nocaptcha__image">
-        <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
+      <label for="url" class="sr-only">If you are a human, do not fill out this field.</label>
+      <input type="text" name="url" id="url" class="form--comment__field--url" value="">
+      <div class="form--comment__actions">
+        <input type="submit" value="POST" id="submit" class="form--comment__actions--submit">
       </div>
-      <div class="form--comment__field--nocaptcha__input">
-        <label for="nocaptcha">What type of animal is the Savas Labs logo?</label>
-        <p class="form--comment__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
-        <input type="text" name="nocaptcha" id="nocaptcha" required="">
-      </div>
-    </div>
-    <div class="form--comment__row__item">
-      <input type="submit" value="Post comment" id="submit" class="form--comment__submit">
     </div>
   </div>
 </form>
@@ -56,93 +46,8 @@ parent: forms
 
 */
 
+// Messages.
 .form--comment {
-  .form--comment__row {
-    clear: both;
-    margin-top: $base-spacing * 1.5;
-    overflow: auto;
-
-    .form--comment__row__item {
-      @include grid-media($large-screen-up) {
-        @include grid-column(4 of 8);
-      }
-    }
-  }
-
-  .form--comment__field {
-    margin-bottom: .75em;
-
-    input,
-    textarea {
-      margin-bottom: 0;
-    }
-  }
-
-  // Text inputs.
-  .form--comment__field--name,
-  .form--comment__field--email,
-  .form--comment__field--comment {
-    max-width: 375px;
-  }
-
-  // This removes extra space under textarea in some browsers.
-  textarea {
-    vertical-align: top;
-  }
-
-  // Nocaptcha field.
-  .form--comment__field--nocaptcha {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-
-    &__image {
-      margin-right: $base-spacing;
-      text-align: center;
-
-      img {
-        display: block;
-        width: 40px;
-      }
-    }
-
-    &__input {
-
-      label {
-        margin-bottom: 0;
-      }
-
-      .form--comment__helptext {
-        margin-bottom: .25em;
-      }
-
-      input {
-        width: 80px;
-      }
-    }
-  }
-
-  .form--comment__submit {
-    margin-top: $base-spacing * 1.5;
-
-    @include grid-media($large-screen-up) {
-      margin-top: 0;
-    }
-  }
-
-  // Helptext below fields.
-  .form--comment__helptext {
-    font-size: .9em;
-    font-style: italic;
-  }
-
-  // Hide honeypot field.
-  // scss-lint:disable IdSelector
-  #url {
-    display: none;
-  }
-  // scss-lint:enable IdSelector
-
   // Style the error message at the top of the comment form.
   .flash-error {
     margin-top: $base-spacing;
@@ -150,7 +55,134 @@ parent: forms
 
   // Highlight field indicated in an error response.
   .error-field {
-    border-color: $magenta;
-    border-width: 3px;
+    border: 3px solid $magenta;
   }
+}
+
+// Layout.
+.form--comment__wrapper {
+  @include grid-media($medium-screen-up) {
+    display: flex;
+
+    .form--comment__column--left {
+      width: 70%;
+    }
+
+    .form--comment__column--right {
+      width: 30%;
+    }
+  }
+}
+
+.form--comment__helptext {
+  margin-bottom: 1em;
+
+  p {
+    line-height: 1.25em;
+    margin-bottom: .5em;
+  }
+}
+
+.form--comment__field,
+.form--comment__actions {
+  input {
+    margin-bottom: 0;
+  }
+}
+
+// Comment field.
+.form--comment__field--comment {
+  height: 100%;
+
+  textarea {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 4em;
+    margin-bottom: 0;
+    overflow: hidden;
+    resize: none;
+    // We need to override the browser's value for transition.
+    // scss-lint:disable ImportantRule
+    transition: height .35s ease-in-out !important;
+    // scss-lint:enable ImportantRule
+    // This removes extra space under textarea in some browsers.
+    vertical-align: top;
+
+    @include grid-media($medium-screen-up) {
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 0;
+      height: 66.6%;
+    }
+
+    &:focus,
+    &.has-text {
+      height: 8.5em;
+      overflow: auto;
+
+      @include grid-media($medium-screen-up) {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.form--comment__field--name,
+.form--comment__field--email {
+  input {
+    border-top-color: transparent;
+
+    @include grid-media($medium-screen-up) {
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-top-color: $form-border;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $form-border-hover;
+    }
+  }
+}
+
+.form--comment__field--name {
+  input {
+    border-top-right-radius: 0;
+
+    @include grid-media($medium-screen-up) {
+      border-top-right-radius: 3px;
+    }
+  }
+}
+
+.form--comment__field--email {
+  input {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+
+    @include grid-media($medium-screen-up) {
+      border-radius: 0;
+    }
+  }
+}
+
+// Submit button.
+.form--comment__actions {
+  margin-top: 1em;
+
+  @include grid-media($medium-screen-up) {
+    margin-top: 0;
+  }
+
+  input {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
+// Hide honeypot field.
+.form--comment__field--url {
+  display: none;
 }

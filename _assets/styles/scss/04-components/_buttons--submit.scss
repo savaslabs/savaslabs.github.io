@@ -21,6 +21,7 @@ parent: buttons
 [type="submit"] {
   @include button-dark;
 
-  padding: .75em 3em;
+  font-family: $copytext-font;
+  padding: 1em 3em;
   text-transform: none;
 }

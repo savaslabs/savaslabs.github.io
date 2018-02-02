@@ -21,11 +21,13 @@ label {
 // scss-lint:disable ColorVariable
 #{$all-text-inputs} {
   border-radius: 0;
-  padding: .75em;
+  color: $text-color;
+  font-family: $copytext-font;
+  padding: 1.25em .75em;
 
   &:focus {
-    border-color: lighten($orange, 25%);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .06), 0 0 5px rgba(246, 67, 62, .7);
+    border-color: $form-border-hover;
+    box-shadow: none;
   }
 }
 // scss-lint:enable ColorVariable

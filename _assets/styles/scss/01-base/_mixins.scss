@@ -131,12 +131,13 @@
   @include button($background-color, $color);
 
   background-color: $background-color;
+  border-color: $background-color;
 
   &:hover,
   &:focus {
-    background-color: lighten($color, 10%);
+    background-color: lighten($background-color, 10%);
     border-color: lighten($background-color, 10%);
-    color: lighten($background-color, 10%);
+    color: lighten($color, 10%);
   }
 }
 
