@@ -22,7 +22,7 @@ class Comment extends Component {
       <li className={this.props.class}>
         <div className="comment__avatar">
           <div className="comment__avatar--image">
-            <Gravatar md5={this.props.emailHash} default="identicon" />
+            <Gravatar email="{this.props.email}" default="identicon" />
           </div>
           <div className="comment__avatar--bg"></div>
         </div>

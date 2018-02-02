@@ -98,7 +98,6 @@ class Comments extends Component {
                 name={comment.name}
                 date={comment.created_at}
                 comment={comment.comment}
-                emailHash={comment.hash}
               />
             );
           })}
