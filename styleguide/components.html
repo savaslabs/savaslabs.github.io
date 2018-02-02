@@ -780,41 +780,31 @@ styled as a Font Awesome icon, so the link can easily be copied.</p><div class="
 <div class="codeExample">
   <div class="exampleOutput">
     <form id="form--comment" class="form--comment" _lpchecked="1">
-  <div class="form--comment__row">
-    <div class="form--comment__row__item">
+  <div class="form--comment__helptext">
+    <p>Savas Labs will never sell your email address or spam you.</p>
+    <p>Plain text format only please.</p>
+  </div>
+  <div class="form--comment__wrapper">
+    <div class="form--comment__column--left">
+      <div class="form--comment__field form--comment__field--comment">
+        <label for="comment" class="sr-only">Comment</label>
+        <textarea name="comment" id="comment" class="" rows="4" placeholder="Leave a comment..." required=""></textarea>
+      </div>
+    </div>
+    <div class="form--comment__column--right">
       <div class="form--comment__field form--comment__field--name">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required="">
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" name="name" id="name" class="" value="" placeholder="Name" required="">
       </div>
       <div class="form--comment__field form--comment__field--email">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required="">
-        <p class="form--comment__helptext">Savas Labs will never sell your email address or spam you.</p>
+        <label for="email" class="sr-only">E-mail</label>
+        <input type="email" name="email" id="email" class="" value="" placeholder="E-mail" required="">
       </div>
-    </div>
-    <div class="form--comment__field form--comment__field--comment form--comment__row__item">
-      <label for="comment">Comment</label>
-      <textarea name="comment" id="comment" rows="4" required=""></textarea>
-      <p class="form--comment__helptext">Plain text format only please.</p>
-    </div>
-  </div>
-
-  <input type="hidden" name="slug" id="slug" value="/2017/02/27/on-web-typography-review.html">
-  <input type="text" name="url" id="url">
-
-  <div class="form--comment__row">
-    <div class="form--comment__field form--comment__field--nocaptcha form--comment__row__item">
-      <div class="form--comment__field--nocaptcha__image">
-        <img src="/assets/img/icons-and-logos/owl.png" alt="Savas Labs logo">
+      <label for="url" class="sr-only">If you are a human, do not fill out this field.</label>
+      <input type="text" name="url" id="url" class="form--comment__field--url" value="">
+      <div class="form--comment__actions">
+        <input type="submit" value="POST" id="submit" class="form--comment__actions--submit">
       </div>
-      <div class="form--comment__field--nocaptcha__input">
-        <label for="nocaptcha">What type of animal is the Savas Labs logo?</label>
-        <p class="form--comment__helptext">Hint: 3 letters long, starts with an "o" and ends with an "l".</p>
-        <input type="text" name="nocaptcha" id="nocaptcha" required="">
-      </div>
-    </div>
-    <div class="form--comment__row__item">
-      <input type="submit" value="Post comment" id="submit" class="form--comment__submit">
     </div>
   </div>
 </form>
@@ -823,41 +813,31 @@ styled as a Font Awesome icon, so the link can easily be copied.</p><div class="
   <div class="codeBlock">
     <div class="highlight">
       <pre><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"form--comment"</span> <span class="na">class=</span><span class="s">"form--comment"</span> <span class="na">_lpchecked=</span><span class="s">"1"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__row"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__row__item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__helptext"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Savas Labs will never sell your email address or spam you.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Plain text format only please.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__wrapper"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__column--left"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__field form--comment__field--comment"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"comment"</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Comment<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"comment"</span> <span class="na">id=</span><span class="s">"comment"</span> <span class="na">class=</span><span class="s">""</span> <span class="na">rows=</span><span class="s">"4"</span> <span class="na">placeholder=</span><span class="s">"Leave a comment..."</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__column--right"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__field form--comment__field--name"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">class=</span><span class="s">""</span> <span class="na">value=</span><span class="s">""</span> <span class="na">placeholder=</span><span class="s">"Name"</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__field form--comment__field--email"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"form--comment__helptext"</span><span class="nt">&gt;</span>Savas Labs will never sell your email address or spam you.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>E-mail<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">""</span> <span class="na">value=</span><span class="s">""</span> <span class="na">placeholder=</span><span class="s">"E-mail"</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__field form--comment__field--comment form--comment__row__item"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"comment"</span><span class="nt">&gt;</span>Comment<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"comment"</span> <span class="na">id=</span><span class="s">"comment"</span> <span class="na">rows=</span><span class="s">"4"</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;&lt;/textarea&gt;</span>
-      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"form--comment__helptext"</span><span class="nt">&gt;</span>Plain text format only please.<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"slug"</span> <span class="na">id=</span><span class="s">"slug"</span> <span class="na">value=</span><span class="s">"/2017/02/27/on-web-typography-review.html"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">id=</span><span class="s">"url"</span><span class="nt">&gt;</span>
-
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__row"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__field form--comment__field--nocaptcha form--comment__row__item"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__field--nocaptcha__image"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/img/icons-and-logos/owl.png"</span> <span class="na">alt=</span><span class="s">"Savas Labs logo"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"url"</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>If you are a human, do not fill out this field.<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">id=</span><span class="s">"url"</span> <span class="na">class=</span><span class="s">"form--comment__field--url"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__actions"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"form--comment__actions--submit"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__field--nocaptcha__input"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nocaptcha"</span><span class="nt">&gt;</span>What type of animal is the Savas Labs logo?<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"form--comment__helptext"</span><span class="nt">&gt;</span>Hint: 3 letters long, starts with an "o" and ends with an "l".<span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"nocaptcha"</span> <span class="na">id=</span><span class="s">"nocaptcha"</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form--comment__row__item"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Post comment"</span> <span class="na">id=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"form--comment__submit"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span></pre>
