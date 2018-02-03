@@ -9,7 +9,18 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' }
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: [
+            'babel-preset-es2015',
+            'babel-preset-react',
+            'babel-preset-env'
+          ].map(require.resolve)
+        }
+      }
     ]
   },
   devServer: {

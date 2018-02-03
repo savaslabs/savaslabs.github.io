@@ -38,10 +38,10 @@ class App extends Component {
             showCommentForm={this.showCommentForm}
           />
           {this.state.showForm &&
-            <CommentForm
-              refreshComments={this.handleNewComment}
-              hideCommentForm={this.hideCommentForm}
-            />
+          <CommentForm
+            refreshComments={this.handleNewComment}
+            hideCommentForm={this.hideCommentForm}
+          />
           }
         </div>
       </div>
