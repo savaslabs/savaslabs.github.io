@@ -70,7 +70,7 @@ paths.siteHtmlFilesGlob = paths.siteDir + paths.htmlPattern;
 
 // HTML pages to run through the accessibility test.
 paths.htmlTestFiles = [
-  '_site/**/*.html',
+  '_site/2018/**/*.*',
   '!_site/2015/**/*.*',
   '!_site/2016/**/*.*',
   '!_site/mission-and-values/**/*.*',
