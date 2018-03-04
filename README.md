@@ -50,6 +50,13 @@ automatically open a browser window for you when you serve the site.
 you can update the build command in the `build:jekyll:local` task to include the
 `--drafts` tag.
 
+## Image Optimization
+
+To avoid optimizing images each time the site is built, locally or in Travis,
+we're committing optimized images to the `_assets` directory. When you add a
+new image, be sure to run `gulp optimize:images` to optimize the new image. When
+you commit an image, the pre-commit hook will remind you to do this.
+
 ## Git workflow
 
 ### Branches
