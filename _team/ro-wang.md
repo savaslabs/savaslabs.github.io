@@ -2,8 +2,8 @@
 name: Ro Wang
 slug: ro
 layout: team
-job_title: Drupal Developer
-job_description: Ro is a junior web developer at Savas Labs filling her brain daily with myriad things the team throws at her.
+job_title: Project Manager / Junior Developer
+job_description: Ro is a highly effective project manager honing her development skills at Savas Labs.
 drupal: rowang
 github: lrowang
 linkedin: laurenrowang
@@ -12,6 +12,4 @@ redirect_from:
   - /team/ro-wang/
 ---
 
-Ro brings in software development expertise in her work designing automation software for semiconductor manufacturing at Intel. She likes finding ways to improve a user's experience with an object (be it physical or web-based!) and goes gaga for good "workflow" practices.
-
-Before Savas Labs, Ro worked as a mechanical engineer in product development and manufacturing. She lives in Truckee, California and loves to climb, ski, and get out as much as possible!
+Ro is a seasoned project manager and trained technician. She brings experience from both software and mechanical engineering before joining the Savas team. Ro likes to find ways to improve a user's experience with an object (be it physical or digital) and loves sound workflow practices. She _actually likes_ to create documentation. Bi-lingual and multi-sported, Ro is eager to learn and experience new things. Ro lives in Truckee, California near Lake Tahoe and loves to climb, ski, and enjoy the great outdoors as often as possible.
