@@ -460,8 +460,16 @@ gulp.task('build:scripts:watch', ['build:scripts:dev'], function (callback) {
  * Note: passing anything besides hard-coded literal paths with globs doesn't
  * seem to work with gulp.watch().
  */
-gulp.task('serve', ['build:local'], function () {
+gulp.task('serve', function () {
+  // Only rebuild site if --rebuild option is passed to serve command.
+  if (argv.rebuild !== undefined) {
+    runSequence('build:local', 'watch');
+  } else {
+    runSequence('watch');
+  }
+});
 
+gulp.task('watch', function () {
   browserSync.init({
     server: paths.siteDir,
     ghostMode: false, // Toggle to mirror clicks, reloads etc. (performance)
