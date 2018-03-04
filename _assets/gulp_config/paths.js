@@ -73,6 +73,7 @@ paths.htmlTestFiles = [
   '_site/**/*.html',
   '!_site/2015/**/*.*',
   '!_site/2016/**/*.*',
+  '!_site/2017/**/*.*',
   '!_site/mission-and-values/**/*.*',
   '!_site/news/**/*.*',
   '!_site/styleguide/**/*.*',

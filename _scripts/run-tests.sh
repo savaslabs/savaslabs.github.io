@@ -6,4 +6,9 @@ if [ -z "$TRAVIS" ]; then
 fi
 gulp build:test
 bundle exec rake test -f Rakefile
-gulp accessibility-test
+
+# Since this test takes a while, only run it on feature branches.
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$BRANCH" != "source" ]]; then
+  gulp accessibility-test
+fi
