@@ -386,13 +386,24 @@ gulp.task('clean', ['clean:jekyll',
   'clean:styleguide']);
 
 /**
+ * Task: clean:prod
+ *
+ * Runs all clean commands except images, which are cached by Travis.
+ */
+gulp.task('clean:prod', ['clean:jekyll',
+  'clean:fonts',
+  'clean:scripts',
+  'clean:styles',
+  'clean:styleguide']);
+
+/**
  * Task: build
  *
- * Build the site anew.
+ * Build the site anew. Assumes images are cached by Travis.
  */
 gulp.task('build', function (callback) {
-  runSequence('clean',
-    ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+  runSequence('clean:prod',
+    ['build:scripts', 'build:styles', 'build:fonts'],
     'styleguide',
     'build:jekyll',
     callback);
