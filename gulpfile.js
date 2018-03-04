@@ -34,6 +34,7 @@ const run = require('gulp-run');
 const runSequence = require('run-sequence');
 const sass = require('gulp-ruby-sass');
 const uglify = require('gulp-uglify');
+const argv = require('yargs').argv;
 
 // Include paths.
 const paths = require('./_assets/gulp_config/paths');
@@ -279,7 +280,7 @@ gulp.task('build:images', function () {
  * Deletes all processed images.
  */
 gulp.task('clean:images', function (callback) {
-  del([paths.jekyllImageFiles, paths.siteImageFiles]);
+  del.sync([paths.jekyllImageFiles, paths.siteImageFiles]);
   callback();
 });
 
@@ -305,7 +306,6 @@ gulp.task('fontawesome', function () {
       path.dirname = '';
     }))
     .pipe(gulp.dest(paths.jekyllFontFiles))
-    .pipe(gulp.dest(paths.siteFontFiles))
     .pipe(browserSync.stream())
     .on('error', gutil.log);
 });
@@ -316,7 +316,7 @@ gulp.task('fontawesome', function () {
  * Deletes all processed fonts.
  */
 gulp.task('clean:fonts', function (callback) {
-  del([paths.jekyllFontFiles, paths.siteFontFiles]);
+  del.sync([paths.jekyllFontFiles, paths.siteFontFiles]);
   callback();
 });
 
@@ -369,7 +369,7 @@ gulp.task('build:jekyll:local', function () {
  * Deletes the entire _site directory.
  */
 gulp.task('clean:jekyll', function (callback) {
-  del(['_site']);
+  del.sync(['_site']);
   callback();
 });
 
