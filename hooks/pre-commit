@@ -3,6 +3,7 @@
 # Set variables for printing to the command line.
 RED='\033[1;31m'
 YELLOW='\033[0;33m'
+CYAN='\033[0;36m'
 NC='\033[0m'
 
 PASS=true
@@ -87,6 +88,16 @@ summary as well. To ignore this and proceed, use git commit --no-verify.\n\n${NC
     fi
   fi
 done
+
+# If there are image files, remind the developer to optimize them.
+IMAGES=$(git diff-index --cached HEAD --name-only | grep -E '.jpg|.JPG|.jpeg|.JPEG|.png|.PNG|.svg|.SVG|.gif|.GIF|.webp|.WEBP|.tif|.TIF | xargs echo')
+if [ $? = 0 ]; then
+  printf "${YELLOW}\nAre you committing a new image? If so, please run:\n
+  ${CYAN}gulp optimize:images\n
+${YELLOW}Then add the optimized image file and run git commit --no-verify to avoid seeing
+this message again.\n\n${NC}"
+  PASS=false
+fi
 
 # If there were no failures, proceed with commit.
 if $PASS; then

@@ -256,12 +256,25 @@ gulp.task('clean:scripts', function (callback) {
 /**
  * Task: build:images
  *
- * Optimizes and copies image files.
+ * Copies image files.
+ */
+gulp.task('build:images', function () {
+  return gulp.src(paths.imageFilesGlob)
+    .pipe(gulp.dest(paths.jekyllImageFiles))
+    .pipe(gulp.dest(paths.siteImageFiles))
+    .pipe(browserSync.stream());
+});
+
+
+/**
+ * Task: build:images
+ *
+ * Optimizes image files. Note that this task does not run automatically.
  *
  * We're including imagemin options because we're overriding the default JPEG
  * optimization plugin.
  */
-gulp.task('build:images', function () {
+gulp.task('optimize:images', function () {
   return gulp.src(paths.imageFilesGlob)
     .pipe(cache(imagemin([
       imagemin.gifsicle(),
@@ -269,9 +282,7 @@ gulp.task('build:images', function () {
       imagemin.optipng(),
       imagemin.svgo()
     ])))
-    .pipe(gulp.dest(paths.jekyllImageFiles))
-    .pipe(gulp.dest(paths.siteImageFiles))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.imageFiles));
 });
 
 /**
