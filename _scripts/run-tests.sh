@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 set -e
-node_modules/eslint/bin/eslint.js _comments-app/
-bundle exec scss-lint _assets/styles/scss/*/*.scss
-bundle exec mdl . -c .mdlrc --git-recurse
+
+if [ -z "$TRAVIS" ]; then
+  codeclimate analyze
+fi
 gulp build:test
-gulp accessibility-test
 bundle exec rake test -f Rakefile
+
+# Since this test takes a while, only run it on feature branches.
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$BRANCH" != "source" ]]; then
+  gulp accessibility-test
+fi

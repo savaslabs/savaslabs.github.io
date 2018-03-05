@@ -34,6 +34,7 @@ const run = require('gulp-run');
 const runSequence = require('run-sequence');
 const sass = require('gulp-ruby-sass');
 const uglify = require('gulp-uglify');
+const argv = require('yargs').argv;
 
 // Include paths.
 const paths = require('./_assets/gulp_config/paths');
@@ -110,7 +111,7 @@ gulp.task('build:styles', [
  * Deletes all processed site styles.
  */
 gulp.task('clean:styles', function (callback) {
-  del([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
+  del.sync([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
   callback();
 });
 
@@ -244,7 +245,7 @@ gulp.task('build:scripts:dev', function (callback) {
  * Deletes all processed scripts.
  */
 gulp.task('clean:scripts', function (callback) {
-  del([paths.jekyllJsFiles, paths.siteJsFiles]);
+  del.sync([paths.jekyllJsFiles, paths.siteJsFiles]);
   callback();
 });
 
@@ -255,12 +256,25 @@ gulp.task('clean:scripts', function (callback) {
 /**
  * Task: build:images
  *
- * Optimizes and copies image files.
+ * Copies image files.
+ */
+gulp.task('build:images', function () {
+  return gulp.src(paths.imageFilesGlob)
+    .pipe(gulp.dest(paths.jekyllImageFiles))
+    .pipe(gulp.dest(paths.siteImageFiles))
+    .pipe(browserSync.stream());
+});
+
+
+/**
+ * Task: build:images
+ *
+ * Optimizes image files. Note that this task does not run automatically.
  *
  * We're including imagemin options because we're overriding the default JPEG
  * optimization plugin.
  */
-gulp.task('build:images', function () {
+gulp.task('optimize:images', function () {
   return gulp.src(paths.imageFilesGlob)
     .pipe(cache(imagemin([
       imagemin.gifsicle(),
@@ -268,9 +282,7 @@ gulp.task('build:images', function () {
       imagemin.optipng(),
       imagemin.svgo()
     ])))
-    .pipe(gulp.dest(paths.jekyllImageFiles))
-    .pipe(gulp.dest(paths.siteImageFiles))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.imageFiles));
 });
 
 /**
@@ -279,7 +291,7 @@ gulp.task('build:images', function () {
  * Deletes all processed images.
  */
 gulp.task('clean:images', function (callback) {
-  del([paths.jekyllImageFiles, paths.siteImageFiles]);
+  del.sync([paths.jekyllImageFiles, paths.siteImageFiles]);
   callback();
 });
 
@@ -305,7 +317,6 @@ gulp.task('fontawesome', function () {
       path.dirname = '';
     }))
     .pipe(gulp.dest(paths.jekyllFontFiles))
-    .pipe(gulp.dest(paths.siteFontFiles))
     .pipe(browserSync.stream())
     .on('error', gutil.log);
 });
@@ -316,7 +327,7 @@ gulp.task('fontawesome', function () {
  * Deletes all processed fonts.
  */
 gulp.task('clean:fonts', function (callback) {
-  del([paths.jekyllFontFiles, paths.siteFontFiles]);
+  del.sync([paths.jekyllFontFiles, paths.siteFontFiles]);
   callback();
 });
 
@@ -369,7 +380,7 @@ gulp.task('build:jekyll:local', function () {
  * Deletes the entire _site directory.
  */
 gulp.task('clean:jekyll', function (callback) {
-  del(['_site']);
+  del.sync(['_site']);
   callback();
 });
 
@@ -386,13 +397,24 @@ gulp.task('clean', ['clean:jekyll',
   'clean:styleguide']);
 
 /**
+ * Task: clean:prod
+ *
+ * Runs all clean commands except images, which are cached by Travis.
+ */
+gulp.task('clean:prod', ['clean:jekyll',
+  'clean:fonts',
+  'clean:scripts',
+  'clean:styles',
+  'clean:styleguide']);
+
+/**
  * Task: build
  *
- * Build the site anew.
+ * Build the site anew. Assumes images are cached by Travis.
  */
 gulp.task('build', function (callback) {
-  runSequence('clean',
-    ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+  runSequence('clean:prod',
+    ['build:scripts', 'build:styles', 'build:fonts'],
     'styleguide',
     'build:jekyll',
     callback);
@@ -460,8 +482,16 @@ gulp.task('build:scripts:watch', ['build:scripts:dev'], function (callback) {
  * Note: passing anything besides hard-coded literal paths with globs doesn't
  * seem to work with gulp.watch().
  */
-gulp.task('serve', ['build:local'], function () {
+gulp.task('serve', function () {
+  // Only rebuild site if --rebuild option is passed to serve command.
+  if (argv.rebuild !== undefined) {
+    runSequence('build:local', 'watch');
+  } else {
+    runSequence('watch');
+  }
+});
 
+gulp.task('watch', function () {
   browserSync.init({
     server: paths.siteDir,
     ghostMode: false, // Toggle to mirror clicks, reloads etc. (performance)
