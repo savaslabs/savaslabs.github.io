@@ -111,7 +111,7 @@ gulp.task('build:styles', [
  * Deletes all processed site styles.
  */
 gulp.task('clean:styles', function (callback) {
-  del([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
+  del.sync([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
   callback();
 });
 
@@ -245,7 +245,7 @@ gulp.task('build:scripts:dev', function (callback) {
  * Deletes all processed scripts.
  */
 gulp.task('clean:scripts', function (callback) {
-  del([paths.jekyllJsFiles, paths.siteJsFiles]);
+  del.sync([paths.jekyllJsFiles, paths.siteJsFiles]);
   callback();
 });
 
