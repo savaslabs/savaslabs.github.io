@@ -9,9 +9,6 @@ bundle check || bundle install
 # NPM install if needed.
 npm install
 
-curl https://www.teleconsole.com/get.sh | sh
-teleconsole
-
 # Build the site.
 gulp
 
