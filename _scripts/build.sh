@@ -13,7 +13,7 @@ npm install
 gulp
 
 # Checkout master and remove everything
-git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master --depth=1
+git clone https://${GH_TOKEN}@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
 cd ../savaslabs.github.io.master
 git checkout master
 rm -rf *
