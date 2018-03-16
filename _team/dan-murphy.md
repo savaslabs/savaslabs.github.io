@@ -8,6 +8,10 @@ drupal: dmurphy1
 github: dmurphy1
 linkedin: danielmurphyjr
 resume: http://stackoverflow.com/cv/dmurphy1
+badges:
+  - image: "D8CD"
+    alt: "Acquia Certified Developer D8"
+    link: "https://certification.acquia.com/user/1651416"
 redirect_from:
   - /team/dan-murphy/
 ---
