@@ -397,3 +397,9 @@ ul
 YYYY
 hooksPath
 ghostMode
+dmurphy
+github
+linkedin
+danielmurphyjr
+nerding
+Babson
