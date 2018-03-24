@@ -17,7 +17,11 @@ drupal_planet_summary: |
 
 Updating Drupal 8 core with Composer has proven to be a problematic process for many developers. For some, this is nearly as upsetting as the fact that [the Composer logo is actually a conductor](https://github.com/composer/getcomposer.org/issues/36), and some have abandoned the platform entirely, opting to stick with Drupal 7.
 
-Updating from 8.3 to 8.4 was notoriously difficult and I recently experienced an issue while updating from 8.4.5 to 8.5.0. The process isn't always as simple as running `composer update drupal/core` and going about your day. Below are some tips for handling the update process.
+The process isn't always as simple as running `composer update drupal/core` and going about your day—the update from 8.3 to 8.4 was notoriously difficult and I recently experienced an issue while updating from 8.4.5 to 8.5.0. In this article I've provided instructions for updating D8 core with Composer, plus some tips for dealing with common issues.
+
+This is especially important now as we await a [highly critical security update to all versions of Drupal](https://www.drupal.org/psa-2018-001), to be released on Wednesday, March 28, 2018. This level of security update is quite rare, but the update needs to be implemented on all sites as soon as possible after its release.
+
+As the PSA linked to above notes, the Drupal Security Team will be providing security releases for unsupported minor versions 8.3.x and 8.4.x due to the issues many have encountered when updating from these versions. If you're still on one of those versions, the update may be more straightforward if you stick with the release for that minor version.
 
 ## General instructions for updating core
 
