@@ -6,9 +6,106 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Mar 2018 09:21:17 +0000</pubDate>
-    <lastBuildDate>Sat, 24 Mar 2018 09:21:17 +0000</lastBuildDate>
+    <pubDate>Sun, 25 Mar 2018 03:03:05 +0000</pubDate>
+    <lastBuildDate>Sun, 25 Mar 2018 03:03:05 +0000</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Updating Drupal 8 core via Composer</title>
+        <description>&lt;p&gt;Updating Drupal 8 core with Composer has proven to be a problematic process for many developers. For some, this is nearly as upsetting as the fact that &lt;a href=&quot;https://github.com/composer/getcomposer.org/issues/36&quot;&gt;the Composer logo is actually a conductor&lt;/a&gt;, and some have abandoned the platform entirely, opting to stick with Drupal 7.&lt;/p&gt;
+
+&lt;p&gt;The process isn’t always as simple as running &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update drupal/core&lt;/code&gt; and going about your day — the update from 8.3 to 8.4 was notoriously difficult and I recently experienced an issue while updating from 8.4.5 to 8.5.0. In this article, I’ve provided instructions for updating D8 core with Composer, plus some tips for dealing with common issues.&lt;/p&gt;
+
+&lt;p&gt;This is especially important now as we await a &lt;a href=&quot;https://www.drupal.org/psa-2018-001&quot;&gt;highly critical security update to all versions of Drupal&lt;/a&gt;, to be released on Wednesday, March 28, 2018. This level of security update is quite rare, but the update needs to be implemented on all sites as soon as possible after its release.&lt;/p&gt;
+
+&lt;p&gt;As the PSA linked to above notes, the Drupal Security Team will be providing security releases for unsupported minor versions 8.3.x and 8.4.x due to the issues many have encountered when updating from these versions. If you’re still on one of those versions, the update may be more straightforward if you stick with the release for that minor version.&lt;/p&gt;
+
+&lt;h2 id=&quot;general-instructions-for-updating-core&quot;&gt;General instructions for updating core&lt;/h2&gt;
+
+&lt;p&gt;First, let’s cover the steps needed to update Drupal 8 core with Composer.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;To update the core package, run:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+ composer update drupal/core --with-dependencies -v
+&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;It’s recommended to run the update command with the &lt;code class=&quot;highlighter-rouge&quot;&gt;--with-dependencies&lt;/code&gt; flag to update any of Drupal core’s dependencies as well.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To capture any included database updates, run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush updb -y&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;To capture any included configuration changes, run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush config-export -y&lt;/code&gt; and commit the changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All three of these steps are necessary whenever the core package is updated.&lt;/p&gt;
+
+&lt;h2 id=&quot;dealing-with-errors&quot;&gt;Dealing with errors&lt;/h2&gt;
+
+&lt;h3 id=&quot;core-version-doesnt-update&quot;&gt;Core version doesn’t update&lt;/h3&gt;
+
+&lt;p&gt;If you run the &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; command but core isn’t updating, edit your &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file to include the specific version of core you want, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;^8.5&lt;/code&gt;. Then, run the &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; command again.&lt;/p&gt;
+
+&lt;h3 id=&quot;composer-command-outputs-errors&quot;&gt;Composer command outputs errors&lt;/h3&gt;
+
+&lt;p&gt;Composer may not be able to resolve all of the dependencies of core and will output an error like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Your requirements could not be resolved to an installable &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;of packages.
+
+  Problem 1
+    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;&#39;t install drupal/core 8.5.0
+    - Conclusion: don&#39;&lt;/span&gt;t install drupal/core 8.5.0-rc1
+    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;&#39;t install drupal/core 8.5.0-beta1
+    - Conclusion: don&#39;&lt;/span&gt;t install drupal/core 8.5.0-alpha1
+    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;&#39;t install drupal/core 8.6.x-dev
+    - Conclusion: remove symfony/config v3.2.9
+    - Installation request for drupal/core ^8.5 -&amp;gt; satisfiable by drupal/core[8.5.0, 8.5.0-alpha1, 8.5.0-beta1, 8.5.0-rc1, 8.5.x-dev, 8.6.x-dev].
+    - Conclusion: don&#39;&lt;/span&gt;t install symfony/config v3.2.9
+    - drupal/core 8.5.x-dev requires symfony/dependency-injection ~3.4.0 -&amp;gt; satisfiable by symfony/dependency-injection[3.4.x-dev, v3.4.0, v3.4.0-BETA1, v3.4.0-BETA2, v3.4.0-BETA3, v3.4.0-BETA4, v3.4.0-RC1, v3.4.0-RC2, v3.4.1, v3.4.2, v3.4.3, v3.4.4, v3.4.5, v3.4.6].
+    - symfony/dependency-injection 3.4.x-dev conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.0 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.0-BETA1 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.0-BETA2 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.0-BETA3 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.0-BETA4 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.0-RC1 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.0-RC2 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.1 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.2 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.3 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.4 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.5 conflicts with symfony/config[v3.2.9].
+    - symfony/dependency-injection v3.4.6 conflicts with symfony/config[v3.2.9].
+    - Installation request &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;symfony/config &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;locked at v3.2.9&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; -&amp;gt; satisfiable by symfony/config[v3.2.9].
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This happens when one of Drupal’s dependencies is updated and the new version requires an updated version of another package. To resolve this, include the dependency package causing the issue in the &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; command. The &lt;code class=&quot;highlighter-rouge&quot;&gt;--with-dependencies&lt;/code&gt; flag this will ensure that the dependency’s &lt;em&gt;dependencies&lt;/em&gt; are also updated. To fix the error above, I ran:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer update drupal/core symfony/config --with-dependencies -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;youre-not-alone&quot;&gt;You’re not alone&lt;/h2&gt;
+
+&lt;p&gt;If you continue to run into problems, the best advice I can give you is to search for the specific update you’re trying to make. Every time I’ve had an issue I’ve been able to find discussions online regarding that specific update and potential resolutions.&lt;/p&gt;
+
+&lt;p&gt;In fact, when I got the error above while trying to update to 8.5.0, I found &lt;a href=&quot;https://orkjern.com/updating-to-drupal-85-with-composer&quot;&gt;this helpful article&lt;/a&gt; by drupal.org user &lt;a href=&quot;https://www.drupal.org/u/eiriksm&quot;&gt;eiriksm&lt;/a&gt; and was able to resolve the issue. Check out the article and its comments for more discussion on how to deal with Composer issues when updating Drupal 8 core.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2018/03/25/updating-drupal-8-via-composer.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2018/03/25/updating-drupal-8-via-composer.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal8</category>
+        
+        <category>drupal-planet</category>
+        
+        <category>composer</category>
+        
+        
+      </item>
     
       <item>
         <title>The cost of investing in Drupal 7 - why it&#39;s time for Drupal 8</title>
@@ -1471,267 +1568,6 @@ drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span cla
         <category>module-development</category>
         
         <category>mailchimp</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Deploying Jekyll to Github Pages with Travis and Gulp</title>
-        <description>&lt;p&gt;Since our company’s inception, we at Savas Labs have used &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; to build our company website and &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; to host it with great success. Jekyll is a powerful tool out of the box, and it’s hard to imagine a simpler hosting strategy than GitHub Pages, which only requires a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot;&gt;specifically named branch&lt;/a&gt; and a &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages&quot;&gt;single settings update&lt;/a&gt; to get your site live for free. Although we often use &lt;a href=&quot;/blog/tag/drupal/&quot;&gt;Drupal&lt;/a&gt; to build complex, data-heavy systems that need to have a simple workflow for site admins, for our own site we recognized that Jekyll was a better tool for our workflow that would mitigate security risks, eliminate site hosting costs, and reduce complexity since there’s no need for a database back-end.&lt;/p&gt;
-
-&lt;p&gt;One well-known limitation of this workflow: any Jekyll plugins not &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;whitelisted by GitHub Pages&lt;/a&gt; will be disabled when GitHub Pages builds the site, since &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; is run with the &lt;code class=&quot;highlighter-rouge&quot;&gt;--safe&lt;/code&gt; tag. We recently wanted to start using the &lt;a href=&quot;https://github.com/robwierzbowski/jekyll-picture-tag&quot;&gt;Jekyll Picture Tag&lt;/a&gt; plugin (&lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html#jekyll-picture-tag-plugin&quot;&gt;read about why&lt;/a&gt;), and the incredibly crucial &lt;a href=&quot;https://github.com/jekyll/jemoji&quot;&gt;Jemoji&lt;/a&gt; plugin &lt;img class=&quot;emoji&quot; title=&quot;:joy_cat:&quot; alt=&quot;:joy_cat:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f639.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;, so we needed to find a way to build our site before pushing it to GitHub Pages for deployment. To complicate matters a bit more, we recently starting &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;building our site with gulp&lt;/a&gt;, which introduced another layer of dependencies to the mix.&lt;/p&gt;
-
-&lt;p&gt;Many solutions exist for building the site before pushing to GitHub Pages. We chose to use Travis CI to run our gulp command to build the site, then commit the changes to our &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch so GitHub Pages will deploy the updated site.&lt;/p&gt;
-
-&lt;h2 id=&quot;basic-workflow&quot;&gt;Basic workflow&lt;/h2&gt;
-
-&lt;p&gt;Our site was already using Travis CI to run our
-&lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/70420c8afcf59b8d91fba3b57d2ca8241c71f211/_scripts/run-tests.sh&quot;&gt;test script&lt;/a&gt;
-on pull requests and merges to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch. You can learn about setting
-up Travis in their &lt;a href=&quot;https://docs.travis-ci.com/&quot;&gt;docs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Previously, Travis would build the site and run our tests, then we would merge
-branches into &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, triggering GitHub Pages to rebuild and deploy our site.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/original-deployment-workflow.jpg&quot; alt=&quot;Diagram of original deployment workflow&quot; class=&quot;blog-image-full-width&quot; /&gt;
-&lt;span class=&quot;caption&quot;&gt;Original deployment workflow&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Now, we want to build our site before it gets to GitHub Pages to ensure our
-Jekyll Plugins are included. In our new workflow:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;We created a new default branch so the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch can be cleared
-out and used by Travis.&lt;/li&gt;
-  &lt;li&gt;When this new branch is updated (i.e. a pull request is merged), Travis
-builds the site.&lt;/li&gt;
-  &lt;li&gt;Using a GitHub token for authorization, Travis commits the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;
-directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, then pushes the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch.&lt;/li&gt;
-  &lt;li&gt;This triggers GitHub Pages to deploy our pre-built site.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/new-deployment-workflow.jpg&quot; alt=&quot;Diagram of new deployment workflow&quot; class=&quot;blog-image-full-width&quot; /&gt;
-&lt;span class=&quot;caption&quot;&gt;New deployment workflow&lt;/span&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;create-a-new-default-branch&quot;&gt;Create a new default branch&lt;/h3&gt;
-
-&lt;p&gt;We created a new branch off &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; and set it to the default
-branch on GitHub. &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; contains what the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch used to — the
-Jekyll config file(s), HTML files and partials, data files, styles and JS, etc.
-Each time the deploy process is run, Travis deletes all the files on the
-&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, then commits the entire compiled &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory. So, the
-&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch only contains the compiled site, which is deployed by
-GitHub Pages.&lt;/p&gt;
-
-&lt;p&gt;Why delete all files on &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; before committing the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory? This
-ensures that all changes (including deletions) are captured in each deployment.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-up-a-github-token-for-travis&quot;&gt;Set up a GitHub token for Travis&lt;/h3&gt;
-
-&lt;p&gt;To give Travis the authority to commit and push to our repository, we generated
-a personal access token by visiting the
-&lt;a href=&quot;https://github.com/settings/tokens&quot;&gt;settings page&lt;/a&gt; on GitHub and generating a
-new token. We used a bot account that has access to our repository to avoid
-needing to use one of our personal accounts.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/github-token.jpg&quot; alt=&quot;Generating a personal access token in GitHub&quot; class=&quot;blog-image-full-width&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We’ll need to use the access token and the account’s email address in our
-deployment script, so to keep those items out of version control we used
-&lt;code class=&quot;highlighter-rouge&quot;&gt;travis encrypt&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;travis encrypt &lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;token&amp;gt; --add env.global
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;travis encrypt &lt;span class=&quot;nv&quot;&gt;GH_EMAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;email&amp;gt; --add env.global
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This adds encrypted versions of these sensitive items to &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;big long encrypted string...&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;...and another&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With that, we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;GH_TOKEN&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GH_EMAIL&lt;/code&gt; variables in our
-deployment script. See &lt;a href=&quot;https://docs.travis-ci.com/user/encryption-keys/&quot;&gt;Travis’ docs for more inforamtion.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;configure-deployment&quot;&gt;Configure deployment&lt;/h3&gt;
-
-&lt;p&gt;Next we added the following to our &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Keep Travis from testing `master` branch&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Deployment config&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./_scripts/build.sh&quot;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We don’t want Travis running the test script on the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch anymore since it
-only contains the compiled site, and we only want Travis to run the
-deployment script on the &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; branch. We’re also telling Travis which script
-to run on deployment, and to destroy the site after the test script is run with our
-&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.test.yml&lt;/code&gt; file so the deployment script can rebuild the site with our
-default &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file. Check out &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/95bb1d70790acf4c33b7c121e2ff462af5096d73/.travis.yml&quot;&gt;this revision of the full .travis.yml file here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;That revision of &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; worked for us when we were using &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; to
-compile the site, but things got trickier when we started using gulp. We had to
-set the proper versions of npm and node.js and ensure that our ruby gems were
-installed properly. Here’s the full Travis config we needed to get things
-running with gulp:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# .travis.yml&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;required&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./_scripts/run-tests.sh&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;6.1&#39;&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rvm install 2.1&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rvm use 2.1&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;. $HOME/.nvm/nvm.sh &amp;amp;&amp;amp; nvm install 6.1 &amp;amp;&amp;amp; nvm use 6.1&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gem install bundler&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle check || bundle install&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;NOKOGIRI_USE_SYSTEM_LIBRARIES=true&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stuff&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;more stuff&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./_scripts/build.sh&quot;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;source&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Or view it &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/9434cee6fe1cce54de4bc0294da1c6e9f52476e0/.travis.yml&quot;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-deployment-script&quot;&gt;The deployment script&lt;/h3&gt;
-
-&lt;p&gt;When the &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; branch is updated and our tests pass, the deployment script
-&lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt; is executed.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Enable error reporting to the console.&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -e
-
-&lt;span class=&quot;c&quot;&gt;# Install bundles if needed.&lt;/span&gt;
-bundle check &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; bundle install
-
-&lt;span class=&quot;c&quot;&gt;# NPM install if needed.&lt;/span&gt;
-. &lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.nvm/nvm.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nvm install 6.1 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; nvm use 6.1
-npm install
-
-&lt;span class=&quot;c&quot;&gt;# Build the site.&lt;/span&gt;
-gulp
-
-&lt;span class=&quot;c&quot;&gt;# Checkout `master` and remove everything.&lt;/span&gt;
-git clone https://&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_TOKEN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;@github.com/savaslabs/savaslabs.github.io.git ../savaslabs.github.io.master
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../savaslabs.github.io.master
-git checkout master
-rm -rf &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Copy generated HTML site from source branch in original repository.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Now the `master` branch will contain only the contents of the _site directory.&lt;/span&gt;
-cp -R ../savaslabs.github.io/_site/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; .
-
-&lt;span class=&quot;c&quot;&gt;# Make sure we have the updated .travis.yml file so tests won&#39;t run on master.&lt;/span&gt;
-cp ../savaslabs.github.io/.travis.yml .
-git config user.email &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GH_EMAIL&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-git config user.name &lt;span class=&quot;s2&quot;&gt;&quot;savas-bot&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Commit and push generated content to `master` branch.&lt;/span&gt;
-git status
-git add -A .
-git status
-git commit -a -m &lt;span class=&quot;s2&quot;&gt;&quot;Travis #&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TRAVIS_BUILD_NUMBER&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-git push --quiet origin &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;master&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Some important notes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Make sure the script file is executable!&lt;/li&gt;
-  &lt;li&gt;The last line ensures that our encrypted token won’t end up in git logs.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;deployment-and-debugging&quot;&gt;Deployment and debugging&lt;/h2&gt;
-
-&lt;p&gt;Merging this code into &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; was the easiest way for us to test if our new process worked
-— scary, right? Fortunately, if the build script failed (and it did several
-times until we could get the npm and node versions correct and the ruby gems
-installing properly) nothing got pushed to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; so nothing was deployed,
-meaning no downtime on our site.&lt;/p&gt;
-
-&lt;p&gt;We also used
-&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; to debug from inside the Travis
-environment. To do this, we commented out the &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; line and added the following to
-&lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl https://www.teleconsole.com/get.sh | sh
-teleconsole
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This printed a session ID in the Travis CI output. With a couple of commands, we
-could enter the session from our local machines:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Install teleconsole&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;curl https://www.teleconsole.com/get.sh | sh
-
-&lt;span class=&quot;c&quot;&gt;# Join session&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;teleconsole join &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;session ID]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Being able to look around and run commands within the Travis environment was
-hugely helpful!&lt;/p&gt;
-
-&lt;h2 id=&quot;future-work&quot;&gt;Future work&lt;/h2&gt;
-
-&lt;p&gt;We’d like to implement some improvements on this process in the future:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;With our current setup, we can’t deploy when our tests are failing.&lt;/li&gt;
-  &lt;li&gt;Providing consistency with Ruby and Node dependencies across different
-operating systems and environments has proven difficult. We’ve considered
-Dockerizing our site but that’s a subject for another post!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;We’d like to give credit to these helpful posts, which we adapted for our site:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://eshepelyuk.github.io/2014/10/28/automate-github-pages-travisci.html&quot;&gt;Automate GitHub Pages publishing with Jekyll and Travis CI&lt;/a&gt; by Evgeny Shepelyuk&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://mlota.github.io/2015/11/23/automating-deployment-github-pages-jekyll-travis.html&quot;&gt;Automating deployment of a GitHub Pages hosted site with Jekyll and Travis CI&lt;/a&gt; by Mel Lota&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2016/10/25/deploy-jekyll-with-travis.html</guid>
-        
-        <category>jekyll</category>
-        
-        <category>continuous-integration</category>
         
         
       </item>
