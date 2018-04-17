@@ -12,7 +12,7 @@ layout: default
         <ul>
           {% assign numServices = page.services | size %}
           {% assign halfWay = numServices | divided_by: 2.0 | ceil %}
-          {% for item in page.services | limit: halfWay %}
+          {% for item in page.services limit: halfWay %}
             <li>{{ item }}</li>
           {% endfor %}
         </ul>
