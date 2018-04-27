@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'github-pages'
-gem 'html-proofer', '~> 3.0.0'
+gem 'html-proofer'
 gem 'travis'
 gem 'scss_lint'
 gem 'json', github: 'flori/json', branch: 'v1.8'
