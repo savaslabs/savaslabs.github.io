@@ -49,6 +49,7 @@ sass port of the Solarized theme. See
   table td.code { width: 100%; }
   border: 1px solid $light-gray !important;
   border-radius: .4em;
+  margin: 0 1.5em 1.5em !important;
 }
 
 .highlight .line-numbers {
@@ -86,6 +87,10 @@ pre {
   margin: 0;
   color: $pre-color;
   overflow: auto;
+
+  &.highlight {
+    margin: 0 !important;
+  }
 }
 
 .pre-code {

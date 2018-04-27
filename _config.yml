@@ -59,7 +59,7 @@ collections:
     output: false
 
 # Gems
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate

@@ -168,7 +168,7 @@ If through research you uncover that you're still not ready for Drupal 8, you sh
 
 ### To those with production Drupal 7 sites.
 
-As far as building new on Drupal 7, I have a hard time conceptualizing for whom that is the right choice. MDW [wants to keep the door open to building new in Drupal 7]((https://www.mydropwizard.com/blog/its-ok-build-new-sites-drupal-7)), but others [point out incentives again](https://www.mydropwizard.com/comment/916#comment-916). Much like the hat tip to Dries for accepting criticism, I must commend MDW accepting these comments on their blog.
+As far as building new on Drupal 7, I have a hard time conceptualizing for whom that is the right choice. MDW [wants to keep the door open to building new in Drupal 7](https://www.mydropwizard.com/blog/its-ok-build-new-sites-drupal-7), but others [point out incentives again](https://www.mydropwizard.com/comment/916#comment-916). Much like the hat tip to Dries for accepting criticism, I must commend MDW accepting these comments on their blog.
 
 If you have a high degree of customization and technical debt, [keep track of the development of Drupal 9](https://www.drupal.org/node/2608062). Upgrade now cannot be prescriptive for the 900,000+ sites still on Drupal 7. We generally agree with Angie's recent presentation at Acquia Engage called [Drupal 9 and Backwards Compatibility: Why now is the time to upgrade to Drupal 8](https://www.slideshare.net/webchickenator/drupal-9-and-backwards-compatibility-why-now-is-the-time-to-upgrade-to-drupal-8/39) for those on Drupal 7:
 
