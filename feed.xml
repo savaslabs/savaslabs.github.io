@@ -6,9 +6,9 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Mar 2018 09:24:35 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Mar 2018 09:24:35 +0000</lastBuildDate>
-    <generator>Jekyll v3.0.3</generator>
+    <pubDate>Fri, 27 Apr 2018 15:46:55 +0000</pubDate>
+    <lastBuildDate>Fri, 27 Apr 2018 15:46:55 +0000</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>Updating Drupal 8 core via Composer</title>
@@ -28,9 +28,8 @@
   &lt;li&gt;
     &lt;p&gt;To update the core package, run:&lt;/p&gt;
 
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
- composer update drupal/core --with-dependencies -v
-&lt;/code&gt;&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; composer update drupal/core --with-dependencies -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;p&gt;It’s recommended to run the update command with the &lt;code class=&quot;highlighter-rouge&quot;&gt;--with-dependencies&lt;/code&gt; flag to update any of Drupal core’s dependencies as well.&lt;/p&gt;
   &lt;/li&gt;
@@ -50,17 +49,17 @@
 
 &lt;p&gt;Composer may not be able to resolve all of the dependencies of core and will output an error like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Your requirements could not be resolved to an installable &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;of packages.
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Your requirements could not be resolved to an installable &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;of packages.
 
   Problem 1
-    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;&#39;t install drupal/core 8.5.0
-    - Conclusion: don&#39;&lt;/span&gt;t install drupal/core 8.5.0-rc1
-    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;&#39;t install drupal/core 8.5.0-beta1
-    - Conclusion: don&#39;&lt;/span&gt;t install drupal/core 8.5.0-alpha1
-    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;&#39;t install drupal/core 8.6.x-dev
+    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;'t install drupal/core 8.5.0
+    - Conclusion: don'&lt;/span&gt;t install drupal/core 8.5.0-rc1
+    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;'t install drupal/core 8.5.0-beta1
+    - Conclusion: don'&lt;/span&gt;t install drupal/core 8.5.0-alpha1
+    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;'t install drupal/core 8.6.x-dev
     - Conclusion: remove symfony/config v3.2.9
     - Installation request for drupal/core ^8.5 -&amp;gt; satisfiable by drupal/core[8.5.0, 8.5.0-alpha1, 8.5.0-beta1, 8.5.0-rc1, 8.5.x-dev, 8.6.x-dev].
-    - Conclusion: don&#39;&lt;/span&gt;t install symfony/config v3.2.9
+    - Conclusion: don'&lt;/span&gt;t install symfony/config v3.2.9
     - drupal/core 8.5.x-dev requires symfony/dependency-injection ~3.4.0 -&amp;gt; satisfiable by symfony/dependency-injection[3.4.x-dev, v3.4.0, v3.4.0-BETA1, v3.4.0-BETA2, v3.4.0-BETA3, v3.4.0-BETA4, v3.4.0-RC1, v3.4.0-RC2, v3.4.1, v3.4.2, v3.4.3, v3.4.4, v3.4.5, v3.4.6].
     - symfony/dependency-injection 3.4.x-dev conflicts with symfony/config[v3.2.9].
     - symfony/dependency-injection v3.4.0 conflicts with symfony/config[v3.2.9].
@@ -77,14 +76,12 @@
     - symfony/dependency-injection v3.4.5 conflicts with symfony/config[v3.2.9].
     - symfony/dependency-injection v3.4.6 conflicts with symfony/config[v3.2.9].
     - Installation request &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;symfony/config &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;locked at v3.2.9&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; -&amp;gt; satisfiable by symfony/config[v3.2.9].
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This happens when one of Drupal’s dependencies is updated and the new version requires an updated version of another package. To resolve this, include the dependency package causing the issue in the &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; command. The &lt;code class=&quot;highlighter-rouge&quot;&gt;--with-dependencies&lt;/code&gt; flag this will ensure that the dependency’s &lt;em&gt;dependencies&lt;/em&gt; are also updated. To fix the error above, I ran:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer update drupal/core symfony/config --with-dependencies -v
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer update drupal/core symfony/config &lt;span class=&quot;nt&quot;&gt;--with-dependencies&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;youre-not-alone&quot;&gt;You’re not alone&lt;/h2&gt;
 
@@ -108,7 +105,7 @@
       </item>
     
       <item>
-        <title>The cost of investing in Drupal 7 - why it&#39;s time for Drupal 8</title>
+        <title>The cost of investing in Drupal 7 - why it's time for Drupal 8</title>
         <description>&lt;p&gt;This is part two of a two-part series.&lt;/p&gt;
 
 &lt;p&gt;In &lt;a href=&quot;/2017/10/27/drupal-8-turns-2.html&quot;&gt;part one&lt;/a&gt;, we discussed how Drupal 8’s adoption in its first two years was a bit lackluster compared to what many expected. Grounded in a better understanding of the shortcomings of the past two years, we’ll try to equip those of you considering Drupal 8 with the information you need to make the best decision for your organization as you continue to invest in the powerful framework of Drupal.&lt;/p&gt;
@@ -250,7 +247,7 @@
 
 &lt;h3 id=&quot;wiifm-the-future&quot;&gt;WIIFM? The Future.&lt;/h3&gt;
 
-&lt;p&gt;The future is uncertain; the only things guaranteed are death and taxes. Actually, even &lt;a href=&quot;https://phys.org/news/2017-03-economists-minimum-income.html&quot;&gt;those&lt;/a&gt; I’m &lt;a href=&quot;https://www.scientificamerican.com/article/aging-is-reversible-at-least-in-human-cells-and-live-mice/&quot;&gt;not so sure&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; Regardless, the future for Drupal 6 and 7 are a known entity not likely to get much better. The upside of Drupal 8, while partially known, is largely still in the making and will keep getting better over time.&lt;/p&gt;
+&lt;p&gt;The future is uncertain; the only things guaranteed are death and taxes. Actually, even &lt;a href=&quot;https://phys.org/news/2017-03-economists-minimum-income.html&quot;&gt;those&lt;/a&gt; I’m &lt;a href=&quot;https://www.scientificamerican.com/article/aging-is-reversible-at-least-in-human-cells-and-live-mice/&quot;&gt;not so sure&lt;/a&gt; :wink: Regardless, the future for Drupal 6 and 7 are a known entity not likely to get much better. The upside of Drupal 8, while partially known, is largely still in the making and will keep getting better over time.&lt;/p&gt;
 
 &lt;h4 id=&quot;continuous-innovation-with-experimental-modules-who-doesnt-want-that&quot;&gt;Continuous innovation with experimental modules! Who doesn’t want &lt;em&gt;that&lt;/em&gt;?&lt;/h4&gt;
 
@@ -286,7 +283,7 @@
 
 &lt;h3 id=&quot;to-those-with-production-drupal-7-sites&quot;&gt;To those with production Drupal 7 sites.&lt;/h3&gt;
 
-&lt;p&gt;As far as building new on Drupal 7, I have a hard time conceptualizing for whom that is the right choice. MDW &lt;a href=&quot;(https://www.mydropwizard.com/blog/its-ok-build-new-sites-drupal-7)&quot;&gt;wants to keep the door open to building new in Drupal 7&lt;/a&gt;, but others &lt;a href=&quot;https://www.mydropwizard.com/comment/916#comment-916&quot;&gt;point out incentives again&lt;/a&gt;. Much like the hat tip to Dries for accepting criticism, I must commend MDW accepting these comments on their blog.&lt;/p&gt;
+&lt;p&gt;As far as building new on Drupal 7, I have a hard time conceptualizing for whom that is the right choice. MDW &lt;a href=&quot;https://www.mydropwizard.com/blog/its-ok-build-new-sites-drupal-7&quot;&gt;wants to keep the door open to building new in Drupal 7&lt;/a&gt;, but others &lt;a href=&quot;https://www.mydropwizard.com/comment/916#comment-916&quot;&gt;point out incentives again&lt;/a&gt;. Much like the hat tip to Dries for accepting criticism, I must commend MDW accepting these comments on their blog.&lt;/p&gt;
 
 &lt;p&gt;If you have a high degree of customization and technical debt, &lt;a href=&quot;https://www.drupal.org/node/2608062&quot;&gt;keep track of the development of Drupal 9&lt;/a&gt;. Upgrade now cannot be prescriptive for the 900,000+ sites still on Drupal 7. We generally agree with Angie’s recent presentation at Acquia Engage called &lt;a href=&quot;https://www.slideshare.net/webchickenator/drupal-9-and-backwards-compatibility-why-now-is-the-time-to-upgrade-to-drupal-8/39&quot;&gt;Drupal 9 and Backwards Compatibility: Why now is the time to upgrade to Drupal 8&lt;/a&gt; for those on Drupal 7:&lt;/p&gt;
 
@@ -336,7 +333,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
   &lt;p&gt;To upgrade or not? &lt;em&gt;That&lt;/em&gt; is the question.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Like any decision, whether you’re building new or upgrading, the fundamental question is: do the benefits outweigh the costs? In the specific case of investing in Drupal the question becomes: &lt;em&gt;when&lt;/em&gt; does making the leap to Drupal 8 rather than continuing to invest in Drupal 7 (or possibly 6… don’t tell me it’s 5 &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; ) outweigh the costs to take that leap? For any organization to properly answer that question, it’s necessary to look 3-5 years out with regard to budget and organizational goals. It’s also helpful to better understand how the broader community has approached this same decision over the past two years. Let’s take a look.&lt;/p&gt;
+&lt;p&gt;Like any decision, whether you’re building new or upgrading, the fundamental question is: do the benefits outweigh the costs? In the specific case of investing in Drupal the question becomes: &lt;em&gt;when&lt;/em&gt; does making the leap to Drupal 8 rather than continuing to invest in Drupal 7 (or possibly 6… don’t tell me it’s 5 :wink: ) outweigh the costs to take that leap? For any organization to properly answer that question, it’s necessary to look 3-5 years out with regard to budget and organizational goals. It’s also helpful to better understand how the broader community has approached this same decision over the past two years. Let’s take a look.&lt;/p&gt;
 
 &lt;h2 id=&quot;taking-stock-of-drupal-8s-adoption&quot;&gt;Taking stock of Drupal 8’s adoption&lt;/h2&gt;
 
@@ -397,15 +394,15 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;Drupalers haven’t written much about the retrospective analysis of the Drupal 8 adoption challenges. But without being able to take a real, honest look inward, we cannot improve. We must know thyself because the examined Drupal problems are worth fixing! We highlight here the most prominent challenges that have slowed Drupal 8 adoption.&lt;/p&gt;
 
-&lt;h3 id=&quot;complete-code-re-architecture&quot;&gt;1. Complete code re-architecture&lt;/h3&gt;
+&lt;h3 id=&quot;1-complete-code-re-architecture&quot;&gt;1. Complete code re-architecture&lt;/h3&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://dri.es/why-the-big-architectural-changes-in-drupal-8&quot;&gt;massive shift of the underpinnings of the Drupal code&lt;/a&gt; is a decision that has long been debated within the community. There’s no question it has proven a challenge for proficient Drupal 7 developers to develop on Drupal 8: for most, substantial training and learning is required. Training takes time, and time can often mean money. The loss in short-term efficiency for seasoned Drupal developers made early adoption riskier, and typically added to a project’s expense. Joining with other prominent frameworks known outside of Drupal like Twig and Symfony (colloquially referred to as “&lt;a href=&quot;https://www.garfieldtech.com/blog/off-the-island-2013&quot;&gt;getting off the island&lt;/a&gt;”) was a collective decision by wise Drupal leadership with the long-term value of the product in mind, but in the short-term, for the average Drupal developer, it meant more new things to learn.&lt;/p&gt;
 
-&lt;h3 id=&quot;slow-contributed-module-porting&quot;&gt;2. Slow contributed module porting&lt;/h3&gt;
+&lt;h3 id=&quot;2-slow-contributed-module-porting&quot;&gt;2. Slow contributed module porting&lt;/h3&gt;
 
 &lt;p&gt;Historically Drupal has derived much of its usefulness from the rich contributed module ecosystem that extends the features of Drupal core. Contributed modules, although crucial to most live Drupal websites, by definition are not directly driven by those that oversee Drupal core development. This disconnect invariably leads to some important modules not having a usable upgraded version when a new major version of Drupal core is released. This is well-known within the Drupal community, &lt;a href=&quot;http://webchick.net/node/129&quot;&gt;explained at great length by Angie Byron&lt;/a&gt; (second reference), and not unique to the Drupal 8 release. Tremendous amounts of individual and community efforts are required to upgrade modules to the latest major version. Due to &lt;a href=&quot;#complete-code-re-architecture&quot;&gt;#1 from above&lt;/a&gt;, these efforts were further exacerbated by the re-architecture. Costs to upgrade even one module (it’s common for a Drupal 7 site to use 100) are often greater than clients or agencies are willing to absorb on a given project.&lt;/p&gt;
 
-&lt;h3 id=&quot;incomplete-upgrade-path&quot;&gt;3. Incomplete upgrade path&lt;/h3&gt;
+&lt;h3 id=&quot;3-incomplete-upgrade-path&quot;&gt;3. Incomplete upgrade path&lt;/h3&gt;
 
 &lt;p&gt;We often describe websites as comprised of three main asset groups: the &lt;strong&gt;code&lt;/strong&gt; (Drupal core, contributed and custom modules), &lt;strong&gt;files&lt;/strong&gt; (think media assets like images), and the &lt;strong&gt;database&lt;/strong&gt; where content and site configuration lives. When upgrading, you download the new Drupal code, which has a set of instructions that must be run to apply complex updates to the database. Files remain unchanged. A well-oiled upgrade process is required to update the content and configuration from the site being upgraded into a format intelligible to the new system. The approach to perform those upgrades &lt;a href=&quot;https://www.drupal.org/docs/8/upgrade/upgrading-from-drupal-6-or-7-to-drupal-8&quot;&gt;has also changed in Drupal 8&lt;/a&gt; to what is now referred to as “a migration”. As of the &lt;a href=&quot;https://www.drupal.org/blog/drupal-8-4-0&quot;&gt;most recent minor release of Drupal 8&lt;/a&gt; in October states:&lt;/p&gt;
 
@@ -415,7 +412,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;“Nearing beta stability” after two years out from release is not ideal though it is reality since perfecting these migration tasks is hard work. One can discern from the Drupal 7 -&amp;gt; 8 migration snippet that it’s clearly further afield, and for those who need to preserve their content, perhaps a non-starter for a 7 -&amp;gt; 8 upgrade. The inability to efficiently update database structures adds to project expense. Whatever doesn’t come over “for free” with the migration will need to be manually replicated by a human, and humans are costly, as our time is precious.&lt;/p&gt;
 
-&lt;h3 id=&quot;stance-on-backwards-compatibility&quot;&gt;4. Stance on backwards compatibility&lt;/h3&gt;
+&lt;h3 id=&quot;4-stance-on-backwards-compatibility&quot;&gt;4. Stance on backwards compatibility&lt;/h3&gt;
 
 &lt;p&gt;Drupal’s approach to backwards compatibility is famously “&lt;a href=&quot;https://www.drupal.org/node/2613652&quot;&gt;for data, not code&lt;/a&gt;”. Briefly put, in their words: “While the upgrade path will reliably preserve your data, there is no backward compatibility with the previous Drupal code.” If you want to dig deeper, there’s a lot of &lt;a href=&quot;https://dri.es/backward-compatibility&quot;&gt;good&lt;/a&gt; &lt;a href=&quot;https://www.drupal.org/core/d8-bc-policy&quot;&gt;discussion&lt;/a&gt; &lt;a href=&quot;https://www.drupal.org/blog/the-transformation-of-drupal-8-for-continuous-innovation&quot;&gt;on&lt;/a&gt; &lt;a href=&quot;https://www.drupal.org/core/d8-allowed-changes#bc-break&quot;&gt;this&lt;/a&gt; &lt;a href=&quot;https://events.drupal.org/baltimore2017/sessions/backwards-compatibility-burden-benefit&quot;&gt;topic&lt;/a&gt;.&lt;/p&gt;
 
@@ -427,7 +424,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;Albeit a bit confusing, even for the non-technologist, you get the sense they’re more worried about breaking stuff and want upgrades to Just Work™. The strength of the Drupal approach is it allows for more innovation, and in some ways, less baggage since preserving backwards compatibility often means hanging on to outdated code. The trade-off is, once old code is determined to be holding innovation back, it’s cast to the side, and new structures must be implemented in the updated version. Historically, this paradigm has caused many to get stuck in an outdated Drupal version for longer than they’d like because they cannot afford an upgrade.&lt;/p&gt;
 
-&lt;h3 id=&quot;inertia-perceived-value-and-expense&quot;&gt;5. Inertia, perceived value, and expense&lt;/h3&gt;
+&lt;h3 id=&quot;5-inertia-perceived-value-and-expense&quot;&gt;5. Inertia, perceived value, and expense&lt;/h3&gt;
 
 &lt;p&gt;A modern organization is focused on more than &lt;em&gt;just&lt;/em&gt; their website, and for investments that don’t deliver direct, visual, tangible change, stakeholders often overlook them, even when they may present value. Examples where the value is oft-invisible to clients are investing in an automated testing framework that ensures perpetual site integrity, or vigilantly applying security updates as they become available. In either case, the client may perceive them as optional, but foregoing them is likely to cost the organization in the long-run.&lt;/p&gt;
 
@@ -486,7 +483,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;h2 id=&quot;why-the-redesign&quot;&gt;Why the redesign&lt;/h2&gt;
 
-&lt;p&gt;You know, the typical reason, because we wanted to &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;. In truth, we were due for a redesign as the last time we did this was &lt;a href=&quot;/2015/04/01/building-our-site.html&quot;&gt;over two years ago&lt;/a&gt;. Additionally, given our growth, we felt our website did not reflect the quality of work we’ve been doing. As we updated our message, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, &lt;a href=&quot;/company/oksana-cyrwus/&quot;&gt;Oksana Cyrwus&lt;/a&gt;, to create a vision of our team’s identity.&lt;/p&gt;
+&lt;p&gt;You know, the typical reason, because we wanted to :wink:. In truth, we were due for a redesign as the last time we did this was &lt;a href=&quot;/2015/04/01/building-our-site.html&quot;&gt;over two years ago&lt;/a&gt;. Additionally, given our growth, we felt our website did not reflect the quality of work we’ve been doing. As we updated our message, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, &lt;a href=&quot;/company/oksana-cyrwus/&quot;&gt;Oksana Cyrwus&lt;/a&gt;, to create a vision of our team’s identity.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg&quot; alt=&quot;Many devices testing responsive&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Oksana’s cross browser testing lab&lt;/span&gt;&lt;/p&gt;
@@ -564,7 +561,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;The web development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.&lt;/p&gt;
 
-&lt;p&gt;One of our core &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt; “Lightning Skillshares!” &lt;img class=&quot;emoji&quot; title=&quot;:zap:&quot; alt=&quot;:zap:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/26a1.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;One of our core &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our :zap: “Lightning Skillshares!” :zap:&lt;/p&gt;
 
 &lt;p&gt;Since we believe in the open source ethos and sharing with the community, in this series, we’ll highlight some tips we use to improve our day-to-day efficiency (and hopefully yours too!).&lt;/p&gt;
 
@@ -576,7 +573,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;#using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Online Screen Recorder to capture your screen&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/h2&gt;
+&lt;h2 id=&quot;1-using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; lets you share your UNIX terminal session for easy collaboration! We’ve been using it for a couple months now and find it to be an excellent addition to our team toolbox.&lt;/p&gt;
 
@@ -587,7 +584,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-teleconsole-demo.gif&quot; class=&quot;blog-image-full-width&quot; alt=&quot;Teleconsole demo&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Terminal sharing 2,700 miles away!&lt;/span&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm&lt;/h2&gt;
+&lt;h2 id=&quot;2-accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm&lt;/h2&gt;
 
 &lt;p&gt;There are many useful tools available for interacting with a MySQL database. Since we’ve transitioned to &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker for our local development&lt;/a&gt;, we prefer one of the following techniques for manipulating databases abstracted into the Docker container.&lt;/p&gt;
 
@@ -612,7 +609,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
   &lt;li&gt;Set the correct database user and password (&lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_USER&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_PASSWORD&lt;/code&gt;).&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Once the containers are up you can visit the port specific url (for instance &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;example.site&amp;gt;:8001&lt;/code&gt;) to access your project-specific PhpMyAdmin interface! &lt;img class=&quot;emoji&quot; title=&quot;:tada:&quot; alt=&quot;:tada:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f389.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once the containers are up you can visit the port specific url (for instance &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;example.site&amp;gt;:8001&lt;/code&gt;) to access your project-specific PhpMyAdmin interface! :tada:&lt;/p&gt;
 
 &lt;h3 id=&quot;using-phpstorm-to-interact-with-a-dockerized-database&quot;&gt;Using PhpStorm to interact with a Dockerized Database&lt;/h3&gt;
 &lt;p&gt;Another method is to connect PhpStorm directly to the database container using PhpStorm’s Database Browser. Instead of opening a shell into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface! PhpStorm even provides useful code completions when writing database queries!&lt;/p&gt;
@@ -637,12 +634,12 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm2.png&quot; class=&quot;blog-image-full-width&quot; alt=&quot;phpstorm connect2&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! &lt;img class=&quot;emoji&quot; title=&quot;:star2:&quot; alt=&quot;:star2:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f31f.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! :star2:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm3.png&quot; class=&quot;blog-image-full-width&quot; alt=&quot;phpstorm connect3&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Write and save custom queries!&lt;/span&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Screen Recorder to capture your screen&lt;/h2&gt;
+&lt;h2 id=&quot;3-using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Screen Recorder to capture your screen&lt;/h2&gt;
 
 &lt;p&gt;If a picture’s worth a thousand words, than a video is worth…a million? There are times when it’s useful to send a short video (for example, a quick tutorial to a client) and Apowersoft’s &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;Free Online Screen Recorder&lt;/a&gt; is a great tool for capturing your screen. It’s easy to use and there’s &lt;em&gt;no recording time limit&lt;/em&gt;!  Other things we like are the ability to customize the cursor appearance, limit the capture to a specific region of your screen, and specify the resulting video format.&lt;/p&gt;
 
@@ -689,7 +686,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;#simplify-content-linking-with-linkit&quot;&gt;5. Simplify content linking with LinkIt&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;dont-make-authors-guess---use-structured-content&quot;&gt;1. Don’t make authors guess - use structured content&lt;/h2&gt;
+&lt;h2 id=&quot;1-dont-make-authors-guess---use-structured-content&quot;&gt;1. Don’t make authors guess - use structured content&lt;/h2&gt;
 
 &lt;p&gt;The abundance of different devices, screen sizes and form factors warrants the use of structured content. Structured content is content separated into distinct parts, each of which has a clearly defined purpose and can be edited and presented independently from one another according to context.&lt;/p&gt;
 
@@ -717,7 +714,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
   &lt;li&gt;The modular nature of structured content makes migrations between CMS versions or to a completely different CMS much more streamlined. &lt;em&gt;A huge plus for those long-term thinkers!&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;configure-the-wysiwyg-editor-responsibly&quot;&gt;2. Configure the WYSIWYG editor responsibly&lt;/h2&gt;
+&lt;h2 id=&quot;2-configure-the-wysiwyg-editor-responsibly&quot;&gt;2. Configure the WYSIWYG editor responsibly&lt;/h2&gt;
 
 &lt;p&gt;Drupal 8 ships with WYSIWYG text editor in core. The editor even works great on mobile! In a society that is so dependent on our mobile devices - who wouldn’t like to be able to quickly edit a missed typo right from your phone?&lt;/p&gt;
 
@@ -750,7 +747,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;Let’s keep our content editors happy and not overcrowd their interfaces when it’s absolutely not necessary. It is our duty as software engineers to deliver systems that are easy to use, intuitive, scalable and uphold design consistency.&lt;/p&gt;
 
-&lt;h2 id=&quot;empower-your-editorial-team-with-quick-edit&quot;&gt;3. Empower your editorial team with Quick-Edit&lt;/h2&gt;
+&lt;h2 id=&quot;3-empower-your-editorial-team-with-quick-edit&quot;&gt;3. Empower your editorial team with Quick-Edit&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.drupal.org/docs/8/core/modules/quick-edit/overview&quot;&gt;The Quick Edit module&lt;/a&gt; is one of the most exciting new features that is included in Drupal 8 core. It allows content authors and editors to make updates to their content without ever leaving the page.&lt;/p&gt;
 
@@ -768,7 +765,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;A workaround for this issue is to use the custom View modes for Entities and create custom Twig templates for each View mode that should be outputted by Views in order to accommodate custom layout options.&lt;/p&gt;
 
-&lt;h2 id=&quot;enrich-content-with-media-embeds&quot;&gt;4. Enrich content with Media Embeds&lt;/h2&gt;
+&lt;h2 id=&quot;4-enrich-content-with-media-embeds&quot;&gt;4. Enrich content with Media Embeds&lt;/h2&gt;
 
 &lt;p&gt;In the era of social media, content editors can’t imagine their daily routine without being able to embed their Tweets or videos into the stories they publish on their sites. In Drupal 6 and the early days of Drupal 7, it was pretty challenging to provide this functionality within the WYSIWYG editor. Developers had to configure many different plugins and modules and ask them politely to cooperate.&lt;/p&gt;
 
@@ -779,7 +776,7 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
 
 &lt;p&gt;With all this media goodness available to us, there is no reason why we shouldn’t go the extra mile and configure the CKEditor Media Embed module for our content authors!&lt;/p&gt;
 
-&lt;h2 id=&quot;simplify-content-linking-with-linkit&quot;&gt;5. Simplify content linking with LinkIt&lt;/h2&gt;
+&lt;h2 id=&quot;5-simplify-content-linking-with-linkit&quot;&gt;5. Simplify content linking with LinkIt&lt;/h2&gt;
 
 &lt;p&gt;Linking to content has always been a clumsy experience for content editors, especially when linking internally within the same site.&lt;/p&gt;
 
@@ -867,7 +864,7 @@ offer (true bolds and italics, language sets and punctuation among others)&lt;/l
 
 &lt;h2 id=&quot;evaluating-typefaces&quot;&gt;Evaluating typefaces&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-helvetica-alternatives.jpg&quot; alt=&quot;Examples of alternatives to Helvetica based on Helvetica&#39;s physical characteristics&quot; class=&quot;blog-image-full-width&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/on-web-typography-helvetica-alternatives.jpg&quot; alt=&quot;Examples of alternatives to Helvetica based on Helvetica's physical characteristics&quot; class=&quot;blog-image-full-width&quot; /&gt;
 &lt;span class=&quot;caption&quot;&gt;Finding alternatives to Helvetica by examining its physical characteristics&lt;br /&gt;
 &lt;em&gt;From&lt;/em&gt; &lt;a href=&quot;https://abookapart.com/products/on-web-typography&quot;&gt;On Web Typography&lt;/a&gt; &lt;em&gt;by Jason Santa Maria&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -1025,19 +1022,19 @@ but you also put yourself in your readers’ shoes.&lt;/p&gt;
 
 &lt;p&gt;To build an image with the applications required by our theme we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; with the following contents:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM node:7.1
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM node:7.1
 MAINTAINER Dan Murphy &amp;lt;dan@savaslabs.com&amp;gt;
 
 RUN apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    apt-get install -y php5-dev  &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    curl -sS https://getcomposer.org/installer | php -- --install-dir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin --filename&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;composer &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    apt-get install &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; php5-dev  &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    curl &lt;span class=&quot;nt&quot;&gt;-sS&lt;/span&gt; https://getcomposer.org/installer | php &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--install-dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin &lt;span class=&quot;nt&quot;&gt;--filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;composer &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 
     &lt;span class=&quot;c&quot;&gt;# Directory required by Yeoman to run.&lt;/span&gt;
-    mkdir -p /root/.config/configstore &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    mkdir &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /root/.config/configstore &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 
     &lt;span class=&quot;c&quot;&gt;# Clean up.&lt;/span&gt;
     apt-get clean &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    rm -rf &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
       /root/.composer &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
       /tmp/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
       /usr/include/php &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
@@ -1048,8 +1045,7 @@ RUN apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&g
 RUN chmod g+rwx /root /root/.config /root/.config/configstore
 
 EXPOSE 3001 3050
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The commands in this &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt;:&lt;/p&gt;
 
@@ -1076,15 +1072,14 @@ EXPOSE 3001 3050
 
 &lt;p&gt;To use this image, we specified it in our project’s &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file (&lt;a href=&quot;https://gist.github.com/dmurphy1/ee62085eef2d40b279cc848f88213fc9&quot;&gt;see full file here&lt;/a&gt;) by adding the following lines to the services section:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;node-php-composer&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;savaslabs/node-php-composer:1.2&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;node-php-composer&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;savaslabs/node-php-composer:1.2&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3050:3050&quot;&lt;/span&gt;
    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3001:3001&quot;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;volumes_from&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;volumes_from&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;php&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This defines the configuration that is applied to a &lt;code class=&quot;highlighter-rouge&quot;&gt;node-php-composer&lt;/code&gt; container when spun up. This configuration:&lt;/p&gt;
 
@@ -1100,18 +1095,16 @@ EXPOSE 3001 3050
 
 &lt;p&gt;Once the containers are running, we can open a Bash shell in the theme directory of the &lt;code class=&quot;highlighter-rouge&quot;&gt;node-php-composer&lt;/code&gt; container by running the command:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose run --rm --service-ports -w /var/www/html/web/themes/custom/pattern_lab_starter node-php-composer /bin/bash
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--service-ports&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /var/www/html/web/themes/custom/pattern_lab_starter node-php-composer /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;We use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--service-ports&lt;/code&gt; option &lt;a href=&quot;https://github.com/docker/compose/issues/1259#issuecomment-90878095&quot;&gt;to ensure the ports used for serving the style guide are mapped to the host&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Once inside the container in the theme directory, we install the theme’s dependencies and serve the style guide by running the following commands:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --unsafe-perm
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install &lt;span class=&quot;nt&quot;&gt;--unsafe-perm&lt;/span&gt;
 npm start
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Voila! Once &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; is running we can access the Pattern Lab style guide at the URL’s that are outputted, for example &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:3050/pattern-lab/public/&lt;/code&gt;.&lt;/p&gt;
 
@@ -1169,51 +1162,48 @@ npm start
 
 &lt;p&gt;The way we historically imported a database was to pipe a SQL database dump file into the MySQL command-line client:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql -u&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_user&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; -p&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_pass&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;database_name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &amp;lt; /path/to/database.sql
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_user&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_pass&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;database_name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &amp;lt; /path/to/database.sql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;An improvement upon the default method above which we’ve been using for some time allows us to monitor import progress utilizing the &lt;a href=&quot;https://www.ivarch.com/programs/pv.shtml&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pv&lt;/code&gt;&lt;/a&gt; command. Large imports can take many minutes, so having insight into how much time remains is helpful to our workflow:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pv /path/to/database.sql | mysql -u&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_user&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; -p &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_pass&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;database_name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pv /path/to/database.sql | mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_user&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;some_pass&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;database_name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;On large databases, though, MYSQL imports can be slow. If we look at a database dump SQL file, we can see why. For example, a 19 MB database dump file we are using in one of our test cases further on in this post contains these instructions:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;--
--- Table structure for table `block_content`
---
-&lt;/span&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;-- Table structure for table `block_content`&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
+
 &lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EXISTS&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;/*!40101 SET @saved_cs_client     = @@character_set_client */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;/*!40101 SET character_set_client = utf8 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
   &lt;span class=&quot;nv&quot;&gt;`id`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;nv&quot;&gt;`revision_id`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;`type`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COMMENT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;The ID of the target entity.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;`type`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COMMENT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'The ID of the target entity.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;nv&quot;&gt;`uuid`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;nv&quot;&gt;`langcode`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascii&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;UNIQUE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content_field__uuid__value`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`uuid`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;UNIQUE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content__revision_id`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`revision_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content_field__type__target_id`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`type`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InnoDB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARSET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8mb4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COMMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;The base table for block_content entities.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InnoDB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHARSET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8mb4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COMMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'The base table for block_content entities.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;/*!40101 SET character_set_client = @saved_cs_client */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;--
--- Dumping data for table `block_content`
---
-&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;-- Dumping data for table `block_content`&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
+
 &lt;span class=&quot;k&quot;&gt;LOCK&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLES&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WRITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;/*!40000 ALTER TABLE `block_content` DISABLE KEYS */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autocommit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;a9167ea6-c6b7-48a1-ac06-6d04a67a5d54&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;2114eee9-1674-4873-8800-aaf06aaf9773&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;855c13ba-689e-40fd-9b00-d7e3dd7998ae&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;8c68671b-715e-457d-a497-2d38c1562f67&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;bc7701dd-b31c-45a6-9f96-48b0b91c7fa2&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;d8e23385-5bda-41da-8e1f-ba60fc25c1dc&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;ea6a93eb-b0c3-4d1c-8690-c16b3c52b3f1&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;3d314051-567f-4e74-aae4-a8b076603e44&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;2ef5ae05-6819-4571-8872-4d994ae793ef&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;3deaa1a9-4144-43cc-9a3d-aeb635dfc2ca&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;basic&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;d57e81e8-c613-45be-b1d5-5844ba15413c&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;en&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`block_content`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a9167ea6-c6b7-48a1-ac06-6d04a67a5d54'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2114eee9-1674-4873-8800-aaf06aaf9773'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'855c13ba-689e-40fd-9b00-d7e3dd7998ae'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'8c68671b-715e-457d-a497-2d38c1562f67'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'bc7701dd-b31c-45a6-9f96-48b0b91c7fa2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'d8e23385-5bda-41da-8e1f-ba60fc25c1dc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ea6a93eb-b0c3-4d1c-8690-c16b3c52b3f1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'3d314051-567f-4e74-aae4-a8b076603e44'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2ef5ae05-6819-4571-8872-4d994ae793ef'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'3deaa1a9-4144-43cc-9a3d-aeb635dfc2ca'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basic'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'d57e81e8-c613-45be-b1d5-5844ba15413c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;/*!40000 ALTER TABLE `block_content` ENABLE KEYS */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;UNLOCK&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;When we pipe the contents of the MySQL database dump to the &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; command, the client processes each of these instructions sequentially in order to (1) create the structure for each table defined in the file, (2) populate the database with data from the SQL dump and (3) do post-processing work like create indices to ensure the database performs well. The example here processes pretty quickly, but if your site has a lot of historic content, as many of our clients do, then the import process can take enough time that it throws a wrench in our rapid workflow!&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
@@ -1273,16 +1263,15 @@ npm start
 
 &lt;p&gt;Here’s how the process works&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. Suppose you have a Docker stack with a web container and a database container, and that the database container has data in it already (your site is up and running locally). Assuming a database container name of &lt;code class=&quot;highlighter-rouge&quot;&gt;drupal_database&lt;/code&gt;, to generate a volume for the MySQL &lt;code class=&quot;highlighter-rouge&quot;&gt;/var/lib/mysql&lt;/code&gt; contents of the database container, you’d run these commands:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Stop the database container to prevent read/writes to it during the database&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Stop the database container to prevent read/writes to it during the database&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# export process.&lt;/span&gt;
 docker stop drupal_database
 &lt;span class=&quot;c&quot;&gt;# Now use the carinamarinab/backup image with the `backup` command to generate a&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# tar.gz file based on the `/var/lib/mysql` directory in the `drupal_database`&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# container.&lt;/span&gt;
-docker run --rm --volumes-from drupal_database carinamarina/backup backup &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---source /var/lib/mysql/ --stdout --zip &amp;gt; db-data-volume.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--volumes-from&lt;/span&gt; drupal_database carinamarina/backup backup &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--source&lt;/span&gt; /var/lib/mysql/ &lt;span class=&quot;nt&quot;&gt;--stdout&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--zip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; db-data-volume.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;With the 4.7 GB sample database above, this process takes 239 seconds and results in 702 MB compressed file.&lt;/p&gt;
 
@@ -1290,23 +1279,22 @@ docker run --rm --volumes-from drupal_database carinamarina/backup backup &lt;sp
 
 &lt;p&gt;You can then distribute this file to your colleagues (at Savas Labs, we use &lt;a href=&quot;https://aws.amazon.com/s3/&quot;&gt;Amazon S3&lt;/a&gt;), or make use of it in continuous integration builds (more on that below), using these commands:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Copy the data volume tar.gz file from your team&#39;s AWS S3 bucket.&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; ! -f db/db-data-volume.tar.gz &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then &lt;/span&gt;aws s3 cp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;your-bucket&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/mysql-data-volume/db-data-volume.tar.gz db-data-volume.tar.gz; &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Copy the data volume tar.gz file from your team's AWS S3 bucket.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; db/db-data-volume.tar.gz &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then &lt;/span&gt;aws s3 cp &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;your-bucket&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/mysql-data-volume/db-data-volume.tar.gz db-data-volume.tar.gz&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Stop the database container to prevent read/writes during the database&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# restore process.&lt;/span&gt;
 docker stop drupal_database
 &lt;span class=&quot;c&quot;&gt;# Remove the /var/lib/mysql contents from the database container.&lt;/span&gt;
-docker run --rm --volumes-from drupal_database alpine:3.3 rm -rf /var/lib/mysql/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--volumes-from&lt;/span&gt; drupal_database alpine:3.3 rm &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/mysql/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Use the carinamarina/backup image with the `restore` command to extract&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# the tar.gz file contents into /var/lib/mysql in the database container.&lt;/span&gt;
-docker run --rm --interactive --volumes-from drupal_database &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-carinamarina/backup restore --destination /var/lib/mysql/ --stdin &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
---zip &amp;lt; db-data-volume.tar.gz
+docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--interactive&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--volumes-from&lt;/span&gt; drupal_database &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+carinamarina/backup restore &lt;span class=&quot;nt&quot;&gt;--destination&lt;/span&gt; /var/lib/mysql/ &lt;span class=&quot;nt&quot;&gt;--stdin&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--zip&lt;/span&gt; &amp;lt; db-data-volume.tar.gz
 &lt;span class=&quot;c&quot;&gt;# Start the database container again.&lt;/span&gt;
 docker start drupal_database
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;So, not too complicated, but it will require a change in your processes for generating seed databases to distribute to your team for local development, or for CI builds. Instead of using &lt;code class=&quot;highlighter-rouge&quot;&gt;mysqldump&lt;/code&gt; to create the seed database file, you’ll need to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;carinamarina/backup&lt;/code&gt; image to create the &lt;code class=&quot;highlighter-rouge&quot;&gt;.tar.gz&lt;/code&gt; file for distribution. And instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql {database} &amp;lt; database.sql&lt;/code&gt; you’ll use &lt;code class=&quot;highlighter-rouge&quot;&gt;carinamarina/backup&lt;/code&gt; to restore the data volume.&lt;/p&gt;
 
@@ -1316,51 +1304,48 @@ docker start drupal_database
 
 &lt;p&gt;The above steps can be manually performed by a technical lead responsible for generating and distributing the MySQL data volume to team members and your testing infrastructure. But we can get further productivity gains by automating this process completely with &lt;a href=&quot;https://www.travis-ci.com&quot;&gt;Travis CI&lt;/a&gt; and GitHub hooks. In outline, here’s what this process looks like:&lt;/p&gt;
 
-&lt;h3 id=&quot;generate-a-new-seed-database-sql-dump-after-production-deployments&quot;&gt;1. Generate a new seed database SQL dump after production deployments&lt;/h3&gt;
+&lt;h3 id=&quot;1-generate-a-new-seed-database-sql-dump-after-production-deployments&quot;&gt;1. Generate a new seed database SQL dump after production deployments&lt;/h3&gt;
 
 &lt;p&gt;At Savas Labs, we use &lt;a href=&quot;http://www.fabfile.org&quot;&gt;Fabric&lt;/a&gt; to automate our deployment process. When we deploy to production (not on a Docker stack), our post-deployment tasks generate a traditional MySQL database dump and copy it to Amazon S3:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update_seed_db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;drush -r &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s/www/web sql-dump &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update_seed_db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'drush -r &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s/www/web sql-dump &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    --result-file=/tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql --gzip &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    --structure-tables-list=cache,cache_*,history,search_*,sessions,watchdog&#39;&lt;/span&gt; \
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    --structure-tables-list=cache,cache_*,history,search_*,sessions,watchdog'&lt;/span&gt; \
     &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;/usr/local/bin/aws s3 cp /tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql.gz &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    s3://{bucket-name}/seed-database/database.sql.gz --sse&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;rm /tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql.gz&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/usr/local/bin/aws s3 cp /tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql.gz &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    s3://{bucket-name}/seed-database/database.sql.gz --sse'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'rm /tmp/$(date +&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d)--post-deployment.sql.gz'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;when-work-is-merged-into-develop-create-a-new-mysql-data-volume-archive&quot;&gt;2. When work is merged into develop, create a new MySQL data volume archive&lt;/h3&gt;
+&lt;h3 id=&quot;2-when-work-is-merged-into-develop-create-a-new-mysql-data-volume-archive&quot;&gt;2. When work is merged into develop, create a new MySQL data volume archive&lt;/h3&gt;
 
 &lt;p&gt;We use &lt;a href=&quot;http://developers.savaslabs.com/en/latest/git.html#basic-git-workflow-git-flow&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git flow&lt;/code&gt;&lt;/a&gt; as our collaboration and documentation standard for source code management on our Drupal projects. Whenever a developer merges a feature branch into &lt;code class=&quot;highlighter-rouge&quot;&gt;develop&lt;/code&gt;, we update the MySQL data volume archive dump for use in Travis CI tasks and local development. First, there is a specification in our &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file that calls a deployment script:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;resources/scripts/travis-deploy.sh&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;develop&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+  &lt;span class=&quot;na&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;develop&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And the &lt;code class=&quot;highlighter-rouge&quot;&gt;travis-deploy.sh&lt;/code&gt; script:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; -e
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
 
 make import-seed-db
-make &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt;-mysql-data
+make export-mysql-data
 aws s3 cp db-data-volume.tar.gz &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/mysql-data-volume/db-data-volume.tar.gz --sse
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;/mysql-data-volume/db-data-volume.tar.gz &lt;span class=&quot;nt&quot;&gt;--sse&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This script: (1) imports the traditional MySQL seed database file from production, and then (2) creates a MySQL data volume archive. We use a &lt;a href=&quot;https://github.com/savaslabs/docker-drupal-template/blob/master/Makefile&quot;&gt;Makefile&lt;/a&gt; to standardize common site provisioning tasks for developers and our CI systems.&lt;/p&gt;
 
-&lt;h3 id=&quot;pull-requests-and-local-development-make-use-of-the-mysql-data-volume-archive&quot;&gt;3. Pull requests and local development make use of the MySQL data volume archive&lt;/h3&gt;
+&lt;h3 id=&quot;3-pull-requests-and-local-development-make-use-of-the-mysql-data-volume-archive&quot;&gt;3. Pull requests and local development make use of the MySQL data volume archive&lt;/h3&gt;
 
 &lt;p&gt;Now, whenever developers want to refresh their local environment by wiping the existing database and re-importing the seed database, or, when a Travis CI build is triggered by a GitHub pull request, these processes can make use of an up-to-date MySQL data volume archive file which is super fast to restore! This way, we ensure we’re always testing against the latest content and configuration, and avoid running into costly issues having to troubleshoot inconsistencies with production.&lt;/p&gt;
 
@@ -1371,10 +1356,10 @@ s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&qu
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;It’s worth noting that there are &lt;a href=&quot;https://github.com/juampynr/syncdb&quot;&gt;cool projects out there&lt;/a&gt; for doing parallel imports of a SQL dump file which improve the import experience. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;It’s worth noting that there are &lt;a href=&quot;https://github.com/juampynr/syncdb&quot;&gt;cool projects out there&lt;/a&gt; for doing parallel imports of a SQL dump file which improve the import experience. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Hat tip to Tim Stallmann for taking a proof of concept and incorporating it into a &lt;a href=&quot;/results/case-studies/hptn/&quot;&gt;real-world project&lt;/a&gt;, from which many of the code samples here are drawn. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Hat tip to Tim Stallmann for taking a proof of concept and incorporating it into a &lt;a href=&quot;/results/case-studies/hptn/&quot;&gt;real-world project&lt;/a&gt;, from which many of the code samples here are drawn. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1438,13 +1423,12 @@ s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&qu
 
 &lt;p&gt;To use this new library, we must specify it as a dependency of our custom module. We do that in a &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file that sits in our custom module’s root directory and requires that library via the following code:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;thinkshout/mailchimp-api-php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=1.0.3&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;thinkshout/mailchimp-api-php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=1.0.3&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;install-the-library&quot;&gt;Install the library&lt;/h3&gt;
 
@@ -1458,18 +1442,16 @@ s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&qu
 
 &lt;p&gt;From the command line, we can run the following drush commands:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;drush composer-manager install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;drush composer-manager install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Alternatively, we could include the following lines in an update hook:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Re-build Composer Manager composer.json and run composer update.
-drush_composer_manager_composer_json_rebuild&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;;
-drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;update&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Re-build Composer Manager composer.json and run composer update.
+drush_composer_manager_composer_json_rebuild&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'update'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;For Drupal 8 sites, the process is slightly different. As mentioned previously, as of release 8.1.0, Drupal core directly uses Composer to manage dependencies and the Composer Manager module is no longer necessary. For Drupal 8 sites, we should follow the &lt;a href=&quot;https://www.drupal.org/node/2822349&quot;&gt;Drupal.org instructions for managing dependencies for a custom project&lt;/a&gt;. Following those instructions ensures that all of the site’s dependencies, including the MailChimp library specified by our custom module, are installed.&lt;/p&gt;
 
@@ -1481,7 +1463,7 @@ drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span cla
 
 &lt;p&gt;We implemented the following function, which can be reviewed and modified for your specific purposes:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span class=&quot;sd&quot;&gt;/**
  * Add an email to a MailChimp list.
  *
@@ -1504,50 +1486,48 @@ drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span cla
 &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mymodule_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
   &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Set the timeout to something that won&#39;t take down the Drupal site:
+    &lt;span class=&quot;c1&quot;&gt;// Set the timeout to something that won't take down the Drupal site:
 &lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// Get an instance of the MailchimpLists class.
-&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;apikey&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'apikey'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// Use MEMBER_STATUS_PENDING to require double opt-in for the subscriber. Otherwise, use MEMBER_STATUS_SUBSCRIBED.
 &lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;status&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MEMBER_STATUS_PENDING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;email_type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MEMBER_STATUS_PENDING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'email_type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// Subscribe user to the list.
 &lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addOrUpdateMember&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@email was subscribed to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_NOTICE&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mymodule'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@email was subscribed to list @list.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'@email'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@list'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_NOTICE&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;A problem occurred subscribing @email to list @list.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mymodule'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'A problem occurred subscribing @email to list @list.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'@email'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'@list'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// The user was not subscribed so log to watchdog.
-&lt;/span&gt;    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mymodule&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;An error occurred subscribing @email to list @list. Status code @code. &quot;%message&quot;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;@email&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;@list&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;%message&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;&#39;@code&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+&lt;/span&gt;    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mymodule'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'An error occurred subscribing @email to list @list. Status code @code. &quot;%message&quot;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'@email'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'@list'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'%message'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'@code'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;With that function defined, we can then subscribe an email address to a specific Mailchimp mailing list through the following function call in our custom module:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mymodule_subscribe_user($api_key, $list_id, $email);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;mymodule_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 

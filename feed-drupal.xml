@@ -6,9 +6,9 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Mar 2018 09:24:35 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Mar 2018 09:24:35 +0000</lastBuildDate>
-    <generator>Jekyll v3.0.3</generator>
+    <pubDate>Fri, 27 Apr 2018 15:46:55 +0000</pubDate>
+    <lastBuildDate>Fri, 27 Apr 2018 15:46:55 +0000</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
     
     
       <item>
@@ -22,7 +22,7 @@
             Updating Drupal 8 core with Composer has proven to be a problematic process
 for many developers and has caused some to abandon the platform entirely,
 opting to stick with Drupal 7. Having updating our own Drupal 8 sites many
-times now, we&#39;ve compiled some notes on how to use Composer to update core
+times now, we've compiled some notes on how to use Composer to update core
 and what to do when issues arise.
 
                 &lt;a href=&quot;https://savaslabs.com/2018/03/25/updating-drupal-8-via-composer.html&quot;&gt;Continue reading…&lt;/a&gt;
@@ -46,14 +46,14 @@ and what to do when issues arise.
     
     
       <item>
-        <title>The cost of investing in Drupal 7 - why it&#39;s time for Drupal 8</title>
+        <title>The cost of investing in Drupal 7 - why it's time for Drupal 8</title>
         <description>
           &lt;p&gt;
             
               
               &lt;img src=&quot;https://savaslabs.com/assets/img/blog/drupal-8-outweighs-7.jpg&quot; alt=&quot;Drupal 8 outweighing Drupal 7 on a scale&quot; &gt;
             
-            In the second of a two-part series, we investigate Drupal 8&#39;s present value and help highlight sometimes hidden costs of developing on an older platform.
+            In the second of a two-part series, we investigate Drupal 8's present value and help highlight sometimes hidden costs of developing on an older platform.
 
                 &lt;a href=&quot;https://savaslabs.com/2017/11/08/cost-of-drupal-7.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
@@ -81,7 +81,7 @@ and what to do when issues arise.
               
               &lt;img src=&quot;https://savaslabs.com/assets/img/blog/drupal-7-outweighs-8.jpg&quot; alt=&quot;Drupal 7 outweighs Drupal 8 in 2016&quot; &gt;
             
-            Drupal 8 has been around for almost two years. In the first of a two-part series, we take a look at how successful Drupal 8 has been. In the second, we&#39;ll investigate its future value and the cost of developing on older platforms.
+            Drupal 8 has been around for almost two years. In the first of a two-part series, we take a look at how successful Drupal 8 has been. In the second, we'll investigate its future value and the cost of developing on older platforms.
 
                 &lt;a href=&quot;https://savaslabs.com/2017/10/27/drupal-8-turns-2.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
@@ -217,7 +217,7 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
               
               &lt;img src=&quot;https://savaslabs.com/assets/img/blog/mailchimp_3_drupal_composer_3.jpg&quot; alt=&quot;sheet music&quot; &gt;
             
-            A tutorial that shows you how to use Composer and ThinkShout&#39;s new PHP library for MailChimp API v3.0 to easily subscribe users to mailing lists in Drupal custom modules without using the MailChimp contributed module. This is a follow-up to a previous post that used the old API, and also includes some new Drupal 8 specifics.
+            A tutorial that shows you how to use Composer and ThinkShout's new PHP library for MailChimp API v3.0 to easily subscribe users to mailing lists in Drupal custom modules without using the MailChimp contributed module. This is a follow-up to a previous post that used the old API, and also includes some new Drupal 8 specifics.
 
                 &lt;a href=&quot;https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
@@ -253,7 +253,7 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
               
               &lt;img src=&quot;https://savaslabs.com/assets/img/blog/supercharged-seo-with-drupal-8.jpg&quot; alt=&quot;Supercharged SEO with Drupal 8&quot; &gt;
             
-            SEO trends 2017 and an in depth look at Drupal 8&#39;s new features that make Drupal the best option for your long-term marketing campaign.
+            SEO trends 2017 and an in depth look at Drupal 8's new features that make Drupal the best option for your long-term marketing campaign.
                 &lt;a href=&quot;https://savaslabs.com/2016/09/23/supercharged-seo-with-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
@@ -390,7 +390,7 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
               
               &lt;img src=&quot;https://savaslabs.com/assets/img/blog/options.jpg&quot; alt=&quot;a highway-looking sign with arrows pointing to many possibilities&quot; &gt;
             
-            Part 3 of a series investigating what options you have with your Drupal 6 site as EOL approaches. We discuss what your options really are given the many difficult decisions you are likely faced given your organization&#39;s budget, level of risk and tolerance for it, and other business priorities.
+            Part 3 of a series investigating what options you have with your Drupal 6 site as EOL approaches. We discuss what your options really are given the many difficult decisions you are likely faced given your organization's budget, level of risk and tolerance for it, and other business priorities.
                 &lt;a href=&quot;https://savaslabs.com/2016/01/25/drupal-6-part-3.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
         </description>
@@ -442,7 +442,7 @@ Here are five tips in Drupal 8 that make the content authoring experience more e
     
     
       <item>
-        <title>It&#39;s nearly 2016, your site is running on Drupal 6, now what? Part 2: the risks.</title>
+        <title>It's nearly 2016, your site is running on Drupal 6, now what? Part 2: the risks.</title>
         <description>
           &lt;p&gt;
             
@@ -471,7 +471,7 @@ EOL approaches. This post takes a deep dive into the risks specifically.
     
     
       <item>
-        <title>It&#39;s nearly 2016, your site is running on Drupal 6, now what? Part 1: The overview</title>
+        <title>It's nearly 2016, your site is running on Drupal 6, now what? Part 1: The overview</title>
         <description>
           &lt;p&gt;
             
@@ -529,7 +529,7 @@ EOL approaches. This post takes a deep dive into the risks specifically.
         <description>
           &lt;p&gt;
             
-            It takes some forethought, but a well-organized theme means code that is modular and easy to maintain or pass off to another developer. SMACSS principles are becoming more and more widespread and can be applied to a Drupal theme. At Savas Labs we&#39;ve picked out what we love from SMACSS and simplified the rest, creating a stylesheet organization method that works for us. In this post (part 2 of my three-part series on Drupal theming with Sass) I&#39;ll go through our version of SMACSS and link to real examples.
+            It takes some forethought, but a well-organized theme means code that is modular and easy to maintain or pass off to another developer. SMACSS principles are becoming more and more widespread and can be applied to a Drupal theme. At Savas Labs we've picked out what we love from SMACSS and simplified the rest, creating a stylesheet organization method that works for us. In this post (part 2 of my three-part series on Drupal theming with Sass) I'll go through our version of SMACSS and link to real examples.
 
                 &lt;a href=&quot;https://savaslabs.com/2015/08/28/sassy-drupal-theming-part-2.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
@@ -562,7 +562,7 @@ EOL approaches. This post takes a deep dive into the risks specifically.
         <description>
           &lt;p&gt;
             
-            When Savas Labs built a custom Drupal 8 theme, we needed to include a grid framework and chose Bourbon&#39;s Neat for its ease of use, its light weight, and the library of useful Sass mixins provided by Bourbon. In this post I detail how to set all of this up and use Compass to compile SCSS.
+            When Savas Labs built a custom Drupal 8 theme, we needed to include a grid framework and chose Bourbon's Neat for its ease of use, its light weight, and the library of useful Sass mixins provided by Bourbon. In this post I detail how to set all of this up and use Compass to compile SCSS.
 
                 &lt;a href=&quot;https://savaslabs.com/2015/08/21/sassy-drupal-theming-part-1.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
@@ -591,11 +591,11 @@ EOL approaches. This post takes a deep dive into the risks specifically.
     
     
       <item>
-        <title>When Drupal database sanitization isn&#39;t enough</title>
+        <title>When Drupal database sanitization isn't enough</title>
         <description>
           &lt;p&gt;
             
-            One of the most embarrassing and potentially costly things we can do as developers is to send emails out to real people unintentionally from a development environment. It happens, and often times we aren&#39;t even aware of it until the damage is done and a background process sends out, say, 11,000 automated emails to existing customers (actually happened to a former employer recently). In the Drupal world, there are [myriad ways](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/commit/64a558e2) to [attempt to address](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/blob/master/scripts/sanitize.php) this problem.
+            One of the most embarrassing and potentially costly things we can do as developers is to send emails out to real people unintentionally from a development environment. It happens, and often times we aren't even aware of it until the damage is done and a background process sends out, say, 11,000 automated emails to existing customers (actually happened to a former employer recently). In the Drupal world, there are [myriad ways](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/commit/64a558e2) to [attempt to address](https://github.com/chrisarusso/Tilthy-Rich-Compost-Website/blob/master/scripts/sanitize.php) this problem.
 
 We discuss how to use a drush hook on the `drush sqlsan` command to ensure proper sanitization while using the `user revision` module.
 
@@ -626,9 +626,9 @@ We discuss how to use a drush hook on the `drush sqlsan` command to ensure prope
         <description>
           &lt;p&gt;
             
-            Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don&#39;t have an 8.x branch ready and therefore aren&#39;t usable in Drupal 8. Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.
+            Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don't have an 8.x branch ready and therefore aren't usable in Drupal 8. Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.
 
-In this post we&#39;ll add the Leaflet library to a custom theme using the new *.libaries.yml file, write a little Javascript to create our map, and pull in map points via a REST export view.
+In this post we'll add the Leaflet library to a custom theme using the new *.libaries.yml file, write a little Javascript to create our map, and pull in map points via a REST export view.
 
                 &lt;a href=&quot;https://savaslabs.com/2015/07/06/map-in-drupal-8.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
@@ -659,11 +659,11 @@ In this post we&#39;ll add the Leaflet library to a custom theme using the new *
         <description>
           &lt;p&gt;
             
-            No one likes long forms. They&#39;re overwhelming to look at and it&#39;s easy to lose your place. Multi-step forms are a way to simplify data collection and make your users&#39; lives easier.
+            No one likes long forms. They're overwhelming to look at and it's easy to lose your place. Multi-step forms are a way to simplify data collection and make your users' lives easier.
 
-Drupal&#39;s Form API combined with the CTools module provide a solid platform for building a multi-step form. There are [many wonderful guides](https://duckduckgo.com/?q=ctools+multistep+form) on how to build a CTools multi-step form in Drupal. But as far as I can tell, all of the guides assume that the form will live on a page — which makes sense, as that&#39;s the most common use case.
+Drupal's Form API combined with the CTools module provide a solid platform for building a multi-step form. There are [many wonderful guides](https://duckduckgo.com/?q=ctools+multistep+form) on how to build a CTools multi-step form in Drupal. But as far as I can tell, all of the guides assume that the form will live on a page — which makes sense, as that's the most common use case.
 
-On a recent project, though, a client asked us to create a multi-step form using only a block, so it could be placed on a page using Panels. It turns out this is pretty straightforward but as it&#39;s not well documented elsewhere, here&#39;s a quick guide to what you need to do. (Note: I created [an example module on GitHub](https://github.com/savaslabs/ctools_multistep_form_block), so please reference that as needed. This post is just covering the highlights.)
+On a recent project, though, a client asked us to create a multi-step form using only a block, so it could be placed on a page using Panels. It turns out this is pretty straightforward but as it's not well documented elsewhere, here's a quick guide to what you need to do. (Note: I created [an example module on GitHub](https://github.com/savaslabs/ctools_multistep_form_block), so please reference that as needed. This post is just covering the highlights.)
 
                 &lt;a href=&quot;https://savaslabs.com/2015/06/23/implementing-ctools-multi-step-form-block.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
@@ -688,9 +688,9 @@ On a recent project, though, a client asked us to create a multi-step form using
         <description>
           &lt;p&gt;
             
-            Theming in Drupal 8 means a lot of changes for current Drupalers. These updates make Drupal more accessible to non-Drupalers and more modular, semantic, modern, and fun for everyone. Right now, documentation is scarce and often out-of-date, so I&#39;ve collected all that I&#39;ve learned while building my first Drupal 8 site.
+            Theming in Drupal 8 means a lot of changes for current Drupalers. These updates make Drupal more accessible to non-Drupalers and more modular, semantic, modern, and fun for everyone. Right now, documentation is scarce and often out-of-date, so I've collected all that I've learned while building my first Drupal 8 site.
 
-Since most contributed base themes don&#39;t have an 8.x branch in a useable state at this point, Savas Labs created a custom theme based on Classy, Drupal&#39;s new base theme. I&#39;ll step through the process of creating a custom theme and walk through the basics of Twig and Twig debugging.
+Since most contributed base themes don't have an 8.x branch in a useable state at this point, Savas Labs created a custom theme based on Classy, Drupal's new base theme. I'll step through the process of creating a custom theme and walk through the basics of Twig and Twig debugging.
 
                 &lt;a href=&quot;https://savaslabs.com/2015/06/10/d8-theming-basics.html&quot;&gt;Continue reading…&lt;/a&gt;
           &lt;/p&gt;
