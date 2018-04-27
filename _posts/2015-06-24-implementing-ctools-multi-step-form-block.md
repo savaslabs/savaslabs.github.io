@@ -17,7 +17,7 @@ No one likes long forms. They're overwhelming to look at and it's easy to lose y
 
 Drupal's Form API combined with the CTools module provide a solid platform for building a multi-step form. There are [many wonderful guides](https://duckduckgo.com/?q=ctools+multistep+form) on how to build a CTools multi-step form in Drupal. But as far as I can tell, all of the guides assume that the form will live on a page — which makes sense, as that's the most common use case.
 
-On a recent project, though, a client asked us to create a multi-step form using only a block, so it could be placed on a page using Panels. It turns out this is pretty straightforward but as it's not well documented elsewhere, here's a quick guide to what you need to do. (Note: I created [an example module on GitHub](git@github.com:savaslabs/ctools_multistep_form_block.git), so please reference that as needed. This post is just covering the highlights.)
+On a recent project, though, a client asked us to create a multi-step form using only a block, so it could be placed on a page using Panels. It turns out this is pretty straightforward but as it's not well documented elsewhere, here's a quick guide to what you need to do. (Note: I created [an example module on GitHub](https://github.com/savaslabs/ctools_multistep_form_block), so please reference that as needed. This post is just covering the highlights.)
 
 ## Update your CTools form definition
 
