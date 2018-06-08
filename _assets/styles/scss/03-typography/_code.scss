@@ -55,9 +55,13 @@ $solar-scroll-thumb: rgba(#fff, .2);
 .highlight {
   background: #ddd;
   border-radius: .4em;
-  margin: 0 1.5em 1.5em !important;
+  margin: 0 0 1.5em !important;
   overflow-x: auto;
   overflow-y: hidden;
+
+  @include grid-media($medium-screen-up) {
+    margin: 0 1.5em 1.5em !important;
+  }
 
   &::-webkit-scrollbar {
     background: $solar-scroll-bg;

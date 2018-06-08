@@ -23,7 +23,6 @@ Writing CSS is easy. Writing good, semantic, DRY CSS, all while avoiding uninten
 
 Note: most of the techniques I tested require the node package manager (npm) for installation. Check out [the npm docs](https://docs.npmjs.com/getting-started/installing-node) for installation instructions.
 
-
 ### Syntax checks & house/project styleguide
 
 #### CSS Lint
@@ -37,7 +36,6 @@ Savas Labs uses the [SCSS-Lint Ruby gem](https://github.com/brigade/scss-lint) o
 #### StyleStats
 
 [Stylestats](https://github.com/t32k/stylestats) provides stylesheet statistics and is useful in tandem with CSS Lint. It works on single stylesheets or a directory of them, or globbing can be used (don't forget the quotes, e.g. `stylestats 'styles/*.css'`). Stylestats will report the number and size of your stylesheets, simplicity (# rules/# selectors), unique font sizes, number of ID selectors used, and other pertinent information.
-
 
 ### Image Diff
 
@@ -53,7 +51,6 @@ BackstopJS is a cinch to install and configure ([this article](https://css-trick
 
 Created by BBC News, [Wraith](http://bbc-news.github.io/wraith/index.html) compares a local/dev/staging site against the live site, much more useful for sites with dynamic content than a set of baseline images that would quickly become outdated. A major downside is that the testing process is more manual than Backstop since Wraith doesn't output a report - the CLI states whether or not there were failures, but it's up to the tester to find them in individual images or a gallery of all the diffs. The image diffs show differences down to the pixel in bright blue, but they still have to be found manually. Still, Wraith would be a valuable tool for large Drupal sites. For smaller or non-Drupal sites, I'd stick with Backstop.
 
-
 ### Computed Style
 
 #### Hardy
@@ -62,10 +59,8 @@ Created by BBC News, [Wraith](http://bbc-news.github.io/wraith/index.html) compa
 
 Because of the time-consuming nature of creating the tests, I would reserve the use of Hardy for large theming projects in which avoiding CSS regression errors is key.
 
-
 ## Further reading
 
 - <a href="http://csste.st/">csste.st</a> - A good place to start.
 - A nice <a href="https://css-tricks.com/automatic-css-testing/">summary</a> of automated testing techniques.
 - An excellent introductory <a href="http://code.tutsplus.com/tutorials/object-oriented-css-what-how-and-why--net-6986">tutorial</a> on object oriented CSS.
-
