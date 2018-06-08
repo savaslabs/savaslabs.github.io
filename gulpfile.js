@@ -39,6 +39,44 @@ const argv = require('yargs').argv;
 // Include paths.
 const paths = require('./_assets/gulp_config/paths');
 
+/**
+ * Compiles and places a CSS file.
+ *
+ * @param scssRoot
+ *   The SCSS root file, e.g. 'styles.scss'.
+ * @param destinations
+ *   An array of destinations where the resulting CSS file should be placed.
+ */
+function buildStyles(scssRoot, destinations) {
+  let stream = sass(paths.sassFiles + scssRoot, {
+    style: 'compressed',
+    trace: true,
+    loadPath: [paths.sassFiles]
+  });
+  stream.pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+    .pipe(cleancss());
+
+  // Pipe file to all destinations.
+  for (let i = 0; i < destinations.length; i++) {
+    stream = stream.pipe(gulp.dest(destinations[i]));
+  }
+
+  stream.pipe(browserSync.stream())
+    .on('error', gutil.log);
+}
+
+/**
+ * Deletes the specified items.
+ *
+ * @param callback
+ * @param items
+ *   An array of items to be deleted.
+ */
+function clean (callback, items) {
+  del.sync(items);
+  callback();
+}
+
 // -----------------------------------------------------------------------------
 //   1: Styles
 // -----------------------------------------------------------------------------
@@ -49,35 +87,20 @@ const paths = require('./_assets/gulp_config/paths');
  * Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
  * outputs file to the appropriate location.
  */
-gulp.task('build:styles:main', function () {
-  return sass(paths.sassFiles + '/main.scss', {
-    style: 'compressed',
-    trace: true,
-    loadPath: [paths.sassFiles]
-  }).pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
-    .pipe(cleancss())
-    .pipe(gulp.dest(paths.jekyllCssFiles))
-    .pipe(gulp.dest(paths.siteCssFiles))
-    .pipe(gulp.dest(paths.siteStyleGuide))
-    .pipe(browserSync.stream())
-    .on('error', gutil.log);
-});
+const mainStyleDests = [
+  paths.jekyllCssFiles,
+  paths.siteCssFiles,
+  paths.siteStyleGuide
+];
+gulp.task('build:styles:main', buildStyles('/main.scss', mainStyleDests));
 
 /**
  * Task: build:styles:critical
  *
  * Processes critical CSS, to be included in head.html.
  */
-gulp.task('build:styles:critical', function () {
-  return sass(paths.sassFiles + '/critical*.scss', {
-    style: 'compressed',
-    trace: true,
-    loadPath: [paths.sassFiles]
-  }).pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
-    .pipe(cleancss())
-    .pipe(gulp.dest('_includes/css'))
-    .on('error', gutil.log);
-});
+const critialStyleDests = ['_includes/css'];
+gulp.task('build:styles:critical', buildStyles('/critical*.scss', critialStyleDests));
 
 /**
  * Task: build:styles:css
@@ -110,9 +133,9 @@ gulp.task('build:styles', [
  *
  * Deletes all processed site styles.
  */
-gulp.task('clean:styles', function (callback) {
-  del.sync([paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css']);
-  callback();
+const removeStyles = [paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css'];
+gulp.task('clean:styles', function(callback) {
+  clean(callback, removeStyles);
 });
 
 /**
@@ -120,19 +143,12 @@ gulp.task('clean:styles', function (callback) {
  *
  * Generates CSS for the style guide.
  */
-gulp.task('build:styles:styleguide', function () {
-  return sass(paths.sassFiles + '/styleguide.scss', {
-    style: 'compressed',
-    trace: true,
-    loadPath: [paths.sassFiles]
-  }).pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
-    .pipe(cleancss())
-    .pipe(gulp.dest(paths.styleGuideAssets))
-    .pipe(gulp.dest('styleguide'))
-    .pipe(gulp.dest(paths.siteStyleGuide))
-    .pipe(browserSync.stream())
-    .on('error', gutil.log);
-});
+const styleguideStyleDests = [
+  paths.styleGuideAssets,
+  'styleguide',
+  paths.siteStyleGuide
+];
+gulp.task('build:styles:styleguide', buildStyles('/styleguide.scss', styleguideStyleDests));
 
 // -----------------------------------------------------------------------------
 //   2: Scripts
@@ -244,9 +260,9 @@ gulp.task('build:scripts:dev', function (callback) {
  *
  * Deletes all processed scripts.
  */
-gulp.task('clean:scripts', function (callback) {
-  del.sync([paths.jekyllJsFiles, paths.siteJsFiles]);
-  callback();
+const removeScripts = [paths.jekyllJsFiles, paths.siteJsFiles];
+gulp.task('clean:scripts', function(callback) {
+  clean(callback, removeScripts);
 });
 
 // -----------------------------------------------------------------------------
@@ -290,9 +306,9 @@ gulp.task('optimize:images', function () {
  *
  * Deletes all processed images.
  */
-gulp.task('clean:images', function (callback) {
-  del.sync([paths.jekyllImageFiles, paths.siteImageFiles]);
-  callback();
+const removeImages = [paths.jekyllImageFiles, paths.siteImageFiles];
+gulp.task('clean:images', function(callback) {
+  clean(callback, removeImages);
 });
 
 // -----------------------------------------------------------------------------
@@ -326,9 +342,9 @@ gulp.task('fontawesome', function () {
  *
  * Deletes all processed fonts.
  */
-gulp.task('clean:fonts', function (callback) {
-  del.sync([paths.jekyllFontFiles, paths.siteFontFiles]);
-  callback();
+const removeFonts = [paths.jekyllFontFiles, paths.siteFontFiles];
+gulp.task('clean:fonts', function(callback) {
+  clean(callback, removeFonts);
 });
 
 // -----------------------------------------------------------------------------
@@ -379,9 +395,9 @@ gulp.task('build:jekyll:local', function () {
  *
  * Deletes the entire _site directory.
  */
-gulp.task('clean:jekyll', function (callback) {
-  del.sync(['_site']);
-  callback();
+const removeSite = ['_site'];
+gulp.task('clean:jekyll', function(callback) {
+  clean(callback, removeSite);
 });
 
 /**
@@ -635,7 +651,6 @@ gulp.task('cache-clear', function (done) {
  * We're also skipping redirect pages like /news/* and /team/*.
  */
 gulp.task('accessibility-test', function () {
-  console.log('Auditing for accessibility...');
   return gulp.src(paths.htmlTestFiles)
     .pipe(accessibility({
       force: false,
@@ -650,8 +665,5 @@ gulp.task('accessibility-test', function () {
         'WCAG2A.Principle1.Guideline1_3.1_3_1.H42'
       ]
     }))
-    .on('error', console.log)
-    .on('end', function () {
-      console.log('Accessibility audit complete');
-    });
+    .on('error', gutil.log);
 });
