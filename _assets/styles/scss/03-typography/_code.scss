@@ -45,43 +45,81 @@ sass port of the Solarized theme. See
 
 */
 
+$solar-scroll-bg: rgba(#fff, .15);
+$solar-scroll-thumb: rgba(#fff, .2);
+@if $solarized == light {
+  $solar-scroll-bg: rgba(#000, .15);
+  $solar-scroll-thumb: rgba(#000, .15);
+}
+
 .highlight {
-  table td.code { width: 100%; }
-  border: 1px solid $light-gray !important;
+  background: #ddd;
   border-radius: .4em;
   margin: 0 1.5em 1.5em !important;
-}
+  overflow-x: auto;
+  overflow-y: hidden;
 
-.highlight .line-numbers {
-  text-align: right;
-  font-size: 13px;
-  line-height: 1.45em;
-  @if $solarized == light {
-    background: lighten($base03, 1) $noise-bg !important;
-    border-right: 1px solid darken($base01, 2) !important;
-    box-shadow: lighten($base03, 2) -1px 0 inset;
-    text-shadow: lighten($base01, 2) 0 -1px;
-  } @else {
-    background: $base01 $noise-bg !important;
-    border-right: 1px solid darken($base03, 2) !important;
-    box-shadow: lighten($base01, 2) -1px 0 inset;
-    text-shadow: darken($base01, 10) 0 -1px;
+  &::-webkit-scrollbar {
+    background: $solar-scroll-bg;
+    height: .5em;
   }
-  span { color: $base01 !important; }
-  padding: .8em !important;
-  border-radius: 0;
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    background: $solar-scroll-thumb;
+    border-radius: 4px
+  }
+
+  pre {
+    background: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  code {
+    @extend .pre-code;
+    background: #fff !important;
+  }
+
+  .line-numbers {
+    border-radius: 0;
+    font-size: 13px;
+    line-height: 1.45em;
+    padding: .8em !important;
+    text-align: right;
+
+    @if $solarized == light {
+      background: lighten($base03, 1) $noise-bg !important;
+      border-right: 1px solid darken($base01, 2) !important;
+      box-shadow: lighten($base03, 2) -1px 0 inset;
+      text-shadow: lighten($base01, 2) 0 -1px;
+    } @else {
+      background: $base01 $noise-bg !important;
+      border-right: 1px solid darken($base03, 2) !important;
+      box-shadow: lighten($base01, 2) -1px 0 inset;
+      text-shadow: darken($base01, 10) 0 -1px;
+    }
+
+    span {
+      color: $base01 !important;
+    }
+  }
+
+  table td.code {
+    width: 100%;
+  }
 }
 
-figure.code, pre {
+figure.code,
+pre {
   box-shadow: rgba(#000, .06) 0 0 10px;
-  .highlight pre { box-shadow: none; }
 }
 
 pre {
   background: $pre-bg $noise-bg;
+  border: 1px solid $light-gray;
   border-radius: .4em;
   font-family: $monospace-font !important;
-  border: 1px solid $pre-border;
   line-height: 1.45em;
   font-size: 13px !important;
   margin: 0;
@@ -93,7 +131,7 @@ pre {
   }
 }
 
-.pre-code {
+pre code {
   font-family: $monospace-font !important;
   overflow: scroll;
   overflow-y: hidden;
@@ -101,7 +139,6 @@ pre {
   padding: .8em;
   overflow-x: auto;
   line-height: 1.45em;
-  background: $base03 $noise-bg !important;
   color: $base1 !important;
   span { color: $base1 !important; }
   span { font-style: normal !important; font-weight: normal !important; }
@@ -172,63 +209,22 @@ pre {
   div { .gd, .gd .x, .gi, .gi .x { display: inline-block; width: 100%; }}
 }
 
-.highlight {
-  pre { background: none; border-radius: 0; border: none; padding: 0; margin-bottom: 0; }
-  margin: 0 3em 1.5em;
-  background: #ddd;
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-
-$solar-scroll-bg: rgba(#fff, .15);
-$solar-scroll-thumb: rgba(#fff, .2);
-@if $solarized == light {
-  $solar-scroll-bg: rgba(#000, .15);
-  $solar-scroll-thumb: rgba(#000, .15);
-}
-
-pre, .highlight {
-  &::-webkit-scrollbar {  height: .5em; background: $solar-scroll-bg; }
-  &::-webkit-scrollbar-thumb:horizontal { background: $solar-scroll-thumb;  -webkit-border-radius: 4px; border-radius: 4px }
-}
-
-.highlight code {
-  @extend .pre-code;
-  background: #fff !important;
-}
-
-figure.code {
-  background: none;
-  padding: 0;
-  border: 0;
-  margin-bottom: 1.5em;
-  pre { margin-bottom: 0; }
-  figcaption {
-    position: relative;
-    @extend .code-title;
-    a { @extend .download-source; }
-  }
-  .highlight {
-    margin-bottom: 0;
-  }
-}
-
 .code-title {
-  text-align: center;
-  font-size: 13px;
-  line-height: 2em;
-  text-shadow: #cbcccc 0 1px 0;
-  color: #474747;
-  font-weight: normal;
-  margin-bottom: 0;
   @include border-top-radius(5px);
-  font-family: "Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;
+
   background: #aaaaaa top repeat-x;
-  border: 1px solid #565656;
-  border-top-color: #cbcbcb;
-  border-left-color: #a5a5a5;
-  border-right-color: #a5a5a5;
   border-bottom: 0;
+  border-left: 1px solid #a5a5a5;
+  border-right: 1px solid #a5a5a5;
+  border-top: 1px solid #cbcbcb;
+  color: #474747;
+  font-family: "Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 2em;
+  margin-bottom: 0;
+  text-align: center;
+  text-shadow: #cbcccc 0 1px 0;
 }
 
 .download-source {
@@ -238,6 +234,31 @@ figure.code {
   font-size: 13px;
   text-shadow: #cbcccc 0 1px 0;
   padding-left: 3em;
+}
+
+figure.code {
+  background: none;
+  border: 0;
+  margin-bottom: 1.5em;
+  padding: 0;
+
+  pre {
+    margin-bottom: 0;
+  }
+
+  figcaption {
+    @extend .code-title;
+
+    position: relative;
+
+    a {
+      @extend .download-source;
+    }
+  }
+
+  .highlight {
+    margin-bottom: 0;
+  }
 }
 
 .highlight-console .pre-code {
