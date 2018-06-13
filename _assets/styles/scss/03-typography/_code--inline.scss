@@ -32,7 +32,7 @@ the MySQL server.</p>
 // scss-lint:disable ImportantRule
 p,
 li {
-  code {
+  > code {
     background: $base-background-color;
     border: 1px solid $light-gray;
     border-radius: .2em;

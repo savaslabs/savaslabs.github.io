@@ -55,7 +55,6 @@ Though the theming layer in Drupal 8 is quite different from Drupal 7 and will r
 - More semantic CSS class names means leaner CSS and a more readable DOM
 - A general trend towards more extendable, modular, well-organized, better-performing code
 
-
 ## Okay, are there any disadvantages?
 
 At the time of writing this post, the toughest things about theming in Drupal 8 for me were:
@@ -114,7 +113,6 @@ regions:
 
 This hasn't changed much from Drupal 7. Don't forget that the `Content` region is required. You can also forego declaring regions if you want to use Drupal's [default regions.](https://www.drupal.org/node/2469113)
 
-
 ### Classy, the new base theme
 
 ```yaml
@@ -124,7 +122,6 @@ base theme: classy
 Classy is a brand new base theme that ships with Drupal core. All CSS classes were moved out of core template files and into Classy's as a way to a) contain, minimize, and organize default classes and b) give developers the option of not using Drupal's default classes without having to undo core. One can simply choose not to use Classy as a base theme.
 
 Additionally, Classy's classes follow the BEM convention, making them less generic and more meaningful. Check out [this article](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) for a great introduction to BEM.
-
 
 ### Libraries
 
@@ -160,7 +157,6 @@ As you may have guessed, `global-styling` is a library that applies site-wide st
 
 By listing these two libraries in `mappy.info.yml` we ensure that these assets will be included on every page of our site. However, this is typically not the best practice for larger sites since these files can seriously affect performance. [This page](https://www.drupal.org/developing/api/8/assets) on Drupal.org details how to attach assets to pages via hooks so that CSS and JS files are only loaded where they're needed.
 
-
 ### Breakpoints
 Another new YAML file, `[theme-name].breakpoints.yml`, allows developers to create standard breakpoints to be used by modules and themes across the site. You can set custom breakpoints by defining them in this file. Below is our breakpoints file, which also resides in the root of our theme. Note that we simply adapted the breakpoints file from the Bartik theme.
 
@@ -189,7 +185,6 @@ mappy.wide:
 Important tip: Once you add a breakpoints file, you'll need to uninstall and reinstall your theme to expose these breakpoints in the admin UI.
 
 With these files set up, you now have a working custom theme!
-
 
 ## Creating template files with Twig
 
@@ -284,7 +279,6 @@ Another useful tag is `set`, which allows you to set and use variables throughou
 ### Coding standards
 
 Since this is new to some Drupalers, take a moment to check out the [coding standards](https://www.drupal.org/node/1823416) for Twig.
-
 
 ## Debugging with Twig
 
@@ -381,7 +375,6 @@ Enter the beloved Devel module and the new Devel Kint module. Kint is to Drupal 
 <img src="{{ site.base_url }}/assets/img/blog/kint-output.jpg" alt="Screenshot of kint function output.">
 
 Ahh, much better!
-
 
 ## Further reading:
 - Start with Drupal.org's [theming guide](https://www.drupal.org/theme-guide/8)
