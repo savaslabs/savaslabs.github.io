@@ -12,18 +12,24 @@ linkedin: oksanacyrwus
 stack-exchange: 6655373/oksana-c
 website: http://oksanac.com
 badges:
-  - image: "association_ind_member_badge"
-    alt: "Drupal Association Individual Member"
-    link: "https://assoc.drupal.org/membership"
-  - image: "D8CD"
-    alt: "Acquia Certified Developer D8"
+  - image: "D8GM"
+    alt: "Acquia Certified Drupal 8 Grand Master"
     link: "https://certification.acquia.com/user/1593291"
   - image: "D8FES"
     alt: "Acquia Certified Drupal 8 Front End Specialist"
     link: "https://certification.acquia.com/user/1593291"
+  - image: "D8BE"
+    alt: "Acquia Certified Drupal 8 Back End Specialist"
+    link: "https://certification.acquia.com/user/1593291"
+  - image: "D8CD"
+    alt: "Acquia Certified Developer D8"
+    link: "https://certification.acquia.com/user/1593291"
   - image: "D7CD"
     alt: "Acquia Certified Developer D7"
     link: "https://certification.acquia.com/user/1593291"
+  - image: "association_ind_member_badge"
+    alt: "Drupal Association Individual Member"
+    link: "https://assoc.drupal.org/membership"
 redirect_from:
   - /team/oksana-cyrwus/
 ---
