@@ -15,4 +15,4 @@ badges:
 redirect_from:
   - /team/anne-tomasevich/
 ---
-Anne received a B.S. in textile engineering and worked in the clinical research industry for five years before becoming a web developer. At Savas Labs, Anne translates designs to code, builds Drupal themes, works to improve user experience, and enthusiastically [lints](https://github.com/brigade/scss-lint) her [SCSS](/2015/08/21/sassy-drupal-theming-part-1.html#scss). She is particularly interested in CSS preprocessors, CSS3, responsive design, styleguide-driven development, and automated testing. When her laptop is closed, Anne enjoys cooking, reading, and <a href="http://jonsebastian.bandcamp.com/">playing music</a>.
+Anne received a B.S. in textile engineering before becoming a web developer. At Savas Labs, Anne translates designs to code, builds custom Drupal themes, uses modern JavaScript frameworks, and works to improve user experience and accessibility. She is particularly interested in all things CSS, React, styleguide-driven development, and automated testing. When her laptop is closed, Anne enjoys cooking, reading, and <a href="http://jonsebastian.bandcamp.com/">playing music</a>.
