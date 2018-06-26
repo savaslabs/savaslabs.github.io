@@ -62,23 +62,23 @@ Google (and closely mirroring behind, Firefox) has been getting more stringent i
 In January 2017, they began marking any site that collects a password field or credit card information, served over HTTP as subtly (grey text) not secure.
 
 ![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/jan-2017-http-not-secure.png)<br>
- <span class="caption"> Google blog </span>
+ <span class="caption">Laravel News</span>
 
 Then, in October 2017, they tightened things up so that a site that collected _any_ form information over HTTP, would have the same "not secure" messaging. They added the more action-based aspect of showing the warning on the URL bar _when a user entered data into a form_. This is an especially obtrusive experience on mobile due to space constraints, which more deeply engages the user cognitively as to exactly what is unsafe about how they're interacting with the site.
 
-![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/oct-2017-http-insecure.gif)<br>
+![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/oct-2017-http-insecure.gif){:class="blog-image-large"}<br>
 <span class="caption"> Google blog </span>
 
 Next, in July 2018, all HTTP sites will be marked as not secure.
 
 In September 2018, secure sites will be marked more neutrally, removing the green secure lock by default connoting a continuing expectation that HTTPS is the norm and no longer special.
 
-![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/sep-2018-neutral-https.png)<br>
+![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/sep-2018-neutral-https.png){:class="blog-image-large"}<br>
 <span class="caption"> Google blog </span>
 
 In October 2018, any HTTP site that accepts any form fields will show affirmatively not secure with a <span style="color:#cc0000">**bold red label**</span>, much like a misconfigured HTTPS site does now.
 
-![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/oct-2018-http-affirmative-insecure.gif)<br>
+![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/oct-2018-http-affirmative-insecure.gif){:class="blog-image-large"}<br>
 <span class="caption"> Google blog </span>
 
 Though they haven't yet announced a date, Google intends to show affirmatively not secure for all HTTP sites. The drive is clearly to establish the norm that all the web traffic should be served over HTTPS and that outdated HTTP is not to be trusted. This is a pretty strong message that if Google has their way (which they usually do) HTTPS will inevitably be virtually mandatory. And inevitably in internet years, may be right around the corner.
