@@ -11,14 +11,14 @@ drupal_planet_summary: |
   There are many considerations for site owners on when to make the move to HTTPS. Google has just stepped up the pressure. Secure communication is especially important for Drupal site owners and the time to make the move to HTTPS is now.
 ---
 
-For some time, major internet players have advocated the benefits of a ubiquitous, secure internet, touting its myriad benefits for all users and service providers. The most prominent and steadfast among them is Google. In the next week, continuing a multi-year effort to shepherd more traffic to the secure web, Google will make perhaps its boldest move to date which will negatively impact all organizations not securely serving their website over HTTPS.
+For some time, major internet players have advocated for a ubiquitous, secure internet, touting the myriad benefits for all users and service providers of "HTTPS everywhere". The most prominent and steadfast among them is Google. In the next week, continuing a multi-year effort to shepherd more traffic to the secure web, Google will make perhaps its boldest move to date which will negatively impact all organizations not securely serving their website over HTTPS.
 
 To quote the official [Google Security Blog](https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html)
 
 > Beginning in July 2018 with the release of Chrome 68, Chrome will mark all HTTP sites as “not secure”
 
 ![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/chrome-68-not-secure.png)<br>
- <span class="caption"> Googleblog </span>
+ <span class="caption"> Google blog </span>
 
 <!-- Test center image - doesn't work <img src="/assets/img/blog/chrome-68-not-secure.png" alt="Chrome insecure message for HTTP" class="blog-image-center"> -->
 
@@ -28,7 +28,7 @@ So what does this mean for your organization if your site is not served over HTT
 
 ## What is HTTPS?
 
-HTTP, or **H**yper**T**ext **T**ransfer **P**rotocol, is the internet technology used to communicate between your web browser and the servers that the websites you visit are on. HTTPS is the secure version (s for secure) which is served over TLS: Transport Layer Security. What these technical acronyms equate to are tools for internet communication that verify you're communicating with who you think you are, in the way you intended to, in which no one besides the intended recipient can understand. We'll touch on the specifics in a moment and why they're important. Put simply, HTTPS enables secure internet communication.
+HTTP, or **H**yper**T**ext **T**ransfer **P**rotocol, is the internet technology used to communicate between your web browser and the servers that the websites you visit are on. HTTPS is the secure version (s for secure) which is served over TLS: Transport Layer Security. What these technical acronyms equate to are tools for internet communication that verify you're communicating with who you think you are, in the way you intended to, in a format that only the intended recipient can understand. We'll touch on the specifics in a moment and why they're important. Put simply, HTTPS enables secure internet communication.
 
 ## Why secure browsing matters
 
@@ -53,7 +53,7 @@ With engaging a participant of your target audience, you have precious few momen
 
 #### Browsers drawing attention to insecure HTTP
 
-Much like search, browser usage patterns have evolved over the last five years to heavily favor Google Chrome. Therefore, what Google does, carries tremendous weight internet-wide. Current estimations of browser usage put Chrome between 55% and 60% of the market ([again](https://en.wikipedia.org/wiki/Usage_share_of_web_browsers), [depending](http://gs.statcounter.com/browser-market-share) [on](https://netmarketshare.com/browser-market-share.aspx) [sources](https://www.w3counter.com/trends)). Firefox has followed suit with Chrome as far as HTTP security alerts go, and there's no indication we should expect this to change. So it's safe to assume a combined 60-75% of the market is represented by Chrome's updates.
+Much like search, browser usage patterns have evolved over the last five years to heavily favor Google Chrome. Therefore, what Google does carries tremendous weight internet-wide. Current estimations of browser usage put Chrome between 55% and 60% of the market ([again](https://en.wikipedia.org/wiki/Usage_share_of_web_browsers), [depending](http://gs.statcounter.com/browser-market-share) [on](https://netmarketshare.com/browser-market-share.aspx) [sources](https://www.w3counter.com/trends)). Firefox has followed suit with Chrome as far as HTTP security alerts go, and there's no indication we should expect this to change. So it's safe to assume a combined 60-75% of the market is represented by Chrome's updates.
 
 #### Google Chrome HTTP warning roll out
 
@@ -74,11 +74,9 @@ Next, in July 2018, all HTTP sites will be marked as not secure.
 In September 2018, secure sites will be marked more neutrally, removing the green secure lock by default connoting a continuing expectation that HTTPS is the norm and no longer special.
 
 ![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/sep-2018-neutral-https.png)<br>
-<span class="caption"> Googleblog </span>
+<span class="caption"> Google blog </span>
 
 In October 2018, any HTTP site that accepts any form fields will show affirmatively not secure with a <span style="color:#cc0000">**bold red label**</span>, much like a misconfigured HTTPS site does now.
-
-{% comment %} TODO: do bold red color in a less cheesy way? Ideas Anne? {% endcomment %}
 
 ![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/oct-2018-http-affirmative-insecure.gif)<br>
 <span class="caption"> Google blog </span>
@@ -91,7 +89,7 @@ Returning to the technical, as mentioned previously, HTTPS helps secure communic
 
 - **Authentication** "you're communicating with who you think you are"
 - **Data integrity** "in the way you intended to"
-- **Encryption**: "in which no one besides the intended recipient can understand"
+- **Encryption**: "in a format that only the intended recipient can understand"
 
 #### What authentication does for you
 
@@ -101,13 +99,13 @@ In order for the browser to recognize and evaluate an HTTPS certificate, it must
 
 Therefore, the authentication gives your users the confidence you are who you say you are, which is important when you're engaging with them in any way whether they're providing an email, credit card or simply reading articles.
 
-#### Data integrity
+#### How data integrity helps you
 
-Data integrity is also guaranteed by HTTPS again via public-key cryptography. When a user communicates with a server through the browser, the browser creates what's referred to as a "checksum" from the contents of that communication. This checksum is created by running a cryptographic hash function with the communication as the input, and generates a "message digest". This message digest, which is a string of characters, are unique based on the input. Given the same input, regardless of where and when they are run, the cryptographic hash will generate the same output. Passing the message digest along allows for the receiving server to re-run that some cryptographic hash function to produce the message digest and compare it to the checksum sent. Since it is nearly computationally impossible to reverse engineer these cryptographic functions, this proves the message was not altered en route to the server. Again, no such check-summing happens over HTTP, and there is therefore no way to tell if a message has been altered en route to the server from the browser.
+Ensuring perfect preservation of communication over the internet is another guarantee HTTPS provides. When a user communicates with a website over HTTPS, the browser takes the input of that communication and using a one-way hashing function creates a unique "message digest": a concise, alphanumeric string. The digest may only be reliably recreated by running the exact same input through the same hash algorithm irrespective of where and when this is done. For each request the user makes to the website, the browser passes a message digest alongside it and the server then runs the input it receives from the request through the hash algorithm to verify it matches the browser-sent digest. Since it is nearly computationally impossible to reverse engineer these hash functions, if the digests match, it proves the message was not altered in transit. Again, no such data integrity preservation is possible over HTTP, and there is therefore no way to tell if a message has been altered en route to the server from the browser.
 
 #### What encryption does for you
 
- Communicating over an unencrypted HTTP connection allows for some easily exploitable security risks in the case of authentication to a site. To demonstrate how easy it can be to take over someone's account on an HTTP connection, a tool called [Firesheep](https://en.wikipedia.org/wiki/Firesheep) was developed and openly released in mid 2010. Major social media platforms  [Facebook and Twitter were both susceptible](https://www.pcworld.com/article/209333/how_to_hijack_facebook_using_firesheep.html) to this exploit for some time after Firesheep was released. The identity theft is carried out through a means called [session hijacking](https://en.wikipedia.org/wiki/Session_hijacking). With Firesheep installed, a few clicks could log you in as another user who was browsing over WiFi nearby on any HTTP website. This form of session hijacking is possible when the authentication cookies, small identifying pieces of information that live in your browser while you're logged into a site, are transmitted to the server  on each request over HTTP. Over WiFi these messages are broadcasted into the air in plain text, and can be picked up by anyone listening. HTTPS prevents this since the communication is encrypted and unintelligible to eavesdroppers.
+Communicating over an unencrypted HTTP connection allows for some easily exploitable security risks in the case of authentication to a site. To demonstrate how easy it can be to take over someone's account on an HTTP connection, a tool called [Firesheep](https://en.wikipedia.org/wiki/Firesheep) was developed and openly released in mid 2010. Major social media platforms  [Facebook and Twitter were both susceptible](https://www.pcworld.com/article/209333/how_to_hijack_facebook_using_firesheep.html) to this exploit for some time after Firesheep was released. The identity theft is carried out through a means called [session hijacking](https://en.wikipedia.org/wiki/Session_hijacking). With Firesheep installed, a few clicks could log you in as another user who was browsing over WiFi nearby on any HTTP website. This form of session hijacking is possible when the authentication cookies, small identifying pieces of information that live in your browser while you're logged into a site, are transmitted to the server  on each request over HTTP. Over WiFi these messages are broadcasted into the air in plain text, and can be picked up by anyone listening. HTTPS prevents this since the communication is encrypted and unintelligible to eavesdroppers.
 
 In the example of a CMS like Drupal or any other system in which there is a login, if an administrator with elevated site permissions is logged in over HTTP, they're subject to the same risk if that traffic is monitored or "sniffed" at any point along its path from the browser to the server. This is especially easy over WiFi but is not relegated to only WiFi. The cookies are sent to the server upon every request, regardless of whether or not the user entered their password during the active session or not. Depending on the admin's privileges, this access can be easily escalated to complete control of the website. Encryption is a big deal.
 
@@ -126,19 +124,17 @@ If you aren't taking advantage of any of these features that are possible throug
 
 Historically, considering a move to HTTPS has been held back by some valid concerns for webmasters whose job it was to select where and how their websites were hosted. A few of the fundamental apprehensions could be categorized as:
 
-- No perceived benefit. People often assumed if they weren't collecting financial or personal information, it wasn't necessary.
-- Performance costs. We know reducing latency is crucial for optimizing conversions and HTTPS does require additional communication and computation which could slow sites down.
-- Financial costs. HTTPS was just too complex and costly to implement for some.
+- **No perceived benefit.** People often assumed if they weren't collecting financial or personal information, it wasn't necessary. We've covered why holding this belief in 2018 is a misconception. Savas Labs made the move in July 2017 to serve exclusively over HTTPS for our [statically-generated Jekyll website](/blog/tag/jekyll/) even though at the time we had no forms or logins.
+- **Performance costs.** We know reducing latency is crucial for optimizing conversions and HTTPS does require additional communication and computation. However, with the broad adoption of the HTTP/2 protocol over the last few years, HTTPS now [usually outperforms HTTP](http://www.httpvshttps.com/).
+- **Financial costs.** HTTPS was too complex and costly to implement for some. Large strides have been made across many hosting providers who now bundle HTTPS into their hosting offerings by default, often at no additional cost. [Let's Encrypt](https://letsencrypt.org/), a relatively new and novel certificate authority, first began offering free certificates (which they still do) and then made it easy to automatically renew those certificates, helping to ease the burden and cost of implementation.
 
-As for the first, I believe we've covered why holding this belief currently is a misconception. With regard to performance, with the adoption of the HTTP/2 protocol, HTTPS [usually outperforms HTTP](http://www.httpvshttps.com/). On the financial front, large strides have been made across many hosting platforms who bundle HTTPS into their offerings for free. This coupled with the [Let's Encrypt](https://letsencrypt.org/) certificate authority first offering free certificates (which they still do) and next making it easy to automatically renew those certificates has greatly reduced the cost of implementation.
-
-We'll cover each of these in more detail in the follow-up post guiding how to make the move to HTTPS.
+We'll cover each of these in more detail in the follow-up article that will help guide you on how to make the move to HTTPS.
 
 {% comment %} TODO: Update link when deploying the next blog post {% endcomment %}
 
 ## Conclusion
 
-To revisit Google's statement:
+To revisit Google's announcement:
 
 > Beginning in July 2018 with the release of Chrome 68, Chrome will mark all HTTP sites as “not secure”.
 
@@ -146,7 +142,7 @@ Interpreting that and providing our perspective:
 
 > You're not part of the modern web unless you're exclusively using HTTPS.
 
-A bold, perhaps slightly controversial statement, but for ambitious organizations like the folks we're fortunate enough to work with each day, HTTPS-only is the standard in mid 2018 and beyond. Given the benefits, the lifted previous barriers, and the opportunity for the future, very few organization have a good reason not to exclusively serve their sites over HTTPS.
+A bold, if slightly controversial statement, but for ambitious organizations like the folks we're fortunate enough to work with each day, HTTPS-only is the standard in mid 2018 and beyond. Given the benefits, the lifted previous barriers, and the opportunity for the future, very few organization have a good reason not to exclusively serve their sites over HTTPS.
 
 Have we convinced you yet? Great! Stay tuned for some guidance on how to make the move.
 
@@ -154,6 +150,6 @@ Have we convinced you yet? Great! Stay tuned for some guidance on how to make th
 
 ## Additional resources
 
-- <https://www.youtube.com/watch?v=cBhZ6S0PFCY>
-- <https://www.youtube.com/watch?v=e6DUrH56g14>
-- <https://conversionxl.com/blog/first-impressions-matter-the-importance-of-great-visual-design/>
+- [Google I/O 2014: "HTTPS Everywhere"](https://www.youtube.com/watch?v=cBhZ6S0PFCY)
+- [Progressive Web App Summit 2016: Mythbusting HTTPS](https://www.youtube.com/watch?v=e6DUrH56g14)
+- [First Impressions Matter: The Importance of Great Visual Design](https://conversionxl.com/blog/first-impressions-matter-the-importance-of-great-visual-design)
