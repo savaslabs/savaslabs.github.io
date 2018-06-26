@@ -73,11 +73,11 @@ Plain ol' `<img>` tags work too.
 
 You can add following classes to contextual images:
 
-- `class="blog-image-full-width"` - image will span the whole width of the post
+- `class="blog-image-full-width"` - image will span the whole width of the post. This image style is preferred over the others.
+- `class="blog-image-large` - image will be max 500px wide and horizontally centered
+- `class="blog-image` - image will be max 250px wide and horizontally centered
 - `class="blog-image-left"` - image will float left
 - `class="blog-image-right"` - image will float right
-
-Images without class will use default styling which is 100% post width.
 
 Captions can be added to full width images by adding `<span class="caption">Caption</span>` right under the image tag.
 
