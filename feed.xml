@@ -6,9 +6,185 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Jun 2018 21:14:34 +0000</pubDate>
-    <lastBuildDate>Fri, 22 Jun 2018 21:14:34 +0000</lastBuildDate>
+    <pubDate>Tue, 26 Jun 2018 18:59:59 +0000</pubDate>
+    <lastBuildDate>Tue, 26 Jun 2018 18:59:59 +0000</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Why your website needs HTTPS</title>
+        <description>&lt;p&gt;For some time, major internet players have advocated for a ubiquitous, secure internet, touting the myriad benefits for all users and service providers of “HTTPS everywhere”. The most prominent and steadfast among them is Google. In the next week, continuing a multi-year effort to shepherd more traffic to the secure web, Google will make perhaps its boldest move to date which will negatively impact all organizations not securely serving their website over HTTPS.&lt;/p&gt;
+
+&lt;p&gt;To quote the official &lt;a href=&quot;https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html&quot;&gt;Google Security Blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Beginning in July 2018 with the release of Chrome 68, Chrome will mark all HTTP sites as “not secure”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/chrome-68-not-secure.png&quot; alt=&quot;Chrome insecure message for HTTP&quot; /&gt;&lt;br /&gt;
+ &lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
+
+&lt;!-- Test center image - doesn't work &lt;img src=&quot;/assets/img/blog/chrome-68-not-secure.png&quot; alt=&quot;Chrome insecure message for HTTP&quot; class=&quot;blog-image-center&quot;&gt; --&gt;
+
+&lt;p&gt;Given the ambiguous “in July 2018”, with no clearly communicated release date for Chrome 68, it’s wise to err on the side of caution and assume it will roll out on the 1st. We have readied our partners with this expectation.&lt;/p&gt;
+
+&lt;p&gt;So what does this mean for your organization if your site is not served over HTTPS? In short, it’s time to make the move. Let’s dig in.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-https&quot;&gt;What is HTTPS?&lt;/h2&gt;
+
+&lt;p&gt;HTTP, or &lt;strong&gt;H&lt;/strong&gt;yper&lt;strong&gt;T&lt;/strong&gt;ext &lt;strong&gt;T&lt;/strong&gt;ransfer &lt;strong&gt;P&lt;/strong&gt;rotocol, is the internet technology used to communicate between your web browser and the servers that the websites you visit are on. HTTPS is the secure version (s for secure) which is served over TLS: Transport Layer Security. What these technical acronyms equate to are tools for internet communication that verify you’re communicating with who you think you are, in the way you intended to, in a format that only the intended recipient can understand. We’ll touch on the specifics in a moment and why they’re important. Put simply, HTTPS enables secure internet communication.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-secure-browsing-matters&quot;&gt;Why secure browsing matters&lt;/h2&gt;
+
+&lt;p&gt;Leaving aside the technical details for a moment and taking a broader view than communication protocols reveals more nuanced benefits your organization receives by communicating securely with its audience.&lt;/p&gt;
+
+&lt;h3 id=&quot;https-improves-seo&quot;&gt;HTTPS improves SEO&lt;/h3&gt;
+
+&lt;p&gt;Since Google accounts for 75-90% of global search queries (&lt;a href=&quot;https://netmarketshare.com/search-engine-market-share.aspx?options=%7B%22filter%22%3A%7B%22%24and%22%3A%5B%7B%22deviceType%22%3A%7B%22%24in%22%3A%5B%22Desktop%2Flaptop%22%5D%7D%7D%5D%7D%2C%22dateLabel%22%3A%22Trend%22%2C%22attributes%22%3A%22share%22%2C%22group%22%3A%22searchEngine%22%2C%22sort%22%3A%7B%22share%22%3A-1%7D%2C%22id%22%3A%22searchEnginesDesktop%22%2C%22dateInterval%22%3A%22Monthly%22%2C%22dateStart%22%3A%222017-06%22%2C%22dateEnd%22%3A%222018-05%22%2C%22segments%22%3A%22-1000%22%7D&quot;&gt;depending&lt;/a&gt; &lt;a href=&quot;https://www.statista.com/statistics/267161/market-share-of-search-engines-in-the-united-states/&quot;&gt;on&lt;/a&gt; &lt;a href=&quot;https://www.smartinsights.com/search-engine-marketing/search-engine-statistics/&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;http://gs.statcounter.com/search-engine-market-share&quot;&gt;source&lt;/a&gt;) SEO is understandably often synonymous with optimizing for Google. Given their market domination, competitors are taking queues from Google and in most cases it’s safe to assume what’s good for SEO in Google is good for optimizing competing search engines.&lt;/p&gt;
+
+&lt;p&gt;In the summer of 2014, &lt;a href=&quot;https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html&quot;&gt;Google announced on their blog&lt;/a&gt; that they would begin to favorably rank sites who used HTTPS over HTTP. It’s already been nearly four years since we’ve known HTTPS to be advantageous for SEO. Since then, Google has consistently advocated the concept of HTTPS ubiquity, frequently writing about it in blog posts and speaking about it at conferences. The extent to which serving your site over HTTPS improves your SEO is not cut and dry and can vary slightly depending on industry. However, the trend toward favoring HTTPS is well under way and the scales are tipped irreversibly at this point.&lt;/p&gt;
+
+&lt;h3 id=&quot;https-improves-credibility-and-ux&quot;&gt;HTTPS improves credibility and UX&lt;/h3&gt;
+
+&lt;p&gt;Once a user has arrived at your site, their perceptions may be largely shaped by whether the site is served over HTTP or HTTPS. The user experience when interacting with a site being served over HTTPS is demonstrably better. &lt;a href=&quot;https://www.semrush.com/blog/https-just-a-google-ranking-signal/#header2&quot;&gt;SEMrush summarizes well&lt;/a&gt; what the data clearly indicate; people care a great deal about security on the web. A couple highlights:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://www.statista.com/statistics/467656/us-online-shopping-concerns/&quot;&gt;second highest concern for online shoppers was security&lt;/a&gt;. The first was shipping being too expensive.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.statista.com/statistics/339735/crime-worries-in-the-united-states/&quot;&gt;Crimes Americans worried about the most in 2016&lt;/a&gt;: #2 having credit card stolen (69%), and #3 having web identity compromised (64%).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You never get a second chance to make a first impression.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With engaging a participant of your target audience, you have precious few moments to instill a sense of credibility with them. This is certainly true of the first time a user interacts with your site, but is also true for returning users. You have to earn your reputation every day, and it can be lost quickly. We know credibility decisions are &lt;a href=&quot;http://credibility.stanford.edu/guidelines/index.html&quot;&gt;highly influenced by design choices&lt;/a&gt; and &lt;a href=&quot;https://www.tandfonline.com/doi/abs/10.1080/01449290500330448&quot;&gt;are made in well under one second&lt;/a&gt;. Combining these two insights, with the visual updates Chrome is making to highlight the security of a user’s connection to your site, drawing the user’s attention to a warning in the URL bar translates to a potentially costly loss in credibility. Unfortunately it’s the sort of thing that users won’t notice unless there’s a problem, and per the referenced cliché, at that point it may be too late.&lt;/p&gt;
+
+&lt;h4 id=&quot;browsers-drawing-attention-to-insecure-http&quot;&gt;Browsers drawing attention to insecure HTTP&lt;/h4&gt;
+
+&lt;p&gt;Much like search, browser usage patterns have evolved over the last five years to heavily favor Google Chrome. Therefore, what Google does carries tremendous weight internet-wide. Current estimations of browser usage put Chrome between 55% and 60% of the market (&lt;a href=&quot;https://en.wikipedia.org/wiki/Usage_share_of_web_browsers&quot;&gt;again&lt;/a&gt;, &lt;a href=&quot;http://gs.statcounter.com/browser-market-share&quot;&gt;depending&lt;/a&gt; &lt;a href=&quot;https://netmarketshare.com/browser-market-share.aspx&quot;&gt;on&lt;/a&gt; &lt;a href=&quot;https://www.w3counter.com/trends&quot;&gt;sources&lt;/a&gt;). Firefox has followed suit with Chrome as far as HTTP security alerts go, and there’s no indication we should expect this to change. So it’s safe to assume a combined 60-75% of the market is represented by Chrome’s updates.&lt;/p&gt;
+
+&lt;h4 id=&quot;google-chrome-http-warning-roll-out&quot;&gt;Google Chrome HTTP warning roll out&lt;/h4&gt;
+
+&lt;p&gt;Google (and closely mirroring behind, Firefox) has been getting more stringent in their display of the security implications of a site served over HTTP (in addition to sites misconfigured over HTTPS). They’ve shared details on the six-step roll out on &lt;a href=&quot;https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&quot;&gt;their general blog&lt;/a&gt; as well as on a more technical, granular level on the &lt;a href=&quot;https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure&quot;&gt;Chrome browser blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In January 2017, they began marking any site that collects a password field or credit card information, served over HTTP as subtly (grey text) not secure.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/jan-2017-http-not-secure.png&quot; alt=&quot;Chrome insecure message for HTTP&quot; /&gt;&lt;br /&gt;
+ &lt;span class=&quot;caption&quot;&gt;Laravel News&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Then, in October 2017, they tightened things up so that a site that collected &lt;em&gt;any&lt;/em&gt; form information over HTTP, would have the same “not secure” messaging. They added the more action-based aspect of showing the warning on the URL bar &lt;em&gt;when a user entered data into a form&lt;/em&gt;. This is an especially obtrusive experience on mobile due to space constraints, which more deeply engages the user cognitively as to exactly what is unsafe about how they’re interacting with the site.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/oct-2017-http-insecure.gif&quot; alt=&quot;Chrome insecure message for HTTP&quot; class=&quot;blog-image-large&quot; /&gt;&lt;br /&gt;
+&lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, in July 2018, all HTTP sites will be marked as not secure.&lt;/p&gt;
+
+&lt;p&gt;In September 2018, secure sites will be marked more neutrally, removing the green secure lock by default connoting a continuing expectation that HTTPS is the norm and no longer special.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/sep-2018-neutral-https.png&quot; alt=&quot;Chrome insecure message for HTTP&quot; class=&quot;blog-image-large&quot; /&gt;&lt;br /&gt;
+&lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In October 2018, any HTTP site that accepts any form fields will show affirmatively not secure with a &lt;span style=&quot;color:#cc0000&quot;&gt;&lt;strong&gt;bold red label&lt;/strong&gt;&lt;/span&gt;, much like a misconfigured HTTPS site does now.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/oct-2018-http-affirmative-insecure.gif&quot; alt=&quot;Chrome insecure message for HTTP&quot; class=&quot;blog-image-large&quot; /&gt;&lt;br /&gt;
+&lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Though they haven’t yet announced a date, Google intends to show affirmatively not secure for all HTTP sites. The drive is clearly to establish the norm that all the web traffic should be served over HTTPS and that outdated HTTP is not to be trusted. This is a pretty strong message that if Google has their way (which they usually do) HTTPS will inevitably be virtually mandatory. And inevitably in internet years, may be right around the corner.&lt;/p&gt;
+
+&lt;h3 id=&quot;https-vastly-improves-security-for-you-and-your-users&quot;&gt;HTTPS vastly improves security for you and your users&lt;/h3&gt;
+
+&lt;p&gt;Returning to the technical, as mentioned previously, HTTPS helps secure communication in three basic ways.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt; “you’re communicating with who you think you are”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data integrity&lt;/strong&gt; “in the way you intended to”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Encryption&lt;/strong&gt;: “in a format that only the intended recipient can understand”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;what-authentication-does-for-you&quot;&gt;What authentication does for you&lt;/h4&gt;
+
+&lt;p&gt;In order for the browser to recognize and evaluate an HTTPS certificate, it must be verified by a trusted certificate authority (CA). There are a limited amount of CAs who are entrusted to distribute HTTPS certificates. Through &lt;a href=&quot;https://en.wikipedia.org/wiki/Public-key_cryptography&quot;&gt;public-key cryptography&lt;/a&gt;, a fairly complex but interesting topic, through inherent trust in the CA who has provided the HTTPS certificate for a given site, the browser can verify any site visitor is positively communicating with the expected entity with no way of anyone else posing as that entity. No such verification is possible over HTTP and it’s fairly simple to imagine what identify theft would be possible if you were communicating with a different website than you appeared to be. In the event any of the major browsers cannot validate the expected certificate, they will show a strong, usually red warning that you may not be communicating with the expected website, and strongly encourage you to reconsider interacting at all.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/misconfigured-https.png&quot; alt=&quot;Chrome misconfigured HTTPS&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Therefore, the authentication gives your users the confidence you are who you say you are, which is important when you’re engaging with them in any way whether they’re providing an email, credit card or simply reading articles.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-data-integrity-helps-you&quot;&gt;How data integrity helps you&lt;/h4&gt;
+
+&lt;p&gt;Ensuring perfect preservation of communication over the internet is another guarantee HTTPS provides. When a user communicates with a website over HTTPS, the browser takes the input of that communication and using a one-way hashing function creates a unique “message digest”: a concise, alphanumeric string. The digest may only be reliably recreated by running the exact same input through the same hash algorithm irrespective of where and when this is done. For each request the user makes to the website, the browser passes a message digest alongside it and the server then runs the input it receives from the request through the hash algorithm to verify it matches the browser-sent digest. Since it is nearly computationally impossible to reverse engineer these hash functions, if the digests match, it proves the message was not altered in transit. Again, no such data integrity preservation is possible over HTTP, and there is therefore no way to tell if a message has been altered en route to the server from the browser.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-encryption-does-for-you&quot;&gt;What encryption does for you&lt;/h4&gt;
+
+&lt;p&gt;Communicating over an unencrypted HTTP connection allows for some easily exploitable security risks in the case of authentication to a site. To demonstrate how easy it can be to take over someone’s account on an HTTP connection, a tool called &lt;a href=&quot;https://en.wikipedia.org/wiki/Firesheep&quot;&gt;Firesheep&lt;/a&gt; was developed and openly released in mid 2010. Major social media platforms  &lt;a href=&quot;https://www.pcworld.com/article/209333/how_to_hijack_facebook_using_firesheep.html&quot;&gt;Facebook and Twitter were both susceptible&lt;/a&gt; to this exploit for some time after Firesheep was released. The identity theft is carried out through a means called &lt;a href=&quot;https://en.wikipedia.org/wiki/Session_hijacking&quot;&gt;session hijacking&lt;/a&gt;. With Firesheep installed, a few clicks could log you in as another user who was browsing over WiFi nearby on any HTTP website. This form of session hijacking is possible when the authentication cookies, small identifying pieces of information that live in your browser while you’re logged into a site, are transmitted to the server  on each request over HTTP. Over WiFi these messages are broadcasted into the air in plain text, and can be picked up by anyone listening. HTTPS prevents this since the communication is encrypted and unintelligible to eavesdroppers.&lt;/p&gt;
+
+&lt;p&gt;In the example of a CMS like Drupal or any other system in which there is a login, if an administrator with elevated site permissions is logged in over HTTP, they’re subject to the same risk if that traffic is monitored or “sniffed” at any point along its path from the browser to the server. This is especially easy over WiFi but is not relegated to only WiFi. The cookies are sent to the server upon every request, regardless of whether or not the user entered their password during the active session or not. Depending on the admin’s privileges, this access can be easily escalated to complete control of the website. Encryption is a big deal.&lt;/p&gt;
+
+&lt;h3 id=&quot;https-is-required-for-the-modern-web&quot;&gt;HTTPS is required for the modern web&lt;/h3&gt;
+
+&lt;p&gt;One of the more promising developments of the last few years, is the pervasiveness and effectiveness of Progressive Web Apps (PWAs). PWAs is the name coined for a set of technologies that provide a feature-set for mobile browsing akin to native applications, yet is entirely served through the web browser. PWAs require all communication to be done over HTTPS. Some of the possibilities with PWAs that were previously relegated to native applications only are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Providing content and services based on the user’s location data&lt;/li&gt;
+  &lt;li&gt;Providing interaction with the user’s camera and microphone within the browsing experience&lt;/li&gt;
+  &lt;li&gt;Sending push notifications&lt;/li&gt;
+  &lt;li&gt;Serving off-line content&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you aren’t taking advantage of any of these features that are possible through PWAs, it’s something your organization should strongly consider to further engage users. Before the ambitions to be on feature parity with native applications are fully borne-out, PWAs will continue to evolve the power of layering deeper engagement with users on top of your existing mobile experience with minimal effort. PWAs simply do not work over HTTP. HTTPS is required to open the door to their possibilities.&lt;/p&gt;
+
+&lt;h2 id=&quot;barriers-to-https-have-been-lifted&quot;&gt;Barriers to HTTPS have been lifted&lt;/h2&gt;
+
+&lt;p&gt;Historically, considering a move to HTTPS has been held back by some valid concerns for webmasters whose job it was to select where and how their websites were hosted. A few of the fundamental apprehensions could be categorized as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;No perceived benefit.&lt;/strong&gt; People often assumed if they weren’t collecting financial or personal information, it wasn’t necessary. We’ve covered why holding this belief in 2018 is a misconception. Savas Labs made the move in July 2017 to serve exclusively over HTTPS for our &lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;statically-generated Jekyll website&lt;/a&gt; even though at the time we had no forms or logins.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Performance costs.&lt;/strong&gt; We know reducing latency is crucial for optimizing conversions and HTTPS does require additional communication and computation. However, with the broad adoption of the HTTP/2 protocol over the last few years, HTTPS now &lt;a href=&quot;http://www.httpvshttps.com/&quot;&gt;usually outperforms HTTP&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Financial costs.&lt;/strong&gt; HTTPS was too complex and costly to implement for some. Large strides have been made across many hosting providers who now bundle HTTPS into their hosting offerings by default, often at no additional cost. &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt;, a relatively new and novel certificate authority, first began offering free certificates (which they still do) and then made it easy to automatically renew those certificates, helping to ease the burden and cost of implementation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We’ll cover each of these in more detail in the follow-up article that will help guide you on how to make the move to HTTPS.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;To revisit Google’s announcement:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Beginning in July 2018 with the release of Chrome 68, Chrome will mark all HTTP sites as “not secure”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Interpreting that and providing our perspective:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You’re not part of the modern web unless you’re exclusively using HTTPS.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A bold, if slightly controversial statement, but for ambitious organizations like the folks we’re fortunate enough to work with each day, HTTPS-only is the standard in mid 2018 and beyond. Given the benefits, the lifted previous barriers, and the opportunity for the future, very few organization have a good reason not to exclusively serve their sites over HTTPS.&lt;/p&gt;
+
+&lt;p&gt;Have we convinced you yet? Great! Stay tuned for some guidance on how to make the move.&lt;/p&gt;
+
+&lt;h2 id=&quot;additional-resources&quot;&gt;Additional resources&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cBhZ6S0PFCY&quot;&gt;Google I/O 2014: “HTTPS Everywhere”&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=e6DUrH56g14&quot;&gt;Progressive Web App Summit 2016: Mythbusting HTTPS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://conversionxl.com/blog/first-impressions-matter-the-importance-of-great-visual-design&quot;&gt;First Impressions Matter: The Importance of Great Visual Design&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2018/06/26/why-you-need-https.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2018/06/26/why-you-need-https.html</guid>
+        
+        <category>marketing</category>
+        
+        <category>user-experience</category>
+        
+        <category>best-practices</category>
+        
+        <category>drupal</category>
+        
+        <category>drupal-planet</category>
+        
+        
+      </item>
     
       <item>
         <title>Updating Drupal 8 core via Composer</title>
@@ -1379,175 +1555,6 @@ s3://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;bucket-name&lt;span class=&qu
         <category>performance</category>
         
         <category>productivity</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Using MailChimp API v3.0 to subscribe users to email lists in Drupal custom modules</title>
-        <description>&lt;p&gt;Our clients are often looking to reach their audiences via email campaigns, and &lt;a href=&quot;https://mailchimp.com/&quot;&gt;MailChimp&lt;/a&gt; is one of the solutions we frequently recommend for this. MailChimp makes it easy to create and manage email campaigns while also providing beneficial analytics on user behavior.&lt;/p&gt;
-
-&lt;p&gt;Earlier this year I wrote &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;a blog post&lt;/a&gt; showing how to use &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; along with the Mailchimp API v2.0 PHP package to subscribe users to mailing lists in a Drupal 6 or 7 custom module without the need for the Mailchimp contributed module.&lt;/p&gt;
-
-&lt;p&gt;However, since then, MailChimp API v3.0 was released and Mailchimp announced that v2.0 (and all prior versions) will no longer be supported after 2016.&lt;/p&gt;
-
-&lt;p&gt;So in this blog post, I’ll demonstrate how to accomplish the same objective using the new MailChimp API v3.0, and I’ll expand the tutorial to also include some Drupal 8 specifics.&lt;/p&gt;
-
-&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
-
-&lt;p&gt;To quickly summarize the key takeaways from my previous blog posts &lt;a href=&quot;/2015/10/15/composing-with-composer-manager.html&quot;&gt;on Composer Manager&lt;/a&gt; and &lt;a href=&quot;/2016/01/22/composer-mailchimp-subscriptions.html&quot;&gt;subscribing users to MailChimp lists using the old API&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Composer is a tool for managing PHP libraries that your project depends on.&lt;/li&gt;
-  &lt;li&gt;Challenges arise managing project-wide dependencies when custom and contributed modules specify their own unique dependencies.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; is a contributed module for Drupal 7 (and formerly Drupal 6) that addresses these challenges and allows contributed and custom modules to depend on PHP libraries managed via Composer.&lt;/li&gt;
-  &lt;li&gt;Using a Composer managed PHP package for the MailChimp API, we can easily subscribe users to MailChimp lists in a Drupal custom module without relying on the Mailchimp module.&lt;/li&gt;
-  &lt;li&gt;While the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; is great, sometimes all you need is a simple, lightweight method for subscribing users to mailing lists.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;One important development since my previous posts is that Composer Manager has been deprecated for Drupal 8. &lt;a href=&quot;https://www.drupal.org/project/drupal/releases/8.1.0&quot;&gt;Improvements introduced in Drupal 8.1.0&lt;/a&gt; allow modules to rely on Composer managed dependencies without the need for the Composer Manager module.&lt;/p&gt;
-
-&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
-
-&lt;p&gt;There are a few steps we must take so that we can subscribe users to mailing lists in our custom module. We’ll review each of these steps in detail:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Add the MailChimp API v3.0 PHP library as a dependency of our custom module.&lt;/li&gt;
-  &lt;li&gt;Ensure that the library is installed for our project.&lt;/li&gt;
-  &lt;li&gt;Properly use the library in our custom module to subscribe users to mailing lists.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;specify-the-dependency&quot;&gt;Specify the dependency&lt;/h3&gt;
-
-&lt;p&gt;ThinkShout maintains the &lt;a href=&quot;https://www.drupal.org/project/mailchimp&quot;&gt;Mailchimp contributed module&lt;/a&gt; and we were very excited to see that as part of the effort to &lt;a href=&quot;http://www.garfieldtech.com/blog/off-the-island-2013&quot;&gt;“get Drupal off the island”&lt;/a&gt; they also released &lt;a href=&quot;https://packagist.org/packages/thinkshout/mailchimp-api-php&quot;&gt;a PHP library for MailChimp API v3.0&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To use this new library, we must specify it as a dependency of our custom module. We do that in a &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file that sits in our custom module’s root directory and requires that library via the following code:&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;thinkshout/mailchimp-api-php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=1.0.3&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;install-the-library&quot;&gt;Install the library&lt;/h3&gt;
-
-&lt;p&gt;Composer is intended for projects and therefore requires a Drupal site to have a single &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt;, so things get complicated when individual modules specify their own dependencies.&lt;/p&gt;
-
-&lt;p&gt;For Drupal 7 sites (or still active Drupal 6 sites), the &lt;a href=&quot;https://www.drupal.org/project/composer_manager&quot;&gt;Composer Manager&lt;/a&gt; contributed module handles this by merging the requirements specified by each custom and contributed module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; files into a single, consolidated, site-wide &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;So for Drupal 6/7 projects we’ll need Composer Manager installed and enabled.&lt;/p&gt;
-
-&lt;p&gt;Once enabled, we can generate the consolidated &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; and then install all of the site’s dependencies that file specifies (including the MailChimp API v3.0 PHP library specified by our custom module) in one of two ways:&lt;/p&gt;
-
-&lt;p&gt;From the command line, we can run the following drush commands:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;drush composer-json-rebuild
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;drush composer-manager install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Alternatively, we could include the following lines in an update hook:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Re-build Composer Manager composer.json and run composer update.
-drush_composer_manager_composer_json_rebuild&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-drush_composer_manager&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'update'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;For Drupal 8 sites, the process is slightly different. As mentioned previously, as of release 8.1.0, Drupal core directly uses Composer to manage dependencies and the Composer Manager module is no longer necessary. For Drupal 8 sites, we should follow the &lt;a href=&quot;https://www.drupal.org/node/2822349&quot;&gt;Drupal.org instructions for managing dependencies for a custom project&lt;/a&gt;. Following those instructions ensures that all of the site’s dependencies, including the MailChimp library specified by our custom module, are installed.&lt;/p&gt;
-
-&lt;h3 id=&quot;use-the-library&quot;&gt;Use the library&lt;/h3&gt;
-
-&lt;p&gt;Once we have the MailChimp API v3.0 PHP library installed, we can use it in our custom module to subscribe users to mailing lists.&lt;/p&gt;
-
-&lt;p&gt;We suggest creating a dedicated function for subscribing users to email lists which can then be called throughout the custom module. For our purposes, we modeled that function off of the Mailchimp module (version 7.x-4.6) &lt;code class=&quot;highlighter-rouge&quot;&gt;mailchimp_subscribe_process()&lt;/code&gt; function.&lt;/p&gt;
-
-&lt;p&gt;We implemented the following function, which can be reviewed and modified for your specific purposes:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;/**
- * Add an email to a MailChimp list.
- *
- * This code is based on the 7.x-4.6 version of the Mailchimp module,
- * specifically the mailchimp_subscribe_process() function. That version of
- * the Mailchimp contrib module makes use of the ThinkShout PHP library for
- * version 3.0 of the MailChimp API. See the following for more detail:
- * https://www.drupal.org/project/mailchimp
- * https://github.com/thinkshout/mailchimp-api-php.
- *
- * @see Mailchimp_Lists::subscribe()
- *
- * @param string $api_key
- *   The MailChimp API key.
- * @param string $list_id
- *   The MailChimp list id that the user should be subscribed to.
- * @param string $email
- *   The email address for the user being subscribed to the mailing list.
- */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mymodule_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Set the timeout to something that won't take down the Drupal site:
-&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Get an instance of the MailchimpLists class.
-&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'apikey'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Use MEMBER_STATUS_PENDING to require double opt-in for the subscriber. Otherwise, use MEMBER_STATUS_SUBSCRIBED.
-&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Mailchimp\MailchimpLists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MEMBER_STATUS_PENDING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'email_type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Subscribe user to the list.
-&lt;/span&gt;    &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$mailchimp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addOrUpdateMember&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mymodule'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@email was subscribed to list @list.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'@email'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@list'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_NOTICE&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mymodule'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'A problem occurred subscribing @email to list @list.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;'@email'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;'@list'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// The user was not subscribed so log to watchdog.
-&lt;/span&gt;    &lt;span class=&quot;nx&quot;&gt;watchdog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mymodule'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'An error occurred subscribing @email to list @list. Status code @code. &quot;%message&quot;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'@email'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'@list'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'%message'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'@code'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;WATCHDOG_ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;With that function defined, we can then subscribe an email address to a specific Mailchimp mailing list through the following function call in our custom module:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;mymodule_subscribe_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$list_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;By taking advantage of the modern PHP ecosystem built on reusable Composer managed packages, we can easily build or adapt a custom module to subscribe users to mailing lists without the MailChimp contributed module.&lt;/p&gt;
-
-&lt;p&gt;Lastly, a special thanks to &lt;a href=&quot;https://thinkshout.com/&quot;&gt;ThinkShout&lt;/a&gt; for their hard work maintaining the MailChimp module and creating the library, on which this approach depends!&lt;/p&gt;
-</description>
-        <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2016/11/15/composer-mailchimp-subscriptions-v3-api.html</guid>
-        
-        <category>drupal</category>
-        
-        <category>drupal-planet</category>
-        
-        <category>composer</category>
-        
-        <category>module-development</category>
-        
-        <category>mailchimp</category>
         
         
       </item>

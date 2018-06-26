@@ -6,9 +6,41 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed-drupal.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Jun 2018 21:14:34 +0000</pubDate>
-    <lastBuildDate>Fri, 22 Jun 2018 21:14:34 +0000</lastBuildDate>
+    <pubDate>Tue, 26 Jun 2018 18:59:59 +0000</pubDate>
+    <lastBuildDate>Tue, 26 Jun 2018 18:59:59 +0000</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+    
+      <item>
+        <title>Why your website needs HTTPS</title>
+        <description>
+          &lt;p&gt;
+            
+              
+              &lt;img src=&quot;https://savaslabs.com/assets/img/blog/https.jpg&quot; alt=&quot;Image endorsing move to HTTPS from HTTP&quot; &gt;
+            
+            There are many considerations for site owners on when to make the move to HTTPS. Google has just stepped up the pressure. Secure communication is especially important for Drupal site owners and the time to make the move to HTTPS is now.
+
+                &lt;a href=&quot;https://savaslabs.com/2018/06/26/why-you-need-https.html&quot;&gt;Continue reading…&lt;/a&gt;
+          &lt;/p&gt;
+        </description>
+        <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2018/06/26/why-you-need-https.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2018/06/26/why-you-need-https.html</guid>
+        
+        <category>marketing</category>
+        
+        <category>user-experience</category>
+        
+        <category>best-practices</category>
+        
+        <category>drupal</category>
+        
+        <category>drupal-planet</category>
+        
+        
+      </item>
+      
     
     
       <item>
