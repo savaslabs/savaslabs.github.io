@@ -3,6 +3,12 @@
 # the proper borders!
 # Add new items to the top of the list.
 
+
+- title: "A Partial Decoupling: React + Drupal + Apache Solr FTW!"
+  event: Design 4 Drupal 2018
+  team-member: Dan Murphy
+  link: https://design4drupal.org/sessions/case-studypanel/partial-decoupling-react-drupal-apache-solr-ftw
+  icon: d4d-logo.svg
 - title: "The Strange Case of Dr. Jekyll and Mr. Drupal"
   event: Florida DrupalCamp Orlando 2018
   team-member: Chris Russo

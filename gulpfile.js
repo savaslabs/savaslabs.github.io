@@ -92,15 +92,19 @@ const mainStyleDests = [
   paths.siteCssFiles,
   paths.siteStyleGuide
 ];
-gulp.task('build:styles:main', buildStyles('/main.scss', mainStyleDests));
+gulp.task('build:styles:main', function () {
+  buildStyles('/main.scss', mainStyleDests);
+});
 
 /**
  * Task: build:styles:critical
  *
  * Processes critical CSS, to be included in head.html.
  */
-const critialStyleDests = ['_includes/css'];
-gulp.task('build:styles:critical', buildStyles('/critical*.scss', critialStyleDests));
+const criticalStyleDests = ['_includes/css'];
+gulp.task('build:styles:critical', function () {
+  buildStyles('/critical*.scss', criticalStyleDests);
+});
 
 /**
  * Task: build:styles:css
@@ -148,7 +152,9 @@ const styleguideStyleDests = [
   'styleguide',
   paths.siteStyleGuide
 ];
-gulp.task('build:styles:styleguide', buildStyles('/styleguide.scss', styleguideStyleDests));
+gulp.task('build:styles:styleguide', function () {
+  buildStyles('/styleguide.scss', styleguideStyleDests);
+});
 
 // -----------------------------------------------------------------------------
 //   2: Scripts
