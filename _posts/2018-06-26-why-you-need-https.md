@@ -4,12 +4,14 @@ title: "Why your website needs HTTPS"
 date: 2018-06-26
 author: Chris Russo
 tags:  marketing user-experience best-practices drupal drupal-planet
-summary: The upsides of HTTPS now greatly exceeds any previously valid tradeoffs. If you're not using it, it's time.
+summary: The upside of HTTPS now greatly exceeds any previously valid tradeoffs. If you're not using it exclusively, it's time to make the switch.
 featured_image: "/blog/https.jpg"
 featured_image_alt: "Image endorsing move to HTTPS from HTTP"
 drupal_planet_summary: |
   There are many considerations for site owners on when to make the move to HTTPS. Google has just stepped up the pressure. Secure communication is especially important for Drupal site owners and the time to make the move to HTTPS is now.
 ---
+
+This is part one of a [two-part series](/2018/07/31/how-to-move-to-https.html) on transitioning to HTTPS
 
 For some time, major internet players have advocated for a ubiquitous, secure internet, touting the myriad benefits for all users and service providers of "HTTPS everywhere". The most prominent and steadfast among them is Google. In the next week, continuing a multi-year effort to shepherd more traffic to the secure web, Google will make perhaps its boldest move to date which will negatively impact all organizations not securely serving their website over HTTPS.
 
@@ -128,9 +130,7 @@ Historically, considering a move to HTTPS has been held back by some valid conce
 - **Performance costs.** We know reducing latency is crucial for optimizing conversions and HTTPS does require additional communication and computation. However, with the broad adoption of the HTTP/2 protocol over the last few years, HTTPS now [usually outperforms HTTP](http://www.httpvshttps.com/).
 - **Financial costs.** HTTPS was too complex and costly to implement for some. Large strides have been made across many hosting providers who now bundle HTTPS into their hosting offerings by default, often at no additional cost. [Let's Encrypt](https://letsencrypt.org/), a relatively new and novel certificate authority, first began offering free certificates (which they still do) and then made it easy to automatically renew those certificates, helping to ease the burden and cost of implementation.
 
-We'll cover each of these in more detail in the follow-up article that will help guide you on how to make the move to HTTPS.
-
-{% comment %} TODO: Update link when deploying the next blog post {% endcomment %}
+We cover each of these in more detail in [part two](/2018/07/31/how-to-move-to-https.html) that will help guide you on how to make the move to HTTPS.
 
 ## Conclusion
 
@@ -153,3 +153,4 @@ Have we convinced you yet? Great! Stay tuned for some guidance on how to make th
 - [Google I/O 2014: "HTTPS Everywhere"](https://www.youtube.com/watch?v=cBhZ6S0PFCY)
 - [Progressive Web App Summit 2016: Mythbusting HTTPS](https://www.youtube.com/watch?v=e6DUrH56g14)
 - [First Impressions Matter: The Importance of Great Visual Design](https://conversionxl.com/blog/first-impressions-matter-the-importance-of-great-visual-design)
+- [A demonstration of speed benefits of HTTP/2 via HTTPS over HTTP](http://www.httpvshttps.com/)
