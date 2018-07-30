@@ -5,7 +5,7 @@ date: 2018-07-31
 author: Chris Russo
 tags:  marketing user-experience best-practices drupal drupal-planet
 summary: Now that you know your website needs to be served over HTTPS, we help you get there.
-featured_image: "/blog/https.jpg"
+featured_image: "/blog/https2.jpg"
 featured_image_alt: "Image endorsing move to HTTPS from HTTP"
 drupal_planet_summary: |
   How to move from serving your site over HTTP to HTTPS. Spoiler alert: there are some easy ways to do this with various Drupal hosting options. A quick read for guidance.
