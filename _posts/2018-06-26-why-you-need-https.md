@@ -3,7 +3,7 @@ layout: post
 title: "Why your website needs HTTPS"
 date: 2018-06-26
 author: Chris Russo
-tags:  marketing user-experience best-practices drupal drupal-planet
+tags:  marketing user-experience best-practices performance drupal drupal-planet
 summary: The upside of HTTPS now greatly exceeds any previously valid tradeoffs. If you're not using it exclusively, it's time to make the switch.
 featured_image: "/blog/https.jpg"
 featured_image_alt: "Image endorsing move to HTTPS from HTTP"

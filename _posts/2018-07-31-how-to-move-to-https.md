@@ -3,7 +3,7 @@ layout: post
 title: "How to transition your website from HTTP to HTTPS"
 date: 2018-07-31
 author: Chris Russo
-tags:  marketing user-experience best-practices drupal drupal-planet
+tags:  marketing user-experience best-practices performance drupal drupal-planet
 summary: Now that you know your website needs to be served over HTTPS, we help you get there.
 featured_image: "/blog/https2.jpg"
 featured_image_alt: "Image endorsing move to HTTPS from HTTP"
@@ -74,7 +74,7 @@ With the advent of the aforementioned free certificate, many platform-as-a-servi
 For many of our Drupal partners, we prefer to use a platform as a service (PaaS) hosting option like Pantheon, Acquia, or Platform.sh. Both [Pantheon](https://pantheon.io/features/managed-https
 ) and [Platform.sh](https://platform.sh/blog/free-ssl-certificates-for-every-project-every-environment) now provide a free HTTPS upgrade for all hosting plans; Acquia Cloud, another popular Drupal PaaS, is [still a bit behind in this regard](https://redfinsolutions.com/blog/installing-free-lets-encrypt-ssl-certificates-acquia#comment-3290247800). We have found that the efficiency gains of spending less time in server administration translates to more value to our clients empowering additional effort for the strategy, design, and development for which they hired us. In addition to efficiency, the reliability and consistency provided by finely tuned PaaS offerings are, in most cases, superior to manual installation.
 
-A good example of the evolution of hosting platforms maturing into the HTTPS everywhere world is our own Jekyll-based site, [which we've written about](/blog/tag/jekyll) and [presented on before](https://www.fldrupal.camp/sessions/sessions-drupal-island/strange-case-dr-jekyll-and-mr-drupal). We first set up HTTPS over GitHub pages using CloudFlare guided by [this tutorial](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/) since we found it necessary to serve our site over HTTPS. However, about a year later [GitHub announced they would provide HTTPS support for GitHub pages](https://blog.github.com/2018-05-01-github-pages-custom-domains-https/0).
+A good example of the evolution of hosting platforms maturing into the HTTPS everywhere world is our own Jekyll-based site, [which we've written about](/blog/tag/jekyll) and [presented on before](https://www.fldrupal.camp/sessions/sessions-drupal-island/strange-case-dr-jekyll-and-mr-drupal). We first set up HTTPS over GitHub pages using CloudFlare guided by [this tutorial](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/) since we found it necessary to serve our site over HTTPS. However, about a year later [GitHub announced they would provide HTTPS support for GitHub pages](https://blog.github.com/2018-05-01-github-pages-custom-domains-https/).
 
 {% twitter https://twitter.com/github/status/991366832421523456 %}
 
