@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to transition your website from HTTP to HTTPS"
-date: 2018-07-31
+date: 2018-08-01
 author: Chris Russo
 tags:  marketing user-experience best-practices performance drupal drupal-planet
 summary: Now that you know your website needs to be served over HTTPS, we help you get there.
