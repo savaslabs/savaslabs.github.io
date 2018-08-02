@@ -22,8 +22,6 @@ To quote the official [Google Security Blog](https://security.googleblog.com/201
 ![Chrome insecure message for HTTP]({{ site.url }}/assets/img/blog/chrome-68-not-secure.png)<br>
  <span class="caption"> Google blog </span>
 
-<!-- Test center image - doesn't work <img src="/assets/img/blog/chrome-68-not-secure.png" alt="Chrome insecure message for HTTP" class="blog-image-center"> -->
-
 Given the ambiguous "in July 2018", with no clearly communicated release date for Chrome 68, it's wise to err on the side of caution and assume it will roll out on the 1st. We have readied our partners with this expectation.
 
 So what does this mean for your organization if your site is not served over HTTPS? In short, it's time to make the move. Let's dig in.
@@ -144,9 +142,7 @@ Interpreting that and providing our perspective:
 
 A bold, if slightly controversial statement, but for ambitious organizations like the folks we're fortunate enough to work with each day, HTTPS-only is the standard in mid 2018 and beyond. Given the benefits, the lifted previous barriers, and the opportunity for the future, very few organization have a good reason not to exclusively serve their sites over HTTPS.
 
-Have we convinced you yet? Great! Stay tuned for some guidance on how to make the move.
-
-{% comment %} TODO: Update link when deploying the next blog post {% endcomment %}
+Have we convinced you yet? Great! Read [part two](/2018/08/01/how-to-move-to-https.html) for some assistance on how to make the move.
 
 ## Additional resources
 
