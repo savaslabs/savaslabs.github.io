@@ -89,12 +89,3 @@ You can also use tools like Qualys SSL Labs to verify the quality of your HTTPS 
 ## Wrap-up
 
 Given the much greater ease at which many modern hosting platforms allow for HTTPS, the biggest barrier, primarily a matter of effort, is to clean up your content and make sure all assets are served over HTTPS from all pages within your website. So, if you haven't already, start the transition now! [Contact us](/contact) over the phone or email if you need assistance and feel free to [comment below](#js-comments).
-
-{% comment %}
-### Marketing shoutouts
-
-https://twitter.com/emschec
-
-https://www.paulirish.com/2010/the-protocol-relative-url/ - practices that used to be encouraged due to flexibility are now frowned upon in the -everything-over-https-days
-
-{% endcomment %}
