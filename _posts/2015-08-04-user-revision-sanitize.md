@@ -89,9 +89,8 @@ I first installed xdebug with [homebrew](http://brew.sh/) via
 NB: Changing the port change to `10000` was necessary for me.
 
 ### Upgrade to latest drush
-I [ensured I was using the most recent version of drush](http://whaaat.com/installing-drush-8-using-composer)
-(I strongly recommend perusing Brant's [about page](http://whaaat.com/about))
-to ensure that the code I wrote would apply to most recent drush development.
+I [ensured I was using the most recent version of drush](http://brantwynn.com/installing-drush-9-using-composer)
+to ensure that the code I wrote would apply to the most recent drush development.
 
 ### Getting breakpoints in PHPStorm to listen to drush
 Several have blogged about this before, so I'll just point theirs out. Generally,
