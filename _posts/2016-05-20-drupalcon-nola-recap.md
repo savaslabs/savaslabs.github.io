@@ -38,7 +38,7 @@ Thanks to Kevin for my two wheels, this is what my commute looked like most days
 
  In between panels and presentations, the rest of us divvied up into smaller groups brainstorming around key issues and presented our collective expertise back to the larger group. Topics ranged from content strategy, to marketing tactics, to how to handle conflict with large personalities, and everything in between. The breadth of the coverage ensured that nearly everyone got something out of the summit. My reading list grew by an order of magnitude from the summit. Now if I could only find the time...
 
- After the summit, I joined my teammates Lisa and [Kosta](/company/kosta-harlan/) at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.
+ After the summit, I joined my teammates Lisa and Kosta at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.
 
  We then headed to the welcome pub crawl to meet up with some Drupal friends in person for the first time. It was a great evening of beautiful weather, good beer, and excited Drupalist(a)(o)s eagerly anticipating a fun week.
 
@@ -58,7 +58,7 @@ A couple favorites are:
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Is <a href="https://twitter.com/acquia">@acquia</a>&#39;s <a href="https://twitter.com/HornCologne">@horncologne</a> secretly involved with <a href="https://twitter.com/Jamroom">@Jamroom</a> CMS?<br><br>Sifting through the rumors today <a href="https://twitter.com/5">@5</a>:00 <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://t.co/T4sQ5Pmbih">https://t.co/T4sQ5Pmbih</a></p>&mdash; Savas Labs (@Savas_Labs) <a href="https://twitter.com/Savas_Labs/status/730096335748206592">May 10, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I must admit, since we have a [Jam](/company/kosta-harlan) of our own (inquire within), Acquia's Jam is a topic of frequent discussion at the Savas Labs water cooler. I <del>was</del> still am hopeful for some social media reaction. Unfortunately there were no _real_ rumors to speak of.
+I must admit, since we have a Jam of our own (inquire within), Acquia's Jam is a topic of frequent discussion at the Savas Labs water cooler. I <del>was</del> still am hopeful for some social media reaction. Unfortunately there were no _real_ rumors to speak of.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">TBD today <a href="https://twitter.com/5">@5</a>:00 <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://t.co/VODC0fZ65P">https://t.co/VODC0fZ65P</a><br><br>What&#39;s the best/worst named CMS?<br>Farcry<br>Geeklog<br>Thingamablog<a href="https://twitter.com/TiddlyWiki">@TiddlyWiki</a> (my fave)</p>&mdash; Savas Labs (@Savas_Labs) <a href="https://twitter.com/Savas_Labs/status/730087801790828545">May 10, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -73,7 +73,7 @@ to figure out once and for all, what was going on. So like any deep-dive, I
 fired up the trusty ol' debugger and discovered the aforementioned culprit.
 
 ## The solution to the _specific_ problem
-After consulting [Kosta](/company/kosta-harlan/), we agreed
+After consulting the team, we agreed
 that the solution would be to write a [drush hook](https://www.drupal.org/node/2534638)
 for the `user_revision` module. This code would need to sanitize the `mail`
 field in the `user_revision` table and would be invoked when the `drush sqlsan`
