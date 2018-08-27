@@ -69,7 +69,7 @@ with care, we can meld the internet with our physical world in a way that actual
 our lives. [Josh Clark](https://bigmedium.com/) suggested that instead of using
 our powers to bombard people with ads or infantilize them with needless apps, **we
 should strive to make people feel like superheroes.** One great example that Josh
-shared is [Wayfindr](http://www.rlsb.org.uk/tech-hub/wayfindr), an audio
+shared is [Wayfindr](https://www.wayfindr.net/), an audio
 navigation system to help visually impaired people use the London Tube.
 
 Josh also called on us to design calm technology - to weave data into the background
