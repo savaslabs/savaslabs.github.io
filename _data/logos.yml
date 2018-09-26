@@ -16,6 +16,12 @@
 - name: Hunter Boots
   image: hunter-logo.svg
   weight: 6
+- name: Darden School of Business
+  image: darden-logo.png
+  weight: 6
+- name: Viget
+  image: viget-logo.png
+  weight: 3
 - name: HIV Prevention Trials Network
   image: hptn-logo.png
   weight: 7
@@ -28,6 +34,9 @@
 - name: Omega Institute
   image: omega-logo.jpg
   weight: 10
+- name: National Toxicology Program
+  image: ntp-logo.jpg
+  weight: 11
 - name: Perinatal Quality Collaborative of North Carolina
   image: pqcnc-logo.png
   weight: 11
