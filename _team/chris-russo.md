@@ -2,7 +2,7 @@
 name: Chris Russo
 slug: chris
 layout: team
-job_title: Principal Director
+job_title: Chief Executive Officer
 job_description:
   Chris does his best to ensure that his team is learning and growing and that
   our clients feel like partners.
