@@ -76,6 +76,6 @@ Alongside Jekyll, we used [Hologram](http://trulia.github.io/hologram/) develope
 
 And today... Today we celebrate our independ... no - we celebrate our redesigned website launch and the [Drupalcon Baltimore](https://events.drupal.org/baltimore2017) kickoff simultaneously! Coincidence? Of course not! However, I would like to give a shoutout to my entire team for making this happen on a tight schedule and an extra big-ups to Anne and Oksana who put in extra hours in the weeks leading up to make today possible. It was fun to be a part of the building process again; I found myself feverishly reloading the site every time new code was pushed up, which was often many, many times a day.
 
-So now it's time to show off our fancy new website complete with business cards to boot! Tell us what you think [in comments](#js-comments) or on [Twitter](https://twitter.com/intent/tweet?text=We%20think%20the%20redesign%20is%20likely,%20nay,%20probable,%20to%20bring%20about%20world%20peace%20%F0%9F%8C%8F%20%E2%98%AE%EF%B8%8F%20Congrats%20%40Savas_Labs%21&source=webclient).
+So now it's time to show off our fancy new website complete with business cards to boot! Tell us what you think [in comments](#js-comments) or on [Twitter](https://twitter.com/intent/tweet?text=We%20think%20the%20redesign%20is%20likely,%20nay,%20probable,%20to%20bring%20about%20world%20peace%20%F0%9F%8C%8F%20%E2%98%AE%EF%B8%8F%20Congrats%20%40savaslabs%21&source=webclient).
 
 {% twitter https://twitter.com/SavasLabs/status/854730073152385027 %}

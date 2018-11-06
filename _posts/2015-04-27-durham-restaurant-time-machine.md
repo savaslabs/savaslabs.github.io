@@ -22,7 +22,7 @@ No longer do you have to wonder:
 * Is it true when people say that there were no restaurants downtown in the 1990s? (not exactly, but there were a lot fewer)
 
 <br>**Click here to [take a look!](http://www.savaslabs.com/durham-restaurants-map)**
-And we'd love to hear what you think! You can reach us on twitter at <a href="https://twitter.com/savas_labs">@savas_labs</a>, or email <a href="mailto:info@savaslabs.com">info@savaslabs.com</a>.
+And we'd love to hear what you think! You can reach us on twitter at <a href="https://twitter.com/savaslabs">@savaslabs</a>, or email <a href="mailto:info@savaslabs.com">info@savaslabs.com</a>.
 
 ## Sources
 The data comes from [Durham's new open data initiative](http://data.dconc.gov/), which provides a dataset of restaurant inspections going back all the way to 1990.

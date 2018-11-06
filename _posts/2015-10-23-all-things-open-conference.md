@@ -8,7 +8,7 @@ summary: Attending and sharing experiences from the All Things Open conference.
 
 ---
 
-Last week, I attended the [All Things Open conference](http://allthingsopen.org/) conference. The conference is hosted in Raleigh, so for those of us carless folks, it is a very accessible world-class conference a mere 30-minute bus ride away. I attended the conference last year (its 2nd year running) and enjoyed a shallow dive into a wide variety of open source technologies. Some of which was applicable to the work I was doing, and some of which was more geared towards inspiration, new ideas, and learning about technologies that I could utilize or at least should be aware of. This year I attended with a similar perspective, but also with my employer (red) hat ([and shoes](https://twitter.com/Savas_Labs/status/656108971175116801)) on.
+Last week, I attended the [All Things Open conference](http://allthingsopen.org/) conference. The conference is hosted in Raleigh, so for those of us carless folks, it is a very accessible world-class conference a mere 30-minute bus ride away. I attended the conference last year (its 2nd year running) and enjoyed a shallow dive into a wide variety of open source technologies. Some of which was applicable to the work I was doing, and some of which was more geared towards inspiration, new ideas, and learning about technologies that I could utilize or at least should be aware of. This year I attended with a similar perspective, but also with my employer (red) hat ([and shoes](https://twitter.com/savaslabs/status/656108971175116801)) on.
 
 It was fun to network and discuss opportunities of diversity with organizations
 like [girl develop it](https://www.girldevelopit.com/) and advocate that the
