@@ -78,4 +78,4 @@ And today... Today we celebrate our independ... no - we celebrate our redesigned
 
 So now it's time to show off our fancy new website complete with business cards to boot! Tell us what you think [in comments](#js-comments) or on [Twitter](https://twitter.com/intent/tweet?text=We%20think%20the%20redesign%20is%20likely,%20nay,%20probable,%20to%20bring%20about%20world%20peace%20%F0%9F%8C%8F%20%E2%98%AE%EF%B8%8F%20Congrats%20%40Savas_Labs%21&source=webclient).
 
-{% twitter https://twitter.com/Savas_Labs/status/854730073152385027%}
+{% twitter https://twitter.com/SavasLabs/status/854730073152385027 %}
