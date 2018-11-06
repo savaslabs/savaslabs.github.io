@@ -20,7 +20,7 @@ I arrived Saturday evening after a few short flights from Durham, NC. My graciou
 
  Kevin also took me to the convention center so I could get my bearings for the week ahead. He took my picture, and **_ever so slightly_** doctored up the version you see below for me to share with our community that we had made it to the big stage!
 
- {% twitter https://twitter.com/Savas_Labs/status/729504649233899521 %}
+ {% twitter https://twitter.com/SavasLabs/status/729504649233899521 %}
 
 ## Monday - Business Summit / Opening party
 

@@ -45,7 +45,7 @@ Many in the community contested the veracity of his optimism in the article's co
 
 About a month later, some six months after Drupal 8 was released, Savas Labs attended DrupalCon NOLA.
 
-{% twitter https://twitter.com/Savas_Labs/status/729504649233899521 %}
+{% twitter https://twitter.com/SavasLabs/status/729504649233899521 %}
 
 During the [perennial "Driesnote,"](https://youtu.be/Ksp5JVFryEg?t=464) Dries continued to present Drupal 8 as well on its way to match if not exceed the success of Drupal 7.
 
