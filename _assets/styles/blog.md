@@ -124,7 +124,7 @@ to add Twitter widgets to blog posts or other pages. Use the following format
 within HTML or markdown files:
 
 ```
-{% twitter https://twitter.com/Savas_Labs/status/729504649233899521 %}
+{% twitter https://twitter.com/SavasLabs/status/729504649233899521 %}
 ```
 
 ---
