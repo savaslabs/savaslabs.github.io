@@ -9,6 +9,7 @@ task :test do
       :url_ignore => [/drupal.org/,
                       /linkedin.com/,
                       /fldrupal.camp/,
+                      /huffingtonpost.com/,
                       /#.*/,
                       ],
       :empty_alt_ignore => false,
