@@ -46,23 +46,23 @@
     display: block;
     font-size: 1.5em;
     font-weight: 400;
-    margin-top: 84px;
+    margin-top: 100px;
     max-width: 400px;
     padding: $base-spacing $base-spacing $base-spacing * 3;
     width: 100%;
 
     @include grid-media($medium-screen-up) {
-      font-size: 2em;
+      font-size: 3em;
       max-width: 780px;
-      padding: $base-spacing * 2 $base-spacing;
+      padding: $base-spacing * 3 $base-spacing;
     }
 
     @include grid-media($extra-large-screen-up) {
-      font-size: 3em;
+      font-size: 4em;
     }
 
     @include grid-media($max-width-up) {
-      font-size: 2.75em;
+      font-size: 4.75em;
       max-width: 800px;
     }
 

@@ -25,8 +25,4 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
 
 ## Open Positions
 
-Savas Labs is always accepting resumés from [excellent](/company/mission-and-values/#excel) people, but we're actively seeking to fill the following positions:
-
-[Marketing Director](/careers/marketing-director)
-
-The Marketing Director will be Savas Labs's first marketing director and will help shape and execute our marketing plan.
+Savas Labs is always accepting resumés from [excellent](/company/mission-and-values/#excel) people, though we do not currently have any active openings. Don't let that stop you from [reaching out](/contact).
