@@ -90,8 +90,7 @@ The day concluded with the marching memorial putting Drupal 6 to rest. I observe
 
 The Friday sprints were surprisingly well attended. Sprint lounges were occupied all week, and some sprinters promised to continue throughout the weekend at the convention center. This dedication to the project is impressive and inspirational (and I've argued necessary) to the future of Drupal's success.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Putting my 💰 where my 🤑 is and investing in <a href="https://twitter.com/hashtag/Drupal?src=hash">#Drupal</a>:  <a href="https://t.co/s1aUuoKxkv">https://t.co/s1aUuoKxkv</a> <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> code sprinting 🏃 ! <a href="https://t.co/mlSXsZif4m">pic.twitter.com/mlSXsZif4m</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/731148211218436097">May 13, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% twitter https://twitter.com/SavasLabs/status/731148211218436097 %}
 
 It is in the track world just as it is in the coding world: **sprinting is hard!** It is difficult to get organized, get oriented (or help orient) and contribute effectively to a global project in a narrow window of time.
 

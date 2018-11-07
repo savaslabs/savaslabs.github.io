@@ -1,6 +1,5 @@
 ---
 layout: case-study
-featured: 1
 weight: -4
 project_title: Durham Civil and Human Rights History Map
 slug: pmp-civil-rights-map

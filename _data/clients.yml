@@ -1,5 +1,10 @@
 # For client quote regions.
-
+- project: omega-react-solr
+  name: Laurie Hunt
+  title: Digital Marketing Director at the Omega Institute for Holistic Studies
+  image: /assets/img/work/clients/lz-eo.jpg
+  quote: |
+    The search application Savas built strikes the perfect balance of catering to our diverse audiences' specific interests while showcasing the breadth of all Omega has to offer. We love it.
 - project: duke_today
   name: Blyth Morrell
   title: Director of Strategic and Digital Communications at Duke University
@@ -7,8 +12,8 @@
   quote: |
     We've gotten nothing but rave reviews about the new site.
 - project: omega-lz
-  name: Laurie Zollo
-  title: Assistant Director of Digital Marketing at the Omega Institute for Holistic Studies
+  name: Laurie Hunt
+  title: Digital Marketing Director at the Omega Institute for Holistic Studies
   image: /assets/img/work/clients/lz-eo.jpg
   quote: |
     Of the 15 years I've been in this, the Savas team has had the most impeccable QA
