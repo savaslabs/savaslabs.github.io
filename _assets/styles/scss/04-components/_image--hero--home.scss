@@ -54,7 +54,7 @@
     @include grid-media($medium-screen-up) {
       font-size: 3em;
       max-width: 780px;
-      padding: $base-spacing * 3 $base-spacing;
+      padding: $base-spacing;
     }
 
     @include grid-media($extra-large-screen-up) {
