@@ -33,17 +33,15 @@ Thanks to Kevin for my two wheels, this is what my commute looked like most days
 
  After arriving, I walked the .75 miles (no exaggeration... it's 1 mile long) **_inside_** the convention center to get to the business summit. Although a little disorganized due to a last-minute personnel change of who would be running the summit, it proved to be a very open forum where leaders in in the Drupal community spoke very openly, honestly, and encouragingly about how they run their Drupal businesses. It was refreshing how genuinely the open source philosophy pervaded the consciousness of the leaders who were on panels and giving presentations.
 
- <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Gaining insight from <a href="https://twitter.com/hashtag/Drupal?src=hash">#Drupal</a> leaders <a href="https://twitter.com/mediacurrent">@mediacurrent</a> <a href="https://twitter.com/prometsource">@prometsource</a> <a href="https://twitter.com/lullabot">@lullabot</a> <a href="https://twitter.com/phase2">@phase2</a> <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://twitter.com/hashtag/NOLA?src=hash">#NOLA</a> <a href="https://twitter.com/hashtag/Drupalcon?src=hash">#Drupalcon</a> <a href="https://t.co/cqvytd7KG7">pic.twitter.com/cqvytd7KG7</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/729739985109327873">May 9, 2016</a></blockquote>
- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% twitter https://twitter.com/SavasLabs/status/729739985109327873 %}
 
- In between panels and presentations, the rest of us divvied up into smaller groups brainstorming around key issues and presented our collective expertise back to the larger group. Topics ranged from content strategy, to marketing tactics, to how to handle conflict with large personalities, and everything in between. The breadth of the coverage ensured that nearly everyone got something out of the summit. My reading list grew by an order of magnitude from the summit. Now if I could only find the time...
+In between panels and presentations, the rest of us divvied up into smaller groups brainstorming around key issues and presented our collective expertise back to the larger group. Topics ranged from content strategy, to marketing tactics, to how to handle conflict with large personalities, and everything in between. The breadth of the coverage ensured that nearly everyone got something out of the summit. My reading list grew by an order of magnitude from the summit. Now if I could only find the time...
 
  After the summit, I joined my teammates Lisa and Kosta at the opening reception. This was the first opportunity to see former coworkers and members of the community we were  personally acquainted with before the conference.
 
  We then headed to the welcome pub crawl to meet up with some Drupal friends in person for the first time. It was a great evening of beautiful weather, good beer, and excited Drupalist(a)(o)s eagerly anticipating a fun week.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thanks to <a href="https://twitter.com/kostajh">@kostajh</a> just cheers&#39;ed with <a href="https://twitter.com/BioRAFT">@BioRAFT</a> &quot;to coding standards!&quot; <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://twitter.com/hashtag/DrupalCon?src=hash">#DrupalCon</a> <a href="https://twitter.com/hashtag/NOLA?src=hash">#NOLA</a> <a href="https://t.co/6lWKBxNklN">pic.twitter.com/6lWKBxNklN</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/729877906231451648">May 10, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% twitter https://twitter.com/SavasLabs/status/729877906231451648 %}
 
 <span class="caption">...Only at Drupalcon...</span>
 
@@ -55,8 +53,7 @@ Since Drupalcon is primarily a developer's conference, and I was speaking in the
 
 A couple favorites are:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Is <a href="https://twitter.com/acquia">@acquia</a>&#39;s <a href="https://twitter.com/HornCologne">@horncologne</a> secretly involved with <a href="https://twitter.com/Jamroom">@Jamroom</a> CMS?<br><br>Sifting through the rumors today <a href="https://twitter.com/5">@5</a>:00 <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://t.co/T4sQ5Pmbih">https://t.co/T4sQ5Pmbih</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/730096335748206592">May 10, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% twitter https://twitter.com/SavasLabs/status/730096335748206592 %}
 
 I must admit, since we have a Jam of our own (inquire within), Acquia's Jam is a topic of frequent discussion at the Savas Labs water cooler. I <del>was</del> still am hopeful for some social media reaction. Unfortunately there were no _real_ rumors to speak of.
 
@@ -96,9 +93,7 @@ It is in the track world just as it is in the coding world: **sprinting is hard!
 
 Given my newfound desire to ease the barriers and access to contributing to the project in general, I decided to sprint to make the drupal.org contributor experience better. In doing so, I got [my very own installation of the drupal.org website](https://drupal:drupal@chrisarusso-drupal.dev.devdrupal.org) of which I had complete control. **Fun**!
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Just for one glorious day when contributing to <a href="https://twitter.com/hashtag/Drupal?src=hash">#Drupal</a>, I AM <a href="https://twitter.com/Dries">@Dries</a>! <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://twitter.com/hashtag/DreamsRealized?src=hash">#DreamsRealized</a> <a href="https://t.co/aWGlGaM67P">pic.twitter.com/aWGlGaM67P</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/731184271218610177">May 13, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<span class="caption">Note: Dries liked this Tweet</span>
+{% twitter https://twitter.com/SavasLabs/status/731184271218610177 %}
 
 As mentioned, **sprinting is hard**, so I was actually unable to meaningfully contribute a patch during my stay before I had to head to the airport.
 
@@ -110,5 +105,4 @@ In conclusion, one of my biggest takeaways from the whole experience is that **i
 
 ### Honorable mention Tweets anxiously awaiting a response
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">. <a href="https://twitter.com/sethviebrock">@sethviebrock</a> of <a href="https://twitter.com/OriginEight">@OriginEight</a> - great to meet <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> - HAVE to hear about your work on 🎤 <a href="https://twitter.com/justinbieber">@justinbieber</a>&#39;s 🎤 website 💻 <a href="https://twitter.com/hashtag/Beliebers?src=hash">#Beliebers</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/730456948731154433">May 11, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% twitter https://twitter.com/SavasLabs/status/730456948731154433 %}
