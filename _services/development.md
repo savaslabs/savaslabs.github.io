@@ -5,6 +5,8 @@ slug: development
 weight: 2
 summary: |
   Turning organizational challenges into creative technical solutions is very rewarding to us. We employ an ever-expanding set of tools to fulfill our partners' constantly evolving needs.
+durham_summary: |
+  Are you a local Raleigh design agency but don't staff development resources? An organization looking to help moderize their technology? We provide creative technical solutions to fulfill our partners' constantly evolving needs.
 icon: "development-icon.svg"
 vertical_image: "/assets/img/services/development-hero.jpg"
 vertical_image_alt: "Websites built by Savas Labs displayed on mobile screens"

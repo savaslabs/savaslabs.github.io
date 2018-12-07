@@ -5,6 +5,8 @@ slug: strategy
 weight: 1
 summary: |
   Our seasoned team combines wisdom from years of digital consulting experience with an exuberance to leave no stone unturned in exploring the best solutions for our partners.
+durham_summary: |
+  You're a Triangle company whose looking for a seasoned team of digital consultants to help start your next project. You've come to the right place. Our process starts with sound strategic guidance.
 icon: "strategy-icon.svg"
 vertical_image: "/assets/img/services/strategy-hero.jpg"
 vertical_image_alt: "Chris walking with a client"
