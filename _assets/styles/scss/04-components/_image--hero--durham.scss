@@ -1,0 +1,15 @@
+/**
+ * @file
+ *
+ * Hero image styles for the Durham page.
+ */
+
+.page--durham .region--hero {
+  .region--hero__image {
+    background-position: bottom center;
+
+    @include grid-media($large-screen-up) {
+      background-position: center center;
+    }
+  }
+}
