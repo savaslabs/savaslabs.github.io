@@ -52,6 +52,7 @@
 @import 'scss/04-components/header-navigation--menu-link';
 @import 'scss/04-components/icons';
 @import 'scss/04-components/icons--service';
+@import 'scss/04-components/image--hero--durham';
 @import 'scss/04-components/image--hero--home';
 @import 'scss/04-components/image--hero--careers';
 @import 'scss/04-components/image--hero--company';
@@ -78,10 +79,11 @@
 
 // Region rules.
 @import 'scss/05-regions/banner';
-@import 'scss/05-regions/banner--drupal-meetup';
 @import 'scss/05-regions/banner--heading';
 @import 'scss/05-regions/banner--open-source';
 @import 'scss/05-regions/banner--service';
+@import 'scss/05-regions/banner--tridug--durham';
+@import 'scss/05-regions/banner--tridug--open-source';
 @import 'scss/05-regions/banner--were-hiring';
 @import 'scss/05-regions/blog-tiles';
 @import 'scss/05-regions/blog-tiles--all';

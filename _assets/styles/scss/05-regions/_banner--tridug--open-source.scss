@@ -1,10 +1,10 @@
 /**
  * @file
  *
- * Styles for Open Source Contributions banner region.
+ * Styles for the Tridug banner on the open source page.
  */
 
-.region--banner--drupal-meetup {
+.region--banner--tridug--os {
   .region--full-width__wrapper {
     align-items: center;
     display: flex;
@@ -17,7 +17,7 @@
     }
   }
 
-  .region--banner--drupal-meetup__image {
+  .region--banner--tridug--os__image {
     img {
       display: block;
 
@@ -27,7 +27,7 @@
     }
   }
 
-  .region--banner--drupal-meetup__text {
+  .region--banner--tridug--os__text {
     padding: $base-spacing * 3 $base-spacing;
 
     @include grid-media($medium-screen-up) {

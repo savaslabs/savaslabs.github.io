@@ -36,5 +36,12 @@
   .region--hero__image {
     background-image: url('/assets/img/bg/services-hero.jpg');
     background-position: 10% center;
+
+    &.durham {
+      background-image: url('/assets/img/bg/durham-deck.jpg');
+    }
   }
+
+
+
 }

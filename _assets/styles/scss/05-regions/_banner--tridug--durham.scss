@@ -1,0 +1,44 @@
+/**
+ * @file
+ *
+ * Styles for Tridug banner on the Durham page.
+ */
+
+.region--banner--tridug--durham {
+  .region--full-width__wrapper {
+    @include grid-media($medium-screen-up) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .region--banner--open-source__image {
+
+
+    padding: $base-spacing;
+    text-align: center;
+
+    @include grid-media($medium-screen-up) {
+      padding: $base-spacing * 3;
+    }
+
+    img {
+      width: 120px;
+    }
+
+    p {
+      font-style: italic;
+      margin-bottom: 0;
+    }
+  }
+
+  .region--banner--open-source__text {
+    max-width: 700px;
+    padding: $base-spacing;
+
+    @include grid-media($medium-screen-up) {
+      padding: $base-spacing * 3;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+- name: Duke Gardens
+  image: duke-gardens-logo.png
+  weight: 1
+- name: Ninth Street Bakery
+  image: ninth-st-bakery-logo.png
+  weight: 2
+- name: Pinhook
+  image: pinhook-logo.png
+  weight: 3
+- name: Cocoa Cinnamon
+  image: cocoa-cinnamon-logo.png
+  weight: 4
+- name: Bull McCabe's
+  image: bull-mccabes-logo.png
+  weight: 5

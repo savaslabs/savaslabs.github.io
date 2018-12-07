@@ -5,6 +5,8 @@ slug: support-maintenance
 weight: 4
 summary: |
   An application serves its purpose best when running. With the help of robots, we ensure maximum uptime and provide ongoing iterative improvements that modern web systems demand to maximize their potential.
+durham_summary: |
+  Have you worked with another shop or freelancer in Raleigh or Durham? Have they left you with an application or website you can't support? Reach out and let us help ensure maximum uptime and provide ongoing improvements.
 icon: "support-maintenance-icon.svg"
 vertical_image: "/assets/img/services/support-maintenance-hero.jpg"
 vertical_image_alt: "Various visual representations of statistics"
