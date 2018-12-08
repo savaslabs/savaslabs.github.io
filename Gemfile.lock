@@ -311,6 +311,7 @@ DEPENDENCIES
   html-proofer
   jekyll-paginate
   jekyll-picture-tag
+  jekyll-seo-tag
   jekyll-twitter-plugin
   jemoji
   json!
@@ -319,4 +320,4 @@ DEPENDENCIES
   travis
 
 BUNDLED WITH
-   1.15.4
+   1.16.1
