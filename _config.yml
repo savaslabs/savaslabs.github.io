@@ -66,6 +66,7 @@ plugins:
   - jekyll-picture-tag
   - jemoji
   - jekyll-twitter-plugin
+  - jekyll-seo-tag
 
 # Picture element presets
 picture:
