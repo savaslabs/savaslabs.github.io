@@ -91,4 +91,5 @@
   name: Team
 - slug: company-culture
   name: Company Culture
-
+- slug: open-source
+  name: Open Source
