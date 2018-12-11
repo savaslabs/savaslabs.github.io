@@ -3,17 +3,13 @@ layout: post
 title: "Welcoming Ben Eckerson as COO of Savas Labs"
 date: 2018-12-10
 author: Chris Russo
-tags: business identity culture people
+tags: team company-culture
 summary: "Savas Labs is excited to announce the arrival of our new COO: Ben Eckerson."
-featured_image: "/team/ben-eckerson/ben-eckerson-company.jpg"
+featured_image: "/blog/ben-landscape.png"
 featured_image_alt: "Image of Ben as a child"
 ---
 
-For a little over a month now, [Ben Eckerson](/company/ben-eckerson) has been working hard to make an impact as Savas Labs' new and first Chief Operating Officer. Ben joins us after six years at premier digital agency [Viget]((https://www.viget.com/)), where he led business development and experimental IoT efforts for their Durham office (a couple blocks away from us in downtown Durham). Prior to Viget, Ben spent 6 years at creative New York/Durham agency [Mckinney](https://mckinney.com/).
-
-<!-- Mention how Chris and Ben met? -->
-<!-- Mention we're collaborating with Viget on Darden projects? -->
-<!-- TODO: Link to Darden ITA when it's live -->
+For a little over a month now, [Ben Eckerson](/company/ben-eckerson) has been working hard to make an impact as Savas Labs' new and first Chief Operating Officer. Ben joins us after six years at premier digital agency [Viget]((https://www.viget.com/)), where he led business development and experimental IoT efforts for their Durham office (a couple blocks away from us in downtown Durham). Prior to Viget, Ben spent six years at creative New York/Durham agency [Mckinney](https://mckinney.com/).
 
 Here's Ben dressed up in his finest:
 
@@ -28,8 +24,8 @@ With well over a decade in leadership roles in digital agencies, Ben will help t
 
 ## Things that have changed since Ben's start
 
-- We've transitioned our internal team planning / scheduling efforts to use [Harvest's forecast](https://www.getharvest.com/forecast).
-- We've improved our retrospective process / documentation as well as our organization of project files in our Google Drive
+- We've transitioned our internal team planning and scheduling efforts to use [Harvest's forecast](https://www.getharvest.com/forecast).
+- We've improved our retrospective process and documentation as well as our organization of project files in our Google Drive
 - We’ve had to up our Slack subscription to keep pace with Ben’s uncanny ability to find the perfect GIF (or create a new custom emoji) for any conversation.
 - We've implemented a Secret Santa tradition in [the office](https://www.youtube.com/watch?v=B6jCMaiTqG0).
 <!-- TODO: link to Savas Claus post -->
@@ -42,9 +38,7 @@ With well over a decade in leadership roles in digital agencies, Ben will help t
 
 ## Helping to make Savas Labs more social
 
-Ben has _gently_ recommended that we more frequently share how special what we've created at Savas Labs is -- hence my writing of this blog post ~~that he made me write~~ about him.
-
-To his chagrin, Ben recognized most of us were not active with our personal social media accounts. For fears he was beginning to detect some [early onset grumpiness](https://www.youtube.com/watch?v=bewKPi9gdT4), Ben has taken swift action to combat things before it's too late.
+Ben has _gently_ recommended that we more frequently share how special what we've created at Savas Labs is -- hence my writing of this blog post ~~that he made me write~~ about him. He also noted that the team has been so busy there was little time for engagement on social media. For fears he was beginning to detect some [early onset grumpiness](https://www.youtube.com/watch?v=bewKPi9gdT4), Ben has taken swift action to combat things before it's too late.
 
 {% twitter https://twitter.com/SavasLabs/status/1059906716224110597 %}
 
