@@ -15,7 +15,7 @@ featured_image_alt: "Savas Claus logo"
 
 <div class="tenor-gif-embed" data-postid="7354987" data-share-method="host" data-width="100%" data-aspect-ratio="1.338235294117647"><a href="https://tenor.com/view/brian-baumgartner-the-office-secret-santa-kevin-gif-7354987">Secret Santa The Office GIF</a> from <a href="https://tenor.com/search/brianbaumgartner-gifs">Brianbaumgartner GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-naturally as engineers, we built an app to ensure that couldn't happen.
+So naturally as engineers, we built an app to solve our problem.
 
 But first, knowing that we had ahead of us one of the **_two_** hard things in computer science: cache-invalidation, off-by-one errors, and **naming things**, we put it to a pol.
 
