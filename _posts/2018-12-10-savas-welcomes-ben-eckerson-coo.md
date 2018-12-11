@@ -9,7 +9,7 @@ featured_image: "/blog/ben-landscape.png"
 featured_image_alt: "Image of Ben as a child"
 ---
 
-For a little over a month now, [Ben Eckerson](/company/ben-eckerson) has been working hard to make an impact as Savas Labs' new and first Chief Operating Officer. Ben joins us after six years at premier digital agency [Viget]((https://www.viget.com/)), where he led business development and experimental IoT efforts for their Durham office (a couple blocks away from us in downtown Durham). Prior to Viget, Ben spent six years at creative New York/Durham agency [Mckinney](https://mckinney.com/).
+For a little over a month now, [Ben Eckerson](/company/ben-eckerson) has been working hard to make an impact as Savas Labs' new and first Chief Operating Officer. Ben joins us after six years at premier digital agency [Viget](https://www.viget.com/), where he led business development and experimental IoT efforts for their Durham office (a couple blocks away from us in downtown Durham). Prior to Viget, Ben spent six years at creative New York/Durham agency [Mckinney](https://mckinney.com/).
 
 Here's Ben dressed up in his finest:
 
