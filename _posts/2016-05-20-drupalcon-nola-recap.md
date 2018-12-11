@@ -26,8 +26,7 @@ I arrived Saturday evening after a few short flights from Durham, NC. My graciou
 
 Thanks to Kevin for my two wheels, this is what my commute looked like most days to and from the conference. Despite the condition of some roads, New Orleans has one of the highest (sixth according to the 2009 census) rates of citizens who commute by bicycle in the U.S. It's clearly also fairly horse-friendly as well.
 
- <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Nice commute alongside horse and buggy to the convention center en route to <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://twitter.com/hashtag/NOLA?src=hash">#NOLA</a> <a href="https://twitter.com/hashtag/DrupalCon2016?src=hash">#DrupalCon2016</a> <a href="https://t.co/BvvIEJqoga">pic.twitter.com/BvvIEJqoga</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/729739990524174336">May 9, 2016</a></blockquote>
- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% twitter https://twitter.com/savaslabs/status/729739990524174336 %}
 
  <span class="caption">Rolling through the French Quarter on the way in!</span>
 
@@ -57,8 +56,8 @@ A couple favorites are:
 
 I must admit, since we have a Jam of our own (inquire within), Acquia's Jam is a topic of frequent discussion at the Savas Labs water cooler. I <del>was</del> still am hopeful for some social media reaction. Unfortunately there were no _real_ rumors to speak of.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">TBD today <a href="https://twitter.com/5">@5</a>:00 <a href="https://twitter.com/DrupalConNA">@DrupalConNA</a> <a href="https://t.co/VODC0fZ65P">https://t.co/VODC0fZ65P</a><br><br>What&#39;s the best/worst named CMS?<br>Farcry<br>Geeklog<br>Thingamablog<a href="https://twitter.com/TiddlyWiki">@TiddlyWiki</a> (my fave)</p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/730087801790828545">May 10, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% twitter https://twitter.com/SavasLabs/status/730087801790828545 %}
+
 <span class="caption">Just a select few of the **incredible** names _someone_ decided to name their CMS in the past. Most of which have little to no presence at this point. You live and learn.</span>
 
 The presentation was fun to give. I saw some familiar faces like former and current coworkers, which was comforting. The research that went into the presentation was perhaps as valuable as giving the talk. I timed the material I shared well, and there was a fairly lively Q&A session after, which was great. I received some positive and constructive feedback both right after the talk, and via the online evaluations that I'm eager to incorporate the next time I give the presentation.
