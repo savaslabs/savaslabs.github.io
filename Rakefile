@@ -7,6 +7,7 @@ task :test do
       :parallel => {:in_processes => 4},
       :only_4xx => true,
       :url_ignore => [/drupal.org/,
+                      /t.co/,
                       /linkedin.com/,
                       /fldrupal.camp/,
                       /huffingtonpost.com/,

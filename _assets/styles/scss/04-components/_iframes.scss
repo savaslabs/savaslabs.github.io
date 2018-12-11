@@ -6,8 +6,9 @@
 
 // Need to override inline style from Twitter iframe.
 // scss-lint:disable ImportantRule
-.twitter-tweet {
+.twitter-tweet, .region--post-content iframe {
   margin: 3em auto !important;
+  display: block;
 }
 // scss-lint:enable ImportantRule
 

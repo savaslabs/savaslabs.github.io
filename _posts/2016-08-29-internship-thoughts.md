@@ -3,7 +3,7 @@ layout: post
 title: "A Savas Labs Internship"
 date: 2016-08-29
 author: Ro Wang
-tags: internship identity
+tags: team company-culture
 summary: What it's like to learn at Savas Labs.
 ---
 <img src="/assets/img/blog/internship-slave.jpg" class="blog-image-large" alt="Sipress Cartoon">
