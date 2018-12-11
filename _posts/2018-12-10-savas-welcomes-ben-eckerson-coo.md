@@ -18,7 +18,7 @@ For a little over a month now, [Ben Eckerson](/company/ben-eckerson) has been wo
 Here's Ben dressed up in his finest:
 
 <div class="blog-image">
-<img alt="Ben rocking spiderman sweater in third grade" src="/assets/img/blog/ben-as-a-child.png">
+<img alt="Ben rocking his Spiderman sweater in kindergarten" src="/assets/img/blog/ben-as-a-child.png">
  <span class="caption">Ben dove right in sharing this kindergarten school photo with the team.</span>
 </div>
 
@@ -31,9 +31,9 @@ With well over a decade in leadership roles in digital agencies, Ben will help t
 - We've transitioned our internal team planning / scheduling efforts to use [Harvest's forecast](https://www.getharvest.com/forecast).
 - We've improved our retrospective process / documentation as well as our organization of project files in our Google Drive
 - We’ve had to up our Slack subscription to keep pace with Ben’s uncanny ability to find the perfect GIF (or create a new custom emoji) for any conversation.
-- We've implemented the inaugural Secret Santa annual tradition in the office.
+- We've implemented a Secret Santa tradition in [the office](https://www.youtube.com/watch?v=B6jCMaiTqG0).
 <!-- TODO: link to Savas Claus post -->
-- We've instituted semi-annual retreats to bring together the full distributed team. Spring 2019 is in the planning stage.
+- We’ve instituted (and started planning) semi-annual retreats to bring together the full distributed team.
 
 <div class="blog-image-large">
 <img alt="Map of country and team central meeting location" src="/assets/img/blog/retreat-map.png">
