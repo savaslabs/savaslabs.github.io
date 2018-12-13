@@ -18,11 +18,26 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
  - Generous PTO
  - Competitive salary
  - Profit sharing plan
- - 100% health insurance coverage (50% for family members)
- - 401(k) plan with matching
- - Flexible schedule / remote opportunities
+ - 100% health insurance premiums covered for you and your family
+ - 401(k) plan with company matching
+ - Flexible schedule / remote working opportunities
  - Paid training, weekly knowledge-share, conference opportunities
 
 ## Open Positions
 
-Savas Labs is always accepting resumés from [excellent](/company/mission-and-values/#excel) people, though we do not currently have any active openings. Don't let that stop you from [reaching out](/contact).
+The needs at Savas Labs are constantly evolving as we grow, but **we are always** on the lookout for talented and [excellent](/company/mission-and-values/#excel) people, so if you don't fit into one of the boxes below, don't let that stop you from [reaching out](/contact) to us.
+
+[Application Developer](/application-developer)
+
+[Drupal Developer](/drupal-developer)
+
+[Marketing Coordinator](/marketing-coordinator)
+
+[Digital Project Manager](/digital-project-manager)
+
+<!--
+[Product Designer](/product-designer)
+
+-->
+
+We strive to foster an productive, yet collaborative work environment that is friendly, inclusive, and rewarding — with the aim for everyone involved to learn and grow together. We think you'll like it here.
