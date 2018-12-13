@@ -9,7 +9,7 @@ excerpt: |
 [Company](/company) > [Careers at Savas Labs](/careers) -> Marketing coordinator
 
 <p style="text-align:center;">
-  <img src="/assets/img/jobs/marketing.png" alt="Marketing Coordinator" class="center" style="width: 100%; max-width: 300px;">
+  <img src="/assets/img/jobs/marketing.svg" alt="Marketing Coordinator" class="center" style="width: 100%; max-width: 300px;">
 </p>
 
 ### The position
@@ -28,7 +28,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + 401k (matching contribution for full-time employees)
 + Generous PTO
 + Semi-annual team retreats
-+ Weekly team lunches
++ Weekly team lunches (for on-site Durham, NC employees)
 + Monthly skill-share sessions
 + Conference presentation and attendance opportunities
 + 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
