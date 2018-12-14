@@ -15,27 +15,32 @@ cta_color: orange
 
 At Savas Labs, we focus on the long-term with both those we partner with as well as our internal team. We have a core set of [values](/company/mission-and-values/) that unite us, yet celebrate that which makes us each unique. We work hard, have fun, and strive for healthy balance. Some of our current employment benefits are:
 
- - Generous PTO
- - Competitive salary
- - Profit sharing plan
- - 100% health insurance premiums covered for you and your family
- - 401(k) plan with company matching
- - Flexible schedule / remote working opportunities
- - Paid training, weekly knowledge-share, conference opportunities
++ Competitive salary
++ Health insurance covered at 100% for you and your family
++ Flexible work schedule
++ 401(k) (matching contribution for full-time employees)
++ Profit sharing plan
++ Generous PTO
++ Semi-annual team retreats
++ Weekly team lunches (for on-site Durham, NC employees)
++ Monthly skill-share sessions
++ Conference presentation and attendance opportunities
++ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
 
 ## Open Positions
 
 The needs at Savas Labs are constantly evolving as we grow, but **we are always** on the lookout for talented and [excellent](/company/mission-and-values/#excel) people, so if you don't fit into one of the boxes below, don't let that stop you from [reaching out](/contact) to us.
 
-[Application Developer](/application-developer)
-
 [Drupal Developer](/drupal-developer)
-
-[Marketing Coordinator](/marketing-coordinator)
 
 [Digital Project Manager](/digital-project-manager)
 
+[Marketing Coordinator](/marketing-coordinator)
+
 <!--
+
+[Application Developer](/application-developer)
+
 [Product Designer](/product-designer)
 
 -->

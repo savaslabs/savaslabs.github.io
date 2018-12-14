@@ -23,15 +23,16 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 ### Employment benefits
 
 + Competitive salary
-+ Health insurance covered by Savas (at 100% for both you and your family)
++ Health insurance covered at 100% for you and your family
 + Flexible work schedule
-+ 401k (matching contribution for full-time employees)
++ 401(k) (matching contribution for full-time employees)
++ Profit sharing plan
 + Generous PTO
 + Semi-annual team retreats
 + Weekly team lunches (for on-site Durham, NC employees)
 + Monthly skill-share sessions
 + Conference presentation and attendance opportunities
-+ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
++ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees
 
 #### About You
 + You are
@@ -61,6 +62,6 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 Let's start there.
 If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover ~~letter~~ email.
+<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover letter.
 
 ---

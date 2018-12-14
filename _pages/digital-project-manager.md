@@ -23,15 +23,16 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 ### Employment benefits
 
 + Competitive salary
-+ Health insurance covered by Savas (at 100% for both you and your family)
++ Health insurance covered at 100% for you and your family
 + Flexible work schedule
-+ 401k (matching contribution for full-time employees)
++ 401(k) (matching contribution for full-time employees)
++ Profit sharing plan
 + Generous PTO
 + Semi-annual team retreats
 + Weekly team lunches (for on-site Durham, NC employees)
 + Monthly skill-share sessions
 + Conference presentation and attendance opportunities
-+ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
++ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees
 
 #### About You
 
@@ -60,9 +61,9 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Jekyll, Laravel, and React spanning the languages of Ruby, Javascript, and PHP. You don't need to know too much about these technologies, but you will bring a lot of value to the team if you're eager to learn more about how we use them to create digital products for our clients.
 
 ---
-
 Let's start there.
 If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover ~~letter~~ email.
+<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover letter.
+<!-- TODO: replace with breezy link -->
 
 ---
