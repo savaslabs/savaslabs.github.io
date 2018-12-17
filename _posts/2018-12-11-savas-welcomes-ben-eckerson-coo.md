@@ -27,8 +27,7 @@ With well over a decade in leadership roles in digital agencies, Ben will help t
 - We've transitioned our internal team planning and scheduling efforts to use [Harvest's forecast](https://www.getharvest.com/forecast).
 - We've improved our retrospective process and documentation as well as our organization of project files in our Google Drive
 - We’ve had to up our Slack subscription to keep pace with Ben’s uncanny ability to find the perfect GIF (or create a new custom emoji) for any conversation.
-- We've implemented a Secret Santa tradition in [the office](https://www.youtube.com/watch?v=B6jCMaiTqG0).
-<!-- TODO: link to Savas Claus post -->
+- We've implemented a [Secret Santa](/2018/12/17/savas-claus.html) tradition in [the office](https://www.youtube.com/watch?v=B6jCMaiTqG0).
 - We’ve instituted (and started planning) semi-annual retreats to bring together the full distributed team.
 
 <div class="blog-image-large">
@@ -48,10 +47,3 @@ Welcome Ben; we're grateful to have you! :handshake:
 
 Stay tuned :radio: for more hiring announcements coming soon.
 
-<!--
-  TODO: Verify with Anne the SCSS change is fine.
-  TODO: Ask Anne to update styles so Instagram posts and LinkedIn posts are centered and padded/margined the way Twitter is
-
-  TODO: Get Ben's thoughts about tags. My feeling is "identity" is weird and that I'd like to add/transform into "people" and/or "culture"
-
-  -->

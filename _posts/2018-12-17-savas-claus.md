@@ -9,19 +9,21 @@ featured_image: "/blog/savasclaus.png"
 featured_image_alt: "Savas Claus logo"
 ---
 
-'Tis the season of :gift: giving. Now that we've [brought Ben on](/2018/12/11/savas-welcomes-ben-eckerson-coo.html), along with him has followed ample holiday cheer. <link href="https://vjs.zencdn.net/4.6/video-js.css" rel="stylesheet"><script src="https://vjs.zencdn.net/4.6/video.js"></script><video class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="640" height="360" poster="https://media.virbcdn.com/images/22/VideoImage-83362-237571-a2321d971cc95a5e2c207084ede25263.jpg" data-setup='{}'><source src="https://media.virbcdn.com/videos/534x300/ee/Video-425231-81264_sd_mobile.mp4" type="video/mp4" /></video>
+'Tis the season of :gift: giving. Now that we've [brought Ben on](/2018/12/11/savas-welcomes-ben-eckerson-coo.html), along with him has followed ample holiday cheer.
+<div style="padding:76.12% 0 0 0;position:relative;"><iframe class="no--margin" src="https://player.vimeo.com/video/24452526?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<span class="caption">Ben was "Snowglobe Boy" for former employer ad agency [Mckinney](https://mckinney.com/) in December 2007 receiving over 100 million media impressions.</span>
 
-Ben suggested and we swiftly agreed to our first annual Savas Claus™: the name we chose for the traditional gift giving tradition oft referred to as [secret santa](https://en.wikipedia.org/wiki/Secret_Santa) in which a group of people buys gifts for one another while keeping the giver and receivers anonymous until the big reveal. It's exciting stuff.
+Ben suggested and we swiftly agreed to our first annual Savas Claus™: the name we chose for the year-end holiday gift giving tradition oft referred to as [Secret Santa](https://en.wikipedia.org/wiki/Secret_Santa) in which a group of people buys gifts for one another while keeping the giver and receivers anonymous until the big reveal. It's exciting stuff.
 
 Typically, to randomly assign gift receivers to their respective givers, you write everyone's name down on paper, put the names into a hat, and each person blindly picks a name for whom they get a gift. However, this analog approach has _one major flaw_: one can easily end up with himself:
 
 <div class="blog-image-large" style="text-align:center">
-<img src="https://media1.tenor.com/images/fe6a574d37f0b0189d412bb11e719906/tenor.gif" alt="Kevin from the Office gets himself for secret santa">
+<img src="https://media1.tenor.com/images/fe6a574d37f0b0189d412bb11e719906/tenor.gif" alt="Kevin from the Office gets himself for Secret Santa">
 </div>
 
 ## The challenges
 
-First, knowing that we had ahead of us one of [the **_two_** hard problems in computer science](https://martinfowler.com/bliki/TwoHardThings.html): cache-invalidation, off-by-one errors, and **naming things**. So we put it to a poll. Savas Claus™ prevailed by a narrow margin over Secret Savas (it's main critique: being too close to “secret service”). Given the aforementioned self-selection consideration ("the Kevin problem"), the fact that our team is distributed, and we're web engineers, naturally we went for a digital solution.
+First, knowing that we had ahead of us one of [the **_two_** hard problems in computer science](https://martinfowler.com/bliki/TwoHardThings.html): cache-invalidation, off-by-one errors, and **naming things**. So we put it to a poll. Savas Claus™ prevailed by a narrow margin over Secret Savas (its main critique: being too close to “secret service”). Given the aforementioned self-selection consideration ("the Kevin problem"), the fact that our team is distributed, and we're web engineers, naturally we went for a digital solution.
 
 ## The approach
 
