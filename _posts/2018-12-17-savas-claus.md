@@ -4,9 +4,11 @@ title: "Savas Claus™: The inaugural holiday tradition"
 date: 2018-12-17
 author: Chris Russo Ben Eckerson
 tags: open-source team company-culture
-summary: "We wrote a Slack bot to help facilitate our first annual office secret santa!"
+summary: "We wrote a Slack app to help facilitate our first annual office secret santa: Savas Claus™!"
+description: "We wrote a Slack app to help facilitate our first annual office secret santa: Savas Claus™!"
 featured_image: "/blog/savasclaus.png"
 featured_image_alt: "Savas Claus logo"
+
 ---
 
 'Tis the season of :gift: giving. Now that we've [brought Ben on](/2018/12/11/savas-welcomes-ben-eckerson-coo.html), along with him has followed ample holiday cheer.
