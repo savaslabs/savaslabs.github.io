@@ -15,7 +15,7 @@ featured_image_alt: "Savas Claus logo"
 <div style="padding:76.12% 0 0 0;position:relative;"><iframe class="no--margin" src="https://player.vimeo.com/video/24452526?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <span class="caption">Ben was "Snowglobe Boy" for former employer ad agency [Mckinney](https://mckinney.com/) in December 2007 receiving over 100 million media impressions.</span>
 
-Ben suggested and we swiftly agreed to our first annual Savas Claus™: the name we chose for the year-end holiday gift giving tradition oft referred to as [Secret Santa](https://en.wikipedia.org/wiki/Secret_Santa) in which a group of people buys gifts for one another while keeping the giver and receivers anonymous until the big reveal. It's exciting stuff.
+Ben suggested — and we swiftly agreed to — our first annual Savas Claus™: the name we chose for our year-end holiday gift giving tradition. Oft referred to as [Secret Santa](https://en.wikipedia.org/wiki/Secret_Santa), a group of people buys gifts for one another while keeping the giver and receivers anonymous until the big reveal. It's a lot of fun.
 
 Typically, to randomly assign gift receivers to their respective givers, you write everyone's name down on paper, put the names into a hat, and each person blindly picks a name for whom they get a gift. However, this analog approach has _one major flaw_: one can easily end up with himself:
 
@@ -25,11 +25,11 @@ Typically, to randomly assign gift receivers to their respective givers, you wri
 
 ## The challenges
 
-First, knowing that we had ahead of us one of [the **_two_** hard problems in computer science](https://martinfowler.com/bliki/TwoHardThings.html): cache-invalidation, off-by-one errors, and **naming things**. So we put it to a poll. Savas Claus™ prevailed by a narrow margin over Secret Savas (its main critique: being too close to “secret service”). Given the aforementioned self-selection consideration ("the Kevin problem"), the fact that our team is distributed, and we're web engineers, naturally we went for a digital solution.
+First, we knew we had ahead of us one of [the **_two_** hard problems in computer science](https://martinfowler.com/bliki/TwoHardThings.html): cache-invalidation, off-by-one errors, and **naming things**. Giving the naming task the gravity it deserved, we put it to a poll. Savas Claus™ prevailed by a narrow margin over Secret Savas (its main critique: being too close to “secret service”). Given the aforementioned self-selection consideration ("the Kevin problem") and the fact that our team is distributed, we went for a digital solution. After all, we _are_ web engineers.
 
 ## The approach
 
-Since Slack is so deeply ingrained in our day-to-day, we looked for a solution there first. A [Secret Santa Slack app does exist](https://savaslabs.slack.com/apps/A0E7EFUB1-secret-santa), yet it didn't afford us the flexibility and panache we were going for — plus it's way more fun to [make your own](https://github.com/savaslabs/savas-slack-tools/pull/5)! So we (well Chris) got in some weekend time building a simple Slack app to use during our weekly Monday morning team-wide status call.
+Since Slack is so deeply ingrained in our day-to-day, we looked for a solution there first. A [Secret Santa Slack app does exist](https://savaslabs.slack.com/apps/A0E7EFUB1-secret-santa), yet it didn't afford us the flexibility and panache we were going for — plus it's way more fun to [make your own](https://github.com/savaslabs/savas-slack-tools/pull/5)! So we (well Chris) got in some weekend time to build a simple Slack app that would serve our needs during our weekly Monday morning team-wide status call.
 
 ## How it works
 
