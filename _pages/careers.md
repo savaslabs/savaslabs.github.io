@@ -45,4 +45,4 @@ The needs at Savas Labs are constantly evolving as we grow, but **we are always*
 
 -->
 
-We strive to foster an productive, yet collaborative work environment that is friendly, inclusive, and rewarding — with the aim for everyone involved to learn and grow together. We think you'll like it here.
+We strive to create a productive, collaborative work environment that is friendly, inclusive, and rewarding — with the aim for everyone involved to learn and grow together. You'll like it here.

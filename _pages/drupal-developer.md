@@ -40,7 +40,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + You have
   + great communication skills
   + an interest in collaborating and sharing
-  + an interest in learning/teaching/growing
+  + an interest in learning, teaching and growing
   + a detail-oriented approach
   + pride in the quality of your work
 + You have substantial experience with
@@ -48,7 +48,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
   + drush
   + the command line
   + PaaS Drupal hosting
-  + continuous Integration workflow
+  + continuous integration workflow
   + OO PHP
 + You care about
   + security
@@ -57,6 +57,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + Bonus points for knowledge in
   + automated testing
   + javascript frameworks (e.g. React)
+  + an interest in open source contribution
 
 #### Our projects
 

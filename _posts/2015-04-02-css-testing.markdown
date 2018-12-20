@@ -43,7 +43,7 @@ Tools using this technique take screenshots of the local/dev/staging site and co
 
 #### BackstopJS
 
-[BackstopJS](https://github.com/garris/BackstopJS) wraps [ResembleJS](http://huddleeng.github.io/Resemble.js/), another Image Diff tool, in a nice, user-friendly interface. It uses Gulp - a Javascript library for automating tasks - to create a reference image set, then run a test. This can be done in any environment and the config file can be reused across environments by simply updating the test site URL. Dynamic content can cause failed tests, but selectors can be ignored to avoid this.
+[BackstopJS](https://github.com/garris/BackstopJS) wraps [ResembleJS](https://github.com/rsmbl/Resemble.js), another Image Diff tool, in a nice, user-friendly interface. It uses Gulp - a Javascript library for automating tasks - to create a reference image set, then run a test. This can be done in any environment and the config file can be reused across environments by simply updating the test site URL. Dynamic content can cause failed tests, but selectors can be ignored to avoid this.
 
 BackstopJS is a cinch to install and configure ([this article](https://css-tricks.com/automating-css-regression-testing/) by Garrett Shipon, the author of BackstopJS, is a good walkthrough), and the test command opens a report with a list of passed and failed tests and diffs of the failed tests, so any unintentional regressions are quickly pinpointed.
 
