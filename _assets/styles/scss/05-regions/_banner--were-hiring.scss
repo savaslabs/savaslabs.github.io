@@ -6,6 +6,10 @@
 
 .region--banner--were-hiring {
 
+  &.region--full-width {
+    margin: 0;
+  }
+
   // On small screens we'll use a background cover image.
   background: url('/assets/img/team-magenta-fade.jpg') top / cover no-repeat $magenta;
 

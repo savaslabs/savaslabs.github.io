@@ -13,6 +13,10 @@
   position: relative;
   width: 100%;
 
+  &.region--full-width {
+    margin: 0;
+  }
+
   @include grid-media($medium-screen-up) {
     height: calc(90vh - 84px);
     min-height: 660px;

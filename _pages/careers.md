@@ -15,14 +15,34 @@ cta_color: orange
 
 At Savas Labs, we focus on the long-term with both those we partner with as well as our internal team. We have a core set of [values](/company/mission-and-values/) that unite us, yet celebrate that which makes us each unique. We work hard, have fun, and strive for healthy balance. Some of our current employment benefits are:
 
- - Generous PTO
- - Competitive salary
- - Profit sharing plan
- - 100% health insurance coverage (50% for family members)
- - 401(k) plan with matching
- - Flexible schedule / remote opportunities
- - Paid training, weekly knowledge-share, conference opportunities
++ Competitive salary
++ Health insurance covered at 100% for you and your family
++ Flexible work schedule
++ 401(k) (matching contribution for full-time employees)
++ Profit sharing plan
++ Generous PTO
++ Semi-annual team retreats
++ Weekly team lunches (for on-site Durham, NC employees)
++ Monthly skill-share sessions
++ Conference presentation and attendance opportunities
++ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
 
 ## Open Positions
 
-Savas Labs is always accepting resumés from [excellent](/company/mission-and-values/#excel) people, though we do not currently have any active openings. Don't let that stop you from [reaching out](/contact).
+The needs at Savas Labs are constantly evolving as we grow, but **we are always** on the lookout for talented and [excellent](/company/mission-and-values/#excel) people, so if you don't fit into one of the boxes below, don't let that stop you from [reaching out](/contact) to us.
+
+[Drupal Developer](/drupal-developer)
+
+[Digital Project Manager](/digital-project-manager)
+
+[Marketing Coordinator](/marketing-coordinator)
+
+<!--
+
+[Application Developer](/application-developer)
+
+[Product Designer](/product-designer)
+
+-->
+
+We strive to create a productive, collaborative work environment that is friendly, inclusive, and rewarding — with the aim for everyone involved to learn and grow together. You'll like it here.
