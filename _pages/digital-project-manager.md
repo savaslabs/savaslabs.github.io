@@ -13,7 +13,8 @@ excerpt: |
 </p>
 
 ### The position
-We are looking to add an **entry to mid level digital project manager** to help support our core team. The right candidate collaborates, communicates, and leads effectively both working with internal team members but also with clients. The position will require some technical knowledge for how the web works and **a strong eagerness to learn** even more on the topic as you will play a key leading role on software development projects. Other tasks include **coordinating client and internal communication, calendars, and schedules** and managing budget, timeline, and client expectations from project to project. They love when things get streamlined and more efficient — and enjoy planning and organization (and is easily excited by spreadsheets and calendars). Perhaps above all, this person is a very strong communicator, curious problem-solver, and motivated self-starter. You will work under the mentorship of the executive and operations teams and will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham) but **will consider the right remote candidate.**
+
+We are looking to add an **entry to mid level digital project manager** to help support our core team. The right candidate collaborates, communicates, and leads effectively both working with internal team members but also with clients. The position will require some technical knowledge for how the web works and **a strong eagerness to learn** even more on the topic as you will play a key role on software development projects. Other tasks include **coordinating client and internal communication, calendars, and schedules** and managing budget, schedule, and client expectations across multiple projects. You love to streamline processes and make things more efficient. You enjoy planning, organization and are easily excited by spreadsheets and calendars. Perhaps above all, this person is a very strong communicator, curious problem-solver, and motivated self-starter. You will work under the mentorship of the executive and operations teams and will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham) but **will consider the right remote candidate.**
 
 ### Working at Savas Labs
 
@@ -43,9 +44,9 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
   + a collaborator that loves working with other people - a team player
   + a multi-tasker with experience managing multiple assignments and prioritizing tasks
 + You understand the importance of strong communication and
-  + strong writing skills with the ability to write clearly and effectively
+  + have strong writing skills with the ability to write clearly and effectively
   + have experience working with or managing clients
-  + the importance of professionalism and making a good impression
+  + value the importance of professionalism and making a good impression
 + You're comfortable
   + balancing the needs of the business, our team, and the client on a project
   + working with remote team members and clients
