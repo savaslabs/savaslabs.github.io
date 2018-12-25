@@ -2,7 +2,7 @@
 name: Oksana Cyrwus
 slug: oksana
 layout: team
-job_title: Solutions Architect / Designer
+job_title: Senior Architect / Designer
 job_description: Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user's needs.
 photo: "/team/oksana-cyrwus.jpg"
 card: "/team/cards/oksana-card.jpg"

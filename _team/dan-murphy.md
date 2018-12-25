@@ -2,7 +2,7 @@
 name: Dan Murphy
 slug: dan
 layout: team
-job_title: Web Developer
+job_title: Senior Web Engineer
 job_description: Dan develops back-end solutions and front-end, responsive designs for Savas Labs clients.
 drupal: dmurphy1
 github: dmurphy1

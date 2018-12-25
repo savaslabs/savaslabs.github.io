@@ -2,7 +2,7 @@
 name: Ro Wang
 slug: ro
 layout: team
-job_title: Project Manager / Junior Developer
+job_title: Senior Project Manager / Web Developer
 job_description: Ro is a highly effective project manager honing her development skills at Savas Labs.
 drupal: rowang
 github: lrowang
