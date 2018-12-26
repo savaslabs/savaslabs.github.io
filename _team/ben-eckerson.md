@@ -5,6 +5,8 @@ layout: team
 job_title: Chief Operating Officer
 linkedin: eckerson
 twitter: beneckerson
+instagram: beneckerson
+website: http://beneckerson.com/
 
 ---
 
