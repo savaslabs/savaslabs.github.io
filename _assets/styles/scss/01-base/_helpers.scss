@@ -1,0 +1,33 @@
+/**
+ * @file
+ *
+ * Helper classes.
+ */
+
+.hide-for-small {
+  display: none;
+
+  @include grid-media($small-screen-up) {
+    display: block;
+  }
+}
+
+.hide-for-medium {
+  display: block;
+
+  @include grid-media($medium-screen-up) {
+    display: none;
+  }
+
+  @include grid-media($large-screen-up) {
+    display: block;
+  }
+}
+
+.hide-for-large {
+  display: block;
+
+  @include grid-media($large-screen-up) {
+    display: none;
+  }
+}

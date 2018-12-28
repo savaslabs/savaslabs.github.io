@@ -1,0 +1,36 @@
+/**
+ * @file
+ *
+ * Job posting icon styles.
+ */
+
+/*doc
+---
+title: Job icons
+name: icon--job
+category: Components
+parent: icons
+---
+
+```html_example
+<div class="icon--job">
+    <img src="/assets/img/jobs/marketing.svg" alt="Marketing Coordinator">
+</div>
+```
+*/
+
+.icon--job {
+  align-items: center;
+  background-color: $light-teal;
+  border-radius: 50%;
+  display: flex;
+  height: 230px;
+  justify-content: center;
+  margin: 2em auto 0;
+  padding: 1em;
+  width: 230px;
+
+  img {
+    max-width: 150px;
+  }
+}

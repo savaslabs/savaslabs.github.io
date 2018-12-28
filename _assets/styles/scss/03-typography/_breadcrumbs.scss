@@ -1,0 +1,11 @@
+/**
+ * @file
+ *
+ * Typography: breadcrumb styles.
+ */
+
+.breadcrumbs {
+  @include paragraph-small;
+
+  margin-top: -1.5em;
+}

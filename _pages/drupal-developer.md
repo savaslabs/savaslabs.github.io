@@ -6,11 +6,16 @@ excerpt: |
   Savas Labs hiring for Drupal developer.
 ---
 
-[Company](/company) > [Careers at Savas Labs](/careers) -> Drupal developer
-
-<p style="text-align:center;">
-  <img src="/assets/img/jobs/drupal 8 logo isolated.svg" alt="Drupal 8 logo" class="center" style="width: 100%; max-width: 300px;">
+<p class="breadcrumbs hide-for-medium hide-for-large">
+    <a href="/careers">< Back to Careers</a>
 </p>
+<p class="breadcrumbs hide-for-small">
+    <a href="/company">Company</a> > <a href="/careers">Careers at Savas Labs</a> > Drupal developer
+</p>
+
+<div class="icon--job">
+    <img src="/assets/img/jobs/drupal 8 logo isolated.svg" alt="Drupal 8 logo">
+</div>
 
 ### The position
 
@@ -67,7 +72,5 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 Let's start there.
 If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover letter.
+<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
 <!-- TODO: replace with breezy link -->
-
----

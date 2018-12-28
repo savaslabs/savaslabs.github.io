@@ -6,12 +6,16 @@ excerpt: |
   Savas Labs hiring for Application developer.
 ---
 
-[Company](/company) > [Careers at Savas Labs](/careers) -> Application developer
-
-<!-- TODO: This image is weak IMO -->
-<p style="text-align:center;">
-  <img src="/assets/img/jobs/developer.svg" alt="Application Developer" class="center" style="width: 50%; max-width: 300px;">
+<p class="breadcrumbs hide-for-medium hide-for-large">
+    <a href="/careers">< Back to Careers</a>
 </p>
+<p class="breadcrumbs hide-for-small">
+    <a href="/company">Company</a> > <a href="/careers">Careers at Savas Labs</a> > Application developer
+</p>
+
+<div class="icon--job">
+    <img src="/assets/img/jobs/developer.svg" alt="Application Developer">
+</div>
 
 ### The position
 
@@ -56,6 +60,4 @@ As a full-service digital agency, we partner with clients to fulfill their desig
 
 Let's start there.
 If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover letter.
-
----
+<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
