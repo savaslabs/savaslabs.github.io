@@ -12,7 +12,7 @@ featured_image_alt: "Savas Claus logo"
 ---
 
 'Tis the season of :gift: giving. Now that we've [brought Ben on](/2018/12/11/savas-welcomes-ben-eckerson-coo.html), along with him has followed ample holiday cheer.
-<div style="padding:76.12% 0 0 0;position:relative;"><iframe class="no--margin" src="https://player.vimeo.com/video/24452526?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="padding:76.12% 0 0 0;position:relative;"><iframe class="m0" src="https://player.vimeo.com/video/24452526?autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <span class="caption">Ben was "Snowglobe Boy" for former employer ad agency [Mckinney](https://mckinney.com/) in December 2007 receiving over 100 million media impressions.</span>
 
 Ben suggested — and we swiftly agreed to — our first annual Savas Claus™: the name we chose for our year-end holiday gift giving tradition. Oft referred to as [Secret Santa](https://en.wikipedia.org/wiki/Secret_Santa), a group of people buys gifts for one another while keeping the giver and receivers anonymous until the big reveal. It's a lot of fun.
