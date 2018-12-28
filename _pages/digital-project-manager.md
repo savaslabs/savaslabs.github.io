@@ -6,11 +6,16 @@ excerpt: |
   Savas Labs hiring for a Digital Project Manager.
 ---
 
-[Company](/company) > [Careers at Savas Labs](/careers) -> Digital project manager
-
-<p style="text-align:center;">
-  <img src="/assets/img/jobs/digital-project-manager.svg" alt="Digital Project Manager" class="center" style="width: 50%; max-width: 300px;">
+<p class="breadcrumbs hide-for-medium hide-for-large">
+    <a href="/careers">< Back to Careers</a>
 </p>
+<p class="breadcrumbs hide-for-small">
+    <a href="/company">Company</a> > <a href="/careers">Careers at Savas Labs</a> > Digital project manager
+</p>
+
+<div class="icon--job">
+    <img src="/assets/img/jobs/digital-project-manager.svg" alt="Digital Project Manager">
+</div>
 
 ### The position
 
@@ -64,7 +69,5 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 ---
 Let's start there.
 If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover letter.
+<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
 <!-- TODO: replace with breezy link -->
-
----

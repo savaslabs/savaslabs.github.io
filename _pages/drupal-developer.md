@@ -6,11 +6,16 @@ excerpt: |
   Savas Labs hiring for Drupal developer.
 ---
 
-[Company](/company) > [Careers at Savas Labs](/careers) -> Drupal developer
-
-<p style="text-align:center;">
-  <img src="/assets/img/jobs/drupal 8 logo isolated.svg" alt="Drupal 8 logo" class="center" style="width: 100%; max-width: 300px;">
+<p class="breadcrumbs hide-for-medium hide-for-large">
+    <a href="/careers">< Back to Careers</a>
 </p>
+<p class="breadcrumbs hide-for-small">
+    <a href="/company">Company</a> > <a href="/careers">Careers at Savas Labs</a> > Drupal developer
+</p>
+
+<div class="icon--job">
+    <img src="/assets/img/jobs/drupal 8 logo isolated.svg" alt="Drupal 8 logo">
+</div>
 
 ### The position
 
@@ -25,6 +30,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 
 + Competitive salary
 + Health insurance covered at 100% for you and your family
++ Dental and vision insurance covered at 50% for you and your family
 + Flexible work schedule
 + 401(k) (matching contribution for full-time employees)
 + Profit sharing plan
@@ -34,6 +40,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + Monthly skill-share sessions
 + Conference presentation and attendance opportunities
 + 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees
++ Annual technology stipend
 
 #### About You
 
@@ -54,20 +61,18 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
   + security
   + performance
   + best practices
+  + contributing to open source
 + Bonus points for knowledge in
+  + Javascript frameworks (e.g. React)
+  + E-commerce frameworks
   + automated testing
-  + javascript frameworks (e.g. React)
-  + an interest in open source contribution
 
 #### Our projects
 
-As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Jekyll, Laravel, and React spanning the languages of Ruby, Javascript, and PHP. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to productively contribute to a variety of projects and technologies simultaneously apart from your Drupal focus.
+As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Laravel, React, and Jekyll, spanning the languages of PHP, Javascript, and Ruby. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to productively contribute to a variety of projects and technologies simultaneously apart from your Drupal focus.
 
 ---
 
-Let's start there.
-If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a resumé and cover letter.
-<!-- TODO: replace with breezy link -->
+<a href="https://savas-labs.breezy.hr/p/b2a556a7a1ab-drupal-developer/apply" class="button">Apply</a>
 
 ---

@@ -8,8 +8,10 @@
 @import 'scss/01-base/normalize';
 @import 'scss/01-base/base';
 @import 'scss/01-base/base-layout';
+@import 'scss/01-base/helpers';
 
 // Typography rules.
+@import 'scss/03-typography/breadcrumbs';
 @import 'scss/03-typography/headings';
 @import 'scss/03-typography/headings--underline';
 @import 'scss/03-typography/links';
@@ -27,6 +29,7 @@
 @import 'scss/04-components/form-elements';
 @import 'scss/04-components/header-navigation';
 @import 'scss/04-components/header-navigation--menu-link';
+@import 'scss/04-components/icons--job';
 @import 'scss/04-components/icons--service';
 @import 'scss/04-components/image--hero--company';
 @import 'scss/04-components/image--hero--home';

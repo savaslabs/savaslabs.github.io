@@ -55,6 +55,10 @@ article {
   }
 }
 
+.paragraph--small {
+  @include paragraph-small;
+}
+
 .paragraph--loud {
   @include paragraph-loud;
 }

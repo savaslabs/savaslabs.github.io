@@ -41,6 +41,10 @@
   }
 }
 
+@mixin paragraph-small() {
+  font-size: 1em;
+}
+
 @mixin paragraph-loud() {
   font-size: 1.25em;
 }
