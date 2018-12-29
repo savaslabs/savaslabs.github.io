@@ -408,3 +408,8 @@ installable
 satisfiable
 symfony
 PSA
+permalink
+PaaS
+Solr
+KPI
+résumé
