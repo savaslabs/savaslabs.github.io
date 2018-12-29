@@ -137,3 +137,10 @@ picture:
         width: "640"
       source_default:
         width: "400"
+
+# Add for default for og:image meta tag
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/images/logo.svg"
