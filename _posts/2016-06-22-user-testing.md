@@ -6,6 +6,7 @@ author: Anne Tomasevich
 tags: user-experience best-practices
 services: strategy design-ux
 summary: Our approach to designing, conducting, and learning from user testing and other analyses.
+image: "/assets/img/blog/usability-testing.jpg"
 featured_image: "/blog/usability-testing.jpg"
 featured_image_alt: "Two people comparing notes while using computers"
 featured_image_height: "984px"

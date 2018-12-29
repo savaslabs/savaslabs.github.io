@@ -5,6 +5,7 @@ date: 2017-11-08
 author: Chris Russo
 tags: drupal drupal8 drupal-planet
 summary: While there _were_ compelling reasons to build in Drupal 7 in the past, we discuss why, for most, it's time to move on to Drupal 8.
+image: "/assets/img/blog/drupal-8-outweighs-7.jpg"
 featured_image: "/blog/drupal-8-outweighs-7.jpg"
 featured_image_alt: "Drupal 8 outweighing Drupal 7 on a scale"
 drupal_planet_summary: |

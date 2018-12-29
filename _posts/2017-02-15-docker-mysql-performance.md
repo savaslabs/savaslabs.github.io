@@ -7,6 +7,7 @@ primary_author: Kosta Harlan
 tags: drupal drupal-planet docker continuous-integration performance productivity
 services: development
 summary: "How to dramatically improve MySQL database import performance on Drupal with Docker stacks"
+image: "/assets/img/blog/sea-ocean-boats-port.jpg"
 featured_image: "/blog/sea-ocean-boats-port.jpg"
 featured_image_alt: "Docker, ships, the sea"
 featured_image_height: "983px"

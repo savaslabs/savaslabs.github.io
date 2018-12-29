@@ -5,6 +5,7 @@ date: 2017-04-24
 author: Chris Russo
 tags: design user-experience jekyll
 summary: The Spring 2017 Redesign of Savaslabs.com
+image: "/assets/img/blog/redesign-featured.jpg"
 featured_image: "/blog/redesign-featured.jpg"
 featured_image_alt: "Many devices testing responsive"
 featured_image_height: "917px"

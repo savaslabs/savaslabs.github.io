@@ -5,6 +5,7 @@ date: 2017-10-27
 author: Chris Russo
 tags: drupal drupal8 drupal-planet
 summary: Drupal 8 has been around for almost two years. We take a look at where it's been and where it's going.
+image: "/assets/img/blog/drupal-7-outweighs-8.jpg"
 featured_image: "/blog/drupal-7-outweighs-8.jpg"
 featured_image_alt: "Drupal 7 outweighs Drupal 8 in 2016"
 drupal_planet_summary: |

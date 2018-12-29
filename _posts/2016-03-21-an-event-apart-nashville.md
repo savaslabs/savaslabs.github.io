@@ -6,6 +6,7 @@ author: Anne Tomasevich
 tags: conference design front-end-dev
 services: design-ux
 summary: Some recap and reflection after my first An Event Apart conference.
+image: "/assets/img/blog/aea_nashville_hero.jpg"
 featured_image: "/blog/aea_nashville_hero.jpg"
 featured_image_alt: "An Event Apart: Nashville logo over Broadway Street"
 featured_image_height: "830px"
