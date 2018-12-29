@@ -143,4 +143,4 @@ defaults:
   - scope:
       path: ""
     values:
-      image: "/assets/images/logo.svg"
+      image: "/assets/img/logo.svg"

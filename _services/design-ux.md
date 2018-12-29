@@ -9,6 +9,7 @@ durham_summary: |
   We design with both our clients and the user in mind. We empower content creators on your team to be more productive and help craft a beautiful and engaging experience.
 icon: "design-ux-icon.svg"
 vertical_image: "/assets/img/services/design-ux-hero.jpg"
+image: "/assets/img/services/design-ux-hero.jpg"
 vertical_image_alt: "User experience design concepts"
 quote_project: "omega-md"
 services: [User Experience Strategy, Concepting & Ideation, Wireframing & Prototyping, Style Guide Design, Conversion Optimization, Usability & User Testing]

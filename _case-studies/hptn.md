@@ -15,6 +15,8 @@ client_dates: 2015 - present
 client_quote: hptn
 project_description: |
   When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, they started evaluating the capabilities of various content management systems that would meet their needs. They settled on Drupal 8.
+description: |
+  When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, they started evaluating the capabilities of various content management systems that would meet their needs. They settled on Drupal 8.
 project_highlights: [Responsive web design, UX design, Drupal 8, Client server integration]
 project_objective: |
   For the redesign, HPTN prioritized providing their users with a clean, modern site that loads easily on mobile devices in areas of the world with less-than-optimal bandwidth, and to provide their content editors with a powerful, easy-to-use content management interface. They also needed to connect with their Microsoft SQL server to pull data on studies, study sites, publications, and network members.
@@ -42,23 +44,7 @@ tile_description: |
   When the HIV Prevention Trials Network aimed to update to a modern, mobile-friendly, easy-to-maintain website, Savas Labs helped them implement a new content management system that would meet their needs.
 redirect_from:
   - /work/hptn-case-study/
+image: "/assets/img/work/hptn/hptn-showcase.jpg"
+
 ---
 
-Eventually we can talk more about:
-
-## Design
-
-- Goals/personas, consulting around these items
-- Styleguide
-- Branding/logo design
-- Design process
-- Wireframing
-
-## Theme development
-
-- We can go into a lot of detail here about integrating the styleguide with the theme, the tools we chose to use, and the fact that we built a custom theme completely from scratch
-- Talk about the benefits of D8 theming
-
-## Content management experience
-
-## Integration with MsSQL server

@@ -9,6 +9,7 @@ durham_summary: |
   Have you worked with another shop or freelancer in Raleigh or Durham? Have they left you with an application or website you can't support? Reach out and let us help ensure maximum uptime and provide ongoing improvements.
 icon: "support-maintenance-icon.svg"
 vertical_image: "/assets/img/services/support-maintenance-hero.jpg"
+image: "/assets/img/services/support-maintenance-hero.jpg"
 vertical_image_alt: "Various visual representations of statistics"
 quote_project: "omega-lz"
 services: [Uptime Monitoring, 24x7x365 Support, Bug Fixing, Feature Enhancements, Drupal Security Updates, Disaster Recovery Planning, Backup Strategy, Best Practices Consultation]

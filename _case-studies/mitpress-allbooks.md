@@ -14,6 +14,8 @@ client_quote: mitpress-jf
 client_dates: 2014 - present
 project_description: |
   When the MIT Press needed to bring new product information into their website from their back-end database, Savas Labs came through with an automated importer module that did the job in a flexible and extensible way.
+description: |
+  When the MIT Press needed to bring new product information into their website from their back-end database, Savas Labs came through with an automated importer module that did the job in a flexible and extensible way.
 project_highlights: [Drupal 6, Custom module development, Drupal admin interface customization, Unit testing]
 project_objective: |
   As new books come to press, the MIT Press needs to keep information on titles and authors on their client-facing website synced with the data in their back-end data store. To replace their quarterly manual import process, the Press needed an automated import solution to seamlessly import new and updated data without interrupting the live site.
@@ -33,4 +35,6 @@ client_logo_height: "107px"
 client_logo_light: "/assets/img/work/logos/mitpress-logo-eggshell.png"
 redirect_from:
   - /work/allbooks-case-study/
+image: "/assets/img/work/mitpress-allbooks/mitpress-allbooks-showcase.jpg"
+
 ---

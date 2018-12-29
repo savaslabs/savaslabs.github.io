@@ -4,6 +4,7 @@ title: Digital Project Manager
 permalink: "/digital-project-manager/"
 excerpt: |
   Savas Labs hiring for a Digital Project Manager.
+image: "/assets/img/jobs/digital-project-manager.svg" 
 ---
 
 <p class="breadcrumbs hide-for-medium hide-for-large">

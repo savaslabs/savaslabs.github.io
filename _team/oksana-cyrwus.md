@@ -32,6 +32,8 @@ badges:
     link: "https://assoc.drupal.org/membership"
 redirect_from:
   - /team/oksana-cyrwus/
+image: "/assets/img/team/oksana/oksana-square-outside.jpg"
+
 ---
 Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user’s needs. As a Solutions Architect & Designer at Savas Labs, Oksana grounds her work in analytic research swiftly composing balanced solutions that fulfill high-level organizational goals.
 

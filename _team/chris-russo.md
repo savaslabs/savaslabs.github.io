@@ -17,6 +17,7 @@ redirect_from:
   - /team/chris-russo/
 twitter: chris_a_russo
 instagram: chris_a_russo
+image: "/assets/img/team/chris/chris-square-outside.jpg"
 ---
 
 Chris has been a professional web developer since 2007 and made his first website

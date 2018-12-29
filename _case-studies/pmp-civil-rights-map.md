@@ -14,6 +14,8 @@ client_description: |
 client_dates: 2015 - present
 project_description: |
   Over 5+ years, the Pauli Murray Project assembled a detailed map about Durham's Civil and Human Rights history. But their data was locked in a proprietary Google Map, which broke after an API update. Savas Labs worked with the Pauli Murray Project to create a fresh responsive design to showcase the rich detail of these important stories.
+description: |
+  Over 5+ years, the Pauli Murray Project assembled a detailed map about Durham's Civil and Human Rights history. But their data was locked in a proprietary Google Map, which broke after an API update. Savas Labs worked with the Pauli Murray Project to create a fresh responsive design to showcase the rich detail of these important stories.
 project_highlights: [Responsive web design, Drupal 8, Leaflet integration, Drupal contributed module development]
 project_objective: |
   Savas Labs needed to move content out of the old Google MyMap (shown), and provide a map which was easy to navigate but also held detailed content for each point, spanning text write-ups, photos, and audio documentary pieces. We also wanted to create a structure that would make it easy for future Duke students working with the Center to add content to the map.
@@ -40,4 +42,6 @@ tile_description: |
 block_image: "/assets/img/work/civil-rights-map-case-study/pmp-block.jpg"
 redirect_from:
   - /work/civil-rights-map-case-study/
+image: "/assets/img/work/pmp-civil-rights-map/pmp-civil-rights-map-showcase.jpg"
+
 ---

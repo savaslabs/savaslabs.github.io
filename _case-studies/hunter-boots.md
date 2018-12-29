@@ -14,6 +14,8 @@ client_quote: hunter-boots-sp
 client_dates: 2011 - 2015
 project_description: |
   After a previous agency failed to complete the complicated eCommerce site build, Savas Labs rescued the project and delivered a BlueDrop award-winning eCommerce website alongside partner Isovera. In a secondary phase, we contributed to a mobile redesign.
+description: |
+  After a previous agency failed to complete the complicated eCommerce site build, Savas Labs rescued the project and delivered a BlueDrop award-winning eCommerce website alongside partner Isovera. In a secondary phase, we contributed to a mobile redesign.
 project_highlights: [Responsive web design, Drupal custom module development, Drupal theming, Drupal Commerce integration]
 project_objective: |
   Rescue a build from an absentee vendor and deliver a rich and engaging shopping experience fit for the quality the Hunter brand expects in a timely fashion.
@@ -38,4 +40,6 @@ client_logo_light: "/assets/img/work/logos/hunter-logo-eggshell.png"
 client_quote2: hunter-boots-js
 redirect_from:
   - /work/hunter-boots-case-study/
+image: "/assets/img/work/hunter-boots/hunter-boots-showcase.jpg"
+
 ---

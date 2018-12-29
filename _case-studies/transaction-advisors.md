@@ -14,6 +14,8 @@ client_quote: transaction_advisors
 client_dates: 2014 - present
 project_description: |
   When Transaction Advisors acquired two related websites, Savas Labs helped integrate those sites into their existing Drupal 7 infrastructure, providing responsive theming, subscription access, and a single administrative interface for all three sites.
+description: |
+  When Transaction Advisors acquired two related websites, Savas Labs helped integrate those sites into their existing Drupal 7 infrastructure, providing responsive theming, subscription access, and a single administrative interface for all three sites.
 project_highlights: [Responsive web design, Drupal custom module development, Drupal multisite, Payment processing, Content migration]
 project_objective: |
   After Transaction Advisors acquired two related publications (SatelliteFinance and TelecomFinance), they needed to easily manage all three websites from a single administrative interface. For branding purposes, they wanted a similar look and feel across the three sites. Lastly, it was critical to offer users online subscription access to each site’s paywall-protected content.
@@ -39,4 +41,6 @@ client_logo: "/assets/img/work/logos/transaction-advisors-logo.png"
 client_logo_light: "/assets/img/work/logos/transaction-advisors-logo-eggshell.png"
 redirect_from:
   - /work/transaction-advisors-case-study/
+image: "/assets/img/work/transaction-advisors/transaction-advisors-showcase.jpg"
+
 ---
