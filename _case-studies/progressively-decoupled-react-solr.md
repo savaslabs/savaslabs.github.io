@@ -16,6 +16,8 @@ client_dates: 2015 - present
 project_highlights: [React JS, Apache Solr, Progressive Decoupling, Data-driven decision making]
 project_description: |
  With a desire to ease the ability to reserve Omega's in-person and online learning workshops through their website, we uncovered a means to improve conversions: enhance the user experience of search with React JS and Apache Solr. The end result: a faceted, snappy search application with spell-checking and auto-completion fed by two data sources embedded within Omega institute's website that vastly increased conversions!
+description: |
+ With a desire to ease the ability to reserve Omega's in-person and online learning workshops through their website, we uncovered a means to improve conversions: enhance the user experience of search with React JS and Apache Solr. The end result: a faceted, snappy search application with spell-checking and auto-completion fed by two data sources embedded within Omega institute's website that vastly increased conversions!
 project_objective: |
  World-class workshops and educators are fundamental to why people come to Omega's campuses and digital spaces. To provide an effective means for site visitors to _quickly_ discover and reserve an experience through the website is paramount to their organizational success. After multiple projects in partnership with Savas to strengthen and streamline e-commerce, purchasing experiential learning through the website has become core to their business. One KPI that informs financial and organizational success is e-commerce conversion rate.
 project_process: |
@@ -37,5 +39,7 @@ client_logo_height: "56px"
 client_logo_light: "/assets/img/work/logos/omega-logo.png"
 tile_description: |
   How we improved e-commerce conversions by designing a high-performing, spell-checking, auto-completing, multi-filtered React and Apache Solr search application.
+image: "/assets/img/work/progressively-decoupled-react-solr/progressively-decoupled-react-solr-showcase.jpg"
+
 ---
 

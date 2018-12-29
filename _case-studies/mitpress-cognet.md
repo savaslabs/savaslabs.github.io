@@ -14,6 +14,8 @@ client_quote: mitpress-bt
 client_dates: 2014 - present
 project_description: |
   After building a custom Drupal 7 theme based on Zurb Foundation, Savas Labs went back to the drawing board to redesign the site for small screens, resulting in a seamless, responsive experience across devices.
+description: |
+  After building a custom Drupal 7 theme based on Zurb Foundation, Savas Labs went back to the drawing board to redesign the site for small screens, resulting in a seamless, responsive experience across devices.
 project_highlights: [Responsive design, Drupal theming, Zurb Foundation]
 project_objective: |
   As a next phase in development following the site's relaunch in May 2015, MIT Press CogNet wanted to extend their site to users of all devices. A complete responsive redesign was in order.
@@ -37,4 +39,6 @@ client_logo_height: "60px"
 client_logo_light: "/assets/img/work/logos/cognet-logo-eggshell.png"
 redirect_from:
   - /work/cognet-case-study/
+image: "/assets/img/work/mitpress-cognet/mitpress-cognet-showcase.jpg"
+
 ---

@@ -4,6 +4,7 @@ title: Marketing Coordinator
 permalink: "/marketing-coordinator/"
 excerpt: |
   Savas Labs is hiring for a Marketing Coordinator.
+image: "/assets/img/jobs/marketing.svg"
 ---
 
 <p class="breadcrumbs hide-for-medium hide-for-large">

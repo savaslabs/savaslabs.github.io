@@ -9,6 +9,7 @@ cta_paragraph: Interested in working with Savas Labs? Contact us today.
 cta_link: https://savas-labs.breezy.hr/
 cta_link_text: Apply Now
 cta_color: orange
+image: "/assets/img/bg/careers-hero.jpg"
 ---
 
 [Company](/company) > Careers at Savas Labs

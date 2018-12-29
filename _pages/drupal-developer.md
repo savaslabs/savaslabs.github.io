@@ -4,6 +4,7 @@ title: Drupal developer
 permalink: "/drupal-developer/"
 excerpt: |
   Savas Labs hiring for Drupal developer.
+image: "/assets/img/jobs/drupal 8 logo isolated.svg"
 ---
 
 <p class="breadcrumbs hide-for-medium hide-for-large">

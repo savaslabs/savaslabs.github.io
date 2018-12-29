@@ -16,6 +16,8 @@ client_dates: 2016 - present
 project_highlights: [Content migration, Custom module development, User experience enhancement, Dockerized deployment]
 project_description: |
   After multiple organizational transitions left Duke's flagship news outlet's redesign incomplete and in need of a new development team nearly two years into the project, design and user experience agency Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration within a four-month turnaround.
+description: |
+  After multiple organizational transitions left Duke's flagship news outlet's redesign incomplete and in need of a new development team nearly two years into the project, design and user experience agency Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration within a four-month turnaround.
 project_objective: |
  Given the prolonged project history that had gone through two development agencies, when design agency and fellow Durham natives Cuberis asked Savas Labs to partner, our edict was to determine what was complete and what remained so we could deliver the finished product to an eager client as soon as possible.
 project_process: |
@@ -40,6 +42,7 @@ tile_description: |
   After multiple organizational transitions left Duke's flagship news outlet's redesign incomplete, partner Cuberis entrusted Savas Labs to audit the work, implement new functionality, and execute a complex content migration in just 4 months.
 redirect_from:
   - /work/duke-today-case-study/
+image: "/assets/img/work/duke-today/duke-today-showcase.jpg"
 
 ---
 

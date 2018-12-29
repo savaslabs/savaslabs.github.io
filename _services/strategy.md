@@ -9,6 +9,7 @@ durham_summary: |
   You're a Triangle company who's looking for a seasoned team of digital consultants to help start your next project. You've come to the right place. Our process starts with sound strategic guidance.
 icon: "strategy-icon.svg"
 vertical_image: "/assets/img/services/strategy-hero.jpg"
+image: "/assets/img/services/strategy-hero.jpg"
 vertical_image_alt: "Chris walking with a client"
 quote_project: "transaction_advisors"
 services: [Content Strategy, SEO, Technical Audit / Planning, Channel Identification, Competitive Analysis, Analytics Insights, Information Architecture, User Journey Mapping, Brand Assessment, Digital Marketing, Campaign Planning  ]

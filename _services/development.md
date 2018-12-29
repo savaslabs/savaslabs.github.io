@@ -9,6 +9,7 @@ durham_summary: |
   Are you a local Raleigh design agency but don't staff development resources? An organization looking to help moderize their technology? We provide creative technical solutions to fulfill our partners' constantly evolving needs.
 icon: "development-icon.svg"
 vertical_image: "/assets/img/services/development-hero.jpg"
+image: "/assets/img/services/development-hero.jpg"
 vertical_image_alt: "Websites built by Savas Labs displayed on mobile screens"
 quote_project: "ka-consult"
 services: [Drupal Customization, 3rd Party Service Integration, Database Architecture, Data Migration, E-Commerce, Performance Optimization, Automated Testing, Hosting Consultation, Security & Best Practices Consultation]
