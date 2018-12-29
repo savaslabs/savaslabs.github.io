@@ -6,6 +6,7 @@ author: Oksana Cyrwus
 tags: drupal drupal8 drupal-planet marketing
 services: strategy development design-ux
 summary: SEO trends 2017 and Drupal 8 as the best option for your long-term marketing campaign.
+image: "/assets/img/blog/supercharged-seo-with-drupal-8.jpg"
 featured_image: "/blog/supercharged-seo-with-drupal-8.jpg"
 featured_image_alt: "Supercharged SEO with Drupal 8"
 featured_image_height: "627px"

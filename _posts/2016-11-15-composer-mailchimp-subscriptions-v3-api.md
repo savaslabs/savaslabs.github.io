@@ -6,6 +6,7 @@ author: Dan Murphy
 tags: drupal drupal-planet composer module-development mailchimp
 services: development
 summary: How to use Composer along with the ThinkShout PHP library for MailChimp API v3.0 to easily subscribe users to mailing lists without the MailChimp contributed module.
+image: "/assets/img/blog/mailchimp_3_drupal_composer_3.jpg"
 featured_image: "/blog/mailchimp_3_drupal_composer_3.jpg"
 featured_image_alt: "sheet music"
 featured_image_height: "983px"

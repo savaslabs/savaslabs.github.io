@@ -5,6 +5,7 @@ date: 2017-02-27
 author: Anne Tomasevich
 tags: design typography user-experience
 services: design-ux
+image: "/assets/img/blog/on-web-typography-featured.jpg"
 featured_image: "/blog/on-web-typography-featured.jpg"
 featured_image_alt: "A woman reading on a tablet"
 featured_image_height: "983px"

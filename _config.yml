@@ -17,6 +17,9 @@ is_production: 1
 # Professional and social media links
 twitter_username: savaslabs
 github_username: savaslabs
+twitter:
+  username: savaslabs
+
 
 # Languages and syntax highlighting
 markdown: kramdown

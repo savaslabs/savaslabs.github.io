@@ -5,6 +5,7 @@ date: 2018-03-25
 author: Anne Tomasevich
 tags: drupal drupal8 drupal-planet composer
 summary: Some quick tips for completing this surprisingly tricky task.
+image: "/assets/img/blog/composer-drupal-8.jpg"
 featured_image: "/blog/composer-drupal-8.jpg"
 featured_image_alt: "Composer and Drupal 8 working together"
 drupal_planet_summary: |

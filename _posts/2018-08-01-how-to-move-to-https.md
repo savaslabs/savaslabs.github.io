@@ -5,6 +5,7 @@ date: 2018-08-01
 author: Chris Russo
 tags:  marketing user-experience best-practices performance drupal drupal-planet
 summary: Now that you know your website needs to be served over HTTPS, we help you get there.
+image: "/assets/img/blog/https2.jpg"
 featured_image: "/blog/https2.jpg"
 featured_image_alt: "Image endorsing move to HTTPS from HTTP"
 drupal_planet_summary: |

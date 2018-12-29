@@ -5,6 +5,7 @@ date: 2018-12-11
 author: Chris Russo
 tags: team company-culture
 summary: "Savas Labs is excited to announce the arrival of our new COO: Ben Eckerson."
+image: "/assets/img/blog/ben-landscape.png"
 featured_image: "/blog/ben-landscape.png"
 featured_image_alt: "Image of Ben as a child"
 ---

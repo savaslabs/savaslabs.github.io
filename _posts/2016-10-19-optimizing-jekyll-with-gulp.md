@@ -7,6 +7,7 @@ tags: performance jekyll javascript css sass front-end-dev
 services: development design-ux
 summary: |
   How we improved our company site's performance with a better Jekyll workflow
+image: "/assets/img/blog/test-tubes.jpg"
 featured_image: "/blog/test-tubes.jpg"
 featured_image_alt: "Test tubes with brightly color liquids inside"
 featured_image_height: "912px"

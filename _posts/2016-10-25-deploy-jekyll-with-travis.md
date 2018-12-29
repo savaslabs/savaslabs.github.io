@@ -4,6 +4,7 @@ title: Deploying Jekyll to Github Pages with Travis and Gulp
 date: 2016-10-25
 author: Anne Tomasevich
 tags: jekyll continuous-integration
+image: "/assets/img/blog/travis-hero.png"
 featured_image: "/blog/travis-hero.png"
 featured_image_alt: "Jekyll, Gulp, Travis, and GitHub logos"
 featured_image_height: "739px"
