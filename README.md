@@ -25,12 +25,12 @@ The site is built using Jekyll and Gulp.
 
 ## Local development
 
-Use the `gulp serve` command to serve the site locally and watch for file
+Run `npm run serve` to serve the site locally and watch for file
 changes. Initially, or anytime you want to rebuild the `_site` directory, you
-should run `gulp serve --rebuild`, which will run the local build task before
+should run `npm run serve:rebuild`, which will run the local build task before
 serving the site.
 
-`gulp serve` uses the test and dev config files for local development.
+The `serve` task uses the test and dev config files for local development.
 
 If needed, run `npm install` to install any modules that were added since you
 last served the site.

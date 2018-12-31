@@ -8,8 +8,8 @@
  *   2. Scripts
  *   3. Images
  *   4. Fonts
- *   5. Jekyll
- *   6. Style Guide
+ *   5. Style Guide
+ *   6. Jekyll
  *   7. Misc.
  */
 
@@ -63,38 +63,47 @@ function buildStyles(scssRoot, destinations) {
 
   stream.pipe(browserSync.stream())
     .on('error', gutil.log);
+
+  return stream;
 }
 
 /**
  * Deletes the specified items.
  *
- * @param callback
  * @param items
  *   An array of items to be deleted.
  */
-function clean (callback, items) {
-  del.sync(items);
-  callback();
+function clean(items) {
+  return del(items);
 }
+
+/**
+ * Reloads browsersync session.
+ */
+function reload(callback) {
+  browserSync.reload();
+  callback();
+};
 
 // -----------------------------------------------------------------------------
 //   1: Styles
 // -----------------------------------------------------------------------------
 
 /**
- * Task: build:styles:main
- *
- * Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
- * outputs file to the appropriate location.
- */
+* Task: build:styles:main
+*
+* Uses Sass compiler to process styles, adds vendor prefixes, minifies, then
+* outputs file to the appropriate location.
+*/
 const mainStyleDests = [
   paths.jekyllCssFiles,
   paths.siteCssFiles,
   paths.siteStyleGuide
 ];
-gulp.task('build:styles:main', function () {
-  buildStyles('/main.scss', mainStyleDests);
-});
+const buildStylesMain = () => {
+  return buildStyles('/main.scss', mainStyleDests);
+};
+gulp.task('build:styles:main', gulp.parallel(buildStylesMain));
 
 /**
  * Task: build:styles:critical
@@ -102,9 +111,10 @@ gulp.task('build:styles:main', function () {
  * Processes critical CSS, to be included in head.html.
  */
 const criticalStyleDests = ['_includes/css'];
-gulp.task('build:styles:critical', function () {
-  buildStyles('/critical*.scss', criticalStyleDests);
-});
+const buildStylesCritical = () => {
+  return buildStyles('/critical*.scss', criticalStyleDests);
+};
+gulp.task('build:styles:critical', gulp.parallel(buildStylesCritical));
 
 /**
  * Task: build:styles:css
@@ -112,25 +122,26 @@ gulp.task('build:styles:critical', function () {
  * Copies any other CSS files to the assets directory, to be used by pages/posts
  * that specify custom CSS files.
  */
-gulp.task('build:styles:css', function () {
+const buildStylesOther = () => {
   return gulp.src([paths.sassFiles + '/*.css'])
     .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
     .pipe(cleancss())
     .pipe(gulp.dest(paths.jekyllCssFiles))
     .pipe(gulp.dest(paths.siteCssFiles))
     .on('error', gutil.log);
-});
+};
+gulp.task('build:styles:css', gulp.parallel(buildStylesOther));
 
 /**
  * Task: build:styles
  *
  * Builds all site styles.
  */
-gulp.task('build:styles', [
-  'build:styles:main',
-  'build:styles:critical',
-  'build:styles:css'
-]);
+gulp.task('build:styles', gulp.parallel(
+  buildStylesMain,
+  buildStylesCritical,
+  buildStylesOther
+));
 
 /**
  * Task: clean:styles
@@ -138,9 +149,10 @@ gulp.task('build:styles', [
  * Deletes all processed site styles.
  */
 const removeStyles = [paths.jekyllCssFiles, paths.siteCssFiles, '_includes/critical.css'];
-gulp.task('clean:styles', function(callback) {
-  clean(callback, removeStyles);
-});
+const cleanStyles = () => {
+  return clean(removeStyles);
+};
+gulp.task('clean:styles', gulp.parallel(cleanStyles));
 
 /**
  * Task: build:styles:styleguide
@@ -152,9 +164,10 @@ const styleguideStyleDests = [
   'styleguide',
   paths.siteStyleGuide
 ];
-gulp.task('build:styles:styleguide', function () {
-  buildStyles('/styleguide.scss', styleguideStyleDests);
-});
+const buildStylesStyleguide = () => {
+  return buildStyles('/styleguide.scss', styleguideStyleDests);
+};
+gulp.task('build:styles:styleguide', gulp.parallel(buildStylesStyleguide));
 
 // -----------------------------------------------------------------------------
 //   2: Scripts
@@ -166,7 +179,7 @@ gulp.task('build:styles:styleguide', function () {
  * Concatenates and uglifies global JS files and outputs result to the
  * appropriate location.
  */
-gulp.task('build:scripts:global', function () {
+const buildScriptsGlobal = () => {
   return gulp.src([
     paths.jsFiles + '/global/lib' + paths.jsPattern,
     paths.jsFiles + '/global/*.js'
@@ -180,7 +193,8 @@ gulp.task('build:scripts:global', function () {
     // Only place in `assets` because Jekyll needs to process the file.
     .pipe(gulp.dest(paths.jekyllJsFiles))
     .on('error', gutil.log);
-});
+};
+gulp.task('build:scripts:global', gulp.parallel(buildScriptsGlobal));
 
 /**
  * Task: build:scripts:webpack
@@ -188,10 +202,11 @@ gulp.task('build:scripts:global', function () {
  * Special task for running webpack to compile React code for comments app for
  * production.
  */
-gulp.task('build:scripts:webpack', function () {
-  return gulp.src('')
+const buildScriptsWebpack = () => {
+  return gulp.src('.')
     .pipe(run('npm run build-comments'));
-});
+};
+gulp.task('build:scripts:webpack', gulp.parallel(buildScriptsWebpack));
 
 /**
  * Task: build:scripts:webpack:dev
@@ -199,27 +214,29 @@ gulp.task('build:scripts:webpack', function () {
  * Special task for running webpack to compile React code for comments app for
  * development.
  */
-gulp.task('build:scripts:webpack:dev', function () {
-  return gulp.src('')
+const buildScriptsWebpackDev = () => {
+  return gulp.src('.')
     .pipe(run('npm run build-comments-dev'));
-});
+};
+gulp.task('build:scripts:webpack:dev', gulp.parallel(buildScriptsWebpackDev));
 
 /**
  * Task: build:scripts:comments
  *
  * Copies comments app to the assets directory.
  */
-gulp.task('build:scripts:comments', function () {
+const buildScriptsComments = () => {
   return gulp.src([
     paths.jsFiles + '/comments.js'
   ])
-    // We need to add front matter so Jekyll will process variables.
+  // We need to add front matter so Jekyll will process variables.
     .pipe(appendPrepend.prependFile('./_assets/gulp_config/front-matter.txt'))
 
     // Only place in `assets` because Jekyll needs to process the file.
     .pipe(gulp.dest(paths.jekyllJsFiles))
     .on('error', gutil.log);
-});
+};
+gulp.task('build:scripts:comments', gulp.parallel(buildScriptsComments));
 
 /**
  * Task: build:scripts:leaflet
@@ -227,7 +244,7 @@ gulp.task('build:scripts:comments', function () {
  * Concatenates and uglifies leaflet JS files and outputs result to the
  * appropriate location.
  */
-gulp.task('build:scripts:leaflet', function () {
+const buildScriptsLeaflet = () => {
   return gulp.src([
     paths.jsFiles + '/leaflet/leaflet.js',
     paths.jsFiles + '/leaflet/leaflet-providers.js'
@@ -237,29 +254,28 @@ gulp.task('build:scripts:leaflet', function () {
     .pipe(gulp.dest(paths.jekyllJsFiles))
     .pipe(gulp.dest(paths.siteJsFiles))
     .on('error', gutil.log);
-});
+};
+gulp.task('build:scripts:leaflet', gulp.parallel(buildScriptsLeaflet));
 
 /**
  * Task: build:scripts
  *
  * Builds all scripts.
  */
-gulp.task('build:scripts', function (callback) {
-  runSequence('build:scripts:webpack',
-    ['build:scripts:global', 'build:scripts:comments', 'build:scripts:leaflet'],
-    callback);
-});
+gulp.task('build:scripts', gulp.series(
+  buildScriptsWebpack,
+  gulp.parallel(buildScriptsGlobal, buildScriptsComments, buildScriptsLeaflet)
+));
 
 /**
  * Task: build:scripts:dev
  *
  * Builds all scripts, running webpack for dev environment.
  */
-gulp.task('build:scripts:dev', function (callback) {
-  runSequence('build:scripts:webpack:dev',
-    ['build:scripts:global', 'build:scripts:comments', 'build:scripts:leaflet'],
-    callback);
-});
+gulp.task('build:scripts:dev', gulp.series(
+  buildScriptsWebpackDev,
+  gulp.parallel(buildScriptsGlobal, buildScriptsComments, buildScriptsLeaflet)
+));
 
 /**
  * Task: clean:scripts
@@ -267,9 +283,10 @@ gulp.task('build:scripts:dev', function (callback) {
  * Deletes all processed scripts.
  */
 const removeScripts = [paths.jekyllJsFiles, paths.siteJsFiles];
-gulp.task('clean:scripts', function(callback) {
-  clean(callback, removeScripts);
-});
+const cleanScripts = () => {
+  return clean(removeScripts);
+};
+gulp.task('clean:scripts', gulp.parallel(cleanScripts));
 
 // -----------------------------------------------------------------------------
 //   3: Images
@@ -280,13 +297,13 @@ gulp.task('clean:scripts', function(callback) {
  *
  * Copies image files.
  */
-gulp.task('build:images', function () {
+const buildImages = () => {
   return gulp.src(paths.imageFilesGlob)
     .pipe(gulp.dest(paths.jekyllImageFiles))
     .pipe(gulp.dest(paths.siteImageFiles))
     .pipe(browserSync.stream());
-});
-
+};
+gulp.task('build:images', gulp.parallel(buildImages));
 
 /**
  * Task: build:images
@@ -296,7 +313,7 @@ gulp.task('build:images', function () {
  * We're including imagemin options because we're overriding the default JPEG
  * optimization plugin.
  */
-gulp.task('optimize:images', function () {
+const optimizeImages = () => {
   return gulp.src(paths.imageFilesGlob)
     .pipe(cache(imagemin([
       imagemin.gifsicle(),
@@ -305,7 +322,8 @@ gulp.task('optimize:images', function () {
       imagemin.svgo()
     ])))
     .pipe(gulp.dest(paths.imageFiles));
-});
+};
+gulp.task('optimize:images', gulp.parallel(optimizeImages));
 
 /**
  * Task: clean:images
@@ -313,27 +331,21 @@ gulp.task('optimize:images', function () {
  * Deletes all processed images.
  */
 const removeImages = [paths.jekyllImageFiles, paths.siteImageFiles];
-gulp.task('clean:images', function(callback) {
-  clean(callback, removeImages);
-});
+const cleanImages = () => {
+  return clean(removeImages);
+};
+gulp.task('clean:images', gulp.parallel(cleanImages));
 
 // -----------------------------------------------------------------------------
 //   4: Fonts
 // -----------------------------------------------------------------------------
 
 /**
- * Task: build:fonts
- *
- * Copies fonts.
- */
-gulp.task('build:fonts', ['fontawesome']);
-
-/**
  * Task: fontawesome
  *
  * Places Font Awesome fonts in the proper location.
  */
-gulp.task('fontawesome', function () {
+const buildFontAwesome = () => {
   return gulp.src(paths.fontFiles + '/font-awesome/**.*')
     .pipe(rename(function (path) {
       path.dirname = '';
@@ -341,7 +353,15 @@ gulp.task('fontawesome', function () {
     .pipe(gulp.dest(paths.jekyllFontFiles))
     .pipe(browserSync.stream())
     .on('error', gutil.log);
-});
+};
+gulp.task('fontawesome', gulp.parallel(buildFontAwesome));
+
+/**
+ * Task: build:fonts
+ *
+ * Copies fonts.
+ */
+gulp.task('build:fonts', gulp.parallel(buildFontAwesome));
 
 /**
  * Task: clean:fonts
@@ -349,12 +369,52 @@ gulp.task('fontawesome', function () {
  * Deletes all processed fonts.
  */
 const removeFonts = [paths.jekyllFontFiles, paths.siteFontFiles];
-gulp.task('clean:fonts', function(callback) {
-  clean(callback, removeFonts);
-});
+const cleanFonts = () => {
+  return clean(removeFonts);
+};
+gulp.task('clean:fonts', gulp.parallel(cleanFonts));
 
 // -----------------------------------------------------------------------------
-//   5: Jekyll
+//   5: Style Guide
+// -----------------------------------------------------------------------------
+
+/**
+ * Task: build:styleguide
+ *
+ * Builds the style guide via the hologram gem.
+ */
+const buildStyleguide = () => {
+  const shellCommand = 'hologram -c hologram_config.yml';
+
+  return gulp.src('.')
+    .pipe(run(shellCommand))
+    .on('error', gutil.log);
+};
+gulp.task('build:styleguide', gulp.parallel(buildStyleguide));
+
+/**
+ * Task: clean:styleguide
+ *
+ * Deletes the entire _site/styleguide directory.
+ */
+const cleanStyleguide = () => {
+  return clean(['styleguide', '_site/styleguide']);
+};
+gulp.task('clean:styleguide', gulp.parallel(cleanStyleguide));
+
+/**
+ * Task: styleguide
+ *
+ * Creates the style guide within the _site directory.
+ */
+gulp.task('styleguide', gulp.series(
+  cleanStyleguide,
+  buildStylesStyleguide,
+  buildStyleguide
+));
+
+// -----------------------------------------------------------------------------
+//   6: Jekyll
 // -----------------------------------------------------------------------------
 
 /**
@@ -362,39 +422,42 @@ gulp.task('clean:fonts', function(callback) {
  *
  * Runs the jekyll build command.
  */
-gulp.task('build:jekyll', function () {
+const buildJekyll = () => {
   const shellCommand = 'bundle exec jekyll build --config _config.yml';
 
-  return gulp.src('')
+  return gulp.src('.')
     .pipe(run(shellCommand))
     .on('error', gutil.log);
-});
+};
+gulp.task('build:jekyll', gulp.parallel(buildJekyll));
 
 /**
  * Task: build:jekyll:test
  *
  * Runs the jekyll build command using the test config file.
  */
-gulp.task('build:jekyll:test', function () {
+const buildJekyllTest = () => {
   const shellCommand = 'bundle exec jekyll build --future --config _config.yml,_config.test.yml';
 
-  return gulp.src('')
+  return gulp.src('.')
     .pipe(run(shellCommand))
     .on('error', gutil.log);
-});
+};
+gulp.task('build:jekyll:test', gulp.parallel(buildJekyllTest));
 
 /**
  * Task: build:jekyll:local
  *
  * Runs the jekyll build command using the test and local config files.
  */
-gulp.task('build:jekyll:local', function () {
+const buildJekyllLocal = () => {
   const shellCommand = 'bundle exec jekyll build --future --config _config.yml,_config.test.yml,_config.dev.yml';
 
-  return gulp.src('')
+  return gulp.src('.')
     .pipe(run(shellCommand))
     .on('error', gutil.log);
-});
+};
+gulp.task('build:jekyll:local', gulp.parallel(buildJekyllLocal));
 
 /**
  * Task: clean:jekyll
@@ -402,107 +465,95 @@ gulp.task('build:jekyll:local', function () {
  * Deletes the entire _site directory.
  */
 const removeSite = ['_site'];
-gulp.task('clean:jekyll', function(callback) {
-  clean(callback, removeSite);
-});
+const cleanJekyll = () => {
+  return clean(removeSite);
+};
+gulp.task('clean:jekyll', gulp.parallel(cleanJekyll));
 
 /**
  * Task: clean
  *
  * Runs all the clean commands.
  */
-gulp.task('clean', ['clean:jekyll',
-  'clean:fonts',
-  'clean:images',
-  'clean:scripts',
-  'clean:styles',
-  'clean:styleguide']);
+gulp.task('clean', gulp.parallel(
+  cleanJekyll,
+  cleanFonts,
+  cleanImages,
+  cleanScripts,
+  cleanStyles,
+  cleanStyleguide
+));
 
 /**
  * Task: build
  *
  * Build the site anew. Assumes images are cached by Travis.
  */
-gulp.task('build', function (callback) {
-  runSequence('clean',
-    ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
-    'styleguide',
-    'build:jekyll',
-    callback);
-});
+gulp.task('build', gulp.series(
+  'clean',
+  gulp.parallel('build:scripts', 'build:images', 'build:styles', 'build:fonts'),
+  'styleguide',
+  'build:jekyll'
+));
 
 /**
  * Task: build:test
  *
  * Builds the site anew using test config.
  */
-gulp.task('build:test', function (callback) {
-  runSequence('clean',
-    ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
-    'styleguide',
-    'build:jekyll:test',
-    callback);
-});
+gulp.task('build:test', gulp.series(
+  'clean',
+  gulp.parallel('build:scripts', 'build:images', 'build:styles', 'build:fonts'),
+  'styleguide',
+  buildJekyllTest
+));
 
 /**
  * Task: build:local
  *
  * Builds the site anew using test and local config.
  */
-gulp.task('build:local', function (callback) {
-  runSequence('clean',
-    ['build:scripts:dev', 'build:images', 'build:styles', 'build:fonts'],
-    'styleguide',
-    'build:jekyll:local',
-    callback);
-});
+gulp.task('build:local', gulp.series(
+  'clean',
+  gulp.parallel('build:scripts', 'build:images', 'build:styles', 'build:fonts'),
+  'styleguide',
+  buildJekyllLocal
+));
 
 /**
  * Task: default
  *
  * Builds the site anew.
  */
-gulp.task('default', ['build']);
+gulp.task('default', gulp.parallel('build'));
 
 /**
  * Task: build:jekyll:watch
  *
  * Special task for building the site then reloading via BrowserSync.
  */
-gulp.task('build:jekyll:watch', ['build:jekyll:local'], function (callback) {
-  browserSync.reload();
-  callback();
-});
+gulp.task('build:jekyll:watch', gulp.series(buildJekyllLocal, reload));
 
 /**
  * Task: build:scripts:watch
  *
  * Special task for building scripts then reloading via BrowserSync.
  */
-gulp.task('build:scripts:watch', ['build:scripts:dev'], function (callback) {
-  runSequence('build:jekyll:local');
-  browserSync.reload();
-  callback();
-});
+gulp.task('build:scripts:watch', gulp.series(
+  'build:scripts:dev',
+  buildJekyllLocal,
+  reload
+));
 
 /**
- * Task: serve
+ * Task: watch
  *
  * Static Server + watching files.
  *
  * Note: passing anything besides hard-coded literal paths with globs doesn't
  * seem to work with gulp.watch().
  */
-gulp.task('serve', function () {
-  // Only rebuild site if --rebuild option is passed to serve command.
-  if (argv.rebuild !== undefined) {
-    runSequence('build:local', 'watch');
-  } else {
-    runSequence('watch');
-  }
-});
-
-gulp.task('watch', function () {
+const serve = () => {
   browserSync.init({
     server: paths.siteDir,
     ghostMode: false, // Toggle to mirror clicks, reloads etc. (performance)
@@ -512,102 +563,78 @@ gulp.task('watch', function () {
   });
 
   // Watch site settings.
-  gulp.watch(['_config*.yml'], ['build:jekyll:watch']);
+  gulp.watch(['_config*.yml'], gulp.parallel('build:jekyll:watch'));
 
   // Watch .scss files; changes are piped to browserSync.
   // Ignore style guide SCSS.
   // Rebuild the style guide to catch updates to component markup.
   gulp.watch(
     ['_assets/styles/**/*.scss', '!_assets/styles/scss/07-styleguide/**/*', '!_assets/styles/styleguide.scss'],
-    ['build:styles', 'build:styleguide']
+    gulp.parallel('build:styles', 'build:styleguide')
   );
 
   // Watch .js files.
   gulp.watch(
     ['_assets/js/**/*.js', '_comments-app/app/**/*'],
-    ['build:scripts:watch']
+    gulp.parallel('build:scripts:watch')
   );
 
   // Watch comment app files.
-  gulp.watch('_comments-app/**/*', ['build:scripts:watch']);
+  gulp.watch('_comments-app/**/*', gulp.parallel('build:scripts:watch'));
 
   // Watch image files; changes are piped to browserSync.
-  gulp.watch('_assets/img/**/*', ['build:images']);
+  gulp.watch('_assets/img/**/*', gulp.parallel('build:images'));
 
   // Watch posts.
-  gulp.watch('_posts/**/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+  gulp.watch('_posts/**/*.+(md|markdown|MD)', gulp.parallel('build:jekyll:watch'));
 
   // Watch drafts if --drafts flag was passed.
   if (module.exports.drafts) {
-    gulp.watch('_drafts/*.+(md|markdown|MD)', ['build:jekyll:watch']);
+    gulp.watch('_drafts/*.+(md|markdown|MD)', gulp.parallel('build:jekyll:watch'));
   }
 
   // Watch HTML and markdown files.
   gulp.watch(
     ['**/*.+(html|md|markdown|MD)', '!_site/**/*.*', '!_styleguide_assets/**/*.*', '!_assets/styles/*.md'],
-    ['build:jekyll:watch']
+    gulp.parallel('build:jekyll:watch')
   );
 
   // Watch RSS feed XML files.
-  gulp.watch('**.xml', ['build:jekyll:watch']);
+  gulp.watch('**.xml', gulp.parallel('build:jekyll:watch'));
 
   // Watch data files.
-  gulp.watch('_data/**.*+(yml|yaml|csv|json)', ['build:jekyll:watch']);
+  gulp.watch('_data/**.*+(yml|yaml|csv|json)', gulp.parallel('build:jekyll:watch'));
 
   // Watch favicon.png.
-  gulp.watch('favicon.png', ['build:jekyll:watch']);
+  gulp.watch('favicon.png', gulp.parallel('build:jekyll:watch'));
 
   // Watch style guide SCSS.
   gulp.watch(
     ['_assets/styles/styleguide.scss', '_assets/styles/scss/07-styleguide/**/*.scss'],
-    ['build:styles:styleguide']
+    gulp.parallel(buildStylesStyleguide)
   );
 
   // Watch style guide HTML.
   gulp.watch(
     ['_styleguide_assets/*.html', '_assets/styles/*.md'],
-    ['build:styleguide', 'build:jekyll:watch']
+    gulp.parallel(buildStyleguide, 'build:jekyll:watch')
   );
-});
-
-// -----------------------------------------------------------------------------
-//   6: Style Guide
-// -----------------------------------------------------------------------------
+};
 
 /**
- * Task: styleguide
+ * Task: serve
  *
- * Creates the style guide within the _site directory.
+ * Runs the watch task without rebuilding the site.
  */
-gulp.task('styleguide', function (callback) {
-  runSequence('clean:styleguide',
-    'build:styles:styleguide',
-    'build:styleguide',
-    callback);
-});
+gulp.task('serve', gulp.parallel(serve));
 
 /**
- * Task: build:styleguide
+ * Task: serve:rebuild
  *
- * Builds the style guide via the hologram gem.
+ * Runs the watch task and rebuilds the site.
  */
-gulp.task('build:styleguide', function () {
-  const shellCommand = 'hologram -c hologram_config.yml';
+gulp.task('serve:rebuild', gulp.series('build:local', serve));
 
-  return gulp.src('')
-    .pipe(run(shellCommand))
-    .on('error', gutil.log);
-});
-
-/**
- * Task: clean:styleguide
- *
- * Deletes the entire _site/styleguide directory.
- */
-gulp.task('clean:styleguide', function (callback) {
-  del(['styleguide', '_site/styleguide']);
-  callback();
-});
 
 // -----------------------------------------------------------------------------
 //   7: Misc.
@@ -618,22 +645,23 @@ gulp.task('clean:styleguide', function (callback) {
  *
  * Updates Ruby gems.
  */
-gulp.task('update:gems', function () {
-  return gulp.src('')
+const updateGems = () => {
+  return gulp.src('.')
     .pipe(run('bundle install'))
     .pipe(run('bundle update'))
     .pipe(notify({message: 'Bundle Update Complete'}))
     .on('error', gutil.log);
-});
+};
+gulp.task('update:gems', gulp.parallel(updateGems));
 
 /**
  * Task: cache-clear
  *
  * Clears the gulp cache. Currently this just holds processed images.
  */
-gulp.task('cache-clear', function (done) {
+gulp.task('cache-clear', gulp.parallel(function (done) {
   return cache.clearAll(done);
-});
+}));
 
 /**
  * Task: accessibility-test
@@ -656,7 +684,7 @@ gulp.task('cache-clear', function (done) {
  *
  * We're also skipping redirect pages like /news/* and /team/*.
  */
-gulp.task('accessibility-test', function () {
+const accessibilityTest = () => {
   return gulp.src(paths.htmlTestFiles)
     .pipe(accessibility({
       force: false,
@@ -672,4 +700,5 @@ gulp.task('accessibility-test', function () {
       ]
     }))
     .on('error', gutil.log);
-});
+};
+gulp.task('accessibility-test', gulp.parallel(accessibilityTest));

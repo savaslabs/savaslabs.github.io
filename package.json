@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build-comments": "webpack -p",
-    "build-comments-dev": "webpack"
+    "build-comments-dev": "webpack",
+    "build": "./node_modules/.bin/gulp",
+    "serve": "./node_modules/.bin/gulp serve",
+    "serve:rebuild": "./node_modules/.bin/gulp serve:rebuild"
   },
   "repository": {
     "type": "git",
