@@ -66,6 +66,6 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 ---
 
-Let's start there.
-If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
+<a href="https://savas-labs.breezy.hr/p/28d0139db3ae-marketing-coordinator/apply" class="button">Apply</a>
+
+---
