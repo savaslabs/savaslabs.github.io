@@ -68,7 +68,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Jekyll, Laravel, and React spanning the languages of Ruby, Javascript, and PHP. You don't need to know too much about these technologies, but you will bring a lot of value to the team if you're eager to learn more about how we use them to create digital products for our clients.
 
 ---
-Let's start there.
-If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
-<!-- TODO: replace with breezy link -->
+
+<a href="https://savas-labs.breezy.hr/p/0fdd24eaede0-digital-project-manager/apply" class="button">Apply</a>
+
+---
