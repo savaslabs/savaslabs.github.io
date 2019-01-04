@@ -3,7 +3,7 @@ layout: post
 title: "How we added comments to our Jekyll site"
 date: 2016-04-20
 author: Kosta Harlan
-tags: jekyll javascript
+tags: jekyll javascript open-source
 services: development
 comments_enabled: 0
 disclaimer: |
