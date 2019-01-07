@@ -43,7 +43,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees
 + Annual technology stipend
 
-#### About You
+#### About you
 
 + You have
   + great communication skills
