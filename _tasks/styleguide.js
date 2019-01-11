@@ -2,16 +2,10 @@ const utils = require('./utils');
 const paths = require('../_assets/gulp_config/paths');
 
 const gulp = require('gulp');
-const gutil = require('gulp-util');
-const run = require('gulp-run');
 
 // Builds the style guide via the hologram gem.
 const buildStyleguide = () => {
-  const shellCommand = 'hologram -c hologram_config.yml';
-
-  return gulp.src('.')
-    .pipe(run(shellCommand))
-    .on('error', gutil.log);
+  return utils.runCommand('hologram -c hologram_config.yml');
 };
 gulp.task('build:styleguide', gulp.parallel(buildStyleguide));
 

@@ -7,6 +7,7 @@ const del = require('del');
 const gulp = require('gulp');
 const gutil = require('gulp-util');
 const postcss = require('gulp-postcss');
+const run = require('gulp-run');
 const sass = require('gulp-ruby-sass');
 
 module.exports = {
@@ -54,5 +55,17 @@ module.exports = {
   reload: function reload(callback) {
     browserSync.reload();
     callback();
-  }
+  },
+
+  /**
+   * Runs a command.
+   *
+   * @param command
+   *   The command to run.
+   */
+  runCommand: (command) => {
+    return gulp.src('.')
+      .pipe(run(command))
+      .on('error', gutil.log);
+  },
 };
