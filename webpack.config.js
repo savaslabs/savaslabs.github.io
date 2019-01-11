@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   entry: './_comments-app/index.js',
   output: {
-    path: path.resolve(__dirname, './_assets/js'),
+    path: path.resolve(__dirname, './_assets/js'), // eslint-disable-line
     filename: 'comments.js',
     publicPath: '/'
   },
