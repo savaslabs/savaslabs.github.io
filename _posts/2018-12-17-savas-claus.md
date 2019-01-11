@@ -2,7 +2,8 @@
 layout: post
 title: "Savas Claus™: The inaugural holiday tradition"
 date: 2018-12-17
-author: Chris Russo Ben Eckerson
+author: Ben Eckerson and Chris Russo
+primary_author: Ben Eckerson
 tags: open-source team company-culture
 summary: "We wrote a Slack app to help facilitate our first annual office secret santa: Savas Claus™!"
 description: "We wrote a Slack app to help facilitate our first annual office secret santa: Savas Claus™!"
