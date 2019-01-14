@@ -4,7 +4,7 @@ set -e
 if [ -z "$TRAVIS" ]; then
   codeclimate analyze
 fi
-gulp build:test
+./node_modules/.bin/gulp build:test
 bundle exec rake test -f Rakefile
 
 # Since this test takes a while, only run it on cron.
