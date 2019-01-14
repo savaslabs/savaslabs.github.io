@@ -64,6 +64,6 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-gravatar": "^2.6.3",
-    "webpack": "^3.12.0"
+    "webpack": "^4.28.4"
   }
 }
