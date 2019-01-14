@@ -32,7 +32,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.24.3",
     "del": "^2.2.2",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.7.0",
@@ -64,6 +64,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-gravatar": "^2.6.3",
-    "webpack": "^4.28.4"
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
   }
 }
