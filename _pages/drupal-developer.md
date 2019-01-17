@@ -3,8 +3,8 @@ layout: page
 title: Drupal developer
 permalink: "/drupal-developer/"
 excerpt: |
-  Savas Labs hiring for Drupal developer.
-image: "/assets/img/jobs/drupal 8 logo isolated.svg"
+  Savas Labs is hiring Drupal developers.
+image: "/assets/img/jobs/drupal 8 logo isolated.png"
 ---
 
 <p class="breadcrumbs hide-for-medium hide-for-large">
