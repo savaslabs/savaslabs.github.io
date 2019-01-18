@@ -93,7 +93,7 @@ done
 IMAGES=$(git diff-index --cached HEAD --name-only | grep -E '.jpg|.JPG|.jpeg|.JPEG|.png|.PNG|.svg|.SVG|.gif|.GIF|.webp|.WEBP|.tif|.TIF | xargs echo')
 if [ $? = 0 ]; then
   printf "${YELLOW}\nAre you committing a new image? If so, please run:\n
-  ${CYAN}gulp optimize:images\n
+  ${CYAN}npm run images\n
 ${YELLOW}Then add the optimized image file and run git commit --no-verify to avoid seeing
 this message again.\n\n${NC}"
   PASS=false

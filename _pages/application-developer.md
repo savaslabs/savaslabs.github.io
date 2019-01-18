@@ -4,7 +4,7 @@ title: Application Developer
 permalink: "/application-developer/"
 excerpt: |
   Savas Labs hiring for Application developer.
-image: "/assets/img/jobs/developer.svg" 
+image: "/assets/img/jobs/developer.svg"
 ---
 
 <p class="breadcrumbs hide-for-medium hide-for-large">
