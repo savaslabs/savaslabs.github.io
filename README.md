@@ -25,12 +25,12 @@ The site is built using Jekyll and Gulp.
 
 ## Local development
 
-Use the `gulp serve` command to serve the site locally and watch for file
+Run `npm run serve` to serve the site locally and watch for file
 changes. Initially, or anytime you want to rebuild the `_site` directory, you
-should run `gulp serve --rebuild`, which will run the local build task before
+should run `npm run serve:rebuild`, which will run the local build task before
 serving the site.
 
-`gulp serve` uses the test and dev config files for local development.
+The `serve` task uses the test and dev config files for local development.
 
 If needed, run `npm install` to install any modules that were added since you
 last served the site.
@@ -46,15 +46,12 @@ You can toggle some options in the gulpfile:
 reloads, etc. across browsers. Useful for testing, hard on performance.
 - In the `serve` task, change `open` to `false` if you don't want BrowserSync to
 automatically open a browser window for you when you serve the site.
-- TODO: allow devs to use the `--drafts` tag to show works in progress. For now
-you can update the build command in the `build:jekyll:local` task to include the
-`--drafts` tag.
 
 ## Image Optimization
 
 To avoid optimizing images each time the site is built, locally or in Travis,
 we're committing optimized images to the `_assets` directory. When you add a
-new image, be sure to run `gulp optimize:images` to optimize the new image. When
+new image, be sure to run `npm run images` to optimize the new image. When
 you commit an image, the pre-commit hook will remind you to do this.
 
 ## Git workflow
