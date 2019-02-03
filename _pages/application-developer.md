@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Application Developer
+title: Mobile Application Developer
 permalink: "/application-developer/"
 excerpt: |
   Savas Labs hiring for Application developer.
-image: "/assets/img/jobs/developer.svg"
+image: "/assets/img/jobs/developer.png"
+
 ---
 
 <p class="breadcrumbs hide-for-medium hide-for-large">
@@ -20,7 +21,12 @@ image: "/assets/img/jobs/developer.svg"
 
 ### The position
 
-We are looking to hire a **senior application developer** to broaden our services and lead expansion into native mobile application development. We are looking for an engineer that has experience developing and deploying native mobile applications on a team at scale. Technical acumen and ability to mentor others are equally crucial to succeed in this role. You will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham) but **will consider the right remote candidate.** Your expertise in how to architect, and plan mobile applications will be relied on heavily to shape how we offer these services.
+We are looking to hire a **mobile application developer** to broaden our services and lead expansion into native mobile application development. We are looking for an engineer that has experience developing and deploying native mobile applications on a team at scale. Technical acumen and ability to mentor others are equally crucial to succeed in this role. You will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham) but **will consider the right remote candidate.** Your expertise in how to architect, and plan mobile applications will be relied on heavily to shape how we offer these services.
+
+### Working at Savas Labs
+
+At Savas Labs, we prioritize a few things. We like people who are enjoyable to work with. We **learn** from and **teach** one another, and often the result is others learn as well either via [blog posts](/blog),
+ [conference presentations,](/results/open-source/#presentations) or [social media](https://twitter.com/savaslabs). We dedicate time each week for self-improvement, socializing, and collaboration. We encourage a flexible work schedule so long as we uphold our commitments to one another and our clients. We value **openness** and encourage our team members to push _and_ recognize the boundaries of their expertise in a given area. We are honest, yet **respectful**; this is not a cut-throat environment, but rather a supportive one. We take a lot of pride in the quality of our work. We value a work/life **balance** that keeps us productive and happy. We like to have **fun** and we take [our values](/company/mission-and-values/) seriously. **We greatly embrace diversity,** value hard work, and use emoji _fairly often_ :+1:. You'll like it here.
 
 ### Working at Savas Labs
 
@@ -30,15 +36,18 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 ### Employment benefits
 
 + Competitive salary
-+ Health insurance covered by Savas (at 100% for both you and your family)
++ Health insurance covered at 100% for you and your family
++ Dental and vision insurance covered at 50% for you and your family
 + Flexible work schedule
-+ 401k (matching contribution for full-time employees)
++ 401(k) (matching contribution for full-time employees)
++ Profit sharing plan
 + Generous PTO
 + Semi-annual team retreats
 + Weekly team lunches (for on-site Durham, NC employees)
 + Monthly skill-share sessions
 + Conference presentation and attendance opportunities
 + 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
++ Annual technology stipend
 
 #### About you
 

@@ -32,6 +32,8 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
 
 The needs at Savas Labs are constantly evolving as we grow, but **we are always** on the lookout for talented and [excellent](/company/mission-and-values/#excel) people, so if you don't fit into one of the boxes below, don't let that stop you from [reaching out](/contact) to us.
 
+[Mobile Application Developer](/application-developer)
+
 [Drupal Developer](/drupal-developer)
 
 [Digital Project Manager](/digital-project-manager)
@@ -39,8 +41,6 @@ The needs at Savas Labs are constantly evolving as we grow, but **we are always*
 [Marketing Coordinator](/marketing-coordinator)
 
 <!--
-
-[Application Developer](/application-developer)
 
 [Product Designer](/product-designer)
 
