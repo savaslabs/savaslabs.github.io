@@ -1,4 +1,10 @@
 # For client quote regions.
+- project: darden-ideas-to-action
+  name: Jane Doe
+  title: Job Title
+  image: /assets/img/work/clients/lz-eo.jpg
+  quote: |
+    Quote TBD
 - project: omega-react-solr
   name: Laurie Hunt
   title: Digital Marketing Director at the Omega Institute for Holistic Studies
