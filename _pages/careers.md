@@ -38,8 +38,6 @@ The needs at Savas Labs are constantly evolving as we grow, but **we are always*
 
 [Digital Project Manager](/digital-project-manager)
 
-[Marketing Coordinator](/marketing-coordinator)
-
 <!--
 
 [Product Designer](/product-designer)
