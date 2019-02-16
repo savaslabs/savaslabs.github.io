@@ -153,6 +153,7 @@
 
 .region--team-member-top__bio {
   flex-basis: 100%;
+  font-size: 1.1em;
 
   @include grid-media($medium-screen-up) {
     flex-basis: 65%;

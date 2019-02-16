@@ -2,8 +2,8 @@
 name: Oksana Cyrwus
 slug: oksana
 layout: team
-job_title: Senior Architect / Designer
-job_description: Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user's needs.
+job_title: Senior Architect
+job_description: Oksana Cyrwus is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user’s needs.
 photo: "/team/oksana-cyrwus.jpg"
 card: "/team/cards/oksana-card.jpg"
 drupal: oksana-c
@@ -14,15 +14,6 @@ website: http://oksanac.com
 badges:
   - image: "D8GM"
     alt: "Acquia Certified Drupal 8 Grand Master"
-    link: "https://certification.acquia.com/user/1593291"
-  - image: "D8FES"
-    alt: "Acquia Certified Drupal 8 Front End Specialist"
-    link: "https://certification.acquia.com/user/1593291"
-  - image: "D8BE"
-    alt: "Acquia Certified Drupal 8 Back End Specialist"
-    link: "https://certification.acquia.com/user/1593291"
-  - image: "D8CD"
-    alt: "Acquia Certified Developer D8"
     link: "https://certification.acquia.com/user/1593291"
   - image: "D7CD"
     alt: "Acquia Certified Developer D7"
@@ -35,8 +26,12 @@ redirect_from:
 image: "/assets/img/team/oksana/oksana-square-outside.jpg"
 
 ---
-Oksana is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user’s needs. As a Solutions Architect & Designer at Savas Labs, Oksana grounds her work in analytic research swiftly composing balanced solutions that fulfill high-level organizational goals.
+Oksana Cyrwus is a right brain / left brain harmonizer who can quickly switch focus from design ideation to algorithm development all while serving the end user’s needs.
 
-She began building her digital marketing skill set in 2007 as she worked towards her Master’s Degree in Applied Mathematics and Informatics. Having lived and worked in the eastern and western hemispheres, Oksana has refined a unique vision and discipline working with diverse cultures and industries. She is committed to delivering robust systems that are intuitive to the humans that use them.
+Oksana interprets and solves the most complex problems and extracts solutions that are unified, simple and feasible. With 30+ Drupal 8 projects under her belt, Oksana's technical and creative expertise brings cognition and spirit to the team building / mentoring process.
+
+She has a genuine interest in helping colleagues and clients overcome their own challenges and weaknesses while maintaining her own endless desire for learning.
+
+Oksana began building her digital marketing skill set in 2007 as she worked towards her Master’s Degree in Applied Mathematics and Informatics. Her experiences living and working in the eastern and western hemispheres enabled her to refine a unique vision and proven work discipline.
 
 Oksana prefers to take the path less travelled, usually with a two foot long camera lens strapped around her shoulder. She enjoys travel via back-country roads where she can provoke a more genuine learning experience of American history and culture.
