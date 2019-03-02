@@ -73,9 +73,21 @@
 - name: Sandstorm Design
   image: sandstorm-logo.png
   weight: 22
-- name: Compost Pedallers
-  image: compost-pedallers-logo.png
+# - name: Compost Pedallers
+#  image: compost-pedallers-logo.png
+#  weight: 23
+- name: Center for International Policy
+  image: cip-logo.png
   weight: 23
 - name: Transaction Advisors
   image: transaction-advisors-logo.png
   weight: 24
+- name: Duke Cancer Institute
+  image: duke-cancer-institute-logo.png
+  weight: 25
+- name: Videntity
+  image: videntity-logo.png
+  weight: 26
+- name: Clade Design
+  image: clade-logo.png
+  weight: 27
