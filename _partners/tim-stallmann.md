@@ -1,6 +1,6 @@
 ---
 name: Tim Stallmann
 title: Back-end Systems Consultant
-description: Tim is a former employee of Savas Labs, and we call upon him for his myriad expertise in servers, mapping, data analysis/visualization, and complex back-end solutions.
+description: Former Savas Labs employee with expertise in servers, mapping, data visualization, complex back-end solutions, and Vue.js.
 photo: "/partners/tim-stallmann.jpg"
 ---
