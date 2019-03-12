@@ -38,6 +38,8 @@ The needs at Savas Labs are constantly evolving as we grow, but **we are always*
 
 [Digital Project Manager](/digital-project-manager)
 
+[Front-end Developer](/front-end-developer)
+
 <!--
 
 [Product Designer](/product-designer)
