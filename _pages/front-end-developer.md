@@ -61,8 +61,8 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
   + translating design comps and wireframes into semantic HTML + CSS code that is consistent across all browsers and platforms
 + You care about
   + layout aesthetics and technical feasibility of UI/UX designs
-  + maintaining graphic standards and branding throughout the product’s interface
-  + writing concise and maintanable code
+  + maintaining graphics standards and branding throughout the product’s interface
+  + writing concise and maintainable code
   + accessibility and inclusive design
   + performance and scalability
   + best practices
@@ -74,22 +74,14 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 
 #### Our projects
 
-As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Laravel, React, and Jekyll, spanning the languages of PHP, Javascript, and Ruby. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to build interfaces for a variety of back-end technologies simultaneously apart from your Drupal focus.
+As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Laravel, React, and Jekyll, spanning the languages of PHP, Javascript, and Ruby. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to build interfaces for a variety of back-end technologies simultaneously.
 
 ---
 
-Let's start there.
-If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
-
+<a href="https://savas-labs.breezy.hr/p/9975e417a26a-front-end-developer/apply" class="button">Apply</a>
 
 <!-- 
 
-  Is this commented or what?!
   TODO: New icon
-  TODO: Determine front-end or frontend (I feel like Anne likes frontend, and is probably right)
-  TODO: Add breezy button
-  TODO: Add LinkedIn job posting
-  TODO: Specify seniority? 
 
 -->
