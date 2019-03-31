@@ -2,8 +2,8 @@
 name: Anne Tomasevich
 slug: anne
 layout: team
-job_title: Front-End Developer
-job_description: Anne is a developer at Savas Labs, focused on front-end technologies and user experience.
+job_title: Senior Front-End Developer
+job_description: Anne is a senior developer at Savas Labs, focused on front-end technologies and user experience.
 drupal: AnneTee
 github: AnneTee
 linkedin: annetomasevich
