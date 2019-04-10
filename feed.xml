@@ -6,9 +6,44 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Apr 2019 16:47:31 +0000</pubDate>
-    <lastBuildDate>Wed, 10 Apr 2019 16:47:31 +0000</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2019 21:06:39 +0000</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2019 21:06:39 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Savas Brings On (another) Project Manager</title>
+        <description>&lt;p&gt;Faithful readers of the Savas Blog, please welcome Maddy to the Savas Team! :wave: We are so excited that she’s here!&lt;/p&gt;
+
+&lt;p&gt;Maddy comes to us from premier Digital Agency, &lt;a href=&quot;https://viget.com&quot;&gt;Viget&lt;/a&gt;, by way of &lt;a href=&quot;https://ewh.org&quot;&gt;Engineering World Health&lt;/a&gt;—a non-profit that uses the skills of students and professionals to improve health care in low-income countries. During her time there, she traveled the globe managing teams of student-engineers working on medical equipment in places like Rwanda, Nepal, and Cambodia—how awesome is that?!!&lt;/p&gt;
+
+&lt;div class=&quot;blog-image-large&quot;&gt;
+&lt;img alt=&quot;Outdoor meetings together at our airbnb&quot; src=&quot;/assets/img/blog/maddy-rwanda-mt-bisoke.jpg&quot; /&gt;
+ &lt;span class=&quot;caption&quot;&gt;On the rim of Mt Bisoke in Rwanda (home of the mountain gorillas!)&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Maddy has project management skills like you wouldn’t believe and we knew she would be a perfect fit for the Savas Labs Team (&lt;a href=&quot;https://savaslabs.com/careers/&quot;&gt;Think you could be the perfect fit, too? You’re in luck, we’re hiring!&lt;/a&gt;). Her attention to detail, organizational skills, and self-motivated nature a great partner on any project and we’re excited for &lt;a href=&quot;https://savaslabs.com/results/&quot;&gt;current partners&lt;/a&gt; and &lt;a href=&quot;https://savaslabs.com/services/&quot;&gt;new clients&lt;/a&gt; to get the chance to meet Maddy. We know they will be as impressed as we are!&lt;/p&gt;
+
+&lt;p&gt;Fun fact: Maddy’s very first day on the job wasn’t from &lt;a href=&quot;https://savaslabs.com/contact/&quot;&gt;our Durham, NC office&lt;/a&gt; where she works from, but spent on a plane flying to &lt;a href=&quot;https://savaslabs.com/2019/04/08/savas-retreat-yo-self.html&quot;&gt;our latest Team Retreat&lt;/a&gt;—in Austin, Texas! Talk about an exciting first day!&lt;/p&gt;
+
+&lt;div class=&quot;blog-image-large&quot;&gt;
+&lt;img alt=&quot;Outdoor meetings together at our airbnb&quot; src=&quot;/assets/img/blog/maddy-austin-retreat.jpg&quot; /&gt;
+ &lt;span class=&quot;caption&quot;&gt;Hard at work at ReTreat Yo Self.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Another fun fact about Maddy: She’s a foster dog mom. She’s making an impact in her community by &lt;a href=&quot;http://www.carolinaadoptabulls.com&quot;&gt;fostering dogs&lt;/a&gt; and loving them well until (and after) they find a fur-ever home.&lt;/p&gt;
+
+&lt;p&gt;Maddy, we are glad you’re here!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2019/04/10/savas-welcomes-maddy-bishop-van-horn.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2019/04/10/savas-welcomes-maddy-bishop-van-horn.html</guid>
+        
+        <category>team</category>
+        
+        <category>company-culture</category>
+        
+        
+      </item>
     
       <item>
         <title>ReTreat Yo' Self: A Savas Labs Team Summit</title>
@@ -1004,119 +1039,6 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
         <category>user-experience</category>
         
         <category>jekyll</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Lightning Talks - Three Useful Additions to Any Developer Toolbox in Q1 2017</title>
-        <description>&lt;p&gt;&lt;em&gt;This post is part of a new series called “Lightning Talks.”&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The web development world evolves quickly, and keeping abreast of new tools and methodologies while simultaneously delivering client work is tough.&lt;/p&gt;
-
-&lt;p&gt;One of our core &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;philosophies&lt;/a&gt; at Savas Labs is to “&lt;em&gt;hold ourselves to a high and constantly improving standard&lt;/em&gt;.” To that end, we dedicate time each month to share new tips and tools with each other to continue increasing our collective knowledge base – we call these our :zap: “Lightning Skillshares!” :zap:&lt;/p&gt;
-
-&lt;p&gt;Since we believe in the open source ethos and sharing with the community, in this series, we’ll highlight some tips we use to improve our day-to-day efficiency (and hopefully yours too!).&lt;/p&gt;
-
-&lt;p&gt;What we’ve added to our toolboxes in Q1 2017:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpStorm or PhpMyAdmin&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Online Screen Recorder to capture your screen&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-using-teleconsole-for-collaboration&quot;&gt;1. Using Teleconsole for collaboration&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;Teleconsole&lt;/a&gt; lets you share your UNIX terminal session for easy collaboration! We’ve been using it for a couple months now and find it to be an excellent addition to our team toolbox.&lt;/p&gt;
-
-&lt;p&gt;It works by starting an SSH server on the host computer and generating a unique session ID that others can connect to via their terminal or a web browser. You can have multiple connected individuals in a session, though we typically use it more for 1-1 debugging and troubleshooting.&lt;/p&gt;
-
-&lt;p&gt;Be aware, collaborators will have &lt;em&gt;direct&lt;/em&gt; access to your terminal, so only share with people you trust and be careful about accidental commands. Other than that, it’s free and easy to set up – check it out &lt;a href=&quot;https://www.teleconsole.com/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-teleconsole-demo.gif&quot; class=&quot;blog-image-full-width&quot; alt=&quot;Teleconsole demo&quot; /&gt;
-&lt;span class=&quot;caption&quot;&gt;Terminal sharing 2,700 miles away!&lt;/span&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-accessing-a-dockerized-database-via-phpmyadmin-or-phpstorm&quot;&gt;2. Accessing a Dockerized database via PhpMyAdmin or PhpStorm&lt;/h2&gt;
-
-&lt;p&gt;There are many useful tools available for interacting with a MySQL database. Since we’ve transitioned to &lt;a href=&quot;/blog/tag/docker/&quot;&gt;Docker for our local development&lt;/a&gt;, we prefer one of the following techniques for manipulating databases abstracted into the Docker container.&lt;/p&gt;
-
-&lt;h3 id=&quot;adding-phpmyadmin-to-a-docker-stack&quot;&gt;Adding PhpMyAdmin to a Docker Stack&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.phpmyadmin.net/&quot;&gt;PhpMyAdmin&lt;/a&gt; is a great tool that provides a useful interface for visualizing and interacting with a MySQL database. Here’s a simple method for adding the PhpMyAdmin service to a project’s existing Docker Stack.&lt;/p&gt;
-
-&lt;p&gt;To build a container to run the PhpMyAdmin service:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Simply add this snippet to your &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;It uses the official &lt;code class=&quot;highlighter-rouge&quot;&gt;phpmyadmin&lt;/code&gt; image and defines the host as the database container (&lt;code class=&quot;highlighter-rouge&quot;&gt;mariadb&lt;/code&gt; in this example), so be sure to add it &lt;em&gt;after&lt;/em&gt; the section defining your database container.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-phpmyadmin.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpmyadmin container&quot; /&gt;
-&lt;span class=&quot;caption&quot;&gt;Add to &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;ol start=&quot;2&quot;&gt;
-  &lt;li&gt;Set the correct database user and password (&lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_USER&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;PMA_PASSWORD&lt;/code&gt;).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Once the containers are up you can visit the port specific url (for instance &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;example.site&amp;gt;:8001&lt;/code&gt;) to access your project-specific PhpMyAdmin interface! :tada:&lt;/p&gt;
-
-&lt;h3 id=&quot;using-phpstorm-to-interact-with-a-dockerized-database&quot;&gt;Using PhpStorm to interact with a Dockerized Database&lt;/h3&gt;
-&lt;p&gt;Another method is to connect PhpStorm directly to the database container using PhpStorm’s Database Browser. Instead of opening a shell into the container via the command line, this allows us to view DB tables and run SQL queries directly within the PhpStorm interface! PhpStorm even provides useful code completions when writing database queries!&lt;/p&gt;
-
-&lt;p&gt;To connect PhpStorm to your DB container:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;In PhpStorm, go to the “Database Browser”, click the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; dropdown and select “Data Source &amp;gt; MySQL”&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm1.png&quot; class=&quot;blog-image-large&quot; alt=&quot;phpstorm connect1&quot; /&gt;&lt;/p&gt;
-
-&lt;ol start=&quot;2&quot;&gt;
-  &lt;li&gt;In the popup window:
-    &lt;ul&gt;
-      &lt;li&gt;Map the project DB container’s port specified in the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;Port&lt;/code&gt; (in the below example it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;32770&lt;/code&gt;)&lt;/li&gt;
-      &lt;li&gt;Add the &lt;code class=&quot;highlighter-rouge&quot;&gt;Database&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;User&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Password&lt;/code&gt; fields from the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file as well&lt;/li&gt;
-      &lt;li&gt;You can select &lt;code class=&quot;highlighter-rouge&quot;&gt;Test Conneciton&lt;/code&gt; or just &lt;code class=&quot;highlighter-rouge&quot;&gt;OK&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm2.png&quot; class=&quot;blog-image-full-width&quot; alt=&quot;phpstorm connect2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once connected, PhpStorm will display all the tables in a drop down in the Database Browser, which is useful for quickly glancing through all the tables! You’ll also be able to run SQL queries within PhpStorm and see outputted results without having to leave the interface! :star2:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/lightning-17q1-pstorm3.png&quot; class=&quot;blog-image-full-width&quot; alt=&quot;phpstorm connect3&quot; /&gt;
-&lt;span class=&quot;caption&quot;&gt;Write and save custom queries!&lt;/span&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-using-apowersofts-free-screen-recorder-to-capture-your-screen&quot;&gt;3. Using Apowersoft’s Free Screen Recorder to capture your screen&lt;/h2&gt;
-
-&lt;p&gt;If a picture’s worth a thousand words, than a video is worth…a million? There are times when it’s useful to send a short video (for example, a quick tutorial to a client) and Apowersoft’s &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;Free Online Screen Recorder&lt;/a&gt; is a great tool for capturing your screen. It’s easy to use and there’s &lt;em&gt;no recording time limit&lt;/em&gt;!  Other things we like are the ability to customize the cursor appearance, limit the capture to a specific region of your screen, and specify the resulting video format.&lt;/p&gt;
-
-&lt;p&gt;Setup is incredibly easy:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Go to the &lt;a href=&quot;https://www.apowersoft.com/free-online-screen-recorder&quot;&gt;site&lt;/a&gt; and download the Launcher (you only have to do this once)&lt;/li&gt;
-  &lt;li&gt;Now anytime you want to record, just go back to the page and hit “Start Recording”!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;*There is a Desktop version for those who prefer using the full application. However, the free desktop version limits recordings to 3 minutes.&lt;/p&gt;
-
-&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap Up&lt;/h2&gt;
-&lt;p&gt;We hope you find this quarter’s top picks helpful! Leave a comment if you have additions to share with us!&lt;/p&gt;
-</description>
-        <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2017/03/20/lightning-q1-2017.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2017/03/20/lightning-q1-2017.html</guid>
-        
-        <category>skillshare</category>
-        
-        <category>productivity</category>
-        
-        <category>docker</category>
         
         
       </item>
