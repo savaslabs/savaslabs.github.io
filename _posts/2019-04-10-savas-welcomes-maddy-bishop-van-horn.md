@@ -30,6 +30,6 @@ Fun fact: Maddy’s very first day on the job wasn’t from [our Durham, NC offi
  <span class="caption">Hard at work at ReTreat Yo Self.</span>
 </div>
 
-Another fun fact about Maddy: She’s a foster dog mom. She’s making an impact in her community by [http://www.carolinaadoptabulls.com](fostering dogs) and loving them well until (and after) they find a fur-ever home.
+Another fun fact about Maddy: She’s a foster dog mom. She’s making an impact in her community by [fostering dogs](http://www.carolinaadoptabulls.com) and loving them well until (and after) they find a fur-ever home.
 
 Maddy, we are glad you’re here!
