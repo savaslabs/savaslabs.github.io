@@ -15,7 +15,7 @@ Austin, TX March \| 2019
 
 Periodically, the Savas Lab team gathers at a voted-upon location to work in person together, participate in team-building, and prepare for the upcoming year. Most recently we packed our bags, hopped on planes from all over (from as far away as Boston, Rapid City, Reno, and of course, Durham), and touched down in beautiful Austin, TX!
 
-After everyone arrived, we cooked a meal together and settled in our beautiful airbnb before jumping into the two-day, action packed festivities. [Chris](/company/chris-russo) and [Ben](/company/ben-eckerson/) led breakout exercises and team sessions like "Looking Back" -- which reflected on Savas Labs as a company and each of our time spent with the company so far (Spoiler alert: this was **Maddy’s FIRST DAY** of work with the team—what a way to start!) and break out exercises, as well.
+After everyone arrived, we cooked a meal together and settled in our beautiful airbnb before jumping into the two-day, action packed festivities. [Chris](/company/chris-russo) and [Ben](/company/ben-eckerson/) led breakout exercises and team sessions like "Looking Back" -- which reflected on Savas Labs as a company and each of our time spent with the company so far (spoiler alert: this was **Maddy’s FIRST DAY** of work with the team—what a way to start!).
 
 <div class="blog-image-full-width">
 <img alt="Outdoor meetings together at our airbnb" src="/assets/img/blog/outdoor-meeting-austin.jpg">
