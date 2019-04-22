@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Top 5 Things You Need To Know To Speak Drupal"
-date: 2019-04-23
+date: 2019-04-22
 author: Maddy Bishop-Van Horn
 tags: drupal drupal8
 summary: "Drupal takes years to master. However with a focused introduction, beginners can turn the intimidating esoteric terminology into a powerful shared vocabulary with the pros who have been at it for years."
