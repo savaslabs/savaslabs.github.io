@@ -6,9 +6,134 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Apr 2019 01:18:08 +0000</pubDate>
-    <lastBuildDate>Thu, 11 Apr 2019 01:18:08 +0000</lastBuildDate>
+    <pubDate>Mon, 22 Apr 2019 11:54:59 +0000</pubDate>
+    <lastBuildDate>Mon, 22 Apr 2019 11:54:59 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Top 5 Things You Need To Know To Speak Drupal</title>
+        <description>&lt;p&gt;Oh, hello there. I’m Savas Lab’s &lt;a href=&quot;https://savaslabs.com/company/maddy-bishop-van-horn/&quot;&gt;newest project manager&lt;/a&gt;. In addition to being new to Savas, I’m also a Drupal beginner. Before joining Savas, I had experience with several other CMSes (Wordpress, Craft, Joomla!, and Umbraco, in addition to a couple of custom Rails apps.) I didn’t know much about Drupal, but I’d heard enough rumors to be a little afraid.&lt;/p&gt;
+
+&lt;div class=&quot;blog-image-large&quot;&gt;
+&lt;img alt=&quot;The learning curve for popular CMSs&quot; src=&quot;/assets/img/blog/drupal-learning-curve.jpg&quot; /&gt;
+ &lt;span class=&quot;caption&quot;&gt;Often shared image, source unknown.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As I’ve learned more about Drupal, I’ve come to appreciate that it is an incredibly powerful and flexible CMS and there’s a great community of commercial companies and volunteers who help to build and support it. My coworkers at Savas have helped me overcome the first hurdle in learning to work with Drupal: &lt;strong&gt;understanding Drupal terminology.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Before we dive in, I’d like to extend a huge thank you to &lt;a href=&quot;https://savaslabs.com/company/anne-tomasevich/&quot;&gt;Anne&lt;/a&gt; and &lt;a href=&quot;https://savaslabs.com/company/chris-russo/&quot;&gt;Chris&lt;/a&gt; for their mentorship and their contributions to this article.&lt;/p&gt;
+
+&lt;p&gt;Let’s get started.&lt;/p&gt;
+
+&lt;h2 id=&quot;drupal-terminology&quot;&gt;Drupal Terminology&lt;/h2&gt;
+
+&lt;p&gt;I’ll admit it: Drupal terminology is not very intuitive. This article lists the key terms and concepts that I’ve found necessary to get started. I’ll break it into five categories:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Drupal code&lt;/li&gt;
+  &lt;li&gt;Content&lt;/li&gt;
+  &lt;li&gt;Taxonomy&lt;/li&gt;
+  &lt;li&gt;Users&lt;/li&gt;
+  &lt;li&gt;Views&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;1-drupal-code&quot;&gt;1. DRUPAL CODE&lt;/h3&gt;
+
+&lt;p&gt;What is Drupal? When we discuss the software package itself, we usually refer to one of the three subsections of code that have specific and distinct purposes:&lt;/p&gt;
+
+&lt;h4 id=&quot;drupal-core&quot;&gt;Drupal Core&lt;/h4&gt;
+
+&lt;p&gt;The codebase that makes up the basic “core” functionality of Drupal. It’s open source and updated consistently by the Drupal community. When writing this, Drupal 8 was the latest, stable version. The move from Drupal 7 to 8 is an investment, but &lt;a href=&quot;https://savaslabs.com/2017/11/08/cost-of-drupal-7.html&quot;&gt;it’s worth it&lt;/a&gt; and represents the last time such a substantial effort will be required to upgrade.&lt;/p&gt;
+
+&lt;h4 id=&quot;modules&quot;&gt;Modules&lt;/h4&gt;
+
+&lt;p&gt;A module is a directory of code that extends Drupal features/functionality. Drupal core comes with some modules, and many others are freely available to be downloaded. The Drupal community develops and shares these modules outside of core and they are often referred to as “contrib” (short for contributed). If needed, developers can create &lt;strong&gt;custom&lt;/strong&gt; modules for specific functionality for a given client or project. &lt;em&gt;(Wordpress translation: Modules are like plugins, although they generally require more development knowledge to install and maintain.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;themes&quot;&gt;Themes&lt;/h4&gt;
+
+&lt;p&gt;The Theme is the part of the Drupal codebase that determines how the site and its content are displayed. Theme code includes HTML markup, CSS, JavaScript, and Drupal configuration files. Savas Labs’s clients nearly always require custom theme development, and fortunately Drupal supports an efficient, sophisticated means to build off of or “extend” base themes which reduces the effort to develop and maintain custom themes.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-content&quot;&gt;2. CONTENT&lt;/h3&gt;
+
+&lt;p&gt;Content refers to the copy, images, and other media that make up a website.&lt;/p&gt;
+
+&lt;h4 id=&quot;content-type&quot;&gt;Content type&lt;/h4&gt;
+
+&lt;p&gt;A collection of fields created and defined by a developer via code or a site builder via the web admin interface. Each field has a set data type, limits, and display specifications. Drupal Core comes with some basic content types, like “article” and “basic page.” Drupal core ships with a couple of basic content types and site builders may define any number of additional content types as the site requires.&lt;/p&gt;
+
+&lt;h4 id=&quot;node&quot;&gt;Node&lt;/h4&gt;
+
+&lt;p&gt;A piece of content created by a content editor. Each node has an associated content type. We can display nodes in a variety of ways across the site (we can think of it as a page, although it can be presented in other ways too. These display options are configured by developers by using &lt;strong&gt;views&lt;/strong&gt; - more on that below).&lt;/p&gt;
+
+&lt;h4 id=&quot;paragraph&quot;&gt;Paragraph&lt;/h4&gt;
+
+&lt;p&gt;Paragraphs are a powerful feature of Drupal 8 that did not exist in previous versions. Site builders may define Paragraph types, and they can have fields that include text, media, buttons, and more. (I repeat: paragraphs are not just for text.) I like to think of Paragraphs as components that admins can add to a &lt;strong&gt;node&lt;/strong&gt; (which, remember, we can think of as a page). Developers can add &lt;strong&gt;paragraph&lt;/strong&gt; fields to &lt;strong&gt;content types&lt;/strong&gt; to allow content editors to add a variety of &lt;strong&gt;paragraph types&lt;/strong&gt; to a node.&lt;/p&gt;
+
+&lt;!-- To be honest this seems too complex for beginners - maybe linking to a resource or having an animated GIF inline here to show what a paragraph is would go a long way to help beginners --&gt;
+
+&lt;h4 id=&quot;blocks&quot;&gt;Blocks&lt;/h4&gt;
+
+&lt;p&gt;Blocks are a way to put content in different regions of the site. They can be turned on and off for different pages. Take the example of a sidebar with three distinct pieces of content in it: “latest news”, “relevant content” and “ newsletter signup”. The &lt;strong&gt;region&lt;/strong&gt; would be the sidebar, and the three distinct pieces of content (“latest news”, “relevant content” and “newsletter signup”) would each be a &lt;strong&gt;block&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-taxonomy&quot;&gt;3. TAXONOMY&lt;/h3&gt;
+
+&lt;p&gt;Taxonomy is an essential and powerful part of Drupal. It is a system for classification that Drupal uses to define relationships between content. Think tags and keywords associated with a blog article.&lt;/p&gt;
+
+&lt;h4 id=&quot;vocabulary&quot;&gt;Vocabulary&lt;/h4&gt;
+
+&lt;p&gt;A vocabulary is a taxonomy type. Like content types, Vocabularies are a defined collection of fields and can have visible pages, but often they do not. Vocabularies are meant to be “tags” for content rather than pieces of content themselves. However, developers can define a vocabulary using any collection of fields, so it is technically possible for a Vocabulary to show up as a page, just uncommon.&lt;/p&gt;
+
+&lt;h4 id=&quot;term&quot;&gt;Term&lt;/h4&gt;
+
+&lt;p&gt;An item within a Vocabulary. You can think of a term as a “tag,” although they can have additional fields, as I mentioned above. &lt;strong&gt;Terms&lt;/strong&gt; are to &lt;strong&gt;Vocabularies&lt;/strong&gt; as &lt;strong&gt;nodes&lt;/strong&gt; are to &lt;strong&gt;content types&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-users&quot;&gt;4. USERS&lt;/h3&gt;
+
+&lt;p&gt;One of Drupal’s strengths compared to other CMSes is its highly customizable user permissions and roles. But what does that mean?&lt;/p&gt;
+
+&lt;h4 id=&quot;user&quot;&gt;User&lt;/h4&gt;
+
+&lt;p&gt;A user is anyone interacting with the site. Users can be &lt;strong&gt;anonymous&lt;/strong&gt; (any site visitor who is not logged in) or &lt;strong&gt;authenticated&lt;/strong&gt; (a visitor who logged in with an account).&lt;/p&gt;
+
+&lt;h4 id=&quot;role&quot;&gt;Role&lt;/h4&gt;
+
+&lt;p&gt;A role is a defined type of user with assigned permissions. &lt;strong&gt;Anonymous&lt;/strong&gt; is one role. &lt;strong&gt;Authenticated&lt;/strong&gt; users can be given any number of defined roles, for example: “logged-in user”, “content creator”, and “administrator”. Administrators can create and customize as many roles as they want.&lt;/p&gt;
+
+&lt;h4 id=&quot;permission&quot;&gt;Permission&lt;/h4&gt;
+
+&lt;p&gt;Permissions are levels of access that can be granted to roles by site administrators. Each &lt;strong&gt;role&lt;/strong&gt; can have a different view and edit permissions (e.g. “view published content”, “administer users”, “create new content”).&lt;/p&gt;
+
+&lt;h3 id=&quot;5-views&quot;&gt;5. VIEWS&lt;/h3&gt;
+
+&lt;p&gt;Drupal Views is one of the more powerful features of a Drupal site. It gives site administrators a high level of control and sophistication for grouping and presenting content across the site.&lt;/p&gt;
+
+&lt;h4 id=&quot;views-module&quot;&gt;Views Module&lt;/h4&gt;
+
+&lt;p&gt;The Views module allows administrators and site designers to create, manage, and display lists of content. Each list managed by the views module is known as a &lt;strong&gt;view&lt;/strong&gt;, and the output of a view is known as a &lt;strong&gt;display&lt;/strong&gt;. Admins can create displays in either block or page form, and a single view may have multiple displays.&lt;/p&gt;
+
+&lt;h4 id=&quot;view-mode&quot;&gt;View Mode&lt;/h4&gt;
+
+&lt;p&gt;Using the &lt;strong&gt;Views module&lt;/strong&gt;, developers can configure each &lt;strong&gt;content type&lt;/strong&gt; to have various &lt;strong&gt;view modes&lt;/strong&gt;. With view modes, admins can output a &lt;strong&gt;node&lt;/strong&gt; in a specific format with a particular set of fields. This format is known as a &lt;strong&gt;display&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, a developer may make a “Preview” view mode, which will display a subset of the fields of a given &lt;strong&gt;content type&lt;/strong&gt;. By editing the fields of the node, content editors can change the content displayed in the “Preview” view mode. Another good example of a view mode that a developer may configure is a “search result” view mode, which will define, for each content type, how to display that content on the search page.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Good news: we made it! I won’t claim that you’re now completely fluent in Drupal, but you should have the foundation to understand and talk about the building blocks of a Drupal site with a developer or site builder.&lt;/p&gt;
+
+&lt;p&gt;Are you also new to Drupal? Or are you a Drupal pro? Either way, leave a comment below with your favorite resources.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2019/04/22/top-5-things-to-know-to-speak-drupal.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2019/04/22/top-5-things-to-know-to-speak-drupal.html</guid>
+        
+        <category>drupal</category>
+        
+        <category>drupal8</category>
+        
+        
+      </item>
     
       <item>
         <title>Savas Brings On (another) Project Manager</title>
@@ -940,105 +1065,6 @@ But if D8 offers features you want, consider earlier adoption.&lt;/p&gt;
         <category>drupal8</category>
         
         <category>drupal-planet</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Savaslabs.com Redesign</title>
-        <description>&lt;p&gt;At Savas Labs, we are a forward-looking bunch, much like our neighbors around the corner from our Durham office, The Republik, who wear that badge a little more… overtly:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/the-republik-building.jpg&quot; alt=&quot;Front of The Republik building&quot; class=&quot;blog-image-full-width&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Though future-focused-first, we &lt;em&gt;also&lt;/em&gt; recognize the importance of history and the value of a little reflection. After all, we  &lt;em&gt;must&lt;/em&gt; learn from our mistakes to truly thrive.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Know from whence you came. If you know whence you came, there are absolutely no limitations to where you can go. - James Baldwin&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Aside: I can’t recommend the award-winning documentary about James Baldwin’s legacy &lt;a href=&quot;http://www.iamnotyournegrofilm.com/&quot;&gt;&lt;em&gt;I am not your negro&lt;/em&gt;&lt;/a&gt; strongly enough. See it.&lt;/p&gt;
-
-&lt;h2 id=&quot;from-whence-we-came&quot;&gt;From whence we came…&lt;/h2&gt;
-&lt;p&gt;Savas Labs matured substantially in 2016, refining processes and adding new team members who brought complementary skills. It’s both intriguing and humbling to reflect on just how much we learned in the past year. It wasn’t all &lt;a href=&quot;https://www.google.com/search?biw=1524&amp;amp;bih=979&amp;amp;tbm=isch&amp;amp;sa=1&amp;amp;q=puppy+dogs+and+ice+cream&amp;amp;oq=puppy+dogs+and+ice+cream&quot;&gt;puppy dogs and ice cream&lt;/a&gt;, but the successes and the challenges helped us carve out our place in the world. We worked with consultants, analyzed and soul-searched to elicit what it is we love doing &lt;em&gt;and&lt;/em&gt; are really good at as a growing team. One manifestation of these pursuits was the establishment of &lt;a href=&quot;/company/mission-and-values/&quot;&gt;our core values&lt;/a&gt;. They help hold us and future Savasians (coining the demonym &lt;em&gt;Savasian&lt;/em&gt; - another thing we did in 2016) accountable to an agreed upon set of principles which drive how we treat one another and our partners.&lt;/p&gt;
-
-&lt;p&gt;In addition to internal analysis, we studied our best projects to see what characteristics in partners and their challenges for which we are best fit. We uncovered that what we enjoy most and truly &lt;a href=&quot;/company/mission-and-values/#excel&quot;&gt;excel&lt;/a&gt; at are projects with strategic and complex needs that lean heavily on our deep Drupal expertise usually requiring inter-departmental engagement within organizations.&lt;/p&gt;
-
-&lt;p&gt;Ergo: our positioning statement that appears front-and-center on our &lt;a href=&quot;/&quot;&gt;homepage&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;We craft elegant Drupal web systems that propel organizations&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;why-the-redesign&quot;&gt;Why the redesign&lt;/h2&gt;
-
-&lt;p&gt;You know, the typical reason, because we wanted to :wink:. In truth, we were due for a redesign as the last time we did this was &lt;a href=&quot;/2015/04/01/building-our-site.html&quot;&gt;over two years ago&lt;/a&gt;. Additionally, given our growth, we felt our website did not reflect the quality of work we’ve been doing. As we updated our message, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, &lt;a href=&quot;/company/oksana-cyrwus/&quot;&gt;Oksana Cyrwus&lt;/a&gt;, to create a vision of our team’s identity.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg&quot; alt=&quot;Many devices testing responsive&quot; class=&quot;blog-image-full-width&quot; /&gt;
-&lt;span class=&quot;caption&quot;&gt;Oksana’s cross browser testing lab&lt;/span&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;construction-materials&quot;&gt;Construction Materials&lt;/h2&gt;
-
-&lt;p&gt;Although we’re usually building client websites in Drupal, we chose to continue with the static site generator Jekyll which we’ve &lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;written about before&lt;/a&gt; as our platform. We believe firmly in using the right tool for the job and use a multitude of technologies, frameworks and programming languages in any given &lt;del&gt;Sunday&lt;/del&gt; workday.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/construction.jpg&quot; class=&quot;blog-image-full-width&quot; alt=&quot;Man cutting wood&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As &lt;a href=&quot;https://twitter.com/codeguy&quot;&gt;Josh Lockhart&lt;/a&gt; a local author and creator of the &lt;a href=&quot;https://www.slimframework.com/&quot;&gt;Slim PHP MicroFramework&lt;/a&gt; advised a developer audience at a recent PHP conference talk (&lt;a href=&quot;https://youtu.be/hH4HyfXiH9Y?t=924&quot;&gt;Video link&lt;/a&gt;):&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Be aware that other tools exist and that they may be better suited for certain tasks.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Ultimately, for us, the benefits outweighed the drawbacks:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/inertia.jpg&quot; alt=&quot;man pushing a rock: inertia&quot; class=&quot;blog-image-right&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;bennies&quot;&gt;Bennies&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;No database back-end, meaning reduced security threats and reduced hosting complexity. We’re able to host for free on &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;A &lt;a href=&quot;/2016/10/19/optimizing-jekyll-with-gulp.html&quot;&gt;highly-performant framework&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2016/10/25/deploy-jekyll-with-travis.html&quot;&gt;Ease of deployment&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Efficient for our workflow as it is developer oriented.&lt;/li&gt;
-  &lt;li&gt;Inertia.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;drawbacks&quot;&gt;Drawbacks&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Requires Ruby ecosystem competency which often presents the need to acquire new skills for Drupalers.&lt;/li&gt;
-  &lt;li&gt;Requires developer-level skills to update.&lt;/li&gt;
-  &lt;li&gt;Not as robust of an ecosystem as Drupal for example.
-    &lt;ol&gt;
-      &lt;li&gt;Example: When we were dissatisfied with our comment options, we &lt;a href=&quot;/2016/04/20/squabble-comments.html&quot;&gt;built our own server&lt;/a&gt; on guess what, a different framework. This took us time and is less feature-rich than what we’d get with Drupal out of the box.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;These drawbacks, though not without their costs, are also opportunities for us to be a part of the broader web ecosystem and learn. The more exposure to best-practices and other frameworks, the more we can borrow from and employ them in our work, though it &lt;em&gt;is&lt;/em&gt; an investment to develop the expertise.&lt;/p&gt;
-
-&lt;p&gt;Jekyll works for us since the &lt;a href=&quot;/company#team&quot;&gt;team of savvy Savasians&lt;/a&gt; is comfortable rapidly learning a new workflow to publish updates to our website. Additionally our website needs are relatively simple, certainly compared to the needs of many of our partners. Our partners often have personnel with a wide range of technical training and often require sophisticated content models, granular authentication and permissions, advanced content publishing workflows among many other common needs for which a modular ecosystem of plugins like Drupal’s would be better suited.&lt;/p&gt;
-
-&lt;p&gt;Alongside Jekyll, we used &lt;a href=&quot;http://trulia.github.io/hologram/&quot;&gt;Hologram&lt;/a&gt; developed by Trulia for our &lt;a href=&quot;/styleguide&quot;&gt;style guide&lt;/a&gt;. It proved to be a great workflow for our designer, front-end developer and myself to interact efficiently and see updated results in the browser rapidly.&lt;/p&gt;
-
-&lt;h2 id=&quot;timing&quot;&gt;Timing&lt;/h2&gt;
-
-&lt;p&gt;And today… Today we celebrate our independ… no - we celebrate our redesigned website launch and the &lt;a href=&quot;https://events.drupal.org/baltimore2017&quot;&gt;Drupalcon Baltimore&lt;/a&gt; kickoff simultaneously! Coincidence? Of course not! However, I would like to give a shoutout to my entire team for making this happen on a tight schedule and an extra big-ups to Anne and Oksana who put in extra hours in the weeks leading up to make today possible. It was fun to be a part of the building process again; I found myself feverishly reloading the site every time new code was pushed up, which was often many, many times a day.&lt;/p&gt;
-
-&lt;p&gt;So now it’s time to show off our fancy new website complete with business cards to boot! Tell us what you think &lt;a href=&quot;#js-comments&quot;&gt;in comments&lt;/a&gt; or on &lt;a href=&quot;https://twitter.com/intent/tweet?text=We%20think%20the%20redesign%20is%20likely,%20nay,%20probable,%20to%20bring%20about%20world%20peace%20%F0%9F%8C%8F%20%E2%98%AE%EF%B8%8F%20Congrats%20%40savaslabs%21&amp;amp;source=webclient&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Got the new fully recyclable ♻️  green business cards in honor of &lt;a href=&quot;https://twitter.com/hashtag/EarthDay2017?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#EarthDay2017&lt;/a&gt; 🌏 📅  just in time for &lt;a href=&quot;https://twitter.com/hashtag/Drupalcon?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Drupalcon&lt;/a&gt; &lt;a href=&quot;https://t.co/YMg90yU1UT&quot;&gt;pic.twitter.com/YMg90yU1UT&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@SavasLabs) &lt;a href=&quot;https://twitter.com/SavasLabs/status/854730073152385027?ref_src=twsrc%5Etfw&quot;&gt;April 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2017/04/24/savas-labs-website-redesign.html</guid>
-        
-        <category>design</category>
-        
-        <category>user-experience</category>
-        
-        <category>jekyll</category>
         
         
       </item>
