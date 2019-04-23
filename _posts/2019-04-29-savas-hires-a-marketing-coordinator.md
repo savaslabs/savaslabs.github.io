@@ -16,7 +16,6 @@ Hello, world! ([is that right?](https://en.wikipedia.org/wiki/%22Hello,_World!%2
 
 I’ll be working on—you guessed it—all things marketing! Blog posts (some more exciting posts coming very soon), social media (come say hi [here](https://twitter.com/SavasLabs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [here](https://www.facebook.com/savaslabs/?modal=admin_todo_tour), or [here](https://www.linkedin.com/company/savas-labs/), and events will be my domain. Plus some other exciting things we may have up our sleeves!
 
-
 <div class="blog-image-large">
 <img alt="Oh boy! This is gonna be good, I can tell. -Dory" src="/assets/img/blog/oh-boy-nemo.gif">
 </div>
@@ -29,13 +28,13 @@ I learned quickly, that here at Savas, music preferences are taken VERY seriousl
 * Anything [can be vetoed](https://twitter.com/SavasLabs/status/1084825113080578048) by anyone at anytime, no questions asked
 * Song requests/suggestions are welcomed
 
-I knew immediately that my first suggestion was going to make an impression on this music-loving team (and I had learned that [someone](https://savaslabs.com/company/chris-russo/) on the team had an affinity for pop, specifically of the 90’s/2000’s variety). 
+I knew immediately that my first suggestion was going to make an impression on this music-loving team (and I had learned that [someone](https://savaslabs.com/company/chris-russo/) on the team had an affinity for pop, specifically of the 90’s/2000’s variety).
 
-Challenge accepted. 
- 
+Challenge accepted.
+
 Suggestion: [2002 by Anne-Marie](https://open.spotify.com/track/2BgEsaKNfHUdlh97KmvFyo)
 
-Friends, I’m so glad to report that — much like me taking the position here — it was a great choice. 
+Friends, I’m so glad to report that — much like me taking the position here — it was a great choice.
 
 <div class="blog-image-large">
 <img alt="take a bow" src="/assets/img/blog/take-a-bow.gif">
