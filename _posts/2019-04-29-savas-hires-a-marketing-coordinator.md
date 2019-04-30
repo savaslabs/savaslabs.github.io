@@ -14,7 +14,7 @@ featured_image_alt: "Jordan Nelson working at her computer"
 
 Hello, world! ([is that right?](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program)) My name is [Jordan](https://savaslabs.com/company/jordan-nelson/), and I’m the newest addition to the Savas Team. I’ve joined as the Marketing Coordinator!
 
-I’ll be working on—you guessed it—all things marketing! Blog posts (some more exciting posts coming very soon), social media (come say hi [here](https://twitter.com/SavasLabs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [here](https://www.facebook.com/savaslabs/?modal=admin_todo_tour), or [here](https://www.linkedin.com/company/savas-labs/), and events will be my domain). Plus some other exciting things we may have up our sleeves!
+I’ll be working on—you guessed it—all things marketing! Blog posts (some additional exciting posts are coming very soon), social media (come say hi [here](https://twitter.com/SavasLabs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [here](https://www.facebook.com/savaslabs/?modal=admin_todo_tour), or [here](https://www.linkedin.com/company/savas-labs/)), and events will be my domain. Plus some other exciting things we may have up our sleeves!
 
 <div class="blog-image-large">
 <img alt="Oh boy! This is gonna be good, I can tell. -Dory" src="/assets/img/blog/oh-boy-nemo.gif">
@@ -24,9 +24,9 @@ I come from a social media/email marketing background—working in higher educat
 
 I learned quickly, that here at Savas, music preferences are taken VERY seriously (especially locally in our [Durham office](https://savaslabs.com/durham/)). I was warned that music was a big part of the [Savas culture (It’s great here—you should come work with us, too!)](https://savaslabs.com/careers/) and that the “rules” include the following:
 
-* Everything is given a chance
-* Anything [can be vetoed](https://twitter.com/SavasLabs/status/1084825113080578048) by anyone at anytime, no questions asked
-* Song requests/suggestions are welcomed
+* We give _all kinds_ of music a chance
+* Anyone can [veto any song](https://twitter.com/SavasLabs/status/1084825113080578048) at any time, no questions asked
+* We always encourage song requests/suggestions
 
 I knew immediately that my first suggestion was going to make an impression on this music-loving team (and I had learned that [someone](https://savaslabs.com/company/chris-russo/) on the team had an affinity for pop, specifically of the 90’s/2000’s variety).
 
