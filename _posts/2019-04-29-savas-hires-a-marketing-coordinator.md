@@ -14,7 +14,7 @@ featured_image_alt: "Jordan Nelson working at her computer"
 
 Hello, world! ([is that right?](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program)) My name is [Jordan](https://savaslabs.com/company/jordan-nelson/), and I’m the newest addition to the Savas Team. I’ve joined as the Marketing Coordinator!
 
-I’ll be working on—you guessed it—all things marketing! Blog posts (some more exciting posts coming very soon), social media (come say hi [here](https://twitter.com/SavasLabs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [here](https://www.facebook.com/savaslabs/?modal=admin_todo_tour), or [here](https://www.linkedin.com/company/savas-labs/), and events will be my domain). Plus some other exciting things we may have up our sleeves!
+I’ll be working on—you guessed it—all things marketing! Blog posts (some more exciting posts coming very soon), social media (come say hi [here](https://twitter.com/SavasLabs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [here](https://www.facebook.com/savaslabs/?modal=admin_todo_tour), or [here](https://www.linkedin.com/company/savas-labs/)), and events will be my domain. Plus some other exciting things we may have up our sleeves!
 
 <div class="blog-image-large">
 <img alt="Oh boy! This is gonna be good, I can tell. -Dory" src="/assets/img/blog/oh-boy-nemo.gif">
