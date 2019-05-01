@@ -18,17 +18,8 @@ redirect_from:
 twitter: chris_a_russo
 instagram: chris_a_russo
 image: "/assets/img/team/chris/chris-square-outside.jpg"
+website: https://chrisrus.so/
+
 ---
 
-Chris has been a professional web developer since 2007 and made his first website
-on geocities.com when he was 11. He was a big fan of
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink"><code>&lt;blink&gt;&lt;/blink&gt;</code></a>
-and was deeply saddened when it was deprecated. For Savas Labs, Chris relishes in
-the success and growth of his clients and team, and writing in the third
-person. When Chris is not behind the computer, he’s often on a bicycle. He is
-the former board chair of nonprofit hospitality network
-[WarmShowers.org](https://www.warmshowers.org), served on the board of his
-local bicycle advocacy organization [Bike Durham](http://www.bikedurham.org) for
-3.5 years, founded a bicycle-powered food scraps recycling company called
-[Tilthy Rich Compost](http://www.tilthyrichcompost.com), and rode his bicycle
-6,000 miles across the U.S. in the summer of 2008.
+Chris made his first foray into the web when he was 11 years old, creating a site on geocities.com (young people won't know what this is). He moved to the Triangle from Boston, MA in 2010 and shortly after that started a bicycle-powered organics recycling service he coined [Tilthy Rich Compost](https://tilthyrichcompost.com/), get [it](https://www.merriam-webster.com/dictionary/tilth)? _Rooted_ in his passions for the environment and justice (a skosh above his affinity to write in the third person), bicycles are an inextricable element of Chris's professional and personal life. Whether it be a 4-month [ride across the U.S.A](https://chrisarusso.github.io/2008-trans-am/) in 2008], biking from Boston to the [White House](https://www.facebook.com/chris.andrews.russo/posts/10105607797760221) to protest the Keystone XL Pipeline, leading a [100,000+ member bicycle/hospitality focused global nonprofit](https://www.warmshowers.org/) through a challenging transition, or simply riding into the [Savas Labs office in downtown Durham](https://savaslabs.com/durham/) each day, you're likely to find Chris on or near a bike. Wave to him; he's friendly. Chris constantly schemes on how to use his resources best to be a force for positive change. He'd love (and needs) your help!
