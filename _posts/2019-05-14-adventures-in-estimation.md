@@ -8,7 +8,7 @@ summary: "Estimating projects and their constituent tasks is an essential part o
 description: "Estimating projects and their constituent tasks is an essential part of our success at Savas Labs. However, estimation is notoriously difficult to do well. We're proud of our (imperfect) track record, and share some perspective on how to do estimates better."
 image: "/assets/img/blog/story-points-estimating.jpg"
 featured_image: "/blog/story-points-estimating.jpg"
-featured_image_alt: "time estimating icons"
+featured_image_alt: "time estimating icons source: https://rubygarage.org/blog/3-reasons-to-estimate-with-story-points"
 
 ---
 Excellent project management starts with accurate project time estimation and is important for several reasons:
@@ -74,6 +74,6 @@ A project typically fits into one of two broad categories: one in which we have 
 
 This direct, constructive feedback is something that I would only consider within a team with a substantial "[psychological safety](https://www.inc.com/justin-bariso/google-spent-years-studying-effective-teams-this-single-quality-contributed-most-to-their-success.html)," which we [work hard to cultivate and sustain](/company/mission-and-values/) at Savas. The feedback is a gift that helps avoid potential future pitfalls, but a person will only hear it from someone they trust and know has shared  goals.
 
-When we complte the internal work, we produce one of the most beneficial outputs from the discovery process: a more detailed plan with more accurate schedule and budget.
+When we complete the internal work, we produce one of the most beneficial outputs from the discovery process: a more detailed plan with a more accurate schedule and budget.
 
 Setting more accurate time expectations is better for everyone because we create the necessary space—and far less anxiety and pressure—to do better quality work. It creates reliability for the client, for ourselves and our coworkers and generally keeps everything running smoothly.
