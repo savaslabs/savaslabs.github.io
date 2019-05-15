@@ -87,17 +87,17 @@ To run the tests:
 `$ bash _scripts/run-tests.sh`
 
 ## Writing blog posts
-To ensure writing blog posts is accesible to everyone on our team, we draft blog posts in google docs:
-1. Make a copy of the google doc [template](https://docs.google.com/document/d/1lT9YThBQduRzv6rb3wmlIu2KepoWoG3pgodYgZqy_iQ/edit?usp=sharing), and draft the post.
+To ensure writing blog posts is accessible to everyone on our team, we draft blog posts in Google Docs:
+1. Make a copy of the Google Doc [template](https://docs.google.com/document/d/1lT9YThBQduRzv6rb3wmlIu2KepoWoG3pgodYgZqy_iQ/edit?usp=sharing), and create the post.
 2. Share the draft with reviewers. Reviewers will sign off on content and run the blog post through Grammarly.
 
 **After blog content is finalized**, a developer will follow instructions in [our style guide](https://savaslabs.com/styleguide/blog.html):
-1. Convert the google doc to markdown.
+1. Convert the Google Doc to markdown.
     - [Docs to Markdown drive add-on](https://gsuite.google.com/marketplace/app/docs_to_markdown/700168918607) is helpful, but formatting must be confirmed manually. 
 2. Push branch and create a PR
 3. Stage the post
     - `git push origin [branch-name]:stage1` pushes the branch to: [https://stage1--savas-staging.netlify.com](https://stage1--savas-staging.netlify.com)
-    - Other options: stage1 - stage6
+    - Other options: `stage1`, `stage2`, ... `stage6`
 4. After PR approval, merge to `source` to publish the blog post to https://savaslabs.com/blog/
 
 ## Comments
