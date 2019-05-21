@@ -33,7 +33,7 @@ Ergo: our positioning statement that appears front-and-center on our [homepage](
 
 ## Why the redesign
 
-You know, the typical reason, because we wanted to :wink:. In truth, we were due for a redesign as the last time we did this was [over two years ago](/2015/04/01/building-our-site.html). Additionally, given our growth, we felt our website did not reflect the quality of work we've been doing. As we updated our message, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, [Oksana Cyrwus](/company/oksana-cyrwus/), to create a vision of our team's identity.
+You know, the typical reason, because we wanted to :wink:. In truth, we were due for a redesign as the last time we did this was [over two years ago](/2015/04/01/building-our-site.html). Additionally, given our growth, we felt our website did not reflect the quality of work we've been doing. As we updated our message, we recognized copy updates alone would be insufficient to demonstrate our capabilities. In the process, we took advantage of the artistic skillset of one of our 2016 additions to the team, Oksana Cyrwus, to create a vision of our team's identity.
 
 <img src="/assets/img/blog/cross-browser-testing-lab-redesign-2017.jpg" alt="Many devices testing responsive" class="blog-image-full-width">
 <span class="caption">Oksana's cross browser testing lab</span>
