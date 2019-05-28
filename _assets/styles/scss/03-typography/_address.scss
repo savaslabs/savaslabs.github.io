@@ -1,0 +1,26 @@
+/**
+ * @file
+ *
+ * Typography: address styles.
+ */
+
+/*doc
+---
+title: Address
+name: address
+category: Typography
+---
+
+```html_example
+<address>
+  Savas Labs<br>
+  212 W Main Street, Suite 303<br>
+  Durham, NC 27701
+</address>
+```
+
+*/
+
+address {
+  font-style: normal;
+}
