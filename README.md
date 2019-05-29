@@ -93,7 +93,7 @@ To ensure writing blog posts is accessible to everyone on our team, we draft blo
 
 **After blog content is finalized**, a developer will follow instructions in [our style guide](https://savaslabs.com/styleguide/blog.html):
 1. Convert the Google Doc to markdown.
-    - [Docs to Markdown drive add-on](https://gsuite.google.com/marketplace/app/docs_to_markdown/700168918607) is helpful, but formatting must be confirmed manually. 
+    - [Docs to Markdown drive add-on](https://gsuite.google.com/marketplace/app/docs_to_markdown/700168918607) is helpful, but formatting must be confirmed manually.
 2. Push branch and create a PR
 3. Stage the post
     - `git push origin [branch-name]:stage1` pushes the branch to: [https://stage1--savas-staging.netlify.com](https://stage1--savas-staging.netlify.com)
