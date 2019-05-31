@@ -1,6 +1,6 @@
 ---
 layout: case-study
-featured: 1
+featured: 0
 weight: -5
 project_title: HIV Prevention Trials Network (HPTN) Site Redesign
 slug: hptn
