@@ -6,7 +6,6 @@ job_title: Senior UX Design Strategist
 linkedin: sposhea
 codepen: os
 github: sposhe
-image: "/assets/img/team/chris/chris-square-outside.jpg"
 
 ---
 
