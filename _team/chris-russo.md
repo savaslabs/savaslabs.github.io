@@ -17,7 +17,6 @@ redirect_from:
   - /team/chris-russo/
 twitter: chris_a_russo
 instagram: chris_a_russo
-image: "/assets/img/team/chris/chris-square-outside.jpg"
 website: https://chrisrus.so/
 
 ---

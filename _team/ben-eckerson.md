@@ -7,7 +7,6 @@ linkedin: eckerson
 twitter: beneckerson
 instagram: beneckerson
 website: http://beneckerson.com/
-image: "/assets/img/team/ben-eckerson/ben-eckerson-square-outside.jpg"
 
 ---
 
