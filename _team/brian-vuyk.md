@@ -1,5 +1,6 @@
 ---
 name: Brian Vuyk
+layout: team
 slug: brian-vuyk
 job_title: Senior Drupal Developer
 linkedin: brianvuyk
