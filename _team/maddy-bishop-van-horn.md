@@ -6,6 +6,7 @@ job_title: Project Manager
 linkedin: mbishopvanhorn
 drupal: maddybvh
 github: maddybvh
+image: "/assets/img/team/maddy-bishop-van-horn/maddy-bishop-van-horn-square-outside.jpg"
 
 ---
 

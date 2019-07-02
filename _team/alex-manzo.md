@@ -8,6 +8,7 @@ twitter: alexmanzo_
 codepen: alexmanzo
 github: alexmanzo
 drupal: alexmanzo
+image: "/assets/img/team/alex-manzo/alex-manzo-square-outside.jpg"
 
 ---
 

@@ -4,7 +4,7 @@ layout: team
 slug: brian-vuyk
 job_title: Senior Drupal Developer
 linkedin: brianvuyk
-# image: "/assets/img/team/brian-vuyk/brian-vuyk-square-outside.png"
+image: "/assets/img/team/brian-vuyk/brian-vuyk-square-outside.png"
 
 ---
 

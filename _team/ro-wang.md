@@ -10,6 +10,7 @@ linkedin: laurenrowang
 resume: http://stackoverflow.com/cv/rowang
 redirect_from:
   - /team/ro-wang/
+image: "/assets/img/team/ro/ro-square-outside.jpg"
 
 ---
 

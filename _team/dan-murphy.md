@@ -14,6 +14,7 @@ badges:
     link: "https://certification.acquia.com/user/1651416"
 redirect_from:
   - /team/dan-murphy/
+image: "/assets/img/team/dan/dan-square-outside.jpg"
 
 ---
 

@@ -6,6 +6,7 @@ job_title: Marketing Coordinator
 linkedin: jordancoakleynelson
 twitter: jordanENelson_
 instagram: jordan_e_nelson
+image: "/assets/img/team/jordan-nelson/jordan-nelson-square-outside.jpg"
 
 ---
 
