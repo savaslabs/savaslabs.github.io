@@ -22,12 +22,12 @@ image: "/assets/img/jobs/drupal 8 logo isolated.png"
 
 ## The position
 
-We are looking to hire a **mid-level to senior front-end Drupal developer** to add to our core team. Along with extensive Drupal theming experience, we greatly honor a desire for continuous growth and learning. You will have the chance to work with a stellar team that is **primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are **looking to fill the role in [Durham, NC](/durham)** but will consider the right remote candidate. At Savas, you will have a voice in the kind of work you find most rewarding, and we will do what we can to meet your preferences.
+We are looking to hire a **mid-level to senior front-end Drupal developer** to add to our core team. Along with extensive Drupal theming experience, we greatly honor a desire for continuous growth and learning. You will have the chance to work with a stellar team that is **primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are **looking to fill the role in [Durham, NC](/durham)**. At Savas, you will have a voice in the kind of work you find most rewarding, and we will do what we can to meet your preferences.
 
 ## Working at Savas Labs
 
 At Savas Labs, we prioritize a few things. We like people who are enjoyable to work with. We **learn** from and **teach** one another, and often the result is others learn as well either via [blog posts](/blog),
- [conference presentations,](/results/open-source/#presentations) or [social media](https://twitter.com/savaslabs). We dedicate time each week for self-improvement, socializing, and collaboration. We encourage a flexible work schedule so long as we uphold our commitments to one another and our clients. We value **openness** and encourage our team members to push _and_ recognize the boundaries of their expertise in a given area. We are honest, yet **respectful**; this is not a cut-throat environment, but rather a supportive one. We take a lot of pride in the quality of our work. We value a work/life **balance** that keeps us productive and happy. We like to have **fun** and we take [our values](/company/mission-and-values/) seriously. **We greatly embrace diversity,** value hard work, and use emoji _fairly often_ :+1:. You'll like it here.
+ [conference presentations,](/results/open-source/#presentations) or [social media](https://twitter.com/savaslabs). We dedicate time each week for self-improvement, socializing, and collaboration. We encourage a flexible work schedule so long as we uphold our commitments to one another and our clients. We value **openness** and encourage our team members to push _and_ recognize the boundaries of their expertise in a given area. We are honest, yet **respectful**; this is not a cut-throat environment, but rather a supportive one. We take a lot of pride in the quality of our work. We value a work/life **balance** that keeps us productive and happy. We like to have **fun** and we take [our values](/company/mission-and-values/) seriously. **We greatly embrace inclusivity,** value hard work. You'll like it here.
 
 ### Employment benefits
 
@@ -39,10 +39,10 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + Profit sharing plan
 + Generous PTO
 + Semi-annual team retreats
-+ Weekly team lunches (for on-site Durham, NC employees)
-+ Monthly skill-share sessions
++ Weekly team lunches
++ Biweekly skill-share sessions
 + Conference presentation and attendance opportunities
-+ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
++ 24/7 access to the [American Underground](http://americanunderground.com/)
 + Annual technology stipend
 
 ### Our projects
@@ -61,11 +61,13 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 ### You have experience with:
 
++ Drupal 8
 + Writing custom Drupal themes
 + Designing Drupal content architecture (content types, paragraphs, etc.)
-+ Twig **(Should Drupal 8 be a requirement? Or a bonus?)**
++ Twig
 + CSS and JavaScript
 + Drush
++ PHP
 + The command line
 
 ### You care about:
@@ -77,7 +79,6 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 ### Bonus points for knowledge in:
 
-+ PHP **(note - should this be a requirement?)**
 + Modern JavaScript
 + JavaScript frameworks (e.g. React, Vue, Angular)
 
