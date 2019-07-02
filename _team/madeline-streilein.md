@@ -8,6 +8,7 @@ twitter: madinthebull
 codepen: madinthebull
 github: madinthebull
 drupal: madinthebull
+image: "/assets/img/team/madeline-streilein/madeline-streilein-square-outside.jpg"
 
 ---
 
