@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Savas Brings on Another Front-end Developer"
-date: 2019-07-02
+date: 2019-07-03
 author: Madeline Streilein
 tags: team company-culture
-summary: "Estimating projects and their constituent tasks is an essential part of our success at Savas Labs. However, estimation is notoriously difficult to do well. We're proud of our (imperfect) track record, and share some perspective on how to do estimates better."
-description: "Estimating projects and their constituent tasks is an essential part of our success at Savas Labs. However, estimation is notoriously difficult to do well. We're proud of our (imperfect) track record, and share some perspective on how to do estimates better."
-image: "/assets/img/blog/story-points-estimating.jpg"
-featured_image: "/blog/story-points-estimating.jpg"
-featured_image_alt: "time estimating icons source: https://rubygarage.org/blog/3-reasons-to-estimate-with-story-points"
+summary: “Hello Savas Labs fans! My name is Madeline Streilein and I am one of Savas’ two brand new Junior Front-end Developers (Alex Manzo also joined our burgeoning front-end squad under the tutelage of Anne Tomasevich - keep an eye out for their introduction).“
+description: “Hello Savas Labs fans! My name is Madeline Streilein and I am one of Savas’ two brand new Junior Front-end Developers (Alex Manzo also joined our burgeoning front-end squad under the tutelage of Anne Tomasevich - keep an eye out for their introduction).“
+image: "/assets/img/blog/madeline-dan-computer.jpg"
+featured_image: "/blog/madeline-dan-computer.jpg"
+featured_image_alt: "Madeline and Dan working on computer."
 
 ---
 
