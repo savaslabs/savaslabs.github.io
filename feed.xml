@@ -6,9 +6,59 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Jul 2019 01:41:10 +0000</pubDate>
-    <lastBuildDate>Wed, 03 Jul 2019 01:41:10 +0000</lastBuildDate>
+    <pubDate>Wed, 03 Jul 2019 15:52:14 +0000</pubDate>
+    <lastBuildDate>Wed, 03 Jul 2019 15:52:14 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Savas Brings on Another Front-end Developer</title>
+        <description>&lt;h3 id=&quot;who-am-i&quot;&gt;Who am I?&lt;/h3&gt;
+
+&lt;p&gt;Hello Savas Labs fans! My name is &lt;a href=&quot;https://savaslabs.com/company/madeline-streilein/&quot;&gt;Madeline Streilein&lt;/a&gt;, and I am one of Savas’ two brand new Junior Front-end Developers (&lt;a href=&quot;https://savaslabs.com/company/alex-manzo/&quot;&gt;Alex Manzo&lt;/a&gt; also joined our burgeoning front-end squad under the tutelage of &lt;a href=&quot;https://savaslabs.com/company/anne-tomasevich/&quot;&gt;Anne Tomasevich&lt;/a&gt; - keep an eye out for their introduction). Some random facts about me: I love stone fruit, humidity, satirical news, and using Slack notation on all messaging platforms. I also opened a day spa in my home when I was in elementary school. It wasn’t &lt;em&gt;_not_&lt;/em&gt; profitable.&lt;/p&gt;
+
+&lt;h3 id=&quot;where-did-i-come-from&quot;&gt;Where did I come from?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.projectshift.io/&quot;&gt;Project Shift&lt;/a&gt;, if you haven’t heard, is a software engineering fellowship here in Durham. I am a proud graduate of Cohort 5. Prior to Project Shift, I came from the land of electoral politics, a field that relies heavily on technology (from data analytics and predictions to voter contact and volunteer recruitment) to mobilize voters and volunteers in the days, weeks, and months leading up to an election. In my most recent role, I ran a statewide peer-to-peer texting program to get North Carolinians to the polls. I experienced first hand how thoughtful technology can catalyze civic engagement, and on the flip side, how platforms that weren’t built with the user in mind could cause enough frustration to dissuade volunteer participation and annoy an on-the-fence electorate.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-am-i-choosing-to-sit-behind-a-computer-when-i-could-be-hitting-the-pavement-or-training-organizers&quot;&gt;Why am I choosing to sit behind a computer when I could be hitting the pavement or training organizers?&lt;/h3&gt;
+
+&lt;p&gt;So, I ask myself, possibly more frequently than I’d prefer, what is the best use of my time and potential skills? Am I contributing enough to causes that matter? Am I contributing in a way that is actually helpful and not harmful?&lt;/p&gt;
+
+&lt;p&gt;The answer at which I’ve finally arrived is this: I believe technology has the potential to alter our habits as individuals, as a society, and as a species positively, more quickly, efficiently, and sustainably than through other means of change that may come to mind. I knew I had to switch industries to help build better solutions. This, I learned through the interview process, is also part of the vision at Savas Labs. This vision is to, in the near future, make a concerted effort to take on pro bono work as a way of eliminating a main barrier some organizations have: needing a digital presence but not having the means to make that happen. More to come on this in the coming weeks from Savas CEO, &lt;a href=&quot;https://savaslabs.com/company/chris-russo/&quot;&gt;Chris Russo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-did-i-choose-savas&quot;&gt;Why did I choose Savas?&lt;/h3&gt;
+
+&lt;p&gt;I chose Savas for many reasons — especially the team. I’ve seen my coworkers practice and exemplify the &lt;a href=&quot;https://savaslabs.com/company/mission-and-values/&quot;&gt;values&lt;/a&gt; we define on the &lt;a href=&quot;https://savaslabs.com&quot;&gt;website&lt;/a&gt;, ones that drive me as well. How can one &lt;em&gt;_not_&lt;/em&gt; feel welcomed, empowered to excel, and ask for what they need in the onboarding process when they receive Slack messages like this from remote colleagues?&lt;/p&gt;
+
+&lt;div class=&quot;blog-image-large&quot;&gt;
+&lt;img alt=&quot;Slack screenshot&quot; src=&quot;/assets/img/blog/savas-welcome.jpg&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Senior Project Manager, Ro Wang, greets me warmly in a private message on Slack.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My teammates bring to the table many things, in equal parts tangible and intangible, resulting in a highly productive, respectful, creative, and collaborative environment of humans who work diligently for our clients. I recognized that before I started.&lt;/p&gt;
+
+&lt;p&gt;After my last campaign wrapped up, I knew I would only be fulfilled if I went to work each day for a company that considers the community it operates within, and the unique responsibility it has to contribute (beyond the paid services it came into existence to provide). I was pleased to learn that at Savas Labs, every full-time employee is afforded one day of PTO for community service at an organization of our choosing.&lt;/p&gt;
+
+&lt;p&gt;While not as significant a factor in my job search, humor in the workplace is definitely a plus. Savas incorporates dad jokes (and other actual humor) into our weekly meetings, so I’ll just leave these here . . .&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question: Why did the functional component feel lost?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Answer: Because it didn’t know what &lt;em&gt;state&lt;/em&gt; it was in!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question:  Why did the child component have such great self-esteem?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Answer: Because its parent kept giving it &lt;em&gt;props&lt;/em&gt;!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2019/07/03/savas-brings-on-another-front-end-developer.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2019/07/03/savas-brings-on-another-front-end-developer.html</guid>
+        
+        <category>team</category>
+        
+        <category>company-culture</category>
+        
+        
+      </item>
     
       <item>
         <title>Adventures in Estimation: Accuracy and Strategy at Savas Labs</title>
@@ -758,100 +808,6 @@
         <category>drupal</category>
         
         <category>drupal-planet</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Updating Drupal 8 core via Composer</title>
-        <description>&lt;p&gt;Updating Drupal 8 core with Composer has proven to be a problematic process for many developers. For some, this is nearly as upsetting as the fact that &lt;a href=&quot;https://github.com/composer/getcomposer.org/issues/36&quot;&gt;the Composer logo is actually a conductor&lt;/a&gt;, and some have abandoned the platform entirely, opting to stick with Drupal 7.&lt;/p&gt;
-
-&lt;p&gt;The process isn’t always as simple as running &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update drupal/core&lt;/code&gt; and going about your day — the update from 8.3 to 8.4 was notoriously difficult and I recently experienced an issue while updating from 8.4.5 to 8.5.0. In this article, I’ve provided instructions for updating D8 core with Composer, plus some tips for dealing with common issues.&lt;/p&gt;
-
-&lt;p&gt;This is especially important now as we await a &lt;a href=&quot;https://www.drupal.org/psa-2018-001&quot;&gt;highly critical security update to all versions of Drupal&lt;/a&gt;, to be released on Wednesday, March 28, 2018. This level of security update is quite rare, but the update needs to be implemented on all sites as soon as possible after its release.&lt;/p&gt;
-
-&lt;p&gt;As the PSA linked to above notes, the Drupal Security Team will be providing security releases for unsupported minor versions 8.3.x and 8.4.x due to the issues many have encountered when updating from these versions. If you’re still on one of those versions, the update may be more straightforward if you stick with the release for that minor version.&lt;/p&gt;
-
-&lt;h2 id=&quot;general-instructions-for-updating-core&quot;&gt;General instructions for updating core&lt;/h2&gt;
-
-&lt;p&gt;First, let’s cover the steps needed to update Drupal 8 core with Composer.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;To update the core package, run:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; composer update drupal/core --with-dependencies -v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-
-    &lt;p&gt;It’s recommended to run the update command with the &lt;code class=&quot;highlighter-rouge&quot;&gt;--with-dependencies&lt;/code&gt; flag to update any of Drupal core’s dependencies as well.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;To capture any included database updates, run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush updb -y&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;To capture any included configuration changes, run &lt;code class=&quot;highlighter-rouge&quot;&gt;drush config-export -y&lt;/code&gt; and commit the changes.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;All three of these steps are necessary whenever the core package is updated.&lt;/p&gt;
-
-&lt;h2 id=&quot;dealing-with-errors&quot;&gt;Dealing with errors&lt;/h2&gt;
-
-&lt;h3 id=&quot;core-version-doesnt-update&quot;&gt;Core version doesn’t update&lt;/h3&gt;
-
-&lt;p&gt;If you run the &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; command but core isn’t updating, edit your &lt;code class=&quot;highlighter-rouge&quot;&gt;composer.json&lt;/code&gt; file to include the specific version of core you want, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;^8.5&lt;/code&gt;. Then, run the &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; command again.&lt;/p&gt;
-
-&lt;h3 id=&quot;composer-command-outputs-errors&quot;&gt;Composer command outputs errors&lt;/h3&gt;
-
-&lt;p&gt;Composer may not be able to resolve all of the dependencies of core and will output an error like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Your requirements could not be resolved to an installable &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;of packages.
-
-  Problem 1
-    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;'t install drupal/core 8.5.0
-    - Conclusion: don'&lt;/span&gt;t install drupal/core 8.5.0-rc1
-    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;'t install drupal/core 8.5.0-beta1
-    - Conclusion: don'&lt;/span&gt;t install drupal/core 8.5.0-alpha1
-    - Conclusion: don&lt;span class=&quot;s1&quot;&gt;'t install drupal/core 8.6.x-dev
-    - Conclusion: remove symfony/config v3.2.9
-    - Installation request for drupal/core ^8.5 -&amp;gt; satisfiable by drupal/core[8.5.0, 8.5.0-alpha1, 8.5.0-beta1, 8.5.0-rc1, 8.5.x-dev, 8.6.x-dev].
-    - Conclusion: don'&lt;/span&gt;t install symfony/config v3.2.9
-    - drupal/core 8.5.x-dev requires symfony/dependency-injection ~3.4.0 -&amp;gt; satisfiable by symfony/dependency-injection[3.4.x-dev, v3.4.0, v3.4.0-BETA1, v3.4.0-BETA2, v3.4.0-BETA3, v3.4.0-BETA4, v3.4.0-RC1, v3.4.0-RC2, v3.4.1, v3.4.2, v3.4.3, v3.4.4, v3.4.5, v3.4.6].
-    - symfony/dependency-injection 3.4.x-dev conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.0 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.0-BETA1 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.0-BETA2 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.0-BETA3 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.0-BETA4 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.0-RC1 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.0-RC2 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.1 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.2 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.3 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.4 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.5 conflicts with symfony/config[v3.2.9].
-    - symfony/dependency-injection v3.4.6 conflicts with symfony/config[v3.2.9].
-    - Installation request &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;symfony/config &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;locked at v3.2.9&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; -&amp;gt; satisfiable by symfony/config[v3.2.9].
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This happens when one of Drupal’s dependencies is updated and the new version requires an updated version of another package. To resolve this, include the dependency package causing the issue in the &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; command. The &lt;code class=&quot;highlighter-rouge&quot;&gt;--with-dependencies&lt;/code&gt; flag this will ensure that the dependency’s &lt;em&gt;dependencies&lt;/em&gt; are also updated. To fix the error above, I ran:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer update drupal/core symfony/config &lt;span class=&quot;nt&quot;&gt;--with-dependencies&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;youre-not-alone&quot;&gt;You’re not alone&lt;/h2&gt;
-
-&lt;p&gt;If you continue to run into problems, the best advice I can give you is to search for the specific update you’re trying to make. Every time I’ve had an issue I’ve been able to find discussions online regarding that specific update and potential resolutions.&lt;/p&gt;
-
-&lt;p&gt;In fact, when I got the error above while trying to update to 8.5.0, I found &lt;a href=&quot;https://orkjern.com/updating-to-drupal-85-with-composer&quot;&gt;this helpful article&lt;/a&gt; by drupal.org user &lt;a href=&quot;https://www.drupal.org/u/eiriksm&quot;&gt;eiriksm&lt;/a&gt; and was able to resolve the issue. Check out the article and its comments for more discussion on how to deal with Composer issues when updating Drupal 8 core.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2018/03/25/updating-drupal-8-via-composer.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2018/03/25/updating-drupal-8-via-composer.html</guid>
-        
-        <category>drupal</category>
-        
-        <category>drupal8</category>
-        
-        <category>drupal-planet</category>
-        
-        <category>composer</category>
         
         
       </item>
