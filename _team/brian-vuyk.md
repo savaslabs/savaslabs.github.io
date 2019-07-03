@@ -2,7 +2,7 @@
 name: Brian Vuyk
 layout: team
 slug: brian-vuyk
-job_title: Senior Drupal Developer
+job_title: Senior Web Engineer
 linkedin: brianvuyk
 drupal: brianv
 image: "/assets/img/team/brian-vuyk/brian-vuyk-square-outside.png"
