@@ -24,7 +24,7 @@ Hello Savas Labs fans! My name is [Madeline Streilein](https://savaslabs.com/com
 
 So, I ask myself, possibly more frequently than I’d prefer, what is the best use of my time and potential skills? Am I contributing enough to causes that matter? Am I contributing in a way that is actually helpful and not harmful?
 
-The answer at which I’ve finally arrived is this: I believe technology has the potential to alter our habits as individuals, as a society, and as a species positively, more quickly, efficiently, and sustainably than through other means of change that may come to mind. I knew I had to switch industries to help build better solutions. This, I learned through the interview process, is also part of the vision at Savas Labs. This vision is to, in the near future, make a concerted effort to take on pro bono work as a way of eliminating a main barrier some organizations have: needing a digital presence but not having the means to make that happen. More to come on this in the coming weeks from Savas CEO, [Chris Russo](https://savaslabs.com/company/chris-russo/).
+The answer at which I’ve finally arrived is this: I believe technology has the potential to alter our habits as individuals, as a society, and as a species positively, more quickly, efficiently, and sustainably than through other means of change that may come to mind. I knew I had to switch industries to help build better solutions. Using technology to maximize positive impact, I learned through the interview process, is also part of a developing vision at Savas Labs. Stay tuned for an upcoming announcement with more specific articulation of those goals from team leadership.
 
 ### Why did I choose Savas?
 
