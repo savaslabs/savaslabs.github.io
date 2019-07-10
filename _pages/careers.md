@@ -36,6 +36,8 @@ The needs at Savas Labs are constantly evolving as we grow, but **we are always*
 
 [Drupal Developer](/drupal-developer)
 
+[Front-end Drupal Developer](/front-end-drupal-developer)
+
 [Digital Project Manager](/digital-project-manager)
 
 [Front-end Developer](/front-end-developer)
