@@ -32,15 +32,15 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
 
 The needs at Savas Labs are continually evolving as we grow, but one constant is that we always love to meet ambitious, hard-working people who seek to [excel](/company/mission-and-values/#excel). So, if that fits you, and you don't fit _perfectly_ into one of the listings below, please [reach out](/contact) anyhow!
 
-[Mobile Application Developer](/application-developer)
+[**Senior Front-end Developer**](/senior-front-end-developer)
 
-[Drupal Developer](/drupal-developer)
+<!-- [Drupal Developer](/drupal-developer) -->
 
-[Front-end Drupal Developer](/front-end-drupal-developer)
+[Front-end Drupal Developer](/front-end-drupal-developer) (mid-level to senior)
 
 [Digital Project Manager](/digital-project-manager)
 
-[Front-end Developer](/front-end-developer)
+[Mobile Application Developer](/application-developer)
 
 <!--
 

@@ -35,14 +35,11 @@ I chose Savas for many reasons — especially the team. I’ve seen my coworkers
 <span class="caption">Senior Project Manager, Ro Wang, greets me warmly in a private message on Slack.</span>
 </div>
 
-
 My teammates bring to the table many things, in equal parts tangible and intangible, resulting in a highly productive, respectful, creative, and collaborative environment of humans who work diligently for our clients. I recognized that before I started.
 
 After my last campaign wrapped up, I knew I would only be fulfilled if I went to work each day for a company that considers the community it operates within, and the unique responsibility it has to contribute (beyond the paid services it came into existence to provide). I was pleased to learn that at Savas Labs, every full-time employee is afforded one day of PTO for community service at an organization of our choosing.
 
 While not as significant a factor in my job search, humor in the workplace is definitely a plus. Savas incorporates dad jokes (and other actual humor) into our weekly meetings, so I’ll just leave these here . . .
-
-
 
 **Question: Why did the functional component feel lost?**
 
