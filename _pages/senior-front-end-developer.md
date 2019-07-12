@@ -25,7 +25,7 @@ image: "/assets/img/jobs/developer.png"
 
 We seek a **senior front-end developer** to join our [core team](/company/#team) to build beautiful, thoughtful, functional and accessible web and app experiences. You will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. This role is for candidates who will work out of our **[Durham, NC](/durham) office only**; we are not accepting remote candidates, though we offer relocation assistance for applicants outside of the Triangle who want to move here. You should, it's great.
 
-Applicants should be HTML, CSS, and web accessibility experts and be fluent in modern Javascript, JavaScript frameworks, and front-end build tools. Candidates should have either experience or a strong interest in mentoring  other front-end team members as well as a strong desire to lead Savas in the successful application of emerging technologies for our partners. Both will be crucial to the success in the role.
+Applicants should be HTML, CSS, and web accessibility experts and be fluent in modern Javascript, JavaScript frameworks, and front-end build tools. Candidates should have either experience or a strong interest in mentoring  other front-end team members as well as a strong desire to lead Savas in the successful application of emerging technologies for our partners. Both will be crucial to success in the role.
 
 ## Working at Savas Labs
 
@@ -94,4 +94,4 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 Ready to get started? Send us an application today.
 
-<a href="https://savas-labs.breezy.hr/p/9975e417a26a-front-end-developer/apply" class="button--arrow--orange">Apply</a>
+<a href="https://savas-labs.breezy.hr/p/e03dcbc18391-senior-front-end-developer/apply" class="button--arrow--orange">Apply</a>
