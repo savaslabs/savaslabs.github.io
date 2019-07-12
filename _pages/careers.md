@@ -2,7 +2,7 @@
 layout: page
 title: Careers at Savas Labs
 permalink: "/careers/"
-excerpt: Career positions to work with the talented Savas Labs team
+excerpt: Career positions to join the wonderful Savas Labs team
 hero_region: hero--careers.html
 cta_heading: Join our team
 cta_paragraph: Interested in working with Savas Labs? Contact us today.
@@ -30,17 +30,17 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
 
 ## Open Positions
 
-The needs at Savas Labs are constantly evolving as we grow, but **we are always** on the lookout for talented and [excellent](/company/mission-and-values/#excel) people, so if you don't fit into one of the boxes below, don't let that stop you from [reaching out](/contact) to us.
+The needs at Savas Labs are continually evolving as we grow, but one constant is that we always love to meet ambitious, hard-working people who seek to [excel](/company/mission-and-values/#excel). So, if that fits you, and you don't fit _perfectly_ into one of the listings below, please [reach out](/contact) anyhow!
 
-[Mobile Application Developer](/application-developer)
+[**Senior Front-end Developer**](/senior-front-end-developer)
 
-[Drupal Developer](/drupal-developer)
+<!-- [Drupal Developer](/drupal-developer) -->
 
-[Front-end Drupal Developer](/front-end-drupal-developer)
+[Front-end Drupal Developer](/front-end-drupal-developer) (mid-level to senior)
 
 [Digital Project Manager](/digital-project-manager)
 
-[Front-end Developer](/front-end-developer)
+[Mobile Application Developer](/application-developer)
 
 <!--
 
