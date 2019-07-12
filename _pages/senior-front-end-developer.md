@@ -3,7 +3,7 @@ layout: page
 title: Senior Front-end Developer
 permalink: "/senior-front-end-developer/"
 excerpt: |
-  Savas Labs hiring Front-end developers.
+  Savas Labs is looking to hire a senior front-end developer to help lead and develop a burgeoning front-end team out of our office in   downtown Durham.
 image: "/assets/img/jobs/developer.png"
 
 ---
