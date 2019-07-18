@@ -419,3 +419,5 @@ manzo
 alexmanzomedia
 alexmanzo
 codepen
+kayla
+morales
