@@ -18,15 +18,18 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
 
 + Competitive salary
 + Health insurance covered at 100% for you and your family
++ Dental and vision insurance covered at 50% for you and your family
 + Flexible work schedule
 + 401(k) (matching contribution for full-time employees)
 + Profit-sharing plan
-+ Generous PTO
++ Generous PTO and Holiday Schedule
 + Semi-annual team retreats
 + Weekly team lunches (for on-site Durham, NC employees)
-+ Monthly skill-share sessions
++ Bi-weekly skill-share sessions
 + Conference presentation and attendance opportunities
 + 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
++ Annual technology stipend
++ One annual paid community service day
 
 ## Open Positions
 

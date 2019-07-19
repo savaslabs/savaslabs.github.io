@@ -37,13 +37,14 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + Flexible work schedule
 + 401(k) (matching contribution for full-time employees)
 + Profit-sharing plan
-+ Generous PTO
++ Generous PTO and Holiday Schedule
 + Semi-annual team retreats
-+ Weekly team lunches
-+ Biweekly skill-share sessions
++ Weekly team lunches (for on-site Durham, NC employees)
++ Bi-weekly skill-share sessions
 + Conference presentation and attendance opportunities
-+ 24/7 access to the [American Underground](http://americanunderground.com/)
++ 24/7 access to the [American Underground](http://americanunderground.com/) (for on-site Durham, NC employees)
 + Annual technology stipend
++ One annual paid community service day
 
 ### Our projects
 
