@@ -35,7 +35,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 + Health insurance covered at 100% for you and your family
 + Flexible work schedule
 + 401(k) (matching contribution for full-time employees)
-+ Profit sharing plan
++ Profit-sharing plan
 + Generous PTO
 + Semi-annual team retreats
 + Weekly team lunches (for on-site Durham, NC employees)

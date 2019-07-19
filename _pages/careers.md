@@ -20,7 +20,7 @@ At Savas Labs, we focus on the long-term with both those we partner with as well
 + Health insurance covered at 100% for you and your family
 + Flexible work schedule
 + 401(k) (matching contribution for full-time employees)
-+ Profit sharing plan
++ Profit-sharing plan
 + Generous PTO
 + Semi-annual team retreats
 + Weekly team lunches (for on-site Durham, NC employees)
@@ -37,6 +37,8 @@ The needs at Savas Labs are continually evolving as we grow, but one constant is
 <!-- [Drupal Developer](/drupal-developer) -->
 
 [Front-end Drupal Developer](/front-end-drupal-developer) (mid-level to senior)
+
+[UI/UX Designer](/ui-ux-designer)
 
 [Digital Project Manager](/digital-project-manager)
 
