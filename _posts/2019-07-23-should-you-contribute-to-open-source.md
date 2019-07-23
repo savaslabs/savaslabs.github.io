@@ -13,6 +13,7 @@ featured_image_alt: "Mac computer whose screen reads 'Do more'"
 ---
 
 _The following article is the foundation for a 2019 Drupal GovCon session in the Business + Community track entitled [“Should you contribute to open source? It's complicated.”](https://www.drupalgovcon.org/2019/program/sessions/should-you-contribute-open-source-its-complicated)_
+
 ___
 
 It's true that the _act of contributing_ to open-source software (OSS) is [complicated](https://www.quora.com/What-makes-it-difficult-for-you-to-contribute-to-an-open-source-project). Having the requisite skills to perform the work and the time to navigate a community are substantial barriers, to name just two.
