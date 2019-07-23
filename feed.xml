@@ -6,9 +6,153 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 19 Jul 2019 20:15:54 +0000</pubDate>
-    <lastBuildDate>Fri, 19 Jul 2019 20:15:54 +0000</lastBuildDate>
+    <pubDate>Tue, 23 Jul 2019 15:12:44 +0000</pubDate>
+    <lastBuildDate>Tue, 23 Jul 2019 15:12:44 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Should you contribute to open-source software? &lt;em&gt;It's complicated&lt;/em&gt;.</title>
+        <description>&lt;p&gt;&lt;em&gt;The following article is the foundation for a 2019 Drupal GovCon session in the Business + Community track entitled &lt;a href=&quot;https://www.drupalgovcon.org/2019/program/sessions/should-you-contribute-open-source-its-complicated&quot;&gt;“Should you contribute to open source? It’s complicated.”&lt;/a&gt;&lt;/em&gt;
+___&lt;/p&gt;
+
+&lt;p&gt;It’s true that the &lt;em&gt;act of contributing&lt;/em&gt; to open-source software (OSS) is &lt;a href=&quot;https://www.quora.com/What-makes-it-difficult-for-you-to-contribute-to-an-open-source-project&quot;&gt;complicated&lt;/a&gt;. Having the requisite skills to perform the work and the time to navigate a community are substantial barriers, to name just two.&lt;/p&gt;
+
+&lt;p&gt;Ever the fan of double entendres, I believe that whether OSS contribution is the &lt;em&gt;best usage of time and skill&lt;/em&gt; for professionals who work in OSS (read: &lt;a href=&quot;https://sdtimes.com/os/open-source-at-20-the-ubiquity-of-shared-code/&quot;&gt;everyone&lt;/a&gt;) is &lt;em&gt;also complicated&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In my career (all in OSS, excluding my high school &lt;em&gt;sandwich artist&lt;/em&gt; days), my colleagues have held near unanimity that it’s in the organization’s best interest to contribute back to the OSS tools it uses. They’ve typically advocated doing so during company time (for brevity’s sake, from here on, I’ll refer to this as “flex time”). Beyond my anecdote, the data also show that a &lt;a href=&quot;https://insights.stackoverflow.com/survey/2019#developer-profile-_-contributing-to-open-source&quot;&gt;majority of software developers contribute&lt;/a&gt; at least occasionally.&lt;/p&gt;
+
+&lt;p&gt;In the sections to follow, we’ll briefly look at the OSS ecosystem, analyzing both the motivations that drive and the barriers that challenge the highly-skilled individuals and organizations who contribute to OSS. We’ll also take a look at &lt;em&gt;some alternatives&lt;/em&gt; to OSS contribution with how to our limited (flex) time.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-open-source-software-oss-contribution&quot;&gt;What Is Open-source Software (OSS) Contribution?&lt;/h2&gt;
+
+&lt;p&gt;According to Redhat (who runs opensource.com and whose &lt;a href=&quot;https://www.google.com/maps?q=100EDavieSt,Raleigh,NC,27601&quot;&gt;HQ&lt;/a&gt; is in our backyard)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Open source software is software with source code that anyone can inspect, modify, and enhance.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A few examples of popular OSS projects that you’re perhaps familiar with (at least one of which you’re using right now) are the &lt;a href=&quot;https://www.chromium.org/&quot;&gt;Google Chrome Browser&lt;/a&gt;, the &lt;a href=&quot;http://drupal.org/&quot;&gt;Drupal&lt;/a&gt; CMS and the &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; static site generator, the platform for the Savas website (at the time of writing this). In fact, much of the foundation of the internet is OSS. Anyone who has the requisite expertise can modify such programs; the access is free. Whether or not those modifications qualify as “enhancements,” much like beauty, is in the eye of the beholder.&lt;/p&gt;
+
+&lt;p&gt;The opposite end of the spectrum is closed-source software, which is &lt;strong&gt;not&lt;/strong&gt; publicly available to be modified and is almost always exclusively licensed by the company that owns and protects the proprietary code to consumers and businesses who use the product. A couple of examples of closed-source software that you may be familiar with are Adobe Creative Suite and Microsoft Office.&lt;/p&gt;
+
+&lt;p&gt;Successful OSS projects are highly utilized, and by design, foster substantial collaboration causing robust and complex communities to form around them. Let’s look at the stakeholders in those communities.&lt;/p&gt;
+
+&lt;h2 id=&quot;oss-stakeholders&quot;&gt;OSS Stakeholders&lt;/h2&gt;
+
+&lt;div class=&quot;blog-image-full-width&quot;&gt;
+&lt;img alt=&quot;Warren Buffet holding a steak, get it?&quot; src=&quot;/assets/img/blog/steak-holder.jpg&quot; /&gt;
+ &lt;span class=&quot;caption&quot;&gt;Memegenerator.com&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are two fundamental stakeholders that comprise the contributors to an OSS community: individuals and organizations. Organizations are naturally comprised of individuals. Individuals either work for an organization that uses the OSS tools or represent themselves. When not employed by a company, individuals are either hobbyists or what I would argue is the more sustainable of the two, self-employed freelancers.&lt;/p&gt;
+
+&lt;p&gt;Organizations and individuals have some nuanced distinctions in their motivations and how they behave within OSS communities. A single contributor’s motivations can range from entirely self-promotional to solely altruistic, which depends largely on the individual and their circumstances. An organization’s incentives tend to be more systematic and structured.&lt;/p&gt;
+
+&lt;h3 id=&quot;individual-stakeholders-and-their-motivations&quot;&gt;Individual Stakeholders And Their Motivations&lt;/h3&gt;
+
+&lt;div class=&quot;blog-image-full-width&quot;&gt;
+&lt;img alt=&quot;Richard Simmons pointing like only he can&quot; src=&quot;/assets/img/blog/richard-simmons-motivation.jpg&quot; /&gt;
+ &lt;span class=&quot;caption&quot;&gt;Richard Simmons @ Reed College motivational AF&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Many things motivate us in the workplace; some irrespective of the type of work, while others are inextricably linked to it. We humans have a &lt;a href=&quot;https://www.verywellmind.com/what-is-the-need-to-belong-2795393&quot;&gt;deep desire to belong&lt;/a&gt; to a group, to be included, to be &lt;a href=&quot;https://soundcloud.com/onbeing/alain-de-botton-the-true-hard-work-of-love-and-relationships-aug2018#t=39:08&quot;&gt;accepted&lt;/a&gt;. For many individuals, this undergirds at least some of their motivation to contribute to an OSS project, and by extension, to become part of a community. Contribution can also positively influence one’s career opportunities by demonstrating proficiency publicly with a particular tool. Developing a professional network with other OSS professionals within the community can also be advantageous and complements the skills gained.&lt;/p&gt;
+
+&lt;p&gt;Further, as Daniel Pink expresses in his seminal book Drive (&lt;a href=&quot;https://www.thersa.org/discover/videos/rsa-animate/2010/04/rsa-animate---drive#&quot;&gt;cartoon-animated with a sharpie if you prefer&lt;/a&gt;), significant motivations for knowledge workers across industries are &lt;strong&gt;autonomy&lt;/strong&gt;, &lt;strong&gt;mastery&lt;/strong&gt;, and &lt;strong&gt;purpose&lt;/strong&gt;. In the best of circumstances, OSS contribution can check all three of these boxes if the contributor has some control over what they’re going to contribute. This Harvard Business School report exemplifies the demonstration of mastery:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Companies that contribute and give back learn how to better use the open source software in their own environment. &lt;span&gt;Frank Nagle - HBS - &lt;a href=&quot;https://hbswk.hbs.edu/item/the-hidden-benefit-of-giving-back-to-open-source-software&quot;&gt;The Hidden Benefit of Giving Back to Open Source Software&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A local favorite of mine, behavioral economist Dan Ariely, demonstrates the &lt;a href=&quot;https://www.ted.com/talks/dan_ariely_what_makes_us_feel_good_about_our_work/transcript?language=en&quot;&gt;importance of “purpose”&lt;/a&gt;, which he refers to as “meaning” in experiments he’s conducted targeting knowledge workers.&lt;/p&gt;
+
+&lt;h3 id=&quot;organization-stakeholders-and-their-motivations&quot;&gt;Organization Stakeholders And Their Motivations&lt;/h3&gt;
+
+&lt;p&gt;In some ways, organizations share motivations with individuals as they are a collective of them, or in the case of a U.S. corporation, a &lt;em&gt;very powerful &lt;a href=&quot;https://www.youtube.com/watch?v=hYclXJTRzqU&quot;&gt;person&lt;/a&gt;&lt;/em&gt;, if you prefer. I don’t. However, I’ll focus on the motivations that are unique to organizations for the sake of comparison.&lt;/p&gt;
+
+&lt;p&gt;An organization looks at self-preservation differently than an individual. An individual needs to eat, drink, sleep, and be be loved. An organization, to keep its doors open, has to do things like marketing, sales, recruiting, and the like. For agencies like ours who work with OSS, but whose business model is to serve clients, OSS contribution — not merely leveraging OSS in a build, but true contribution to a core project — requires either volunteer time, or company dedicated flex time to do the &lt;a href=&quot;https://www.youtube.com/watch?v=_RMtnDaxmPw&quot;&gt;deep work&lt;/a&gt; of OSS contribution. There are rare opportunities in which project work fits well with an OSS contribution, but this is typically a serendipitous exception, not the norm. The flex time does not bring in revenue directly, so it represents a short-term opportunity cost to the organization of someone’s (usually a developer’s) time. The question is, is the investment worth it?&lt;/p&gt;
+
+&lt;h4 id=&quot;oss-contribution-marketing-and-sales-benefits-substantiated&quot;&gt;OSS Contribution Marketing And Sales Benefits. Substantiated?&lt;/h4&gt;
+
+&lt;p&gt;Organizations may market OSS contribution as conferring a competitive advantage but, IMCO (correct), that advantage is often overstated. Differentiating one’s organization from its competitors &lt;em&gt;is&lt;/em&gt; the world of marketing and sales, and is just the game we all play. Try this overzealous marketing statement on for size that I referenced in my &lt;a href=&quot;https://events.drupal.org/neworleans2016/sessions/total-value-ownership-drupal-8-and-beyond&quot;&gt;Drupalcon talk in 2016&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;At Chapter Three, our dedicated team of experts helped to build Drupal 8, and we are helping port modules to Drupal 8 daily. Our investment in Drupal 8 has given us unprecedented access to the latest Drupal 8 techniques and put us lightyears ahead of others agencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Perhaps a touch too braggadocious? I’d be curious to know how that worked out for them. Also, “light years”: two words, and is, of course, a measure of distance, so I’m not sure exactly &lt;em&gt;where&lt;/em&gt; that puts them on the map, but seemingly not “&lt;em&gt;light years&lt;/em&gt;” ahead in grammar compared to &lt;a href=&quot;https://github.com/savaslabs/savaslabs.github.io/blob/source/hooks/pre-commit#L45-L63&quot;&gt;“others agencies”&lt;/a&gt; ;)  &lt;a href=&quot;https://us2.campaign-archive.com/?u=84a5d97487adda9f8f52224e2&amp;amp;id=04a3ce3d49&amp;amp;e=83a6cb0714&quot;&gt;&amp;lt;/rant&amp;gt;&lt;/a&gt;. Partial dig notwithstanding, we appreciate your support in making Drupal 8 better &lt;a href=&quot;https://www.chapterthree.com/&quot;&gt;Chapter 3&lt;/a&gt; – we undoubtedly benefited from your work!&lt;/p&gt;
+
+&lt;p&gt;Obviously, &lt;a href=&quot;https://www.mediacurrent.com/blog/why-should-companies-support-drupal/&quot;&gt;others in our industry, like Mediacurrent&lt;/a&gt;, do &lt;a href=&quot;https://www.mediacurrent.com/blog/how-organizations-can-give-back-open-source-projects-and-why/&quot;&gt;this&lt;/a&gt; as well (including &lt;a href=&quot;/results/open-source/&quot;&gt;us&lt;/a&gt;). Like Chapter Three, Mediacurrent is also well known in the Drupal community as a perennial contributor, and I have a lot of respect for them as an organization.&lt;/p&gt;
+
+&lt;p&gt;While contribution demonstrates &lt;em&gt;some&lt;/em&gt; skill with a tool, it is only on rare occasions that a specific OSS contribution is a meaningful distinction – decision-makers who determine what consultant to hire for a project usually don’t have the experience to understand what the OSS contribution represents and, in most cases, do not care. Rather, OSS contribution is part of a whole package of being a good standing digital corporate citizen, but it’s rarely the chief decision-maker in a sale.&lt;/p&gt;
+
+&lt;h4 id=&quot;oss-contribution-recruiting-impact&quot;&gt;OSS Contribution Recruiting Impact&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;companies that pay employees to contribute to open source are improving their image and, potentially, their ability to recruit top talent. &lt;span&gt;Frank Nagle - HBS - &lt;a href=&quot;https://hbswk.hbs.edu/item/the-hidden-benefit-of-giving-back-to-open-source-software&quot;&gt;The Hidden Benefit of Giving Back to Open Source Software&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the knowledge economy, an organization’s most valuable resource is its people, and providing the opportunity to contribute helps with employee satisfaction (and therefore, retention) for the contributor. Savas Labs has had the chance to &lt;a href=&quot;/blog/tag/team/&quot;&gt;grow throughout 2019 consistently&lt;/a&gt;. With that fortune, I have spent a fair amount of time conversing with applicants, a majority of whom express an interest in the opportunity to contribute to OSS and that they appreciate &lt;a href=&quot;/results/open-source/&quot;&gt;how we &lt;em&gt;do&lt;/em&gt; that at Savas&lt;/a&gt;. So, it stands to reason, to remain a competitive workplace, it has become somewhat of an expectation that OSS contribution is part of company time. Marketing these contributions entices future applicants, which can be tremendously valuable.&lt;/p&gt;
+
+&lt;p&gt;I would argue (I am, quite cogently I might add) that, recruiting, employee satisfaction, and retention confer the most significant organizational benefits from flex time OSS contribution. Existing and prospective team members &lt;em&gt;do understand&lt;/em&gt; OSS and are intrigued by an environment that will help them contribute to it for all the reasons mentioned.&lt;/p&gt;
+
+&lt;h4 id=&quot;oss-contribution-financial-impact&quot;&gt;OSS Contribution Financial Impact&lt;/h4&gt;
+
+&lt;p&gt;One thing we’ve learned from Pink is that people aren’t as professionally motivated by money as we might think they are. When the work requires at least “rudimentary cognitive skill,” an individual tends to focus on other emotionally fulfilling aspects of their work. In most cases, OSS contributors within a company don’t see much difference in their compensation regardless of the amount of time given for contribution. Organizations, however, typically have more financially-oriented goals and have a greater onus to serve their stakeholders (employees, owners, and investors). Therefore, necessarily, they need to focus on money more than individuals do. To “take the issue of money off the table” as Pink suggests, those of us who run organizations need to be financially competent and transparent so that finances are not an issue non-owning team members need to worry about. All this to say, there &lt;em&gt;are&lt;/em&gt; challenges to striking a healthy balance of company flex time, and it is of utmost importance for organizations to justify the return on investment from a host of perspectives.&lt;/p&gt;
+
+&lt;h3 id=&quot;challenges-to-oss-contribution&quot;&gt;Challenges To OSS Contribution&lt;/h3&gt;
+
+&lt;p&gt;Like all things in life not created equally, the ability to contribute to OSS is no exception. To his credit and admitting to the errors of his previous oversight (with some assistance from the diversity and inclusion team, as well as &lt;a href=&quot;https://youtu.be/7rbUyv3hYDc?t=307&quot;&gt;others he’s employed&lt;/a&gt;), the creator of Drupal, Dries Buytaert, writes well to the fact that &lt;a href=&quot;https://dri.es/the-privilege-of-free-time-in-open-source&quot;&gt;OSS contribution is a tremendously privileged activity&lt;/a&gt;.  Therefore, who gets to contribute is not evenly distributed in society, and neither are the advantages that come along with having those public contributions to reference. Others have said it well in the past:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It takes time and mentorship to contribute to open source, and not everyone has those two things. &lt;span&gt;Mark Lavin @ All Things Open 2015 then of Caktus Group&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Incidentally, I’ve referenced three other (white) men talking about privilege. Noted :thinking:.&lt;/p&gt;
+
+&lt;p&gt;Interviewers – the Savas Labs recruiting team is no exception – will often ask about, and certainly search for without asking, public proof of expertise. OSS contributions are the most common and relevant bits of this information. It is a data point that we’ve learned to appreciate the embedded privilege that may be associated with it and judge accordingly.&lt;/p&gt;
+
+&lt;h3 id=&quot;if-not-oss-contribution-then-what-are-the-alternatives&quot;&gt;If not OSS contribution, then what are the alternatives?&lt;/h3&gt;
+
+&lt;p&gt;In our profession, we must continuously prioritize how to best use our limited time in a way that’s most rewarding to the relevant stakeholders to our organization: our team members, partners, and depending on your perspective, to society at large. This is the area I probably spend the most time thinking about, and yet also seems to be the most challenging from which to derive clarity. Many others have been thinking about these things for a long time as well. Here are a few approaches out there:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Implement a volunteer day&lt;/strong&gt;: We’ve recently added a Community Service day to our company benefits. This a good way to empower people with the autonomy to give back in however they see most fit.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Start an innovation lab&lt;/strong&gt;: Our neighbors and good friends one block to the north, Viget, instituted something they call “&lt;a href=&quot;https://pointlesscorp.com/&quot;&gt;Pointless Corp&lt;/a&gt;” in which, when team members have flex time, they may choose to build useful or fun projects &lt;a href=&quot;https://www.viget.com/articles/making-things-just-because/&quot;&gt;just because&lt;/a&gt;, in their case, with a unique brand of “pointless” irreverence. While clearly not aiming for Pink’s &lt;strong&gt;purpose&lt;/strong&gt; of the three main drivers for knowledge workers, Pointless Corp provides Vigeters an opportunity to develop &lt;strong&gt;mastery&lt;/strong&gt; &lt;strong&gt;autonomously&lt;/strong&gt;. As a wise,  Meatloaf once said, yes, the same Meatloaf who &lt;em&gt;would do anything for love&lt;/em&gt;: “two out of three ain’t bad.” Such &lt;a href=&quot;https://www.youtube.com/watch?v=k5hWWe-ts2s&quot;&gt;passion :cupid: that Meatloaf!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Provide autonomous structure&lt;/strong&gt;: Our neighbors and good friends one block to the south, thoughtbot, have something they call “&lt;a href=&quot;https://thoughtbot.com/playbook/our-company/time&quot;&gt;investment time&lt;/a&gt;” in which they give their team members guidance on what to do within some parameters, but it’s primarily up to the team member to decide what they’ll work on. They dedicate their entire Friday each week (with few exceptions) to investment time. This commitment is impressive, and as far as I can tell from speaking to their team members, something they really appreciate.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Work on pro bono projects&lt;/strong&gt;: In other words, providing consultation and services for free for a mission-driven organization or one that has limited resources (often a nonprofit). These projects can be highly beneficial to the receiving organization and can give purpose to the delivering team when the services they provide make an impact. We had a great experience with &lt;a href=&quot;/results/case-studies/pmp-civil-rights-map/&quot;&gt;Barbara Lau and the Pauli Murray Project&lt;/a&gt;. Merging the often different work styles and pace can present challenges. I recommend &lt;a href=&quot;https://medium.com/ragtag-notes/tech-for-social-impact-6359bb241fc&quot;&gt;this resource&lt;/a&gt; provided by Ragtag, an organization whose purpose is to &lt;em&gt;“amplify progressive organizing in innovative and high-impact ways”&lt;/em&gt; on how to have a successful partnership. At Savas, we are in the process of formalizing an initiative to take on at least on pro bono project per year. More details to come in a follow-up post.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How do you feel about these options? Does your company do something different, or do you have an idea of a good usage of flex time? Please let us know via &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSd4hGMEcf-m-SD4AYZhfVZXAjrVPIZTJAxBNFK9iL1Q7o-hvg/viewform&quot;&gt;this &lt;strong&gt;super short&lt;/strong&gt; survey&lt;/a&gt; or by leaving a &lt;a href=&quot;#js-comments&quot;&gt;comment&lt;/a&gt;. We’ll share the results in a follow-up post when we’ve collected some data.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-should-you-contribute-to-open-source&quot;&gt;So, Should You Contribute To Open-Source?&lt;/h3&gt;
+
+&lt;p&gt;So what’s our hot take given the array of incentives, challenges, and goals of organizations and individuals on whether or not you should contribute to OSS? Well, I wouldn’t be a proper consultant if I didn’t answer this with a resounding: &lt;strong&gt;it depends&lt;/strong&gt;, now would I?!&lt;/p&gt;
+
+&lt;p&gt;I won’t try to be prescriptive for all individuals as to what they &lt;em&gt;should&lt;/em&gt; do with their free time, but I would be remiss not to point out again that, in general, software designers and engineers are a very privileged group. If your goal is to “give back,” I would encourage you to ask yourself if those you want to help the most are other software developers and if not, how you can best use your resources to help whoever else it may be. Ultimately, OSS contribution is a good deed; sharing is caring. I have had opportunities to do sponsored OSS contribution and have also volunteered my time, though even &lt;em&gt;some&lt;/em&gt; donations come with perks :eyes: :&lt;/p&gt;
+
+&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Bicycles on shirt: ✔️ &lt;a href=&quot;https://twitter.com/hashtag/crocs?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#crocs&lt;/a&gt; on swag socks for being a &lt;a href=&quot;https://twitter.com/gatsbyjs?ref_src=twsrc%5Etfw&quot;&gt;@gatsbyjs&lt;/a&gt; maintainer: ✔️  Flare dialed up to 💯: ✔️ With our powers combined... it&amp;#39;s going to be a great afternoon! &lt;a href=&quot;https://twitter.com/hashtag/buildwithgatsby?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#buildwithgatsby&lt;/a&gt; &lt;a href=&quot;https://t.co/6fuNuJQXX5&quot;&gt;pic.twitter.com/6fuNuJQXX5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Savas Labs (@SavasLabs) &lt;a href=&quot;https://twitter.com/SavasLabs/status/1045386497065701382?ref_src=twsrc%5Etfw&quot;&gt;September 27, 2018&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;p&gt;From an organization’s perspective, it depends on your company goals. Generally speaking, if you’re able to contribute to OSS, you should. On balance, contributing to something that gives value to others for free while improving your team’s job satisfaction and career options presents a win-win for the community and the contributor. Given the importance of your people, improving happiness has &lt;a href=&quot;https://warwick.ac.uk/newsandevents/pressreleases/new_study_shows/&quot;&gt;serious productivity implications&lt;/a&gt;, and improving recruiting quality and efficiency also have substantial payoffs, as it’s where we invest much of our time.&lt;/p&gt;
+
+&lt;p&gt;If your organization seeks to benefit society more broadly with its flex time, a goal of ours at Savas Labs, we believe there are more powerful ways to consider beyond OSS contribution.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2019/07/23/should-you-contribute-to-open-source.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2019/07/23/should-you-contribute-to-open-source.html</guid>
+        
+        <category>philosophy</category>
+        
+        <category>open-source</category>
+        
+        <category>drupal</category>
+        
+        <category>business</category>
+        
+        
+      </item>
     
       <item>
         <title>Savas Brings on Another Front-end Developer</title>
@@ -617,185 +761,6 @@
         <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
         <link>https://savaslabs.com/2018/08/01/how-to-move-to-https.html</link>
         <guid isPermaLink="true">https://savaslabs.com/2018/08/01/how-to-move-to-https.html</guid>
-        
-        <category>marketing</category>
-        
-        <category>user-experience</category>
-        
-        <category>best-practices</category>
-        
-        <category>performance</category>
-        
-        <category>drupal</category>
-        
-        <category>drupal-planet</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Why your website needs HTTPS</title>
-        <description>&lt;p&gt;This is part one of a &lt;a href=&quot;/2018/08/01/how-to-move-to-https.html&quot;&gt;two-part series&lt;/a&gt; on transitioning to HTTPS&lt;/p&gt;
-
-&lt;p&gt;For some time, major internet players have advocated for a ubiquitous, secure internet, touting the myriad benefits for all users and service providers of “HTTPS everywhere”. The most prominent and steadfast among them is Google. In the next week, continuing a multi-year effort to shepherd more traffic to the secure web, Google will make perhaps its boldest move to date which will negatively impact all organizations not securely serving their website over HTTPS.&lt;/p&gt;
-
-&lt;p&gt;To quote the official &lt;a href=&quot;https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html&quot;&gt;Google Security Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Beginning in July 2018 with the release of Chrome 68, Chrome will mark all HTTP sites as “not secure”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/chrome-68-not-secure.png&quot; alt=&quot;Chrome insecure message for HTTP&quot; /&gt;&lt;br /&gt;
- &lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Given the ambiguous “in July 2018”, with no clearly communicated release date for Chrome 68, it’s wise to err on the side of caution and assume it will roll out on the 1st. We have readied our partners with this expectation.&lt;/p&gt;
-
-&lt;p&gt;So what does this mean for your organization if your site is not served over HTTPS? In short, it’s time to make the move. Let’s dig in.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-https&quot;&gt;What is HTTPS?&lt;/h2&gt;
-
-&lt;p&gt;HTTP, or &lt;strong&gt;H&lt;/strong&gt;yper&lt;strong&gt;T&lt;/strong&gt;ext &lt;strong&gt;T&lt;/strong&gt;ransfer &lt;strong&gt;P&lt;/strong&gt;rotocol, is the internet technology used to communicate between your web browser and the servers that the websites you visit are on. HTTPS is the secure version (s for secure) which is served over TLS: Transport Layer Security. What these technical acronyms equate to are tools for internet communication that verify you’re communicating with who you think you are, in the way you intended to, in a format that only the intended recipient can understand. We’ll touch on the specifics in a moment and why they’re important. Put simply, HTTPS enables secure internet communication.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-secure-browsing-matters&quot;&gt;Why secure browsing matters&lt;/h2&gt;
-
-&lt;p&gt;Leaving aside the technical details for a moment and taking a broader view than communication protocols reveals more nuanced benefits your organization receives by communicating securely with its audience.&lt;/p&gt;
-
-&lt;h3 id=&quot;https-improves-seo&quot;&gt;HTTPS improves SEO&lt;/h3&gt;
-
-&lt;p&gt;Since Google accounts for 75-90% of global search queries (&lt;a href=&quot;https://netmarketshare.com/search-engine-market-share.aspx?options=%7B%22filter%22%3A%7B%22%24and%22%3A%5B%7B%22deviceType%22%3A%7B%22%24in%22%3A%5B%22Desktop%2Flaptop%22%5D%7D%7D%5D%7D%2C%22dateLabel%22%3A%22Trend%22%2C%22attributes%22%3A%22share%22%2C%22group%22%3A%22searchEngine%22%2C%22sort%22%3A%7B%22share%22%3A-1%7D%2C%22id%22%3A%22searchEnginesDesktop%22%2C%22dateInterval%22%3A%22Monthly%22%2C%22dateStart%22%3A%222017-06%22%2C%22dateEnd%22%3A%222018-05%22%2C%22segments%22%3A%22-1000%22%7D&quot;&gt;depending&lt;/a&gt; &lt;a href=&quot;https://www.statista.com/statistics/267161/market-share-of-search-engines-in-the-united-states/&quot;&gt;on&lt;/a&gt; &lt;a href=&quot;https://www.smartinsights.com/search-engine-marketing/search-engine-statistics/&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;http://gs.statcounter.com/search-engine-market-share&quot;&gt;source&lt;/a&gt;) SEO is understandably often synonymous with optimizing for Google. Given their market domination, competitors are taking queues from Google and in most cases it’s safe to assume what’s good for SEO in Google is good for optimizing competing search engines.&lt;/p&gt;
-
-&lt;p&gt;In the summer of 2014, &lt;a href=&quot;https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html&quot;&gt;Google announced on their blog&lt;/a&gt; that they would begin to favorably rank sites who used HTTPS over HTTP. It’s already been nearly four years since we’ve known HTTPS to be advantageous for SEO. Since then, Google has consistently advocated the concept of HTTPS ubiquity, frequently writing about it in blog posts and speaking about it at conferences. The extent to which serving your site over HTTPS improves your SEO is not cut and dry and can vary slightly depending on industry. However, the trend toward favoring HTTPS is well under way and the scales are tipped irreversibly at this point.&lt;/p&gt;
-
-&lt;h3 id=&quot;https-improves-credibility-and-ux&quot;&gt;HTTPS improves credibility and UX&lt;/h3&gt;
-
-&lt;p&gt;Once a user has arrived at your site, their perceptions may be largely shaped by whether the site is served over HTTP or HTTPS. The user experience when interacting with a site being served over HTTPS is demonstrably better. &lt;a href=&quot;https://www.semrush.com/blog/https-just-a-google-ranking-signal/#header2&quot;&gt;SEMrush summarizes well&lt;/a&gt; what the data clearly indicate; people care a great deal about security on the web. A couple highlights:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The &lt;a href=&quot;https://www.statista.com/statistics/467656/us-online-shopping-concerns/&quot;&gt;second highest concern for online shoppers was security&lt;/a&gt;. The first was shipping being too expensive.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.statista.com/statistics/339735/crime-worries-in-the-united-states/&quot;&gt;Crimes Americans worried about the most in 2016&lt;/a&gt;: #2 having credit card stolen (69%), and #3 having web identity compromised (64%).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;You never get a second chance to make a first impression.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;With engaging a participant of your target audience, you have precious few moments to instill a sense of credibility with them. This is certainly true of the first time a user interacts with your site, but is also true for returning users. You have to earn your reputation every day, and it can be lost quickly. We know credibility decisions are &lt;a href=&quot;http://credibility.stanford.edu/guidelines/index.html&quot;&gt;highly influenced by design choices&lt;/a&gt; and &lt;a href=&quot;https://www.tandfonline.com/doi/abs/10.1080/01449290500330448&quot;&gt;are made in well under one second&lt;/a&gt;. Combining these two insights, with the visual updates Chrome is making to highlight the security of a user’s connection to your site, drawing the user’s attention to a warning in the URL bar translates to a potentially costly loss in credibility. Unfortunately it’s the sort of thing that users won’t notice unless there’s a problem, and per the referenced cliché, at that point it may be too late.&lt;/p&gt;
-
-&lt;h4 id=&quot;browsers-drawing-attention-to-insecure-http&quot;&gt;Browsers drawing attention to insecure HTTP&lt;/h4&gt;
-
-&lt;p&gt;Much like search, browser usage patterns have evolved over the last five years to heavily favor Google Chrome. Therefore, what Google does carries tremendous weight internet-wide. Current estimations of browser usage put Chrome between 55% and 60% of the market (&lt;a href=&quot;https://en.wikipedia.org/wiki/Usage_share_of_web_browsers&quot;&gt;again&lt;/a&gt;, &lt;a href=&quot;http://gs.statcounter.com/browser-market-share&quot;&gt;depending&lt;/a&gt; &lt;a href=&quot;https://netmarketshare.com/browser-market-share.aspx&quot;&gt;on&lt;/a&gt; &lt;a href=&quot;https://www.w3counter.com/trends&quot;&gt;sources&lt;/a&gt;). Firefox has followed suit with Chrome as far as HTTP security alerts go, and there’s no indication we should expect this to change. So it’s safe to assume a combined 60-75% of the market is represented by Chrome’s updates.&lt;/p&gt;
-
-&lt;h4 id=&quot;google-chrome-http-warning-roll-out&quot;&gt;Google Chrome HTTP warning roll out&lt;/h4&gt;
-
-&lt;p&gt;Google (and closely mirroring behind, Firefox) has been getting more stringent in their display of the security implications of a site served over HTTP (in addition to sites misconfigured over HTTPS). They’ve shared details on the six-step roll out on &lt;a href=&quot;https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html&quot;&gt;their general blog&lt;/a&gt; as well as on a more technical, granular level on the &lt;a href=&quot;https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure&quot;&gt;Chrome browser blog&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In January 2017, they began marking any site that collects a password field or credit card information, served over HTTP as subtly (grey text) not secure.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/jan-2017-http-not-secure.png&quot; alt=&quot;Chrome insecure message for HTTP&quot; /&gt;&lt;br /&gt;
- &lt;span class=&quot;caption&quot;&gt;Laravel News&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Then, in October 2017, they tightened things up so that a site that collected &lt;em&gt;any&lt;/em&gt; form information over HTTP, would have the same “not secure” messaging. They added the more action-based aspect of showing the warning on the URL bar &lt;em&gt;when a user entered data into a form&lt;/em&gt;. This is an especially obtrusive experience on mobile due to space constraints, which more deeply engages the user cognitively as to exactly what is unsafe about how they’re interacting with the site.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/oct-2017-http-insecure.gif&quot; alt=&quot;Chrome insecure message for HTTP&quot; class=&quot;blog-image-large&quot; /&gt;&lt;br /&gt;
-&lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, in July 2018, all HTTP sites will be marked as not secure.&lt;/p&gt;
-
-&lt;p&gt;In September 2018, secure sites will be marked more neutrally, removing the green secure lock by default connoting a continuing expectation that HTTPS is the norm and no longer special.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/sep-2018-neutral-https.png&quot; alt=&quot;Chrome insecure message for HTTP&quot; class=&quot;blog-image-large&quot; /&gt;&lt;br /&gt;
-&lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;In October 2018, any HTTP site that accepts any form fields will show affirmatively not secure with a &lt;span style=&quot;color:#cc0000&quot;&gt;&lt;strong&gt;bold red label&lt;/strong&gt;&lt;/span&gt;, much like a misconfigured HTTPS site does now.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/oct-2018-http-affirmative-insecure.gif&quot; alt=&quot;Chrome insecure message for HTTP&quot; class=&quot;blog-image-large&quot; /&gt;&lt;br /&gt;
-&lt;span class=&quot;caption&quot;&gt; Google blog &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Though they haven’t yet announced a date, Google intends to show affirmatively not secure for all HTTP sites. The drive is clearly to establish the norm that all the web traffic should be served over HTTPS and that outdated HTTP is not to be trusted. This is a pretty strong message that if Google has their way (which they usually do) HTTPS will inevitably be virtually mandatory. And inevitably in internet years, may be right around the corner.&lt;/p&gt;
-
-&lt;h3 id=&quot;https-vastly-improves-security-for-you-and-your-users&quot;&gt;HTTPS vastly improves security for you and your users&lt;/h3&gt;
-
-&lt;p&gt;Returning to the technical, as mentioned previously, HTTPS helps secure communication in three basic ways.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt; “you’re communicating with who you think you are”&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data integrity&lt;/strong&gt; “in the way you intended to”&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Encryption&lt;/strong&gt;: “in a format that only the intended recipient can understand”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;what-authentication-does-for-you&quot;&gt;What authentication does for you&lt;/h4&gt;
-
-&lt;p&gt;In order for the browser to recognize and evaluate an HTTPS certificate, it must be verified by a trusted certificate authority (CA). There are a limited amount of CAs who are entrusted to distribute HTTPS certificates. Through &lt;a href=&quot;https://en.wikipedia.org/wiki/Public-key_cryptography&quot;&gt;public-key cryptography&lt;/a&gt;, a fairly complex but interesting topic, through inherent trust in the CA who has provided the HTTPS certificate for a given site, the browser can verify any site visitor is positively communicating with the expected entity with no way of anyone else posing as that entity. No such verification is possible over HTTP and it’s fairly simple to imagine what identify theft would be possible if you were communicating with a different website than you appeared to be. In the event any of the major browsers cannot validate the expected certificate, they will show a strong, usually red warning that you may not be communicating with the expected website, and strongly encourage you to reconsider interacting at all.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://savaslabs.com/assets/img/blog/misconfigured-https.png&quot; alt=&quot;Chrome misconfigured HTTPS&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Therefore, the authentication gives your users the confidence you are who you say you are, which is important when you’re engaging with them in any way whether they’re providing an email, credit card or simply reading articles.&lt;/p&gt;
-
-&lt;h4 id=&quot;how-data-integrity-helps-you&quot;&gt;How data integrity helps you&lt;/h4&gt;
-
-&lt;p&gt;Ensuring perfect preservation of communication over the internet is another guarantee HTTPS provides. When a user communicates with a website over HTTPS, the browser takes the input of that communication and using a one-way hashing function creates a unique “message digest”: a concise, alphanumeric string. The digest may only be reliably recreated by running the exact same input through the same hash algorithm irrespective of where and when this is done. For each request the user makes to the website, the browser passes a message digest alongside it and the server then runs the input it receives from the request through the hash algorithm to verify it matches the browser-sent digest. Since it is nearly computationally impossible to reverse engineer these hash functions, if the digests match, it proves the message was not altered in transit. Again, no such data integrity preservation is possible over HTTP, and there is therefore no way to tell if a message has been altered en route to the server from the browser.&lt;/p&gt;
-
-&lt;h4 id=&quot;what-encryption-does-for-you&quot;&gt;What encryption does for you&lt;/h4&gt;
-
-&lt;p&gt;Communicating over an unencrypted HTTP connection allows for some easily exploitable security risks in the case of authentication to a site. To demonstrate how easy it can be to take over someone’s account on an HTTP connection, a tool called &lt;a href=&quot;https://en.wikipedia.org/wiki/Firesheep&quot;&gt;Firesheep&lt;/a&gt; was developed and openly released in mid 2010. Major social media platforms  &lt;a href=&quot;https://www.pcworld.com/article/209333/how_to_hijack_facebook_using_firesheep.html&quot;&gt;Facebook and Twitter were both susceptible&lt;/a&gt; to this exploit for some time after Firesheep was released. The identity theft is carried out through a means called &lt;a href=&quot;https://en.wikipedia.org/wiki/Session_hijacking&quot;&gt;session hijacking&lt;/a&gt;. With Firesheep installed, a few clicks could log you in as another user who was browsing over WiFi nearby on any HTTP website. This form of session hijacking is possible when the authentication cookies, small identifying pieces of information that live in your browser while you’re logged into a site, are transmitted to the server  on each request over HTTP. Over WiFi these messages are broadcasted into the air in plain text, and can be picked up by anyone listening. HTTPS prevents this since the communication is encrypted and unintelligible to eavesdroppers.&lt;/p&gt;
-
-&lt;p&gt;In the example of a CMS like Drupal or any other system in which there is a login, if an administrator with elevated site permissions is logged in over HTTP, they’re subject to the same risk if that traffic is monitored or “sniffed” at any point along its path from the browser to the server. This is especially easy over WiFi but is not relegated to only WiFi. The cookies are sent to the server upon every request, regardless of whether or not the user entered their password during the active session or not. Depending on the admin’s privileges, this access can be easily escalated to complete control of the website. Encryption is a big deal.&lt;/p&gt;
-
-&lt;h3 id=&quot;https-is-required-for-the-modern-web&quot;&gt;HTTPS is required for the modern web&lt;/h3&gt;
-
-&lt;p&gt;One of the more promising developments of the last few years, is the pervasiveness and effectiveness of Progressive Web Apps (PWAs). PWAs is the name coined for a set of technologies that provide a feature-set for mobile browsing akin to native applications, yet is entirely served through the web browser. PWAs require all communication to be done over HTTPS. Some of the possibilities with PWAs that were previously relegated to native applications only are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Providing content and services based on the user’s location data&lt;/li&gt;
-  &lt;li&gt;Providing interaction with the user’s camera and microphone within the browsing experience&lt;/li&gt;
-  &lt;li&gt;Sending push notifications&lt;/li&gt;
-  &lt;li&gt;Serving off-line content&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you aren’t taking advantage of any of these features that are possible through PWAs, it’s something your organization should strongly consider to further engage users. Before the ambitions to be on feature parity with native applications are fully borne-out, PWAs will continue to evolve the power of layering deeper engagement with users on top of your existing mobile experience with minimal effort. PWAs simply do not work over HTTP. HTTPS is required to open the door to their possibilities.&lt;/p&gt;
-
-&lt;h2 id=&quot;barriers-to-https-have-been-lifted&quot;&gt;Barriers to HTTPS have been lifted&lt;/h2&gt;
-
-&lt;p&gt;Historically, considering a move to HTTPS has been held back by some valid concerns for webmasters whose job it was to select where and how their websites were hosted. A few of the fundamental apprehensions could be categorized as:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;No perceived benefit.&lt;/strong&gt; People often assumed if they weren’t collecting financial or personal information, it wasn’t necessary. We’ve covered why holding this belief in 2018 is a misconception. Savas Labs made the move in July 2017 to serve exclusively over HTTPS for our &lt;a href=&quot;/blog/tag/jekyll/&quot;&gt;statically-generated Jekyll website&lt;/a&gt; even though at the time we had no forms or logins.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Performance costs.&lt;/strong&gt; We know reducing latency is crucial for optimizing conversions and HTTPS does require additional communication and computation. However, with the broad adoption of the HTTP/2 protocol over the last few years, HTTPS now &lt;a href=&quot;http://www.httpvshttps.com/&quot;&gt;usually outperforms HTTP&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Financial costs.&lt;/strong&gt; HTTPS was too complex and costly to implement for some. Large strides have been made across many hosting providers who now bundle HTTPS into their hosting offerings by default, often at no additional cost. &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt;, a relatively new and novel certificate authority, first began offering free certificates (which they still do) and then made it easy to automatically renew those certificates, helping to ease the burden and cost of implementation.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We cover each of these in more detail in &lt;a href=&quot;/2018/08/01/how-to-move-to-https.html&quot;&gt;part two&lt;/a&gt; that will help guide you on how to make the move to HTTPS.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;To revisit Google’s announcement:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Beginning in July 2018 with the release of Chrome 68, Chrome will mark all HTTP sites as “not secure”.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Interpreting that and providing our perspective:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;You’re not part of the modern web unless you’re exclusively using HTTPS.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;A bold, if slightly controversial statement, but for ambitious organizations like the folks we’re fortunate enough to work with each day, HTTPS-only is the standard in mid 2018 and beyond. Given the benefits, the lifted previous barriers, and the opportunity for the future, very few organization have a good reason not to exclusively serve their sites over HTTPS.&lt;/p&gt;
-
-&lt;p&gt;Have we convinced you yet? Great! Read &lt;a href=&quot;/2018/08/01/how-to-move-to-https.html&quot;&gt;part two&lt;/a&gt; for some assistance on how to make the move.&lt;/p&gt;
-
-&lt;h2 id=&quot;additional-resources&quot;&gt;Additional resources&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cBhZ6S0PFCY&quot;&gt;Google I/O 2014: “HTTPS Everywhere”&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=e6DUrH56g14&quot;&gt;Progressive Web App Summit 2016: Mythbusting HTTPS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://conversionxl.com/blog/first-impressions-matter-the-importance-of-great-visual-design&quot;&gt;First Impressions Matter: The Importance of Great Visual Design&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.httpvshttps.com/&quot;&gt;A demonstration of speed benefits of HTTP/2 via HTTPS over HTTP&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2018/06/26/why-you-need-https.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2018/06/26/why-you-need-https.html</guid>
         
         <category>marketing</category>
         
