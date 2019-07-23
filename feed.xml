@@ -6,14 +6,15 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Jul 2019 15:12:44 +0000</pubDate>
-    <lastBuildDate>Tue, 23 Jul 2019 15:12:44 +0000</lastBuildDate>
+    <pubDate>Tue, 23 Jul 2019 15:56:07 +0000</pubDate>
+    <lastBuildDate>Tue, 23 Jul 2019 15:56:07 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
         <title>Should you contribute to open-source software? &lt;em&gt;It's complicated&lt;/em&gt;.</title>
-        <description>&lt;p&gt;&lt;em&gt;The following article is the foundation for a 2019 Drupal GovCon session in the Business + Community track entitled &lt;a href=&quot;https://www.drupalgovcon.org/2019/program/sessions/should-you-contribute-open-source-its-complicated&quot;&gt;“Should you contribute to open source? It’s complicated.”&lt;/a&gt;&lt;/em&gt;
-___&lt;/p&gt;
+        <description>&lt;p&gt;&lt;em&gt;The following article is the foundation for a 2019 Drupal GovCon session in the Business + Community track entitled &lt;a href=&quot;https://www.drupalgovcon.org/2019/program/sessions/should-you-contribute-open-source-its-complicated&quot;&gt;“Should you contribute to open source? It’s complicated.”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;It’s true that the &lt;em&gt;act of contributing&lt;/em&gt; to open-source software (OSS) is &lt;a href=&quot;https://www.quora.com/What-makes-it-difficult-for-you-to-contribute-to-an-open-source-project&quot;&gt;complicated&lt;/a&gt;. Having the requisite skills to perform the work and the time to navigate a community are substantial barriers, to name just two.&lt;/p&gt;
 
