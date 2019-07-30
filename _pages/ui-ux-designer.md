@@ -103,6 +103,6 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 Ready to get started? Send us an application today.
 
-<a href="https://savas-labs.breezy.hr/p/e03dcbc18391-senior-front-end-developer/apply" class="button--arrow--orange">Apply</a>
+<a href="https://savas-labs.breezy.hr/p/1e2915a597f9-ux-designer" class="button--arrow--orange">Apply</a>
 
 <!-- TODO: update link -->
