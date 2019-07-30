@@ -9,6 +9,12 @@
     picture {
       width: 100%;
     }
+
+    p {
+      color: $grey;
+      font-size: .9em;
+      text-align: center;
+    }
   }
 }
 
@@ -157,6 +163,7 @@
 
 // Image captions.
 .caption {
+  color: $grey;
   display: block;
   font-size: .9em;
   margin: 0 auto 2em;
