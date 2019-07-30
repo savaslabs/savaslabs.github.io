@@ -5,6 +5,7 @@ date: 2015-05-25
 author: Tim Stallmann
 tags: mapping leaflet javascript
 summary: Sometimes the data you want isn't exactly the data you have. This post examines how to clean, filter and convert data using free and open-source tools.
+disclaimer: The USGS geoJSON earthquake data feed has been modified since the writing of this post. External links may no longer be active.
 ---
 
 In my [last tutorial](/2015/05/18/mapping-geojson.html), we used USGS earthquake data to make a simple web map using leaflet. Today, we'll explore how to use GDAL tools to explore and manipulate GeoJSON data.
@@ -21,7 +22,7 @@ Why might this be useful?
 
 If you're on a Mac and using homebrew, you can easily install GDAL by running `brew install gdal` from the command line. Otherwise, you can download [binaries from GDAL](http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries) or [compile the source code yourself](http://trac.osgeo.org/gdal/wiki/BuildHints).
 
-Just like the last tutorial, we're going to be using the USGS earthquake data. Navigate to [http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson), and save the resulting file to your computer as a `.geojson` file.
+Just like the last tutorial, we're going to be using the USGS earthquake data. Navigate to [http://earthquake.usgs.gov/earthquakes/feed/](http://earthquake.usgs.gov/earthquakes/feed/), and save the resulting file to your computer as a `.geojson` file.
 
 ## Using OGRInfo to look inside your dataset
 
