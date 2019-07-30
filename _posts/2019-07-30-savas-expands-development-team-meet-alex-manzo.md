@@ -43,7 +43,7 @@ As far as other things you should know about me, consider this list a great prim
 </div>
 
 - I’ve read Harry Potter so many times one of my books is literally broken in half. My spouse and I also make it a point to rack up first place finishes in Harry Potter trivia.
-git
+
 - Our household revolves around our two dogs, Jasper & Patch. The pair bring a delightful amount of dysfunction into day-to-day life. Jasper has already made a [visit](https://twitter.com/SavasLabs/status/1142097797895925761) to Savas headquarters.
 
 <div class="blog-image-full-width">
