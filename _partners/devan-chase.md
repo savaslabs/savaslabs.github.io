@@ -1,6 +1,6 @@
 ---
 name: Devan Chase
-title: PHP/Python Developer
-description: Drupal and Django developer with a focus on DevOps, data science, front-end implementation, and database design.
+title: Web Developer
+description: PHP developer with experience in Drupal, front-end implementation, and architecting / interfacing with Javascript APIs.
 photo: "/partners/devan-chase-building.jpg"
 ---
