@@ -1,4 +1,10 @@
 # For client quote regions.
+- project: videntity-smh
+  name: Sara Stewart
+  title: CEO, Clade Design (Partner Agency)
+  image: /assets/img/work/clients/sa-st.jpg
+  quote: |
+    Your team is just killer - I’m just impressed with how intelligent the team is - they would just listen in and run with it - there is no hand holding needed.
 - project: omega-react-solr
   name: Laurie Hunt
   title: Digital Marketing Director at the Omega Institute for Holistic Studies
