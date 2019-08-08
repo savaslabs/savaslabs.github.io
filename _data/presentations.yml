@@ -4,6 +4,11 @@
 # Add new items to the top of the list.
 
 
+- title: "Should you contribute to open source? It's complicated."
+  event: Drupal GovCon Washington D.C. 2019
+  team-member: Chris Russo
+  link: https://www.drupalgovcon.org/2019/program/sessions/should-you-contribute-open-source-its-complicated
+  icon: drupal-govcon-2019.svg
 - title: "Progressively Decoupling with React + Solr"
   event: Drupalcamp Atlanta 2018
   team-member: Chris Russo
