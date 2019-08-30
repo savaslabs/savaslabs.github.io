@@ -1,5 +1,6 @@
 ---
 layout: case-study
+featured: 1
 weight: -9
 project_title: UVA Darden Ideas to Action
 slug: uva-darden-ita
