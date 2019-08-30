@@ -21,7 +21,7 @@ Oh, hello there. I’m Savas Lab’s [newest project manager](https://savaslabs.
 
 As I’ve learned more about Drupal, I’ve come to appreciate that it is an incredibly powerful and flexible CMS and there's a great community of commercial companies and volunteers who help to build and support it. My coworkers at Savas have helped me overcome the first hurdle in learning to work with Drupal: **understanding Drupal terminology.**
 
-Before we dive in, I’d like to extend a huge thank you to [Anne](https://savaslabs.com/company/anne-tomasevich/) and [Chris](https://savaslabs.com/company/chris-russo/) for their mentorship and their contributions to this article.
+Before we dive in, I’d like to extend a huge thank you to [Anne](https://savaslabs.com/company/) and [Chris](https://savaslabs.com/company/chris-russo/) for their mentorship and their contributions to this article.
 
 Let’s get started.
 
