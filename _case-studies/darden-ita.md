@@ -1,9 +1,9 @@
 ---
 layout: case-study
-featured: 0
+featured: 1
 weight: -8
 project_title: UVA Darden Ideas to Action
-slug: uva-darden-ideas-to-action
+slug: uva-darden-ita
 tags: drupal strategy
 services: strategy development design-ux
 featured_tags: [Drupal, UX]
@@ -47,5 +47,5 @@ client_logo_light: "/assets/img/work/logos/ita-logo.png"
 tile_description: |
   To secure their place as one of the country’s top business schools, the Darden School of Business sought to redesign and rebuild their web properties in Drupal 8.
 image: "/assets/img/work/darden/ita-results.jpg"
-client_hero_image: "/assets/img/work/darden/ita-hero.jpg"
+client_hero_image: "/assets/img/work/uva-darden-ita/ita-hero.jpg"
 ---
