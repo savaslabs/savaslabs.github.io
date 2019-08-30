@@ -1,4 +1,10 @@
 # For client quote regions.
+- project: uva-darden-ita
+  name: Kelly Kenny
+  title: VP, Client Services, Viget (Partner Agency)
+  image: /assets/img/work/clients/ke-ke.png
+  quote: |
+    Savas is a strong Drupal partner. The end result was an easily customizable, powerful CMS that worked well from day one.
 - project: videntity-smh
   name: Sara Stewart
   title: CEO, Clade Design (Partner Agency)
