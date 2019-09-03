@@ -14,7 +14,7 @@ featured_image_alt: "Madeline and Dan working on computer."
 
 ### Who am I?
 
-Hello Savas Labs fans! My name is [Madeline Streilein](https://savaslabs.com/company/madeline-streilein/), and I am one of Savas’ two brand new Junior Front-end Developers ([Alex Manzo](https://savaslabs.com/company/alex-manzo/) also joined our burgeoning front-end squad under the tutelage of [Anne Tomasevich](https://savaslabs.com/company/) - keep an eye out for their introduction). Some random facts about me: I love stone fruit, humidity, satirical news, and using Slack notation on all messaging platforms. I also opened a day spa in my home when I was in elementary school. It wasn’t _\_not\__ profitable.
+Hello Savas Labs fans! My name is [Madeline Streilein](https://savaslabs.com/company/madeline-streilein/), and I am one of Savas’ two brand new Junior Front-end Developers ([Alex Manzo](https://savaslabs.com/company/alex-manzo/) also joined our burgeoning front-end squad under the tutelage of Anne Tomasevich - keep an eye out for their introduction). Some random facts about me: I love stone fruit, humidity, satirical news, and using Slack notation on all messaging platforms. I also opened a day spa in my home when I was in elementary school. It wasn’t _\_not\__ profitable.
 
 ### Where did I come from?
 

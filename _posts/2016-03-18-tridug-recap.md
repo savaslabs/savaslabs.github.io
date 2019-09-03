@@ -14,6 +14,6 @@ I presented on my experiences building [Durham Atlético](https://www.durhamatle
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The meetup has begun! <a href="https://t.co/wEHisuW44l">pic.twitter.com/wEHisuW44l</a></p>&mdash; Savas Labs (@savaslabs) <a href="https://twitter.com/savaslabs/status/710605691237605377">March 17, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-[Anne](/company/) gave a tour of the theming layer (she did some [amazing work building the theme](https://github.com/durhamatletico/durhamatletico-cms/graphs/contributors) for the Durham Atlético site) and talked up the benefits of using Twig over the old PHP-based templating system in Drupal 7. If you'd like to know more about Drupal 8 theming, we have a great set of [introductory articles here](/blog/tag/theming/).
+Anne gave a tour of the theming layer (she did some [amazing work building the theme](https://github.com/durhamatletico/durhamatletico-cms/graphs/contributors) for the Durham Atlético site) and talked up the benefits of using Twig over the old PHP-based templating system in Drupal 7. If you'd like to know more about Drupal 8 theming, we have a great set of [introductory articles here](/blog/tag/theming/).
 
 Thanks to everyone who attended, we're looking forward to seeing you all at the next TriDUG meetup!
