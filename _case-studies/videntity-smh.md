@@ -15,10 +15,7 @@ client_description: |
 client_dates: 2018 - present
 project_highlights: [Rapid Prototyping, React JS]
 project_description: |
-  - Worked with design agency Clade
-  - Delivered a prototype used for user testing as well as stakeholder interest
-  - Fast ~3-week sprint
-  - End product led to effective user testing, code was reusable, and client was happy
+  Working with design agency Clade, we quickly developed a React prototype for client Videntity. The lean application was used for quick and effective user testing and to gain stakeholder interest. The three week sprint proved to be essential in the product roadmap and left Videntity with a reusable and scalable code base.
 description: |
   Working with design agency Clade, we quickly developed a React prototype for client Videntity. The lean application was used for quick and effective user testing and to gain stakeholder interest. The three week sprint proved to be essential in the product roadmap and left Videntity with a reusable and scalable code base.
 project_objective: |
@@ -39,7 +36,7 @@ client_logo_width: "270px"
 client_logo_height: "56px"
 client_logo_light: "/assets/img/work/logos/videntity-logo.png"
 tile_description: |
-  How we improved e-commerce conversions by designing a high-performing, spell-checking, auto-completing, multi-filtered React and Apache Solr search application.
+  How we—on a quick timeline—leveraged Create React App to develop a React prototype for user testing of scenarios involving a complex member approval process where the code could be later used for the final product.
 image: "/assets/img/work/videntity-smh/videntity-smh-showcase.jpg"
 
 ---
