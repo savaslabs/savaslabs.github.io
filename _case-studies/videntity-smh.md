@@ -36,7 +36,7 @@ client_logo_width: "270px"
 client_logo_height: "56px"
 client_logo_light: "/assets/img/work/logos/videntity-logo.png"
 tile_description: |
-  How we improved e-commerce conversions by designing a high-performing, spell-checking, auto-completing, multi-filtered React and Apache Solr search application.
+  How we—on a quick timeline—leveraged Create React App to develop a React prototype for user testing of scenarios involving a complex member approval process where the code could be later used for the final product.
 image: "/assets/img/work/videntity-smh/videntity-smh-showcase.jpg"
 
 ---
