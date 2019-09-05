@@ -28,7 +28,7 @@ Everyone at Savas Labs contributed to my learning! I was encouraged by the entir
 
 <span class="caption">Supportive Savasians!</span>
 
-It helped that many on the team had also transitioned from other careers and understood what it felt like to be overwhelmed by a barrage of new information. More than once, [Dan](/company/dan-murphy/) or [Anne](/company/anne-tomasevich/) would check in and ask me if I needed any help or had any general questions (thanks you guys!). And I could tell everyone took my internship seriously, and never once was I made to feel inconsequential!
+It helped that many on the team had also transitioned from other careers and understood what it felt like to be overwhelmed by a barrage of new information. More than once, [Dan](/company/dan-murphy/) or Anne would check in and ask me if I needed any help or had any general questions (thanks you guys!). And I could tell everyone took my internship seriously, and never once was I made to feel inconsequential!
 
 <img src="/assets/img/blog/internship-dilbert.gif" class="blog-image-full-width" alt="Dilbert Cartoon">
 

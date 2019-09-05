@@ -21,14 +21,12 @@ plugin to create a `<picture>` element for the team member photo.
     <h2 class="heading--underline--magenta">Team</h2>
     <div class="region--team-member-list__list">
       <div class="team-member-bio">
-        <a class="team-member-bio__link" href="/company/anne-tomasevich/">
-          <div class="team-member-bio__image">
-            <img src="/assets/img/team/anne/anne-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Anne Tomasevich">
-          </div>
-          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Anne Tomasevich</h3>
-          <p class="team-member-bio__title">Front End Developer</p>
-          <p class="team-member-bio__description">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
-        </a>
+        <div class="team-member-bio__image">
+          <img src="/assets/img/team/chris/chris-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Anne Tomasevich">
+        </div>
+        <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Anne Tomasevich</h3>
+        <p class="team-member-bio__title">Front End Developer</p>
+        <p class="team-member-bio__description">Anne is a developer at Savas Labs, focused on front-end technologies and user experience.</p>
       </div>
       <div class="team-member-bio">
         <a class="team-member-bio__link" href="/company/chris-russo/">
@@ -51,15 +49,13 @@ plugin to create a `<picture>` element for the team member photo.
         </a>
       </div>
       <div class="team-member-bio">
-      <a class="team-member-bio__link" href="/company/kat-nigro/">
         <div class="team-member-bio__image">
-          <img src="/assets/img/team/kat/kat-square-green.jpg" class="image--team-square" itemprop="image" alt="Kat Nigro">
+          <img src="/assets/img/team/chris/chris-square-green.jpg" class="image--team-square" itemprop="image" alt="Kat Nigro">
         </div>
         <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Kat Nigro</h3>
         <p class="team-member-bio__title">Office Administrator</p>
         <p class="team-member-bio__description">Kat is the office admin at Savas Labs. She gets stuff done.</p>
-      </a>
-    </div>
+      </div>
       <div class="team-member-bio">
         <a class="team-member-bio__link" href="/company/ro-wang/">
           <div class="team-member-bio__image">

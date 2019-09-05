@@ -41,7 +41,7 @@ Turns out, the secret surprise was an [on-brand] palindromic team kayak excursio
 </span>
 </div>
 
-The next morning some of us fit in some exercise :running_man:, and we all caught up on email and individual work before gathering for [lunch](https://torchystacos.com/menu/). Afternoon team sessions were around the theme of “Looking Forward”—what’s in store for the future of Savas, trends in development from [Anne](/company/anne-tomasevich), [Dan](/company/dan-murphy), and Oksana, and a look into what marketing plans we have in store for 2019 and beyond (spoiler: that involves [me](/company/jordan-nelson)!) . Ideas were pitched, concerns brought to light and addressed, and excitement built! There was an energy at this meeting. An energy of anticipation, excitement, and togetherness.
+The next morning some of us fit in some exercise :running_man:, and we all caught up on email and individual work before gathering for [lunch](https://torchystacos.com/menu/). Afternoon team sessions were around the theme of “Looking Forward”—what’s in store for the future of Savas, trends in development from Anne, [Dan](/company/dan-murphy), and Oksana, and a look into what marketing plans we have in store for 2019 and beyond (spoiler: that involves [me](/company/jordan-nelson)!) . Ideas were pitched, concerns brought to light and addressed, and excitement built! There was an energy at this meeting. An energy of anticipation, excitement, and togetherness.
 
 <div class="blog-image-full-width">
 <img alt="Outdoor meetings together at our airbnb" src="/assets/img/blog/chris-dan-austin-run.jpg">
