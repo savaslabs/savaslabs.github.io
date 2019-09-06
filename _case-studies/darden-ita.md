@@ -15,8 +15,6 @@ client_description: |
 client_dates: 2018 - Present
 project_highlights: [Drupal 8, Content Migration, UX design and implementation, Client Training]
 project_description: |
-  Content Migration / Redesign
-
   To secure their place as one of the country’s top business schools, the Darden School of Business sought to redesign and rebuild their web properties in Drupal 8. Partnering closely with peer agency Viget on design, Savas Labs consulted throughout the design process and engineered the new Drupal 8 site.
 description: |
   To secure their place as one of the country’s top business schools, the Darden School of Business sought to redesign and rebuild their web properties in Drupal 8. Partnering closely with peer agency Viget on design, Savas Labs consulted throughout the design process and engineered the new Drupal 8 site.
