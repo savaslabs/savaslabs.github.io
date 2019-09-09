@@ -9,7 +9,7 @@ drupal_planet_summary: |
   How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
 description: How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
 image: "/assets/img/blog/ancient-language.jpg"
-featured_image: "/blog/ancient-language.JPG"
+featured_image: "/blog/ancient-language.jpg"
 featured_image_alt: "Ancient written language."
 
 ---
