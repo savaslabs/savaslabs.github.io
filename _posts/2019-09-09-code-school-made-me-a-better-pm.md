@@ -4,10 +4,10 @@ title: "Code School Made Me a Better PM"
 date: 2019-09-09
 author: Maddy Bishop-Van Horn
 tags: best-practices business productivity drupal-planet
-summary: "How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager."
+summary: How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
 drupal_planet_summary: |
-  "How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager."
-description: "How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager."
+  How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
+description: How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
 image: "/assets/img/blog/ancient-language.jpg"
 featured_image: "/blog/ancient-language.JPG"
 featured_image_alt: "Ancient written language."
@@ -32,7 +32,7 @@ I started with the [Web Development 101](https://www.theodinproject.com/courses/
 
 <div class="blog-image-large">
 <img alt="Yoshi depicted on virtual etch-a-sketch" src="/assets/img/blog/etch-a-sketch.png">
-<span class="caption">[Ro](https://savaslabs.com/company/ro-wang/), a senior PM at Savas, used my etch-a-sketch to draw a killer rendition of Yoshi</span>
+<span class="caption">Ro, a senior PM at Savas, used my etch-a-sketch to draw a killer rendition of Yoshi</span>
 </div>
 
 I also built this throwback, functional “solar-powered” [calculator](https://maddybvh.github.io/calculator/) from scratch using html, css, and javascript (#proud):
