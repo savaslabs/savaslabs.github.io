@@ -35,9 +35,7 @@ I started with the [Web Development 101](https://www.theodinproject.com/courses/
 
 I also built this throwback, functional “solar-powered” [calculator](https://maddybvh.github.io/calculator/) from scratch using HTML, CSS, and JavaScript (#proud):
 
-<div class="blog-image">
-<img alt="Solar powered calculator" src="/assets/img/blog/maddy-calculator.png">
-</div>
+<iframe src="https://maddybvh.github.io/calculator/" width="100%" height="500px" style="border:none"></iframe>
 
 I had a blast and grew a whole new level of appreciation for Savas’s supportive frontend squad.
 
