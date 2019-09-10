@@ -21,12 +21,12 @@ This meant I spent a lot of time in countries in which I did not speak the local
 
 <div class="blog-image-full-width">
 <img alt="Map depicting Maddy's travels" src="/assets/img/blog/maddy-travels-map.png">
-<span class="caption">Those tiny red dots are areas I’ve lived, worked, and traveled over the past 3 years.</span>
+<span class="caption">Those tiny red dots are areas I’ve lived, worked, and traveled over the past three years.</span>
 </div>
 
 I’ve found that the same principle applies to working in web development. In my last blog post, I wrote about [Learning to Speak Drupal](https://savaslabs.com/2019/04/22/top-5-things-to-know-to-speak-drupal.html). Now, I’m reflecting on how learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager as a whole.
 
-Since I’m both perpetually curious and respectful of my coworker’s time, I looked to a free, open-source code school called The Odin Project to begin learning the “basic phrases” of web development. [The Odin Project](https://www.theodinproject.com) teaches Ruby on Rails as a backend language and framework, while Savas works primarily with PHP/Drupal. However, I still found it to be a fantastic roadmap for learning the basics.
+Since I’m both perpetually curious _and_ respectful of my coworker’s time, I looked to a free, open-source code school called The Odin Project to begin learning the “basic phrases” of web development. [The Odin Project](https://www.theodinproject.com) teaches Ruby on Rails as a backend language and framework, while Savas works primarily with PHP/Drupal. However, I still found it to be a fantastic roadmap for learning the basics.
 
 I started with the [Web Development 101](https://www.theodinproject.com/courses/web-development-101) course and would recommend it to anyone who prefers learning by doing (and failing and then doing again…). While working my way through the course, I built this groovy [etch-a-sketch](https://maddybvh.github.io/etch-a-sketch/).
 
@@ -35,7 +35,7 @@ I started with the [Web Development 101](https://www.theodinproject.com/courses/
 <span class="caption">Ro, a senior PM at Savas, used my etch-a-sketch to draw a killer rendition of Yoshi</span>
 </div>
 
-I also built this throwback, functional “solar-powered” [calculator](https://maddybvh.github.io/calculator/) from scratch using html, css, and javascript (#proud):
+I also built this throwback, functional “solar-powered” [calculator](https://maddybvh.github.io/calculator/) from scratch using HTML, CSS, and JavaScript (#proud):
 
 <div class="blog-image">
 <img alt="Solar powered calculator" src="/assets/img/blog/maddy-calculator.png">
@@ -51,7 +51,7 @@ But that’s all just fun and games.
 
 For my day-to-day job, the most valuable skill I’ve developed is comfort using the command line and git. One of my favorite ways to help my team is by removing blockers and addressing bottlenecks. Sometimes this is best done through project planning and capacity planning, and sometimes it’s best done by rolling up my sleeves and filling a needed role.
 
-The way I see it, project managers are the ultimate team players. Being able to provide a timely, manual QA of a bug fix branch before it goes to code review and is deployed to a staging site is one way that I’m able to help keep projects running on time and unblock team members. Other times I’m able to help troubleshoot -- or, let’s be honest, at least recreate -- a local stack issue.
+The way I see it, project managers are the ultimate team players. Providing timely, manual QA of a bug fix branch before  code review and deployment to a staging site is one way that I’m able to help keep projects running on time and unblock team members. Other times I’m able to help troubleshoot -- or, let’s be honest, at least recreate -- a local stack issue.
 
 I’m also able to confidently answer questions including:
 * What’s the difference between a codebase and a database?
@@ -60,7 +60,7 @@ I’m also able to confidently answer questions including:
 
 Savas is developer founded and developer managed. It’s one of the things I like most about working here, and it jives well with my curious nature and technical tendencies. Learning just a tiny bit of programming has made me more confident in my ability to contribute to the work we do.
 
-I never became fluent in Kinyarwanda or Nepali, but I did learn enough to get around and occasionally impress the locals. I think about programming the same way. While I may never become fluent in css or PHP, I’m learning enough to do QA locally, spot a complex feature request, and occasionally impress developers and technical clients with what I’ve picked up along the way.
+I never became fluent in Kinyarwanda or Nepali, but I did learn enough to get around and occasionally impress the locals. I think about programming in the same way. While I may never become fluent in CSS or PHP, I’m learning enough to do QA locally, spot a complex feature request, and occasionally impress developers and technical clients with what I’ve picked up along the way.
 
 One of my main goals in life is to expand my comfort zone (professionally, and otherwise). Next on my list? I’d like to improve my vocabulary for the design phase of projects. I’ll be starting with reading [Articulating Design Decisions](https://www.amazon.com/Articulating-Design-Decisions-Communicate-Stakeholders/dp/1491921560), by Tom Greever, which comes recommended by Savas designer, [Sean](https://savaslabs.com/company/sean-oshea/).
 
