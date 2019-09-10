@@ -3,10 +3,8 @@ layout: post
 title: "Code School Made Me a Better PM"
 date: 2019-09-09
 author: Maddy Bishop-Van Horn
-tags: best-practices business productivity drupal-planet
+tags: best-practices business productivity
 summary: How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
-drupal_planet_summary: |
-  How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
 description: How learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager.
 image: "/assets/img/blog/ancient-language.jpg"
 featured_image: "/blog/ancient-language.jpg"
