@@ -6,9 +6,75 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Sep 2019 20:15:21 +0000</pubDate>
-    <lastBuildDate>Tue, 10 Sep 2019 20:15:21 +0000</lastBuildDate>
+    <pubDate>Wed, 11 Sep 2019 11:47:20 +0000</pubDate>
+    <lastBuildDate>Wed, 11 Sep 2019 11:47:20 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Code School Made Me a Better PM</title>
+        <description>&lt;p&gt;Fun fact: before transitioning to the Digital Project Manager career, I spent ~6 months out of the year traveling internationally for work (for an amazing organization called &lt;a href=&quot;http://www.ewh.org&quot;&gt;Engineering World Health&lt;/a&gt; – yes, I’m biased, but check it out!).&lt;/p&gt;
+
+&lt;p&gt;This meant I spent a lot of time in countries in which I did not speak the local language (including Kinyarwanda, Swahili, Khmer, Nepali, and Mongolian). Before each 2-3 month trip, I’d learn some basic phrases (you know, the classics: “Hello,” “Where is the bathroom?”, and “Please, stop the bus, I need to get out!”). However, I found that for each new language, it took about a week for my ears to adjust to the new sounds and patterns so that I could reliably pick up words and phrases.&lt;/p&gt;
+
+&lt;div class=&quot;blog-image-full-width&quot;&gt;
+&lt;img alt=&quot;Map depicting Maddy's travels&quot; src=&quot;/assets/img/blog/maddy-travels-map.png&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Those tiny red dots are areas I’ve lived, worked, and traveled over the past three years.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’ve found that the same principle applies to working in web development. In my last blog post, I wrote about &lt;a href=&quot;https://savaslabs.com/2019/04/22/top-5-things-to-know-to-speak-drupal.html&quot;&gt;Learning to Speak Drupal&lt;/a&gt;. Now, I’m reflecting on how learning the basics of the command line, git, and frontend languages made me a better advocate for clients, development teams, and a better project manager as a whole.&lt;/p&gt;
+
+&lt;p&gt;Since I’m both perpetually curious &lt;em&gt;and&lt;/em&gt; respectful of my coworker’s time, I looked to a free, open-source code school called The Odin Project to begin learning the “basic phrases” of web development. &lt;a href=&quot;https://www.theodinproject.com&quot;&gt;The Odin Project&lt;/a&gt; teaches Ruby on Rails as a backend language and framework, while Savas works primarily with PHP/Drupal. However, I still found it to be a fantastic roadmap for learning the basics.&lt;/p&gt;
+
+&lt;p&gt;I started with the &lt;a href=&quot;https://www.theodinproject.com/courses/web-development-101&quot;&gt;Web Development 101&lt;/a&gt; course and would recommend it to anyone who prefers learning by doing (and failing and then doing again…). While working my way through the course, I built this groovy &lt;a href=&quot;https://maddybvh.github.io/etch-a-sketch/&quot;&gt;etch-a-sketch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;blog-image-large&quot;&gt;
+&lt;img alt=&quot;Yoshi depicted on virtual etch-a-sketch&quot; src=&quot;/assets/img/blog/etch-a-sketch.png&quot; /&gt;
+&lt;span class=&quot;caption&quot;&gt;Ro, a senior PM at Savas, used my etch-a-sketch to draw a killer rendition of Yoshi&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I also built this throwback, functional “solar-powered” &lt;a href=&quot;https://maddybvh.github.io/calculator/&quot;&gt;calculator&lt;/a&gt; from scratch using HTML, CSS, and JavaScript (#proud):&lt;/p&gt;
+
+&lt;iframe src=&quot;https://maddybvh.github.io/calculator/&quot; width=&quot;100%&quot; height=&quot;500px&quot; style=&quot;border:none&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I had a blast and grew a whole new level of appreciation for Savas’s supportive frontend squad.&lt;/p&gt;
+
+&lt;div class=&quot;blog-image-large&quot;&gt;
+&lt;img alt=&quot;Slack messages congratulating Maddy on her etch-a-sketch creation&quot; src=&quot;/assets/img/blog/maddy-front-end-slack.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But that’s all just fun and games.&lt;/p&gt;
+
+&lt;p&gt;For my day-to-day job, the most valuable skill I’ve developed is comfort using the command line and git. One of my favorite ways to help my team is by removing blockers and addressing bottlenecks. Sometimes this is best done through project planning and capacity planning, and sometimes it’s best done by rolling up my sleeves and filling a needed role.&lt;/p&gt;
+
+&lt;p&gt;The way I see it, project managers are the ultimate team players. Providing timely, manual QA of a bug fix branch before  code review and deployment to a staging site is one way that I’m able to help keep projects running on time and unblock team members. Other times I’m able to help troubleshoot – or, let’s be honest, at least recreate – a local stack issue.&lt;/p&gt;
+
+&lt;p&gt;I’m also able to confidently answer questions including:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;What’s the difference between a codebase and a database?&lt;/li&gt;
+  &lt;li&gt;What is a merge conflict?&lt;/li&gt;
+  &lt;li&gt;What are the actual steps required to stage work for client review?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Savas is developer founded and developer managed. It’s one of the things I like most about working here, and it jives well with my curious nature and technical tendencies. Learning just a tiny bit of programming has made me more confident in my ability to contribute to the work we do.&lt;/p&gt;
+
+&lt;p&gt;I never became fluent in Kinyarwanda or Nepali, but I did learn enough to get around and occasionally impress the locals. I think about programming in the same way. While I may never become fluent in CSS or PHP, I’m learning enough to do QA locally, spot a complex feature request, and occasionally impress developers and technical clients with what I’ve picked up along the way.&lt;/p&gt;
+
+&lt;p&gt;One of my main goals in life is to expand my comfort zone (professionally, and otherwise). Next on my list? I’d like to improve my vocabulary for the design phase of projects. I’ll be starting with reading &lt;a href=&quot;https://www.amazon.com/Articulating-Design-Decisions-Communicate-Stakeholders/dp/1491921560&quot;&gt;Articulating Design Decisions&lt;/a&gt;, by Tom Greever, which comes recommended by Savas designer, &lt;a href=&quot;https://savaslabs.com/company/sean-oshea/&quot;&gt;Sean&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I’m always on the lookout for resources to expand my vocabulary and expertise. What do you do to expand your professional comfort zone?&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2019/09/11/code-school-made-me-a-better-pm.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2019/09/11/code-school-made-me-a-better-pm.html</guid>
+        
+        <category>best-practices</category>
+        
+        <category>business</category>
+        
+        <category>productivity</category>
+        
+        
+      </item>
     
       <item>
         <title>Our Team Keeps Getting Bigger: Meet Kayla Morales</title>
@@ -695,56 +761,6 @@ If that’s not a great compliment, I don’t know what is.&lt;/li&gt;
         <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
         <link>https://savaslabs.com/2019/04/08/savas-retreat-yo-self.html</link>
         <guid isPermaLink="true">https://savaslabs.com/2019/04/08/savas-retreat-yo-self.html</guid>
-        
-        <category>team</category>
-        
-        <category>company-culture</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Savas Claus™: The inaugural holiday tradition</title>
-        <description>&lt;p&gt;‘Tis the season of :gift: giving. Now that we’ve &lt;a href=&quot;/2018/12/11/savas-welcomes-ben-eckerson-coo.html&quot;&gt;brought Ben on&lt;/a&gt;, along with him has followed ample holiday cheer.&lt;/p&gt;
-&lt;div style=&quot;padding:76.12% 0 0 0;position:relative;&quot;&gt;&lt;iframe class=&quot;m0&quot; src=&quot;https://player.vimeo.com/video/24452526?autoplay=1&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-&lt;script src=&quot;https://player.vimeo.com/api/player.js&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;span class=&quot;caption&quot;&gt;Ben was “Snowglobe Boy” for former employer ad agency &lt;a href=&quot;https://mckinney.com/&quot;&gt;Mckinney&lt;/a&gt; in December 2007 receiving over 100 million media impressions.&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Ben suggested — and we swiftly agreed to — our first annual Savas Claus™: the name we chose for our year-end holiday gift giving tradition. Oft referred to as &lt;a href=&quot;https://en.wikipedia.org/wiki/Secret_Santa&quot;&gt;Secret Santa&lt;/a&gt;, a group of people buys gifts for one another while keeping the giver and receivers anonymous until the big reveal. It’s a lot of fun.&lt;/p&gt;
-
-&lt;p&gt;Typically, to randomly assign gift receivers to their respective givers, you write everyone’s name down on paper, put the names into a hat, and each person blindly picks a name for whom they get a gift. However, this analog approach has &lt;em&gt;one major flaw&lt;/em&gt;: one can easily end up with himself:&lt;/p&gt;
-
-&lt;div class=&quot;blog-image-large&quot; style=&quot;text-align:center&quot;&gt;
-&lt;img src=&quot;https://media1.tenor.com/images/fe6a574d37f0b0189d412bb11e719906/tenor.gif&quot; alt=&quot;Kevin from the Office gets himself for Secret Santa&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;the-challenges&quot;&gt;The challenges&lt;/h2&gt;
-
-&lt;p&gt;First, we knew we had ahead of us one of &lt;a href=&quot;https://martinfowler.com/bliki/TwoHardThings.html&quot;&gt;the &lt;strong&gt;&lt;em&gt;two&lt;/em&gt;&lt;/strong&gt; hard problems in computer science&lt;/a&gt;: cache-invalidation, off-by-one errors, and &lt;strong&gt;naming things&lt;/strong&gt;. Giving the naming task the gravity it deserved, we put it to a poll. Savas Claus™ prevailed by a narrow margin over Secret Savas (its main critique: being too close to “secret service”). Given the aforementioned self-selection consideration (“the Kevin problem”) and the fact that our team is distributed, we went for a digital solution. After all, we &lt;em&gt;are&lt;/em&gt; web engineers.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-approach&quot;&gt;The approach&lt;/h2&gt;
-
-&lt;p&gt;Since Slack is so deeply ingrained in our day-to-day, we looked for a solution there first. A &lt;a href=&quot;https://savaslabs.slack.com/apps/A0E7EFUB1-secret-santa&quot;&gt;Secret Santa Slack app does exist&lt;/a&gt;, yet it didn’t afford us the flexibility and panache we were going for — plus it’s way more fun to &lt;a href=&quot;https://github.com/savaslabs/savas-slack-tools/pull/5&quot;&gt;make your own&lt;/a&gt;! So we (well Chris) got in some weekend time to build a simple Slack app that would serve our needs during our weekly Monday morning team-wide status call.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
-
-&lt;p&gt;We use tools on a near-daily basis that randomize the order of our team, for purposes like who gets to choose the lunch spot each week when we go out, or to randomize the order we speak during our weekly status call. So, adding the Savas Claus™ functionality was a natural extension to what we already had. The app creates a random order of the team (the “givers”), generates a second randomly ordered list of the team (“the receivers”) and pairs them with each other. If there are any repeats among the two lists in the same slot, the app automatically regenerates the second list and will repeat until the lists share no one in the same slot, and therefore receivers can safely be assigned to givers. With the lists vetted, the Slack app privately messages each giver notifying them of their respective recipient. The message looks &lt;em&gt;something&lt;/em&gt; like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/blog/savas-claus-chris-screenshot.png&quot; alt=&quot;Chris's resulting Savas Claus private message&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;NB: the exclamation point was meant to be a subtly hidden link, an &lt;a href=&quot;https://en.wikipedia.org/wiki/Easter_egg_(media)&quot;&gt;:rabbit: :egg: easter egg&lt;/a&gt; if you will, but it seems Slack sensed it was the wrong time of year for such shenanigans and sabotaged the surprise unfurling the &lt;a href=&quot;https://www.youtube.com/watch?v=B6jCMaiTqG0&quot;&gt;office reference&lt;/a&gt; for all to see plainly. You win some and you lose some.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-results-santa-christmas_tree-gift-gift_heart&quot;&gt;The results :santa: :christmas_tree: :gift: :gift_heart:&lt;/h2&gt;
-
-&lt;p&gt;The team is currently prepping and/or shipping their gifts before our “unwrapping” virtual party/social of sorts in a couple days. No doubt we’ll use our “Savas Shuffle” Slackbot to determine the order for who will open their gifts first. &lt;a href=&quot;https://twitter.com/savaslabs&quot;&gt;Follow us on Twitter&lt;/a&gt; and we’ll share the real results (the gifts!) from our first annual Savas Claus™.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2018/12/17/savas-claus.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2018/12/17/savas-claus.html</guid>
-        
-        <category>open-source</category>
         
         <category>team</category>
         
