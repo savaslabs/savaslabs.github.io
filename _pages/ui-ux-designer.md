@@ -101,8 +101,4 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 <br>
 
-Ready to get started? Send us an application today.
-
-<a href="https://savas-labs.breezy.hr/p/1e2915a597f9-ux-designer" class="button--arrow--orange">Apply</a>
-
-<!-- TODO: update link -->
+Let's start there. If you're Interested in applying for this position please <a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
