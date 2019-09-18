@@ -111,6 +111,40 @@
   </script>
   <!-- End of Async Drift Code -->
 
+  <!-- // Pulled from here: https://github.com/fightforthefuture/digital-climate-strike -->
+  <script type="text/javascript">
+    var DIGITAL_CLIMATE_STRIKE_OPTIONS = {
+
+      /**
+       * Set the language of the widget. We currently support:
+       * 'en': English
+       * 'de': German
+       * 'es': Spanish
+       * 'cs': Czech
+       * 'fr': French
+       * 'nl': Dutch
+       * 'tr': Turkish
+       * Defaults to null, which will obey the nagivator.language setting of the
+       * viewer's browser.
+       */
+      language: 'en', // @type {string}
+
+      /**
+       * For the full page widget, shows a close button "x" and hides the message about the site being
+       * available tomorrow. Defaults to false.
+       */
+      showCloseButtonOnFullPageWidget: true, // @type {boolean}
+
+      /**
+       * The date when the sticky footer widget should start showing on your web site.
+       * Note: the month is one integer less than the number of the month. E.g. 8 is September, not August.
+       * Defaults to new Date(2019, 7, 1) (August 1st, 2019).
+       */
+      footerDisplayStartDate: new Date(), //@ type {Date object}
+
+    };
+  </script>
+  <script src="https://assets.digitalclimatestrike.net/widget.js" async></script>
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Savas Labs | We design digital products that users love</title>
 <meta name="generator" content="Jekyll v3.7.4" />
