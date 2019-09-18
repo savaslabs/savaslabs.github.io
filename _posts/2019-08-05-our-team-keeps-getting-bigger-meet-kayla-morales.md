@@ -4,8 +4,8 @@ title: "Our Team Keeps Getting Bigger: Meet Kayla Morales"
 date: 2019-08-05
 author: Jordan Nelson and Kayla Morales
 tags: team company-culture
-summary: “Kayla joins as our newest Project Manager. In between her busy days onboarding with Maddy, getting acclimated to the office, and taking on projects of her own, we caught up and I asked some questions for us all to get to know her a bit better. So, without further ado, let’s meet Kayla!“
-description: “Kayla joins as our newest Project Manager. In between her busy days onboarding with Maddy, getting acclimated to the office, and taking on projects of her own, we caught up and I asked some questions for us all to get to know her a bit better. So, without further ado, let’s meet Kayla!“
+summary: We interviewed Kayla to learn more about her story, what she brings to the Savas team, and her love of reading!
+description: We interviewed Kayla to learn more about her story, what she brings to the Savas team, and her love of reading!
 image: "/assets/img/blog/kayla-and-jordan.JPG"
 featured_image: "/blog/kayla-and-jordan.JPG"
 featured_image_alt: "Kayla and Jordan on computer."
