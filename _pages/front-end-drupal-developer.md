@@ -90,5 +90,5 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 <br>
 
 Ready to get started? Send us an application today.
-<!-- @todo: Add correct link. -->
+
 <a href="https://savas-labs.breezy.hr/p/b2a556a7a1ab-drupal-developer/apply" class="button--arrow--orange">Apply</a>

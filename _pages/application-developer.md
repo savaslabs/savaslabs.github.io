@@ -73,6 +73,6 @@ As a full-service digital agency, we partner with clients to fulfill their desig
 
 <br>
 
-Let's start there.
-If you're Interested in applying for this position
-<a href="mailto:careers@savaslabs.com">send us a message</a> and attach a résumé and cover letter.
+Ready to get started? Send us a résumé and cover letter today.
+
+<a href="mailto:careers@savaslabs.com" class="button--arrow--orange">Apply</a>
