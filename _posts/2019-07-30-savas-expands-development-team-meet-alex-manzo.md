@@ -4,8 +4,8 @@ title: "Savas Expands Development Team: Meet Alex Manzo"
 date: 2019-07-30
 author: Alex Manzo
 tags: team company-culture
-summary: “I am beyond thrilled to join the Savas Labs team as a junior front-end developer. I came to Savas after a year working with NETE. Before that, I spent my days, nights, and weekends working in athletics video production. I’m probably the only member of the Savas team who could produce a live basketball broadcast without breaking a sweat.“
-description: “I am beyond thrilled to join the Savas Labs team as a junior front-end developer. I came to Savas after a year working with NETE. Before that, I spent my days, nights, and weekends working in athletics video production. I’m probably the only member of the Savas team who could produce a live basketball broadcast without breaking a sweat.“
+summary: "Our newest Junior Front-End Developer joins us with a love of dogs (their dog even joined us at the office one day!) and the best gif game you've ever seen."
+description: "Our newest Junior Front-End Developer joins us with a love of dogs (their dog even joined us at the office one day!) and the best gif game you've ever seen."
 image: "/assets/img/blog/alex-maddy-computer.jpg"
 featured_image: "/blog/alex-maddy-computer.jpg"
 featured_image_alt: "Alex and Maddy collaborating."

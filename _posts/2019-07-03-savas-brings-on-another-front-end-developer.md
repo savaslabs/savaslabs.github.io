@@ -4,8 +4,8 @@ title: "Savas Brings on Another Front-end Developer"
 date: 2019-07-03
 author: Madeline Streilein
 tags: team company-culture
-summary: “Hello Savas Labs fans! My name is Madeline Streilein and I am one of Savas’ two brand new Junior Front-end Developers (Alex Manzo also joined our burgeoning front-end squad under the tutelage of Anne Tomasevich - keep an eye out for their introduction).“
-description: “Hello Savas Labs fans! My name is Madeline Streilein and I am one of Savas’ two brand new Junior Front-end Developers (Alex Manzo also joined our burgeoning front-end squad under the tutelage of Anne Tomasevich - keep an eye out for their introduction).“
+summary: Get to know Savas' newest Junior Front-end Developer, find out why she chose Savas and read a couple of her best dad jokes.
+description: Get to know Savas' newest Junior Front-end Developer, find out why she chose Savas and read a couple of her best dad jokes.
 image: "/assets/img/blog/madeline-dan-computer.jpg"
 featured_image: "/blog/madeline-dan-computer.jpg"
 featured_image_alt: "Madeline and Dan working on computer."
