@@ -1,5 +1,6 @@
 ---
 name: Ben Eckerson
+first_name: Ben
 slug: ben-eckerson
 layout: team
 job_title: Chief Operating Officer

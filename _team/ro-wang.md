@@ -1,5 +1,6 @@
 ---
 name: Ro Wang
+first_name: Ro
 slug: ro
 layout: team
 job_title: Senior Project Manager / Web Developer

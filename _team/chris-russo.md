@@ -1,5 +1,6 @@
 ---
 name: Chris Russo
+first_name: Chris
 slug: chris
 layout: team
 job_title: Chief Executive Officer

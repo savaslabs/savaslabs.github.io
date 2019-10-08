@@ -1,5 +1,6 @@
 ---
 name: Madeline Streilein
+first_name: Madeline
 slug: madeline-streilein
 layout: team
 job_title: Junior Front-end Developer

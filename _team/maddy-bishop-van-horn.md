@@ -1,5 +1,6 @@
 ---
 name: Maddy Bishop-Van Horn
+first_name: Maddy
 slug: maddy-bishop-van-horn
 layout: team
 job_title: Project Manager

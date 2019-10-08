@@ -1,5 +1,6 @@
 ---
 name: Brian Vuyk
+first_name: Brian
 layout: team
 slug: brian-vuyk
 job_title: Senior Web Engineer
