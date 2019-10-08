@@ -41,7 +41,7 @@ services_provided: |
   - [Site Migration](/services/development)
 technologies_used: |
   - [Varnish](/blog/tag/performance)
-  - [Linode](/blog/tag/linode)
+  - [Linode](/blog/tag/legacy-systems-integration)
 client_logo: "/assets/img/work/logos/wisebread-logo.png"
 client_logo_width: "430px"
 client_logo_height: "85px"
