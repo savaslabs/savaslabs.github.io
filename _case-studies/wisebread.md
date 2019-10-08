@@ -35,7 +35,7 @@ technologies_used: |
 client_logo: "/assets/img/work/logos/wisebread-logo.png"
 client_logo_width: "430px"
 client_logo_height: "85px"
-client_logo_light: "/assets/img/work/logos/wisebread-logo.png"
+client_logo_light: "/assets/img/work/logos/wisebread-logo-eggshell.png"
 tile_description: |
   A longtime partner, we’ve created solutions in stride with Wisebread’s needs. One thing we’re most proud of: the 99.99% uptime for the platform.
 image: "/assets/img/work/wisebread/wisebread-showcase.png"
