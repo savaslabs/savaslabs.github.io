@@ -1,4 +1,10 @@
 # For client quote regions.
+- project: wisebread
+  name: Gregory Go
+  title: Founder and CTO of Wisebread
+  image: /assets/img/work/clients/gr-go.jpeg
+  quote: |
+    You guys have been there from the beginning. We’re so happy with the work from Savas.
 - project: uva-darden-ita
   name: Kelly Kenny
   title: VP, Client Services, Viget (Partner Agency)
