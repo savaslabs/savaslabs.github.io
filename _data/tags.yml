@@ -7,6 +7,8 @@
   name: Drupal Planet
 - slug: jekyll
   name: Jekyll
+- slug: linode
+  name: Linode
 - slug: bourbon
   name: Bourbon
 - slug: sass
