@@ -1,6 +1,5 @@
 ---
 name: Alex Manzo
-first_name: Alex
 slug: alex-manzo
 layout: team
 job_title: Junior Front-end Developer

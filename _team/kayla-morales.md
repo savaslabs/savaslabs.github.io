@@ -1,6 +1,5 @@
 ---
 name: Kayla Morales
-first_name: Kayla
 slug: kayla-morales
 layout: team
 job_title: Project Manager

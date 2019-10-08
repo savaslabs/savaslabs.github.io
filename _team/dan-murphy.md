@@ -1,6 +1,5 @@
 ---
 name: Dan Murphy
-first_name: Dan
 slug: dan
 layout: team
 job_title: Senior Web Engineer

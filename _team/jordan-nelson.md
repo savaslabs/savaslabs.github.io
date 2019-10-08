@@ -1,6 +1,5 @@
 ---
 name: Jordan Nelson
-first_name: Jordan
 slug: jordan-nelson
 layout: team
 job_title: Marketing Coordinator

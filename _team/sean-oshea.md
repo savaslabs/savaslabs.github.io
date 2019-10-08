@@ -1,6 +1,5 @@
 ---
 name: Sean O'Shea
-first_name: Sean
 slug: sean-oshea
 layout: team
 job_title: Senior UX Design Strategist
