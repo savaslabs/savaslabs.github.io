@@ -1,6 +1,7 @@
 ---
 name: Devan Chase
 slug: devan-chase
+first_name: Devan
 job_title: Senior Web Developer
 layout: team
 linkedin: devan-chase-0aa2a162
