@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Storybook Part 1"
+title: "Working with Storybook and Drupal (Part 1)"
 date: 2019-10-11
 author: Alex Manzo
 tags: storybook front-end-dev component-libraries twig drupal drupal-planet
@@ -49,17 +49,18 @@ After tinkering with several solutions we finally settled on [Storybook](https:/
 
 A friend to Savas gave us a great starter project that included Twig integration to get us up and running. We heavily changed and adapted that into our own setup. We’ll dig into specifics in a future post, but there were some challenges we faced along the way.
 
-1. Integrating Storybook into Drupal
-  We ultimately created a Storybook directory within our site’s theme directory. This allows all of the templates in our Drupal theme to access Storybook components within the same project.
+#### 1. Integrating Storybook into Drupal
+We ultimately created a Storybook directory within our site’s theme directory. This allows all of the templates in our Drupal theme to access Storybook components within the same project.
 
-2. Using Twig
-  Twig Loader has been the key to getting Storybook and Twig to work well together. It’s only necessary for us to load within Storybook itself and has allowed us to use Twig templates seamlessly.
+#### 2. Using Twig
+Twig Loader has been the key to getting Storybook and Twig to work well together. It’s only necessary for us to load within Storybook itself and has allowed us to use Twig templates seamlessly.
 
-3. Custom Webpack Configuration
-  In our theme directory we created a `wepback.commons.js` file that both the webpack config in our Drupal theme and the one in the Storybook directory could have access to. This allows for the styles/scripts Storybook to be compiled into bundles that both Storybook and our Drupal theme have access to.
+#### 3. Custom Webpack Configuration
+In our theme directory we created a `wepback.commons.js` file that both the webpack config in our Drupal theme and the one in the Storybook directory could have access to. This allows for the styles/scripts Storybook to be compiled into bundles that both Storybook and our Drupal theme have access to.
 
-4. Integrating Tailwind
-  As a team we use [Tailwind](https://tailwindcss.com/), a utility framework for CSS. It comes with its own needs in terms of webpack configuration and we fought a bit of a battle getting all plugins and configs to play nicely together.
+#### 4. Integrating Tailwind
+As a team we use [Tailwind](https://tailwindcss.com/), a utility framework for CSS. It comes with its own needs in terms of webpack configuration and we fought a bit of a battle getting all plugins and configs to play nicely together.
+
 
 The setup we ultimately ended up with has worked great with some limitations. We’re still troubleshooting some issues with Storybook accessing our custom JS files. Fortunately, Drupal’s access to the scripts hasn’t been an issue, so we haven’t had our progress impeded too much as we tackle that lingering challenge.
 
@@ -67,13 +68,13 @@ The setup we ultimately ended up with has worked great with some limitations. We
 
 This blog is unique - it’s not a pre-mortem or post-mortem, it’s a….mid-mortem? We’ve already learned a lot, made some mistakes along the way, but are proud to say we have Storybook and Drupal working in tandem with one another.
 
-_Big Jump on Front-end_
+**Big Jump on Front-end**
 
 One of the biggest differences this approach made off the bat was the ability to immediately get started on building components on the front-end. We built JSON data models so we could populate our templates based on the data that would be coming from Drupal.
 
 Once the Drupal environment was ready, we slid our Storybook theme right in and started hooking up our templates to their respective paragraph types, and voilà!
 
-_Getting More Organized_
+**Getting More Organized**
 
 Focusing on making components reusable and focusing on atomic design principles has helped us be more efficient in our work.
 
@@ -105,7 +106,7 @@ From a Drupal perspective, most of our template files contain nothing but a refe
 <img alt="Featured Topic card example" src="/assets/img/blog/storybook-card-7.png">
 </div>
 
-_Challenges_
+**Challenges**
 
 We’d love to say that everything has been easy and flawless, but you wouldn’t believe us anyway. There have definitely been some challenges along the way.
 
