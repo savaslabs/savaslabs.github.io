@@ -1,6 +1,12 @@
 # For now, if you add a tag you also need to add an empty
 # template in /blog/tag.
 
+- slug: component-libraries
+  name: Component Libraries
+- slug: storybook
+  name: Storybook
+- slug: twig
+  name: Twig
 - slug: drupal
   name: Drupal
 - slug: drupal-planet
