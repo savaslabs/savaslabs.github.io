@@ -9,6 +9,8 @@ description: On using Storybook to integrate component libraries into Drupal 8 p
 image: "/assets/img/blog/storybook-post.jpg"
 featured_image: "/blog/storybook-post.jpg"
 featured_image_alt: "Storybook and Drupal 8 logos on background with people working on laptops."
+drupal_planet_summary: |
+  On using Storybook to integrate component libraries into Drupal 8 projects, part 1.
 
 ---
 
