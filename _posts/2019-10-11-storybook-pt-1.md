@@ -8,7 +8,7 @@ summary: On using Storybook to integrate component libraries into Drupal 8 proje
 description: On using Storybook to integrate component libraries into Drupal 8 projects.
 image: "/assets/img/blog/storybook-post.jpg"
 featured_image: "/blog/storybook-post.jpg"
-featured_image_alt: "Ancient written language."
+featured_image_alt: "Storybook and Drupal 8 logos on background with people working on laptops."
 
 ---
 
@@ -37,9 +37,9 @@ There are a lot of great component library tools out there, but we needed to fin
 - Support for Twig (how we build our templates in Drupal)
 - Supports our build processes (webpack, linting, image optimization, etc.)
 
-Y’all, I’m gonna be straight with you. Finding the right tool for this was _hard_. Many of the tools for component libraries out there are (very logically) focused on supporting projects in React, Vue, or Angular. Our projects weren’t a logical use case for these kinds of technologies. It immediately became clear that there was probably no “out of the box” solution and we’d have to do at least some customization to fit our needs
+Y’all, I’m gonna be straight with you. Finding the right tool for this was _hard_. Many of the tools for component libraries out there are (logically) focused on supporting projects in React, Vue, or Angular. Our projects weren’t a logical use case for these kinds of technologies. It immediately became clear that there was probably no “out of the box” solution and we’d have to do at least some customization to fit our needs.
 
-We found a lot of blog posts and articles where teams had leveraged a component library and Drupal or integrated Twig with popular component library tools.  Sadly, we didn’t find much explanation of _how_ to do it. (We’re looking to remedy that problem in Part 2 of this post).
+We found a lot of blog posts and articles where teams had leveraged a component library and Drupal or integrated Twig with popular component library tools. Sadly, we didn’t find much explanation of _how_ to do it. (We’re looking to remedy that problem in Part 2 of this post).
 
 After tinkering with several solutions we finally settled on [Storybook](https://storybook.js.org/). Storybook offered a more light-weight file structure than some others, uses webpack, and would work with other front-end technologies we’ll use in the future. Storybook also benefits from a large community that works to improve the product and create great add-ons. Most importantly, it’s adaptable enough to fit our use case.
 
@@ -69,7 +69,7 @@ _Big Jump on Front-end_
 
 One of the biggest differences this approach made off the bat was the ability to immediately get started on building components on the front-end. We built JSON data models so we could populate our templates based on the data that would be coming from Drupal.
 
-Once the Drupal environment was ready, we slid our Storybook theme right in and started hooking up our templates to their respective paragraph types, and voila!
+Once the Drupal environment was ready, we slid our Storybook theme right in and started hooking up our templates to their respective paragraph types, and voilà!
 
 _Getting More Organized_
 
@@ -79,7 +79,7 @@ A great example of this is the use of “cards” on one project. This particula
 
 For each of those seven “types” of cards, each of _those_ has multiple versions that show in different scenarios. They all ultimately reference one component file. In turn, that template can references some even smaller templates that change depending on the context.
 
-From a Drupal perspective, most of our template files contain nothing but a reference and variable declarations to the appropriate storybook component. Nothing gets siloed or repeated.  All roads lead back to `card.twig`:
+From a Drupal perspective, most of our template files contain nothing but a reference and variable declarations to the appropriate storybook component. Nothing gets siloed or repeated. All roads lead back to `card.twig`:
 
 <div class="blog-image-large">
 <img alt="Trending Topic card example" src="/assets/img/blog/storybook-card-1.png">
@@ -109,7 +109,7 @@ We’d love to say that everything has been easy and flawless, but you wouldn’
 
 First, we seem to continually be refactoring component files to be _more_ flexible and reusable as we continue to find use cases for them. We focused heavily on creating paragraph types in Storybook, but as we build others section of our sites, we realize the shared styles and functionality can expand even further.
 
-Along the same lines, finding the right balance on how to break everything down within the paradigm of atomic design is a challenge. I personally have found that some things that began as an “organism” should more realistically be considered “molecules”.
+Along the same lines, finding the right balance on how to break everything down within the paradigm of atomic design is a challenge. I have found that some things that began as an “organism” should more realistically be considered “molecules”.
 
 Another challenge has been creating templates that work appropriately for both Drupal and Storybook. What works to display something in Drupal might not work as well for Storybook. Overriding templates for fields changes the data flow so it becomes more necessary to pass Storybook literal templates as data instead of just data itself.
 
