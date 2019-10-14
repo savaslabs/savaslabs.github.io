@@ -20,7 +20,7 @@ Recently, the team at Savas Labs decided to embark on integrating component libr
 
 A component library is a repository of reusable building blocks for your website. Think of some of the items that appear on a website over and over again. There are small items (like form elements) and bigger ones (like an image carousel). These are components. For some examples, head over to [Bootstrap’s documentation](https://getbootstrap.com/docs/3.4/components/), where they lay out some of the many reusable components available with the framework.
 
-Component based design goes hand in hand with the practice of [atomic design](http://bradfrost.com/blog/post/atomic-web-design/). This methodology breaks down elements into five categories: Atoms, Molecules, Organisms, Templates, and Pages. Atoms are the smallest parts of your site. Atoms build molecules, molecules build organisms, etc. I highly recommend visiting the link and learning more about this methodology.
+Component-based design goes hand in hand with the practice of [atomic design](http://bradfrost.com/blog/post/atomic-web-design/). This methodology breaks down elements into five categories: Atoms, Molecules, Organisms, Templates, and Pages. Atoms are the smallest parts of your site. Atoms build molecules, molecules build organisms, etc. I highly recommend visiting the link and learning more about this methodology.
 
 ### Why Are We Using a Component Library?
 
@@ -43,11 +43,11 @@ Y’all, I’m gonna be straight with you. Finding the right tool for this was _
 
 We found a lot of blog posts and articles where teams had leveraged a component library and Drupal or integrated Twig with popular component library tools. Sadly, we didn’t find much explanation of _how_ to do it. (We’re looking to remedy that problem in Part 2 of this post).
 
-After tinkering with several solutions we finally settled on [Storybook](https://storybook.js.org/). Storybook offered a more light-weight file structure than some others, uses webpack, and would work with other front-end technologies we’ll use in the future. Storybook also benefits from a large community that works to improve the product and create great add-ons. Most importantly, it’s adaptable enough to fit our use case.
+After tinkering with several solutions we finally settled on [Storybook](https://storybook.js.org/). Storybook offered a more light-weight file structures than some others, uses webpack, and would work with other front-end technologies we’ll use in the future. Storybook also benefits from a large community that works to improve the product and create great add-ons. Most importantly, it’s adaptable enough to fit our use case.
 
 ### Getting Storybook to Work for Us
 
-A friend to Savas gave us a great starter project that included Twig integration to get us up and running. We heavily changed and adapted that into our own setup. We’ll dig into specifics in a future post, but there were some challenges we faced along the way.
+A friend to Savas gave us a great starter project that included Twig integration to get us up and running. We heavily changed and adapted that into our setup. We’ll dig into specifics in a future post, but there were some challenges we faced along the way.
 
 #### 1. Integrating Storybook into Drupal
 We ultimately created a Storybook directory within our site’s theme directory. This allows all of the templates in our Drupal theme to access Storybook components within the same project.
@@ -56,10 +56,10 @@ We ultimately created a Storybook directory within our site’s theme directory.
 Twig Loader has been the key to getting Storybook and Twig to work well together. It’s only necessary for us to load within Storybook itself and has allowed us to use Twig templates seamlessly.
 
 #### 3. Custom Webpack Configuration
-In our theme directory we created a `wepback.commons.js` file that both the webpack config in our Drupal theme and the one in the Storybook directory could have access to. This allows for the styles/scripts Storybook to be compiled into bundles that both Storybook and our Drupal theme have access to.
+In our theme directory, we created a `wepback.commons.js` file that both the webpack config in our Drupal theme and the one in the Storybook directory could have access to. This allows for the styles/scripts Storybook to be compiled into bundles that both Storybook and our Drupal theme have access to.
 
 #### 4. Integrating Tailwind
-As a team we use [Tailwind](https://tailwindcss.com/), a utility framework for CSS. It comes with its own needs in terms of webpack configuration and we fought a bit of a battle getting all plugins and configs to play nicely together.
+As a team, we use [Tailwind](https://tailwindcss.com/), a utility framework for CSS. It comes with its own needs in terms of webpack configuration and we fought a bit of a battle getting all plugins and configs to play nicely together.
 
 
 The setup we ultimately ended up with has worked great with some limitations. We’re still troubleshooting some issues with Storybook accessing our custom JS files. Fortunately, Drupal’s access to the scripts hasn’t been an issue, so we haven’t had our progress impeded too much as we tackle that lingering challenge.
@@ -108,9 +108,9 @@ From a Drupal perspective, most of our template files contain nothing but a refe
 
 **Challenges**
 
-We’d love to say that everything has been easy and flawless, but you wouldn’t believe us anyway. There have definitely been some challenges along the way.
+We’d love to say that everything has been easy and flawless, but you wouldn’t believe us anyway. There have been some challenges along the way.
 
-First, we seem to continually be refactoring component files to be _more_ flexible and reusable as we continue to find use cases for them. We focused heavily on creating paragraph types in Storybook, but as we build others section of our sites, we realize the shared styles and functionality can expand even further.
+First, we seem to continually be refactoring component files to be _more_ flexible and reusable as we continue to find use cases for them. We focused heavily on creating paragraph types in Storybook, but as we build other sections of our sites, we realize the shared styles and functionality can expand even further.
 
 Along the same lines, finding the right balance on how to break everything down within the paradigm of atomic design is a challenge. I have found that some things that began as an “organism” should more realistically be considered “molecules”.
 
