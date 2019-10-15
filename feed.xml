@@ -6,8 +6,8 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Oct 2019 11:03:20 +0000</pubDate>
-    <lastBuildDate>Fri, 11 Oct 2019 11:03:20 +0000</lastBuildDate>
+    <pubDate>Tue, 15 Oct 2019 19:01:49 +0000</pubDate>
+    <lastBuildDate>Tue, 15 Oct 2019 19:01:49 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -18,7 +18,7 @@
 
 &lt;p&gt;A component library is a repository of reusable building blocks for your website. Think of some of the items that appear on a website over and over again. There are small items (like form elements) and bigger ones (like an image carousel). These are components. For some examples, head over to &lt;a href=&quot;https://getbootstrap.com/docs/3.4/components/&quot;&gt;Bootstrap’s documentation&lt;/a&gt;, where they lay out some of the many reusable components available with the framework.&lt;/p&gt;
 
-&lt;p&gt;Component based design goes hand in hand with the practice of &lt;a href=&quot;http://bradfrost.com/blog/post/atomic-web-design/&quot;&gt;atomic design&lt;/a&gt;. This methodology breaks down elements into five categories: Atoms, Molecules, Organisms, Templates, and Pages. Atoms are the smallest parts of your site. Atoms build molecules, molecules build organisms, etc. I highly recommend visiting the link and learning more about this methodology.&lt;/p&gt;
+&lt;p&gt;Component-based design goes hand in hand with the practice of &lt;a href=&quot;http://bradfrost.com/blog/post/atomic-web-design/&quot;&gt;atomic design&lt;/a&gt;. This methodology breaks down elements into five categories: Atoms, Molecules, Organisms, Templates, and Pages. Atoms are the smallest parts of your site. Atoms build molecules, molecules build organisms, etc. I highly recommend visiting the link and learning more about this methodology.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-are-we-using-a-component-library&quot;&gt;Why Are We Using a Component Library?&lt;/h3&gt;
 
@@ -43,11 +43,11 @@
 
 &lt;p&gt;We found a lot of blog posts and articles where teams had leveraged a component library and Drupal or integrated Twig with popular component library tools. Sadly, we didn’t find much explanation of &lt;em&gt;how&lt;/em&gt; to do it. (We’re looking to remedy that problem in Part 2 of this post).&lt;/p&gt;
 
-&lt;p&gt;After tinkering with several solutions we finally settled on &lt;a href=&quot;https://storybook.js.org/&quot;&gt;Storybook&lt;/a&gt;. Storybook offered a more light-weight file structure than some others, uses webpack, and would work with other front-end technologies we’ll use in the future. Storybook also benefits from a large community that works to improve the product and create great add-ons. Most importantly, it’s adaptable enough to fit our use case.&lt;/p&gt;
+&lt;p&gt;After tinkering with several solutions we finally settled on &lt;a href=&quot;https://storybook.js.org/&quot;&gt;Storybook&lt;/a&gt;. Storybook offered a more light-weight file structures than some others, uses webpack, and would work with other front-end technologies we’ll use in the future. Storybook also benefits from a large community that works to improve the product and create great add-ons. Most importantly, it’s adaptable enough to fit our use case.&lt;/p&gt;
 
 &lt;h3 id=&quot;getting-storybook-to-work-for-us&quot;&gt;Getting Storybook to Work for Us&lt;/h3&gt;
 
-&lt;p&gt;A friend to Savas gave us a great starter project that included Twig integration to get us up and running. We heavily changed and adapted that into our own setup. We’ll dig into specifics in a future post, but there were some challenges we faced along the way.&lt;/p&gt;
+&lt;p&gt;A friend to Savas gave us a great starter project that included Twig integration to get us up and running. We heavily changed and adapted that into our setup. We’ll dig into specifics in a future post, but there were some challenges we faced along the way.&lt;/p&gt;
 
 &lt;h4 id=&quot;1-integrating-storybook-into-drupal&quot;&gt;1. Integrating Storybook into Drupal&lt;/h4&gt;
 &lt;p&gt;We ultimately created a Storybook directory within our site’s theme directory. This allows all of the templates in our Drupal theme to access Storybook components within the same project.&lt;/p&gt;
@@ -56,10 +56,10 @@
 &lt;p&gt;Twig Loader has been the key to getting Storybook and Twig to work well together. It’s only necessary for us to load within Storybook itself and has allowed us to use Twig templates seamlessly.&lt;/p&gt;
 
 &lt;h4 id=&quot;3-custom-webpack-configuration&quot;&gt;3. Custom Webpack Configuration&lt;/h4&gt;
-&lt;p&gt;In our theme directory we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;wepback.commons.js&lt;/code&gt; file that both the webpack config in our Drupal theme and the one in the Storybook directory could have access to. This allows for the styles/scripts Storybook to be compiled into bundles that both Storybook and our Drupal theme have access to.&lt;/p&gt;
+&lt;p&gt;In our theme directory, we created a &lt;code class=&quot;highlighter-rouge&quot;&gt;wepback.commons.js&lt;/code&gt; file that both the webpack config in our Drupal theme and the one in the Storybook directory could have access to. This allows for the styles/scripts Storybook to be compiled into bundles that both Storybook and our Drupal theme have access to.&lt;/p&gt;
 
 &lt;h4 id=&quot;4-integrating-tailwind&quot;&gt;4. Integrating Tailwind&lt;/h4&gt;
-&lt;p&gt;As a team we use &lt;a href=&quot;https://tailwindcss.com/&quot;&gt;Tailwind&lt;/a&gt;, a utility framework for CSS. It comes with its own needs in terms of webpack configuration and we fought a bit of a battle getting all plugins and configs to play nicely together.&lt;/p&gt;
+&lt;p&gt;As a team, we use &lt;a href=&quot;https://tailwindcss.com/&quot;&gt;Tailwind&lt;/a&gt;, a utility framework for CSS. It comes with its own needs in terms of webpack configuration and we fought a bit of a battle getting all plugins and configs to play nicely together.&lt;/p&gt;
 
 &lt;p&gt;The setup we ultimately ended up with has worked great with some limitations. We’re still troubleshooting some issues with Storybook accessing our custom JS files. Fortunately, Drupal’s access to the scripts hasn’t been an issue, so we haven’t had our progress impeded too much as we tackle that lingering challenge.&lt;/p&gt;
 
@@ -107,9 +107,9 @@
 
 &lt;p&gt;&lt;strong&gt;Challenges&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;We’d love to say that everything has been easy and flawless, but you wouldn’t believe us anyway. There have definitely been some challenges along the way.&lt;/p&gt;
+&lt;p&gt;We’d love to say that everything has been easy and flawless, but you wouldn’t believe us anyway. There have been some challenges along the way.&lt;/p&gt;
 
-&lt;p&gt;First, we seem to continually be refactoring component files to be &lt;em&gt;more&lt;/em&gt; flexible and reusable as we continue to find use cases for them. We focused heavily on creating paragraph types in Storybook, but as we build others section of our sites, we realize the shared styles and functionality can expand even further.&lt;/p&gt;
+&lt;p&gt;First, we seem to continually be refactoring component files to be &lt;em&gt;more&lt;/em&gt; flexible and reusable as we continue to find use cases for them. We focused heavily on creating paragraph types in Storybook, but as we build other sections of our sites, we realize the shared styles and functionality can expand even further.&lt;/p&gt;
 
 &lt;p&gt;Along the same lines, finding the right balance on how to break everything down within the paradigm of atomic design is a challenge. I have found that some things that began as an “organism” should more realistically be considered “molecules”.&lt;/p&gt;
 
