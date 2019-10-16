@@ -43,7 +43,7 @@ Y’all, I’m gonna be straight with you. Finding the right tool for this was _
 
 We found a lot of blog posts and articles where teams had leveraged a component library and Drupal or integrated Twig with popular component library tools. Sadly, we didn’t find much explanation of _how_ to do it. (We’re looking to remedy that problem in Part 2 of this post).
 
-After tinkering with several solutions we finally settled on [Storybook](https://storybook.js.org/). Storybook offered a more light-weight file structures than some others, uses webpack, and would work with other front-end technologies we’ll use in the future. Storybook also benefits from a large community that works to improve the product and create great add-ons. Most importantly, it’s adaptable enough to fit our use case.
+After tinkering with several solutions we finally settled on [Storybook](https://storybook.js.org/). Storybook offered a more light-weight file structure than some others, uses webpack, and would work with other front-end technologies we’ll use in the future. Storybook also benefits from a large community that works to improve the product and create great add-ons. Most importantly, it’s adaptable enough to fit our use case.
 
 ### Getting Storybook to Work for Us
 
