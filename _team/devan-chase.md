@@ -8,7 +8,7 @@ linkedin: devan-chase-0aa2a162
 drupal: devan.chase
 github: chased11
 description: PHP developer with experience in Drupal, front-end implementation, and architecting / interfacing with Javascript APIs.
-image: "/assets/img/team/devan-chase/devan-chase-building.jpg"
+image: "/assets/img/team/devan-chase/devan-chase-square-outside.jpg"
 
 ---
 
