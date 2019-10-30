@@ -1,5 +1,5 @@
 ---
-name: Drew Glober
+name: Drew Glover
 slug: drew-glover
 layout: team
 job_title: UI/UX Designer
