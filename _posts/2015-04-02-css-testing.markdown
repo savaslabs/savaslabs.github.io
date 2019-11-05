@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CSS testing techniques and tools"
+title: "CSS Testing Techniques and Tools"
 date: 2015-04-02
 author: Anne Tomasevich
 tags: css testing front-end-dev
