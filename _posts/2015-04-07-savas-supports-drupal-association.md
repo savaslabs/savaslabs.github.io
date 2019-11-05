@@ -1,5 +1,5 @@
 ---
-title: Savas Labs supports the Drupal Association
+title: Savas Labs Supports the Drupal Association
 layout: post
 date: 2015-04-07
 author: Kosta Harlan
