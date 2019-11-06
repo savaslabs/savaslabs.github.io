@@ -58,11 +58,14 @@
   margin-left: -$base-spacing;
   max-width: none;
   width: calc(100% + 2em);
+}
 
-  // The following styles make full width images span the width of the article
-  // container, even though the text body may be less wide to maintain
-  // readability. See _post.scss for corresponding styles on
-  // .region--post-content.
+// The following styles make full width images span the width of the article
+// container, even though the text body may be less wide to maintain
+// readability. See _post.scss for corresponding styles on
+// .region--post-content.
+.blog-image-full-width,
+.blog-row {
   @include grid-media($medium-screen-up) {
     margin-left: -1.5em;
     width: calc(100% + 3em);
@@ -158,6 +161,26 @@
   @include grid-media($max-width-up) {
     margin-right: -8em;
     width: calc(50% + 8em);
+  }
+}
+
+.blog-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+
+  @include grid-media($medium-screen-up) {
+    flex-direction: row;
+  }
+
+  .blog-image-row {
+    margin-left: -$base-spacing;
+    max-width: none;
+    width: calc(100% + 2em);
+
+    @include grid-media($medium-screen-up) {
+      margin: 0 $base-spacing 0 $base-spacing;
+    }
   }
 }
 
