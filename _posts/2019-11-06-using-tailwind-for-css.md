@@ -22,8 +22,8 @@ There are a lot of CSS frameworks out there to choose from. You’ve likely work
 
 ### Here are some of the highlights of Tailwind:
 - Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides [low-level utility classes](https://tailwindcss.com/docs/utility-first/) to help get you up and running quickly.
-- Tailwind focuses on mobile-first design and makes it very easy to build [responsive](https://tailwindcss.com/docs/responsive-design) elements and pages.
-- While it focuses on utility classes, it’s very easy to make your own components by [extracting component classes](https://tailwindcss.com/docs/extracting-components/).
+- Tailwind focuses on mobile-first design and makes it easy to build [responsive](https://tailwindcss.com/docs/responsive-design) elements and pages.
+- While it focuses on utility classes, it’s easy to make your own components by [extracting component classes](https://tailwindcss.com/docs/extracting-components/).
 - It’s extremely [customizable](https://getbootstrap.com/docs/4.3/components).
 
 For us, an opinionated framework like Bootstrap doesn’t always make sense. After having a positive experience using Tailwind, we decided to go all-in.
@@ -32,30 +32,40 @@ For us, an opinionated framework like Bootstrap doesn’t always make sense. Aft
 Our first step was really about customizing Tailwind for our needs. This included updating the configuration with colors, breakpoints, spacing values, fonts, and more. From there, we could start using the classes on our components. We can look at a button as an easy example case.
 
 We started by making a simple Twig template in Storybook (more on that here).
+
 ```<a class=”button {{ classes }}” href=”{{ url }}”>{{ text }}</a>```
 
 We apply some base styles to the .button class that will apply to any button across the site.
+
 ```
+
 .button {
   @apply text-white /* color: white; */
     text-14 /* font-size: 14px; */
     tppercase /* text-transfrom: uppercase; */
     no-underline; /* text-transform: none; */
 }
+
 ```
 
-Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list `bg-magnolia border-3 border-magnolia py-20 px-40 hover:bg-transparent hover:text-magnolia` results in this styling:
+Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list
+
+`bg-magnolia border-3 border-magnolia py-20 px-40 hover:bg-transparent hover:text-magnolia`
+
+results in this styling:
 
 <div class="blog-image">
 <img alt="Green button with white text: 'Button Text'" src="/assets/img/blog/tailwindbutton.png">
 </div>
 
 ### What are the downsides?
-One of the biggest drawbacks of Tailwind is that the class list on a given element can become very long, making markup less readable.
+One of the biggest drawbacks of Tailwind is that the class list on a given element can become long, making markup less readable.
 
 ```
+
 <h2 class="leading-tight font-bold mb-60 text-18 text-center tracking-wide uppercase"></h2>
 <div class="mt-40 order-1 w-full lg:absolute lg:mt-0 lg:order-0 lg:pin-r lg:pin-t lg:w-auto"></div>
+
 ```
 
 This can be remedied a bit by using @apply in CSS to apply Tailwind classes. The drawback there is increasing the size of your bundled CSS in the end.
