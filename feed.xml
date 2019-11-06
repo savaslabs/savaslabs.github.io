@@ -6,8 +6,8 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Nov 2019 14:34:01 +0000</pubDate>
-    <lastBuildDate>Wed, 06 Nov 2019 14:34:01 +0000</lastBuildDate>
+    <pubDate>Wed, 06 Nov 2019 20:11:56 +0000</pubDate>
+    <lastBuildDate>Wed, 06 Nov 2019 20:11:56 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -35,23 +35,28 @@
 
 &lt;p&gt;We started by making a simple Twig template in Storybook (more on that here).&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a class=”button ” href=””&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”button&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;””&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;We apply some base styles to the .button class that will apply to any button across the site.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-.button {
-  @apply text-white /* color: white; */
-    text-14 /* font-size: 14px; */
-    tppercase /* text-transfrom: uppercase; */
-    no-underline; /* text-transform: none; */
-}
-
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nc&quot;&gt;.button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;@apply&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;text-white&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* color: white; */&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;text-14&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* font-size: 14px; */&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;tppercase&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transfrom: uppercase; */&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;no-underline;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transform: none; */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bg-magnolia border-3 border-magnolia py-20 px-40 hover:bg-transparent hover:text-magnolia&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;bg-magnolia&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;border-3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;border-magnolia&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;py-20&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;px-40&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;hover&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:bg-transparent&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;hover&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:text-magnolia&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;results in this styling:&lt;/p&gt;
 
@@ -62,9 +67,9 @@
 &lt;h3 id=&quot;what-are-the-downsides&quot;&gt;What are the downsides?&lt;/h3&gt;
 &lt;p&gt;One of the biggest drawbacks of Tailwind is that the class list on a given element can become long, making markup less readable.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&amp;lt;h2 class=&quot;leading-tight font-bold mb-60 text-18 text-center tracking-wide uppercase&quot;&amp;gt;&amp;lt;/h2&amp;gt;
-&amp;lt;div class=&quot;mt-40 order-1 w-full lg:absolute lg:mt-0 lg:order-0 lg:pin-r lg:pin-t lg:w-auto&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;leading-tight font-bold mb-60 text-18 text-center tracking-wide uppercase&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mt-40 order-1 w-full lg:absolute lg:mt-0 lg:order-0 lg:pin-r lg:pin-t lg:w-auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
