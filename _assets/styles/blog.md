@@ -78,7 +78,7 @@ You can add following classes to contextual images:
 - `class="blog-image` - image will be max 250px wide and horizontally centered
 - `class="blog-image-left"` - image will float left
 - `class="blog-image-right"` - image will float right
-- `class="blog-image-grid"` - image will be horizontally centered and padded
+- `class="blog-image-row"` - image will be horizontally centered and padded
 
 Captions can be added to full width images by adding `<span class="caption">Caption</span>` right under the image tag.
 
@@ -91,23 +91,23 @@ To add caption to floated images wrap the `<img>` tag in a `<div>` and give it a
 </div>
 ```
 
-Up to six images and their captions can be displayed in a row by wrapping in a `<div>` with class `.blog-grid`:
+Up to six images and their captions can be displayed in a row by wrapping in a `<div>` with class `.blog-row`:
 
 ``` html
-<div class="blog-grid">
-<div class="blog-image-grid">
+<div class="blog-row">
+<div class="blog-image-row">
  <img src="/assets/img/blog/{img}" alt="{alt}">
   <span class="caption">{caption}</span>
 </div>
-<div class="blog-image-grid">
+<div class="blog-image-row">
  <img src="/assets/img/blog/{img}" alt="{alt}">
   <span class="caption">{caption}</span>
 </div>
-<div class="blog-image-grid">
+<div class="blog-image-row">
  <img src="/assets/img/blog/{img}" alt="{alt}">
   <span class="caption">{caption}</span>
 </div>
-<div class="blog-image-grid">
+<div class="blog-image-row">
  <img src="/assets/img/blog/{img}" alt="{alt}">
   <span class="caption">{caption}</span>
 </div>
