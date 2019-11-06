@@ -33,11 +33,15 @@ Our first step was really about customizing Tailwind for our needs. This include
 
 We started by making a simple Twig template in Storybook (more on that here).
 
-```<a class=”button {{ classes }}” href=”{{ url }}”>{{ text }}</a>```
+```html
+
+<a class=”button {{ classes }}” href=”{{ url }}”>{{ text }}</a>
+
+```
 
 We apply some base styles to the .button class that will apply to any button across the site.
 
-```
+```css
 
 .button {
   @apply text-white /* color: white; */
@@ -45,12 +49,15 @@ We apply some base styles to the .button class that will apply to any button acr
     tppercase /* text-transfrom: uppercase; */
     no-underline; /* text-transform: none; */
 }
-
 ```
 
 Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list
 
-`bg-magnolia border-3 border-magnolia py-20 px-40 hover:bg-transparent hover:text-magnolia`
+```css
+
+bg-magnolia border-3 border-magnolia py-20 px-40 hover:bg-transparent hover:text-magnolia
+
+```
 
 results in this styling:
 
@@ -61,7 +68,7 @@ results in this styling:
 ### What are the downsides?
 One of the biggest drawbacks of Tailwind is that the class list on a given element can become long, making markup less readable.
 
-```
+```html
 
 <h2 class="leading-tight font-bold mb-60 text-18 text-center tracking-wide uppercase"></h2>
 <div class="mt-40 order-1 w-full lg:absolute lg:mt-0 lg:order-0 lg:pin-r lg:pin-t lg:w-auto"></div>
