@@ -5,6 +5,8 @@
   name: Component Libraries
 - slug: storybook
   name: Storybook
+- slug: tailwind
+  name: Tailwind
 - slug: twig
   name: Twig
 - slug: drupal
