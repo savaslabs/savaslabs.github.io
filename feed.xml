@@ -6,9 +6,87 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Oct 2019 21:15:44 +0000</pubDate>
-    <lastBuildDate>Thu, 31 Oct 2019 21:15:44 +0000</lastBuildDate>
+    <pubDate>Wed, 06 Nov 2019 14:34:01 +0000</pubDate>
+    <lastBuildDate>Wed, 06 Nov 2019 14:34:01 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Using Tailwind for CSS</title>
+        <description>&lt;p&gt;As any front-end developer knows, keeping styles organized, reusable, and functional across large projects can be a unique challenge. This is especially true when multiple developers are writing styles for a site. As our front-end team at Savas has continued to grow, we’ve worked to find practical solutions to standardize our code. In that spirit, we’ve recently utilized &lt;a href=&quot;https://tailwindcss.com/&quot;&gt;Tailwind CSS&lt;/a&gt;, a utility-first CSS framework.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-use-a-css-framework&quot;&gt;Why use a CSS framework?&lt;/h3&gt;
+&lt;p&gt;A CSS framework is useful to add to your workflow because it saves time. Writing CSS means that you will inevitably write a lot of the same code over and over again. A framework helps you reduce that repetition. Additionally, it can help reduce the number of typos and mistakes you’re making in your code and make sure all developers are writing CSS in a consistent style.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-tailwind&quot;&gt;Why Tailwind?&lt;/h3&gt;
+&lt;p&gt;There are a lot of CSS frameworks out there to choose from. You’ve likely worked at least a year of &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;, which is probably the most popular of the bunch. In addition to providing a library of utility classes, Bootstrap (and other similar frameworks) provide &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;pre-built UI components&lt;/a&gt;. These can be incredibly useful in terms of building layouts quickly, but aren’t always practical when going for a custom look and feel.&lt;/p&gt;
+
+&lt;h3 id=&quot;here-are-some-of-the-highlights-of-tailwind&quot;&gt;Here are some of the highlights of Tailwind:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides &lt;a href=&quot;https://tailwindcss.com/docs/utility-first/&quot;&gt;low-level utility classes&lt;/a&gt; to help get you up and running quickly.&lt;/li&gt;
+  &lt;li&gt;Tailwind focuses on mobile-first design and makes it easy to build &lt;a href=&quot;https://tailwindcss.com/docs/responsive-design&quot;&gt;responsive&lt;/a&gt; elements and pages.&lt;/li&gt;
+  &lt;li&gt;While it focuses on utility classes, it’s easy to make your own components by &lt;a href=&quot;https://tailwindcss.com/docs/extracting-components/&quot;&gt;extracting component classes&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;It’s extremely &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;customizable&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For us, an opinionated framework like Bootstrap doesn’t always make sense. After having a positive experience using Tailwind, we decided to go all-in.&lt;/p&gt;
+
+&lt;h3 id=&quot;tailwind-in-practice&quot;&gt;Tailwind in practice&lt;/h3&gt;
+&lt;p&gt;Our first step was really about customizing Tailwind for our needs. This included updating the configuration with colors, breakpoints, spacing values, fonts, and more. From there, we could start using the classes on our components. We can look at a button as an easy example case.&lt;/p&gt;
+
+&lt;p&gt;We started by making a simple Twig template in Storybook (more on that here).&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a class=”button ” href=””&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We apply some base styles to the .button class that will apply to any button across the site.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+.button {
+  @apply text-white /* color: white; */
+    text-14 /* font-size: 14px; */
+    tppercase /* text-transfrom: uppercase; */
+    no-underline; /* text-transform: none; */
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bg-magnolia border-3 border-magnolia py-20 px-40 hover:bg-transparent hover:text-magnolia&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;results in this styling:&lt;/p&gt;
+
+&lt;div class=&quot;blog-image&quot;&gt;
+&lt;img alt=&quot;Green button with white text: 'Button Text'&quot; src=&quot;/assets/img/blog/tailwindbutton.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;what-are-the-downsides&quot;&gt;What are the downsides?&lt;/h3&gt;
+&lt;p&gt;One of the biggest drawbacks of Tailwind is that the class list on a given element can become long, making markup less readable.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&amp;lt;h2 class=&quot;leading-tight font-bold mb-60 text-18 text-center tracking-wide uppercase&quot;&amp;gt;&amp;lt;/h2&amp;gt;
+&amp;lt;div class=&quot;mt-40 order-1 w-full lg:absolute lg:mt-0 lg:order-0 lg:pin-r lg:pin-t lg:w-auto&quot;&amp;gt;&amp;lt;/div&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This can be remedied a bit by using @apply in CSS to apply Tailwind classes. The drawback there is increasing the size of your bundled CSS in the end.&lt;/p&gt;
+
+&lt;p&gt;While the ability to customize Tailwind is a huge positive, it can also be wearing having to repeatedly return to the configuration to add in new functionality you need. As we continue to use the framework here at Savas, we keep updating our configuration to reduce time spent on this in the future.&lt;/p&gt;
+
+&lt;h3 id=&quot;last-word&quot;&gt;Last word&lt;/h3&gt;
+&lt;p&gt;Tailwind makes writing CSS faster and easier. It’s as simple as that. I recently worked on another project without any CSS libraries or frameworks installed and immediately lost patience with having to write everything out in full. Once you get the hang of it, Tailwind helps you focus on solving design and style issues as a developer - not on tediously writing the CSS to fix them.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2019/11/06/using-tailwind-for-css.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2019/11/06/using-tailwind-for-css.html</guid>
+        
+        <category>storybook</category>
+        
+        <category>front-end-dev</category>
+        
+        <category>tailwind</category>
+        
+        
+      </item>
     
       <item>
         <title>Working with Storybook and Drupal (Part 1)</title>
@@ -799,41 +877,6 @@ If that’s not a great compliment, I don’t know what is.&lt;/li&gt;
         <category>drupal</category>
         
         <category>drupal8</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Savas Brings On (another) Project Manager</title>
-        <description>&lt;p&gt;Faithful readers of the Savas Blog, please welcome Maddy to the Savas Team! :wave: We are so excited that she’s here!&lt;/p&gt;
-
-&lt;p&gt;Maddy comes to us from premier Digital Agency, &lt;a href=&quot;https://viget.com&quot;&gt;Viget&lt;/a&gt;, by way of &lt;a href=&quot;https://ewh.org&quot;&gt;Engineering World Health&lt;/a&gt;—a non-profit that uses the skills of students and professionals to improve health care in low-income countries. During her time there, she traveled the globe managing teams of student-engineers working on medical equipment in places like Rwanda, Nepal, and Cambodia—how awesome is that?!!&lt;/p&gt;
-
-&lt;div class=&quot;blog-image-large&quot;&gt;
-&lt;img alt=&quot;Outdoor meetings together at our airbnb&quot; src=&quot;/assets/img/blog/maddy-rwanda-mt-bisoke.jpg&quot; /&gt;
- &lt;span class=&quot;caption&quot;&gt;On the rim of Mt Bisoke in Rwanda (home of the mountain gorillas!)&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Maddy has project management skills like you wouldn’t believe and we knew she would be a perfect fit for the Savas Labs Team (&lt;a href=&quot;https://savaslabs.com/careers/&quot;&gt;Think you could be the perfect fit, too? You’re in luck, we’re hiring!&lt;/a&gt;). Her attention to detail, organizational skills, and self-motivated nature a great partner on any project and we’re excited for &lt;a href=&quot;https://savaslabs.com/results/&quot;&gt;current partners&lt;/a&gt; and &lt;a href=&quot;https://savaslabs.com/services/&quot;&gt;new clients&lt;/a&gt; to get the chance to meet Maddy. We know they will be as impressed as we are!&lt;/p&gt;
-
-&lt;p&gt;Fun fact: Maddy’s very first day on the job wasn’t from &lt;a href=&quot;https://savaslabs.com/contact/&quot;&gt;our Durham, NC office&lt;/a&gt; where she works from, but spent on a plane flying to &lt;a href=&quot;https://savaslabs.com/2019/04/08/savas-retreat-yo-self.html&quot;&gt;our latest Team Retreat&lt;/a&gt;—in Austin, Texas! Talk about an exciting first day!&lt;/p&gt;
-
-&lt;div class=&quot;blog-image-large&quot;&gt;
-&lt;img alt=&quot;Outdoor meetings together at our airbnb&quot; src=&quot;/assets/img/blog/maddy-austin-retreat.jpg&quot; /&gt;
- &lt;span class=&quot;caption&quot;&gt;Hard at work at ReTreat Yo Self.&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Another fun fact about Maddy: She’s a foster dog mom. She’s making an impact in her community by &lt;a href=&quot;http://www.carolinaadoptabulls.com&quot;&gt;fostering dogs&lt;/a&gt; and loving them well until (and after) they find a fur-ever home.&lt;/p&gt;
-
-&lt;p&gt;Maddy, we are glad you’re here!&lt;/p&gt;
-</description>
-        <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2019/04/10/savas-welcomes-maddy-bishop-van-horn.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2019/04/10/savas-welcomes-maddy-bishop-van-horn.html</guid>
-        
-        <category>team</category>
-        
-        <category>company-culture</category>
         
         
       </item>
