@@ -37,11 +37,11 @@
 &lt;p&gt;A CSS framework is useful to add to your workflow because it saves time. Writing CSS means that you will inevitably write a lot of the same code over and over again. A framework helps you reduce that repetition. Additionally, it can help reduce the number of typos and mistakes you’re making in your code and make sure all developers are writing CSS in a consistent style.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-tailwind&quot;&gt;Why Tailwind?&lt;/h3&gt;
-&lt;p&gt;There are a lot of CSS frameworks out there to choose from. You’ve likely worked at least a year of &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;, which is probably the most popular of the bunch. In addition to providing a library of utility classes, Bootstrap (and other similar frameworks) provide &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;pre-built UI components&lt;/a&gt;. These can be incredibly useful in terms of building layouts quickly, but aren’t always practical when going for a custom look and feel.&lt;/p&gt;
+&lt;p&gt;There are a lot of CSS frameworks out there to choose from. You’ve likely at least heard of &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;, which is probably the most popular of the bunch. In addition to providing a library of utility classes, Bootstrap (and other similar frameworks) provide &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;pre-built UI components&lt;/a&gt;. These can be incredibly useful in terms of building layouts quickly, but aren’t always practical when going for a custom look and feel.&lt;/p&gt;
 
 &lt;h3 id=&quot;here-are-some-of-the-highlights-of-tailwind&quot;&gt;Here are some of the highlights of Tailwind:&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides &lt;a href=&quot;https://tailwindcss.com/docs/utility-first/&quot;&gt;low-level utility classes&lt;/a&gt; to help get you up and running quickly.&lt;/li&gt;
+  &lt;li&gt;Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides &lt;a href=&quot;https://tailwindcss.com/docs/configuration/&quot;&gt;low-level utility classes&lt;/a&gt; to help get you up and running quickly.&lt;/li&gt;
   &lt;li&gt;Tailwind focuses on mobile-first design and makes it easy to build &lt;a href=&quot;https://tailwindcss.com/docs/responsive-design&quot;&gt;responsive&lt;/a&gt; elements and pages.&lt;/li&gt;
   &lt;li&gt;While it focuses on utility classes, it’s easy to make your own components by &lt;a href=&quot;https://tailwindcss.com/docs/extracting-components/&quot;&gt;extracting component classes&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;It’s extremely &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;customizable&lt;/a&gt;.&lt;/li&gt;
@@ -52,10 +52,10 @@
 &lt;h3 id=&quot;tailwind-in-practice&quot;&gt;Tailwind in practice&lt;/h3&gt;
 &lt;p&gt;Our first step was really about customizing Tailwind for our needs. This included updating the configuration with colors, breakpoints, spacing values, fonts, and more. From there, we could start using the classes on our components. We can look at a button as an easy example case.&lt;/p&gt;
 
-&lt;p&gt;We started by making a simple Twig template in Storybook (more on that here).&lt;/p&gt;
+&lt;p&gt;We started by making a simple Twig template in Storybook (more on that &lt;a href=&quot;https://savaslabs.com/2019/10/11/storybook-pt-1.html&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”button&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;””&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button {% classes %}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{% url %}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{% text %}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -65,12 +65,12 @@
 &lt;span class=&quot;nc&quot;&gt;.button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;err&quot;&gt;@apply&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;text-white&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* color: white; */&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;text-14&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* font-size: 14px; */&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt;tppercase&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transfrom: uppercase; */&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt;no-underline;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transform: none; */&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;uppercase&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transfrom: uppercase; */&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;no-underline;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-descoration: none; */&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list&lt;/p&gt;
+&lt;p&gt;Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list:&lt;/p&gt;
 
 &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;nt&quot;&gt;bg-magnolia&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;border-3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;border-magnolia&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;py-20&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;px-40&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;hover&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:bg-transparent&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;hover&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:text-magnolia&lt;/span&gt;
@@ -155,11 +155,11 @@
 &lt;p&gt;A CSS framework is useful to add to your workflow because it saves time. Writing CSS means that you will inevitably write a lot of the same code over and over again. A framework helps you reduce that repetition. Additionally, it can help reduce the number of typos and mistakes you’re making in your code and make sure all developers are writing CSS in a consistent style.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-tailwind&quot;&gt;Why Tailwind?&lt;/h3&gt;
-&lt;p&gt;There are a lot of CSS frameworks out there to choose from. You’ve likely worked at least a year of &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;, which is probably the most popular of the bunch. In addition to providing a library of utility classes, Bootstrap (and other similar frameworks) provide &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;pre-built UI components&lt;/a&gt;. These can be incredibly useful in terms of building layouts quickly, but aren’t always practical when going for a custom look and feel.&lt;/p&gt;
+&lt;p&gt;There are a lot of CSS frameworks out there to choose from. You’ve likely at least heard of &lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;, which is probably the most popular of the bunch. In addition to providing a library of utility classes, Bootstrap (and other similar frameworks) provide &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;pre-built UI components&lt;/a&gt;. These can be incredibly useful in terms of building layouts quickly, but aren’t always practical when going for a custom look and feel.&lt;/p&gt;
 
 &lt;h3 id=&quot;here-are-some-of-the-highlights-of-tailwind&quot;&gt;Here are some of the highlights of Tailwind:&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides &lt;a href=&quot;https://tailwindcss.com/docs/utility-first/&quot;&gt;low-level utility classes&lt;/a&gt; to help get you up and running quickly.&lt;/li&gt;
+  &lt;li&gt;Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides &lt;a href=&quot;https://tailwindcss.com/docs/configuration/&quot;&gt;low-level utility classes&lt;/a&gt; to help get you up and running quickly.&lt;/li&gt;
   &lt;li&gt;Tailwind focuses on mobile-first design and makes it easy to build &lt;a href=&quot;https://tailwindcss.com/docs/responsive-design&quot;&gt;responsive&lt;/a&gt; elements and pages.&lt;/li&gt;
   &lt;li&gt;While it focuses on utility classes, it’s easy to make your own components by &lt;a href=&quot;https://tailwindcss.com/docs/extracting-components/&quot;&gt;extracting component classes&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;It’s extremely &lt;a href=&quot;https://getbootstrap.com/docs/4.3/components&quot;&gt;customizable&lt;/a&gt;.&lt;/li&gt;
@@ -170,10 +170,10 @@
 &lt;h3 id=&quot;tailwind-in-practice&quot;&gt;Tailwind in practice&lt;/h3&gt;
 &lt;p&gt;Our first step was really about customizing Tailwind for our needs. This included updating the configuration with colors, breakpoints, spacing values, fonts, and more. From there, we could start using the classes on our components. We can look at a button as an easy example case.&lt;/p&gt;
 
-&lt;p&gt;We started by making a simple Twig template in Storybook (more on that here).&lt;/p&gt;
+&lt;p&gt;We started by making a simple Twig template in Storybook (more on that &lt;a href=&quot;https://savaslabs.com/2019/10/11/storybook-pt-1.html&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;”button&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;””&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button {% classes %}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{% url %}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{% text %}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -183,12 +183,12 @@
 &lt;span class=&quot;nc&quot;&gt;.button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;err&quot;&gt;@apply&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;text-white&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* color: white; */&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;text-14&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* font-size: 14px; */&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt;tppercase&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transfrom: uppercase; */&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt;no-underline;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transform: none; */&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;uppercase&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-transfrom: uppercase; */&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;no-underline;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* text-descoration: none; */&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list&lt;/p&gt;
+&lt;p&gt;Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list:&lt;/p&gt;
 
 &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;nt&quot;&gt;bg-magnolia&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;border-3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;border-magnolia&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;py-20&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;px-40&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;hover&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:bg-transparent&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;hover&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:text-magnolia&lt;/span&gt;
@@ -432,11 +432,11 @@
 <p>A CSS framework is useful to add to your workflow because it saves time. Writing CSS means that you will inevitably write a lot of the same code over and over again. A framework helps you reduce that repetition. Additionally, it can help reduce the number of typos and mistakes you’re making in your code and make sure all developers are writing CSS in a consistent style.</p>
 
 <h3 id="why-tailwind">Why Tailwind?</h3>
-<p>There are a lot of CSS frameworks out there to choose from. You’ve likely worked at least a year of <a href="https://getbootstrap.com/">Bootstrap</a>, which is probably the most popular of the bunch. In addition to providing a library of utility classes, Bootstrap (and other similar frameworks) provide <a href="https://getbootstrap.com/docs/4.3/components">pre-built UI components</a>. These can be incredibly useful in terms of building layouts quickly, but aren’t always practical when going for a custom look and feel.</p>
+<p>There are a lot of CSS frameworks out there to choose from. You’ve likely at least heard of <a href="https://getbootstrap.com/">Bootstrap</a>, which is probably the most popular of the bunch. In addition to providing a library of utility classes, Bootstrap (and other similar frameworks) provide <a href="https://getbootstrap.com/docs/4.3/components">pre-built UI components</a>. These can be incredibly useful in terms of building layouts quickly, but aren’t always practical when going for a custom look and feel.</p>
 
 <h3 id="here-are-some-of-the-highlights-of-tailwind">Here are some of the highlights of Tailwind:</h3>
 <ul>
-  <li>Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides <a href="https://tailwindcss.com/docs/utility-first/">low-level utility classes</a> to help get you up and running quickly.</li>
+  <li>Tailwind doesn’t come with pre-built components or opinionated styles. It simply provides <a href="https://tailwindcss.com/docs/configuration/">low-level utility classes</a> to help get you up and running quickly.</li>
   <li>Tailwind focuses on mobile-first design and makes it easy to build <a href="https://tailwindcss.com/docs/responsive-design">responsive</a> elements and pages.</li>
   <li>While it focuses on utility classes, it’s easy to make your own components by <a href="https://tailwindcss.com/docs/extracting-components/">extracting component classes</a>.</li>
   <li>It’s extremely <a href="https://getbootstrap.com/docs/4.3/components">customizable</a>.</li>
@@ -447,10 +447,10 @@
 <h3 id="tailwind-in-practice">Tailwind in practice</h3>
 <p>Our first step was really about customizing Tailwind for our needs. This included updating the configuration with colors, breakpoints, spacing values, fonts, and more. From there, we could start using the classes on our components. We can look at a button as an easy example case.</p>
 
-<p>We started by making a simple Twig template in Storybook (more on that here).</p>
+<p>We started by making a simple Twig template in Storybook (more on that <a href="https://savaslabs.com/2019/10/11/storybook-pt-1.html">here</a>).</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">”button</span> <span class="err">”</span> <span class="na">href=</span><span class="s">””</span><span class="nt">&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button {% classes %}"</span> <span class="na">href=</span><span class="s">"{% url %}"</span><span class="nt">&gt;</span>{% text %}<span class="nt">&lt;/a&gt;</span>
 
 </code></pre></div></div>
 
@@ -460,12 +460,12 @@
 <span class="nc">.button</span> <span class="p">{</span>
   <span class="err">@apply</span> <span class="err">text-white</span> <span class="c">/* color: white; */</span>
     <span class="err">text-14</span> <span class="c">/* font-size: 14px; */</span>
-    <span class="err">tppercase</span> <span class="c">/* text-transfrom: uppercase; */</span>
-    <span class="err">no-underline;</span> <span class="c">/* text-transform: none; */</span>
+    <span class="err">uppercase</span> <span class="c">/* text-transfrom: uppercase; */</span>
+    <span class="err">no-underline;</span> <span class="c">/* text-descoration: none; */</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list</p>
+<p>Then, we can add more specific classes to affect color, padding, and other unique styles as needed. The following class list:</p>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nt">bg-magnolia</span> <span class="nt">border-3</span> <span class="nt">border-magnolia</span> <span class="nt">py-20</span> <span class="nt">px-40</span> <span class="nt">hover</span><span class="nd">:bg-transparent</span> <span class="nt">hover</span><span class="nd">:text-magnolia</span>
