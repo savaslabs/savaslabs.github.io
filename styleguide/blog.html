@@ -100,11 +100,33 @@ pixels to satisfy Google&#39;s structured data requirements.</p>
 <li><code class="styleguide">class=&quot;blog-image</code> - image will be max 250px wide and horizontally centered</li>
 <li><code class="styleguide">class=&quot;blog-image-left&quot;</code> - image will float left</li>
 <li><code class="styleguide">class=&quot;blog-image-right&quot;</code> - image will float right</li>
+<li><code class="styleguide">class=&quot;blog-image-row&quot;</code> - image will be horizontally centered and padded</li>
 </ul><p class="styleguide">Captions can be added to full width images by adding <code class="styleguide">&lt;span class=&quot;caption&quot;&gt;Caption&lt;/span&gt;</code> right under the image tag.</p><p class="styleguide">To add caption to floated images wrap the <code class="styleguide">&lt;img&gt;</code> tag in a <code class="styleguide">&lt;div&gt;</code> and give it a class:</p><div class="codeBlock">
   <div class="highlight">
     <pre>&lt;div class="blog-image-left"&gt;
  &lt;img src="/assets/img/blog/{img}" alt="{alt}"&gt;
   &lt;span class="caption"&gt;{caption}&lt;/span&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div><p class="styleguide">Up to six images and their captions can be displayed in a row by wrapping in a <code class="styleguide">&lt;div&gt;</code> with class <code class="styleguide">.blog-row</code>:</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="blog-row"&gt;
+&lt;div class="blog-image-row"&gt;
+ &lt;img src="/assets/img/blog/{img}" alt="{alt}"&gt;
+  &lt;span class="caption"&gt;{caption}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="blog-image-row"&gt;
+ &lt;img src="/assets/img/blog/{img}" alt="{alt}"&gt;
+  &lt;span class="caption"&gt;{caption}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="blog-image-row"&gt;
+ &lt;img src="/assets/img/blog/{img}" alt="{alt}"&gt;
+  &lt;span class="caption"&gt;{caption}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="blog-image-row"&gt;
+ &lt;img src="/assets/img/blog/{img}" alt="{alt}"&gt;
+  &lt;span class="caption"&gt;{caption}&lt;/span&gt;
+&lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
 </div>
