@@ -184,6 +184,15 @@
   }
 }
 
+.blog-column {
+  display: flex;
+  flex-direction: column;
+
+  @include grid-media($large-screen-up) {
+    margin-right: $base-spacing;
+  }
+}
+
 // Image captions.
 .caption {
   color: $grey;
