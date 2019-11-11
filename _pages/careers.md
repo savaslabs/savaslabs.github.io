@@ -43,7 +43,7 @@ The needs at Savas Labs are continually evolving as we grow, but one constant is
 
 [UI/UX Designer](/ui-ux-designer)
 
-<!-- [Digital Project Manager](/digital-project-manager) -->
+[Digital Project Manager](/digital-project-manager)
 
 [Mobile Application Developer](/application-developer)
 
