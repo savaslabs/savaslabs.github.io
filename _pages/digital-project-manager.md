@@ -22,12 +22,11 @@ image: "/assets/img/jobs/digital-project-manager.png"
 
 ## The position
 
-We are looking to bring on a **digital project manager** to steward our projects to  success for all stakeholders. The right candidate collaborates, communicates, and leads effectively both internally and with clients. The position will require some technical knowledge or project management experience. Both would be great, but regardless, **an eagerness to learn** is something all Savasians share. Key responsibilities include managing budget, tracking and reporting project progress, helping to identify and limit risks, and above all, owning the success of each project you manage. Expect to be deeply immersed in projects, not simply reporting on them. You will regularly assign tasks, test UX and functionality, investigate and troubleshoot issues across multiple projects in a given day. You will work closely with company leadership and a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham).
+We are looking to bring on a **digital project manager** to steward our projects to  success for all stakeholders. The right candidate collaborates, communicates, and leads effectively both internally and with clients. Successful candidates generally either have a technical background with a desire to impact the full project from start to finish or have experience managing large projects with multiple stakeholders. Both would be great, but regardless, **an eagerness to learn** is something all Savasians share. Key responsibilities include managing budget, tracking and reporting project progress, helping to identify and limit risks, and above all, owning the success of each project you manage. Expect to be deeply immersed in projects, not simply reporting on them. You will regularly assign tasks, test UX and functionality, investigate and troubleshoot issues across multiple projects in a given day. You will work closely with company leadership and a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham).
 
 ## Working at Savas Labs
 
-At Savas Labs, we prioritize a few things. We like people who are enjoyable to work with. We **learn** from and **teach** one another, and often the result is others learn as well either via [blog posts](/blog),
- [conference presentations,](/results/open-source/#presentations) or [social media](https://twitter.com/savaslabs). We dedicate time each week for self-improvement, socializing, and collaboration. We encourage a flexible work schedule so long as we uphold our commitments to one another and our clients. We value **openness** and encourage our team members to push _and_ recognize the boundaries of their expertise in a given area. We are honest, yet **respectful**; this is not a cut-throat environment, but rather a supportive one. We take a lot of pride in the quality of our work. We value a work/life **balance** that keeps us productive and happy. We like to have **fun** and we take [our values](/company/mission-and-values/) seriously. **We greatly embrace diversity,** value hard work, and use emoji _fairly often_ :+1:. You'll like it here.
+At Savas Labs, we prioritize a few things. We like people who are enjoyable to work with. We **learn** from and **teach** one another, and often the result is others learn as well either via [blog posts](/blog), [conference presentations,](/results/open-source/#presentations) or [social media](https://twitter.com/savaslabs). We dedicate time each week for self-improvement, socializing, and collaboration. We encourage a flexible work schedule so long as we uphold our commitments to one another and our clients. We value **openness** and encourage our team members to push _and_ recognize the boundaries of their expertise in a given area. We are honest, yet **respectful**; this is not a cut-throat environment, but rather a supportive one. We take a lot of pride in the quality of our work and we work hard. We value a work/life **balance** that keeps us productive and happy. We like to have **fun** and yet take [our values](/company/mission-and-values/) seriously. **We greatly embrace inclusivity**. You'll like it here.
 
 ### Employment benefits
 
@@ -54,14 +53,16 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 ### You are:
 
-+ Detail-oriented
-+ A great communicator
++ Detail and action-oriented
++ A proactive and positive communicator
++ Known for asking great questions
 + Constantly seeking efficient ways to work
 + A collaborator that loves working with other people - a team player
 + A multi-tasker with experience managing multiple assignments and prioritizing tasks
 
 ### You understand the importance of strong communication and:
 
++ Consider the timing and content of your communication
 + Have strong writing skills with the ability to write clearly and effectively
 + Have experience working with or managing clients
 + Value the importance of professionalism and making a good impression
@@ -70,14 +71,14 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 + Balancing the needs of the business, our team, and the client on a project
 + Working with remote team members and clients
-+ With leading client presentations or calls
-+ Organizing, scheduling projects and tasks
++ Leading client discussions on topics for which you are not an expert
++ Organizing and scheduling projects and tasks
 + With project management software or ticketing systems and issue/job flow
 
 ### Bonus points for:
 
 + Experience working in an agile environment
-+ Technical development skills.
++ Technical development skills
 
 <br>
 
