@@ -77,7 +77,7 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 ### Bonus points for:
 
 + Experience working in an agile environment
-+ Technical development skills.
++ Technical development skills
 
 <br>
 
