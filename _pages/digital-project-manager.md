@@ -22,7 +22,7 @@ image: "/assets/img/jobs/digital-project-manager.png"
 
 ## The position
 
-We are looking to bring on a **digital project manager** to steward our projects to  success for all stakeholders. The right candidate collaborates, communicates, and leads effectively both internally and with clients. The position will require some technical knowledge or project management experience. Both would be great, but regardless, **an eagerness to learn** is something all Savasians share. Key responsibilities include managing budget, tracking and reporting project progress, helping to identify and limit risks, and above all, owning the success of each project you manage. Expect to be deeply immersed in projects, not simply reporting on them. You will regularly assign tasks, test UX and functionality, investigate and troubleshoot issues across multiple projects in a given day. You will work closely with company leadership and a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham).
+We are looking to bring on a **digital project manager** to steward our projects to  success for all stakeholders. The right candidate collaborates, communicates, and leads effectively both internally and with clients. Successful candidates generally either have a technical background with a desire to impact the full project from start to finish or have experience managing large projects with multiple stakeholders. Both would be great, but regardless, **an eagerness to learn** is something all Savasians share. Key responsibilities include managing budget, tracking and reporting project progress, helping to identify and limit risks, and above all, owning the success of each project you manage. Expect to be deeply immersed in projects, not simply reporting on them. You will regularly assign tasks, test UX and functionality, investigate and troubleshoot issues across multiple projects in a given day. You will work closely with company leadership and a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham).
 
 ## Working at Savas Labs
 
@@ -54,14 +54,16 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 ### You are:
 
-+ Detail-oriented
-+ A great communicator
++ Detail and action-oriented
++ A proactive and positive communicator
++ Known for asking great questions
 + Constantly seeking efficient ways to work
 + A collaborator that loves working with other people - a team player
 + A multi-tasker with experience managing multiple assignments and prioritizing tasks
 
 ### You understand the importance of strong communication and:
 
++ Consider the timing and content of your communication
 + Have strong writing skills with the ability to write clearly and effectively
 + Have experience working with or managing clients
 + Value the importance of professionalism and making a good impression
@@ -70,8 +72,8 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 + Balancing the needs of the business, our team, and the client on a project
 + Working with remote team members and clients
-+ With leading client presentations or calls
-+ Organizing, scheduling projects and tasks
++ Leading client discussions on topics for which you are not an expert
++ Organizing and scheduling projects and tasks
 + With project management software or ticketing systems and issue/job flow
 
 ### Bonus points for:
