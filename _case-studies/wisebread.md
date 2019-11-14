@@ -1,11 +1,11 @@
 ---
 layout: case-study
-weight: -10
+weight: -6
 project_title: Wisebread
 slug: wisebread
 tags: drupal performance security
 services: development support strategy
-featured_tags: [Technical Platform, Support, Security, Content Migration]
+featured_tags: [Performance, Support, Security, Content Migration]
 client_name: Wisebread
 client_url: "https://www.wisebread.com/compare"
 client_quote: wisebread
