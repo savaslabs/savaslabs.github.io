@@ -27,14 +27,12 @@ We are looking to hire a **mobile application developer** to broaden our service
 
 ## Working at Savas Labs
 
-At Savas Labs, we prioritize a few things. We like people who are enjoyable to work with. We **learn** from and **teach** one another, and often the result is others learn as well either via [blog posts](/blog),
- [conference presentations,](/results/open-source/#presentations) or [social media](https://twitter.com/savaslabs). We dedicate time each week for self-improvement, socializing, and collaboration. We encourage a flexible work schedule so long as we uphold our commitments to one another and our clients. We value **openness** and encourage our team members to push _and_ recognize the boundaries of their expertise in a given area. We are honest, yet **respectful**; this is not a cut-throat environment, but rather a supportive one. We take a lot of pride in the quality of our work. We value a work/life **balance** that keeps us productive and happy. We like to have **fun** and we take [our values](/company/mission-and-values/) seriously. **We greatly embrace diversity,** value hard work, and use emoji _fairly often_ :+1:. You'll like it here.
+At Savas Labs, we prioritize a few things. We like people who are enjoyable to work with. We **learn** from and **teach** one another, and often the result is others learn as well either via [blog posts](/blog), [conference presentations,](/results/open-source/#presentations) or [social media](https://twitter.com/savaslabs). We dedicate time each week for self-improvement, socializing, and collaboration. We encourage a flexible work schedule so long as we uphold our commitments to one another and our clients. We value **openness** and encourage our team members to push _and_ recognize the boundaries of their expertise in a given area. We are honest, yet **respectful**; this is not a cut-throat environment, but rather a supportive one. We take a lot of pride in the quality of our work and we work hard. We value a work/life **balance** that keeps us productive and happy. We like to have **fun** and yet take [our values](/company/mission-and-values/) seriously. **We greatly embrace inclusivity**. You'll like it here.
 
 ### Employment benefits
 
 + Competitive salary
-+ Health insurance covered at 100% for you and your family
-+ Dental and vision insurance covered at 50% for you and your family
++ Health, dental, and vision insurance covered at 100% for you and your family
 + Flexible work schedule
 + 401(k) (matching contribution for full-time employees)
 + Profit-sharing plan
