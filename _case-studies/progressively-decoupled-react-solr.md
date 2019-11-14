@@ -1,5 +1,6 @@
 ---
 layout: case-study
+featured: 1
 weight: -7
 project_title: Progressively Decoupled React App powered by Drupal & Apache Solr
 slug: progressively-decoupled-react-solr
