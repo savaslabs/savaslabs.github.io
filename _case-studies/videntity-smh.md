@@ -34,7 +34,7 @@ technologies_used: |
 client_logo: "/assets/img/work/logos/videntity-logo.png"
 client_logo_width: "270px"
 client_logo_height: "56px"
-client_logo_light: "/assets/img/work/logos/videntity-logo.png"
+client_logo_light: "/assets/img/work/logos/videntity-logo-eggshell.png"
 tile_description: |
   How we—on a quick timeline—leveraged Create React App to develop a React prototype for user testing of scenarios involving a complex member approval process where the code could be later used for the final product.
 image: "/assets/img/work/videntity-smh/videntity-smh-showcase.jpg"

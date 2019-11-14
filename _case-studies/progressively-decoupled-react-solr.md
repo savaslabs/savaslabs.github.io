@@ -36,7 +36,7 @@ technologies_used: |
 client_logo: "/assets/img/work/logos/omega-logo.png"
 client_logo_width: "270px"
 client_logo_height: "56px"
-client_logo_light: "/assets/img/work/logos/omega-logo.png"
+client_logo_light: "/assets/img/work/logos/omega-logo-eggshell.png"
 tile_description: |
   How we improved e-commerce conversions by designing a high-performing, spell-checking, auto-completing, multi-filtered React and Apache Solr search application.
 image: "/assets/img/work/progressively-decoupled-react-solr/progressively-decoupled-react-solr-showcase.jpg"

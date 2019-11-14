@@ -6,7 +6,7 @@ project_title: UVA Darden Ideas to Action
 slug: uva-darden-ita
 tags: drupal strategy
 services: strategy development design-ux
-featured_tags: [Drupal, UX]
+featured_tags: [Drupal, UX, Strategy, Content Migration]
 client_name: UVA Darden
 client_url: "https://ideas.darden.virginia.edu/"
 client_quote: uva-darden-ita

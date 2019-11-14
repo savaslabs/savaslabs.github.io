@@ -1,6 +1,8 @@
 # For now, if you add a tag you also need to add an empty
 # template in /blog/tag.
 
+- slug: security
+  name: Security
 - slug: component-libraries
   name: Component Libraries
 - slug: storybook
@@ -15,6 +17,8 @@
   name: Drupal Planet
 - slug: jekyll
   name: Jekyll
+- slug: linode
+  name: Linode
 - slug: bourbon
   name: Bourbon
 - slug: sass
