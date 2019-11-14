@@ -1,6 +1,8 @@
 # For now, if you add a tag you also need to add an empty
 # template in /blog/tag.
 
+- slug: security
+  name: Security
 - slug: drupal
   name: Drupal
 - slug: drupal-planet
