@@ -87,4 +87,4 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 Ready to get started? Send us a résumé and cover letter today.
 
-<a href="mailto:careers@savaslabs.com" class="button--arrow--orange">Apply</a>
+<a href="https://savas-labs.breezy.hr/p/0fdd24eaede0-digital-project-manager" class="button--arrow--orange">Apply</a>
