@@ -82,7 +82,8 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 ### Bonus points for knowledge in:
 
 + Drupal 8 or the Twig templating system
-+ Javascript frameworks (e.g. React)
++ Wrangling webpack
++ React Native
 + Continuous integration
 
 <br>
