@@ -3,6 +3,14 @@
 
 - slug: security
   name: Security
+- slug: component-libraries
+  name: Component Libraries
+- slug: storybook
+  name: Storybook
+- slug: tailwind
+  name: Tailwind
+- slug: twig
+  name: Twig
 - slug: drupal
   name: Drupal
 - slug: drupal-planet
