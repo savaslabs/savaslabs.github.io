@@ -1,4 +1,10 @@
 # For client quote regions.
+- project: uva-darden-main
+  name: Valerie Harness
+  title: Website Project & Systems Manager, UVA Darden School of Business
+  image: /assets/img/work/clients/va-ha.jpg
+  quote: |
+    The trainings, and overall QA process from the Savas Team made my job so much easier. I never felt like I was submitting tickets into a ‘black hole’ and my team and I found the training materials very helpful and beautiful.
 - project: wisebread
   name: Gregory Go
   title: Founder and CTO of Wisebread
