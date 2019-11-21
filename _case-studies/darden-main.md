@@ -1,6 +1,7 @@
 ---
 layout: case-study
-weight: -10
+featured: 1
+weight: -9
 project_title: University of Virginia Darden School of Business
 slug: uva-darden-main
 tags: drupal content-migration tailwind css
@@ -29,8 +30,8 @@ services_provided: |
   - [Content Migration](/services/development)
 technologies_used: |
   - [Drupal 8](/blog/tag/drupal8)
-  - Tailwind
-  - CSS
+  - [Tailwind](/blog/tag/tailwind)
+  - [CSS](/blog/tag/css)
 client_logo: "/assets/img/work/logos/uva-darden-main-logo.png"
 client_logo_width: "174px"
 client_logo_height: "80px"

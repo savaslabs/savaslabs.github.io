@@ -1,7 +1,6 @@
 ---
 layout: case-study
-featured: 1
-weight: -9
+weight: -5
 project_title: UVA Darden Ideas to Action
 slug: uva-darden-ita
 tags: drupal strategy
