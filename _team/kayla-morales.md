@@ -4,7 +4,6 @@ slug: kayla-morales
 layout: team
 job_title: Project Manager
 linkedin: kayla-ann-morales
-github: kannmorales
 drupal: kaylamorales
 image: "/assets/img/team/kayla-morales/kayla-morales-square-outside.jpg"
 
