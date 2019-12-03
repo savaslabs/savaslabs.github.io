@@ -28,7 +28,7 @@ I created a secret gist with instructions for updating our current site with mar
 
 My weaknesses include the fact I’m developing in a different language and framework than I was trained, a tendency to compare, and admittedly: impatience. I want to be a self-sufficient developer and I want to be a self-sufficient developer _now_.
 
-However, I know that comparing myself to developers with any multiplier of my years of experience won’t accelerate my growth. So I admit what I do not know and try my best to describe what I do know. This can feel vulnerable, but the benefits are tremendous. I ask a lot of questions and I’ve made it my mission to learn from every person on my projects. I’ve learned really sweet css tricks from [Alex](https://savaslabs.com/company/alex-manzo/), Drupal custom module and preprocess best practices from [Devan](https://savaslabs.com/company/devan-chase/), project workflow from [Dan](https://savaslabs.com/company/dan-murphy/), Drupal error resolution from [Brian](https://savaslabs.com/company/brian-vuyk/), and a wealth of web accessibility knowledge from [Sean](https://savaslabs.com/company/sean-oshea/). For the most part, I stay abreast of posts in our internal #help Slack channel.
+However, I know that comparing myself to developers with any multiplier of my years of experience won’t accelerate my growth. So I admit what I do not know and try my best to describe what I do know. This can feel vulnerable, but the benefits are tremendous. I ask a lot of questions and I’ve made it my mission to learn from every person on my projects. I’ve learned really sweet css tricks from [Alex](/company/alex-manzo/), Drupal custom module and preprocess best practices from [Devan](/company/devan-chase/), project workflow from [Dan](/company/dan-murphy/), Drupal error resolution from [Brian](/company/brian-vuyk/), and a wealth of web accessibility knowledge from [Sean](/company/sean-oshea/). For the most part, I stay abreast of posts in our internal #help Slack channel.
 
 #### If your company provides training time, you better utilize it
 
@@ -40,7 +40,7 @@ I have previously used my weekly allocation to get more familiar with webpack, r
 
 What I mean is this: say you have a component. On desktop view, this component displays as a triptych of cards displaying information. On mobile view, this component should function as an accordion, with icons that toggle the component open or closed on user action, revealing additional information (that was visible without user action on desktop). The time to figure out how to make this component keyboard and screen reader accessible is before you sit down (or stand up, you standing desk-ers) to create said component in HTML, Twig, and the CSS/SASS/CSS framework of your choosing. The wrong time is after you’ve created the component without tabbing functionality or semantic HTML, reused the component in 5+ other organisms within your atomic design based component library, mapped to it in your Drupal node/paragraph template, written Javascript only for onClick toggle behavior, etc…
 
-We have used Storybook, a component library, on [recent projects](https://savaslabs.com/2019/10/11/storybook-pt-1.html). It provides real-time accessibility testing via an add-on called [a11y](https://www.npmjs.com/package/@storybook/addon-a11y). However, I strongly suggest going out of your way to become adept at developing accessible technology. A few good places to start: [The A11y Project](https://a11yproject.com/), Web Content Accessibility Guidelines [(WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), Accessible Rich Internet Applications [(ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA). After Sean gave an insightful skillshare in November (more on that to come), I began practicing and testing my semantic markup skills and tag usage with random company landing pages.
+We have used Storybook, a component library, on [recent projects](2019/10/11/storybook-pt-1.html). It provides real-time accessibility testing via an add-on called [a11y](https://www.npmjs.com/package/@storybook/addon-a11y). However, I strongly suggest going out of your way to become adept at developing accessible technology. A few good places to start: [The A11y Project](https://a11yproject.com/), Web Content Accessibility Guidelines [(WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), Accessible Rich Internet Applications [(ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA). After Sean gave an insightful skillshare in November (more on that to come), I began practicing and testing my semantic markup skills and tag usage with random company landing pages.
 
 As no accessibility tool will catch every issue with your web project, we incorporate the following tools into our QA process, in addition to manual review:
 [VoiceOver](https://www.apple.com/voiceover/info/guide/_1124.html): Apple’s screenreader.
@@ -57,7 +57,7 @@ Success as a front-end developer requires having a thorough understanding of the
 
 How to make components that are both accessible and reusable? Semantic HTML and content agnostic CSS.
 
-I effectively went through 1-3 of [Adam Wathan’s phases of writing CSS](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) in a manner of weeks. Ironically enough, we use [Tailwind CSS](https://savaslabs.com/2019/11/06/using-tailwind-for-css.html) which Adam created, but historically we have not used it the way he intended. This was our process until recently:
+I effectively went through 1-3 of [Adam Wathan’s phases of writing CSS](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) in a manner of weeks. Ironically enough, we use [Tailwind CSS](/2019/11/06/using-tailwind-for-css.html) which Adam created, but historically we have not used it the way he intended. This was our process until recently:
 
 - Develop individual components in Chrome DevTools with Tailwind CSS utility classes within the HTML file (Twig template, in our case)
 - When it worked/looked the way we wanted, we’d replace the utility classes with content-specific BEM modifiers in the component’s Twig file
@@ -99,7 +99,7 @@ You could decide to preserve your sanity for the sake of a polished output or yo
 
 **What we were actually building:** Decoupled React - Drupal web application
 
-**What we used:** (Create React App)[https://reactjs.org/docs/create-a-new-react-app.html] to save hours that would be required for configuring Webpack
+**What we used:** [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) to save hours that would be required for configuring Webpack
 
 **What we didn’t know, and what we learned (chronologically) as our seven hour mark neared:**
 
@@ -116,5 +116,5 @@ To meet our 5 p.m. deadline, we could have only attempted the entry log view, an
 
 ### What’s Next
 
-I’m in the midst of a React Native project and there are big things are on the horizon. Now that I’m more comfortable in Drupal, I look forward to honing in on front-end architecture, accessibility, trying out new tools, and of course, further contributing to internal processes.
+I’m in the midst of a React Native project and there are big things on the horizon. Now that I’m more comfortable in Drupal, I look forward to honing in on front-end architecture, accessibility, trying out new tools, and of course, further contributing to internal processes.
 
