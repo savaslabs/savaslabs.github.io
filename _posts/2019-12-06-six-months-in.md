@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Six months in: Revelations and Roadblocks as a Junior Developer"
-date: 2019-11-06
+date: 2019-12-06
 author: Madeline Streilein
 tags: front-end-dev philosophy best-practices accessibility tailwind
 summary:
