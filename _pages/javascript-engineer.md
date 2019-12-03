@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Mobile Application Developer
-permalink: "/application-developer/"
+title: JavaScript Engineer
+permalink: "/javascript-engineer/"
 excerpt: |
-  Savas Labs hiring for Application developer.
+  Savas Labs is looking to hire a JavaScript engineer.
 image: "/assets/img/jobs/developer.png"
 
 ---
@@ -14,16 +14,17 @@ image: "/assets/img/jobs/developer.png"
 <p class="breadcrumbs hide-for-small">
     <a href="/company">Company</a><i class="fa fa-caret-right"></i>
     <a href="/careers">Careers at Savas Labs</a><i class="fa fa-caret-right"></i>
-    Application developer
+    JavaScript engineer
 </p>
 
 <div class="icon--job">
-    <img src="/assets/img/jobs/developer.svg" alt="Application Developer">
+    <img src="/assets/img/jobs/developer.svg" alt="JavaScript Engineer">
 </div>
 
 ## The position
 
-We are looking to hire a **mobile application developer** to broaden our services and lead expansion into native mobile application development. We are looking for an engineer that has experience developing and deploying native mobile applications on a team at scale. Technical acumen and ability to mentor others are equally crucial to succeed in this role. You will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. We are looking to fill the role in [Durham, NC](/durham) but **will consider the right remote candidate.** Your expertise in how to architect, and plan mobile applications will be relied on heavily to shape how we offer these services.
+We are looking to hire a **JavaScript engineer** to develop web and native mobile applications who is experienced in the full stack though you may prefer the front or back end. You have the ability to lead and execute efficiently as an engineer, while also have a desire to support other team members in their growth. You will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. This role is for candidates who will work out of our **[Durham, NC](/durham) office only**; we are not accepting remote candidates, though we may provide relocation assistance for applicants outside of the Triangle who want to move here. You should, it's great.
+
 
 ## Working at Savas Labs
 
@@ -47,7 +48,8 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 
 ### Our projects
 
-As a full-service digital agency, we partner with clients to fulfill their design, user experience, strategy, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. We are adding mobile application development to our service offering for clients in addition to standalone products. Help launch this facet of our business!
+As a full-service digital agency, we partner with clients to fulfill their design, user experience, strategy, and development needs.  We work with high-profile corporate, educational and nonprofit clients who operate across various industries. In the past year, Savas has expanded design services and mobile engineering which has afforded us more product opportunities. We would like to continue to grow this aspect of the business. 
+
 
 ## About you
 
@@ -55,15 +57,35 @@ As a full-service digital agency, we partner with clients to fulfill their desig
 
 + Great communication skills
 + An interest in collaborating and sharing
-+ An interest in learning/teaching/growing
++ A desire to help shape and improve processes
++ An interest in leadership, teaching and growing
 + A detail-oriented approach
 + Pride in the quality of your work
++ The ability to perform well in a fast-paced environment
 
-### You are well-informed about:
+### You have experience with:
 
-+ Mobile application development frameworks
++ The MERN stack for web applications
++ React Native
+
+### You care about:
+
++ Layout aesthetics and technical feasibility of UI/UX designs
++ Maintaining graphics standards and branding throughout the product’s interface
++ Writing concise and maintainable code
++ Accessibility and inclusive design
++ Performance, scalability and security 
++ Best practices
+
+### Bonus points for knowledge in:
+
++ CMS application integration
++ Wrangling webpack
++ Continuous integration
++ High-scale applications
++ Working on and/or leading a mobile team
 + Strengths and weaknesses of true native vs compiled native (e.g. React native)
-+ Best practices for back end/scaling
+
 
 <br>
 
