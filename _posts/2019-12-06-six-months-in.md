@@ -28,7 +28,7 @@ I created a secret gist with instructions for updating our current site with mar
 
 My weaknesses include the fact I’m developing in a different language and framework than I was trained, a tendency to compare, and admittedly: impatience. I want to be a self-sufficient developer and I want to be a self-sufficient developer _now_.
 
-However, I know that comparing myself to developers with any multiplier of my years of experience won’t accelerate my growth. So I admit what I do not know and try my best to describe what I do know. This can feel vulnerable, but the benefits are tremendous. I ask a lot of questions and I’ve made it my mission to learn from every person on my projects. I’ve learned really sweet css tricks from [Alex](https://savaslabs.com/company/alex-manzo/), Drupal custom module and preprocess best practices from [Devan](https://savaslabs.com/company/devan-chase/), project workflow from [Dan](https://savaslabs.com/company/dan-murphy/), Drupal error resolution from [Brian](https://savaslabs.com/company/brian-vuyk/), and a wealth of web accessibility knowledge from [sean](https://savaslabs.com/company/sean-oshea/). For the most part, I stay abreast of posts in our internal #help Slack channel.
+However, I know that comparing myself to developers with any multiplier of my years of experience won’t accelerate my growth. So I admit what I do not know and try my best to describe what I do know. This can feel vulnerable, but the benefits are tremendous. I ask a lot of questions and I’ve made it my mission to learn from every person on my projects. I’ve learned really sweet css tricks from [Alex](https://savaslabs.com/company/alex-manzo/), Drupal custom module and preprocess best practices from [Devan](https://savaslabs.com/company/devan-chase/), project workflow from [Dan](https://savaslabs.com/company/dan-murphy/), Drupal error resolution from [Brian](https://savaslabs.com/company/brian-vuyk/), and a wealth of web accessibility knowledge from [Sean](https://savaslabs.com/company/sean-oshea/). For the most part, I stay abreast of posts in our internal #help Slack channel.
 
 #### If your company provides training time, you better utilize it
 
@@ -87,27 +87,32 @@ Months ago I implemented the footer on a client project. I was particularly prou
 
 Nuggets from my back-end training come in handy every once in awhile. During our hack-a-thon I googled my way to a solution for a CORS error that was thrown when I attempted to make an HTTP request to our Drupal endpoint. Though I haven’t dealt with Drupal on the backend, my experience with Node.js and the cors library proved fruitful. The solution is [here](https://www.drupal.org/node/2715637#comment-12284397), and coincidentally written by a former Savas Labs partner (Thanks Justin!).
 
-Nuggets from product development at my fellowship still apply as well, and I didn’t realize how much until our Hack-to-the-Future in the fall. A reminder: trust your gut if you know something will take longer than is estimated, no matter how new to the team you are. If you know you can’t make a multi-view web app in seven hours with a well oiled team and technology you know well, then trust that you won’t be able to do it with a new team and new technology. With that being said, there are times to ignore your gut. There are times when you should ...
+Nuggets from product development at my fellowship still apply as well, and I didn’t realize how much until our Hack-to-the-Future in the fall. A reminder: trust your gut if you know something will take longer than is estimated, no matter how new to the team you are. If you know you can’t make a multi-view web app in seven hours with a well oiled team and technology you know well, then trust that you won’t be able to do it with a new team and new technology. With that being said, there are times to ignore your gut. There are times when instead you should…
 
 #### Take Risks
 
-You could decide to preserve your sanity for the sake of a polished output or you could shoot for the moon, fail, and learn a metric ton about the stars that you wouldn’t have otherwise(_cringe_). I’ll set the scene:
+You could decide to preserve your sanity for the sake of a polished output or you could shoot for the moon, fail, and learn a metric ton about the stars that you wouldn’t have otherwise (_cringe_). I’ll set the scene:
 
 **What we had:** Figma mobile mockups taken from Material Design UI Kit
+
 **What we faced:** 7 hours until demo
+
 **What we were actually building:** Decoupled React - Drupal web application
-**What we used:** Create React App to save hours that would be required for configuring Webpack
+
+**What we used:** (Create React App)[https://reactjs.org/docs/create-a-new-react-app.html] to save hours that would be required for configuring Webpack
+
 **What we didn’t know, and what we learned (chronologically) as our seven hour mark neared:**
-1. Material Design Web is incompatible with Create React App unless one ejects due to the need to edit the webpack.config.js
+
+1. [Material Design Web](https://material.io/develop/web/) is incompatible with Create React App unless one ejects due to the need to edit the webpack.config.js
 2. Material Design React works with CRA, but doesn’t have all the same components at Material Design Web, such as the data table which was integral to our entry log comps
 3. Neither Material Design Web nor Material React Web have all the same components as Material Design for mobile apps.
 4. We didn’t _think_ we needed centralized state management when we started, but we did.
 5. There wasn’t enough time to style.
 6. There wasn’t enough time to connect to the backend to get real data.
 
-To meet our 5pm deadline, we could have only attempted the entry log view, and the create entry functionality. We probably could have made a pretty simple node web server with one GET and one POST endpoint to handle fetching all the logs and adding a new one, without having to deal with authentication. We could have styled the log and the new entry form from scratch, and been able to present our working single purpose app.
+To meet our 5 p.m. deadline, we could have only attempted the entry log view, and the create entry functionality. We could have made a pretty simple node web server with one GET and one POST endpoint to handle fetching all the logs and adding a new one, without having to deal with authentication. We could have styled the log and the new entry form from scratch, and been able to present our working single purpose app…
 
-BUT that wouldn’t have exposed us to the nuances of Material Design, a new-to-us component library, the downsides of Create React App, or given us practice with a decoupled Drupal app. Our demo result wasn’t what we envisioned, but we made a great effort, and each of us learned about one another’s roles and now have a greater understanding of each of the tools.
+…BUT this strategy that wouldn’t have exposed us to the nuances of Material Design, a new-to-us component library, the downsides of Create React App, or given us practice with a decoupled Drupal app. Our demo result wasn’t what we envisioned, but we made a great effort, and each of us learned about one another’s roles and now have a greater understanding of each of the tools.
 
 ### What’s Next
 
