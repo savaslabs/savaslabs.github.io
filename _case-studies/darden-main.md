@@ -1,6 +1,5 @@
 ---
 layout: case-study
-featured: 1
 weight: -9
 project_title: University of Virginia Darden School of Business
 slug: uva-darden-main
