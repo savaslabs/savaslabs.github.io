@@ -4,9 +4,9 @@ featured: 1
 weight: -10
 project_title: Duke Cancer Institute Drupal 8 Migration
 slug: dci
-tags: drupal-8 search-improvements migration client-training editorial-enhancements multi-site-functionality
+tags: drupal-8 search-improvements migration client-training editorial-enhancements multisite
 services: development
-featured_tags: [Drupal 8, Multi-site Functionality, Migration, Client Training]
+featured_tags: [Drupal 8, Multisite, Migration, Client Training]
 client_name: Duke Cancer Institute
 client_url: "http://dukecancerinstitute.org"
 client_quote: dci
@@ -29,7 +29,7 @@ services_provided: |
   - [Search Improvements](/services/development)
   - [Migration](/services/development)
   - [Client Training](/services/development)
-  - [Editorial Enhancements](/services/)
+  - [Editorial Enhancements](/services/development)
   - [Multi-site Functionality](/services/development)
 technologies_used: |
   - [Drupal 8](/blog/tag/drupal8)
