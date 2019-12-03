@@ -3,12 +3,12 @@ layout: post
 title: "Six months in: Revelations and Roadblocks as a Junior Developer"
 date: 2019-11-06
 author: Madeline Streilein
-tags: front-end-dev tailwind best-practices accessibility philosophy
+tags: front-end-dev philosophy best-practices accessibility tailwind
 summary:
 description:
-image: "/assets/img/blog/parliament-2019-featured-image.jpg"
-featured_image: "/blog/parliament-2019-featured-image.jpg"
-featured_image_alt: ""
+image: "/assets/img/blog/madeline-six-mo-blog.jpg"
+featured_image: "/blog/madeline-six-mo-blog.jpg"
+featured_image_alt: "Photo by Suzanne D. Williams on Unsplash. Features butterfly chrysalis transitioning from cacoon to butterfly."
 
 ---
 
