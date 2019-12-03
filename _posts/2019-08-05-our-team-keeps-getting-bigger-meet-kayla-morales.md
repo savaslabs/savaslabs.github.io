@@ -12,13 +12,13 @@ featured_image_alt: "Kayla and Jordan on computer."
 
 ---
 
-As you know, we’ve been growing quite a bit these last few months [(still are, if you want to join us!)](https://savaslabs.com/careers/). So it’s with great pleasure that we welcome our newest addition [Kayla](https://savaslabs.com/company/kayla-morales/) Morales to the Savas Labs team!
+As you know, we’ve been growing quite a bit these last few months [(still are, if you want to join us!)](/careers/). So it’s with great pleasure that we welcome our newest addition Kayla Morales to the Savas Labs team!
 
 <div class="blog-image-large">
 <img alt="Welcome, welcome, welcome, welcome. - Jimmy Fallon" src="/assets/img/blog/jimmy-fallon-welcome.gif">
 </div>
 
-Kayla joins as our newest Project Manager. In between her busy days onboarding with [Maddy](https://savaslabs.com/company/maddy-bishop-van-horn/), getting acclimated to the office, and taking on projects of her own, we caught up and I asked some questions for us all to get to know her a bit better. So, without further ado, let’s meet Kayla!
+Kayla joins as our newest Project Manager. In between her busy days onboarding with [Maddy](/company/maddy-bishop-van-horn/), getting acclimated to the office, and taking on projects of her own, we caught up and I asked some questions for us all to get to know her a bit better. So, without further ado, let’s meet Kayla!
 
 **Okay, Kayla, let’s just jump right in! Where did you go to college and what did you study?**
 
@@ -30,15 +30,15 @@ Prior to joining the Savas Labs team, I worked as a Copywriter & Digital Marketi
 
 **Relocating from PA and transitioning to a more technical agency; what made you choose Savas as your next career move?**
 
-[Savas is a growing company](https://savaslabs.com/careers/), thriving at a rapid pace. I chose Savas because I wanted to be a part of an organization that is expanding, so I can grow alongside as a professional, too.
+[Savas is a growing company](/careers/), thriving at a rapid pace. I chose Savas because I wanted to be a part of an organization that is expanding, so I can grow alongside as a professional, too.
 
 **What were/are you most excited about joining the Savas Team?**
 
-Being a part of a [cohesive group](https://savaslabs.com/company/), working alongside creative and hard-working individuals, and learning more about project management.
+Being a part of a [cohesive group](/company/), working alongside creative and hard-working individuals, and learning more about project management.
 
 **Well, we are very glad you’re here! How is the Savas Team/office set-up/workflow different from what you’ve experienced in the past?**
 
-Other places that I worked at prior to joining the Savas Team were very rigid, structured, and not very collaborative. Most of the time, my thoughts and ideas surrounding certain topics or projects were never taken into account. The first day I started working at Savas, I noticed how different of a work dynamic it is compared to my prior jobs. [Savas is very much a united and communal workplace](https://savaslabs.com/company/mission-and-values/), which I greatly appreciate.
+Other places that I worked at prior to joining the Savas Team were very rigid, structured, and not very collaborative. Most of the time, my thoughts and ideas surrounding certain topics or projects were never taken into account. The first day I started working at Savas, I noticed how different of a work dynamic it is compared to my prior jobs. [Savas is very much a united and communal workplace](/company/mission-and-values/), which I greatly appreciate.
 
 I love how Savas provides a platform for others to speak and voice their thoughts about projects or other important work-related topics.
 
