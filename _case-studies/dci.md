@@ -13,7 +13,7 @@ client_quote: dci
 client_description: |
   Duke Cancer Institute (DCI) is a National Cancer Institute-designated Comprehensive Cancer Center at Duke University and Duke Medical Center. Collaborative, innovative, and fast-paced, Duke Cancer Institute exists to discover and develop the world’s best cancer care through first-class patient care, top-tier talent, and game-changing research.
 client_dates: 2018 - Present
-project_highlights: [Drupal 8, Content Migration]
+project_highlights: [Drupal 8, Search Improvements, Migration, Client Training, Editorial Enhancements]
 project_description: |
   We migrated the Duke Cancer Institute’s site, [](http://dukecancerinstitute.org), and it’s derivative site [] (https://prostateurologiccenter.dukecancerinstitute.org/) from Drupal 7 to Drupal 8, addressing accessibility and select feature enhancements along the way.
 description: |
@@ -28,9 +28,7 @@ services_provided: |
   - [Drupal 8](/services/development)
   - [Search Improvements](/services/development)
   - [Migration](/services/development)
-  # Add tag
   - [Client Training](/services/development)
-  # Add tag
   - [Editorial Enhancements](/services/)
   - [Multi-site Functionality](/services/development)
 technologies_used: |
