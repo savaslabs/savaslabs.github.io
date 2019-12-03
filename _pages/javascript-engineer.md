@@ -95,4 +95,4 @@ As a full-service digital agency, we partner with clients to fulfill their desig
 
 Ready to get started? Send us a résumé and cover letter today.
 
-<a href="mailto:careers@savaslabs.com" class="button--arrow--orange">Apply</a>
+<a href="https://savas-labs.breezy.hr/p/218d1df27c9a-javascript-engineer/apply" class="button--arrow--orange">Apply</a>
