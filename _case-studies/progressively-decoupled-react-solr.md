@@ -2,7 +2,7 @@
 layout: case-study
 featured: 1
 weight: -7
-project_title: Progressively Decoupled React App powered by Drupal & Apache Solr
+project_title: Omega Institute Decoupled React App
 slug: progressively-decoupled-react-solr
 tags: react search drupal front-end-dev performance user-experience
 services: strategy development design-ux
