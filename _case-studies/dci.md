@@ -15,7 +15,7 @@ client_description: |
 client_dates: 2018 - Present
 project_highlights: [Drupal 8, Search Improvements, Migration, Client Training, Editorial Enhancements]
 project_description: |
-  We migrated the Duke Cancer Institute’s site, [](http://dukecancerinstitute.org), and it’s derivative site [] (https://prostateurologiccenter.dukecancerinstitute.org/) from Drupal 7 to Drupal 8, addressing accessibility and select feature enhancements along the way.
+  We migrated the Duke Cancer Institute’s site, [http://dukecancerinstitute.org](http://dukecancerinstitute.org), and it’s derivative site [https://prostateurologiccenter.dukecancerinstitute.org/](https://prostateurologiccenter.dukecancerinstitute.org/) from Drupal 7 to Drupal 8, addressing accessibility and select feature enhancements along the way.
 description: |
   We migrated the Duke Cancer Institute’s site, dukecancerinstitute.org, and it’s derivative site prostateurologiccenter.dukecancerinstitute.org/ from Drupal 7 to Drupal 8, addressing accessibility and select feature enhancements along the way.
 project_objective: |
