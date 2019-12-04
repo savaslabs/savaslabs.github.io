@@ -4,8 +4,8 @@ title: "Six months in: Revelations and Roadblocks as a Junior Developer"
 date: 2019-12-06
 author: Madeline Streilein
 tags: front-end-dev philosophy best-practices accessibility tailwind
-summary:
-description:
+summary: Ever wondered what beginning a dev career at a web agency is like? One of our own shares hurdles, highlights, and tips as she reflects on half a year at Savas Labs.
+description: Ever wondered what beginning a dev career at a web agency is like? One of our own shares hurdles, highlights, and tips as she reflects on half a year at Savas Labs.
 image: "/assets/img/blog/madeline-six-mo-blog.jpg"
 featured_image: "/blog/madeline-six-mo-blog.jpg"
 featured_image_alt: "Photo by Suzanne D. Williams on Unsplash. Features butterfly chrysalis transitioning from cacoon to butterfly."
