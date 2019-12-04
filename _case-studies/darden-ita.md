@@ -40,7 +40,7 @@ technologies_used: |
 client_logo: "/assets/img/work/logos/ita-logo.png"
 client_logo_width: "174px"
 client_logo_height: "170px"
-client_logo_light: "/assets/img/work/logos/ita-logo.png"
+client_logo_light: "/assets/img/work/logos/ita-logo-eggshell.png"
 tile_description: |
   To secure their place as one of the country’s top business schools, the Darden School of Business sought to redesign and rebuild their web properties in Drupal 8.
 image: "/assets/img/work/darden/ita-results.jpg"
