@@ -12,7 +12,7 @@ featured_image_alt: "Photo by Suzanne D. Williams on Unsplash. Features butterfl
 
 ---
 
-Today marks month six as a Junior Front-end Developer at Savas Labs. As it so happens, this week I also celebrate one year since I began to learn to code. Here are some hurdles overcome and lessons learned during that time. Excuse the cliches.
+Today marks month six as a Junior Front-end Developer at Savas Labs. As it so happens, this week I also celebrate one year since I began to learn to code. Here are some hurdles overcome and lessons learned during that time. Excuse the clichés.
 
 ### RE: The role
 
@@ -28,11 +28,11 @@ I created a secret gist with instructions for updating our current site with mar
 
 My weaknesses include the fact I’m developing in a different language and framework than I was trained, a tendency to compare, and admittedly: impatience. I want to be a self-sufficient developer and I want to be a self-sufficient developer _now_.
 
-However, I know that comparing myself to developers with any multiplier of my years of experience won’t accelerate my growth. So I admit what I do not know and try my best to describe what I do know. This can feel vulnerable, but the benefits are tremendous. I ask a lot of questions and I’ve made it my mission to learn from every person on my projects. I’ve learned really sweet css tricks from [Alex](/company/alex-manzo/), Drupal custom module and preprocess best practices from [Devan](/company/devan-chase/), project workflow from [Dan](/company/dan-murphy/), Drupal error resolution from [Brian](/company/brian-vuyk/), and a wealth of web accessibility knowledge from [Sean](/company/sean-oshea/). For the most part, I stay abreast of posts in our internal #help Slack channel.
+However, I know that comparing myself to developers with any multiplier of years of my experience won’t accelerate my growth. So I admit what I do not know and try my best to describe what I do know. This can feel vulnerable, but the benefits are tremendous. I ask a lot of questions and I’ve made it my mission to learn from every person on my projects. I’ve learned really sweet css tricks from [Alex](/company/alex-manzo/), Drupal custom module and preprocess best practices from [Devan](/company/devan-chase/), project workflow from [Dan](/company/dan-murphy/), Drupal error resolution from [Brian](/company/brian-vuyk/), and a wealth of web accessibility knowledge from [Sean](/company/sean-oshea/). For the most part, I stay abreast of posts in our internal #help Slack channel.
 
 #### If your company provides training time, you better utilize it
 
-I have previously used my weekly allocation to get more familiar with webpack, react native, design systems, front-end architecture, web accessibility, and dove deeper into Drupal documentation that my peers sent me in the midst of PR reviews. The more you utilize opportunity to hone in on your skills, the more value you’ll add to your team.
+I have previously used my weekly allocation to get more familiar with Webpack, React Native, design systems, front-end architecture, web accessibility, and I have dove deeper into Drupal documentation that my peers sent me in the midst of PR reviews. The more you utilize given opportunities to hone in on your skills, the more value you’ll add to your team.
 
 ### RE: The job
 
@@ -67,7 +67,7 @@ This took a not-so-insignificant amount of time and seriously slowed down Webpac
 
 #### Drupal is a beast
 
-At ProjectShift my world was primarily the MERN stack, plus vanilla JS, a little Backbone, and Bootstrap. The tech stack of my first full-time project in my current role was Drupal (PHP, Twig), Storybook, TailwindCSS, and some vanilla Javascript. I was in an unfamiliar territory. Advice to be given, six months later:
+At [Project Shift](https://www.projectshift.io/) my world was primarily the MERN stack, plus vanilla JS, a little Backbone, and Bootstrap. The tech stack of my first full-time project in my current role was Drupal (PHP, Twig), Storybook, and TailwindCSS. I was in an unfamiliar territory. Advice to be given, six months later:
 
 - Confusing `make cim` (or `drush cim`) and `make cex` is not a question of if, but when. When you do, you will be sad, but life goes on.
 - Truly, the best way to learn is by doing. I wrote my first PHP preprocess function when creating an interactive map component with layers of nested entity references.
@@ -85,15 +85,15 @@ Months ago I implemented the footer on a client project. I was particularly prou
 
 #### Development is like riding a bike
 
-Nuggets from my back-end training come in handy every once in awhile. During our hack-a-thon I googled my way to a solution for a CORS error that was thrown when I attempted to make an HTTP request to our Drupal endpoint. Though I haven’t dealt with Drupal on the backend, my experience with Node.js and the cors library proved fruitful. The solution is [here](https://www.drupal.org/node/2715637#comment-12284397), and coincidentally written by a former Savas Labs partner (Thanks Justin!).
+Nuggets from my back-end training come in handy every once in awhile. During our Hack-to-the-Future I googled my way to a solution for a CORS error that was thrown when I attempted to make an HTTP GET request to our Drupal endpoint. Though I haven’t dealt with Drupal on the back-end, my experience with Node.js and the cors library proved fruitful. The solution is [here](https://www.drupal.org/node/2715637#comment-12284397), and coincidentally written by a former Savas Labs partner (Thanks Justin!).
 
-Nuggets from product development at my fellowship still apply as well, and I didn’t realize how much until our Hack-to-the-Future in the fall. A reminder: trust your gut if you know something will take longer than is estimated, no matter how new to the team you are. If you know you can’t make a multi-view web app in seven hours with a well oiled team and technology you know well, then trust that you won’t be able to do it with a new team and new technology. With that being said, there are times to ignore your gut. There are times when instead you should…
+Nuggets from product development at my fellowship still apply as well, and I didn’t realize how much until the same hackathon in the fall. A reminder: trust your gut if you know something will take longer than is estimated, no matter how new to the team you are. If you know you can’t make a multi-view web app in seven hours with a well oiled team and technology you know well, then trust that you won’t be able to do it with a new team and new technology. With that being said, there are times to ignore your gut. There are times when instead you should…
 
 #### Take Risks
 
 You could decide to preserve your sanity for the sake of a polished output or you could shoot for the moon, fail, and learn a metric ton about the stars that you wouldn’t have otherwise (_cringe_). I’ll set the scene:
 
-**What we had:** Figma mobile mockups taken from Material Design UI Kit
+**What we had:** Figma mobile mockups taken from Material Design UI Kit, a front-end developer, a back-end developer, and a designer.
 
 **What we faced:** 7 hours until demo
 
@@ -110,9 +110,9 @@ You could decide to preserve your sanity for the sake of a polished output or yo
 5. There wasn’t enough time to style.
 6. There wasn’t enough time to connect to the backend to get real data.
 
-To meet our 5 p.m. deadline, we could have only attempted the entry log view, and the create entry functionality. We could have made a pretty simple node web server with one GET and one POST endpoint to handle fetching all the logs and adding a new one, without having to deal with authentication. We could have styled the log and the new entry form from scratch, and been able to present our working single purpose app…
+To meet our 5 p.m. deadline, we could have attempted just the entry log view, and the create entry functionality. We could have made a pretty simple node web server with one GET and one POST endpoint to handle fetching all the logs and adding a new one, without having to deal with authentication. We could have styled the log and the new entry form from scratch, and been able to present our working single purpose app…
 
-…BUT this strategy that wouldn’t have exposed us to the nuances of Material Design, a new-to-us component library, the downsides of Create React App, or given us practice with a decoupled Drupal app. Our demo result wasn’t what we envisioned, but we made a great effort, and each of us learned about one another’s roles and now have a greater understanding of each of the tools.
+…BUT this strategy wouldn’t have exposed us to the nuances of Material Design, a new-to-us component library, the downsides of Create React App, or given us practice with a decoupled Drupal app. Our demo result wasn’t what we envisioned, but we made a great effort, were exposed to the complexities of one another’s roles and now have a greater understanding of the tools we tested.
 
 ### What’s Next
 
