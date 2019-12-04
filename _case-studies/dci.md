@@ -1,7 +1,6 @@
 ---
 layout: case-study
-featured: 1
-weight: -10
+weight: -6
 project_title: Duke Cancer Institute Drupal 8 Migration
 slug: dci
 tags: drupal-8 search-improvements migration client-training editorial-enhancements multisite
