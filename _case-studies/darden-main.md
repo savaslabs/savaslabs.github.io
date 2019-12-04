@@ -1,6 +1,6 @@
 ---
 layout: case-study
-weight: -9
+weight: -6
 project_title: University of Virginia Darden School of Business
 slug: uva-darden-main
 tags: drupal content-migration tailwind css
