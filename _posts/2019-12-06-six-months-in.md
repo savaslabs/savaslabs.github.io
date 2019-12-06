@@ -22,7 +22,7 @@ I can’t stress the importance of documentation enough: in onboarding, for codi
 
 Plus, seasoned developers tend to forget the need to explain tidbits that have become second nature to them. Take it upon yourself to add to documentation (READMEs, [GitHub gists](https://gist.github.com/), etc.) that would aid future developers in the onboarding process, and current developers on present or future assignments.
 
-When I realized others could benefit from the things I learned about working with our website, I created a gist with instructions on how to update it. I have also contributed to various company-wide discussions, like our approach to the technical architecture of a project, the handoff that happens when designers pass of their comps to front-end developers, the front-end tools we should use, among other processes.
+When I realized others could benefit from the things I learned about working with our website, I created a gist with instructions on how to update it. I have also contributed to various company-wide discussions, like our approach to the technical architecture of a project, the handoff that happens when designers pass of their comps to front-end developers, and the front-end tools we should use, among other processes.
 
 #### Vulnerability is an asset
 
@@ -38,9 +38,9 @@ Savas allocates weekly training time for us as the role requires constant learni
 
 #### Web accessibility development begins before you write the first line of code
 
-Web accessibility, structuring the code's output to be as inclusive as possible on the web, is something Savas takes seriously: it's a [core value](/company/mission-and-values/#be-inclusive). Therefore, ensuring adherence to accessibility standards and best practices cannot be relegated to running a quick report at the end of a project. What I mean is this: say you have a component, a discreet visible (ideally reusable) thing on an app/webpage. On desktop view, this component displays as a triptych of cards showing information. On mobile view, this component should function as an accordion, with icons that toggle the component open or closed on user action, revealing additional information (that was visible without user action on desktop). The time to figure out how to make this component keyboard and screen reader accessible is before you sit down (or stand up, you standing desk-ers) to create said component in HTML, Twig, and the CSS/SASS/CSS framework of your choosing. The wrong time is after you’ve created the component without tabbing functionality or semantic HTML, reused the component in 5 other organisms within your [atomic design](https://bradfrost.com/blog/post/atomic-web-design/) component library, mapped to it in your Drupal node/paragraph template, written Javascript only for onClick toggle behavior, etc…
+Web accessibility, structuring the code's output to be as inclusive as possible on the web, is something Savas takes seriously: it's a [core value](/company/mission-and-values/#be-inclusive). Therefore, ensuring adherence to accessibility standards and best practices cannot be relegated to running a quick report at the end of a project. What I mean is this: say you have a component, a discreet visible (ideally reusable) thing on an app/webpage. On desktop view, this component displays as a triptych of cards showing information. On mobile view, this component should function as an accordion, with icons that toggle the component open or closed on user action, revealing additional information (that was visible without user action on desktop). The time to figure out how to make this component keyboard and screen reader accessible is before you sit down (or stand up, you standing desk-ers) to create said component in the markup language of your choosing. The wrong time is after you’ve created the component without tabbing functionality or semantic HTML, reused the component in 5 other organisms within your [atomic design](https://bradfrost.com/blog/post/atomic-web-design/) component library, mapped to it in your Drupal node/paragraph template, written Javascript only for onClick toggle behavior, etc…
 
-We have used Storybook, a component library, on [recent projects](/2019/10/11/storybook-pt-1.html). It provides real-time accessibility testing via an add-on called [a11y](https://www.npmjs.com/package/@storybook/addon-a11y). However, I strongly suggest going out of your way to become adept at developing accessible technology. A few good places to start: [The A11y Project](https://a11yproject.com/), Web Content Accessibility Guidelines [(WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), Accessible Rich Internet Applications [(ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA). After Sean gave an insightful skillshare in November (more on that to come), I began practicing and testing my semantic markup skills and tag usage with random company landing pages.
+A few good places to start a deep dive into web accessibility: [The A11y Project](https://a11yproject.com/), Web Content Accessibility Guidelines [(WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), Accessible Rich Internet Applications [(ARIA)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA). After Sean gave an insightful skillshare in November (more on that to come), I began practicing and testing my semantic markup skills and tag usage by recreating random company landing pages.
 
 As no accessibility tool will catch every issue with your web project, we incorporate the following tools into our QA process, in addition to manual review:
 [VoiceOver](https://www.apple.com/voiceover/info/guide/_1124.html): Apple’s screenreader.
@@ -49,21 +49,21 @@ Browser Extensions:
 [WGAG Color Contrast Checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf)
 [SiteImprove](https://chrome.google.com/webstore/detail/siteimprove-accessibility/efcfolpjihicnikpmhnmphjhhpiclljc)
 
-I stand by this: if you develop in-accessible solutions, you are not an effective developer.
+I stand by this: in order to be an effective developer, you must develop accessible solutions.
 
 #### Front-end architecture is an art
 
-Success as a front-end developer requires having a thorough understanding of the design comps provided to you. In the case of Drupal development, this means recognizing not just which paragraphs/taxonomy terms to reuse, but which design elements to reuse and which have variations. Success also relies on content-agnostic markup. Lorem ipsum may have been confusing from the context of mapping our documentation of required components to the designs in the absence of annotations, but it can definitely aid in creating content-agnostic markup.
+Success as a front-end developer requires having a thorough understanding of the design comps provided to you. I have also found that success in my position relies on prioritizing reusability when creating the visible components of a project. In the case of Drupal development, this means recognizing not just which paragraphs/taxonomy terms to reuse, but which design elements to reuse and which have variations. How to make components that are both accessible and reusable? Semantic markup and content-agnostic, or "functional", CSS.
 
-How to make components that are both accessible and reusable? Semantic HTML and content-agnostic CSS.
+To me, these concepts are best [described by Adam Wathan](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/). The gist: semantic markup is markup that reinforces the meaning of the information in webpages and not just presentation. Many HTML tags have semantic meaning (think `<img> <h1> <ul> <li>` and on). Content-agnostic CSS is CSS using classes that are named based on increasing the reusability of the classes and not based on the content. So `.card` would be preferable to more specific `.person-card` and `.event-card` if the only difference between the card used to display a Person and the card used to display an Event is just the actual content, and not the structure or styling.
 
-I effectively went through 1-3 of [Adam Wathan’s phases of writing CSS](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) in a matter of weeks. Ironically enough, we use [Tailwind CSS](/2019/11/06/using-tailwind-for-css.html) which Adam created, but historically we have not used it the way he intended. This was our process until recently:
+I effectively went through 1-3 of Adam's phases of writing CSS in a matter of weeks. Ironically enough, we use [Tailwind CSS](/2019/11/06/using-tailwind-for-css.html) which Adam created, but historically we have not optimized our usage in the way he intended. This was our process until recently:
 
 - Develop individual components in Chrome DevTools with Tailwind CSS utility classes within the HTML file (Twig template, in our case)
 - When it worked/looked the way we wanted, we’d replace the utility classes with content-specific BEM modifiers in the component’s Twig file
 - We’d then copy over the Tailwind utility classes to the component’s SASS file to style the modifiers
 
-This took a non-trivial amount of time and substantially slowed down Webpack, all in the name of cleaner template files and, though I may not have known it at the time, separation of concerns. We’ll be incorporating the later phases Adam describes in upcoming projects.
+This took a non-trivial amount of time and substantially slowed down Webpack, all in the name of cleaner template files and, though I may not have known it at the time, separation of concerns. We’ll be incorporating the later phases Adam describes in upcoming projects. (Note: It looks like Adam's article was percieved as quite the #hoot-take by the developer community, but as you can tell, I drink the Kool-aid.)
 
 #### Drupal is a beast
 
@@ -73,7 +73,7 @@ At [Project Shift](https://www.projectshift.io/) they primarily trained us in th
 - Truly, the best way to learn is by doing. I wrote my first PHP preprocess function when creating an interactive map component with layers of nested entity references.
 - Drupal isn’t a walk in the park for senior Drupal developers either, so be kind to yourself. An example:
 
-Months ago I implemented the footer on a client project. I was particularly proud of the PR. Except when I assigned the PR to our tech lead for review, he told me that even after following my testing instructions, he couldn’t see the content in the footer. In the words of every contestant on the Great British Baking Show: I was gutted. After some back and forth trying to troubleshoot what step I missed, we had a revelation. 
+Months ago I implemented the footer on a client project. I was particularly proud of the PR. Except when I assigned the PR to our tech lead for review, he told me that even after following my testing instructions, he couldn’t see the content in the footer. In the words of every contestant on the Great British Baking Show: I was gutted. After some back and forth trying to troubleshoot what step I missed, we had a revelation.
 
 <div class="blog-image-full-width">
 <img alt="Screenshot of a conversation between Dan and Madeline about why the code in her pull request wasn't working." src="/assets/img/blog/madeline-dan-slack.png">
@@ -87,15 +87,17 @@ Props to Dan and his always-thorough code reviews; they are a great learning opp
 
 #### Development is like riding a bike
 
-Nuggets from my back-end training come in handy every once in a while. At the conclusion of our most recent team retreat, which we call a [parliament](/2019/11/08/2019-parliament.html), we wrapped it up with Savas's first hackathon, Hack-to-the-Future:tm: ! _(If you're thinking Delorean, you're right!)_. My team, consisted of Drew on design, Dan (yes, code review Dan from above) on back-end development and myself on the front-end while Jordan assisted with capturing our work. We decided to build a decoupled web app with a Drupal back-end. After running into some challenges as one does when building anything for the first time, I Googled my way to a solution for a CORS error that was thrown when I attempted to make an HTTP GET request to our Drupal endpoint. Though I haven’t dealt with Drupal on the back-end, my experience with Node.js and the CORS library proved fruitful. The [solution](https://www.drupal.org/node/2715637#comment-12284397), coincidentally, was written by a former Savas Labs partner (Thanks Justin!).
+Nuggets from my back-end training come in handy every once in a while. At the conclusion of our most recent team retreat, which we call a [parliament](/2019/11/08/2019-parliament.html), we wrapped it up with Savas's first hackathon, Hack-to-the-Future:tm:. We split into teams, and three of us decided to build a decoupled web app with a Drupal back-end. After running into some challenges as one does when building anything for the first time, I Googled my way to a solution for a CORS error that was thrown when I attempted to make an HTTP GET request to our Drupal endpoint. Though I haven’t dealt with Drupal on the back-end, my experience with Node.js and the CORS library proved fruitful. The [solution](https://www.drupal.org/node/2715637#comment-12284397), coincidentally, was written by a former Savas Labs partner (Thanks Justin!).
 
-Nuggets from product development at my fellowship still apply as well, and I didn’t realize how much until the same hackathon in the fall. A reminder: trust your gut if you know something will take longer than is estimated, no matter how new to the team you are. If you know you can’t make a multi-view web app in seven hours with a well-oiled team and technology you know well, then trust that you won’t be able to do it with a new team and new technology. With that being said, there are times to ignore your gut. There are times when instead you should…
+Nuggets from product development at my fellowship still apply as well, and I didn’t realize how much until Hack-to-the-Future (more on that below). At Project Shift we had one week to build our own web app, 5 days to build one with a team of eleven, and nine small web projects with 3 day deadlines each. I learned a lot about estimation during that experience. The biggest: simple features take longer to build than you'd expect. A reminder: trust your gut if you know something will take longer than is estimated, no matter how new to the team you are. If you know from experience you can’t make a multi-view web app in seven hours with a well-oiled team and technology you know well, then trust that you won’t be able to do it with a new team and new technology.
+
+With that being said, there are times to ignore your gut. There are times when instead you should…
 
 #### Take Risks
 
 You could decide to preserve your sanity for the sake of a polished output or you could shoot for the moon, fail, and learn a metric ton about the stars that you wouldn’t have otherwise (_cringe_). I’ll set the scene:
 
-**What we had:** Figma mobile mockups taken from Material Design UI Kit, a front-end developer, a back-end developer, and a designer.
+**What we had:** Figma mobile mockups that incorporated components from Material Design UI Kit; a front-end developer, a back-end developer, and a designer.
 
 **What we faced:** 7 hours until the demo
 
@@ -118,5 +120,5 @@ To meet our 5 p.m. deadline, we could have attempted just the entry log view, an
 
 ### What’s Next
 
-I’m in the midst of a React Native project, and there are big things on the horizon. Now that I’m more comfortable in Drupal, I look forward to honing in on front-end architecture, accessibility, trying out new tools, and of course, further contributing to internal processes.
+I’m in the midst of a React Native project, and there are big things on the horizon. Now that I’m more comfortable in Drupal, I look forward to honing in on Drupal 8 theming front-end architecture, accessibility, trying out new tools, and of course, further contributing to internal processes.
 
