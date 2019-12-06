@@ -1,6 +1,8 @@
 # For now, if you add a tag you also need to add an empty
 # template in /blog/tag.
 
+- slug: accessibility
+  name: Accessibility
 - slug: search-improvements
   name: Search Improvements
 - slug: editorial-enhancements
