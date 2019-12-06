@@ -3,6 +3,12 @@
 
 - slug: accessibility
   name: Accessibility
+- slug: search-improvements
+  name: Search Improvements
+- slug: editorial-enhancements
+  name: Editorial Enhancements
+- slug: client-training
+  name: Client Training
 - slug: security
   name: Security
 - slug: component-libraries
