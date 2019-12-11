@@ -43,7 +43,7 @@ Here are four ranking factors that we've identified as being most important as o
 
 ### 1. Content
 
-[Content is still king!](https://mention.com/blog/2017-content-marketing-predictions/) Yes, that's right. It is and it always will be! You've got to be relevant in order to even appear in search. And nothing will make you more relevant than carefully crafted, practical, awesome, juicy, shareable, actionable (you name it) CONTENT! It is important to note that marketers should stop thinking of content as purely text and focus their efforts on providing [visual content](http://blog.hubspot.com/marketing/visual-content-marketing-strategy#sm.00001bvjy82syzedqpgnd8w6p9mw8) that supports storytelling, is engaging and [matches user intent](https://varvy.com/matching-user-intent.html).
+[Content is still king!](ttps://mention.com/en/blog/content-marketing-predictions-for-2017/) Yes, that's right. It is and it always will be! You've got to be relevant in order to even appear in search. And nothing will make you more relevant than carefully crafted, practical, awesome, juicy, shareable, actionable (you name it) CONTENT! It is important to note that marketers should stop thinking of content as purely text and focus their efforts on providing [visual content](http://blog.hubspot.com/marketing/visual-content-marketing-strategy#sm.00001bvjy82syzedqpgnd8w6p9mw8) that supports storytelling, is engaging and [matches user intent](https://varvy.com/matching-user-intent.html).
 
 ### 2. Backlinks
 
