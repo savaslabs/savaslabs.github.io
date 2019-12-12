@@ -37,8 +37,6 @@ The needs at Savas Labs are continually evolving as we grow, but one constant is
 
 [Senior Front-end Developer](/senior-front-end-developer)
 
-[Digital Project Manager](/digital-project-manager)
-
 [JavaScript Engineer](/javascript-engineer)
 
 
