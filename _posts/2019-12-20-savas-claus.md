@@ -89,7 +89,7 @@ Fun ensued. We had folks guess their gift-giver right off the bat, others who to
 <img alt="Madeline opening her gift." src="/assets/img/blog/madeline-opening-gift.jpg">
 </div>
 
-Ultimately, the gifts were thoughtful and fun: Cake cookbooks, vegan cookbooks, dog toys (for one of our resident dog-lovers, of course), an R2-D2 coffee mug (hidden inside there were Harry Potter themed socks!), a desk punching bag, plants, shirts, hats, and a few games. All in all it was a great afternoon and we are looking forward to a productive and exciting year ahead!
+Ultimately, the gifts were thoughtful and fun: a cake cookbook, a vegan cookbook, dog toys (for one of our resident dog-lovers, of course), an R2-D2 coffee mug (hidden inside there were Harry Potter themed socks!), a desk punching bag, plants, shirts, hats, and a few games. All in all it was a great afternoon and we are looking forward to a productive and exciting year ahead!
 
 <div class="blog-row">
 <div class="blog-image-row">
