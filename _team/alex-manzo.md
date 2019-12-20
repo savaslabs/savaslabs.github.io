@@ -2,7 +2,7 @@
 name: Alex Manzo
 slug: alex-manzo
 layout: team
-job_title: Junior Front-end Developer
+job_title: Front-end Developer
 linkedin: alexmanzomedia
 twitter: alexmanzo_
 codepen: alexmanzo
