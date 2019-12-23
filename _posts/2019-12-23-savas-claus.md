@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Savas Claus™ 2019: A Tale of Savas Holiday Tradition"
-date: 2019-12-20
+date: 2019-12-23
 author: Jordan Nelson
 tags: open-source team company-culture
 summary: A much-anticipated Savas Team Tradition in which we secretly exchange gifts over lunch in celebration of the holidays.
@@ -61,7 +61,7 @@ Once all solutions were found and Savas Claus™ was added to the calendar, it w
 <img alt="A gif from Jingle All the Way of holiday shoppers racing into a store." src="/assets/img/blog/holiday-shopper-race.gif">
 </div>
 
-We all gathered for our usual Thursday Afternoon Meeting and when all of the work-related things had been reviewed, discussed and hashed out it was officially time. We stacked up the presents, Ben attached camera to his Savas Santa hat, our remote team logged on and off we went.
+We all gathered for our usual Thursday Afternoon Meeting and when all of the work-related things had been reviewed, discussed and hashed out it was officially time. We stacked up the presents, Ben attached a camera to his Savas Santa hat, our remote team logged on and off we went.
 
 <div class="blog-row">
 <div class="blog-image-row">
