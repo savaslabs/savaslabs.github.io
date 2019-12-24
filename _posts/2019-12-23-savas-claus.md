@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Savas Claus™ 2019: A Tale of Savas Holiday Tradition"
-date: 2019-12-23
+date: 2019-12-24
 author: Jordan Nelson
 tags: open-source team company-culture
 summary: A much-anticipated Savas Team Tradition in which we secretly exchange gifts over lunch in celebration of the holidays.
