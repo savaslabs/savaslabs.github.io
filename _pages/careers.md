@@ -17,8 +17,7 @@ image: "/assets/img/bg/careers-hero.jpg"
 At Savas Labs, we focus on the long-term with both those we partner with as well as our internal team. We have a core set of [values](/company/mission-and-values/) that unite us, yet celebrate that which makes us each unique. We work hard, have fun, and strive for healthy balance. Some of our current employment benefits are:
 
 + Competitive salary
-+ Health insurance covered at 100% for you and your family
-+ Dental and vision insurance covered at 50% for you and your family
++ Health dental, and vision insurance covered at 100% for you and your family
 + Flexible work schedule
 + 401(k) (matching contribution for full-time employees)
 + Profit-sharing plan
