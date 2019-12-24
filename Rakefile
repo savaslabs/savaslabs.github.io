@@ -12,6 +12,7 @@ task :test do
                       /linkedin.com/,
                       /fldrupal.camp/,
                       /huffingtonpost.com/,
+                      /fastcompany.com/,
                       /#.*/,
                       ],
       :empty_alt_ignore => false,
