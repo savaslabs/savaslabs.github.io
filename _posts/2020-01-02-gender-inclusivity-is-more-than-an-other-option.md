@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gender Inclusivity Is More Than an “Other” Option"
-date: 2020-01-01
+date: 2020-01-02
 author: Alex Manzo
 tags: accessibility best-practices user-experience diversity-inclusion
 summary: Conversations around gender inclusivity often focus on gender fields in forms. The conversation is bigger than that, though. Is gender data even necessary? How does a user change their name? How does this all tie into user experience?
