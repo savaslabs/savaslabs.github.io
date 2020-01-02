@@ -24,7 +24,7 @@ I believe the fundamental flaws in gender fields is that they just aren’t nece
 
 It’s worth evaluating if you are using data from a gender field in any meaningful way. Do analytics around gender or sex truly inform decisions your company is making? Some targeted advertising allows using gender as a demographic, but it’s [worth evaluating if that is actually best practice.](https://us.kantar.com/business/brands/2019/when-will-marketers-get-gender-targeting-right/)
 
-Consider an example. Last year, I created an account on an app that would link a reward card to my phone. In the sign up process, I was asked for my gender. The options were Male/Female. It was a required field. I had no way to opt out of it. The rewards card was for a gas station. From my perspective, there was no valid reason they needed this data from me. I chose one at random in exasperation.
+Consider an example. Last year, I created an account on an app that would link a reward card to my phone. In the sign up process, I was asked for my gender. The options were Male/Female. It was a required field. I had no way to opt-out of it. The rewards card was for a gas station. From my perspective, there was no valid reason they needed this data from me. I chose one at random in exasperation.
 
 It was another day, another online form causing an existential crisis. Sexual and gender minorities already are more likely to be [battling mental health concerns](https://adaa.org/sexual-gender-minority-individuals) than many cisgender folx. Don’t underestimate the impact little moments like this can have on a person.
 
