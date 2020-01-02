@@ -54,7 +54,7 @@ With engaging a participant of your target audience, you have precious few momen
 
 #### Browsers drawing attention to insecure HTTP
 
-Much like search, browser usage patterns have evolved over the last five years to heavily favor Google Chrome. Therefore, what Google does carries tremendous weight internet-wide. Current estimations of browser usage put Chrome between 55% and 60% of the market ([again](https://en.wikipedia.org/wiki/Usage_share_of_web_browsers), [depending](http://gs.statcounter.com/browser-market-share) [on](https://netmarketshare.com/browser-market-share.aspx) [sources](https://www.w3counter.com/trends)). Firefox has followed suit with Chrome as far as HTTP security alerts go, and there's no indication we should expect this to change. So it's safe to assume a combined 60-75% of the market is represented by Chrome's updates.
+Much like search, browser usage patterns have evolved over the last five years to heavily favor Google Chrome. Therefore, what Google does carries tremendous weight internet-wide. Current estimations of browser usage put Chrome between 55% and 60% of the market ([again](https://en.wikipedia.org/wiki/Usage_share_of_web_browsers), [depending](https://gs.statcounter.com/browser-market-share) [on](https://netmarketshare.com/browser-market-share.aspx) [sources](https://www.w3counter.com/trends)). Firefox has followed suit with Chrome as far as HTTP security alerts go, and there's no indication we should expect this to change. So it's safe to assume a combined 60-75% of the market is represented by Chrome's updates.
 
 #### Google Chrome HTTP warning roll out
 
