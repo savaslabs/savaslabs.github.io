@@ -6,9 +6,112 @@
 </description>
     <link>https://savaslabs.com/</link>
     <atom:link href="https://savaslabs.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Jan 2020 06:02:53 +0000</pubDate>
-    <lastBuildDate>Thu, 02 Jan 2020 06:02:53 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2020 21:54:37 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2020 21:54:37 +0000</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Gender Inclusivity Is More Than an “Other” Option</title>
+        <description>&lt;p&gt;Recently in our #accessibility Slack channel, &lt;a href=&quot;https://savaslabs.com/company/drew-glover/&quot;&gt;Drew&lt;/a&gt; shared a &lt;a href=&quot;https://slate.com/technology/2019/10/gender-binary-nonbinary-code-databases-values.html&quot;&gt;great article on databases accommodating non-binary people&lt;/a&gt;. Meredith Broussard gives a great overview on some of the technical nuances of how personal information is stored in databases and the inherent bias that becomes embedded in the code.&lt;/p&gt;
+
+&lt;p&gt;As a non-binary person myself (who also happens to work as a developer), this article piqued my interest. Alex the non-binary person believes all “gender” fields should be text fields, with the user free to enter what they please. Alex the developer immediately thinks of all the challenges that solution presents.&lt;/p&gt;
+
+&lt;p&gt;However, the conversation about how to handle a “gender” field on forms is a small part of a much larger, more complicated picture. What does inclusivity of gender minorities &lt;em&gt;truly&lt;/em&gt; look like? Let’s take a look at some of the bigger issues surrounding that frustrating little form field.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Gender Data Isn’t Necessary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I believe the fundamental flaws in gender fields is that they just aren’t necessary. Why are you asking a user for their gender? Are you really trying to ask for biological sex? If so, consider labeling the field with “Sex” instead, and provide some short help text of why you’re asking.&lt;/p&gt;
+
+&lt;p&gt;It’s worth evaluating if you are using data from a gender field in any meaningful way. Do analytics around gender or sex truly inform decisions your company is making? Some targeted advertising allows using gender as a demographic, but it’s &lt;a href=&quot;https://us.kantar.com/business/brands/2019/when-will-marketers-get-gender-targeting-right/&quot;&gt;worth evaluating if that is actually best practice.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider an example. Last year, I created an account on an app that would link a reward card to my phone. In the sign up process, I was asked for my gender. The options were Male/Female. It was a required field. I had no way to opt-out of it. The rewards card was for a gas station. From my perspective, there was no valid reason they needed this data from me. I chose one at random in exasperation.&lt;/p&gt;
+
+&lt;p&gt;It was another day, another online form causing an existential crisis. Sexual and gender minorities already are more likely to be &lt;a href=&quot;https://adaa.org/sexual-gender-minority-individuals&quot;&gt;battling mental health concerns&lt;/a&gt; than many cisgender folx. Don’t underestimate the impact little moments like this can have on a person.&lt;/p&gt;
+
+&lt;p&gt;Imagine if someone in any phase of development stopped to evaluate the purpose of that field and consider the harm it could do. It’s a perfect example of the inherent bias we add to our code unintentionally.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Let Users Edit Their Personal Information&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I didn’t always know I was non-binary. I was in my late 20s - I’d already created numerous accounts with my “gender” and name embedded in my profile. It should have been easy for me to go back and just quickly edit my various profiles to reflect my new name and gender, right?&lt;/p&gt;
+
+&lt;p&gt;Nope! A surprising number of services lock a name field in particular from being edited after the fact. Does your product or service &lt;em&gt;legitimately&lt;/em&gt; require a legal name? If not, there’s no reason that shouldn’t be an editable field.&lt;/p&gt;
+
+&lt;p&gt;The ability to edit basic profile information is a simple, easy way to be inclusive and provide a better overall user experience.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;But Wait! What About Legal Name Changes?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Banks, medical patient portals, and other services need your legal name. In this case, it’s fair to create some layer of approval. However, is the process for updating that field easy for a user to find?&lt;/p&gt;
+
+&lt;p&gt;In a lot of cases, the answer is no. To make matters worse, many companies lack even a basic &lt;em&gt;process&lt;/em&gt; for changing legal names. While changing a surname after marriage is usually accounted for, changing your first or middle name can be surprisingly difficult. Raise your hand if you have completely stumped poor customer service agents trying to do their job 🙋‍♂️.&lt;/p&gt;
+
+&lt;p&gt;Here are some examples of companies processing my legal name change:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;One credit card company had no process. The customer service agent simply did not have the ability to edit my first name. I had to send a letter via snail mail explicitly stating what I needed.&lt;/li&gt;
+  &lt;li&gt;A utility company required me to get a form notarized verifying that my certified court order was in fact, a certified court order.&lt;/li&gt;
+  &lt;li&gt;My cellular provider informed me it’s impossible to change the name on my account. I have to create a new account, then transfer ownership of my old account to the new one.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Inclusive Development Helps All Users&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Accessible design and development can be hard. Many developers might feel like they’re catering to a small percentage of people. Recently our team had a skillshare session where &lt;a href=&quot;https://savaslabs.com/company/sean-oshea/&quot;&gt;Sean&lt;/a&gt;, our Senior UX Designer, discussed best practices in accessibility.&lt;/p&gt;
+
+&lt;p&gt;In his presentation, he shared examples of how solutions designed for accessibility can benefit everyone. Elevators are an easy example. I am physically capable of walking up the stairs to our third-floor office every day, but often opt for the elevator as an easier solution.&lt;/p&gt;
+
+&lt;p&gt;In web development and design, making sites keyboard accessible is often a major focus. Keyboard accessibility is vitally important for users with mobility or vision impairments, but that doesn’t mean they’re the only ones who use it.&lt;/p&gt;
+
+&lt;p&gt;Personally, I’m a big fan of keyboard shortcuts and navigation. It ultimately saves me time and makes my every day a little easier. A tool intended for accessibility becomes just as useful for me, even though I don’t necessarily need it.&lt;/p&gt;
+
+&lt;p&gt;The ability to edit personal information is something that benefits all users. What if someone made a typo in the sign-up process? I would hate to forever see my name displayed as Alxe because I couldn’t go back and edit. Additionally, some people may want to edit names for anonymity.&lt;/p&gt;
+
+&lt;p&gt;More people change their names legally than just transgender folx. People get married and take the surname of their spouse every day. Everyone I know who has gone through that process had many of the similar gripes as me.&lt;/p&gt;
+
+&lt;p&gt;Giving a cisgender person the ablity to opt-out of providing their gender also gives them the ability to opt-out of targeting advertisements they might not want to see. It gives them an opportunity to avoid giving personal information where they don’t want to.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;User Experience is Bigger Than You Think&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;User experience extends far beyond a company’s website or app. In the earlier example of my cellular provider, it doesn’t matter how easy it may be for me to create a new account on their website. It doesn’t matter how easy it might be to transfer the ownership.&lt;/p&gt;
+
+&lt;p&gt;Those particular interfaces could be beautifully designed and developed, but I’ve already had a terrible user experience. Just to get to that point, I had to chat with a customer service agent because I couldn’t find the information anywhere else on the site. (Spoiler: I had such a hard time creating and linking a new account I just gave up).&lt;/p&gt;
+
+&lt;p&gt;For even more perspective, if a user is changing their name on your site or app, it likely means they’re repeating the same process dozens of times with other products and services. You can be an easy stop along the way or a pain point. It’s obvious which to strive for.&lt;/p&gt;
+
+&lt;p&gt;Want a better solution? Consider this process:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Let the user edit the name field.&lt;/li&gt;
+  &lt;li&gt;Prompt them with instructions that they’ll need to provide verification (court order, driver’s license, etc.).&lt;/li&gt;
+  &lt;li&gt;Provide a file upload for them to share their documents.&lt;/li&gt;
+  &lt;li&gt;When they click submit, send it off to customer service for approval.&lt;/li&gt;
+  &lt;li&gt;Let the user know it’s in process, and when it’s complete.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s it! You’ve created a user-friendly way of updating legal personal data. There are certainly many concerns and logistics that go into implementing that kind of process. As developers, designers, and product owners… that’s our job. We’re here to solve problems and make the best user experience possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Final Thoughts&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;My personal disclaimer on my own experiences is that:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;I am in good mental health and have ready access to any resources if I run into a particularly triggering experience and&lt;/li&gt;
+  &lt;li&gt;I have the time/money/education/privilege to navigate these systems.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Many trans and non-binary folx don’t have those advantages, which is why conversations like these are important to have. Like any other aspect of web accessibility, these features aren’t just nice to have. They’re necessary.&lt;/p&gt;
+
+&lt;p&gt;If you’d like a guide for creating inclusive gender inputs, I really enjoyed &lt;a href=&quot;https://league.com/us/&quot;&gt;League&lt;/a&gt;’s &lt;a href=&quot;https://medium.com/inside-league/principles-for-inclusive-gender-inputs-how-league-went-beyond-binaries-eb8c7eddd8f8&quot;&gt;Principles for Inclusive Gender Inputs&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+        <link>https://savaslabs.com/2020/01/02/gender-inclusivity-is-more-than-an-other-option.html</link>
+        <guid isPermaLink="true">https://savaslabs.com/2020/01/02/gender-inclusivity-is-more-than-an-other-option.html</guid>
+        
+        <category>accessibility</category>
+        
+        <category>best-practices</category>
+        
+        <category>user-experience</category>
+        
+        <category>diversity-inclusion</category>
+        
+        
+      </item>
     
       <item>
         <title>Savas Claus™ 2019: A Tale of Savas Holiday Tradition</title>
@@ -972,56 +1075,6 @@ If that’s not a great compliment, I don’t know what is.&lt;/li&gt;
         <category>drupal</category>
         
         <category>business</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Savas Brings on Another Front-end Developer</title>
-        <description>&lt;h3 id=&quot;who-am-i&quot;&gt;Who am I?&lt;/h3&gt;
-
-&lt;p&gt;Hello Savas Labs fans! My name is &lt;a href=&quot;https://savaslabs.com/company/madeline-streilein/&quot;&gt;Madeline Streilein&lt;/a&gt;, and I am one of Savas’ two brand new Junior Front-end Developers (&lt;a href=&quot;https://savaslabs.com/company/alex-manzo/&quot;&gt;Alex Manzo&lt;/a&gt; also joined our burgeoning front-end squad under the tutelage of Anne Tomasevich - keep an eye out for their introduction). Some random facts about me: I love stone fruit, humidity, satirical news, and using Slack notation on all messaging platforms. I also opened a day spa in my home when I was in elementary school. It wasn’t &lt;em&gt;_not_&lt;/em&gt; profitable.&lt;/p&gt;
-
-&lt;h3 id=&quot;where-did-i-come-from&quot;&gt;Where did I come from?&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.projectshift.io/&quot;&gt;Project Shift&lt;/a&gt;, if you haven’t heard, is a software engineering fellowship here in Durham. I am a proud graduate of Cohort 5. Prior to Project Shift, I came from the land of electoral politics, a field that relies heavily on technology (from data analytics and predictions to voter contact and volunteer recruitment) to mobilize voters and volunteers in the days, weeks, and months leading up to an election. In my most recent role, I ran a statewide peer-to-peer texting program to get North Carolinians to the polls. I experienced first hand how thoughtful technology can catalyze civic engagement, and on the flip side, how platforms that weren’t built with the user in mind could cause enough frustration to dissuade volunteer participation and annoy an on-the-fence electorate.&lt;/p&gt;
-
-&lt;h3 id=&quot;why-am-i-choosing-to-sit-behind-a-computer-when-i-could-be-hitting-the-pavement-or-training-organizers&quot;&gt;Why am I choosing to sit behind a computer when I could be hitting the pavement or training organizers?&lt;/h3&gt;
-
-&lt;p&gt;So, I ask myself, possibly more frequently than I’d prefer, what is the best use of my time and potential skills? Am I contributing enough to causes that matter? Am I contributing in a way that is actually helpful and not harmful?&lt;/p&gt;
-
-&lt;p&gt;The answer at which I’ve finally arrived is this: I believe technology has the potential to alter our habits as individuals, as a society, and as a species positively, more quickly, efficiently, and sustainably than through other means of change that may come to mind. I knew I had to switch industries to help build better solutions. Using technology to maximize positive impact, I learned through the interview process, is also part of a developing vision at Savas Labs. Stay tuned for an upcoming announcement with more specific articulation of those goals from team leadership.&lt;/p&gt;
-
-&lt;h3 id=&quot;why-did-i-choose-savas&quot;&gt;Why did I choose Savas?&lt;/h3&gt;
-
-&lt;p&gt;I chose Savas for many reasons — especially the team. I’ve seen my coworkers practice and exemplify the &lt;a href=&quot;https://savaslabs.com/company/mission-and-values/&quot;&gt;values&lt;/a&gt; we define on the &lt;a href=&quot;https://savaslabs.com&quot;&gt;website&lt;/a&gt;, ones that drive me as well. How can one &lt;em&gt;_not_&lt;/em&gt; feel welcomed, empowered to excel, and ask for what they need in the onboarding process when they receive Slack messages like this from remote colleagues?&lt;/p&gt;
-
-&lt;div class=&quot;blog-image-large&quot;&gt;
-&lt;img alt=&quot;Slack screenshot&quot; src=&quot;/assets/img/blog/savas-welcome.jpg&quot; /&gt;
-&lt;span class=&quot;caption&quot;&gt;Senior Project Manager, Ro Wang, greets me warmly in a private message on Slack.&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;p&gt;My teammates bring to the table many things, in equal parts tangible and intangible, resulting in a highly productive, respectful, creative, and collaborative environment of humans who work diligently for our clients. I recognized that before I started.&lt;/p&gt;
-
-&lt;p&gt;After my last campaign wrapped up, I knew I would only be fulfilled if I went to work each day for a company that considers the community it operates within, and the unique responsibility it has to contribute (beyond the paid services it came into existence to provide). I was pleased to learn that at Savas Labs, every full-time employee is afforded one day of PTO for community service at an organization of our choosing.&lt;/p&gt;
-
-&lt;p&gt;While not as significant a factor in my job search, humor in the workplace is definitely a plus. Savas incorporates dad jokes (and other actual humor) into our weekly meetings, so I’ll just leave these here . . .&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question: Why did the functional component feel lost?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Answer: Because it didn’t know what &lt;em&gt;state&lt;/em&gt; it was in!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question:  Why did the child component have such great self-esteem?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Answer: Because its parent kept giving it &lt;em&gt;props&lt;/em&gt;!&lt;/p&gt;
-</description>
-        <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
-        <link>https://savaslabs.com/2019/07/03/savas-brings-on-another-front-end-developer.html</link>
-        <guid isPermaLink="true">https://savaslabs.com/2019/07/03/savas-brings-on-another-front-end-developer.html</guid>
-        
-        <category>team</category>
-        
-        <category>company-culture</category>
         
         
       </item>
