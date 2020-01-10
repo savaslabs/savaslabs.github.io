@@ -57,14 +57,12 @@ plugin to create a `<picture>` element for the team member photo.
         <p class="team-member-bio__description">Kat is the office admin at Savas Labs. She gets stuff done.</p>
       </div>
       <div class="team-member-bio">
-        <a class="team-member-bio__link" href="/company/ro-wang/">
-          <div class="team-member-bio__image">
-            <img src="/assets/img/team/ro/ro-square-green.jpg" class="image--team-square-small" itemprop="image" alt="Ro Wang">
-          </div>
-          <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Ro Wang</h3>
-          <p class="team-member-bio__title">Drupal Developer</p>
-          <p class="team-member-bio__description">Ro is a junior web developer at Savas Labs filling her brain daily with myriad things the team throws at her.</p>
-        </a>
+        <div class="team-member-bio__image">
+          <img src="/assets/img/team-former/ro/ro-square-outside.jpg" class="image--team-square-small" itemprop="image" alt="Ro Wang">
+        </div>
+        <h3 class="team-member-bio__name heading--bold heading--sans-serif h5 c-dark-teal">Ro Wang</h3>
+        <p class="team-member-bio__title">Drupal Developer</p>
+        <p class="team-member-bio__description">Ro is a junior web developer at Savas Labs filling her brain daily with myriad things the team throws at her.</p>
       </div>
     </div>
   </div>

@@ -50,7 +50,7 @@ The biggest challenge we (and [the majority](https://medium.com/specstimate/why-
 1. **Data talks.** And history tends to repeat itself. So use historical data to help make the most accurate estimations.
 2. **Do three estimates.** Best-case, worst-case, and most likely. Pro tip: assume your initial estimate is “best-case.”
 3. **Check the calendar.** Take into account the big picture. What other projects will you be working on at these same times? Who will be on vacation and unable to work on the project for a week?
-4. **Think in “Work Weeks.”** When we think of how many days we have until a project is due, we often think in actual days not in “work days.” Count only the Monday-Friday days in your estimation. More on [Ro’s](https://savaslabs.com/company/ro-wang/) idea of “Work Weeks” coming soon.
+4. **Think in “Work Weeks.”** When we think of how many days we have until a project is due, we often think in actual days not in “work days.” Count only the Monday-Friday days in your estimation. More on Ro’s idea of “Work Weeks” coming soon.
 5. **FUDGE it!** Use a fudge ratio:
 
 - Estimate the time it will take to do near-future tasks.

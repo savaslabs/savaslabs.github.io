@@ -31,7 +31,7 @@ After everyone arrived, we cooked a meal together and settled in our beautiful a
   </div>
 </div>
 
-[Ro](/company/ro-wang) talked about the philosophy and tenants of Project Management at Savas, and how our style as a team is ever-evolving. We ended our team meetings with an exercise and discussion on personal fulfillment and work-life perspective. After a full afternoon of learning we hopped in a couple of Lyfts and headed to a quick dinner at [Rainey Street Food Truck Lot](https://www.yelp.com/search?cflt=foodtrucks&find_loc=Rainey+St%2C+Austin%2C+TX+78701). Then, off to what was listed on our agenda as “Secret Evening Plans”. All we knew about the secret up until that point was what was written on the schedule: “NOTE: Pack shorts & sandals that can get wet.”
+Ro talked about the philosophy and tenants of Project Management at Savas, and how our style as a team is ever-evolving. We ended our team meetings with an exercise and discussion on personal fulfillment and work-life perspective. After a full afternoon of learning we hopped in a couple of Lyfts and headed to a quick dinner at [Rainey Street Food Truck Lot](https://www.yelp.com/search?cflt=foodtrucks&find_loc=Rainey+St%2C+Austin%2C+TX+78701). Then, off to what was listed on our agenda as “Secret Evening Plans”. All we knew about the secret up until that point was what was written on the schedule: “NOTE: Pack shorts & sandals that can get wet.”
 
 Turns out, the secret surprise was an [on-brand] palindromic team kayak excursion to the Congress Avenue Bridge to see [Austin’s popular sunset bats](https://www.tripsavvy.com/austins-bat-bridge-a-viewing-guide-254880)! It was a huge hit!
 
