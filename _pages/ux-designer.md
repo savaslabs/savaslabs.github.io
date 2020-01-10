@@ -23,19 +23,15 @@ image: "/assets/img/jobs/designer.png"
 
 ## The position
 
-We are looking to add a **UX designer** to our core team. Responsibilities include:
+We are looking to add an **entry to mid-level UI/UX designer** to our core team. Responsibilities include:
 
 - Planning the structure of the websites and apps we build
-- Researching and advocating for the user, leveraging UX best practices
-- Articulating concepts through documentation to drive decision making
+- Researching and advocating UX best practices
 - Building wireframes and prototypes
 - Exploring design directions, establishing design systems, and creating page layouts
 - Leading presentations and facilitating discussion and feedback
-- Collaborating with developers to transform prototypes and designs into digital products
 
-The right candidate has a **passion for well-crafted interfaces** and enjoys collaborating, communicating, and leading effectively with both internal team members and client stakeholders. 
-
-You are genuinely curious about many subjects and **love to understand people and organizations**. You enjoy and have an eye for good design as well as a desire to work efficiently. You are a **strong communicator**, curious **problem-solver**, and motivated **self-starter**. The position requires an **understanding of how the web works**, and how to design for content management systems and/or digital products. You will work under the mentorship of the design team and will collaborate with a **team primarily located in [Durham, NC](/durham)**, where we are looking to fill this role.
+The right candidate has a **passion for design** and enjoys collaborating, communicating, and leading effectively with both internal team members and client stakeholders. You **love to understand both clients and their business** as well as a desire to work efficiently. You enjoy and have an eye for good design. Perhaps above all, this person is a very **strong communicator**, curious **problem-solver**, and motivated self-starter. The position requires an **understanding of how the web works** and how to design for content management systems. You will work under the mentorship of the executive and design teams and will collaborate with a **team primarily located in [Durham, NC](/durham)**, where we are looking to fill this role.
 
 ## Working at Savas Labs
 
