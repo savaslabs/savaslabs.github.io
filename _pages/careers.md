@@ -38,5 +38,7 @@ The needs at Savas Labs are continually evolving as we grow, but one constant is
 
 [JavaScript Engineer](/javascript-engineer)
 
+[UX Designer](/ux-designer)
+
 
 We strive to create a productive, collaborative work environment that is friendly, inclusive, and rewarding — with the aim for everyone involved to learn and grow together. You'll like it here.

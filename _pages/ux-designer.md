@@ -1,7 +1,7 @@
 ---
 layout: page
-title: UI/UX Designer
-permalink: "/ui-ux-designer/"
+title: UX Designer
+permalink: "/ux-designer/"
 excerpt: |
   Savas Labs is looking to hire a designer to continue to build out design services for our growing team out of our office in downtown Durham.
 image: "/assets/img/jobs/designer.png"
@@ -14,24 +14,28 @@ image: "/assets/img/jobs/designer.png"
 <p class="breadcrumbs hide-for-small">
     <a href="/company">Company</a><i class="fa fa-caret-right"></i>
     <a href="/careers">Careers at Savas Labs</a><i class="fa fa-caret-right"></i>
-    UI/UX designer
+    UX designer
 </p>
 
 <div class="icon--job">
-    <img src="/assets/img/jobs/designer.png" alt="UI/UX Designer">
+    <img src="/assets/img/jobs/designer.png" alt="UX Designer">
 </div>
 
 ## The position
 
-We are looking to add an **entry to mid-level UI/UX designer** to our core team. Responsibilities include:
+We are looking to add a **UX designer** to our core team. Responsibilities include:
 
 - Planning the structure of the websites and apps we build
-- Researching and advocating UX best practices
+- Researching and advocating for the user, leveraging UX best practices
+- Articulating concepts through documentation to drive decision making
 - Building wireframes and prototypes
 - Exploring design directions, establishing design systems, and creating page layouts
 - Leading presentations and facilitating discussion and feedback
+- Collaborating with developers to transform prototypes and designs into digital products
 
-The right candidate has a **passion for design** and enjoys collaborating, communicating, and leading effectively with both internal team members and client stakeholders. You **love to understand both clients and their business** as well as a desire to work efficiently. You enjoy and have an eye for good design. Perhaps above all, this person is a very **strong communicator**, curious **problem-solver**, and motivated self-starter. The position requires an **understanding of how the web works** and how to design for content management systems. You will work under the mentorship of the executive and design teams and will collaborate with a **team primarily located in [Durham, NC](/durham)**, where we are looking to fill this role.
+The right candidate has a **passion for well-crafted interfaces** and enjoys collaborating, communicating, and leading effectively with both internal team members and client stakeholders. 
+
+You are genuinely curious about many subjects and **love to understand people and organizations**. You enjoy and have an eye for good design as well as a desire to work efficiently. You are a **strong communicator**, curious **problem-solver**, and motivated **self-starter**. The position requires an **understanding of how the web works**, and how to design for content management systems and/or digital products. You will work under the mentorship of the design team and will collaborate with a **team primarily located in [Durham, NC](/durham)**, where we are looking to fill this role.
 
 ## Working at Savas Labs
 
@@ -102,4 +106,4 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 
 Ready to get started? Send us a résumé and cover letter today.
 
-<a href="mailto:careers@savaslabs.com" class="button--arrow--orange">Apply</a> 
+<a href="https://savas-labs.breezy.hr/p/1e2915a597f9-ux-designer" class="button--arrow--orange">Apply</a>
