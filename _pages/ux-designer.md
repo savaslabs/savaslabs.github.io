@@ -90,7 +90,7 @@ As a full-service digital agency, we partner with clients to fulfill their strat
 ### You’re comfortable
 
 + balancing rich, unique, engaging design with usability and functionality
-+ Aiding business development efforts through proposal or pitch deck design or playing a role in related introductory calls or presentations
++ aiding business development efforts through proposal or pitch deck design or playing a role in related introductory calls or presentations
 + working with remote team members and clients
 
 ### Bonus points for
