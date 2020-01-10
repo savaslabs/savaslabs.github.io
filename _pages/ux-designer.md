@@ -1,7 +1,7 @@
 ---
 layout: page
-title: UI/UX Designer
-permalink: "/ui-ux-designer/"
+title: UX Designer
+permalink: "/ux-designer/"
 excerpt: |
   Savas Labs is looking to hire a designer to continue to build out design services for our growing team out of our office in downtown Durham.
 image: "/assets/img/jobs/designer.png"
@@ -14,11 +14,11 @@ image: "/assets/img/jobs/designer.png"
 <p class="breadcrumbs hide-for-small">
     <a href="/company">Company</a><i class="fa fa-caret-right"></i>
     <a href="/careers">Careers at Savas Labs</a><i class="fa fa-caret-right"></i>
-    UI/UX designer
+    UX designer
 </p>
 
 <div class="icon--job">
-    <img src="/assets/img/jobs/designer.png" alt="UI/UX Designer">
+    <img src="/assets/img/jobs/designer.png" alt="UX Designer">
 </div>
 
 ## The position
