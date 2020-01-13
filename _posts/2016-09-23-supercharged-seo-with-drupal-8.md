@@ -83,7 +83,7 @@ Drupal 8 comes with responsive themes in core. Now both public facing and admin 
 
 There has been a lot of debate about Drupal 8 vs. Drupal 7 performance / page load since the Drupal 8's release. It is a fact that vanilla Drupal 8 is running much more code than vanilla Drupal 7. It runs vendor code like Symfony, which adds some overhead. However, Drupal 8 has a significant number of performance improvements that are making up for that overhead:
 
-- **Javascript files are now loading in the footer**. Due to this change pages build up faster and user can see and use them earlier.
+- **JavaScript files are now loading in the footer**. Due to this change pages build up faster and user can see and use them earlier.
 
 - **[Pluggable CSS/JS aggregation and minification](https://www.drupal.org/node/2034675)** to support more optimal optimization algorithms.
 

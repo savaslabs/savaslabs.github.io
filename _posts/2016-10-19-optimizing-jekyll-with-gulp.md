@@ -825,7 +825,7 @@ The last thing we needed is a gulp command to serve the site and watch for file
 changes. To accomplish this we're using `gulp.watch()`, which tells gulp to run
 a specified task if the targeted files are changed. We also created a couple of
 special tasks to tell the browser to reload the served site on changes to Jekyll
-files (templates, config, etc.) or Javascript files. We already included
+files (templates, config, etc.) or JavaScript files. We already included
 `.pipe(browserSync.stream())` in our `build:styles:main` and `build:images` tasks, so
 when these files are updated the changes will be injected into our local site
 and we won't even need a refresh.

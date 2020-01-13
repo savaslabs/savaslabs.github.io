@@ -47,7 +47,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 
 ### Our projects
 
-As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Laravel, React, and Jekyll, spanning the languages of PHP, Javascript, and Ruby. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to productively contribute to a variety of projects and technologies simultaneously apart from your Drupal focus.
+As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Laravel, React, and Jekyll, spanning the languages of PHP, JavaScript, and Ruby. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to productively contribute to a variety of projects and technologies simultaneously apart from your Drupal focus.
 
 ## About you
 

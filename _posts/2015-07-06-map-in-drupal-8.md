@@ -8,7 +8,7 @@ summary: In this post I'll outline how to create a basic map in Drupal 8 using t
 drupal_planet_summary: |
   Adding a map to a Drupal 7 site is made easy by a variety of location storage and map rendering modules. However, at the time of this post most of these modules don't have an 8.x branch ready and therefore aren't usable in Drupal 8. Since Savas Labs has recently taken on a Drupal 8 mapping project, we decided to use the Leaflet library within a custom theme to render our map and the Views GeoJSON module to store our data.
 
-  In this post we'll add the Leaflet library to a custom theme using the new *.libaries.yml file, write a little Javascript to create our map, and pull in map points via a REST export view.
+  In this post we'll add the Leaflet library to a custom theme using the new *.libaries.yml file, write a little JavaScript to create our map, and pull in map points via a REST export view.
 disclaimer: |
   This post was written in the early days of Drupal 8 and some information may be outdated. Some clearly-marked updates have been made throughout the post.
 ---
