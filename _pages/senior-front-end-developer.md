@@ -25,7 +25,7 @@ image: "/assets/img/jobs/developer.png"
 
 We seek a **senior front-end developer** to join our [core team](/company/#team) to build beautiful, thoughtful, functional and accessible web and app experiences. You will work with a **team primarily located in [Durham, NC](/durham)**, though we have a number of team members and supporting contractors that work remotely. This role is for candidates who will work out of our **[Durham, NC](/durham) office only**; we are not accepting remote candidates, though we offer relocation assistance for applicants outside of the Triangle who want to move here. You should, it's great.
 
-Applicants should be HTML, CSS, and web accessibility experts and be fluent in modern Javascript, JavaScript frameworks, and front-end build tools. Candidates should have either experience or a strong interest in mentoring  other front-end team members as well as a strong desire to lead Savas in the successful application of emerging technologies for our partners. Both will be crucial to success in the role.
+Applicants should be HTML, CSS, and web accessibility experts and be fluent in modern JavaScript, JavaScript frameworks, and front-end build tools. Candidates should have either experience or a strong interest in mentoring  other front-end team members as well as a strong desire to lead Savas in the successful application of emerging technologies for our partners. Both will be crucial to success in the role.
 
 ## Working at Savas Labs
 
@@ -49,7 +49,7 @@ At Savas Labs, we prioritize a few things. We like people who are enjoyable to w
 
 ### Our projects
 
-As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Laravel, Craft, React, and Jekyll, spanning the languages of PHP, Javascript, and Ruby. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to build interfaces for a variety of back-end technologies simultaneously.
+As a full-service digital agency, we partner with clients to fulfill their strategy, design, user experience, and development needs. We work with high-profile corporate and nonprofit clients who operate in many different industries. In the past year we’ve worked with small, local nonprofits to elite international universities with technology platforms that include Drupal, Laravel, Craft, React, and Jekyll, spanning the languages of PHP, JavaScript, and Ruby. You don’t need to know all these technologies, but you will bring a lot of value to the team if you’re able to build interfaces for a variety of back-end technologies simultaneously.
 
 ## About you
 

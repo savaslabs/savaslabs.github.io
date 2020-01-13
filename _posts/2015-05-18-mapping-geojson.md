@@ -110,7 +110,7 @@ Wouldn't it be nice to be able to click on some of those points and find out mor
 * coordsToLatLng( Array coords )
   * Translates whatever coordinates are in the geoJSON file into latitude and longitude coordinates in WGS 84. Necessary if your GeoJSON data is in a different coordinate system. Returns a [LatLng](http://leafletjs.com/reference.html#latlng) object.
 * style( GeoJSON featureData )
-  * Generates CSS which applies to the marker for the feature with data `featureData`. Returns CSS in the form of a Javascript object.
+  * Generates CSS which applies to the marker for the feature with data `featureData`. Returns CSS in the form of a JavaScript object.
 
 Here, we'll modify `addDataToMap` to use `onEachFeature` to bind a popup to each feature as it is added. In general with GeoJSON you'll find additional data associated with each point in `feature.properties`. I'm using the USGS properties to add a popup giving the precise location, magnitude, and link to more info for each earthquake.
 

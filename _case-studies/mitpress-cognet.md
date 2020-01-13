@@ -4,7 +4,7 @@ weight: 0
 project_title: MIT Press CogNet Responsive Redesign
 slug: mitpress-cognet
 tags: css design drupal front-end-dev javascript sass theming
-featured_tags: [Drupal, Responsive Design, UX, Javascript]
+featured_tags: [Drupal, Responsive Design, UX, JavaScript]
 services: development
 client_name: MIT Press CogNet
 client_url: "http://cognet.mit.edu"
